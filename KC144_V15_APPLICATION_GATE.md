@@ -7,6 +7,7 @@ BASE_BRANCH::kc144-completed-crystal-v15
 BASE_COMMIT::1b653e39d7c09ba8b93a800860244242cd98d397
 BASE_TREE::d2e2f9b92fafdfd17be5088a4a8e6e3a5db1322b
 PUBLICATION_STATE::FIVE_ROLE_CALLS_EXTERNALLY_PUBLISHED
+VERIFICATION_STATE::AUTOMATED_FAIL_CLOSED_ACTIVE
 APPLICATION_STATE::AWAITING_VALID_EXTERNAL_APPLICATIONS
 GOVERNANCE_AUTHORITY_GRANTED::FALSE
 TRUTH_EFFECT::NONE
@@ -26,6 +27,31 @@ Submit one public, double-signed
 `KC144.BatchBoundCandidateApplication.V15` object. Generate and retain all
 private keys externally. Never place a private key, password, recovery phrase,
 access token, or other secret in a GitHub issue.
+
+## Autonomous verification
+
+The [KC144 V15 application verifier](https://github.com/demeet2k/guild-hall/blob/main/.github/workflows/kc144-v15-application-verifier.yml)
+runs whenever an application issue is opened, edited, or reopened. It:
+
+1. accepts only issue titles beginning `[KC144 V15 APPLICATION]`;
+2. parses the issue-form fields without executing applicant text;
+3. checks the selected role, immutable payload digest, application ID, and
+   declared schema;
+4. checks out exact V15 commit
+   `1b653e39d7c09ba8b93a800860244242cd98d397`;
+5. runs the existing signature, time, batch, manifest, and role-call verifier;
+6. creates or updates one machine-readable `PASS` or `HOLD` bot comment.
+
+The live [fail-closed self-test](https://github.com/demeet2k/guild-hall/issues/8)
+submitted a deliberately incomplete synthetic object. Its transport metadata
+parsed, its missing signed envelope was rejected, and the workflow returned
+`BATCH_BOUND_APPLICATION_HOLD`. The test issue is closed and explicitly
+non-counting.
+
+A bot `PASS` admits an object only to the V14 intake boundary. The workflow does
+not establish external identity or independence, select a cohort, deliver a
+packet, mutate the frozen crystal, grant governance authority, close M12, or
+create production truth.
 
 ## Publication receipts
 
