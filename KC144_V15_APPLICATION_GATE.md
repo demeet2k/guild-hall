@@ -75,6 +75,11 @@ false until externally adjudicated over one fixed ledger tree. Duplicate
 applications and identifiers are evaluated symmetrically at that later global
 snapshot; no streaming first writer can acquire counting priority.
 
+The next stage is implemented at the
+[fixed-tree cohort gate](https://github.com/demeet2k/guild-hall/blob/main/KC144_V15_COHORT_GATE.md).
+It preserves technical receipts while grouping replayed sources, applying
+synthetic exclusions, and marking every member of every duplicate set.
+
 The closed [fail-closed self-test issue #8](https://github.com/demeet2k/guild-hall/issues/8)
 contains a deliberately incomplete synthetic object and is non-counting.
 
@@ -121,6 +126,8 @@ OUTER_SIGNATURE_DOMAIN::KC144.V15.BATCH_BOUND_CANDIDATE_APPLICATION
 - [Executable verifier](https://github.com/demeet2k/guild-hall/blob/kc144-completed-crystal-v15/src/kc144_crystal/application_v15.py)
 - [Application transport tests](https://github.com/demeet2k/guild-hall/blob/kc144-completed-crystal-v15/tests/test_application_transport_v15.py)
 - [Ledger contract](https://github.com/demeet2k/guild-hall/blob/kc144-v15-pass-ledger/ledger/v15/CONTRACT.json)
+- [Fixed-tree cohort gate](https://github.com/demeet2k/guild-hall/blob/main/KC144_V15_COHORT_GATE.md)
+- [Cohort snapshot registry](https://github.com/demeet2k/guild-hall/tree/kc144-v15-cohort-snapshots/cohort/v15)
 
 Local verification command after placing a candidate object in
 `batch-bound-candidate-application.json`:
@@ -172,7 +179,7 @@ delivery, packet assignment, governance activation, M12 closure, certification,
 or production truth.
 
 ```text
-NEXT::KC144.V15::FIX-LEDGER-TREE-THEN-GLOBALLY-ADJUDICATE-UNIQUENESS-AND-INDEPENDENCE
+NEXT::KC144.V15::ADMIT-INDEPENDENTLY-GOVERNED-EXTERNAL-ADJUDICATION-TRUST-ROOTS
 RETURN::KC144.V15::LIVE_STATE_METRO
 PARENT::KC144.V15::PUBLISH-VERIFY-LEDGER-WITHOUT-PREMATURE-COUNTING
 ```

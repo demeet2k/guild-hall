@@ -12,11 +12,12 @@
     "SIGNED_GITHUB_ISSUE",
     "IMMUTABLE_CRYPTOGRAPHIC_VERIFIER",
     "CONTENT_ADDRESSED_RECEIPT",
-    "APPEND_ONLY_PASS_LEDGER"
+    "APPEND_ONLY_PASS_LEDGER",
+    "FIXED_TREE_COHORT_SNAPSHOT",
+    "GLOBAL_DUPLICATE_SYMMETRY"
   ],
   "inactive_until_adjudicated": [
-    "FIXED_TREE_COHORT_SNAPSHOT",
-    "GLOBAL_DUPLICATE_AND_INDEPENDENCE_REVIEW",
+    "EXTERNAL_IDENTITY_AND_INDEPENDENCE_ADJUDICATION",
     "FIVE_ROLE_VECTOR",
     "DELIVERY_BARRIER"
   ],
@@ -34,6 +35,24 @@
     "cohort_effect": "NONE_PENDING_FIXED_TREE_SNAPSHOT",
     "force_updates_permitted": false,
     "deletions_permitted": false
+  },
+  "cohort_snapshots": {
+    "branch": "kc144-v15-cohort-snapshots",
+    "root": "cohort/v15",
+    "compiler": "tools/kc144_v15_cohort_snapshot.py",
+    "workflow": ".github/workflows/kc144-v15-cohort-compiler.yml",
+    "deterministic_coordinate": [
+      "ledger_commit",
+      "ledger_tree",
+      "compiler_commit"
+    ],
+    "global_duplicate_symmetry": true,
+    "external_adjudication_trust_root_count": 0,
+    "counting_candidate_count": 0,
+    "filled_role_count": 0,
+    "required_role_count": 5,
+    "governance_authority_granted": false,
+    "production_truth_effect": "NONE"
   },
   "labels": {
     "kc144:v15:preflight-pass": "cryptographic preflight passed; non-counting",
@@ -77,7 +96,8 @@
     "all_applications": "https://github.com/demeet2k/guild-hall/issues?q=is%3Aissue+%22%5BKC144+V15+APPLICATION%5D%22+in%3Atitle",
     "preflight_pass": "https://github.com/demeet2k/guild-hall/issues?q=is%3Aissue+label%3A%22kc144%3Av15%3Apreflight-pass%22",
     "ledgered": "https://github.com/demeet2k/guild-hall/issues?q=is%3Aissue+label%3A%22kc144%3Av15%3Aledgered%22",
-    "hold": "https://github.com/demeet2k/guild-hall/issues?q=is%3Aissue+label%3A%22kc144%3Av15%3Ahold%22"
+    "hold": "https://github.com/demeet2k/guild-hall/issues?q=is%3Aissue+label%3A%22kc144%3Av15%3Ahold%22",
+    "cohort_snapshots": "https://github.com/demeet2k/guild-hall/tree/kc144-v15-cohort-snapshots/cohort/v15"
   },
   "identity_independence_externally_proven": false,
   "governance_authority_granted": false,

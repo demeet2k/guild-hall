@@ -1,0 +1,254 @@
+name: KC144 V15 fixed-tree cohort compiler
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+
+permissions: {}
+
+concurrency:
+  group: kc144-v15-cohort-compiler
+  cancel-in-progress: false
+
+env:
+  KC144_LEDGER_BRANCH: kc144-v15-pass-ledger
+  KC144_SNAPSHOT_BRANCH: kc144-v15-cohort-snapshots
+
+jobs:
+  compile:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    outputs:
+      snapshot_b64: ${{ steps.compile.outputs.snapshot_b64 }}
+      binding_b64: ${{ steps.compile.outputs.binding_b64 }}
+      snapshot_digest: ${{ steps.compile.outputs.snapshot_digest }}
+      snapshot_path: ${{ steps.compile.outputs.snapshot_path }}
+      ledger_commit: ${{ steps.compile.outputs.ledger_commit }}
+      ledger_tree: ${{ steps.compile.outputs.ledger_tree }}
+      compiler_commit: ${{ steps.compile.outputs.compiler_commit }}
+
+    steps:
+      - name: Check out compiler
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.sha }}
+          path: compiler
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Check out fixed ledger head
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: kc144-v15-pass-ledger
+          path: ledger-checkout
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Compile deterministic snapshot
+        id: compile
+        shell: bash
+        run: |
+          compiler_commit="$(git -C compiler rev-parse HEAD)"
+          ledger_commit="$(git -C ledger-checkout rev-parse HEAD)"
+          ledger_tree="$(git -C ledger-checkout rev-parse HEAD^{tree})"
+          test "$compiler_commit" = "$GITHUB_SHA"
+          python3 compiler/tools/kc144_v15_cohort_snapshot.py \
+            --ledger-root ledger-checkout/ledger/v15 \
+            --ledger-commit "$ledger_commit" \
+            --ledger-tree "$ledger_tree" \
+            --compiler-commit "$compiler_commit" \
+            --output snapshot.json \
+            --binding-output binding.json
+          snapshot_digest="$(
+            python3 -c 'import hashlib,pathlib; p=pathlib.Path("snapshot.json").read_bytes(); print("sha256:"+hashlib.sha256(p[:-1] if p.endswith(b"\n") else p).hexdigest())'
+          )"
+          snapshot_path="$(
+            python3 -c 'import json; print(json.load(open("binding.json"))["snapshot_path"])'
+          )"
+          {
+            echo "snapshot_b64=$(base64 -w0 snapshot.json)"
+            echo "binding_b64=$(base64 -w0 binding.json)"
+            echo "snapshot_digest=$snapshot_digest"
+            echo "snapshot_path=$snapshot_path"
+            echo "ledger_commit=$ledger_commit"
+            echo "ledger_tree=$ledger_tree"
+            echo "compiler_commit=$compiler_commit"
+          } >> "$GITHUB_OUTPUT"
+
+  publish:
+    if: always() && needs.compile.result == 'success'
+    needs: compile
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+
+    steps:
+      - name: Revalidate ledger tree and append snapshot
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+        env:
+          SNAPSHOT_B64: ${{ needs.compile.outputs.snapshot_b64 }}
+          BINDING_B64: ${{ needs.compile.outputs.binding_b64 }}
+          SNAPSHOT_DIGEST: ${{ needs.compile.outputs.snapshot_digest }}
+          SNAPSHOT_PATH: ${{ needs.compile.outputs.snapshot_path }}
+          LEDGER_COMMIT: ${{ needs.compile.outputs.ledger_commit }}
+          LEDGER_TREE: ${{ needs.compile.outputs.ledger_tree }}
+          COMPILER_COMMIT: ${{ needs.compile.outputs.compiler_commit }}
+        with:
+          script: |
+            const crypto = require('crypto');
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const ledgerBranch = process.env.KC144_LEDGER_BRANCH;
+            const snapshotBranch = process.env.KC144_SNAPSHOT_BRANCH;
+            const snapshot = Buffer.from(process.env.SNAPSHOT_B64 || '', 'base64').toString('utf8');
+            const binding = Buffer.from(process.env.BINDING_B64 || '', 'base64').toString('utf8');
+            const expectedDigest = process.env.SNAPSHOT_DIGEST;
+            const snapshotPath = process.env.SNAPSHOT_PATH;
+            const ledgerCommit = process.env.LEDGER_COMMIT;
+            const ledgerTree = process.env.LEDGER_TREE;
+            const compilerCommit = process.env.COMPILER_COMMIT;
+            const digest = value =>
+              'sha256:' + crypto.createHash('sha256').update(
+                value.endsWith('\n') ? value.slice(0, -1) : value,
+                'utf8'
+              ).digest('hex');
+
+            if (
+              !snapshot
+              || !binding
+              || digest(snapshot) !== expectedDigest
+              || !/^cohort\/v15\/snapshots\/sha256\/[0-9a-f]{2}\/[0-9a-f]{64}\.snapshot\.json$/.test(snapshotPath)
+            ) {
+              core.setFailed('invalid compiler output');
+              return;
+            }
+            const parsedBinding = JSON.parse(binding);
+            if (
+              parsedBinding.snapshot_digest !== expectedDigest
+              || parsedBinding.snapshot_path !== snapshotPath
+              || parsedBinding.ledger_commit !== ledgerCommit
+              || parsedBinding.ledger_tree !== ledgerTree
+              || parsedBinding.compiler_commit !== compilerCommit
+            ) {
+              core.setFailed('binding/output mismatch');
+              return;
+            }
+
+            const currentLedger = (await github.rest.repos.getBranch({
+              owner, repo, branch: ledgerBranch,
+            })).data;
+            if (
+              currentLedger.commit.sha !== ledgerCommit
+              || currentLedger.commit.commit.tree.sha !== ledgerTree
+            ) {
+              core.setFailed('ledger moved after compilation; next run will retry');
+              return;
+            }
+
+            const bindingPath =
+              `cohort/v15/sources/ledger-trees/${ledgerTree}/${compilerCommit}.json`;
+            async function readPath(path) {
+              try {
+                const response = await github.rest.repos.getContent({
+                  owner, repo, path, ref: snapshotBranch,
+                });
+                if (Array.isArray(response.data) || response.data.type !== 'file') {
+                  throw new Error('occupied path is not a file');
+                }
+                return Buffer.from(
+                  (response.data.content || '').replace(/\n/g, ''),
+                  'base64'
+                ).toString('utf8');
+              } catch (error) {
+                if (error.status === 404) return null;
+                throw error;
+              }
+            }
+
+            for (let attempt = 1; attempt <= 8; attempt += 1) {
+              const existingSnapshot = await readPath(snapshotPath);
+              const existingBinding = await readPath(bindingPath);
+              if (
+                existingSnapshot !== null && existingSnapshot !== snapshot
+                || existingBinding !== null && existingBinding !== binding
+              ) {
+                core.setFailed('content-address or ledger-tree binding collision');
+                return;
+              }
+              if (existingSnapshot !== null && existingBinding !== null) {
+                core.summary
+                  .addHeading('KC144 V15 cohort snapshot')
+                  .addCodeBlock(JSON.stringify({
+                    state: 'ALREADY_PRESENT_IDEMPOTENT',
+                    snapshot_digest: expectedDigest,
+                    snapshot_path: snapshotPath,
+                    ledger_commit: ledgerCommit,
+                    ledger_tree: ledgerTree,
+                  }, null, 2), 'json');
+                await core.summary.write();
+                return;
+              }
+
+              const head = (await github.rest.repos.getBranch({
+                owner, repo, branch: snapshotBranch,
+              })).data;
+              const entries = [];
+              for (const [path, content, exists] of [
+                [snapshotPath, snapshot, existingSnapshot !== null],
+                [bindingPath, binding, existingBinding !== null],
+              ]) {
+                if (!exists) {
+                  const blob = await github.rest.git.createBlob({
+                    owner, repo, content, encoding: 'utf-8',
+                  });
+                  entries.push({
+                    path,
+                    mode: '100644',
+                    type: 'blob',
+                    sha: blob.data.sha,
+                  });
+                }
+              }
+              const tree = await github.rest.git.createTree({
+                owner,
+                repo,
+                base_tree: head.commit.commit.tree.sha,
+                tree: entries,
+              });
+              const commit = await github.rest.git.createCommit({
+                owner,
+                repo,
+                message: `Snapshot KC144 V15 ledger tree ${ledgerTree}`,
+                tree: tree.data.sha,
+                parents: [head.commit.sha],
+              });
+              try {
+                await github.rest.git.updateRef({
+                  owner,
+                  repo,
+                  ref: `heads/${snapshotBranch}`,
+                  sha: commit.data.sha,
+                  force: false,
+                });
+                core.summary
+                  .addHeading('KC144 V15 cohort snapshot')
+                  .addCodeBlock(JSON.stringify({
+                    state: 'APPENDED',
+                    commit: commit.data.sha,
+                    snapshot_digest: expectedDigest,
+                    snapshot_path: snapshotPath,
+                    ledger_commit: ledgerCommit,
+                    ledger_tree: ledgerTree,
+                  }, null, 2), 'json');
+                await core.summary.write();
+                return;
+              } catch (error) {
+                if (error.status !== 409 && error.status !== 422) throw error;
+              }
+            }
+            core.setFailed('concurrent append retry exhausted');

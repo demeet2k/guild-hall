@@ -7,6 +7,9 @@ BASE_COMMIT::1b653e39d7c09ba8b93a800860244242cd98d397
 BASE_TREE::d2e2f9b92fafdfd17be5088a4a8e6e3a5db1322b
 PUBLIC_ROLE_CALLS::5/5
 CRYPTOGRAPHIC_PASS_LEDGER::kc144-v15-pass-ledger
+COHORT_SNAPSHOT_REGISTRY::kc144-v15-cohort-snapshots
+GLOBAL_DUPLICATE_SYMMETRY::ACTIVE
+EXTERNAL_ADJUDICATION_TRUST_ROOT_COUNT::0
 COUNTING_COHORT::NOT_YET_CONSTITUTED
 IDENTITY_INDEPENDENCE_EXTERNALLY_PROVEN::FALSE
 GOVERNANCE_AUTHORITY_GRANTED::FALSE
@@ -28,14 +31,16 @@ PUBLIC_MIRROR
   -> CONTENT_ADDRESSED_RECEIPT
   -> APPEND_ONLY_PASS_LEDGER
   -> FIXED_TREE_COHORT_SNAPSHOT
-  -> GLOBAL_DUPLICATE_AND_INDEPENDENCE_REVIEW
+  -> GLOBAL_DUPLICATE_SYMMETRY
+  -> EXTERNAL_IDENTITY_AND_INDEPENDENCE_ADJUDICATION
   -> FIVE_ROLE_VECTOR
   -> DELIVERY_BARRIER
 ```
 
-Only the first six stations are active. A receipt stops at
-`CRYPTOGRAPHIC_PREFLIGHT_PASS_NONCOUNTING`. No issue, label, bot comment, or
-receipt independently crosses the cohort-snapshot boundary.
+The route is active through fixed-tree snapshot compilation and global duplicate
+symmetry. A receipt stops at `CRYPTOGRAPHIC_PREFLIGHT_PASS_NONCOUNTING`.
+No issue, label, bot comment, receipt, uniqueness result, or self-declared root
+crosses the external-adjudication boundary.
 
 ## Live views
 
@@ -44,6 +49,8 @@ receipt independently crosses the cohort-snapshot boundary.
 - [Content-addressed/ledgered observations](https://github.com/demeet2k/guild-hall/issues?q=is%3Aissue+label%3A%22kc144%3Av15%3Aledgered%22)
 - [Fail-closed HOLD observations](https://github.com/demeet2k/guild-hall/issues?q=is%3Aissue+label%3A%22kc144%3Av15%3Ahold%22)
 - [Append-only PASS ledger](https://github.com/demeet2k/guild-hall/tree/kc144-v15-pass-ledger/ledger/v15)
+- [Fixed-tree cohort gate](https://github.com/demeet2k/guild-hall/blob/main/KC144_V15_COHORT_GATE.md)
+- [Cohort snapshot registry](https://github.com/demeet2k/guild-hall/tree/kc144-v15-cohort-snapshots/cohort/v15)
 - [Open a signed application](https://github.com/demeet2k/guild-hall/issues/new?template=kc144-v15-application.yml)
 
 ## Executed verification matrix
@@ -56,6 +63,9 @@ SIGNED_ROLE_SUBSTITUTION_REJECTION::PASS
 POSITIVE_DOUBLE_SIGNATURE_PATH::PASS
 CONTENT_ADDRESSED_APPEND::PASS
 POSITIVE_LEDGER_IDEMPOTENCE::PASS
+REPEATED_SOURCE_COLLAPSE::PASS
+GLOBAL_DUPLICATE_SYMMETRY::PASS
+DETERMINISTIC_SNAPSHOT_REPLAY::PASS
 SYNTHETIC_COUNTING_EFFECT::NONE
 ```
 

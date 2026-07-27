@@ -9,6 +9,8 @@ STATUS::PUBLIC_MIRROR_ACTIVE
 APPLICATION_GATE::FIVE_ROLE_CALLS_EXTERNALLY_PUBLISHED
 VERIFIER::STRICT_FAIL_CLOSED_ACTIVE
 PASS_LEDGER::CONTENT_ADDRESSED_APPEND_ONLY_ACTIVE
+COHORT_COMPILER::FIXED_TREE_GLOBAL_SYMMETRY_ACTIVE
+COHORT_SNAPSHOT_REGISTRY::kc144-v15-cohort-snapshots
 COUNTING_COHORT::NOT_YET_CONSTITUTED
 PROMOTION_STATUS::WAITING_FOR_TARGET_WRITE_AUTHORITY
 ```
@@ -38,6 +40,8 @@ publication equality witness.
 - [External application gate](https://github.com/demeet2k/guild-hall/blob/main/KC144_V15_APPLICATION_GATE.md)
 - [Submit a signed V15 application](https://github.com/demeet2k/guild-hall/issues/new?template=kc144-v15-application.yml)
 - [Append-only cryptographic-PASS ledger](https://github.com/demeet2k/guild-hall/tree/kc144-v15-pass-ledger/ledger/v15)
+- [Fixed-tree cohort gate](https://github.com/demeet2k/guild-hall/blob/main/KC144_V15_COHORT_GATE.md)
+- [Cohort snapshot registry](https://github.com/demeet2k/guild-hall/tree/kc144-v15-cohort-snapshots/cohort/v15)
 - [Framework entrance / README](https://github.com/demeet2k/guild-hall/blob/kc144-completed-crystal-v15/README.md)
 - [Completed framework](https://github.com/demeet2k/guild-hall/blob/kc144-completed-crystal-v15/COMPLETED_FRAMEWORK.md)
 - [Systematic framework V3](https://github.com/demeet2k/guild-hall/blob/kc144-completed-crystal-v15/SYSTEMATIC_FRAMEWORK_V3.md)
@@ -56,7 +60,8 @@ publication equality witness.
 Publication means that the V15 source tree and all five role-bound application
 calls are publicly addressable and cryptographically reproducible. The live
 overlay can now parse, verify, content-address, and ledger exact issue
-snapshots.
+snapshots, then compile deterministic global cohort state from one fixed ledger
+tree.
 
 It does **not** assert that a valid independent candidate exists, participant
 delivery, governance activation, independent witness completion, or M12
@@ -73,7 +78,7 @@ FIVE_VALID_INDEPENDENT_BATCH_BOUND_APPLICATIONS_REQUIRED
 Canonical continuation:
 
 ```text
-KC144.V15::FIX-LEDGER-TREE-THEN-GLOBALLY-ADJUDICATE-UNIQUENESS-AND-INDEPENDENCE
+KC144.V15::ADMIT-INDEPENDENTLY-GOVERNED-EXTERNAL-ADJUDICATION-TRUST-ROOTS
 ```
 
 ## Promotion route
