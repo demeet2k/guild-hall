@@ -289,11 +289,19 @@ def _edge_options(
     target: int,
     graph: dict[int, list[tuple[int, dict[str, Any]]]],
 ) -> list[dict[str, Any]]:
-    return [
+    options = [
         _arc(row, source, target)
         for neighbor, row in graph[source]
         if neighbor == target
     ]
+    return sorted(
+        options,
+        key=lambda arc: (
+            arc["standing"] != "STRUCTURAL",
+            arc["relation"],
+            arc["edge_id"],
+        ),
+    )
 
 
 def _shortest_language(
@@ -324,7 +332,12 @@ def _shortest_language(
 
     for node in parents:
         parents[node].sort(
-            key=lambda item: (item[0], item[1]["edge_id"], item[1]["relation"])
+            key=lambda item: (
+                item[0],
+                item[1]["standing"] != "STRUCTURAL",
+                item[1]["relation"],
+                item[1]["edge_id"],
+            )
         )
 
     witnesses: list[list[dict[str, Any]]] = []
