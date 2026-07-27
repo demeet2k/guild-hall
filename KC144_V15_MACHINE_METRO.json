@@ -41,6 +41,38 @@
     "kc144:v15:hold": "fail-closed",
     "kc144:v15:stale": "issue snapshot changed before publication"
   },
+  "executed_verification_matrix": {
+    "duplicate_key_rejection": {
+      "issue": 9,
+      "result": "HOLD",
+      "passed": true
+    },
+    "bot_comment_idempotence": {
+      "issue": 9,
+      "result": "ONE_EXACT_BOT_COMMENT",
+      "passed": true
+    },
+    "stale_closed_snapshot_rejection": {
+      "issue": 10,
+      "result": "STALE_HOLD",
+      "passed": true
+    },
+    "positive_double_signature_and_append": {
+      "issue": 11,
+      "result": "CRYPTOGRAPHIC_PREFLIGHT_PASS_NONCOUNTING",
+      "application_digest": "sha256:328b25ac1f02c4a536395e5991345e65ca57f8e7e9049a4cda378a3db59ab57f",
+      "receipt_digest": "sha256:d1d50d1862c69483d511869faf369c285d45c9cd9461b5e0bd424b2a0a6dfc27",
+      "rerun": "ALREADY_PRESENT_IDEMPOTENT",
+      "counting_effect": "NONE",
+      "passed": true
+    },
+    "signed_role_substitution_rejection": {
+      "issue": 12,
+      "result": "HOLD",
+      "failed_check": "single_role_ingress_exact",
+      "passed": true
+    }
+  },
   "live_queries": {
     "all_applications": "https://github.com/demeet2k/guild-hall/issues?q=is%3Aissue+%22%5BKC144+V15+APPLICATION%5D%22+in%3Atitle",
     "preflight_pass": "https://github.com/demeet2k/guild-hall/issues?q=is%3Aissue+label%3A%22kc144%3Av15%3Apreflight-pass%22",
@@ -51,4 +83,3 @@
   "governance_authority_granted": false,
   "production_truth_effect": "NONE"
 }
-

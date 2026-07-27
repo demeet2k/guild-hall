@@ -78,6 +78,19 @@ snapshot; no streaming first writer can acquire counting priority.
 The closed [fail-closed self-test issue #8](https://github.com/demeet2k/guild-hall/issues/8)
 contains a deliberately incomplete synthetic object and is non-counting.
 
+## Adversarial integration evidence
+
+The release was exercised through public issue events, not only local fixtures:
+
+| Case | Public evidence | Observed result |
+|---|---|---|
+| Duplicate JSON key and repeated run | [Issue #9](https://github.com/demeet2k/guild-hall/issues/9), [workflow](https://github.com/demeet2k/guild-hall/actions/runs/30297551241) | `HOLD`; one exact bot comment after rerun |
+| Issue closed between verification and publication | [Issue #10](https://github.com/demeet2k/guild-hall/issues/10), [workflow](https://github.com/demeet2k/guild-hall/actions/runs/30297743485) | `STALE_HOLD`; HOLD and stale labels |
+| Valid double-signed synthetic object | [Issue #11](https://github.com/demeet2k/guild-hall/issues/11), [workflow](https://github.com/demeet2k/guild-hall/actions/runs/30297866329), [source binding](https://github.com/demeet2k/guild-hall/blob/kc144-v15-pass-ledger/ledger/v15/sources/github-issues/000000000011.json) | first run `APPENDED`; rerun `ALREADY_PRESENT_IDEMPOTENT`; explicitly non-counting |
+| Valid signatures with form/signed-role substitution | [Issue #12](https://github.com/demeet2k/guild-hall/issues/12), [workflow](https://github.com/demeet2k/guild-hall/actions/runs/30297864793) | `HOLD` on `single_role_ingress_exact`; no ledger write |
+
+All synthetic test issues are closed and have `COUNTING_EFFECT::NONE`.
+
 ## Publication receipts
 
 | Role | Public call | Immutable payload | Payload digest |

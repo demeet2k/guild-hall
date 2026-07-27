@@ -46,6 +46,24 @@ receipt independently crosses the cohort-snapshot boundary.
 - [Append-only PASS ledger](https://github.com/demeet2k/guild-hall/tree/kc144-v15-pass-ledger/ledger/v15)
 - [Open a signed application](https://github.com/demeet2k/guild-hall/issues/new?template=kc144-v15-application.yml)
 
+## Executed verification matrix
+
+```text
+DUPLICATE_KEY_REJECTION::PASS
+BOT_COMMENT_IDEMPOTENCE::PASS
+STALE_CLOSED_SNAPSHOT_REJECTION::PASS
+SIGNED_ROLE_SUBSTITUTION_REJECTION::PASS
+POSITIVE_DOUBLE_SIGNATURE_PATH::PASS
+CONTENT_ADDRESSED_APPEND::PASS
+POSITIVE_LEDGER_IDEMPOTENCE::PASS
+SYNTHETIC_COUNTING_EFFECT::NONE
+```
+
+- [#9 duplicate-key HOLD](https://github.com/demeet2k/guild-hall/issues/9)
+- [#10 stale/closed HOLD](https://github.com/demeet2k/guild-hall/issues/10)
+- [#11 positive preflight, append, and idempotent rerun](https://github.com/demeet2k/guild-hall/issues/11)
+- [#12 signed role-substitution HOLD](https://github.com/demeet2k/guild-hall/issues/12)
+
 ## Five immutable ingress coordinates
 
 | Role | Public call | State before a real valid application |
@@ -90,4 +108,3 @@ Synthetic tests, malformed objects, stale snapshots, replays, content-address
 collisions, source-binding conflicts, duplicate identifiers, and
 identity/independence claims without external adjudication are non-counting.
 They remain observable without being promoted into truth.
-
