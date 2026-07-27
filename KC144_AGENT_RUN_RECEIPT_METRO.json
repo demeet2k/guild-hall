@@ -1,0 +1,54 @@
+{
+  "schema": "KC144.AgentRunReceiptMetro.V1",
+  "lookup_key": "KC144.V1::CONTENT_ADDRESSED_AGENT_RUN_RECEIPTS",
+  "branch": "kc144-agent-run-receipts-v1",
+  "parent": {
+    "branch": "kc144-parallel-navigation-v1",
+    "snapshot_commit": "475259f5ca3e5da3528eddda59f411baf37e57c0",
+    "snapshot_digest": "sha256:c8e1a1a7c55a144b7bf20b49ff3fd01ca292a0cd34f134ce0a0abf0d9ac0bc1d"
+  },
+  "runtime": {
+    "commit": "91cf0e3c2e8da10ed0787ebf1c0c0105aaf988a9",
+    "tree": "bc44c4f14b25894a8251e8c1289b718e04eef32a"
+  },
+  "receipt_snapshot": {
+    "commit": "4f3bd71a1e88130109edd03437b72f21c0e14096",
+    "tree": "c15740c445baa1f98e20b3172fb8637c9b44271a",
+    "run_id": "sha256:0277d691593684417720414f2a2fd00436811e86d946cdc4eb2b1c0e975beb04",
+    "plan_digest": "sha256:e931514ea1840ec12766ec198ff1989f84d80ff9ffdd01577fa0e568f50a9ad9",
+    "manifest_digest": "sha256:89cb8d76f3a2cc8a0addfcf1eea3ad5836f7833390a21c25667ecc57ee79d377",
+    "audit_root": "sha256:30f0a04797aea055a99ea7da21c2583b2e9bb9fec60e2ac6ac01c48d1f266d0a",
+    "bundle_digest": "sha256:52b8b2896a7bd1fff45dc3df84ac031172a3bc469375e3d3c775c8e9cb0aef59",
+    "bundle_file_sha256": "sha256:7c4feb1135f9c968cc6adace8fe4a75a56ce21c4ad52349b36c504c33aa2f943"
+  },
+  "execution": {
+    "waves": [5, 1],
+    "maximum_parallel_width": 5,
+    "task_receipts": 6,
+    "audit_events": 32,
+    "worker_capacities_verified": [1, 2, 3, 4, 5],
+    "canonical_bytes_identical": true,
+    "independent_witnesses": 0
+  },
+  "mycelium": {
+    "entry": "GID003/H03",
+    "source_binding": "GID005/H05",
+    "activation": "GID006/H06",
+    "execution": "GID135/M03",
+    "receipt_index": "GID141/M09",
+    "verification_boundary": "GID144/M12",
+    "return": "GID001_PRIME",
+    "open_bridge_ids": ["BR019"],
+    "base_graph_mutated": false
+  },
+  "links": {
+    "branch": "https://github.com/demeet2k/guild-hall/tree/kc144-agent-run-receipts-v1",
+    "framework": "https://github.com/demeet2k/guild-hall/blob/91cf0e3c2e8da10ed0787ebf1c0c0105aaf988a9/KC144_AGENT_RUN_RECEIPTS.md",
+    "registry": "https://github.com/demeet2k/guild-hall/tree/4f3bd71a1e88130109edd03437b72f21c0e14096/registry/agent-runs/v1",
+    "bundle": "https://github.com/demeet2k/guild-hall/blob/4f3bd71a1e88130109edd03437b72f21c0e14096/registry/agent-runs/v1/runs/sha256/02/0277d691593684417720414f2a2fd00436811e86d946cdc4eb2b1c0e975beb04.json"
+  },
+  "content_transport_certified": false,
+  "governance_authority_granted": false,
+  "production_truth_effect": "NONE",
+  "next_seed": "KC144.V1::MYCELIUM_LOCATABLE_TOOL_DISPATCH"
+}

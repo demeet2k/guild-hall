@@ -91,9 +91,11 @@ coordinator cannot impersonate independence.
 - [Property tests](https://github.com/demeet2k/guild-hall/blob/kc144-parallel-navigation-v1/tests/test_parallel_routes_v1.py)
 - [Snapshot registry](https://github.com/demeet2k/guild-hall/tree/kc144-parallel-navigation-v1/registry/parallel-navigation/v1)
 - [Current snapshot](https://github.com/demeet2k/guild-hall/blob/kc144-parallel-navigation-v1/registry/parallel-navigation/v1/snapshots/sha256/c8/c8e1a1a7c55a144b7bf20b49ff3fd01ca292a0cd34f134ce0a0abf0d9ac0bc1d.json)
+- [Content-addressed agent-run receipt metro](KC144_AGENT_RUN_RECEIPT_METRO.md)
+- [Current frozen run receipt](https://github.com/demeet2k/guild-hall/blob/4f3bd71a1e88130109edd03437b72f21c0e14096/registry/agent-runs/v1/runs/sha256/02/0277d691593684417720414f2a2fd00436811e86d946cdc4eb2b1c0e975beb04.json)
 
 ```text
-NEXT::KC144.V1::CONTENT-ADDRESSED-AGENT-RUN-RECEIPTS
+NEXT::KC144.V1::CONTENT_ADDRESSED_AGENT_RUN_RECEIPTS
 RETURN::KC144.V15::LIVE_STATE_METRO
 PARENT::KC144.V3::NAVIGATION-WAVE-AND-HOLONOMY
 ```
