@@ -8,6 +8,9 @@ BASE_TREE::d2e2f9b92fafdfd17be5088a4a8e6e3a5db1322b
 PUBLIC_ROLE_CALLS::5/5
 CRYPTOGRAPHIC_PASS_LEDGER::kc144-v15-pass-ledger
 COHORT_SNAPSHOT_REGISTRY::kc144-v15-cohort-snapshots
+PARALLEL_ROUTE_REGISTRY::kc144-parallel-navigation-v1
+PARALLEL_ROUTE_WIDTH::5
+PARALLEL_ROUTE_SNAPSHOT::sha256:c8e1a1a7c55a144b7bf20b49ff3fd01ca292a0cd34f134ce0a0abf0d9ac0bc1d
 GLOBAL_DUPLICATE_SYMMETRY::ACTIVE
 EXTERNAL_ADJUDICATION_TRUST_ROOT_COUNT::0
 TECHNICAL_APPLICATIONS::1
@@ -56,6 +59,8 @@ crosses the external-adjudication boundary.
 - [Fixed-tree cohort gate](https://github.com/demeet2k/guild-hall/blob/main/KC144_V15_COHORT_GATE.md)
 - [Cohort snapshot registry](https://github.com/demeet2k/guild-hall/tree/kc144-v15-cohort-snapshots/cohort/v15)
 - [Current fixed-tree snapshot](https://github.com/demeet2k/guild-hall/blob/kc144-v15-cohort-snapshots/cohort/v15/snapshots/sha256/b7/b7835f3b8ba011e5c0b2c160bbe8cf299d7741896cdfc0903c09e9ad22b2a446.snapshot.json)
+- [Five-lane parallel route metro](https://github.com/demeet2k/guild-hall/blob/main/KC144_PARALLEL_ROUTE_METRO.md)
+- [Current parallel route snapshot](https://github.com/demeet2k/guild-hall/blob/kc144-parallel-navigation-v1/registry/parallel-navigation/v1/snapshots/sha256/c8/c8e1a1a7c55a144b7bf20b49ff3fd01ca292a0cd34f134ce0a0abf0d9ac0bc1d.json)
 - [Open a signed application](https://github.com/demeet2k/guild-hall/issues/new?template=kc144-v15-application.yml)
 
 ## Executed verification matrix
@@ -72,6 +77,8 @@ REPEATED_SOURCE_COLLAPSE::PASS
 GLOBAL_DUPLICATE_SYMMETRY::PASS
 DETERMINISTIC_SNAPSHOT_REPLAY::PASS
 SYNTHETIC_COUNTING_EFFECT::NONE
+ONE-WORKER/FIVE-WORKER-ROUTE-REPLAY::BYTE-IDENTICAL
+FIVE-ROUTE-PAIRWISE-HOLONOMY::10/10-NONZERO
 ```
 
 - [#9 duplicate-key HOLD](https://github.com/demeet2k/guild-hall/issues/9)

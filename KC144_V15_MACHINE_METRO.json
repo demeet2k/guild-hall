@@ -64,6 +64,25 @@
     "governance_authority_granted": false,
     "production_truth_effect": "NONE"
   },
+  "parallel_navigation": {
+    "branch": "kc144-parallel-navigation-v1",
+    "root": "registry/parallel-navigation/v1",
+    "compiler": "src/kc144_crystal/parallel_routes.py",
+    "compiler_commit": "77c67543b0d6df946d7ffa7d17242bf869c3ad1b",
+    "compiler_tree": "0fdb2184b9c9777f557102a84c44ac034991fe5f",
+    "snapshot_commit": "475259f5ca3e5da3528eddda59f411baf37e57c0",
+    "snapshot_digest": "sha256:c8e1a1a7c55a144b7bf20b49ff3fd01ca292a0cd34f134ce0a0abf0d9ac0bc1d",
+    "snapshot_file_sha256": "sha256:55edf1d37b065229863544c556954537b2b8a6c7dc355a92960832336d1e3188",
+    "maximum_parallel_width": 5,
+    "simulation_count": 5,
+    "pairwise_holonomy_comparisons": 10,
+    "all_pairwise_holonomy_nonzero": true,
+    "one_worker_equals_five_workers": true,
+    "bounded_typed_target_path_count": 18402557639,
+    "content_transport_certified": false,
+    "governance_authority_granted": false,
+    "production_truth_effect": "NONE"
+  },
   "labels": {
     "kc144:v15:preflight-pass": "cryptographic preflight passed; non-counting",
     "kc144:v15:ledgered": "content-addressed receipt exists",
@@ -107,7 +126,8 @@
     "preflight_pass": "https://github.com/demeet2k/guild-hall/issues?q=is%3Aissue+label%3A%22kc144%3Av15%3Apreflight-pass%22",
     "ledgered": "https://github.com/demeet2k/guild-hall/issues?q=is%3Aissue+label%3A%22kc144%3Av15%3Aledgered%22",
     "hold": "https://github.com/demeet2k/guild-hall/issues?q=is%3Aissue+label%3A%22kc144%3Av15%3Ahold%22",
-    "cohort_snapshots": "https://github.com/demeet2k/guild-hall/tree/kc144-v15-cohort-snapshots/cohort/v15"
+    "cohort_snapshots": "https://github.com/demeet2k/guild-hall/tree/kc144-v15-cohort-snapshots/cohort/v15",
+    "parallel_navigation": "https://github.com/demeet2k/guild-hall/tree/kc144-parallel-navigation-v1/registry/parallel-navigation/v1"
   },
   "identity_independence_externally_proven": false,
   "governance_authority_granted": false,
