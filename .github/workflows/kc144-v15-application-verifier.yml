@@ -2,230 +2,818 @@ name: KC144 V15 application verifier
 
 on:
   issues:
-    types: [opened, edited, reopened]
+    types: [opened, edited]
 
-permissions:
-  contents: read
-  issues: write
+permissions: {}
 
 concurrency:
   group: kc144-v15-application-${{ github.event.issue.number }}
   cancel-in-progress: true
 
+env:
+  KC144_BASE_COMMIT: 1b653e39d7c09ba8b93a800860244242cd98d397
+  KC144_BASE_TREE: d2e2f9b92fafdfd17be5088a4a8e6e3a5db1322b
+  KC144_LEDGER_BRANCH: kc144-v15-pass-ledger
+
 jobs:
   verify:
     if: startsWith(github.event.issue.title, '[KC144 V15 APPLICATION]')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
+    permissions:
+      contents: read
+    outputs:
+      report_b64: ${{ steps.verify.outputs.report_b64 }}
+      bundle_b64: ${{ steps.verify.outputs.bundle_b64 }}
+      snapshot_b64: ${{ steps.verify.outputs.snapshot_b64 }}
 
     steps:
       - name: Check out immutable V15 verifier
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           ref: 1b653e39d7c09ba8b93a800860244242cd98d397
           fetch-depth: 1
+          persist-credentials: false
 
-      - name: Install verifier
-        run: python3 -m pip install .
+      - name: Assert immutable Git coordinate
+        shell: bash
+        run: |
+          test "$(git rev-parse HEAD)" = "$KC144_BASE_COMMIT"
+          test "$(git rev-parse HEAD^{tree})" = "$KC144_BASE_TREE"
 
-      - name: Parse application issue safely
+      - name: Install pinned verifier dependency
+        shell: bash
+        run: |
+          python3 -m pip install \
+            --disable-pip-version-check \
+            --no-input \
+            --only-binary=:all: \
+            cryptography==43.0.3 \
+            cffi==1.17.1 \
+            pycparser==2.22
+
+      - name: Verify current issue snapshot
+        id: verify
+        shell: bash
+        env:
+          PYTHONPATH: src
         run: |
           python3 - <<'PY'
+          from __future__ import annotations
+
+          import base64
+          import hashlib
           import json
           import os
           import re
-          from pathlib import Path
-
-          event = json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text(encoding='utf-8'))
-          issue = event['issue']
-          body = issue.get('body') or ''
-
-          def section(label):
-              pattern = rf'(?ms)^### {re.escape(label)}\s*\n+(.*?)(?=^### |\Z)'
-              match = re.search(pattern, body)
-              if not match:
-                  raise ValueError(f'missing issue-form section: {label}')
-              return match.group(1).strip()
-
-          state = {
-              'schema': 'KC144.ApplicationIssueParse.V15',
-              'issue_number': issue['number'],
-              'checked_at': issue['created_at'],
-              'parse_ok': False,
-              'checks': {},
-              'error': None,
-          }
-
-          try:
-              role = section('Target role').splitlines()[0].strip()
-              declared_digest = section('Immutable payload digest').splitlines()[0].strip()
-              declared_application_id = section('Application identifier').splitlines()[0].strip()
-              application_section = section('Signed V15 application JSON')
-              fenced = re.search(r'```(?:json)?\s*(.*?)```', application_section, re.S | re.I)
-              raw_json = fenced.group(1).strip() if fenced else application_section
-              application = json.loads(raw_json)
-
-              payload_files = {
-                  'CUSTODIAN': 'registry/v15/application_publication_custodian_v15.json',
-                  'INDEPENDENT_REVIEWER': 'registry/v15/application_publication_independent_reviewer_v15.json',
-                  'REPLAY_WITNESS': 'registry/v15/application_publication_replay_witness_v15.json',
-                  'SOURCE_AUDITOR': 'registry/v15/application_publication_source_auditor_v15.json',
-                  'RETURN_AUDITOR': 'registry/v15/application_publication_return_auditor_v15.json',
-              }
-              role_known = role in payload_files
-              canonical_digest = None
-              if role_known:
-                  payload = json.loads(Path(payload_files[role]).read_text(encoding='utf-8'))
-                  canonical_digest = payload['payload_digest']
-
-              state.update({
-                  'parse_ok': True,
-                  'declared_role': role,
-                  'declared_payload_digest': declared_digest,
-                  'canonical_payload_digest': canonical_digest,
-                  'declared_application_id': declared_application_id,
-                  'checks': {
-                      'role_known': role_known,
-                      'payload_digest_exact': role_known and declared_digest == canonical_digest,
-                      'application_id_exact': application.get('application_id') == declared_application_id,
-                      'schema_declared': application.get('schema') == 'KC144.BatchBoundCandidateApplication.V15',
-                  },
-              })
-              Path('candidate-application.json').write_text(
-                  json.dumps(application, indent=2, sort_keys=True) + '\n',
-                  encoding='utf-8',
-              )
-          except Exception as exc:
-              state['error'] = f'{type(exc).__name__}: {exc}'
-
-          Path('issue-parse-state.json').write_text(
-              json.dumps(state, indent=2, sort_keys=True) + '\n',
-              encoding='utf-8',
-          )
-          PY
-
-      - name: Verify signatures and immutable bindings
-        run: |
-          python3 - <<'PY'
-          import json
           import subprocess
           import sys
+          from datetime import datetime, timezone
           from pathlib import Path
 
-          parse_state = json.loads(Path('issue-parse-state.json').read_text(encoding='utf-8'))
-          runtime = None
-          runtime_error = None
-          returncode = None
-
-          if parse_state['parse_ok']:
-              command = [
-                  sys.executable,
-                  '-m',
-                  'kc144_crystal',
-                  'candidate-application-verify',
-                  'registry/v11/governance_challenge_batch_v11.json',
-                  'candidate-application.json',
-                  '--checked-at',
-                  parse_state['checked_at'],
-              ]
-              completed = subprocess.run(command, capture_output=True, text=True, check=False)
-              returncode = completed.returncode
-              try:
-                  runtime = json.loads(completed.stdout)
-              except Exception:
-                  runtime_error = (completed.stderr or completed.stdout or 'verifier produced no report').strip()
-
-          preflight_pass = (
-              parse_state['parse_ok']
-              and bool(parse_state['checks'])
-              and all(parse_state['checks'].values())
+          BASE_COMMIT = os.environ["KC144_BASE_COMMIT"]
+          BASE_TREE = os.environ["KC144_BASE_TREE"]
+          MAX_BODY_BYTES = 96 * 1024
+          MAX_APPLICATION_BYTES = 64 * 1024
+          ROLES = (
+              "CUSTODIAN",
+              "INDEPENDENT_REVIEWER",
+              "REPLAY_WITNESS",
+              "SOURCE_AUDITOR",
+              "RETURN_AUDITOR",
           )
-          runtime_pass = bool(runtime) and runtime.get('verdict') == 'PASS' and returncode == 0
-          verdict = 'PASS' if preflight_pass and runtime_pass else 'HOLD'
-
-          report = {
-              'schema': 'KC144.GitHubApplicationVerification.V15',
-              'issue_number': parse_state['issue_number'],
-              'verdict': verdict,
-              'status': (
-                  'BATCH_BOUND_APPLICATION_ADMITTED_TO_V14'
-                  if verdict == 'PASS'
-                  else 'BATCH_BOUND_APPLICATION_HOLD'
-              ),
-              'base_commit': '1b653e39d7c09ba8b93a800860244242cd98d397',
-              'base_tree': 'd2e2f9b92fafdfd17be5088a4a8e6e3a5db1322b',
-              'preflight': parse_state,
-              'runtime': runtime,
-              'runtime_returncode': returncode,
-              'runtime_error': runtime_error,
-              'identity_independence_externally_proven': False,
-              'governance_authority_granted': False,
-              'production_truth_effect': 'NONE',
+          PAYLOAD_FILES = {
+              role: f"registry/v15/application_publication_{role.lower()}_v15.json"
+              for role in ROLES
           }
-          Path('verification-report.json').write_text(
-              json.dumps(report, indent=2, sort_keys=True) + '\n',
-              encoding='utf-8',
+          ROOT_RE = re.compile(r"^sha256:[0-9a-f]{64}$")
+          TOP_KEYS = {
+              "schema", "application_id", "nomination_envelope", "batch_id",
+              "batch_root", "call_manifest_root", "target_calls", "submitted_at",
+              "signature_domain", "signature_b64",
+          }
+          ENVELOPE_KEYS = {
+              "schema", "envelope_id", "nomination", "signature_domain",
+              "signature_b64",
+          }
+          NOMINATION_KEYS = {
+              "schema", "nomination_id", "candidate_id", "status", "test_only",
+              "algorithm", "public_key_b64", "eligible_roles",
+              "identity_claim_root", "external_identity_verification_root",
+              "external_independence_verification_root", "institution_root",
+              "lineage_root", "jurisdiction_root", "primary_domain_root",
+              "authority_root", "funding_root", "data_control_root",
+              "staff_control_root", "technology_control_root",
+              "conflict_disclosure_root", "conflict_status",
+              "conflict_resolution_root", "nomination_evidence_root",
+              "not_before", "not_after",
+          }
+          ROOT_FIELDS = {
+              "identity_claim_root", "external_identity_verification_root",
+              "external_independence_verification_root", "institution_root",
+              "lineage_root", "jurisdiction_root", "primary_domain_root",
+              "authority_root", "funding_root", "data_control_root",
+              "staff_control_root", "technology_control_root",
+              "conflict_disclosure_root", "nomination_evidence_root",
+          }
+
+          def canonical(value):
+              return json.dumps(
+                  value,
+                  sort_keys=True,
+                  separators=(",", ":"),
+                  ensure_ascii=False,
+                  allow_nan=False,
+              )
+
+          def digest_bytes(value):
+              return "sha256:" + hashlib.sha256(value).hexdigest()
+
+          def parse_time(value):
+              if not isinstance(value, str) or len(value) > 64:
+                  raise ValueError("invalid timestamp")
+              parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+              if parsed.tzinfo is None:
+                  raise ValueError("timezone required")
+              return parsed.astimezone(timezone.utc)
+
+          def reject_pairs(pairs):
+              result = {}
+              for key, value in pairs:
+                  if key in result:
+                      raise ValueError("duplicate JSON key")
+                  result[key] = value
+              return result
+
+          def reject_constant(_):
+              raise ValueError("non-finite JSON number")
+
+          def exact_keys(value, expected):
+              return isinstance(value, dict) and set(value) == expected
+
+          def bounded_string(value, limit=256):
+              return isinstance(value, str) and 0 < len(value) <= limit
+
+          event = json.loads(
+              Path(os.environ["GITHUB_EVENT_PATH"]).read_text(encoding="utf-8")
           )
+          issue = event["issue"]
+          body = issue.get("body") or ""
+          body_bytes = body.encode("utf-8")
+          body_digest = digest_bytes(body_bytes)
+          snapshot = {
+              "issue_number": int(issue["number"]),
+              "issue_node_id": str(issue["node_id"]),
+              "issue_url": str(issue["html_url"]),
+              "title": str(issue.get("title") or ""),
+              "state": str(issue.get("state") or ""),
+              "updated_at": str(issue["updated_at"]),
+              "body_digest": body_digest,
+          }
+          checks = {}
+          application = None
+          role = None
+          failure_class = None
+
+          try:
+              if len(body_bytes) > MAX_BODY_BYTES:
+                  raise ValueError("body too large")
+              headings = list(re.finditer(r"(?m)^### ([^\r\n]+)\s*$", body))
+              sections = {}
+              for index, heading in enumerate(headings):
+                  label = heading.group(1).strip()
+                  start = heading.end()
+                  end = headings[index + 1].start() if index + 1 < len(headings) else len(body)
+                  sections.setdefault(label, []).append(body[start:end].strip())
+
+              required_sections = (
+                  "Target role",
+                  "Immutable payload digest",
+                  "Application identifier",
+                  "Signed V15 application JSON",
+                  "Public evidence locators",
+                  "Submission declarations",
+              )
+              checks["unique_required_sections"] = all(
+                  len(sections.get(label, [])) == 1 for label in required_sections
+              )
+              if not checks["unique_required_sections"]:
+                  raise ValueError("missing or duplicate section")
+
+              def scalar(label):
+                  lines = [
+                      line.strip()
+                      for line in sections[label][0].splitlines()
+                      if line.strip()
+                  ]
+                  if len(lines) != 1 or len(lines[0]) > 256:
+                      raise ValueError("invalid scalar section")
+                  return lines[0]
+
+              role = scalar("Target role")
+              declared_digest = scalar("Immutable payload digest")
+              declared_application_id = scalar("Application identifier")
+              evidence = sections["Public evidence locators"][0]
+              declarations = sections["Submission declarations"][0]
+              checks["role_known"] = role in ROLES
+              checks["evidence_locators_present"] = (
+                  len(evidence.encode("utf-8")) <= 8192
+                  and "https://" in evidence
+                  and bool(re.search(r"sha256:[0-9a-f]{64}", evidence))
+              )
+              checked_boxes = re.findall(r"(?im)^\s*-\s*\[[x]\]\s+", declarations)
+              checks["all_declarations_checked"] = len(checked_boxes) == 3
+
+              application_section = sections["Signed V15 application JSON"][0]
+              fenced = re.fullmatch(
+                  r"\s*```(?:json)?\s*\n?(.*?)\n?```\s*",
+                  application_section,
+                  re.S | re.I,
+              )
+              raw_json = fenced.group(1) if fenced else application_section
+              if len(raw_json.encode("utf-8")) > MAX_APPLICATION_BYTES:
+                  raise ValueError("application too large")
+              application = json.loads(
+                  raw_json,
+                  object_pairs_hook=reject_pairs,
+                  parse_constant=reject_constant,
+              )
+              canonical_application = canonical(application)
+              application_digest = digest_bytes(canonical_application.encode("utf-8"))
+
+              envelope = application.get("nomination_envelope")
+              nomination = envelope.get("nomination") if isinstance(envelope, dict) else None
+              target_calls = application.get("target_calls")
+              checks["root_shape_exact"] = exact_keys(application, TOP_KEYS)
+              checks["envelope_shape_exact"] = exact_keys(envelope, ENVELOPE_KEYS)
+              checks["nomination_shape_exact"] = exact_keys(nomination, NOMINATION_KEYS)
+              checks["target_call_shape_exact"] = (
+                  isinstance(target_calls, list)
+                  and len(target_calls) == 1
+                  and exact_keys(target_calls[0], {"role", "call_id", "call_digest"})
+              )
+              if not all((
+                  checks["root_shape_exact"],
+                  checks["envelope_shape_exact"],
+                  checks["nomination_shape_exact"],
+                  checks["target_call_shape_exact"],
+              )):
+                  raise ValueError("schema shape mismatch")
+
+              checks["schema_constants_exact"] = (
+                  application["schema"] == "KC144.BatchBoundCandidateApplication.V15"
+                  and application["signature_domain"]
+                      == "KC144.V15.BATCH_BOUND_CANDIDATE_APPLICATION"
+                  and envelope["schema"] == "KC144.SignedCandidateNomination.V14"
+                  and envelope["signature_domain"] == "KC144.V14.CANDIDATE_NOMINATION"
+                  and nomination["schema"] == "KC144.CandidateNomination.V13"
+                  and nomination["status"] == "NOMINATED"
+                  and nomination["algorithm"] == "ED25519"
+                  and nomination["conflict_status"]
+                      in {"CLEAR", "RESOLVED", "DISCLOSED_PENDING_REVIEW"}
+                  and isinstance(nomination["test_only"], bool)
+              )
+              checks["identifiers_bounded"] = all(
+                  bounded_string(value)
+                  for value in (
+                      application["application_id"],
+                      envelope["envelope_id"],
+                      nomination["nomination_id"],
+                      nomination["candidate_id"],
+                  )
+              )
+              checks["signatures_bounded"] = (
+                  bounded_string(application["signature_b64"], 256)
+                  and bounded_string(envelope["signature_b64"], 256)
+                  and bounded_string(nomination["public_key_b64"], 128)
+              )
+              checks["roots_well_formed"] = (
+                  ROOT_RE.fullmatch(application["batch_root"]) is not None
+                  and ROOT_RE.fullmatch(application["call_manifest_root"]) is not None
+                  and all(ROOT_RE.fullmatch(nomination[field]) is not None for field in ROOT_FIELDS)
+                  and (
+                      nomination["conflict_resolution_root"] is None
+                      or ROOT_RE.fullmatch(nomination["conflict_resolution_root"]) is not None
+                  )
+              )
+
+              if role not in PAYLOAD_FILES:
+                  raise ValueError("unknown role")
+              payload = json.loads(
+                  Path(PAYLOAD_FILES[role]).read_text(encoding="utf-8")
+              )
+              canonical_call = {
+                  "role": role,
+                  "call_id": payload["call_id"],
+                  "call_digest": payload["call_digest"],
+              }
+              checks["payload_digest_exact"] = declared_digest == payload["payload_digest"]
+              checks["application_id_exact"] = (
+                  declared_application_id == application["application_id"]
+              )
+              checks["single_role_ingress_exact"] = (
+                  nomination["eligible_roles"] == [role]
+                  and target_calls == [canonical_call]
+              )
+              checks["batch_binding_exact"] = (
+                  application["batch_id"] == payload["batch_id"]
+                  and application["batch_root"] == payload["batch_root"]
+                  and application["call_manifest_root"] == payload["call_manifest_root"]
+              )
+
+              batch = json.loads(
+                  Path("registry/v11/governance_challenge_batch_v11.json").read_text(
+                      encoding="utf-8"
+                  )
+              )
+              observed_at = parse_time(snapshot["updated_at"])
+              submitted_at = parse_time(application["submitted_at"])
+              issued_at = parse_time(batch["issued_at"])
+              expires_at = parse_time(batch["expires_at"])
+              checks["observation_inside_batch"] = issued_at <= observed_at <= expires_at
+              checks["submission_inside_batch"] = issued_at <= submitted_at <= expires_at
+              checks["fresh_observation"] = (
+                  submitted_at <= observed_at
+                  and (observed_at - submitted_at).total_seconds() <= 86400
+              )
+
+              Path("candidate-application.json").write_text(
+                  canonical_application + "\n",
+                  encoding="utf-8",
+              )
+              runtime_completed = subprocess.run(
+                  [
+                      sys.executable,
+                      "-m",
+                      "kc144_crystal",
+                      "candidate-application-verify",
+                      "registry/v11/governance_challenge_batch_v11.json",
+                      "candidate-application.json",
+                      "--checked-at",
+                      snapshot["updated_at"],
+                  ],
+                  capture_output=True,
+                  text=True,
+                  check=False,
+                  timeout=60,
+              )
+              try:
+                  runtime = json.loads(runtime_completed.stdout)
+              except Exception:
+                  runtime = None
+              checks["immutable_runtime_pass"] = (
+                  runtime_completed.returncode == 0
+                  and isinstance(runtime, dict)
+                  and runtime.get("verdict") == "PASS"
+              )
+          except Exception:
+              failure_class = "MALFORMED_OR_INCOMPLETE_APPLICATION"
+
+          all_pass = bool(checks) and all(checks.values()) and failure_class is None
+          technical_verdict = (
+              "CRYPTOGRAPHIC_PREFLIGHT_PASS_NONCOUNTING"
+              if all_pass
+              else "CRYPTOGRAPHIC_PREFLIGHT_HOLD"
+          )
+          failed_checks = sorted(name for name, passed in checks.items() if not passed)
+          if failure_class and failure_class not in failed_checks:
+              failed_checks.append(failure_class)
+          report = {
+              "schema": "KC144.GitHubApplicationVerification.V15",
+              "issue_number": snapshot["issue_number"],
+              "observation_time_source": "github.issue.updated_at",
+              "observed_at": snapshot["updated_at"],
+              "issue_body_digest": snapshot["body_digest"],
+              "technical_verdict": technical_verdict,
+              "failed_checks": failed_checks,
+              "declared_role": role if role in ROLES else None,
+              "application_digest": (
+                  application_digest if all_pass else None
+              ),
+              "immutable_verifier_commit": BASE_COMMIT,
+              "immutable_verifier_tree": BASE_TREE,
+              "ledger_append": "NOT_ATTEMPTED",
+              "cohort_effect": "NONE_PENDING_FIXED_TREE_SNAPSHOT",
+              "identity_independence_externally_proven": False,
+              "governance_authority_granted": False,
+              "production_truth_effect": "NONE",
+          }
+          report["report_digest"] = digest_bytes(canonical(report).encode("utf-8"))
+          bundle = {}
+          if all_pass:
+              nomination = application["nomination_envelope"]["nomination"]
+              bundle = {
+                  "canonical_application": canonical_application,
+                  "application_digest": application_digest,
+                  "declared_role": role,
+                  "application_id": application["application_id"],
+                  "envelope_id": application["nomination_envelope"]["envelope_id"],
+                  "nomination_id": nomination["nomination_id"],
+                  "candidate_id": nomination["candidate_id"],
+                  "candidate_public_key_digest": digest_bytes(
+                      nomination["public_key_b64"].encode("utf-8")
+                  ),
+                  "target_roles": [role],
+              }
+
+          def encode(value):
+              return base64.b64encode(
+                  canonical(value).encode("utf-8")
+              ).decode("ascii")
+
+          output = Path(os.environ["GITHUB_OUTPUT"])
+          with output.open("a", encoding="utf-8") as stream:
+              stream.write(f"report_b64={encode(report)}\n")
+              stream.write(f"bundle_b64={encode(bundle)}\n")
+              stream.write(f"snapshot_b64={encode(snapshot)}\n")
           PY
 
-      - name: Publish or update issue verdict
-        uses: actions/github-script@v7
+  publish:
+    if: always() && startsWith(github.event.issue.title, '[KC144 V15 APPLICATION]')
+    needs: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Revalidate snapshot, append ledger, and publish bounded result
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+        env:
+          REPORT_B64: ${{ needs.verify.outputs.report_b64 }}
+          BUNDLE_B64: ${{ needs.verify.outputs.bundle_b64 }}
+          SNAPSHOT_B64: ${{ needs.verify.outputs.snapshot_b64 }}
         with:
           script: |
-            const fs = require('fs');
-            const report = JSON.parse(fs.readFileSync('verification-report.json', 'utf8'));
+            const crypto = require('crypto');
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const issueNumber = context.issue.number;
+            const ledgerBranch = process.env.KC144_LEDGER_BRANCH;
             const marker = '<!-- KC144_V15_AUTOVERIFIER -->';
-            const symbol = report.verdict === 'PASS' ? 'PASS' : 'HOLD';
-            const publicReport = JSON.stringify(report, null, 2);
+            const pass = 'CRYPTOGRAPHIC_PREFLIGHT_PASS_NONCOUNTING';
+            const hold = 'CRYPTOGRAPHIC_PREFLIGHT_HOLD';
+
+            const canonical = value => JSON.stringify(value, Object.keys(value).sort());
+            const stable = value => {
+              if (Array.isArray(value)) return '[' + value.map(stable).join(',') + ']';
+              if (value && typeof value === 'object') {
+                return '{' + Object.keys(value).sort().map(
+                  key => JSON.stringify(key) + ':' + stable(value[key])
+                ).join(',') + '}';
+              }
+              return JSON.stringify(value);
+            };
+            const sha256 = value =>
+              'sha256:' + crypto.createHash('sha256').update(value, 'utf8').digest('hex');
+            const decode = (value, fallback) => {
+              try {
+                if (!value) return fallback;
+                return JSON.parse(Buffer.from(value, 'base64').toString('utf8'));
+              } catch {
+                return fallback;
+              }
+            };
+
+            let report = decode(process.env.REPORT_B64, {
+              schema: 'KC144.GitHubApplicationVerification.V15',
+              issue_number: issueNumber,
+              technical_verdict: hold,
+              failed_checks: ['VERIFIER_OUTPUT_UNAVAILABLE'],
+              declared_role: null,
+              application_digest: null,
+              immutable_verifier_commit: process.env.KC144_BASE_COMMIT,
+              immutable_verifier_tree: process.env.KC144_BASE_TREE,
+              ledger_append: 'NOT_ATTEMPTED',
+              cohort_effect: 'NONE_PENDING_FIXED_TREE_SNAPSHOT',
+              identity_independence_externally_proven: false,
+              governance_authority_granted: false,
+              production_truth_effect: 'NONE',
+            });
+            const bundle = decode(process.env.BUNDLE_B64, {});
+            const snapshot = decode(process.env.SNAPSHOT_B64, {});
+
+            const current = (await github.rest.issues.get({
+              owner, repo, issue_number: issueNumber,
+            })).data;
+            const currentBody = current.body || '';
+            const currentBodyDigest = sha256(currentBody);
+            const snapshotExact = (
+              snapshot.issue_number === issueNumber
+              && snapshot.issue_node_id === current.node_id
+              && snapshot.updated_at === current.updated_at
+              && snapshot.body_digest === currentBodyDigest
+              && snapshot.title === current.title
+              && current.state === 'open'
+            );
+
+            let ledger = {
+              state: 'NOT_ATTEMPTED',
+              receipt_digest: null,
+              receipt_path: null,
+            };
+            if (!snapshotExact) {
+              report.technical_verdict = hold;
+              report.failed_checks = ['STALE_OR_NONOPEN_ISSUE_SNAPSHOT'];
+              report.application_digest = null;
+              report.ledger_append = 'STALE_HOLD';
+              ledger.state = 'STALE_HOLD';
+            }
+
+            async function readPath(path) {
+              try {
+                const response = await github.rest.repos.getContent({
+                  owner, repo, path, ref: ledgerBranch,
+                });
+                if (Array.isArray(response.data) || response.data.type !== 'file') {
+                  throw new Error('occupied path is not a file');
+                }
+                return Buffer.from(
+                  (response.data.content || '').replace(/\n/g, ''),
+                  'base64'
+                ).toString('utf8');
+              } catch (error) {
+                if (error.status === 404) return null;
+                throw error;
+              }
+            }
+
+            async function appendReceipt() {
+              if (
+                report.technical_verdict !== pass
+                || !snapshotExact
+                || typeof bundle.canonical_application !== 'string'
+                || sha256(bundle.canonical_application) !== bundle.application_digest
+              ) {
+                return {state: 'NOT_ATTEMPTED', receipt_digest: null, receipt_path: null};
+              }
+              const digestHex = bundle.application_digest.replace('sha256:', '');
+              const applicationPath =
+                `ledger/v15/objects/sha256/${digestHex.slice(0, 2)}/${digestHex}.application.json`;
+              const issueKey = String(issueNumber).padStart(12, '0');
+              const sourcePath = `ledger/v15/sources/github-issues/${issueKey}.json`;
+              const receiptBody = {
+                schema: 'KC144.CryptographicPassReceipt.V15',
+                application_digest: bundle.application_digest,
+                application_path: applicationPath,
+                declared_role: bundle.declared_role,
+                source: {
+                  type: 'GITHUB_ISSUE',
+                  repository: `${owner}/${repo}`,
+                  issue_number: issueNumber,
+                  issue_node_id: current.node_id,
+                  issue_url: current.html_url,
+                  issue_updated_at: current.updated_at,
+                  issue_body_digest: currentBodyDigest,
+                },
+                verifier: {
+                  workflow_commit: process.env.GITHUB_SHA,
+                  immutable_commit: process.env.KC144_BASE_COMMIT,
+                  immutable_tree: process.env.KC144_BASE_TREE,
+                  report_digest: report.report_digest,
+                },
+                technical_verdict: pass,
+                ledger_state: 'VERIFIED_PASS_AWAITING_GLOBAL_UNIQUENESS_AND_INDEPENDENCE',
+                cohort_effect: 'NONE_PENDING_FIXED_TREE_SNAPSHOT',
+                identity_independence_externally_proven: false,
+                governance_authority_granted: false,
+                production_truth_effect: 'NONE',
+              };
+              const receiptCanonical = stable(receiptBody);
+              const receiptDigest = sha256(receiptCanonical);
+              const receiptHex = receiptDigest.replace('sha256:', '');
+              const receiptPath =
+                `ledger/v15/receipts/sha256/${receiptHex.slice(0, 2)}/${receiptHex}.receipt.json`;
+              const sourceBody = {
+                schema: 'KC144.GitHubIssueSourceBinding.V15',
+                source_type: 'GITHUB_ISSUE',
+                repository: `${owner}/${repo}`,
+                issue_number: issueNumber,
+                issue_node_id: current.node_id,
+                issue_url: current.html_url,
+                issue_updated_at: current.updated_at,
+                issue_body_digest: currentBodyDigest,
+                application_digest: bundle.application_digest,
+                application_path: applicationPath,
+                receipt_digest: receiptDigest,
+                receipt_path: receiptPath,
+              };
+              const sourceCanonical = stable(sourceBody);
+              const expectedApplication = bundle.canonical_application + '\n';
+              const expectedReceipt = receiptCanonical + '\n';
+              const expectedSource = sourceCanonical + '\n';
+
+              for (let attempt = 1; attempt <= 8; attempt += 1) {
+                const existingSource = await readPath(sourcePath);
+                if (existingSource !== null) {
+                  let bound;
+                  try { bound = JSON.parse(existingSource); } catch { bound = null; }
+                  if (
+                    bound
+                    && bound.application_digest === bundle.application_digest
+                    && bound.issue_body_digest === currentBodyDigest
+                  ) {
+                    return {
+                      state: 'ALREADY_PRESENT_IDEMPOTENT',
+                      receipt_digest: bound.receipt_digest,
+                      receipt_path: bound.receipt_path,
+                    };
+                  }
+                  return {
+                    state: 'SOURCE_BINDING_CONFLICT_HOLD',
+                    receipt_digest: null,
+                    receipt_path: null,
+                  };
+                }
+
+                const existingApplication = await readPath(applicationPath);
+                if (
+                  existingApplication !== null
+                  && existingApplication !== expectedApplication
+                ) {
+                  return {
+                    state: 'CONTENT_ADDRESS_COLLISION_HOLD',
+                    receipt_digest: null,
+                    receipt_path: null,
+                  };
+                }
+                const existingReceipt = await readPath(receiptPath);
+                if (existingReceipt !== null && existingReceipt !== expectedReceipt) {
+                  return {
+                    state: 'CONTENT_ADDRESS_COLLISION_HOLD',
+                    receipt_digest: null,
+                    receipt_path: null,
+                  };
+                }
+
+                const branch = (await github.rest.repos.getBranch({
+                  owner, repo, branch: ledgerBranch,
+                })).data;
+                const tree = [];
+                for (const [path, content, exists] of [
+                  [applicationPath, expectedApplication, existingApplication !== null],
+                  [receiptPath, expectedReceipt, existingReceipt !== null],
+                  [sourcePath, expectedSource, false],
+                ]) {
+                  if (!exists) {
+                    const blob = await github.rest.git.createBlob({
+                      owner, repo, content, encoding: 'utf-8',
+                    });
+                    tree.push({
+                      path,
+                      mode: '100644',
+                      type: 'blob',
+                      sha: blob.data.sha,
+                    });
+                  }
+                }
+                const nextTree = await github.rest.git.createTree({
+                  owner,
+                  repo,
+                  base_tree: branch.commit.commit.tree.sha,
+                  tree,
+                });
+                const nextCommit = await github.rest.git.createCommit({
+                  owner,
+                  repo,
+                  message: `Ledger KC144 V15 preflight receipt for issue #${issueNumber}`,
+                  tree: nextTree.data.sha,
+                  parents: [branch.commit.sha],
+                });
+                try {
+                  await github.rest.git.updateRef({
+                    owner,
+                    repo,
+                    ref: `heads/${ledgerBranch}`,
+                    sha: nextCommit.data.sha,
+                    force: false,
+                  });
+                  return {
+                    state: 'APPENDED',
+                    receipt_digest: receiptDigest,
+                    receipt_path: receiptPath,
+                    commit: nextCommit.data.sha,
+                  };
+                } catch (error) {
+                  if (error.status !== 409 && error.status !== 422) throw error;
+                }
+              }
+              return {
+                state: 'CONCURRENT_APPEND_RETRY_EXHAUSTED_HOLD',
+                receipt_digest: null,
+                receipt_path: null,
+              };
+            }
+
+            try {
+              ledger = await appendReceipt();
+            } catch {
+              ledger = {
+                state: 'LEDGER_WRITE_FAILURE_HOLD',
+                receipt_digest: null,
+                receipt_path: null,
+              };
+            }
+            report.ledger_append = ledger.state;
+
+            const accepted = (
+              report.technical_verdict === pass
+              && ['APPENDED', 'ALREADY_PRESENT_IDEMPOTENT'].includes(ledger.state)
+            );
+            const labelSpec = {
+              'kc144:v15:preflight-pass': ['1f883d', 'Cryptographic preflight PASS; non-counting'],
+              'kc144:v15:hold': ['b60205', 'Fail-closed application HOLD'],
+              'kc144:v15:ledgered': ['0052cc', 'Content-addressed receipt exists'],
+              'kc144:v15:stale': ['d4c5f9', 'Issue snapshot changed before publication'],
+            };
+            for (const [name, [color, description]] of Object.entries(labelSpec)) {
+              try {
+                await github.rest.issues.getLabel({owner, repo, name});
+              } catch (error) {
+                if (error.status !== 404) throw error;
+                try {
+                  await github.rest.issues.createLabel({
+                    owner, repo, name, color, description,
+                  });
+                } catch (createError) {
+                  if (createError.status !== 422) throw createError;
+                }
+              }
+            }
+            const addLabels = accepted
+              ? ['kc144:v15:preflight-pass', 'kc144:v15:ledgered']
+              : [
+                  'kc144:v15:hold',
+                  ...(ledger.state === 'STALE_HOLD' ? ['kc144:v15:stale'] : []),
+                ];
+            await github.rest.issues.addLabels({
+              owner, repo, issue_number: issueNumber, labels: addLabels,
+            });
+            for (const name of Object.keys(labelSpec)) {
+              if (!addLabels.includes(name)) {
+                try {
+                  await github.rest.issues.removeLabel({
+                    owner, repo, issue_number: issueNumber, name,
+                  });
+                } catch (error) {
+                  if (error.status !== 404) throw error;
+                }
+              }
+            }
+
+            const publicReport = {
+              schema: 'KC144.PublicApplicationVerdict.V15',
+              issue_number: issueNumber,
+              current_snapshot_exact: snapshotExact,
+              technical_verdict: report.technical_verdict,
+              failed_checks: report.failed_checks || [],
+              declared_role: report.declared_role || null,
+              application_digest: report.application_digest || null,
+              report_digest: report.report_digest || null,
+              ledger_append: ledger.state,
+              ledger_branch: ledgerBranch,
+              receipt_digest: ledger.receipt_digest,
+              receipt_path: ledger.receipt_path,
+              immutable_verifier_commit: process.env.KC144_BASE_COMMIT,
+              immutable_verifier_tree: process.env.KC144_BASE_TREE,
+              cohort_effect: 'NONE_PENDING_FIXED_TREE_SNAPSHOT',
+              identity_independence_externally_proven: false,
+              governance_authority_granted: false,
+              production_truth_effect: 'NONE',
+            };
             const body = [
               marker,
-              `## KC144 V15 automatic verdict: ${symbol}`,
+              `## KC144 V15 automatic verdict: ${accepted ? 'PREFLIGHT PASS / LEDGERED' : 'HOLD'}`,
               '',
-              `Status: \`${report.status}\``,
+              `Technical verdict: \`${publicReport.technical_verdict}\``,
+              `Ledger append: \`${publicReport.ledger_append}\``,
               '',
-              'This is a deterministic schema, signature, time, batch, manifest, and role-call verification against immutable commit `1b653e39d7c09ba8b93a800860244242cd98d397`.',
+              'A cryptographic preflight PASS is content-addressed but non-counting.',
+              'It does not prove identity or independence and does not select a cohort.',
               '',
-              'A `PASS` admits the signed object to the V14 intake boundary only. It does not establish identity, external independence, selection, delivery, governance authority, certification, M12 closure, or production truth.',
-              '',
-              '<details><summary>Machine report</summary>',
+              '<details><summary>Bounded machine report</summary>',
               '',
               '```json',
-              publicReport,
+              JSON.stringify(publicReport, null, 2),
               '```',
               '</details>',
             ].join('\n');
 
-            const comments = await github.paginate(github.rest.issues.listComments, {
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.issue.number,
-              per_page: 100,
-            });
-            const existing = comments.find(comment =>
-              comment.user?.type === 'Bot' && comment.body?.includes(marker)
+            const comments = await github.paginate(
+              github.rest.issues.listComments,
+              {owner, repo, issue_number: issueNumber, per_page: 100}
             );
-
+            const existing = comments.find(comment =>
+              comment.user?.login === 'github-actions[bot]'
+              && comment.body?.startsWith(marker)
+            );
             if (existing) {
               await github.rest.issues.updateComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                comment_id: existing.id,
-                body,
+                owner, repo, comment_id: existing.id, body,
               });
             } else {
               await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.issue.number,
-                body,
+                owner, repo, issue_number: issueNumber, body,
               });
             }
-
-      - name: Write workflow summary
-        if: always()
-        run: |
-          if [ -f verification-report.json ]; then
-            printf '## KC144 V15 application verification\n\n```json\n' >> "$GITHUB_STEP_SUMMARY"
-            cat verification-report.json >> "$GITHUB_STEP_SUMMARY"
-            printf '```\n' >> "$GITHUB_STEP_SUMMARY"
-          fi

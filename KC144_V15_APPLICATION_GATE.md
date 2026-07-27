@@ -2,56 +2,81 @@
 
 ```text
 LOOKUP_KEY::KC144.V15::EXTERNAL_APPLICATION_GATE
-ROLE::PUBLICATION_AND_APPLICATION_INGRESS_OVERLAY
+ROLE::PUBLICATION_VERIFICATION_AND_LEDGER_INGRESS_OVERLAY
 BASE_BRANCH::kc144-completed-crystal-v15
 BASE_COMMIT::1b653e39d7c09ba8b93a800860244242cd98d397
 BASE_TREE::d2e2f9b92fafdfd17be5088a4a8e6e3a5db1322b
 PUBLICATION_STATE::FIVE_ROLE_CALLS_EXTERNALLY_PUBLISHED
-VERIFICATION_STATE::AUTOMATED_FAIL_CLOSED_ACTIVE
+VERIFICATION_STATE::STRICT_FAIL_CLOSED_TWO_JOB_PIPELINE
+LEDGER_STATE::CONTENT_ADDRESSED_APPEND_ONLY_ACTIVE
 APPLICATION_STATE::AWAITING_VALID_EXTERNAL_APPLICATIONS
+COUNTING_COHORT::NOT_YET_CONSTITUTED
 GOVERNANCE_AUTHORITY_GRANTED::FALSE
 TRUTH_EFFECT::NONE
 ```
 
-The complete V15 crystal is immutable on the public branch
+The complete V15 crystal is immutable on
 [`kc144-completed-crystal-v15`](https://github.com/demeet2k/guild-hall/tree/kc144-completed-crystal-v15).
-This default-branch document is an additive transport overlay: it exposes the
-five exact role-bound application payloads, records stable public locators, and
-opens a structured ingress route. It does not rewrite the frozen runtime state.
+This default-branch gate is an additive transport overlay. It exposes the five
+exact role-bound payloads, accepts public signed objects, verifies current issue
+snapshots against the frozen runtime, and appends content-addressed technical
+receipts. It does not rewrite the crystal.
+
+Use the [live state metro](https://github.com/demeet2k/guild-hall/blob/main/KC144_V15_LIVE_STATE.md)
+to navigate the whole active route.
 
 ## Apply
 
 [Open the KC144 V15 signed-application form](https://github.com/demeet2k/guild-hall/issues/new?template=kc144-v15-application.yml)
 
 Submit one public, double-signed
-`KC144.BatchBoundCandidateApplication.V15` object. Generate and retain all
-private keys externally. Never place a private key, password, recovery phrase,
-access token, or other secret in a GitHub issue.
+`KC144.BatchBoundCandidateApplication.V15` object for exactly one role. Generate
+and retain every private key externally. Never place a private key, password,
+recovery phrase, access token, or other secret in a GitHub issue.
 
-## Autonomous verification
+## Autonomous verification and append
 
 The [KC144 V15 application verifier](https://github.com/demeet2k/guild-hall/blob/main/.github/workflows/kc144-v15-application-verifier.yml)
-runs whenever an application issue is opened, edited, or reopened. It:
+runs when an application issue is opened or edited.
 
-1. accepts only issue titles beginning `[KC144 V15 APPLICATION]`;
-2. parses the issue-form fields without executing applicant text;
-3. checks the selected role, immutable payload digest, application ID, and
-   declared schema;
-4. checks out exact V15 commit
-   `1b653e39d7c09ba8b93a800860244242cd98d397`;
-5. runs the existing signature, time, batch, manifest, and role-call verifier;
-6. creates or updates one machine-readable `PASS` or `HOLD` bot comment.
+1. A read-only job checks out exact commit
+   `1b653e39d7c09ba8b93a800860244242cd98d397`.
+2. It rejects oversized bodies, missing or duplicate sections, duplicate JSON
+   keys, non-finite numbers, extra/missing schema keys, oversized identifiers,
+   malformed roots, unchecked declarations, and missing evidence locators.
+3. It requires one exact ingress role:
+   the form role, payload digest, eligible-role vector, target call identifier,
+   and target call digest must all match the same immutable role payload.
+4. It uses `github.issue.updated_at` as the external observation time and
+   requires the observation and signed submission to be inside the batch
+   window, with the submission no more than 24 hours old when observed.
+5. It runs the frozen double-signature, batch, manifest, role-call, and time
+   verifier.
+6. A separate publisher job refetches the issue and rejects a changed, closed,
+   or stale snapshot before any write.
+7. A technical PASS is appended to
+   [`kc144-v15-pass-ledger`](https://github.com/demeet2k/guild-hall/tree/kc144-v15-pass-ledger/ledger/v15)
+   as canonical application, receipt, and permanent source binding.
+8. One exact `github-actions[bot]` comment and bounded labels expose the result.
 
-The live [fail-closed self-test](https://github.com/demeet2k/guild-hall/issues/8)
-submitted a deliberately incomplete synthetic object. Its transport metadata
-parsed, its missing signed envelope was rejected, and the workflow returned
-`BATCH_BOUND_APPLICATION_HOLD`. The test issue is closed and explicitly
-non-counting.
+The publisher executes no applicant code and does not check out the repository.
+Ledger ref updates are non-force fast-forwards with bounded retry. Repeating the
+same accepted snapshot is idempotent; changing an already-bound issue/application
+pair is held.
 
-A bot `PASS` admits an object only to the V14 intake boundary. The workflow does
-not establish external identity or independence, select a cohort, deliver a
-packet, mutate the frozen crystal, grant governance authority, close M12, or
-create production truth.
+The only positive issue-level technical state is:
+
+```text
+CRYPTOGRAPHIC_PREFLIGHT_PASS_NONCOUNTING
+```
+
+It is not a valid independent cohort member. Identity and independence remain
+false until externally adjudicated over one fixed ledger tree. Duplicate
+applications and identifiers are evaluated symmetrically at that later global
+snapshot; no streaming first writer can acquire counting priority.
+
+The closed [fail-closed self-test issue #8](https://github.com/demeet2k/guild-hall/issues/8)
+contains a deliberately incomplete synthetic object and is non-counting.
 
 ## Publication receipts
 
@@ -82,6 +107,7 @@ OUTER_SIGNATURE_DOMAIN::KC144.V15.BATCH_BOUND_CANDIDATE_APPLICATION
 - [Application JSON Schema](https://github.com/demeet2k/guild-hall/blob/kc144-completed-crystal-v15/schemas/kc144/batch-bound-candidate-application-v15.schema.json)
 - [Executable verifier](https://github.com/demeet2k/guild-hall/blob/kc144-completed-crystal-v15/src/kc144_crystal/application_v15.py)
 - [Application transport tests](https://github.com/demeet2k/guild-hall/blob/kc144-completed-crystal-v15/tests/test_application_transport_v15.py)
+- [Ledger contract](https://github.com/demeet2k/guild-hall/blob/kc144-v15-pass-ledger/ledger/v15/CONTRACT.json)
 
 Local verification command after placing a candidate object in
 `batch-bound-candidate-application.json`:
@@ -96,8 +122,7 @@ PYTHONPATH=src python3 -m kc144_crystal candidate-application-verify \
 ## State transition law
 
 Let `P` be the five immutable prepared payloads and `L` the five public GitHub
-issue locators above. The publication overlay establishes a digest-preserving
-bijection:
+issue locators. Publication establishes:
 
 ```text
 phi_pub: P -> L
@@ -106,31 +131,35 @@ role(phi_pub(p)) = role(p)
 digest(phi_pub(p)) = digest(p)
 ```
 
-This closes only the **external call-publication** sub-barrier. It does not
-alter the historical frozen manifest, whose `READY_UNPUBLISHED` values describe
-the state at V15 compilation time.
+For an application issue `s`:
 
-The live barrier is now:
+```text
+technical_pass(s)
+  = current_snapshot(s)
+  AND strict_schema(s)
+  AND exact_single_role_binding(s)
+  AND time_valid(s.updated_at)
+  AND immutable_runtime(s) = PASS
+
+technical_pass(s) DOES NOT IMPLY independent_candidate(s)
+```
+
+The live barrier remains:
 
 ```text
 FIVE_VALID_INDEPENDENT_BATCH_BOUND_APPLICATIONS_REQUIRED
 ```
 
-A submitted issue is not automatically a valid application. Only an object
-that passes schema, inner V14 signature, outer V15 signature, batch, manifest,
-role-call, validity-window, uniqueness, independence, and conflict checks may
-enter the append-only receipt ledger. Rejected or duplicate objects remain
-preserved and non-counting.
-
 ## Truth boundary
 
-External publication proves public addressability of the five exact calls. It
-does not prove delivery to a particular person, candidate identity,
-independence, fitness, selection, packet assignment, governance activation,
-M12 closure, certification, or any production truth claim.
+External publication proves public addressability. A content-addressed receipt
+proves that one observed issue snapshot passed the cryptographic preflight. It
+does not prove candidate identity, external independence, fitness, selection,
+delivery, packet assignment, governance activation, M12 closure, certification,
+or production truth.
 
 ```text
-NEXT::KC144.V15::INGEST-VERIFY-AND-LEDGER-REAL-BATCH-BOUND-APPLICATIONS
-RETURN::KC144.V15::PUBLIC_MIRROR
-PARENT::KC144.V15::PUBLISH-FIVE-BATCH-BOUND-CALL-PAYLOADS-AND-INGEST-REAL-APPLICATIONS
+NEXT::KC144.V15::FIX-LEDGER-TREE-THEN-GLOBALLY-ADJUDICATE-UNIQUENESS-AND-INDEPENDENCE
+RETURN::KC144.V15::LIVE_STATE_METRO
+PARENT::KC144.V15::PUBLISH-VERIFY-LEDGER-WITHOUT-PREMATURE-COUNTING
 ```

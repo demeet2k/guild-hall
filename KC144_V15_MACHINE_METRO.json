@@ -1,0 +1,54 @@
+{
+  "schema": "KC144.LiveStateMetro.V15",
+  "lookup_key": "KC144.V15::LIVE_STATE_METRO",
+  "immutable_base": {
+    "branch": "kc144-completed-crystal-v15",
+    "commit": "1b653e39d7c09ba8b93a800860244242cd98d397",
+    "tree": "d2e2f9b92fafdfd17be5088a4a8e6e3a5db1322b"
+  },
+  "active_route": [
+    "PUBLIC_MIRROR",
+    "APPLICATION_GATE",
+    "SIGNED_GITHUB_ISSUE",
+    "IMMUTABLE_CRYPTOGRAPHIC_VERIFIER",
+    "CONTENT_ADDRESSED_RECEIPT",
+    "APPEND_ONLY_PASS_LEDGER"
+  ],
+  "inactive_until_adjudicated": [
+    "FIXED_TREE_COHORT_SNAPSHOT",
+    "GLOBAL_DUPLICATE_AND_INDEPENDENCE_REVIEW",
+    "FIVE_ROLE_VECTOR",
+    "DELIVERY_BARRIER"
+  ],
+  "public_role_calls": {
+    "CUSTODIAN": 3,
+    "INDEPENDENT_REVIEWER": 4,
+    "REPLAY_WITNESS": 5,
+    "SOURCE_AUDITOR": 6,
+    "RETURN_AUDITOR": 7
+  },
+  "ledger": {
+    "branch": "kc144-v15-pass-ledger",
+    "root": "ledger/v15",
+    "accepted_technical_state": "CRYPTOGRAPHIC_PREFLIGHT_PASS_NONCOUNTING",
+    "cohort_effect": "NONE_PENDING_FIXED_TREE_SNAPSHOT",
+    "force_updates_permitted": false,
+    "deletions_permitted": false
+  },
+  "labels": {
+    "kc144:v15:preflight-pass": "cryptographic preflight passed; non-counting",
+    "kc144:v15:ledgered": "content-addressed receipt exists",
+    "kc144:v15:hold": "fail-closed",
+    "kc144:v15:stale": "issue snapshot changed before publication"
+  },
+  "live_queries": {
+    "all_applications": "https://github.com/demeet2k/guild-hall/issues?q=is%3Aissue+%22%5BKC144+V15+APPLICATION%5D%22+in%3Atitle",
+    "preflight_pass": "https://github.com/demeet2k/guild-hall/issues?q=is%3Aissue+label%3A%22kc144%3Av15%3Apreflight-pass%22",
+    "ledgered": "https://github.com/demeet2k/guild-hall/issues?q=is%3Aissue+label%3A%22kc144%3Av15%3Aledgered%22",
+    "hold": "https://github.com/demeet2k/guild-hall/issues?q=is%3Aissue+label%3A%22kc144%3Av15%3Ahold%22"
+  },
+  "identity_independence_externally_proven": false,
+  "governance_authority_granted": false,
+  "production_truth_effect": "NONE"
+}
+
