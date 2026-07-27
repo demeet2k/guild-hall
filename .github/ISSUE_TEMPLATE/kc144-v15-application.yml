@@ -1,11 +1,15 @@
 name: KC144 V15 signed application
-description: Submit one public, double-signed, batch-bound candidate application for a KC144 V15 role call.
+description: Submit one public, double-signed, batch-bound candidate application for exactly one KC144 V15 role call.
 title: "[KC144 V15 APPLICATION] "
 body:
   - type: markdown
     attributes:
       value: |
-        Use this form only for `KC144.BatchBoundCandidateApplication.V15`.
+        Use this form only for `KC144.BatchBoundCandidateApplication.V15` and exactly one role.
+
+        Navigate: [live state metro](https://github.com/demeet2k/guild-hall/blob/main/KC144_V15_LIVE_STATE.md) · [application gate](https://github.com/demeet2k/guild-hall/blob/main/KC144_V15_APPLICATION_GATE.md) · [append-only PASS ledger](https://github.com/demeet2k/guild-hall/tree/kc144-v15-pass-ledger/ledger/v15).
+
+        A technical PASS is `CRYPTOGRAPHIC_PREFLIGHT_PASS_NONCOUNTING`; it does not prove identity or independence and does not constitute cohort membership.
 
         Read the public gate and the exact immutable role payload before submitting. Return public material only. Never paste or upload a private key, recovery phrase, password, access token, or other secret.
 
