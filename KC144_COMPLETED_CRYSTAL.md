@@ -6,6 +6,7 @@ ROLE::DEFAULT-BRANCH NAVIGATION GATE
 PRIMARY::demeet2k/guild-hall@kc144-completed-crystal-v15
 INTENDED_ORIGIN::AthenachkaCollective/KC144_COMPLETED_CRYSTAL
 STATUS::PUBLIC_MIRROR_ACTIVE
+APPLICATION_GATE::FIVE_ROLE_CALLS_EXTERNALLY_PUBLISHED
 PROMOTION_STATUS::WAITING_FOR_TARGET_WRITE_AUTHORITY
 ```
 
@@ -29,6 +30,8 @@ publication equality witness.
 
 ## Navigation
 
+- [External application gate](https://github.com/demeet2k/guild-hall/blob/main/KC144_V15_APPLICATION_GATE.md)
+- [Submit a signed V15 application](https://github.com/demeet2k/guild-hall/issues/new?template=kc144-v15-application.yml)
 - [Framework entrance / README](https://github.com/demeet2k/guild-hall/blob/kc144-completed-crystal-v15/README.md)
 - [Completed framework](https://github.com/demeet2k/guild-hall/blob/kc144-completed-crystal-v15/COMPLETED_FRAMEWORK.md)
 - [Systematic framework V3](https://github.com/demeet2k/guild-hall/blob/kc144-completed-crystal-v15/SYSTEMATIC_FRAMEWORK_V3.md)
@@ -44,21 +47,22 @@ publication equality witness.
 
 ## Status boundary
 
-Publication means that the V15 source tree is publicly addressable and
-cryptographically reproducible. It does **not** assert external candidate
-applications, participant delivery, governance activation, independent witness
-completion, or M12 certification.
+Publication means that the V15 source tree and all five role-bound application
+calls are publicly addressable and cryptographically reproducible. It does
+**not** assert that a valid external candidate has applied, participant
+delivery, governance activation, independent witness completion, or M12
+certification.
 
 Current live barrier:
 
 ```text
-FIVE_EXTERNAL_BATCH_BOUND_APPLICATIONS_REQUIRED
+FIVE_VALID_INDEPENDENT_BATCH_BOUND_APPLICATIONS_REQUIRED
 ```
 
 Canonical continuation:
 
 ```text
-KC144.V15::PUBLISH-FIVE-BATCH-BOUND-CALL-PAYLOADS-AND-INGEST-REAL-APPLICATIONS
+KC144.V15::INGEST-VERIFY-AND-LEDGER-REAL-BATCH-BOUND-APPLICATIONS
 ```
 
 ## Promotion route
