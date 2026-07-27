@@ -678,9 +678,9 @@ def main(argv: list[str] | None = None) -> int:
             destination.write_text(
                 json.dumps(
                     result,
-                    indent=2,
                     ensure_ascii=False,
                     sort_keys=True,
+                    separators=(",", ":"),
                 )
                 + "\n",
                 encoding="utf-8",

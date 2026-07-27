@@ -9,6 +9,8 @@
     "lookup_key",
     "mode",
     "coordinate_binding",
+    "coordinate_registry",
+    "coordinate_registry_digest",
     "scheduler",
     "simulations",
     "simultaneous_projection_matrix",
@@ -50,6 +52,16 @@
           }
         }
       ]
+    },
+    "coordinate_registry": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {"pattern": "^GID(00[1-9]|0[1-9][0-9]|1[0-3][0-9]|14[0-4])$"},
+      "additionalProperties": {"type": "object"}
+    },
+    "coordinate_registry_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
     },
     "scheduler": {"$ref": "parallel-agent-plan-v1.schema.json"},
     "simulations": {

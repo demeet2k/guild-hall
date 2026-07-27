@@ -230,6 +230,34 @@ def coordinate_delta(source: int, target: int) -> dict[str, Any]:
     }
 
 
+def _coordinate_delta_refs(source: int, target: int) -> dict[str, Any]:
+    full = coordinate_delta(source, target)
+    return {
+        "source_gid": source,
+        "target_gid": target,
+        "preserved_lenses": full["preserved_lenses"],
+        "changed_lenses": full["changed_lenses"],
+        "removed_coordinate_states": [
+            {
+                "lens": row["lens"],
+                "value_ref": f"#/coordinate_registry/GID{source:03d}/{row['lens']}",
+            }
+            for row in full["removed_coordinate_states"]
+        ],
+        "added_coordinate_states": [
+            {
+                "lens": row["lens"],
+                "value_ref": f"#/coordinate_registry/GID{target:03d}/{row['lens']}",
+            }
+            for row in full["added_coordinate_states"]
+        ],
+        "preserved_count": full["preserved_count"],
+        "changed_count": full["changed_count"],
+        "information_effect": full["information_effect"],
+        "truth_effect": full["truth_effect"],
+    }
+
+
 def _relation_key(row: dict[str, Any]) -> tuple[Any, ...]:
     return (
         row["source"],
@@ -384,7 +412,7 @@ def _analyze_path(
     for left, right, arc in zip(nodes, nodes[1:], arcs):
         if arc["source"] != left or arc["target"] != right:
             raise ParallelRouteError("arc endpoints do not match node path")
-        delta = coordinate_delta(left, right)
+        delta = _coordinate_delta_refs(left, right)
         transitions.append(
             {
                 **arc,
@@ -435,7 +463,7 @@ def _analyze_path(
         "revisited_nodes": sorted(
             gid for gid in set(nodes) if nodes.count(gid) > 1
         ),
-        "net_coordinate_delta": coordinate_delta(nodes[0], nodes[-1]),
+        "net_coordinate_delta": _coordinate_delta_refs(nodes[0], nodes[-1]),
         "navigation_valid": True,
         "content_transport_certified": False,
         "uncertified_bridge_count": uncertified,
@@ -735,11 +763,24 @@ def compile_parallel_route_crystal(
             for value in coordinate_binding.values()
         ):
             raise ParallelRouteError("coordinate binding values must be lowercase Git SHAs")
+    coordinate_gids = sorted(
+        {
+            gid
+            for result in results
+            for witness in result["shortest_path_witnesses"]
+            for gid in witness["nodes"]
+        }
+    )
+    coordinate_registry = {
+        f"GID{gid:03d}": coordinate_vector(gid) for gid in coordinate_gids
+    }
     body = {
         "schema": "KC144.ParallelRouteCrystal.V1",
         "lookup_key": "KC144.V1::PARALLEL_ROUTE_CRYSTAL",
         "mode": "FIVE_SIMULATIONS_THEN_DETERMINISTIC_REDUCTION",
         "coordinate_binding": binding,
+        "coordinate_registry": coordinate_registry,
+        "coordinate_registry_digest": _digest(coordinate_registry),
         "scheduler": plan,
         "simulations": results,
         "simultaneous_projection_matrix": [
