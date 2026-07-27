@@ -104,6 +104,14 @@ from .nomination_v14 import (
     nomination_signing_bytes,
     verify_signed_candidate_nomination,
 )
+from .parallel_routes import (
+    AgentTask,
+    RouteSimulation,
+    compile_execution_waves,
+    compile_parallel_route_crystal,
+    coordinate_delta,
+    coordinate_vector,
+)
 from .population import crystallize
 from .query import QueryBundle, compile_query
 from .repair import (
@@ -142,6 +150,8 @@ from .v15 import compile_application_transport_runtime
 from .witness import BridgeWitnessPacket, evaluate_bridge_witness
 
 __all__ = [
+    "AgentTask",
+    "RouteSimulation",
     "WaveQuery",
     "BridgeWitnessPacket",
     "CommitAuthorization",
@@ -168,7 +178,11 @@ __all__ = [
     "bridge_registry",
     "crystallize",
     "compile_mycelium_framework",
+    "compile_execution_waves",
+    "compile_parallel_route_crystal",
     "compile_query",
+    "coordinate_delta",
+    "coordinate_vector",
     "compile_global_state",
     "compile_repair_framework",
     "compile_production_evidence_kernel",

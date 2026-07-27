@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/parallel-route-crystal-v1.schema.json",
+  "title": "KC144 parallel multi-route crystal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "lookup_key",
+    "mode",
+    "coordinate_binding",
+    "scheduler",
+    "simulations",
+    "simultaneous_projection_matrix",
+    "pairwise_holonomy",
+    "all_routes_navigation_valid",
+    "all_pairwise_holonomy_nonzero",
+    "content_transport_certified",
+    "governance_authority_granted",
+    "production_truth_effect",
+    "interpretation",
+    "crystal_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ParallelRouteCrystal.V1"},
+    "lookup_key": {"const": "KC144.V1::PARALLEL_ROUTE_CRYSTAL"},
+    "mode": {"const": "FIVE_SIMULATIONS_THEN_DETERMINISTIC_REDUCTION"},
+    "coordinate_binding": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["standing"],
+          "properties": {"standing": {"const": "UNBOUND_LOCAL_REPLAY"}}
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "immutable_commit",
+            "immutable_tree",
+            "compiler_commit",
+            "compiler_tree"
+          ],
+          "properties": {
+            "immutable_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+            "immutable_tree": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+            "compiler_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+            "compiler_tree": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+          }
+        }
+      ]
+    },
+    "scheduler": {"$ref": "parallel-agent-plan-v1.schema.json"},
+    "simulations": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "route_id",
+          "task_mode",
+          "input",
+          "graph",
+          "prefix",
+          "shortest_language",
+          "bounded_path_universe",
+          "canonical_path",
+          "shortest_path_witnesses",
+          "truth_effect",
+          "simulation_digest"
+        ],
+        "properties": {
+          "route_id": {"type": "string"},
+          "task_mode": {"const": "INDEPENDENT_SOLO_SIMULATION"},
+          "input": {"type": "object"},
+          "graph": {"type": "object"},
+          "prefix": {"type": "object"},
+          "shortest_language": {"type": "object"},
+          "bounded_path_universe": {
+            "type": "object",
+            "required": [
+              "semantics",
+              "includes_cycles",
+              "finite_because",
+              "target_path_count_by_total_hops",
+              "target_path_count_total"
+            ],
+            "properties": {
+              "semantics": {
+                "const": "EVERY_TYPED_WALK_AFTER_THE_FIXED_PREFIX_UP_TO_ROUTE_BUDGET"
+              },
+              "includes_cycles": {"const": true},
+              "finite_because": {"const": "route_budget"},
+              "target_path_count_by_total_hops": {"type": "object"},
+              "target_path_count_total": {"type": "integer", "minimum": 1}
+            }
+          },
+          "canonical_path": {
+            "type": "object",
+            "required": [
+              "nodes",
+              "edges",
+              "hops",
+              "net_coordinate_delta",
+              "navigation_valid",
+              "content_transport_certified",
+              "standing",
+              "why_valid",
+              "truth_effect",
+              "path_signature"
+            ],
+            "properties": {
+              "nodes": {
+                "type": "array",
+                "minItems": 1,
+                "items": {"type": "integer", "minimum": 1, "maximum": 144}
+              },
+              "edges": {"type": "array", "items": {"type": "object"}},
+              "hops": {"type": "integer", "minimum": 0},
+              "net_coordinate_delta": {"type": "object"},
+              "navigation_valid": {"const": true},
+              "content_transport_certified": {"const": false},
+              "standing": {"type": "string"},
+              "why_valid": {"type": "array", "items": {"type": "string"}},
+              "truth_effect": {"const": "NONE"},
+              "path_signature": {
+                "type": "string",
+                "pattern": "^sha256:[0-9a-f]{64}$"
+              }
+            }
+          },
+          "shortest_path_witnesses": {"type": "array", "items": {"type": "object"}},
+          "truth_effect": {"const": "NONE"},
+          "simulation_digest": {
+            "type": "string",
+            "pattern": "^sha256:[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "simultaneous_projection_matrix": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {"type": "object"}
+    },
+    "pairwise_holonomy": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["left", "right", "shared_target", "edge_holonomy", "node_holonomy", "omega"],
+        "properties": {
+          "left": {"type": "string"},
+          "right": {"type": "string"},
+          "shared_target": {"const": true},
+          "edge_holonomy": {"type": "integer", "minimum": 0},
+          "node_holonomy": {"type": "integer", "minimum": 0},
+          "omega": {"type": "integer", "minimum": 1}
+        }
+      }
+    },
+    "all_routes_navigation_valid": {"const": true},
+    "all_pairwise_holonomy_nonzero": {"const": true},
+    "content_transport_certified": {"const": false},
+    "governance_authority_granted": {"const": false},
+    "production_truth_effect": {"const": "NONE"},
+    "interpretation": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "string"}
+    },
+    "crystal_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/parallel-agent-plan-v1.schema.json",
+  "title": "KC144 bounded deterministic parallel-agent plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "capacity_requested",
+    "maximum_parallel_width",
+    "tasks",
+    "execution_waves",
+    "dispatch_order",
+    "merge_order",
+    "spawn_fallback",
+    "laws",
+    "plan_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ParallelAgentPlan.V1"},
+    "capacity_requested": {"type": "integer", "minimum": 1, "maximum": 5},
+    "maximum_parallel_width": {"type": "integer", "minimum": 1, "maximum": 5},
+    "tasks": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "task_id",
+          "execution_mode",
+          "depends_on",
+          "read_set",
+          "write_set",
+          "priority",
+          "independent_agent_required",
+          "merge_authority",
+          "work_id"
+        ],
+        "properties": {
+          "task_id": {"type": "string", "minLength": 1},
+          "execution_mode": {
+            "enum": [
+              "PARALLEL_WORKER",
+              "SOLO_WORKER",
+              "COORDINATOR_ONLY",
+              "DETERMINISTIC_REDUCER"
+            ]
+          },
+          "depends_on": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {"type": "string"}
+          },
+          "read_set": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {"type": "string"}
+          },
+          "write_set": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {"type": "string"}
+          },
+          "priority": {"type": "integer"},
+          "independent_agent_required": {"type": "boolean"},
+          "merge_authority": {"type": "boolean"},
+          "work_id": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "execution_waves": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 5,
+        "uniqueItems": true,
+        "items": {"type": "string"}
+      }
+    },
+    "dispatch_order": {"const": "DEPENDENCY_RANK_THEN_TASK_ID"},
+    "merge_order": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "spawn_fallback": {"type": "string", "minLength": 1},
+    "laws": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "plan_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

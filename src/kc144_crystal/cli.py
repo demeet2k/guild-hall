@@ -75,6 +75,7 @@ from .nomination_v14 import (
     verify_signed_candidate_nomination,
 )
 from .population import crystallize, write_crystal
+from .parallel_routes import compile_parallel_route_crystal
 from .query import QueryBundle, compile_query, query_contract
 from .repair import (
     M12EvidencePacket,
@@ -164,6 +165,17 @@ def build_parser() -> argparse.ArgumentParser:
     wave.add_argument("--starts", default="6", help="comma-separated GIDs")
     wave.add_argument("--budget", type=int, default=18)
     wave.add_argument("--query-id", default="KC144.V3.CLI.WAVE")
+
+    parallel_routes = commands.add_parser(
+        "parallel-routes",
+        help="compile five KC144 route simulations and reduce them deterministically",
+    )
+    parallel_routes.add_argument("--workers", type=int, default=5)
+    parallel_routes.add_argument("--output")
+    parallel_routes.add_argument("--immutable-commit")
+    parallel_routes.add_argument("--immutable-tree")
+    parallel_routes.add_argument("--compiler-commit")
+    parallel_routes.add_argument("--compiler-tree")
 
     systematic = commands.add_parser("systematic", help="compile every V3 registry")
     systematic.add_argument("--output", default="registry/v3")
@@ -644,6 +656,49 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "wave":
         starts = tuple(int(value) for value in args.starts.split(",") if value)
         _json(propagate(WaveQuery(args.query_id, starts, args.budget)))
+        return 0
+
+    if args.command == "parallel-routes":
+        binding_values = {
+            "immutable_commit": args.immutable_commit,
+            "immutable_tree": args.immutable_tree,
+            "compiler_commit": args.compiler_commit,
+            "compiler_tree": args.compiler_tree,
+        }
+        supplied = {key: value for key, value in binding_values.items() if value}
+        if supplied and len(supplied) != len(binding_values):
+            raise SystemExit("all four coordinate-binding options are required together")
+        result = compile_parallel_route_crystal(
+            executor_workers=args.workers,
+            coordinate_binding=supplied or None,
+        )
+        if args.output:
+            destination = Path(args.output)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_text(
+                json.dumps(
+                    result,
+                    indent=2,
+                    ensure_ascii=False,
+                    sort_keys=True,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            _json(
+                {
+                    "schema": result["schema"],
+                    "output": str(destination),
+                    "crystal_digest": result["crystal_digest"],
+                    "simulations": len(result["simulations"]),
+                    "maximum_parallel_width": result["scheduler"][
+                        "maximum_parallel_width"
+                    ],
+                    "production_truth_effect": result["production_truth_effect"],
+                }
+            )
+        else:
+            _json(result)
         return 0
 
     if args.command == "systematic":
