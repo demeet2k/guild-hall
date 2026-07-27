@@ -1,0 +1,231 @@
+name: KC144 V15 application verifier
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: kc144-v15-application-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    if: startsWith(github.event.issue.title, '[KC144 V15 APPLICATION]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out immutable V15 verifier
+        uses: actions/checkout@v4
+        with:
+          ref: 1b653e39d7c09ba8b93a800860244242cd98d397
+          fetch-depth: 1
+
+      - name: Install verifier
+        run: python3 -m pip install .
+
+      - name: Parse application issue safely
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import re
+          from pathlib import Path
+
+          event = json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text(encoding='utf-8'))
+          issue = event['issue']
+          body = issue.get('body') or ''
+
+          def section(label):
+              pattern = rf'(?ms)^### {re.escape(label)}\s*\n+(.*?)(?=^### |\Z)'
+              match = re.search(pattern, body)
+              if not match:
+                  raise ValueError(f'missing issue-form section: {label}')
+              return match.group(1).strip()
+
+          state = {
+              'schema': 'KC144.ApplicationIssueParse.V15',
+              'issue_number': issue['number'],
+              'checked_at': issue['created_at'],
+              'parse_ok': False,
+              'checks': {},
+              'error': None,
+          }
+
+          try:
+              role = section('Target role').splitlines()[0].strip()
+              declared_digest = section('Immutable payload digest').splitlines()[0].strip()
+              declared_application_id = section('Application identifier').splitlines()[0].strip()
+              application_section = section('Signed V15 application JSON')
+              fenced = re.search(r'```(?:json)?\s*(.*?)```', application_section, re.S | re.I)
+              raw_json = fenced.group(1).strip() if fenced else application_section
+              application = json.loads(raw_json)
+
+              payload_files = {
+                  'CUSTODIAN': 'registry/v15/application_publication_custodian_v15.json',
+                  'INDEPENDENT_REVIEWER': 'registry/v15/application_publication_independent_reviewer_v15.json',
+                  'REPLAY_WITNESS': 'registry/v15/application_publication_replay_witness_v15.json',
+                  'SOURCE_AUDITOR': 'registry/v15/application_publication_source_auditor_v15.json',
+                  'RETURN_AUDITOR': 'registry/v15/application_publication_return_auditor_v15.json',
+              }
+              role_known = role in payload_files
+              canonical_digest = None
+              if role_known:
+                  payload = json.loads(Path(payload_files[role]).read_text(encoding='utf-8'))
+                  canonical_digest = payload['payload_digest']
+
+              state.update({
+                  'parse_ok': True,
+                  'declared_role': role,
+                  'declared_payload_digest': declared_digest,
+                  'canonical_payload_digest': canonical_digest,
+                  'declared_application_id': declared_application_id,
+                  'checks': {
+                      'role_known': role_known,
+                      'payload_digest_exact': role_known and declared_digest == canonical_digest,
+                      'application_id_exact': application.get('application_id') == declared_application_id,
+                      'schema_declared': application.get('schema') == 'KC144.BatchBoundCandidateApplication.V15',
+                  },
+              })
+              Path('candidate-application.json').write_text(
+                  json.dumps(application, indent=2, sort_keys=True) + '\n',
+                  encoding='utf-8',
+              )
+          except Exception as exc:
+              state['error'] = f'{type(exc).__name__}: {exc}'
+
+          Path('issue-parse-state.json').write_text(
+              json.dumps(state, indent=2, sort_keys=True) + '\n',
+              encoding='utf-8',
+          )
+          PY
+
+      - name: Verify signatures and immutable bindings
+        run: |
+          python3 - <<'PY'
+          import json
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          parse_state = json.loads(Path('issue-parse-state.json').read_text(encoding='utf-8'))
+          runtime = None
+          runtime_error = None
+          returncode = None
+
+          if parse_state['parse_ok']:
+              command = [
+                  sys.executable,
+                  '-m',
+                  'kc144_crystal',
+                  'candidate-application-verify',
+                  'registry/v11/governance_challenge_batch_v11.json',
+                  'candidate-application.json',
+                  '--checked-at',
+                  parse_state['checked_at'],
+              ]
+              completed = subprocess.run(command, capture_output=True, text=True, check=False)
+              returncode = completed.returncode
+              try:
+                  runtime = json.loads(completed.stdout)
+              except Exception:
+                  runtime_error = (completed.stderr or completed.stdout or 'verifier produced no report').strip()
+
+          preflight_pass = (
+              parse_state['parse_ok']
+              and bool(parse_state['checks'])
+              and all(parse_state['checks'].values())
+          )
+          runtime_pass = bool(runtime) and runtime.get('verdict') == 'PASS' and returncode == 0
+          verdict = 'PASS' if preflight_pass and runtime_pass else 'HOLD'
+
+          report = {
+              'schema': 'KC144.GitHubApplicationVerification.V15',
+              'issue_number': parse_state['issue_number'],
+              'verdict': verdict,
+              'status': (
+                  'BATCH_BOUND_APPLICATION_ADMITTED_TO_V14'
+                  if verdict == 'PASS'
+                  else 'BATCH_BOUND_APPLICATION_HOLD'
+              ),
+              'base_commit': '1b653e39d7c09ba8b93a800860244242cd98d397',
+              'base_tree': 'd2e2f9b92fafdfd17be5088a4a8e6e3a5db1322b',
+              'preflight': parse_state,
+              'runtime': runtime,
+              'runtime_returncode': returncode,
+              'runtime_error': runtime_error,
+              'identity_independence_externally_proven': False,
+              'governance_authority_granted': False,
+              'production_truth_effect': 'NONE',
+          }
+          Path('verification-report.json').write_text(
+              json.dumps(report, indent=2, sort_keys=True) + '\n',
+              encoding='utf-8',
+          )
+          PY
+
+      - name: Publish or update issue verdict
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = JSON.parse(fs.readFileSync('verification-report.json', 'utf8'));
+            const marker = '<!-- KC144_V15_AUTOVERIFIER -->';
+            const symbol = report.verdict === 'PASS' ? 'PASS' : 'HOLD';
+            const publicReport = JSON.stringify(report, null, 2);
+            const body = [
+              marker,
+              `## KC144 V15 automatic verdict: ${symbol}`,
+              '',
+              `Status: \`${report.status}\``,
+              '',
+              'This is a deterministic schema, signature, time, batch, manifest, and role-call verification against immutable commit `1b653e39d7c09ba8b93a800860244242cd98d397`.',
+              '',
+              'A `PASS` admits the signed object to the V14 intake boundary only. It does not establish identity, external independence, selection, delivery, governance authority, certification, M12 closure, or production truth.',
+              '',
+              '<details><summary>Machine report</summary>',
+              '',
+              '```json',
+              publicReport,
+              '```',
+              '</details>',
+            ].join('\n');
+
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              per_page: 100,
+            });
+            const existing = comments.find(comment =>
+              comment.user?.type === 'Bot' && comment.body?.includes(marker)
+            );
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
+      - name: Write workflow summary
+        if: always()
+        run: |
+          if [ -f verification-report.json ]; then
+            printf '## KC144 V15 application verification\n\n```json\n' >> "$GITHUB_STEP_SUMMARY"
+            cat verification-report.json >> "$GITHUB_STEP_SUMMARY"
+            printf '```\n' >> "$GITHUB_STEP_SUMMARY"
+          fi
