@@ -1,0 +1,74 @@
+name: KC144 V15 signed application
+description: Submit one public, double-signed, batch-bound candidate application for a KC144 V15 role call.
+title: "[KC144 V15 APPLICATION] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form only for `KC144.BatchBoundCandidateApplication.V15`.
+
+        Read the public gate and the exact immutable role payload before submitting. Return public material only. Never paste or upload a private key, recovery phrase, password, access token, or other secret.
+
+        A submission is an application, not selection, delivery, enrollment, governance authority, certification, or a truth claim. Every application remains subject to schema, digest, signature, batch, role-call, independence, conflict, and cohort verification.
+
+  - type: dropdown
+    id: role
+    attributes:
+      label: Target role
+      description: Select the role whose immutable V15 payload you used.
+      options:
+        - CUSTODIAN
+        - INDEPENDENT_REVIEWER
+        - REPLAY_WITNESS
+        - SOURCE_AUDITOR
+        - RETURN_AUDITOR
+    validations:
+      required: true
+
+  - type: input
+    id: payload_digest
+    attributes:
+      label: Immutable payload digest
+      description: Copy the `payload_digest` from the selected role payload.
+      placeholder: sha256:...
+    validations:
+      required: true
+
+  - type: input
+    id: application_id
+    attributes:
+      label: Application identifier
+      description: Copy `application_id` from the submitted V15 JSON object.
+      placeholder: V15-APPLICATION::...
+    validations:
+      required: true
+
+  - type: textarea
+    id: application_json
+    attributes:
+      label: Signed V15 application JSON
+      description: Paste the complete public `KC144.BatchBoundCandidateApplication.V15` object. Do not include private keys or secrets.
+      render: json
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence_locators
+    attributes:
+      label: Public evidence locators
+      description: Provide stable public URLs for identity, independence, conflict, capability, and nomination evidence represented by the roots in the signed envelope.
+      placeholder: One URL and corresponding root per line.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: declarations
+    attributes:
+      label: Submission declarations
+      options:
+        - label: I retained every private key externally and submitted public material only.
+          required: true
+        - label: The inner V14 nomination envelope and outer V15 application were signed under their declared ED25519 domains.
+          required: true
+        - label: I understand that a valid application does not itself grant selection, delivery, enrollment, authority, certification, or truth effect.
+          required: true
