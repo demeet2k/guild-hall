@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/application-record-v15.schema.json",
+  "title": "Stored canonical KC144 V15 application",
+  "description": "The file content is a strict KC144.BatchBoundCandidateApplication.V15 object; its path is derived from the SHA-256 digest of its canonical JSON bytes.",
+  "allOf": [
+    {
+      "$ref": "https://github.com/demeet2k/guild-hall/raw/1b653e39d7c09ba8b93a800860244242cd98d397/schemas/kc144/batch-bound-candidate-application-v15.schema.json"
+    }
+  ]
+}

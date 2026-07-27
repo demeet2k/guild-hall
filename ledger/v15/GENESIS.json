@@ -1,0 +1,14 @@
+{
+  "schema": "KC144.PassLedgerGenesis.V15",
+  "ledger_id": "KC144.V15.CRYPTOGRAPHIC_PASS_LEDGER",
+  "branch": "kc144-v15-pass-ledger",
+  "created_at": "2026-07-27T18:59:15Z",
+  "base_commit": "1b653e39d7c09ba8b93a800860244242cd98d397",
+  "base_tree": "d2e2f9b92fafdfd17be5088a4a8e6e3a5db1322b",
+  "entry_count": 0,
+  "counting_effect": "NONE",
+  "identity_independence_externally_proven": false,
+  "governance_authority_granted": false,
+  "production_truth_effect": "NONE",
+  "genesis_digest": "sha256:1f9ba9c1e8c99f0dab2b7e26d19525e5ff545a718907a5fc031d80aed5328733"
+}

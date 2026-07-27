@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/pass-receipt-v15.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "application_digest",
+    "application_path",
+    "declared_role",
+    "source",
+    "verifier",
+    "technical_verdict",
+    "ledger_state",
+    "cohort_effect",
+    "identity_independence_externally_proven",
+    "governance_authority_granted",
+    "production_truth_effect"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.CryptographicPassReceipt.V15"},
+    "application_digest": {"$ref": "#/$defs/digest"},
+    "application_path": {"type": "string"},
+    "declared_role": {"$ref": "#/$defs/role"},
+    "source": {"type": "object"},
+    "verifier": {"type": "object"},
+    "technical_verdict": {"const": "CRYPTOGRAPHIC_PREFLIGHT_PASS_NONCOUNTING"},
+    "ledger_state": {"const": "VERIFIED_PASS_AWAITING_GLOBAL_UNIQUENESS_AND_INDEPENDENCE"},
+    "cohort_effect": {"const": "NONE_PENDING_FIXED_TREE_SNAPSHOT"},
+    "identity_independence_externally_proven": {"const": false},
+    "governance_authority_granted": {"const": false},
+    "production_truth_effect": {"const": "NONE"}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "role": {
+      "enum": [
+        "CUSTODIAN",
+        "INDEPENDENT_REVIEWER",
+        "REPLAY_WITNESS",
+        "SOURCE_AUDITOR",
+        "RETURN_AUDITOR"
+      ]
+    }
+  }
+}

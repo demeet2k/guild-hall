@@ -1,0 +1,27 @@
+{
+  "schema": "KC144.PassLedgerContract.V15",
+  "ledger_id": "KC144.V15.CRYPTOGRAPHIC_PASS_LEDGER",
+  "branch": "kc144-v15-pass-ledger",
+  "base_commit": "1b653e39d7c09ba8b93a800860244242cd98d397",
+  "base_tree": "d2e2f9b92fafdfd17be5088a4a8e6e3a5db1322b",
+  "application_canonicalization": {
+    "encoding": "UTF-8",
+    "json_sort_keys": true,
+    "json_separators": [",", ":"],
+    "ensure_ascii": false,
+    "stored_trailing_lf": true,
+    "digest_includes_trailing_lf": false,
+    "digest_algorithm": "SHA-256"
+  },
+  "append_law": "new commits must be descendants of the current ledger head; force updates and deletions are forbidden",
+  "source_binding_law": "one GitHub issue path permanently binds its first accepted application digest and issue-body digest",
+  "idempotence_law": "an identical source binding and identical content-addressed objects produce no new commit",
+  "collision_law": "an occupied path with different bytes is a fail-closed conflict",
+  "replay_law": "one application digest may have multiple source observations but never becomes multiple candidates",
+  "aggregation_law": "global uniqueness and independence are evaluated symmetrically over one fixed ledger tree; streaming first-writer status is non-authoritative",
+  "technical_pass_state": "CRYPTOGRAPHIC_PREFLIGHT_PASS_NONCOUNTING",
+  "cohort_effect": "NONE_PENDING_FIXED_TREE_SNAPSHOT",
+  "identity_independence_externally_proven": false,
+  "governance_authority_granted": false,
+  "production_truth_effect": "NONE"
+}

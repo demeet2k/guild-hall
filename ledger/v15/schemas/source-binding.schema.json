@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/source-binding-v15.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "source_type",
+    "repository",
+    "issue_number",
+    "issue_node_id",
+    "issue_url",
+    "issue_updated_at",
+    "issue_body_digest",
+    "application_digest",
+    "application_path",
+    "receipt_digest",
+    "receipt_path"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.GitHubIssueSourceBinding.V15"},
+    "source_type": {"const": "GITHUB_ISSUE"},
+    "repository": {"const": "demeet2k/guild-hall"},
+    "issue_number": {"type": "integer", "minimum": 1},
+    "issue_node_id": {"type": "string"},
+    "issue_url": {"type": "string"},
+    "issue_updated_at": {"type": "string"},
+    "issue_body_digest": {"$ref": "#/$defs/digest"},
+    "application_digest": {"$ref": "#/$defs/digest"},
+    "application_path": {"type": "string"},
+    "receipt_digest": {"$ref": "#/$defs/digest"},
+    "receipt_path": {"type": "string"}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}
