@@ -1,0 +1,36 @@
+{
+  "schema": "KC144.GovernanceCeremonyRuntimeState.V10",
+  "release": "KC144.GOVERNANCE.CEREMONY.RUNTIME.V10",
+  "parent_release": "KC144.EXTERNAL.HANDOFF.RUNTIME.V9",
+  "ceremony_id": "KC144.GOVERNANCE.CEREMONY.V10",
+  "ceremony_contract_digest": "sha256:a3e92b0e52880914667c09327b23c39de0ee9d1618b2e349e5f7304224f4ecd2",
+  "ratification_contract_digest": "sha256:bd8cbb1d8a729cb2a1280ffdd3f62745bdabdca276fa1c156f07b07cf402c611",
+  "plan_digest": "sha256:2c9bc9b7b9e614e8e88bb32a18c746168007d0a815fce646ed152a313e27915c",
+  "internal_readiness": {
+    "verdict": "PASS",
+    "checks": {
+      "v9_runtime_pass": true,
+      "ceremony_identity_exact": true,
+      "five_roles_exact": true,
+      "five_seats_unfilled": true,
+      "random_nonce_required": true,
+      "single_institution_forbidden": true,
+      "external_ratification_required": true,
+      "challenge_disposition_required": true,
+      "constitution_transition_required": true,
+      "rollback_required": true,
+      "two_anchor_contract": true,
+      "fixture_activation_forbidden": true,
+      "no_default_challenges_or_keys_emitted": true
+    }
+  },
+  "filled_seats": 0,
+  "required_seats": 5,
+  "barrier": "FIVE_INDEPENDENT_PARTICIPANT_RESPONSES_REQUIRED",
+  "governance_activated": false,
+  "production_certificate_issued": false,
+  "production_truth_effect": "NONE",
+  "frozen_crystal_mutated": false,
+  "next_seed": "KC144.V10::ISSUE-FIVE-ROLE-BOUND-CHALLENGES",
+  "runtime_state_digest": "sha256:f8f946611c068a656169021025e20fe4b80571e6436bef9d44d430cc8a95235f"
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "KC144.ApplicationTransportContract.V15",
+  "transport_id": "KC144.CANDIDATE.APPLICATION.TRANSPORT.V15",
+  "roles": [
+    "CUSTODIAN",
+    "INDEPENDENT_REVIEWER",
+    "REPLAY_WITNESS",
+    "SOURCE_AUDITOR",
+    "RETURN_AUDITOR"
+  ],
+  "publication_payload_count": 5,
+  "application_schema": "KC144.BatchBoundCandidateApplication.V15",
+  "signature_algorithm": "ED25519",
+  "signature_domain": "KC144.V15.BATCH_BOUND_CANDIDATE_APPLICATION",
+  "double_signature_law": "the inner V14 signature binds the nomination declaration and the outer V15 signature binds that exact signed declaration to one immutable batch, manifest, role-call set, and time",
+  "role_binding_law": "the application target roles must equal the declared eligible roles and every call identifier and digest must equal the canonical V14 call for the active batch",
+  "replay_law": "an otherwise valid application from another batch, call manifest, or role-call digest is non-counting",
+  "publication_law": "payload compilation is not external publication; publication requires independently observed transport evidence",
+  "evidence_law": "both signatures establish key control and byte integrity only, not identity, independence, publication, fitness, or authority",
+  "routing_law": "only unique valid applications release their inner envelopes to V14; every rejected application remains in the V15 ledger",
+  "truth_effect": "NONE",
+  "contract_digest": "sha256:792599594c518288c15161f314721d0319f791f54cab652341f1aec7d1f2bde8"
+}

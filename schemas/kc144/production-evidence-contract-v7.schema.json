@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/production-evidence-contract-v7.schema.json",
+  "title": "KC144 V7 production evidence contract",
+  "type": "object",
+  "required": [
+    "schema",
+    "epoch_id",
+    "epoch_census",
+    "crosswalk_digest",
+    "active_graph_slice",
+    "graph_slice_registry_digest",
+    "signature_algorithm",
+    "envelope_atomicity",
+    "production_contradiction_law",
+    "domain_binding_law",
+    "ic10_law",
+    "compression_law",
+    "direct_v6_production_admission",
+    "direct_v5_bridge_commit"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ProductionEvidenceContract.V7"},
+    "epoch_id": {"const": "EPOCH-B-EIGHT-BLOCK"},
+    "epoch_census": {"const": "6+16+21+37+10+15+27+12"},
+    "crosswalk_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "active_graph_slice": {"const": "X16_ALGEBRA"},
+    "graph_slice_registry_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "signature_algorithm": {"const": "ED25519"},
+    "envelope_atomicity": {"const": "ALL_PACKETS_OR_NONE"},
+    "production_contradiction_law": {"type": "object"},
+    "domain_binding_law": {"type": "string", "minLength": 1},
+    "ic10_law": {"type": "string", "minLength": 1},
+    "compression_law": {"type": "string", "minLength": 1},
+    "direct_v6_production_admission": {
+      "const": "FORBIDDEN_WITHOUT_V7_ENVELOPE_CONTEXT"
+    },
+    "direct_v5_bridge_commit": {
+      "const": "FORBIDDEN_WITHOUT_V7_ENVELOPE_CONTEXT"
+    }
+  }
+}

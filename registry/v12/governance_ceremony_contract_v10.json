@@ -1,0 +1,23 @@
+{
+  "schema": "KC144.GovernanceCeremonyContract.V10",
+  "ceremony_id": "KC144.GOVERNANCE.CEREMONY.V10",
+  "epoch_id": "EPOCH-B-EIGHT-BLOCK",
+  "roles": [
+    "CUSTODIAN",
+    "INDEPENDENT_REVIEWER",
+    "REPLAY_WITNESS",
+    "SOURCE_AUDITOR",
+    "RETURN_AUDITOR"
+  ],
+  "member_count": 5,
+  "authority_threshold": 3,
+  "enrollment_signature_domain": "KC144.V10.GOVERNANCE_ENROLLMENT",
+  "ratification_signature_domain": "KC144.V10.GOVERNANCE_RATIFICATION",
+  "challenge_nonce": "32_RANDOM_BYTES_HEX",
+  "independence_law": "member IDs, public keys, institutions, and lineages are unique across all five seats",
+  "conflict_law": "every conflict is disclosed and either CLEAR or accompanied by a signed resolution root before society assembly",
+  "activation_law": "five verified participant responses form only a pending society; activation additionally requires a closed challenge window, challenge disposition, constitution transition, rollback root, and two independent signed external checkpoints",
+  "fixture_law": "LOCAL_OR_TEST_PROOFS_NEVER_ACTIVATE_PRODUCTION",
+  "truth_effect": "NONE_UNTIL_EXTERNAL_RATIFICATION",
+  "contract_digest": "sha256:a3e92b0e52880914667c09327b23c39de0ee9d1618b2e349e5f7304224f4ecd2"
+}

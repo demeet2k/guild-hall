@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/batch-bound-candidate-application-v15.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "application_id", "nomination_envelope", "batch_id",
+    "batch_root", "call_manifest_root", "target_calls", "submitted_at",
+    "signature_domain", "signature_b64"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.BatchBoundCandidateApplication.V15"},
+    "application_id": {"type": "string", "minLength": 1},
+    "nomination_envelope": {
+      "$ref": "signed-candidate-nomination-v14.schema.json"
+    },
+    "batch_id": {
+      "type": "string",
+      "pattern": "^V11-BATCH::[0-9a-f]{24}$"
+    },
+    "batch_root": {"$ref": "#/$defs/root"},
+    "call_manifest_root": {"$ref": "#/$defs/root"},
+    "target_calls": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["role", "call_id", "call_digest"],
+        "properties": {
+          "role": {"$ref": "#/$defs/role"},
+          "call_id": {"type": "string", "minLength": 1},
+          "call_digest": {"$ref": "#/$defs/root"}
+        }
+      }
+    },
+    "submitted_at": {"type": "string", "minLength": 1},
+    "signature_domain": {
+      "const": "KC144.V15.BATCH_BOUND_CANDIDATE_APPLICATION"
+    },
+    "signature_b64": {"type": "string", "minLength": 86}
+  },
+  "$defs": {
+    "root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "role": {
+      "enum": [
+        "CUSTODIAN", "INDEPENDENT_REVIEWER", "REPLAY_WITNESS",
+        "SOURCE_AUDITOR", "RETURN_AUDITOR"
+      ]
+    }
+  }
+}

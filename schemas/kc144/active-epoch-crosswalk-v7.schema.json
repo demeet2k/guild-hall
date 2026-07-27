@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/active-epoch-crosswalk-v7.schema.json",
+  "title": "KC144 V7 active epoch crosswalk",
+  "type": "object",
+  "required": [
+    "schema",
+    "epoch_id",
+    "epoch_census",
+    "kc15",
+    "kc27",
+    "ssn12",
+    "f37_branch_ledger",
+    "laws",
+    "crosswalk_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ActiveEpochCrosswalk.V7"},
+    "epoch_id": {"const": "EPOCH-B-EIGHT-BLOCK"},
+    "epoch_census": {"const": "6+16+21+37+10+15+27+12"},
+    "kc15": {"type": "object"},
+    "kc27": {"type": "object"},
+    "ssn12": {"type": "object"},
+    "f37_branch_ledger": {"type": "object"},
+    "laws": {"type": "array", "minItems": 1},
+    "crosswalk_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

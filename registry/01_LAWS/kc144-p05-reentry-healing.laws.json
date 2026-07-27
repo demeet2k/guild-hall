@@ -1,0 +1,18 @@
+{
+  "schema": "KC144.INTERNAL-NAV.P05.LAWS.V1",
+  "laws": [
+    {"id": "RH01", "predicate": "checkpoint_digest_commits_to_query_atoms_edges_routes_branches_defects_and_receipt_head"},
+    {"id": "RH02", "predicate": "warm_reentry_requires_checkpoint_identity_digest_ancestry_version_and_receipt_prefix"},
+    {"id": "RH03", "predicate": "monotonic_addition_yields_VALID_WITH_DRIFT_not_decay"},
+    {"id": "RH04", "predicate": "missing_or_changed_checkpoint_atom_is_MEMORY_DECAY"},
+    {"id": "RH05", "predicate": "missing_checkpoint_totalizes_to_ORPHANED"},
+    {"id": "RH06", "predicate": "rollback_is_append_only_compensation_not_history_deletion"},
+    {"id": "RH07", "predicate": "missing_node_is_never_reconstructed_without_source"},
+    {"id": "RH08", "predicate": "typed_gap_does_not_increase_node_coverage"},
+    {"id": "RH09", "predicate": "healing_event_retains_before_patch_after_verifier_rollback_and_residual_gap"},
+    {"id": "RH10", "predicate": "unknown_frozen_edge_denominator_yields_UNBOUND_not_estimated_coverage"},
+    {"id": "RH11", "predicate": "later_receipts_may_extend_a_verified_checkpoint_prefix"},
+    {"id": "RH12", "predicate": "solid_state_requires_reproduced_CV_CE_CR_CS_CP_CPi_equal_one"},
+    {"id": "RH13", "predicate": "structural_healing_never_forces_contradictory_claims_to_agree"}
+  ]
+}

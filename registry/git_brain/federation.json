@@ -1,0 +1,51 @@
+{
+  "federation_id": "athena.federation.v2.reference",
+  "release": "reference-0.1.0",
+  "observed_at": "2026-07-26T19:00:00-07:00",
+  "status": "PROPOSED_NOT_PROMOTED",
+  "resources": [
+    {
+      "rid": "athena.doc.meta-memory",
+      "vid": "library-observed-2026-07-16",
+      "kind": "source_document",
+      "kernel": "Persistent memory is a bootloader; the corpus is the map body; recall requires address, witness, replay, and successor.",
+      "coordinates": ["kc://KC144.V1/GID005", "amc://library/memory/meta-navigation@observed?lens=11#root"]
+    },
+    {
+      "rid": "athena.kc144.constitution",
+      "vid": "v2-proposed-0.1.0",
+      "kind": "constitution",
+      "kernel": "A unified identity-edge-receipt law binds semantic coordinates to versioned mounts.",
+      "coordinates": ["kc://KC144.V1/GID001", "kc://KC144.V1/GID081"]
+    },
+    {
+      "rid": "athena.repo.control",
+      "vid": "github-observed-main",
+      "kind": "repository",
+      "kernel": "Federation identity, schema, route, receipt, contradiction, migration, and promotion control plane.",
+      "coordinates": ["github://demeet2k/Athena@OBSERVED_MAIN/README.md"]
+    },
+    {
+      "rid": "athena.runtime.route-compiler",
+      "vid": "reference-0.1.0",
+      "kind": "runtime",
+      "kernel": "Type-filtered route compilation with witnesses, defects, and a co-compiled return plan.",
+      "coordinates": ["amc://runtime/navigation/route-compiler@0.1.0?lens=10#compile"]
+    }
+  ],
+  "repositories": [
+    {"github": "demeet2k/Athena", "role": "control_plane", "state": "EVOLVE_IN_PLACE"},
+    {"github": "demeet2k/athena-mcp-server", "role": "runtime", "state": "BOUND_AND_SLIM"},
+    {"github": "demeet2k/q-shrink", "role": "domain", "state": "KEEP_INDEPENDENT_ADD_CONTRACT"},
+    {"github": "demeet2k/manuscript-being", "role": "domain", "state": "CANONICAL_CANDIDATE"},
+    {"github": "demeet2k/manscript-being", "role": "legacy", "state": "IDENTITY_FORK_HOLD"},
+    {"github": "demeet2k/athena-square-earth", "role": "view", "state": "DIFFERENTIATE_OR_GENERATE"},
+    {"github": "demeet2k/athena-flower-fire", "role": "view", "state": "DIFFERENTIATE_OR_GENERATE"},
+    {"github": "demeet2k/athena-cloud-water", "role": "view", "state": "DIFFERENTIATE_OR_GENERATE"},
+    {"github": "demeet2k/athena-fractal-air", "role": "view", "state": "DIFFERENTIATE_OR_GENERATE"},
+    {"github": "demeet2k/autoresearch", "role": "experiment", "state": "WITNESS_ONLY_UNTIL_PROMOTED"},
+    {"github": "demeet2k/guild-hall", "role": "coordination", "state": "NO_CODE_AUTHORITY"},
+    {"github": "demeet2k/demeet2k", "role": "profile", "state": "OUTSIDE_COMPUTATIONAL_FEDERATION"}
+  ]
+}
+

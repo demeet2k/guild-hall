@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.invalid/schemas/source.schema.json",
+  "title": "KC144 Source Manifestation",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "manifestation_id",
+    "surface",
+    "provider_id",
+    "observed_version",
+    "locator",
+    "digest",
+    "source_class",
+    "lineage"
+  ],
+  "properties": {
+    "schema_version": {"const": "KC144-SOURCE-1.0"},
+    "manifestation_id": {"type": "string"},
+    "object_id": {"type": ["string", "null"]},
+    "surface": {"enum": ["INTERNAL", "DOCS", "GIT", "FILE", "WEB"]},
+    "provider_id": {"type": "string"},
+    "observed_version": {"type": "string"},
+    "locator": {"type": "string"},
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_class": {"type": "string"},
+    "lineage": {"type": "array", "items": {"type": "object"}},
+    "observed_at": {"type": "string"}
+  },
+  "additionalProperties": true
+}
+

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/parallel-campaign-release-v8.schema.json",
+  "title": "KC144 V8 parallel campaign release",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "release",
+    "parent_release",
+    "verdict",
+    "operational_status",
+    "campaign_shards",
+    "campaign_packets",
+    "maximum_parallel_width",
+    "completed_shards",
+    "production_certificate_issued",
+    "frozen_crystal_mutated",
+    "added_artifacts",
+    "next_seed",
+    "release_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ParallelCampaignRelease.V8"},
+    "release": {"const": "KC144.PARALLEL.CAMPAIGN.RUNTIME.V8"},
+    "parent_release": {"const": "KC144.PRODUCTION.EVIDENCE.KERNEL.V7"},
+    "verdict": {"enum": ["PASS", "FAIL"]},
+    "operational_status": {"type": "string", "minLength": 1},
+    "campaign_shards": {"const": 16},
+    "campaign_packets": {"const": 232},
+    "maximum_parallel_width": {"const": 14},
+    "completed_shards": {"type": "integer", "minimum": 0, "maximum": 16},
+    "production_certificate_issued": {"type": "boolean"},
+    "frozen_crystal_mutated": {"const": false},
+    "added_artifacts": {"type": "array", "minItems": 5},
+    "next_seed": {"type": "string", "minLength": 1},
+    "release_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

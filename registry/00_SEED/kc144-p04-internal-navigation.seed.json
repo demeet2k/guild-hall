@@ -1,0 +1,27 @@
+{
+  "schema": "KC144.MYC.SKELETON.P04.SEED.V1",
+  "id": "KC144.INTERNAL-NAV.P04",
+  "name": "CROSS-CONVERSATION-MYCELIUM-AND-SYNTHESIS-RUNTIME",
+  "status": "implemented-populated-local-verified",
+  "parents": [
+    "KC144.MYC.SKELETON.P03",
+    "KC144.V1::GID005::H05",
+    "KC144.V1::GID006::H06",
+    "KC144.V1::GID029::B07",
+    "KC144.V1::GID030::B08",
+    "KC144.V1::GID043::B21",
+    "KC144.V1::GID090::I10",
+    "KC144.V1::GID133-GID144::SSN"
+  ],
+  "runtime": {
+    "store": "SQLite append-preserving registry braid",
+    "ingress": "PersonalContextAdapter + ContextAtom seed bundles",
+    "query": "H06 QueryBundle",
+    "routing": "GID029 exact-first + GID030 branch ledger",
+    "audit": "KC54 weakest-corridor and return checks",
+    "promotion": "IC10-authorized only",
+    "output": "SynthesisPacket + ReplayPacket + anchored receipt"
+  },
+  "population_law": "new source packets extend shared registries; they do not replace or silently merge existing identities",
+  "next_seed": "KC144.INTERNAL-NAV.P05::AUTOMATIC-REENTRY-AND-COVERAGE-HEALING"
+}

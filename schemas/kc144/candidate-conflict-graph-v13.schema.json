@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/candidate-conflict-graph-v13.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "selection_id", "nodes", "pair_audits", "node_count",
+    "admitted_node_count", "edge_count", "truth_effect", "graph_root"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.CandidateConflictGraph.V13"},
+    "selection_id": {
+      "const": "KC144.CANDIDATE.COHORT.SELECTION.V13"
+    },
+    "nodes": {"type": "array"},
+    "pair_audits": {"type": "array"},
+    "node_count": {"type": "integer", "minimum": 0},
+    "admitted_node_count": {"type": "integer", "minimum": 0},
+    "edge_count": {"type": "integer", "minimum": 0},
+    "truth_effect": {"const": "NONE"},
+    "graph_root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

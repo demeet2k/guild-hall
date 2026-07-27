@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/governance-dispatch-release-v11.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "release", "parent_release", "verdict",
+    "operational_status", "batch_issued", "counted_responses",
+    "required_responses", "governance_activated",
+    "production_certificate_issued", "frozen_crystal_mutated",
+    "added_artifacts", "next_seed", "release_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.GovernanceDispatchRelease.V11"},
+    "release": {"const": "KC144.GOVERNANCE.DISPATCH.RUNTIME.V11"},
+    "parent_release": {"const": "KC144.GOVERNANCE.CEREMONY.RUNTIME.V10"},
+    "verdict": {"enum": ["PASS", "FAIL"]},
+    "operational_status": {"type": "string", "minLength": 1},
+    "batch_issued": {"type": "boolean"},
+    "counted_responses": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "required_responses": {"const": 5},
+    "governance_activated": {"const": false},
+    "production_certificate_issued": {"const": false},
+    "frozen_crystal_mutated": {"const": false},
+    "added_artifacts": {"type": "array", "minItems": 3},
+    "next_seed": {"type": "string", "minLength": 1},
+    "release_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

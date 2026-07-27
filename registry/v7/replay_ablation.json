@@ -1,0 +1,35 @@
+{
+  "schema": "KC144.ReplayAblation.V3",
+  "standing": "STRUCTURAL_COUNTERFACTUAL_NOT_INDEPENDENT_LIVE_REPLAY",
+  "scenarios": [
+    {
+      "scenario": "baseline",
+      "gates_9_of_9": 0,
+      "kernel_promotions": 0
+    },
+    {
+      "scenario": "one_documented_seat",
+      "gates_9_of_9": 1,
+      "kernel_promotions": 1
+    },
+    {
+      "scenario": "generator",
+      "gates_9_of_9": 58,
+      "kernel_promotions": 0
+    },
+    {
+      "scenario": "everything",
+      "gates_9_of_9": 144,
+      "kernel_promotions": 86
+    }
+  ],
+  "actual_live_promotions": 0,
+  "resolution_counts": {
+    "failing_gate_types": 1,
+    "failure_modes": 2,
+    "causal_replay_units": 87,
+    "affected_instances": 144
+  },
+  "promotion_ceiling_from_replay_alone": "86/144",
+  "remaining_domain_population": 58
+}

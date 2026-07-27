@@ -1,0 +1,359 @@
+KC144 M12 REPAIR COMPILER V6
+================================
+
+DOCUMENT::KC144.M12.REPAIR.FRAMEWORK.V6
+RELEASE::KC144.M12.REPAIR.COMPILER.V6
+PARENT::KC144.SSN12.GLOBAL_STATE.V5
+SEED_CONSUMED::KC144.V5::REPAIR-SEED::M12-OPEN-GATES
+MODE::FROZEN_CRYSTAL_PLUS_APPEND_ONLY_EVIDENCE_OVERLAY
+STATUS::COMPILER_PASS; PRODUCTION_HOLD
+PRODUCTION_PACKETS::0
+M12::4/9 PASS
+CERTIFICATE::NONE
+NEXT_SEED::KC144.V6::EVIDENCE-INTAKE::PARALLEL-WAVE-01
+
+
+1. THE COMPLETED SHAPE
+----------------------
+
+V5 made the full crystal observable as one generated object. V6 does not
+redesign that object and does not return to seat-by-seat construction. It
+compiles the five open M12 gates into a single evidence-intake machine.
+
+The architecture is now:
+
+    frozen crystal C5
+          +
+    append-only evidence ledger L
+          +
+    dependency compiler D
+          +
+    M12 recomputation M
+          =
+    successor decision S
+
+The crystal remains fixed. New evidence changes only an overlay:
+
+    C5' = C5
+    L(n+1) = L(n) append p
+
+No packet edits an existing seat, edge, receipt, witness, or decision. Each
+admitted packet receives a sequence number, the previous record digest, its own
+packet digest, and a new record digest. The resulting ledger head is therefore
+replayable and tamper-evident.
+
+
+2. THE FIVE OPEN GATES AS ONE REPAIR VECTOR
+-------------------------------------------
+
+Define the production evidence state:
+
+    E(L) = <b, d, r, x, i>
+
+where:
+
+    b = number of uniquely certified bridge subjects
+    d = number of source-bound domain stations
+    r = number of independently replayed station subjects
+    x = number of unresolved blocking defects
+    i = 1 only when IC10 has promoted the exact V5 candidate
+
+The frozen V5 state is:
+
+    E(L0) = <0, 86, 0, 1, 0>
+
+The lawful M12 evidence target is:
+
+    E* = <28, 144, 144, 0, 1>
+
+This means the open work is not 144 sequential construction steps. It is three
+parallel evidence waves followed by two authority-bound closures:
+
+    R01 BRIDGE CERTIFICATION  ─┐
+    R02 DOMAIN POPULATION     ─┼─> R04 DEFECT CLOSURE
+    R03 INDEPENDENT REPLAY    ─┘          |
+                                           v
+                                   R05 IC10 ADJUDICATION
+                                           |
+                                           v
+                                   R06 M12 RECOMPUTATION
+
+R01, R02, and R03 are co-runnable. Rotation, algebraic generation, and frozen
+address transforms identify the complete target sets immediately. They do not
+manufacture the evidence needed to populate those targets.
+
+
+3. EXACT TARGET UNIVERSES
+-------------------------
+
+BRIDGE_CERTIFICATION
+    Universe: the frozen BR001–BR028 registry.
+    Required: 28 unique subjects.
+    Existing baseline: 0.
+    Repair layer: TRANSPORT.
+    Replay class: B3 or B4.
+
+DOMAIN_POPULATION
+    Universe: the 58 GIDs whose station bodies are not SOURCE_DECLARED.
+    Required final population: 144.
+    Existing baseline: 86.
+    Repair layer: SOURCE_BINDING.
+    Replay class: B2, B3, or B4.
+
+INDEPENDENT_REPLAY
+    Universe: GID001–GID144.
+    Required: 144 unique station subjects.
+    Existing baseline: 0 independent replays.
+    Repair layer: REPLAY.
+    Replay class: EXACT.
+
+DEFECT_CLOSURE
+    Universe: DEF-M12-OPEN-GATES.
+    Required: explicit closure after R01–R03 complete.
+    Repair layer: DEFECT.
+    Replay class: EXACT.
+
+IC10_PROMOTION
+    Candidate: KC144.SSN12.GLOBAL_STATE.V5.
+    Required: one exact PROMOTED decision with I01–I10 all PASS.
+    Repair layer: PROMOTION.
+    Replay class: EXACT.
+
+
+4. THE COMMON EVIDENCE PACKET
+-----------------------------
+
+Every channel uses the same immune/reentry envelope:
+
+    p = <
+        packet_id,
+        kind,
+        subject_id,
+        namespace,
+        evidence_class,
+        evidence_root,
+        source_ref,
+        replay_class,
+        contradiction_class,
+        repair_layer,
+        trust_revision_witness,
+        reentry_permit_id,
+        payload,
+        payload_digest,
+        authority
+    >
+
+Admission is conjunctive:
+
+    ADMIT(p,L) =
+        known_kind
+        AND exact_subject
+        AND exact_namespace
+        AND independent_evidence_root
+        AND payload_digest_exact
+        AND contradiction_typed
+        AND matched_repair_layer
+        AND trust_revision_witnessed
+        AND bounded_reentry_permit
+        AND verified_authority
+        AND exact_authority_scope
+        AND packet_unique
+        AND evidence_root_unique
+        AND subject_unique
+        AND dependency_ready
+        AND kind_specific_payload_valid
+
+A failed conjunct yields HOLD and leaves the ledger byte-for-byte unchanged.
+
+The envelope makes the immune law native to every future mathematical
+successor. Contradiction typing, matched-layer repair, witnessed trust
+revision, independent replay, and bounded reentry are no longer downstream
+notes; they are admission fields.
+
+
+5. KIND-SPECIFIC PAYLOADS
+-------------------------
+
+A bridge-certification payload binds:
+
+    bridge_id
+    signed two-phase commit digest
+    transport evaluation digest
+    return witness root
+    PRODUCTION_TRANSPORT_COMMIT standing
+
+Bridge certification changes transport standing only. It never promotes either
+endpoint.
+
+A domain-population payload binds:
+
+    exact GID
+    source object identity
+    content digest
+    typed carrier
+
+Generated position, naming, route reachability, and rotational symmetry cannot
+substitute for a source-bound content object.
+
+An independent-replay payload binds:
+
+    exact GID
+    expected state root
+    independently reproduced state root
+    EXACT result
+
+Self-replay, shared ancestry, copied outputs, and deterministic regeneration by
+the original process do not count as independent replay.
+
+A defect-closure payload binds:
+
+    exact defect identity
+    CLOSED result
+    closure evidence root
+
+It cannot be admitted until all bridge, domain, and replay subjects are
+complete.
+
+An IC10 payload binds:
+
+    exact V5 candidate identity
+    exact frozen V5 state root
+    I01–I10 conjunctive PASS vector
+    PROMOTED decision
+    exact reserved successor KC144.V2::POPULATE_MATH144
+
+IC10 alone may record this decision. SSN12 only observes and recomputes it.
+
+
+6. TEST AND PRODUCTION ARE NON-INTERCHANGEABLE
+----------------------------------------------
+
+The compiler has separate TEST and PRODUCTION namespaces.
+
+TEST packets may drive every transition in the dependency graph and prove that
+the mechanism closes. Their production-effective projection remains:
+
+    <0, 86, 0, 1, 0>
+
+Therefore even a mechanically complete TEST ledger remains M12 HOLD and cannot
+emit KC144.V2::POPULATE_MATH144.
+
+PRODUCTION packets require EXTERNAL evidence class, non-test authority, exact
+scope, verified signature standing, unique evidence roots, and packet IDs that
+do not identify fixtures or synthetic data.
+
+This is the critical separation:
+
+    executable proof of the admission machinery
+        is not
+    empirical proof of the framework's claims
+
+
+7. M12 RECOMPUTATION
+--------------------
+
+V5 already passes four structural gates:
+
+    M12_NODE_ACTIVATION_144
+    M12_EDGE_MANIFEST_FROZEN
+    M12_TOTAL_RETURN
+    M12_PROJECTIVE_COVERAGE
+
+V6 recomputes the five evidence/authority gates from the admitted production
+ledger:
+
+    M12_BRIDGES_CERTIFIED_28      iff b = 28
+    M12_DOMAIN_POPULATION_144     iff d = 144
+    M12_INDEPENDENT_REPLAY_144    iff r = 144
+    M12_BLOCKING_DEFECTS_EMPTY    iff x = 0
+    M12_IC10_DECISION_PROMOTED    iff i = 1
+
+The certificate condition is:
+
+    CERTIFIED
+      iff
+        namespace = PRODUCTION
+        AND all four structural gates PASS
+        AND E(L) = E*
+
+Otherwise:
+
+    verdict = HOLD
+    certificate = NONE
+    successor = KC144.V6::EVIDENCE-INTAKE::PARALLEL-WAVE-01
+
+
+8. WHEN POPULATE_MATH144 BECOMES LAWFUL
+---------------------------------------
+
+KC144.V2::POPULATE_MATH144 is emitted only when the exact production M12
+certificate exists. The seed then means:
+
+    inventory the mathematical source bodies;
+    freeze each source occurrence and its byte/content identity;
+    distinguish claims, models, examples, conjectures, and empirical statements;
+    bind every object to an explicit carrier and KC144 address;
+    preserve contradictory, failed, and alternative branches;
+    compile only typed cross-domain bridges;
+    emit KC54 constructive/conjugate receipts;
+    run IC10 without aesthetic promotion;
+    independently cold-replay every successor;
+    attach a bounded reentry permit before memory or reseeding;
+    publish only what survives the complete evidentiary corridor.
+
+Until then, MATH144 remains a reserved successor, not a current production
+claim.
+
+
+9. EXECUTABLE SURFACES
+----------------------
+
+Compile the V6 framework:
+
+    PYTHONPATH=src python3 -m kc144_crystal repair --output registry/v6
+
+Inspect the packet contract:
+
+    PYTHONPATH=src python3 -m kc144_crystal m12-evidence-contract
+
+Compile the current dependency frontier:
+
+    PYTHONPATH=src python3 -m kc144_crystal m12-repair-plan \
+      --ledger registry/v6/m12_repair_ledger_v6.json
+
+Evaluate and append one packet:
+
+    PYTHONPATH=src python3 -m kc144_crystal m12-evidence-admit \
+      packet.json \
+      registry/v6/m12_repair_ledger_v6.json \
+      --output next-ledger.json
+
+The admission command writes a successor ledger only after every check passes.
+The prior ledger remains immutable.
+
+
+10. CURRENT SEALED STATE
+------------------------
+
+The V6 compiler itself passes. The production evidence ledger intentionally
+starts empty:
+
+    bridge certifications: 0/28
+    source-domain population: 86/144
+    independent replays: 0/144
+    blocking defects: 1
+    IC10 promoted decisions: 0
+
+Therefore:
+
+    FRAMEWORK::COMPLETE
+    REPAIR_COMPILER::EXECUTABLE
+    PRODUCTION_EVIDENCE::OPEN
+    M12::HOLD
+    CERTIFICATE::NONE
+    FROZEN_CRYSTAL_MUTATED::FALSE
+    NEXT::KC144.V6::EVIDENCE-INTAKE::PARALLEL-WAVE-01
+
+The full crystal can now be populated from its generated target sets and typed
+transformations. What remains is genuine evidence intake, not architectural
+construction.

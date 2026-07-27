@@ -1,0 +1,30 @@
+{
+  "schema": "KC144.M12RepairRelease.V6",
+  "release": "KC144.M12.REPAIR.COMPILER.V6",
+  "parent_release": "KC144.SSN12.GLOBAL_STATE.V5",
+  "verdict": "PASS",
+  "operational_status": "HOLD",
+  "production_packets_admitted": 0,
+  "production_certificate_issued": false,
+  "open_gates": [
+    "M12_BRIDGES_CERTIFIED_28",
+    "M12_DOMAIN_POPULATION_144",
+    "M12_INDEPENDENT_REPLAY_144",
+    "M12_IC10_DECISION_PROMOTED",
+    "M12_BLOCKING_DEFECTS_EMPTY"
+  ],
+  "next_frontier": [
+    "R01_CERTIFY_BRIDGES",
+    "R02_POPULATE_DOMAINS",
+    "R03_REPLAY_STATIONS"
+  ],
+  "next_seed": "KC144.V6::EVIDENCE-INTAKE::PARALLEL-WAVE-01",
+  "frozen_crystal_mutated": false,
+  "added_artifacts": [
+    "m12_evidence_contract_v6.json",
+    "m12_repair_ledger_v6.json",
+    "m12_repair_plan_v6.json",
+    "m12_repair_state_v6.json"
+  ],
+  "release_digest": "sha256:714eca928978fde1a74d33d8cce888e2e4aa25eb28e617a1fa19a00e366e6a23"
+}

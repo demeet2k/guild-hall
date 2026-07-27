@@ -1,0 +1,5 @@
+[console_scripts]
+athena-git-brain = athena_git_brain.cli:main
+athena-immune = athena_immune.cli:main
+kc144-crystal = kc144_crystal.cli:main
+kc144-internal-nav = memory_crystal.internal_nav.cli:main

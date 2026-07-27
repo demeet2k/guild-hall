@@ -1,0 +1,24 @@
+{
+  "schema": "KC144.CandidateSelectionRelease.V13",
+  "release": "KC144.CANDIDATE.SELECTION.RUNTIME.V13",
+  "parent_release": "KC144.PARTICIPANT.HANDOFF.RUNTIME.V12",
+  "verdict": "PASS",
+  "operational_status": "FIVE_EXTERNAL_CANDIDATE_NOMINATIONS_REQUIRED",
+  "nomination_count": 0,
+  "admitted_candidate_count": 0,
+  "solution_status": "NO_COHORT",
+  "selected_cohort": null,
+  "selected_pairwise_audits": 0,
+  "governance_activated": false,
+  "production_certificate_issued": false,
+  "frozen_crystal_mutated": false,
+  "added_artifacts": [
+    "candidate_cohort_solver_v13.json",
+    "candidate_conflict_graph_v13.json",
+    "candidate_nomination_registry_v13.json",
+    "candidate_selection_contract_v13.json",
+    "candidate_selection_runtime_state_v13.json"
+  ],
+  "next_seed": "KC144.V13::INGEST-REAL-CANDIDATE-NOMINATIONS-AND-SOLVE-INDEPENDENCE-QUALIFIED-COHORT",
+  "release_digest": "sha256:ac11f0816411ebd343dba5b1499c011ab6f20df584074c15dca4276fa983e745"
+}

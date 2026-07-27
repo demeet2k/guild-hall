@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/external-handoff-release-v9.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "release", "parent_release", "verdict", "operational_status",
+    "governance_members", "governance_threshold", "handoff_requests",
+    "handoff_packets", "production_certificate_issued",
+    "frozen_crystal_mutated", "added_artifacts", "next_seed", "release_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ExternalHandoffRelease.V9"},
+    "release": {"const": "KC144.EXTERNAL.HANDOFF.RUNTIME.V9"},
+    "parent_release": {"const": "KC144.PARALLEL.CAMPAIGN.RUNTIME.V8"},
+    "verdict": {"enum": ["PASS", "FAIL"]},
+    "operational_status": {"type": "string", "minLength": 1},
+    "governance_members": {"type": "integer", "minimum": 0, "maximum": 5},
+    "governance_threshold": {"const": 3},
+    "handoff_requests": {"const": 16},
+    "handoff_packets": {"const": 232},
+    "production_certificate_issued": {"type": "boolean"},
+    "frozen_crystal_mutated": {"const": false},
+    "added_artifacts": {"type": "array", "minItems": 7},
+    "next_seed": {"type": "string", "minLength": 1},
+    "release_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

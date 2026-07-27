@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/nomination-intake-release-v14.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "release", "parent_release", "verdict",
+    "operational_status", "prepared_role_calls", "published_role_calls",
+    "submission_count", "admitted_submission_count",
+    "held_submission_count", "solution_status", "assigned_packet_count",
+    "addressed_packet_count", "delivered_packet_count",
+    "governance_activated", "production_certificate_issued",
+    "frozen_crystal_mutated", "added_artifacts", "next_seed",
+    "release_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.NominationIntakeRelease.V14"},
+    "release": {
+      "const": "KC144.CANDIDATE.NOMINATION.INTAKE.RUNTIME.V14"
+    },
+    "parent_release": {
+      "const": "KC144.CANDIDATE.SELECTION.RUNTIME.V13"
+    },
+    "verdict": {"enum": ["PASS", "FAIL"]},
+    "operational_status": {"type": "string", "minLength": 1},
+    "prepared_role_calls": {"const": 5},
+    "published_role_calls": {"const": 0},
+    "submission_count": {"type": "integer", "minimum": 0},
+    "admitted_submission_count": {"type": "integer", "minimum": 0},
+    "held_submission_count": {"type": "integer", "minimum": 0},
+    "solution_status": {"type": "string", "minLength": 1},
+    "assigned_packet_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "addressed_packet_count": {"const": 0},
+    "delivered_packet_count": {"const": 0},
+    "governance_activated": {"const": false},
+    "production_certificate_issued": {"const": false},
+    "frozen_crystal_mutated": {"const": false},
+    "added_artifacts": {"type": "array", "minItems": 10},
+    "next_seed": {"type": "string", "minLength": 1},
+    "release_digest": {"$ref": "#/$defs/root"}
+  },
+  "$defs": {
+    "root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

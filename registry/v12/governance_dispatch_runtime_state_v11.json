@@ -1,0 +1,33 @@
+{
+  "schema": "KC144.GovernanceDispatchRuntimeState.V11",
+  "release": "KC144.GOVERNANCE.DISPATCH.RUNTIME.V11",
+  "parent_release": "KC144.GOVERNANCE.CEREMONY.RUNTIME.V10",
+  "dispatch_id": "KC144.GOVERNANCE.DISPATCH.V11",
+  "dispatch_contract_digest": "sha256:8b7982cc2b38a8f23740c98bfbbeab9020650478dbbdf29bea70b03649af8bfb",
+  "plan_digest": "sha256:50756c4d90f174dfbf723f4f4cea2ec4404ea4bdb4bbe685373141b50b3c4fb2",
+  "batch_id": "V11-BATCH::c7e3ae7e8cfd126a75b41b4a",
+  "batch_root": "sha256:b9322c5950d562f7a3f437ed8c939d98506db4edf34446e8332318513bca46b5",
+  "batch_issued": true,
+  "counted_responses": 0,
+  "required_responses": 5,
+  "internal_readiness": {
+    "verdict": "PASS",
+    "checks": {
+      "v10_runtime_pass": true,
+      "dispatch_identity_exact": true,
+      "five_role_parallelism_exact": true,
+      "batch_integrity_or_not_yet_issued": true,
+      "batch_matches_active_v10_roots": true,
+      "no_synthetic_responses": true,
+      "no_automatic_activation": true,
+      "truth_effect_none": true
+    }
+  },
+  "barrier": "FIVE_INDEPENDENT_PARTICIPANT_RESPONSES_REQUIRED",
+  "governance_activated": false,
+  "production_certificate_issued": false,
+  "production_truth_effect": "NONE",
+  "frozen_crystal_mutated": false,
+  "next_seed": "KC144.V11::AWAIT-FIVE-SIGNED-ROLE-BOUND-RESPONSES",
+  "runtime_state_digest": "sha256:1add7ae2c4616adf29f9556b5d05bcd1c31a2c740b5397670143c6fd439985e9"
+}

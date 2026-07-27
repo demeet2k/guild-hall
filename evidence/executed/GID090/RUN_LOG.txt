@@ -1,0 +1,172 @@
+==============================================================================
+GID090 / IC10-I10 :: FIRST EXECUTION
+==============================================================================
+
+CANDIDATE :: KC144.V2::GID020::X-01-FL::RETURN_MECHANICS::P07
+------------------------------------------------------------------------------
+  [PASS] I01 GID081 R07C09  identity / provenance
+  [UNKN] I02 GID082 R07C10  syntax / normalization
+           - raw_identity_preserved: UNKNOWN :: raw_cid=None
+           - normalization_profile_declared: UNKNOWN :: canon_profile=None
+  [PASS] I03 GID083 R07C11  type / unit / carrier
+  [PASS] I04 GID084 R07C12  scope / regime / corridor
+  [PASS] I05 GID085 R08C01  invariant preservation
+  [PASS] I06 GID086 R08C02  evidence sufficiency
+           - empirical_witness_present: UNKNOWN :: empirical/retrieved witnesses=0 (structural-only evidence cannot promote an empirical claim)
+  [FAIL] I07 GID087 R08C03  dependency closure
+           - all_dependencies_closed: FAIL :: open dependencies=['GID021 multivalued return', 'GID022 recursive reseed']
+  [----] I08 GID088 R08C04  bridge / defect / return
+  [----] I09 GID089 R08C05  replay completeness
+------------------------------------------------------------------------------
+  PROMOTABLE CONJUNCTION
+    [FAIL] all_nine_gates_PASS: 5/9 gates PASS (['I02', 'I07', 'I08', 'I09'] not PASS)
+    [FAIL] UnknownHardClauses_empty: unknown hard clauses=['I02.raw_identity_preserved', 'I02.normalization_profile_declared']
+    [PASS] OutOfScopeRequiredClauses_empty: out-of-scope required clauses=[]
+    [PASS] HardDebt_empty: unrepaired S3/S4 defects=[]
+    [FAIL] verifier_independence: verifier_id == constructor_id == 'assistant-instance': the loop was generated and judged by one party
+    [FAIL] stewardship_allows: sigma_S=RESEARCH_ONLY
+    [PASS] ReturnWitness_nonempty: return witnesses=1
+------------------------------------------------------------------------------
+  sigma(C) = <SUPPORTED, PASS, RESEARCH_ONLY, TESTED>
+  VERDICT  = REJECT
+  QUARANTINE :: 4 blocking clause(s); candidate preserved=True
+    repair -> GID074/F31 certificate + GID082 renormalization
+    repair -> GID087 dependency snapshot; REVOKE + retest
+    repair -> blocked by an earlier gate
+  QSHRINK  = REFUSED :: QSHRINK_FORBIDDEN: verdict=REJECT, no promotion receipt exists
+
+CANDIDATE :: KC144.V2::GID044::F01::DLS_ADDRESS_CARRIER::P07
+------------------------------------------------------------------------------
+  [PASS] I01 GID081 R07C09  identity / provenance
+  [PASS] I02 GID082 R07C10  syntax / normalization
+  [PASS] I03 GID083 R07C11  type / unit / carrier
+  [PASS] I04 GID084 R07C12  scope / regime / corridor
+  [PASS] I05 GID085 R08C01  invariant preservation
+  [PASS] I06 GID086 R08C02  evidence sufficiency
+  [PASS] I07 GID087 R08C03  dependency closure
+  [PASS] I08 GID088 R08C04  bridge / defect / return
+  [PASS] I09 GID089 R08C05  replay completeness
+------------------------------------------------------------------------------
+  PROMOTABLE CONJUNCTION
+    [PASS] all_nine_gates_PASS: 9/9 gates PASS ([] not PASS)
+    [PASS] UnknownHardClauses_empty: unknown hard clauses=[]
+    [PASS] OutOfScopeRequiredClauses_empty: out-of-scope required clauses=[]
+    [PASS] HardDebt_empty: unrepaired S3/S4 defects=[]
+    [PASS] verifier_independence: constructor=assistant-instance / verifier=external-execution-this-session on distinct channels
+    [PASS] stewardship_allows: sigma_S=ALLOW_LIMITED
+    [PASS] ReturnWitness_nonempty: return witnesses=1
+------------------------------------------------------------------------------
+  sigma(C) = <EXACT, PASS, ALLOW_LIMITED, PROMOTABLE>
+  VERDICT  = PROMOTE_WITH_CARRY
+  Pi_C digest = e58676c442c2e06dd1ce7bde28e22659...
+  claim ceiling = ['NOT a claim about DLS structures of order != 4^m', 'NOT 192 non-isomorphic structures - 192 is a presentation count', 'symbol alone is NOT a unique cell address']
+  QSHRINK  = AUTHORIZED
+
+CANDIDATE :: KC144.V2::GID043::B21::RETURN_STAR::P10
+------------------------------------------------------------------------------
+  [PASS] I01 GID081 R07C09  identity / provenance
+  [UNKN] I02 GID082 R07C10  syntax / normalization
+           - raw_identity_preserved: UNKNOWN :: raw_cid=None
+           - normalization_profile_declared: UNKNOWN :: canon_profile=None
+  [PASS] I03 GID083 R07C11  type / unit / carrier
+  [PASS] I04 GID084 R07C12  scope / regime / corridor
+  [PASS] I05 GID085 R08C01  invariant preservation
+  [PASS] I06 GID086 R08C02  evidence sufficiency
+           - empirical_witness_present: UNKNOWN :: empirical/retrieved witnesses=0 (structural-only evidence cannot promote an empirical claim)
+  [FAIL] I07 GID087 R08C03  dependency closure
+           - all_dependencies_closed: FAIL :: open dependencies=['runtime edge receipts', 'GID141/M09 path signature']
+  [----] I08 GID088 R08C04  bridge / defect / return
+  [----] I09 GID089 R08C05  replay completeness
+------------------------------------------------------------------------------
+  PROMOTABLE CONJUNCTION
+    [FAIL] all_nine_gates_PASS: 5/9 gates PASS (['I02', 'I07', 'I08', 'I09'] not PASS)
+    [FAIL] UnknownHardClauses_empty: unknown hard clauses=['I02.raw_identity_preserved', 'I02.normalization_profile_declared']
+    [PASS] OutOfScopeRequiredClauses_empty: out-of-scope required clauses=[]
+    [FAIL] HardDebt_empty: unrepaired S3/S4 defects=['D.GID043.RUNTIME']
+    [FAIL] verifier_independence: verifier_id == constructor_id == 'assistant-instance': the loop was generated and judged by one party
+    [FAIL] stewardship_allows: sigma_S=RESEARCH_ONLY
+    [PASS] ReturnWitness_nonempty: return witnesses=1
+------------------------------------------------------------------------------
+  sigma(C) = <PARTIAL, UNKNOWN, RESEARCH_ONLY, CANDIDATE>
+  VERDICT  = REJECT
+  QUARANTINE :: 5 blocking clause(s); candidate preserved=True
+    repair -> GID074/F31 certificate + GID082 renormalization
+    repair -> GID087 dependency snapshot; REVOKE + retest
+    repair -> blocked by an earlier gate
+  QSHRINK  = REFUSED :: QSHRINK_FORBIDDEN: verdict=REJECT, no promotion receipt exists
+
+CANDIDATE :: KC144.V1::GID088::IC10-I08::BRIDGE_GLUE_RETURN::P11
+------------------------------------------------------------------------------
+  [PASS] I01 GID081 R07C09  identity / provenance
+  [UNKN] I02 GID082 R07C10  syntax / normalization
+           - raw_identity_preserved: UNKNOWN :: raw_cid=None
+           - normalization_profile_declared: UNKNOWN :: canon_profile=None
+  [PASS] I03 GID083 R07C11  type / unit / carrier
+  [PASS] I04 GID084 R07C12  scope / regime / corridor
+  [PASS] I05 GID085 R08C01  invariant preservation
+  [PASS] I06 GID086 R08C02  evidence sufficiency
+  [FAIL] I07 GID087 R08C03  dependency closure
+           - all_dependencies_closed: FAIL :: open dependencies=['C_E empirical realization', 'I09-I10']
+  [----] I08 GID088 R08C04  bridge / defect / return
+  [----] I09 GID089 R08C05  replay completeness
+------------------------------------------------------------------------------
+  PROMOTABLE CONJUNCTION
+    [FAIL] all_nine_gates_PASS: 5/9 gates PASS (['I02', 'I07', 'I08', 'I09'] not PASS)
+    [FAIL] UnknownHardClauses_empty: unknown hard clauses=['I02.raw_identity_preserved', 'I02.normalization_profile_declared']
+    [PASS] OutOfScopeRequiredClauses_empty: out-of-scope required clauses=[]
+    [FAIL] HardDebt_empty: unrepaired S3/S4 defects=['C_E.OPEN_BRIDGE']
+    [FAIL] verifier_independence: verifier_id == constructor_id == 'assistant-instance': the loop was generated and judged by one party
+    [FAIL] stewardship_allows: sigma_S=RESEARCH_ONLY
+    [PASS] ReturnWitness_nonempty: return witnesses=1
+------------------------------------------------------------------------------
+  sigma(C) = <PARTIAL, PASS, RESEARCH_ONLY, TESTED>
+  VERDICT  = REJECT
+  QUARANTINE :: 5 blocking clause(s); candidate preserved=True
+    repair -> GID074/F31 certificate + GID082 renormalization
+    repair -> GID087 dependency snapshot; REVOKE + retest
+    repair -> blocked by an earlier gate
+  QSHRINK  = REFUSED :: QSHRINK_FORBIDDEN: verdict=REJECT, no promotion receipt exists
+
+CANDIDATE :: KC144.V1::GID024::B02::ADMIT_HINGE::P07
+------------------------------------------------------------------------------
+  [PASS] I01 GID081 R07C09  identity / provenance
+  [UNKN] I02 GID082 R07C10  syntax / normalization
+           - raw_identity_preserved: UNKNOWN :: raw_cid=None
+           - normalization_profile_declared: UNKNOWN :: canon_profile=None
+  [PASS] I03 GID083 R07C11  type / unit / carrier
+  [PASS] I04 GID084 R07C12  scope / regime / corridor
+  [PASS] I05 GID085 R08C01  invariant preservation
+  [PASS] I06 GID086 R08C02  evidence sufficiency
+  [PASS] I07 GID087 R08C03  dependency closure
+  [PASS] I08 GID088 R08C04  bridge / defect / return
+  [FAIL] I09 GID089 R08C05  replay completeness
+           - boot_class_independent: FAIL :: boot_class=B0 (only B3+ is an independent cold boot)
+           - delta_hard_measured: UNKNOWN :: unmeasured hard components=['authority'] (UNKNOWN != 0)
+------------------------------------------------------------------------------
+  PROMOTABLE CONJUNCTION
+    [FAIL] all_nine_gates_PASS: 7/9 gates PASS (['I02', 'I09'] not PASS)
+    [FAIL] UnknownHardClauses_empty: unknown hard clauses=['I02.raw_identity_preserved', 'I02.normalization_profile_declared', 'I09.delta_hard_measured']
+    [PASS] OutOfScopeRequiredClauses_empty: out-of-scope required clauses=[]
+    [PASS] HardDebt_empty: unrepaired S3/S4 defects=[]
+    [FAIL] verifier_independence: verifier_id == constructor_id == 'assistant-instance': the loop was generated and judged by one party
+    [PASS] stewardship_allows: sigma_S=ALLOW_LIMITED
+    [PASS] ReturnWitness_nonempty: return witnesses=1
+------------------------------------------------------------------------------
+  sigma(C) = <SUPPORTED, PASS, ALLOW_LIMITED, TESTED>
+  VERDICT  = REJECT
+  QUARANTINE :: 3 blocking clause(s); candidate preserved=True
+    repair -> GID074/F31 certificate + GID082 renormalization
+    repair -> GID089 first-divergence checkpoint; GID140/M08 healing ledger
+  QSHRINK  = REFUSED :: QSHRINK_FORBIDDEN: verdict=REJECT, no promotion receipt exists
+
+==============================================================================
+SUMMARY
+==============================================================================
+  REJECT               KC144.V2::GID020::X-01-FL::RETURN_MECHANICS::P07
+  PROMOTE_WITH_CARRY   KC144.V2::GID044::F01::DLS_ADDRESS_CARRIER::P07
+  REJECT               KC144.V2::GID043::B21::RETURN_STAR::P10
+  REJECT               KC144.V1::GID088::IC10-I08::BRIDGE_GLUE_RETURN::P11
+  REJECT               KC144.V1::GID024::B02::ADMIT_HINGE::P07
+
+  verdicts: {'REJECT': 4, 'PROMOTE_WITH_CARRY': 1}
+  promotions issued: 1

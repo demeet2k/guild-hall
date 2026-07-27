@@ -1,0 +1,9 @@
+{
+  "schema": "KC144.CandidateNominationRegistry.V13",
+  "selection_id": "KC144.CANDIDATE.COHORT.SELECTION.V13",
+  "nominations": [],
+  "nomination_count": 0,
+  "authority_effect": "NONE",
+  "truth_effect": "NONE",
+  "registry_root": "sha256:075c773f75026fe23d213fe041afe5f8e4bd244a29a08dc71ff3f55b5baba2a3"
+}

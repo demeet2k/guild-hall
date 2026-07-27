@@ -1,0 +1,36 @@
+{
+  "schema": "KC144.GlobalState.V5",
+  "release": "KC144.SSN12.GLOBAL_STATE.V5",
+  "base_release": "KC144.MYCELIUM.FRAMEWORK.V4",
+  "crystal_digest": "sha256:920b03d50826c1f90ecfb0039cb2bba551f9733597a22bca8755bb8cbf9b39fb",
+  "edge_manifest_digest": "sha256:175e47f51b66b49e24eca872334ad60ee842e928e733307fec654b1ace4aeaa8",
+  "session_digest": "sha256:d921b5793e29d3a927d646d4ca2a739b41be21828804d04bdb9426bb31ad3dc0",
+  "receipt_root": "sha256:17815a3b48d1c7cec64397f758d9db1cbb86d8e2d400f7a2da1ce6bf8145690d",
+  "reentry_seed_digest": "sha256:225a0aa769186bdbd6068dd84f6133e50992dee29d93c1365eb25166159e8832",
+  "cold_reconstruction": "PASS",
+  "replay_level": "N5_DETERMINISTIC_SELF_REPLAY",
+  "independent_replay": false,
+  "ssn12": {
+    "verdict": "HOLD",
+    "gates": {
+      "M12_NODE_ACTIVATION_144": "PASS",
+      "M12_EDGE_MANIFEST_FROZEN": "PASS",
+      "M12_TOTAL_RETURN": "PASS",
+      "M12_PROJECTIVE_COVERAGE": "PASS",
+      "M12_BRIDGES_CERTIFIED_28": "FAIL",
+      "M12_DOMAIN_POPULATION_144": "FAIL",
+      "M12_INDEPENDENT_REPLAY_144": "FAIL",
+      "M12_IC10_DECISION_PROMOTED": "FAIL",
+      "M12_BLOCKING_DEFECTS_EMPTY": "FAIL"
+    },
+    "passed": 4,
+    "total": 9,
+    "certificate": null,
+    "law": "coverage telemetry never substitutes for domain population, independent replay, certified transport, IC10 promotion, or debt closure"
+  },
+  "production_bridge_commits": 0,
+  "actual_live_promotions": 0,
+  "truth_effect": "NONE",
+  "next_seed": "KC144.V5::REPAIR-SEED::M12-OPEN-GATES",
+  "global_state_digest": "sha256:f45feeb8c66a892b6af7c547824c3c02a66d973bb0ee5cf264726bb100128699"
+}

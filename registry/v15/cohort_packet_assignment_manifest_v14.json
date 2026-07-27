@@ -1,0 +1,23 @@
+{
+  "schema": "KC144.CohortPacketAssignmentManifest.V14",
+  "intake_id": "KC144.CANDIDATE.NOMINATION.INTAKE.V14",
+  "parent_batch_id": "V11-BATCH::c7e3ae7e8cfd126a75b41b4a",
+  "parent_batch_root": "sha256:b9322c5950d562f7a3f437ed8c939d98506db4edf34446e8332318513bca46b5",
+  "call_manifest_root": "sha256:fc82581375a195d09a58b7769eb33bba719c7f7e4b7ddd7b5276dcf1ce1d6219",
+  "solver_digest": "sha256:47e799fa356638a8e5f5b2a91619e0046af036d415ac030349a781870fe16243",
+  "solution_status": "NO_COHORT",
+  "assignment_state": "NO_COHORT_NO_BINDING",
+  "bindings": [],
+  "assigned_count": 0,
+  "required_pairwise_audits": 10,
+  "selected_pairwise_audits": 0,
+  "selected_pair_audit_digests": [],
+  "addressed_packets": 0,
+  "delivered_packets": 0,
+  "barrier": "FIVE_EXTERNAL_CANDIDATE_NOMINATIONS_REQUIRED",
+  "selection_authority": "V13_UNIQUE_SOLUTION_ONLY",
+  "governance_authority_granted": false,
+  "production_certificate_issued": false,
+  "truth_effect": "NONE",
+  "assignment_root": "sha256:7a28621096abd498af965fd904ead26d062ded38b03db6898be6719331ac4023"
+}

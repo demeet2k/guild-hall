@@ -1,0 +1,417 @@
+{
+  "schema_version": "KC144-EPOCHS-1.0",
+  "active_epoch": "EPOCH-B-EIGHT-BLOCK",
+  "epochs": {
+    "EPOCH-B-EIGHT-BLOCK": {
+      "partition": [
+        6,
+        16,
+        21,
+        37,
+        10,
+        15,
+        27,
+        12
+      ],
+      "description": "Active eight-block operational atlas"
+    },
+    "EPOCH-A-EXPLICIT-DUPLEX": {
+      "partition": [
+        6,
+        16,
+        21,
+        37,
+        27,
+        27,
+        10
+      ],
+      "description": "Historical explicit constructive/conjugate duplex atlas"
+    }
+  },
+  "collisions": [
+    {
+      "gid": 81,
+      "active": "I01",
+      "legacy": "K+000",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 82,
+      "active": "I02",
+      "legacy": "K+001",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 83,
+      "active": "I03",
+      "legacy": "K+002",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 84,
+      "active": "I04",
+      "legacy": "K+010",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 85,
+      "active": "I05",
+      "legacy": "K+011",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 86,
+      "active": "I06",
+      "legacy": "K+012",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 87,
+      "active": "I07",
+      "legacy": "K+020",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 88,
+      "active": "I08",
+      "legacy": "K+021",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 89,
+      "active": "I09",
+      "legacy": "K+022",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 90,
+      "active": "I10",
+      "legacy": "K+100",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 91,
+      "active": "K01",
+      "legacy": "K+101",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 92,
+      "active": "K02",
+      "legacy": "K+102",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 93,
+      "active": "K03",
+      "legacy": "K+110",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 94,
+      "active": "K04",
+      "legacy": "K+111",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 95,
+      "active": "K05",
+      "legacy": "K+112",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 96,
+      "active": "K06",
+      "legacy": "K+120",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 97,
+      "active": "K07",
+      "legacy": "K+121",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 98,
+      "active": "K08",
+      "legacy": "K+122",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 99,
+      "active": "K09",
+      "legacy": "K+200",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 100,
+      "active": "K10",
+      "legacy": "K+201",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 101,
+      "active": "K11",
+      "legacy": "K+202",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 102,
+      "active": "K12",
+      "legacy": "K+210",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 103,
+      "active": "K13",
+      "legacy": "K+211",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 104,
+      "active": "K14",
+      "legacy": "K+212",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 105,
+      "active": "K15",
+      "legacy": "K+220",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 106,
+      "active": "P00",
+      "legacy": "K+221",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 107,
+      "active": "P01",
+      "legacy": "K+222",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 108,
+      "active": "P02",
+      "legacy": "K*000",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 109,
+      "active": "P03",
+      "legacy": "K*001",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 110,
+      "active": "P04",
+      "legacy": "K*002",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 111,
+      "active": "P05",
+      "legacy": "K*010",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 112,
+      "active": "P06",
+      "legacy": "K*011",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 113,
+      "active": "P07",
+      "legacy": "K*012",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 114,
+      "active": "P08",
+      "legacy": "K*020",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 115,
+      "active": "P09",
+      "legacy": "K*021",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 116,
+      "active": "P10",
+      "legacy": "K*022",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 117,
+      "active": "P11",
+      "legacy": "K*100",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 118,
+      "active": "P12",
+      "legacy": "K*101",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 119,
+      "active": "P13",
+      "legacy": "K*102",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 120,
+      "active": "P14",
+      "legacy": "K*110",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 121,
+      "active": "P15",
+      "legacy": "K*111",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 122,
+      "active": "P16",
+      "legacy": "K*112",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 123,
+      "active": "P17",
+      "legacy": "K*120",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 124,
+      "active": "P18",
+      "legacy": "K*121",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 125,
+      "active": "P19",
+      "legacy": "K*122",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 126,
+      "active": "P20",
+      "legacy": "K*200",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 127,
+      "active": "P21",
+      "legacy": "K*201",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 128,
+      "active": "P22",
+      "legacy": "K*202",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 129,
+      "active": "P23",
+      "legacy": "K*210",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 130,
+      "active": "P24",
+      "legacy": "K*211",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 131,
+      "active": "P25",
+      "legacy": "K*212",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 132,
+      "active": "P26",
+      "legacy": "K*220",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 133,
+      "active": "M01",
+      "legacy": "K*221",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 134,
+      "active": "M02",
+      "legacy": "K*222",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 135,
+      "active": "M03",
+      "legacy": "I01",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 136,
+      "active": "M04",
+      "legacy": "I02",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 137,
+      "active": "M05",
+      "legacy": "I03",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 138,
+      "active": "M06",
+      "legacy": "I04",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 139,
+      "active": "M07",
+      "legacy": "I05",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 140,
+      "active": "M08",
+      "legacy": "I06",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 141,
+      "active": "M09",
+      "legacy": "I07",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 142,
+      "active": "M10",
+      "legacy": "I08",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 143,
+      "active": "M11",
+      "legacy": "I09",
+      "resolution": "EPOCH_REQUIRED"
+    },
+    {
+      "gid": 144,
+      "active": "M12",
+      "legacy": "I10",
+      "resolution": "EPOCH_REQUIRED"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "KC144.QueryContract.V4",
+  "notation": "Q=<query_id,goal,terms,domains,operators,invariants,boundaries,evidence_floor,start_coordinates,route_budget,return_mode>",
+  "evidence_floors": [
+    "STRUCTURAL",
+    "SOURCE_DECLARED",
+    "INDEPENDENT_REPLAY",
+    "PROMOTABLE"
+  ],
+  "return_modes": [
+    "NONE",
+    "RETRACE",
+    "TYPED_RETRACE",
+    "RETURN_ARM"
+  ],
+  "laws": [
+    "query ranking does not mutate truth or evidence",
+    "evidence floors filter; they never promote",
+    "semantic resonance and graph distance remain separate rank dimensions",
+    "a declared bridge exposes a certification obligation",
+    "a structural retrace is not automatically a semantic inverse"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema": "KC144.GovernanceCeremonyPlan.V10",
+  "ceremony_id": "KC144.GOVERNANCE.CEREMONY.V10",
+  "ceremony_contract_digest": "sha256:a3e92b0e52880914667c09327b23c39de0ee9d1618b2e349e5f7304224f4ecd2",
+  "governance_contract_digest": "sha256:f5acd14921b5b11afb128a813e05cefa0799029bf5c7aab7452f1edd914faa85",
+  "authority_registry_digest": "sha256:491b03e0f2e188bfbc4156dbe6693846fa58e11a1579738bba54d9eeab384fc8",
+  "handoff_bundle_root": "sha256:5a26b8be43df7df045c0a9beb4455b66b1e878468b74c1d1877ed5d789d6aea7",
+  "seats": [
+    {
+      "seat": 1,
+      "role": "CUSTODIAN",
+      "status": "AWAITING_EXTERNAL_PARTICIPANT",
+      "challenge_command": "governance-challenge --role CUSTODIAN --authority-registry-digest sha256:491b03e0f2e188bfbc4156dbe6693846fa58e11a1579738bba54d9eeab384fc8 --handoff-bundle-root sha256:5a26b8be43df7df045c0a9beb4455b66b1e878468b74c1d1877ed5d789d6aea7 --issued-at <RFC3339> --expires-at <RFC3339>",
+      "required_response": "SIGNED_GOVERNANCE_ENROLLMENT_RESPONSE_V10"
+    },
+    {
+      "seat": 2,
+      "role": "INDEPENDENT_REVIEWER",
+      "status": "AWAITING_EXTERNAL_PARTICIPANT",
+      "challenge_command": "governance-challenge --role INDEPENDENT_REVIEWER --authority-registry-digest sha256:491b03e0f2e188bfbc4156dbe6693846fa58e11a1579738bba54d9eeab384fc8 --handoff-bundle-root sha256:5a26b8be43df7df045c0a9beb4455b66b1e878468b74c1d1877ed5d789d6aea7 --issued-at <RFC3339> --expires-at <RFC3339>",
+      "required_response": "SIGNED_GOVERNANCE_ENROLLMENT_RESPONSE_V10"
+    },
+    {
+      "seat": 3,
+      "role": "REPLAY_WITNESS",
+      "status": "AWAITING_EXTERNAL_PARTICIPANT",
+      "challenge_command": "governance-challenge --role REPLAY_WITNESS --authority-registry-digest sha256:491b03e0f2e188bfbc4156dbe6693846fa58e11a1579738bba54d9eeab384fc8 --handoff-bundle-root sha256:5a26b8be43df7df045c0a9beb4455b66b1e878468b74c1d1877ed5d789d6aea7 --issued-at <RFC3339> --expires-at <RFC3339>",
+      "required_response": "SIGNED_GOVERNANCE_ENROLLMENT_RESPONSE_V10"
+    },
+    {
+      "seat": 4,
+      "role": "SOURCE_AUDITOR",
+      "status": "AWAITING_EXTERNAL_PARTICIPANT",
+      "challenge_command": "governance-challenge --role SOURCE_AUDITOR --authority-registry-digest sha256:491b03e0f2e188bfbc4156dbe6693846fa58e11a1579738bba54d9eeab384fc8 --handoff-bundle-root sha256:5a26b8be43df7df045c0a9beb4455b66b1e878468b74c1d1877ed5d789d6aea7 --issued-at <RFC3339> --expires-at <RFC3339>",
+      "required_response": "SIGNED_GOVERNANCE_ENROLLMENT_RESPONSE_V10"
+    },
+    {
+      "seat": 5,
+      "role": "RETURN_AUDITOR",
+      "status": "AWAITING_EXTERNAL_PARTICIPANT",
+      "challenge_command": "governance-challenge --role RETURN_AUDITOR --authority-registry-digest sha256:491b03e0f2e188bfbc4156dbe6693846fa58e11a1579738bba54d9eeab384fc8 --handoff-bundle-root sha256:5a26b8be43df7df045c0a9beb4455b66b1e878468b74c1d1877ed5d789d6aea7 --issued-at <RFC3339> --expires-at <RFC3339>",
+      "required_response": "SIGNED_GOVERNANCE_ENROLLMENT_RESPONSE_V10"
+    }
+  ],
+  "filled_seats": 0,
+  "required_seats": 5,
+  "status": "AWAITING_EXTERNAL_PARTICIPANTS",
+  "barrier": "FIVE_INDEPENDENT_PARTICIPANT_RESPONSES_REQUIRED",
+  "next_seed": "KC144.V10::ISSUE-FIVE-ROLE-BOUND-CHALLENGES",
+  "plan_digest": "sha256:2c9bc9b7b9e614e8e88bb32a18c746168007d0a815fce646ed152a313e27915c"
+}

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/participant-handoff-manifest-v12.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "handoff_id", "parent_batch_id", "parent_batch_root",
+    "handoff_contract_digest", "packet_rows", "packet_count",
+    "addressed_count", "delivered_count", "returned_response_count",
+    "status", "barrier", "parallelism", "governance_activated",
+    "production_certificate_issued", "truth_effect", "next_seed",
+    "manifest_root"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ParticipantHandoffManifest.V12"},
+    "handoff_id": {"const": "KC144.PARTICIPANT.HANDOFF.V12"},
+    "parent_batch_id": {
+      "type": "string",
+      "pattern": "^V11-BATCH::[0-9a-f]{24}$"
+    },
+    "parent_batch_root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "handoff_contract_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "packet_rows": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "role", "packet_id", "packet_digest", "challenge_id",
+          "challenge_digest", "state"
+        ],
+        "properties": {
+          "role": {"type": "string", "minLength": 1},
+          "packet_id": {"type": "string", "minLength": 1},
+          "packet_digest": {
+            "type": "string",
+            "pattern": "^sha256:[0-9a-f]{64}$"
+          },
+          "challenge_id": {"type": "string", "minLength": 1},
+          "challenge_digest": {
+            "type": "string",
+            "pattern": "^sha256:[0-9a-f]{64}$"
+          },
+          "state": {"const": "READY_UNADDRESSED_UNDELIVERED"}
+        }
+      }
+    },
+    "packet_count": {"const": 5},
+    "addressed_count": {"const": 0},
+    "delivered_count": {"const": 0},
+    "returned_response_count": {"const": 0},
+    "status": {
+      "const": "READY_FOR_EXTERNAL_RECIPIENT_SELECTION_AND_DELIVERY"
+    },
+    "barrier": {"const": "FIVE_EXTERNAL_PARTICIPANT_HANDOFFS_REQUIRED"},
+    "parallelism": {
+      "const": "ALL_FIVE_PACKETS_MAY_BE_DELIVERED_IN_PARALLEL"
+    },
+    "governance_activated": {"const": false},
+    "production_certificate_issued": {"const": false},
+    "truth_effect": {"const": "NONE"},
+    "next_seed": {"type": "string", "minLength": 1},
+    "manifest_root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

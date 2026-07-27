@@ -1,0 +1,10 @@
+{
+  "schema": "KC144.BridgeCommitLedger.V5",
+  "namespace": "PRODUCTION",
+  "records": [],
+  "prepared": 0,
+  "committed": 0,
+  "declared_bridges": 28,
+  "open_transport_obligations": 28,
+  "station_promotion_effect": "NONE"
+}

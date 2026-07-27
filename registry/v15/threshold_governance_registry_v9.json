@@ -1,0 +1,12 @@
+{
+  "schema": "KC144.ThresholdGovernanceRegistry.V9",
+  "governance_id": "KC144.THRESHOLD.GOVERNANCE.V9",
+  "epoch_id": "EPOCH-B-EIGHT-BLOCK",
+  "required_members": 5,
+  "threshold": 3,
+  "members": [],
+  "revoked_member_ids": [],
+  "revocation_log": [],
+  "law": "no single key, reviewer, witness, institution, or lineage may grant durable production authority",
+  "registry_digest": "sha256:28d630ed644552b198356bb4a25b628da2ddb589eab5ba6180ee031dbab72d8c"
+}

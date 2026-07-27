@@ -1,0 +1,15 @@
+{
+  "schema": "KC144.MYC.SKELETON.P03.LAWS.V1",
+  "laws": [
+    {"id": "L01", "predicate": "carrier_tag_is_part_of_identity"},
+    {"id": "L02", "predicate": "git_coordinate_has_immutable_commit"},
+    {"id": "L03", "predicate": "partial_projection_is_never_reported_exact"},
+    {"id": "L04", "predicate": "candidate_multiplicity_is_preserved"},
+    {"id": "L05", "predicate": "edge_requires_address_source_transform_return_replay"},
+    {"id": "L06", "predicate": "route_weight_is_not_truth"},
+    {"id": "L07", "predicate": "coactivation_is_not_a_certified_bridge"},
+    {"id": "L08", "predicate": "structural_pass_is_not_empirical_proof"},
+    {"id": "L09", "predicate": "retrieved_copy_is_not_an_independent_witness"},
+    {"id": "L10", "predicate": "receipt_chain_plus_anchored_head_detects_omission_reordering_and_terminal_truncation"}
+  ]
+}

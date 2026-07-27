@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/m12-repair-ledger-v6.schema.json",
+  "title": "KC144 V6 append-only M12 repair ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "namespace",
+    "frozen_base",
+    "baseline",
+    "records",
+    "head_digest",
+    "truth_effect",
+    "ledger_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.M12RepairLedger.V6"},
+    "namespace": {"enum": ["PRODUCTION", "TEST"]},
+    "frozen_base": {
+      "type": "object",
+      "required": [
+        "release",
+        "candidate_id",
+        "state_root",
+        "crystal_digest",
+        "edge_manifest_digest",
+        "mutation_allowed"
+      ],
+      "properties": {
+        "release": {"const": "KC144.SSN12.GLOBAL_STATE.V5"},
+        "candidate_id": {"const": "KC144.SSN12.GLOBAL_STATE.V5"},
+        "state_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+        "crystal_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+        "edge_manifest_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "mutation_allowed": {"const": false}
+      }
+    },
+    "baseline": {
+      "type": "object",
+      "required": [
+        "domain_population_gids",
+        "blocking_defect_ids",
+        "certified_bridge_ids",
+        "independent_replay_gids",
+        "ic10_promotions"
+      ]
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "sequence",
+          "previous_record_digest",
+          "packet",
+          "packet_digest",
+          "admission_effect",
+          "frozen_crystal_mutated",
+          "record_digest"
+        ],
+        "properties": {
+          "sequence": {"type": "integer", "minimum": 1},
+          "previous_record_digest": {"type": "string"},
+          "packet": {"$ref": "m12-evidence-packet-v6.schema.json"},
+          "packet_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+          "admission_effect": {
+            "enum": ["TEST_MECHANICS_ONLY", "PRODUCTION_EVIDENCE_OVERLAY"]
+          },
+          "frozen_crystal_mutated": {"const": false},
+          "record_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "v7_envelopes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "envelope_digest",
+          "envelope",
+          "verification"
+        ],
+        "properties": {
+          "envelope_digest": {
+            "type": "string",
+            "pattern": "^sha256:[0-9a-f]{64}$"
+          },
+          "envelope": {
+            "$ref": "signed-evidence-envelope-v7.schema.json"
+          },
+          "verification": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "head_digest": {
+      "anyOf": [
+        {"const": "GENESIS"},
+        {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+      ]
+    },
+    "truth_effect": {"enum": ["NONE", "EVIDENCE_OVERLAY_ONLY"]},
+    "ledger_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

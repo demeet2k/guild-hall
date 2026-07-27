@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.invalid/schemas/seed.schema.json",
+  "title": "KC144 QSHRINK Seed",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "seed_id",
+    "source_node",
+    "promotion_receipt",
+    "generators",
+    "residue",
+    "source_refs",
+    "invariants",
+    "defects",
+    "branches",
+    "return_contract",
+    "replay_level",
+    "next_seed",
+    "reentry_query"
+  ],
+  "properties": {
+    "schema_version": {"const": "KC144-SEED-1.0"},
+    "seed_id": {"type": "string"},
+    "source_node": {"type": "string"},
+    "promotion_receipt": {"type": "string"},
+    "generators": {"type": "array", "items": {"type": "object"}},
+    "residue": {"type": "array", "items": {"type": "object"}},
+    "source_refs": {"type": "array", "items": {"type": "string"}},
+    "invariants": {"type": "array", "items": {"type": "string"}},
+    "defects": {"type": "array", "items": {"type": "object"}},
+    "branches": {"type": "array", "items": {"type": "object"}},
+    "return_contract": {"type": "object"},
+    "replay_level": {"enum": ["N0", "N1", "N2", "N3", "N4", "N5"]},
+    "next_seed": {"type": "string"},
+    "reentry_query": {"type": "string"}
+  },
+  "additionalProperties": true
+}
+

@@ -1,0 +1,22 @@
+{
+  "schema": "KC144.GovernanceDispatchContract.V11",
+  "dispatch_id": "KC144.GOVERNANCE.DISPATCH.V11",
+  "ceremony_id": "KC144.GOVERNANCE.CEREMONY.V10",
+  "epoch_id": "EPOCH-B-EIGHT-BLOCK",
+  "roles": [
+    "CUSTODIAN",
+    "INDEPENDENT_REVIEWER",
+    "REPLAY_WITNESS",
+    "SOURCE_AUDITOR",
+    "RETURN_AUDITOR"
+  ],
+  "challenge_count": 5,
+  "issuance_law": "one immutable batch contains one independently random, role-bound V10 challenge for each of the five governance roles",
+  "routing_law": "all supplied responses are evaluated as one parallel intake wave against the exact issued batch; collisions fail closed",
+  "assembly_law": "only five unique batch-matched verified responses may invoke the V10 pending-society assembler",
+  "expiration_law": "responses are accepted only while the batch is open; an expired batch is preserved and must be replaced, never edited",
+  "activation_law": "dispatch and response routing never activate governance; a complete pending society still requires V10 external ratification",
+  "fixture_law": "LOCAL_OR_TEST_RESPONSES_HAVE_ZERO_PRODUCTION_EFFECT",
+  "truth_effect": "NONE",
+  "contract_digest": "sha256:8b7982cc2b38a8f23740c98bfbbeab9020650478dbbdf29bea70b03649af8bfb"
+}

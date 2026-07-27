@@ -1,0 +1,232 @@
+{
+  "schema": "KC144.DeclaredBridgeRegistry.V3",
+  "count": 28,
+  "standing": "DECLARED_GRAPH_CONNECTIVITY_NOT_TRANSPORT_CERTIFICATION",
+  "certified_transport_count": 0,
+  "bridges": [
+    {
+      "bridge_id": "BR001",
+      "source": 41,
+      "target": 81,
+      "relation": "RETURN_TO_IC10",
+      "declaration": "RETURN/PLUS successor enters I01",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR002",
+      "source": 42,
+      "target": 81,
+      "relation": "RETURN_TO_IC10",
+      "declaration": "RETURN/HINGE process parent enters I01",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR003",
+      "source": 43,
+      "target": 81,
+      "relation": "RETURN_TO_IC10",
+      "declaration": "RETURN/STAR audit enters I01",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR004",
+      "source": 44,
+      "target": 81,
+      "relation": "CARRIER_TO_IDENTITY",
+      "declaration": "F01 address feeds I01",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR005",
+      "source": 76,
+      "target": 81,
+      "relation": "REPLAY_TO_IDENTITY",
+      "declaration": "F33 replay/Merkle feeds I01",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR006",
+      "source": 80,
+      "target": 81,
+      "relation": "PUBLICATION_TO_IDENTITY",
+      "declaration": "F37 publication feeds I01",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR007",
+      "source": 29,
+      "target": 44,
+      "relation": "NAVIGATE_TO_CARRIER",
+      "declaration": "NAVIGATE/PLUS consumes F01",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR008",
+      "source": 29,
+      "target": 58,
+      "relation": "NAVIGATE_TO_CARRIER",
+      "declaration": "NAVIGATE/PLUS consumes F15",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR009",
+      "source": 34,
+      "target": 47,
+      "relation": "TRANSFORM_TO_CARRIER",
+      "declaration": "TRANSFORM/STAR uses F04",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR010",
+      "source": 41,
+      "target": 44,
+      "relation": "RETURN_TO_CARRIER",
+      "declaration": "RETURN/PLUS hands off to F01",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR011",
+      "source": 43,
+      "target": 76,
+      "relation": "RETURN_TO_REPLAY",
+      "declaration": "RETURN/STAR exports to F33",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR012",
+      "source": 43,
+      "target": 141,
+      "relation": "RETURN_TO_SIGNATURE",
+      "declaration": "RETURN/STAR exports to M09",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR013",
+      "source": 21,
+      "target": 43,
+      "relation": "RETURN_CLOUD",
+      "declaration": "multivalued return receives RETURN/STAR",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR014",
+      "source": 22,
+      "target": 43,
+      "relation": "RESEED_RETURN",
+      "declaration": "recursive reseed receives RETURN/STAR",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR015",
+      "source": 61,
+      "target": 30,
+      "relation": "OBSTRUCTION_ROUTE",
+      "declaration": "invalid merge routes to F18",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR016",
+      "source": 40,
+      "target": 88,
+      "relation": "REPAIR_TO_I08",
+      "declaration": "route repair enters bridge/return gate",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR017",
+      "source": 90,
+      "target": 119,
+      "relation": "PROMOTION_TO_QSHRINK",
+      "declaration": "I10 emits to KC27-P13",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR018",
+      "source": 119,
+      "target": 144,
+      "relation": "QSHRINK_TO_M12",
+      "declaration": "QSHRINK emits to M12",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR019",
+      "source": 144,
+      "target": 1,
+      "relation": "SUCCESSOR_RESEED",
+      "declaration": "M12 reseeds provenance-bearing H01 prime",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR020",
+      "source": 88,
+      "target": 89,
+      "relation": "I08_TO_I09",
+      "declaration": "bridge manifest enters replay gate",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR021",
+      "source": 85,
+      "target": 65,
+      "relation": "DRIFT_WARNING",
+      "declaration": "invariant drift routes to F22",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR022",
+      "source": 16,
+      "target": 61,
+      "relation": "INVARIANT_TO_OBSTRUCTION",
+      "declaration": "X-00-FL routes to F18",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR023",
+      "source": 13,
+      "target": 92,
+      "relation": "POLE_SUPPORT",
+      "declaration": "branch carrier supports KC15 {10}",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR024",
+      "source": 7,
+      "target": 91,
+      "relation": "POLE_SUPPORT",
+      "declaration": "object identity supports KC15 {11}",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR025",
+      "source": 15,
+      "target": 93,
+      "relation": "POLE_SUPPORT",
+      "declaration": "zero taxonomy supports KC15 {00}",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR026",
+      "source": 19,
+      "target": 94,
+      "relation": "POLE_SUPPORT",
+      "declaration": "return contract supports KC15 {01}",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR027",
+      "source": 6,
+      "target": 106,
+      "relation": "ACTIVATION_TO_KC27",
+      "declaration": "H06 activation admits at KC27-P00",
+      "standing": "DECLARED_UNCERTIFIED"
+    },
+    {
+      "bridge_id": "BR028",
+      "source": 140,
+      "target": 17,
+      "relation": "HEALING_TO_DEFECT",
+      "declaration": "M08 healing receives X-00-CL defects",
+      "standing": "DECLARED_UNCERTIFIED"
+    }
+  ]
+}

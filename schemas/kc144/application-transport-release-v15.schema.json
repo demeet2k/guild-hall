@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/application-transport-release-v15.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "release", "parent_release", "verdict",
+    "operational_status", "prepared_publication_payloads",
+    "published_publication_payloads", "application_count",
+    "admitted_application_count", "held_application_count",
+    "solution_status", "assigned_packet_count", "delivered_packet_count",
+    "governance_activated", "production_certificate_issued",
+    "frozen_crystal_mutated", "added_artifacts", "next_seed",
+    "release_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ApplicationTransportRelease.V15"},
+    "release": {
+      "const": "KC144.CANDIDATE.APPLICATION.TRANSPORT.RUNTIME.V15"
+    },
+    "parent_release": {
+      "const": "KC144.CANDIDATE.NOMINATION.INTAKE.RUNTIME.V14"
+    },
+    "verdict": {"enum": ["PASS", "FAIL"]},
+    "operational_status": {"type": "string", "minLength": 1},
+    "prepared_publication_payloads": {"const": 5},
+    "published_publication_payloads": {"const": 0},
+    "application_count": {"type": "integer", "minimum": 0},
+    "admitted_application_count": {"type": "integer", "minimum": 0},
+    "held_application_count": {"type": "integer", "minimum": 0},
+    "solution_status": {"type": "string", "minLength": 1},
+    "assigned_packet_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "delivered_packet_count": {"const": 0},
+    "governance_activated": {"const": false},
+    "production_certificate_issued": {"const": false},
+    "frozen_crystal_mutated": {"const": false},
+    "added_artifacts": {"type": "array", "minItems": 9},
+    "next_seed": {"type": "string", "minLength": 1},
+    "release_digest": {"$ref": "#/$defs/root"}
+  },
+  "$defs": {
+    "root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

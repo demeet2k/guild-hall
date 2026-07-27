@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/authority-enrollment-contract-v8.schema.json",
+  "title": "KC144 V8 authority enrollment contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "epoch_id",
+    "algorithm",
+    "proof_fields",
+    "required_boundary_claim",
+    "cryptographic_effect",
+    "governance_effect",
+    "pinning_law",
+    "anti_self_authorization_law",
+    "contract_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.AuthorityEnrollmentContract.V8"},
+    "epoch_id": {"const": "EPOCH-B-EIGHT-BLOCK"},
+    "algorithm": {"const": "ED25519"},
+    "proof_fields": {
+      "type": "array",
+      "minItems": 7,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "required_boundary_claim": {
+      "const": "POSSESSION_ONLY_NOT_AUTHORITY_APPROVAL"
+    },
+    "cryptographic_effect": {"const": "PROVES_PRIVATE_KEY_POSSESSION"},
+    "governance_effect": {"const": "NONE"},
+    "pinning_law": {"type": "string", "minLength": 1},
+    "anti_self_authorization_law": {"type": "string", "minLength": 1},
+    "contract_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

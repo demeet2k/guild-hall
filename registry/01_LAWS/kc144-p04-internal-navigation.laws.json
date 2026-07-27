@@ -1,0 +1,20 @@
+{
+  "schema": "KC144.INTERNAL-NAV.P04.LAWS.V1",
+  "laws": [
+    {"id": "IN01", "predicate": "same_text_does_not_imply_same_source_or_claim"},
+    {"id": "IN02", "predicate": "source_identity_uses_carrier_source_revision_locator"},
+    {"id": "IN03", "predicate": "retrieval_scoped_identity_never_impersonates_native_turn_identity"},
+    {"id": "IN04", "predicate": "derived_view_retains_parent_evidence_root"},
+    {"id": "IN05", "predicate": "ranking_allocates_attention_and_never_promotes_truth"},
+    {"id": "IN06", "predicate": "route_budget_suspends_branches_and_never_deletes_them"},
+    {"id": "IN07", "predicate": "intersection_is_not_compatibility_commutativity_or_mergeability"},
+    {"id": "IN08", "predicate": "edge_requires_relation_inverse_invariants_witness_and_return"},
+    {"id": "IN09", "predicate": "truth_composes_by_weakest_corridor_meet"},
+    {"id": "IN10", "predicate": "OK_requires_explicit_witness"},
+    {"id": "IN11", "predicate": "active_conflict_blocks_OK"},
+    {"id": "IN12", "predicate": "promotion_requires_IC10_AUTHORIZED"},
+    {"id": "IN13", "predicate": "observer_state_changes_viewport_not_source_truth"},
+    {"id": "IN14", "predicate": "query_emits_selected_suspended_conflicts_unresolved_and_next_seed"},
+    {"id": "IN15", "predicate": "replay_signature_commits_to_all_ordered_paths_and_terminal_receipt"}
+  ]
+}

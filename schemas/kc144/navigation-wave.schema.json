@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/navigation-wave.schema.json",
+  "title": "KC144 bounded navigation wave",
+  "type": "object",
+  "required": [
+    "schema",
+    "query",
+    "mode",
+    "base_graph_mutated",
+    "reached",
+    "coverage",
+    "frontier",
+    "nodes",
+    "relation_weight_overlay",
+    "laws"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.NavigationWave.V3"},
+    "query": {
+      "type": "object",
+      "required": ["query_id", "starts", "route_budget", "decay"],
+      "properties": {
+        "query_id": {"type": "string", "minLength": 1},
+        "starts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "integer", "minimum": 1, "maximum": 144}
+        },
+        "route_budget": {"type": "integer", "minimum": 0},
+        "decay": {"type": "number", "exclusiveMinimum": 0, "maximum": 1}
+      }
+    },
+    "mode": {"const": "PARALLEL_BOUNDED_WAVEFRONT_OVER_ALL_DECLARED_RELATIONS"},
+    "base_graph_mutated": {"const": false},
+    "reached": {"type": "integer", "minimum": 1, "maximum": 144},
+    "coverage": {"type": "string", "pattern": "^[0-9]+/144$"},
+    "frontier": {"type": "array", "items": {"type": "integer"}},
+    "nodes": {"type": "array", "items": {"type": "object"}},
+    "relation_weight_overlay": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "target", "relation", "wave_sources", "weight", "truth_effect"],
+        "properties": {
+          "source": {"type": "integer", "minimum": 1, "maximum": 144},
+          "target": {"type": "integer", "minimum": 1, "maximum": 144},
+          "relation": {"type": "string"},
+          "wave_sources": {"type": "array", "items": {"type": "integer"}},
+          "weight": {"type": "integer", "minimum": 1},
+          "truth_effect": {"const": "NONE"}
+        }
+      }
+    },
+    "laws": {"type": "array", "items": {"type": "string"}}
+  }
+}

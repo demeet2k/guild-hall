@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/participant-handoff-release-v12.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "release", "parent_release", "verdict",
+    "operational_status", "prepared_packets", "addressed_packets",
+    "delivered_packets", "counted_responses", "required_responses",
+    "governance_activated", "production_certificate_issued",
+    "frozen_crystal_mutated", "added_artifacts", "next_seed",
+    "release_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ParticipantHandoffRelease.V12"},
+    "release": {"const": "KC144.PARTICIPANT.HANDOFF.RUNTIME.V12"},
+    "parent_release": {"const": "KC144.GOVERNANCE.DISPATCH.RUNTIME.V11"},
+    "verdict": {"enum": ["PASS", "FAIL"]},
+    "operational_status": {"type": "string", "minLength": 1},
+    "prepared_packets": {"const": 5},
+    "addressed_packets": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "delivered_packets": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "counted_responses": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "required_responses": {"const": 5},
+    "governance_activated": {"const": false},
+    "production_certificate_issued": {"const": false},
+    "frozen_crystal_mutated": {"const": false},
+    "added_artifacts": {"type": "array", "minItems": 8},
+    "next_seed": {"type": "string", "minLength": 1},
+    "release_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

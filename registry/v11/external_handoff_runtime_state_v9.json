@@ -1,0 +1,37 @@
+{
+  "schema": "KC144.ExternalHandoffRuntimeState.V9",
+  "release": "KC144.EXTERNAL.HANDOFF.RUNTIME.V9",
+  "parent_release": "KC144.PARALLEL.CAMPAIGN.RUNTIME.V8",
+  "handoff_id": "KC144.EXTERNAL.HANDOFF.V9",
+  "bundle_root": "sha256:5a26b8be43df7df045c0a9beb4455b66b1e878468b74c1d1877ed5d789d6aea7",
+  "bundle_digest": "sha256:3c70bcda8c2fbb741009ea1f01629e1bcd41c4974c5369afe635f3d3b72c9979",
+  "governance_contract_digest": "sha256:f5acd14921b5b11afb128a813e05cefa0799029bf5c7aab7452f1edd914faa85",
+  "governance_registry_digest": "sha256:28d630ed644552b198356bb4a25b628da2ddb589eab5ba6180ee031dbab72d8c",
+  "source_harvest_contract_digest": "sha256:2ff9598c7558a9c72760cfa805d52d6b8d1505b6f56c3653dc42f9ae0ea46cb1",
+  "internal_readiness": {
+    "verdict": "PASS",
+    "checks": {
+      "v8_runtime_pass": true,
+      "handoff_identity_exact": true,
+      "sixteen_requests_exact": true,
+      "two_hundred_thirty_two_packets_exact": true,
+      "campaign_partition_exact": true,
+      "request_digests_unique": true,
+      "bundle_root_bound": true,
+      "source_once_fanout_law": true,
+      "threshold_three_of_five": true,
+      "single_key_governance_forbidden": true,
+      "governance_registry_integrity": true,
+      "empty_run_has_no_truth_effect": true,
+      "external_barrier_explicit": true
+    }
+  },
+  "handoff_state_digest": "sha256:9b4b6af3ee3d763fb1b5ade334fa92d0152915fc063553f25f9915035cddc59d",
+  "run_report_digest": "sha256:740c686c1d17291cdba61d3ad4c9465f3b59d96a5fdfa8a36fe2fe04fe951c55",
+  "barrier": "THRESHOLD_GOVERNANCE_MEMBERS_REQUIRED",
+  "production_certificate_issued": false,
+  "production_truth_effect": "NONE",
+  "frozen_crystal_mutated": false,
+  "next_seed": "KC144.V9::ENROLL-FIVE-INDEPENDENT-GOVERNANCE-MEMBERS",
+  "runtime_state_digest": "sha256:b1a8f5cc2ea3fef2ca6bacce860c9b743752563aea901e1d508527fa505a8977"
+}

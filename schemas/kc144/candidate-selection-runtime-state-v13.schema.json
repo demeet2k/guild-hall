@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/candidate-selection-runtime-state-v13.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "release", "parent_release", "selection_id",
+    "selection_contract_digest", "candidate_registry_root",
+    "conflict_graph_root", "solver_digest", "nomination_count",
+    "admitted_candidate_count", "solution_status", "selected_cohort",
+    "selected_pairwise_audits", "internal_readiness", "barrier",
+    "governance_activated", "production_certificate_issued",
+    "production_truth_effect", "frozen_crystal_mutated", "next_seed",
+    "runtime_state_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.CandidateSelectionRuntimeState.V13"},
+    "release": {"const": "KC144.CANDIDATE.SELECTION.RUNTIME.V13"},
+    "parent_release": {"const": "KC144.PARTICIPANT.HANDOFF.RUNTIME.V12"},
+    "selection_id": {
+      "const": "KC144.CANDIDATE.COHORT.SELECTION.V13"
+    },
+    "selection_contract_digest": {"$ref": "#/$defs/root"},
+    "candidate_registry_root": {"$ref": "#/$defs/root"},
+    "conflict_graph_root": {"$ref": "#/$defs/root"},
+    "solver_digest": {"$ref": "#/$defs/root"},
+    "nomination_count": {"type": "integer", "minimum": 0},
+    "admitted_candidate_count": {"type": "integer", "minimum": 0},
+    "solution_status": {"type": "string", "minLength": 1},
+    "selected_cohort": {
+      "anyOf": [{"type": "null"}, {"type": "object"}]
+    },
+    "selected_pairwise_audits": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10
+    },
+    "internal_readiness": {
+      "type": "object",
+      "required": ["verdict", "checks"]
+    },
+    "barrier": {"type": "string", "minLength": 1},
+    "governance_activated": {"const": false},
+    "production_certificate_issued": {"const": false},
+    "production_truth_effect": {"const": "NONE"},
+    "frozen_crystal_mutated": {"const": false},
+    "next_seed": {"type": "string", "minLength": 1},
+    "runtime_state_digest": {"$ref": "#/$defs/root"}
+  },
+  "$defs": {
+    "root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

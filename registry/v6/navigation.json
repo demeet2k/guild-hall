@@ -1,0 +1,2251 @@
+{
+  "schema": "KC144.NavigationGraph.V3",
+  "reading": "X16_ALGEBRA_WITH_BR21_AND_KC27_MIRRORS",
+  "intra_band_relation_records": 248,
+  "distinct_intra_adjacency_edges": 247,
+  "declared_bridge_records": 28,
+  "distinct_adjacency_edges": 274,
+  "relation_census": {
+    "H6_RING": 6,
+    "ACTIVATION_TO_KC27": 1,
+    "X16_ALGEBRA": 40,
+    "POLE_SUPPORT": 4,
+    "INVARIANT_TO_OBSTRUCTION": 1,
+    "RETURN_CLOUD": 1,
+    "RESEED_RETURN": 1,
+    "BR21_LENS": 21,
+    "BR21_OPERATOR": 18,
+    "BR21_MIRROR": 11,
+    "NAVIGATE_TO_CARRIER": 2,
+    "TRANSFORM_TO_CARRIER": 1,
+    "REPAIR_TO_I08": 1,
+    "RETURN_TO_CARRIER": 1,
+    "RETURN_TO_IC10": 3,
+    "RETURN_TO_REPLAY": 1,
+    "RETURN_TO_SIGNATURE": 1,
+    "F37_RAIL": 36,
+    "CARRIER_TO_IDENTITY": 1,
+    "OBSTRUCTION_ROUTE": 1,
+    "REPLAY_TO_IDENTITY": 1,
+    "PUBLICATION_TO_IDENTITY": 1,
+    "IC10_CHAIN": 9,
+    "DRIFT_WARNING": 1,
+    "I08_TO_I09": 1,
+    "PROMOTION_TO_QSHRINK": 1,
+    "KC15_HASSE": 28,
+    "KC54_EDGE": 54,
+    "KC27_J": 14,
+    "QSHRINK_TO_M12": 1,
+    "SSN12_CHAIN": 11,
+    "HEALING_TO_DEFECT": 1,
+    "SUCCESSOR_RESEED": 1
+  },
+  "components": 1,
+  "component_sizes": [
+    144
+  ],
+  "diameter": 18,
+  "radius": 9,
+  "centers": [
+    {
+      "gid": 43,
+      "station": "B21"
+    }
+  ],
+  "reachable_from_H06": 144,
+  "max_hops_from_H06": 15,
+  "metro_lines": {
+    "BR21_PLUS": {
+      "path": [
+        23,
+        26,
+        29,
+        32,
+        35,
+        38,
+        41
+      ],
+      "verdict": "PASS"
+    },
+    "BR21_HINGE": {
+      "path": [
+        24,
+        27,
+        30,
+        33,
+        36,
+        39,
+        42
+      ],
+      "verdict": "PASS"
+    },
+    "BR21_STAR": {
+      "path": [
+        25,
+        28,
+        31,
+        34,
+        37,
+        40,
+        43
+      ],
+      "verdict": "PASS"
+    },
+    "F37": {
+      "path": [
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80
+      ],
+      "verdict": "PASS"
+    },
+    "IC10": {
+      "path": [
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90
+      ],
+      "verdict": "PASS"
+    },
+    "SSN12": {
+      "path": [
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144
+      ],
+      "verdict": "PASS"
+    },
+    "H6": {
+      "path": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        1
+      ],
+      "verdict": "PASS"
+    },
+    "KC27_X": {
+      "path": [
+        118,
+        119,
+        120
+      ],
+      "verdict": "PASS"
+    },
+    "KC27_Y": {
+      "path": [
+        116,
+        119,
+        122
+      ],
+      "verdict": "PASS"
+    },
+    "KC27_Z": {
+      "path": [
+        110,
+        119,
+        128
+      ],
+      "verdict": "PASS"
+    },
+    "RETURN_ARM": {
+      "path": [
+        41,
+        42,
+        43,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        119,
+        144,
+        1
+      ],
+      "verdict": "PASS"
+    },
+    "X16_SQ": {
+      "path": [
+        7,
+        11,
+        15,
+        19,
+        7
+      ],
+      "verdict": "PASS"
+    },
+    "X16_FL": {
+      "path": [
+        8,
+        12,
+        16,
+        20,
+        8
+      ],
+      "verdict": "PASS"
+    },
+    "X16_CL": {
+      "path": [
+        9,
+        13,
+        17,
+        21,
+        9
+      ],
+      "verdict": "PASS"
+    },
+    "X16_FR": {
+      "path": [
+        10,
+        14,
+        18,
+        22,
+        10
+      ],
+      "verdict": "PASS"
+    }
+  },
+  "return_arm": {
+    "path": [
+      41,
+      42,
+      43,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      119,
+      144,
+      1
+    ],
+    "verdict": "PASS",
+    "successor_identity": "GID001_PRIME_APPEND_ONLY"
+  },
+  "bridge_standing": "DECLARED_GRAPH_CONNECTIVITY_NOT_TRANSPORT_CERTIFICATION",
+  "relations": [
+    {
+      "source": 1,
+      "target": 2,
+      "relation": "H6_RING",
+      "semantics": "control-cycle",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "relation": "H6_RING",
+      "semantics": "control-cycle",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "relation": "H6_RING",
+      "semantics": "control-cycle",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "relation": "H6_RING",
+      "semantics": "control-cycle",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "relation": "H6_RING",
+      "semantics": "control-cycle",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "relation": "H6_RING",
+      "semantics": "control-cycle",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 6,
+      "target": 106,
+      "relation": "ACTIVATION_TO_KC27",
+      "semantics": "H06 activation admits at KC27-P00",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR027"
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "relation": "X16_ALGEBRA",
+      "semantics": "C4 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "relation": "X16_ALGEBRA",
+      "semantics": "C4 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 7,
+      "target": 11,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 7,
+      "target": 15,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 7,
+      "target": 19,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 7,
+      "target": 91,
+      "relation": "POLE_SUPPORT",
+      "semantics": "object identity supports KC15 {11}",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR024"
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "relation": "X16_ALGEBRA",
+      "semantics": "C4 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 8,
+      "target": 16,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 8,
+      "target": 20,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "relation": "X16_ALGEBRA",
+      "semantics": "C4 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 9,
+      "target": 17,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 9,
+      "target": 21,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 10,
+      "target": 18,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 10,
+      "target": 22,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "relation": "X16_ALGEBRA",
+      "semantics": "C4 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 11,
+      "target": 14,
+      "relation": "X16_ALGEBRA",
+      "semantics": "C4 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 11,
+      "target": 15,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 11,
+      "target": 19,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 12,
+      "target": 13,
+      "relation": "X16_ALGEBRA",
+      "semantics": "C4 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 12,
+      "target": 16,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 12,
+      "target": 20,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 13,
+      "target": 14,
+      "relation": "X16_ALGEBRA",
+      "semantics": "C4 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 13,
+      "target": 17,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 13,
+      "target": 21,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 13,
+      "target": 92,
+      "relation": "POLE_SUPPORT",
+      "semantics": "branch carrier supports KC15 {10}",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR023"
+    },
+    {
+      "source": 14,
+      "target": 18,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 14,
+      "target": 22,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 15,
+      "target": 16,
+      "relation": "X16_ALGEBRA",
+      "semantics": "C4 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 15,
+      "target": 18,
+      "relation": "X16_ALGEBRA",
+      "semantics": "C4 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 15,
+      "target": 19,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 15,
+      "target": 93,
+      "relation": "POLE_SUPPORT",
+      "semantics": "zero taxonomy supports KC15 {00}",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR025"
+    },
+    {
+      "source": 16,
+      "target": 17,
+      "relation": "X16_ALGEBRA",
+      "semantics": "C4 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 16,
+      "target": 20,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 16,
+      "target": 61,
+      "relation": "INVARIANT_TO_OBSTRUCTION",
+      "semantics": "X-00-FL routes to F18",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR022"
+    },
+    {
+      "source": 17,
+      "target": 18,
+      "relation": "X16_ALGEBRA",
+      "semantics": "C4 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 17,
+      "target": 21,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 18,
+      "target": 22,
+      "relation": "X16_ALGEBRA",
+      "semantics": "K4 pole relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 19,
+      "target": 20,
+      "relation": "X16_ALGEBRA",
+      "semantics": "C4 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 19,
+      "target": 22,
+      "relation": "X16_ALGEBRA",
+      "semantics": "C4 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 19,
+      "target": 94,
+      "relation": "POLE_SUPPORT",
+      "semantics": "return contract supports KC15 {01}",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR026"
+    },
+    {
+      "source": 20,
+      "target": 21,
+      "relation": "X16_ALGEBRA",
+      "semantics": "C4 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 21,
+      "target": 22,
+      "relation": "X16_ALGEBRA",
+      "semantics": "C4 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 21,
+      "target": 43,
+      "relation": "RETURN_CLOUD",
+      "semantics": "multivalued return receives RETURN/STAR",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR013"
+    },
+    {
+      "source": 22,
+      "target": 43,
+      "relation": "RESEED_RETURN",
+      "semantics": "recursive reseed receives RETURN/STAR",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR014"
+    },
+    {
+      "source": 23,
+      "target": 24,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 23,
+      "target": 25,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 23,
+      "target": 26,
+      "relation": "BR21_OPERATOR",
+      "semantics": "P7 operator rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 23,
+      "target": 43,
+      "relation": "BR21_MIRROR",
+      "semantics": "conjugate operator view",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 24,
+      "target": 25,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 24,
+      "target": 27,
+      "relation": "BR21_OPERATOR",
+      "semantics": "P7 operator rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 24,
+      "target": 42,
+      "relation": "BR21_MIRROR",
+      "semantics": "conjugate operator view",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 25,
+      "target": 28,
+      "relation": "BR21_OPERATOR",
+      "semantics": "P7 operator rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 25,
+      "target": 41,
+      "relation": "BR21_MIRROR",
+      "semantics": "conjugate operator view",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 26,
+      "target": 27,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 26,
+      "target": 28,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 26,
+      "target": 29,
+      "relation": "BR21_OPERATOR",
+      "semantics": "P7 operator rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 26,
+      "target": 40,
+      "relation": "BR21_MIRROR",
+      "semantics": "conjugate operator view",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 27,
+      "target": 28,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 27,
+      "target": 30,
+      "relation": "BR21_OPERATOR",
+      "semantics": "P7 operator rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 27,
+      "target": 39,
+      "relation": "BR21_MIRROR",
+      "semantics": "conjugate operator view",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 28,
+      "target": 31,
+      "relation": "BR21_OPERATOR",
+      "semantics": "P7 operator rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 28,
+      "target": 38,
+      "relation": "BR21_MIRROR",
+      "semantics": "conjugate operator view",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 29,
+      "target": 30,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 29,
+      "target": 31,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 29,
+      "target": 32,
+      "relation": "BR21_OPERATOR",
+      "semantics": "P7 operator rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 29,
+      "target": 37,
+      "relation": "BR21_MIRROR",
+      "semantics": "conjugate operator view",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 29,
+      "target": 44,
+      "relation": "NAVIGATE_TO_CARRIER",
+      "semantics": "NAVIGATE/PLUS consumes F01",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR007"
+    },
+    {
+      "source": 29,
+      "target": 58,
+      "relation": "NAVIGATE_TO_CARRIER",
+      "semantics": "NAVIGATE/PLUS consumes F15",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR008"
+    },
+    {
+      "source": 30,
+      "target": 31,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 30,
+      "target": 33,
+      "relation": "BR21_OPERATOR",
+      "semantics": "P7 operator rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 30,
+      "target": 36,
+      "relation": "BR21_MIRROR",
+      "semantics": "conjugate operator view",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 31,
+      "target": 34,
+      "relation": "BR21_OPERATOR",
+      "semantics": "P7 operator rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 31,
+      "target": 35,
+      "relation": "BR21_MIRROR",
+      "semantics": "conjugate operator view",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 32,
+      "target": 33,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 32,
+      "target": 34,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 32,
+      "target": 34,
+      "relation": "BR21_MIRROR",
+      "semantics": "conjugate operator view",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 32,
+      "target": 35,
+      "relation": "BR21_OPERATOR",
+      "semantics": "P7 operator rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 33,
+      "target": 33,
+      "relation": "BR21_MIRROR",
+      "semantics": "conjugate operator view",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 33,
+      "target": 34,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 33,
+      "target": 36,
+      "relation": "BR21_OPERATOR",
+      "semantics": "P7 operator rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 34,
+      "target": 37,
+      "relation": "BR21_OPERATOR",
+      "semantics": "P7 operator rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 34,
+      "target": 47,
+      "relation": "TRANSFORM_TO_CARRIER",
+      "semantics": "TRANSFORM/STAR uses F04",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR009"
+    },
+    {
+      "source": 35,
+      "target": 36,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 35,
+      "target": 37,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 35,
+      "target": 38,
+      "relation": "BR21_OPERATOR",
+      "semantics": "P7 operator rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 36,
+      "target": 37,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 36,
+      "target": 39,
+      "relation": "BR21_OPERATOR",
+      "semantics": "P7 operator rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 37,
+      "target": 40,
+      "relation": "BR21_OPERATOR",
+      "semantics": "P7 operator rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 38,
+      "target": 39,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 38,
+      "target": 40,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 38,
+      "target": 41,
+      "relation": "BR21_OPERATOR",
+      "semantics": "P7 operator rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 39,
+      "target": 40,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 39,
+      "target": 42,
+      "relation": "BR21_OPERATOR",
+      "semantics": "P7 operator rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 40,
+      "target": 43,
+      "relation": "BR21_OPERATOR",
+      "semantics": "P7 operator rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 40,
+      "target": 88,
+      "relation": "REPAIR_TO_I08",
+      "semantics": "route repair enters bridge/return gate",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR016"
+    },
+    {
+      "source": 41,
+      "target": 42,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 41,
+      "target": 43,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 41,
+      "target": 44,
+      "relation": "RETURN_TO_CARRIER",
+      "semantics": "RETURN/PLUS hands off to F01",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR010"
+    },
+    {
+      "source": 41,
+      "target": 81,
+      "relation": "RETURN_TO_IC10",
+      "semantics": "RETURN/PLUS successor enters I01",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR001"
+    },
+    {
+      "source": 42,
+      "target": 43,
+      "relation": "BR21_LENS",
+      "semantics": "K3 lens relation",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 42,
+      "target": 81,
+      "relation": "RETURN_TO_IC10",
+      "semantics": "RETURN/HINGE process parent enters I01",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR002"
+    },
+    {
+      "source": 43,
+      "target": 76,
+      "relation": "RETURN_TO_REPLAY",
+      "semantics": "RETURN/STAR exports to F33",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR011"
+    },
+    {
+      "source": 43,
+      "target": 81,
+      "relation": "RETURN_TO_IC10",
+      "semantics": "RETURN/STAR audit enters I01",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR003"
+    },
+    {
+      "source": 43,
+      "target": 141,
+      "relation": "RETURN_TO_SIGNATURE",
+      "semantics": "RETURN/STAR exports to M09",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR012"
+    },
+    {
+      "source": 44,
+      "target": 45,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 44,
+      "target": 81,
+      "relation": "CARRIER_TO_IDENTITY",
+      "semantics": "F01 address feeds I01",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR004"
+    },
+    {
+      "source": 45,
+      "target": 46,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 46,
+      "target": 47,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 47,
+      "target": 48,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 48,
+      "target": 49,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 49,
+      "target": 50,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 50,
+      "target": 51,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 51,
+      "target": 52,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 52,
+      "target": 53,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 53,
+      "target": 54,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 54,
+      "target": 55,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 55,
+      "target": 56,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 56,
+      "target": 57,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 57,
+      "target": 58,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 58,
+      "target": 59,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 59,
+      "target": 60,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 60,
+      "target": 61,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 61,
+      "target": 30,
+      "relation": "OBSTRUCTION_ROUTE",
+      "semantics": "invalid merge routes to F18",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR015"
+    },
+    {
+      "source": 61,
+      "target": 62,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 62,
+      "target": 63,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 63,
+      "target": 64,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 64,
+      "target": 65,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 65,
+      "target": 66,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 66,
+      "target": 67,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 67,
+      "target": 68,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 68,
+      "target": 69,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 69,
+      "target": 70,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 70,
+      "target": 71,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 71,
+      "target": 72,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 72,
+      "target": 73,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 73,
+      "target": 74,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 74,
+      "target": 75,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 75,
+      "target": 76,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 76,
+      "target": 77,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 76,
+      "target": 81,
+      "relation": "REPLAY_TO_IDENTITY",
+      "semantics": "F33 replay/Merkle feeds I01",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR005"
+    },
+    {
+      "source": 77,
+      "target": 78,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 78,
+      "target": 79,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 79,
+      "target": 80,
+      "relation": "F37_RAIL",
+      "semantics": "P37 carrier address rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 80,
+      "target": 81,
+      "relation": "PUBLICATION_TO_IDENTITY",
+      "semantics": "F37 publication feeds I01",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR006"
+    },
+    {
+      "source": 81,
+      "target": 82,
+      "relation": "IC10_CHAIN",
+      "semantics": "ordered promotion gates",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 82,
+      "target": 83,
+      "relation": "IC10_CHAIN",
+      "semantics": "ordered promotion gates",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 83,
+      "target": 84,
+      "relation": "IC10_CHAIN",
+      "semantics": "ordered promotion gates",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 84,
+      "target": 85,
+      "relation": "IC10_CHAIN",
+      "semantics": "ordered promotion gates",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 85,
+      "target": 65,
+      "relation": "DRIFT_WARNING",
+      "semantics": "invariant drift routes to F22",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR021"
+    },
+    {
+      "source": 85,
+      "target": 86,
+      "relation": "IC10_CHAIN",
+      "semantics": "ordered promotion gates",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 86,
+      "target": 87,
+      "relation": "IC10_CHAIN",
+      "semantics": "ordered promotion gates",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 87,
+      "target": 88,
+      "relation": "IC10_CHAIN",
+      "semantics": "ordered promotion gates",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 88,
+      "target": 89,
+      "relation": "I08_TO_I09",
+      "semantics": "bridge manifest enters replay gate",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR020"
+    },
+    {
+      "source": 88,
+      "target": 89,
+      "relation": "IC10_CHAIN",
+      "semantics": "ordered promotion gates",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 89,
+      "target": 90,
+      "relation": "IC10_CHAIN",
+      "semantics": "ordered promotion gates",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 90,
+      "target": 119,
+      "relation": "PROMOTION_TO_QSHRINK",
+      "semantics": "I10 emits to KC27-P13",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR017"
+    },
+    {
+      "source": 91,
+      "target": 95,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 91,
+      "target": 96,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 91,
+      "target": 97,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 92,
+      "target": 95,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 92,
+      "target": 98,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 92,
+      "target": 99,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 93,
+      "target": 96,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 93,
+      "target": 98,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 93,
+      "target": 100,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 94,
+      "target": 97,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 94,
+      "target": 99,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 94,
+      "target": 100,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 95,
+      "target": 101,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 95,
+      "target": 102,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 96,
+      "target": 101,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 96,
+      "target": 103,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 97,
+      "target": 102,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 97,
+      "target": 103,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 98,
+      "target": 101,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 98,
+      "target": 104,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 99,
+      "target": 102,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 99,
+      "target": 104,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 100,
+      "target": 103,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 100,
+      "target": 104,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 101,
+      "target": 105,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 102,
+      "target": 105,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 103,
+      "target": 105,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 104,
+      "target": 105,
+      "relation": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 106,
+      "target": 107,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 106,
+      "target": 109,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 106,
+      "target": 115,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 106,
+      "target": 132,
+      "relation": "KC27_J",
+      "semantics": "signed-inversion mirror",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 107,
+      "target": 108,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 107,
+      "target": 110,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 107,
+      "target": 116,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 107,
+      "target": 131,
+      "relation": "KC27_J",
+      "semantics": "signed-inversion mirror",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 108,
+      "target": 111,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 108,
+      "target": 117,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 108,
+      "target": 130,
+      "relation": "KC27_J",
+      "semantics": "signed-inversion mirror",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 109,
+      "target": 110,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 109,
+      "target": 112,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 109,
+      "target": 118,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 109,
+      "target": 129,
+      "relation": "KC27_J",
+      "semantics": "signed-inversion mirror",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 110,
+      "target": 111,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 110,
+      "target": 113,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 110,
+      "target": 119,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 110,
+      "target": 128,
+      "relation": "KC27_J",
+      "semantics": "signed-inversion mirror",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 111,
+      "target": 114,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 111,
+      "target": 120,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 111,
+      "target": 127,
+      "relation": "KC27_J",
+      "semantics": "signed-inversion mirror",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 112,
+      "target": 113,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 112,
+      "target": 121,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 112,
+      "target": 126,
+      "relation": "KC27_J",
+      "semantics": "signed-inversion mirror",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 113,
+      "target": 114,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 113,
+      "target": 122,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 113,
+      "target": 125,
+      "relation": "KC27_J",
+      "semantics": "signed-inversion mirror",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 114,
+      "target": 123,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 114,
+      "target": 124,
+      "relation": "KC27_J",
+      "semantics": "signed-inversion mirror",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 115,
+      "target": 116,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 115,
+      "target": 118,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 115,
+      "target": 123,
+      "relation": "KC27_J",
+      "semantics": "signed-inversion mirror",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 115,
+      "target": 124,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 116,
+      "target": 117,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 116,
+      "target": 119,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 116,
+      "target": 122,
+      "relation": "KC27_J",
+      "semantics": "signed-inversion mirror",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 116,
+      "target": 125,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 117,
+      "target": 120,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 117,
+      "target": 121,
+      "relation": "KC27_J",
+      "semantics": "signed-inversion mirror",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 117,
+      "target": 126,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 118,
+      "target": 119,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 118,
+      "target": 120,
+      "relation": "KC27_J",
+      "semantics": "signed-inversion mirror",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 118,
+      "target": 121,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 118,
+      "target": 127,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 119,
+      "target": 119,
+      "relation": "KC27_J",
+      "semantics": "signed-inversion mirror",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 119,
+      "target": 120,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 119,
+      "target": 122,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 119,
+      "target": 128,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 119,
+      "target": 144,
+      "relation": "QSHRINK_TO_M12",
+      "semantics": "QSHRINK emits to M12",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR018"
+    },
+    {
+      "source": 120,
+      "target": 123,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 120,
+      "target": 129,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 121,
+      "target": 122,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 121,
+      "target": 130,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 122,
+      "target": 123,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 122,
+      "target": 131,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 123,
+      "target": 132,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 124,
+      "target": 125,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 124,
+      "target": 127,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 125,
+      "target": 126,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 125,
+      "target": 128,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 126,
+      "target": 129,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 127,
+      "target": 128,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 127,
+      "target": 130,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 128,
+      "target": 129,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 128,
+      "target": 131,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 129,
+      "target": 132,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 130,
+      "target": 131,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 131,
+      "target": 132,
+      "relation": "KC54_EDGE",
+      "semantics": "KC27 cube rail",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 133,
+      "target": 134,
+      "relation": "SSN12_CHAIN",
+      "semantics": "observatory sequence",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 134,
+      "target": 135,
+      "relation": "SSN12_CHAIN",
+      "semantics": "observatory sequence",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 135,
+      "target": 136,
+      "relation": "SSN12_CHAIN",
+      "semantics": "observatory sequence",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 136,
+      "target": 137,
+      "relation": "SSN12_CHAIN",
+      "semantics": "observatory sequence",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 137,
+      "target": 138,
+      "relation": "SSN12_CHAIN",
+      "semantics": "observatory sequence",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 138,
+      "target": 139,
+      "relation": "SSN12_CHAIN",
+      "semantics": "observatory sequence",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 139,
+      "target": 140,
+      "relation": "SSN12_CHAIN",
+      "semantics": "observatory sequence",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 140,
+      "target": 17,
+      "relation": "HEALING_TO_DEFECT",
+      "semantics": "M08 healing receives X-00-CL defects",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR028"
+    },
+    {
+      "source": 140,
+      "target": 141,
+      "relation": "SSN12_CHAIN",
+      "semantics": "observatory sequence",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 141,
+      "target": 142,
+      "relation": "SSN12_CHAIN",
+      "semantics": "observatory sequence",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 142,
+      "target": 143,
+      "relation": "SSN12_CHAIN",
+      "semantics": "observatory sequence",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 143,
+      "target": 144,
+      "relation": "SSN12_CHAIN",
+      "semantics": "observatory sequence",
+      "standing": "STRUCTURAL"
+    },
+    {
+      "source": 144,
+      "target": 1,
+      "relation": "SUCCESSOR_RESEED",
+      "semantics": "M12 reseeds provenance-bearing H01 prime",
+      "standing": "DECLARED_UNCERTIFIED",
+      "bridge_id": "BR019"
+    }
+  ]
+}

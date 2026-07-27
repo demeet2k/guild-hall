@@ -1,0 +1,22 @@
+{
+  "schema": "KC144.GovernanceDispatchRelease.V11",
+  "release": "KC144.GOVERNANCE.DISPATCH.RUNTIME.V11",
+  "parent_release": "KC144.GOVERNANCE.CEREMONY.RUNTIME.V10",
+  "verdict": "PASS",
+  "operational_status": "FIVE_INDEPENDENT_PARTICIPANT_RESPONSES_REQUIRED",
+  "batch_issued": true,
+  "counted_responses": 0,
+  "required_responses": 5,
+  "governance_activated": false,
+  "production_certificate_issued": false,
+  "frozen_crystal_mutated": false,
+  "added_artifacts": [
+    "governance_challenge_batch_v11.json",
+    "governance_dispatch_contract_v11.json",
+    "governance_dispatch_plan_v11.json",
+    "governance_dispatch_runtime_state_v11.json",
+    "governance_response_router_v11.json"
+  ],
+  "next_seed": "KC144.V11::AWAIT-FIVE-SIGNED-ROLE-BOUND-RESPONSES",
+  "release_digest": "sha256:246392d807883e24ca50d649960b148f29b52d9e755457d1e90f41e43fb5427b"
+}

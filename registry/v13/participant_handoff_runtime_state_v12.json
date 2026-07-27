@@ -1,0 +1,34 @@
+{
+  "schema": "KC144.ParticipantHandoffRuntimeState.V12",
+  "release": "KC144.PARTICIPANT.HANDOFF.RUNTIME.V12",
+  "parent_release": "KC144.GOVERNANCE.DISPATCH.RUNTIME.V11",
+  "handoff_id": "KC144.PARTICIPANT.HANDOFF.V12",
+  "handoff_contract_digest": "sha256:44b247f972c80b12b8744891dd01ea5550a0e84002d20edd09360117ee179ecf",
+  "batch_id": "V11-BATCH::c7e3ae7e8cfd126a75b41b4a",
+  "batch_root": "sha256:b9322c5950d562f7a3f437ed8c939d98506db4edf34446e8332318513bca46b5",
+  "manifest_root": "sha256:38bae310d945ff813afc98bfe60aa51d7a26c241ecee8f99b6f28d2d6bc7f4b7",
+  "prepared_packets": 5,
+  "addressed_packets": 0,
+  "delivered_packets": 0,
+  "counted_responses": 0,
+  "internal_readiness": {
+    "verdict": "PASS",
+    "checks": {
+      "v11_runtime_pass": true,
+      "batch_integrity": true,
+      "five_packets_exact": true,
+      "all_packets_integral": true,
+      "manifest_integrity": true,
+      "no_recipient_fabrication": true,
+      "no_governance_activation": true,
+      "truth_effect_none": true
+    }
+  },
+  "barrier": "FIVE_EXTERNAL_PARTICIPANT_HANDOFFS_REQUIRED",
+  "governance_activated": false,
+  "production_certificate_issued": false,
+  "production_truth_effect": "NONE",
+  "frozen_crystal_mutated": false,
+  "next_seed": "KC144.V12::SELECT-INDEPENDENT-RECIPIENTS_DELIVER-FIVE-PACKETS_AND-ROUTE-SIGNED-RETURNS",
+  "runtime_state_digest": "sha256:689d9f1372ef0f98510c3da2280b32ed14b792d21eaba97e07497fa08acb5715"
+}

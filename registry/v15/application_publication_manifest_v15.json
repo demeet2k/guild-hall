@@ -1,0 +1,59 @@
+{
+  "schema": "KC144.ApplicationPublicationManifest.V15",
+  "transport_id": "KC144.CANDIDATE.APPLICATION.TRANSPORT.V15",
+  "parent_batch_id": "V11-BATCH::c7e3ae7e8cfd126a75b41b4a",
+  "parent_batch_root": "sha256:b9322c5950d562f7a3f437ed8c939d98506db4edf34446e8332318513bca46b5",
+  "call_manifest_root": "sha256:fc82581375a195d09a58b7769eb33bba719c7f7e4b7ddd7b5276dcf1ce1d6219",
+  "transport_contract_digest": "sha256:792599594c518288c15161f314721d0319f791f54cab652341f1aec7d1f2bde8",
+  "payload_rows": [
+    {
+      "role": "CUSTODIAN",
+      "payload_id": "V15-PAYLOAD::CUSTODIAN::493028e824092381",
+      "payload_digest": "sha256:3714c4cc058ec345b33d4cbdb38741d10ad9520937dab8396670135fc7b74a3b",
+      "call_id": "V14-CALL::CUSTODIAN::8abe29b03d1dea61",
+      "call_digest": "sha256:f2744aec6d1e87540d1e95390b933b08e68dfc5c55a85bb1f84a35e70110f77a",
+      "state": "READY_UNPUBLISHED"
+    },
+    {
+      "role": "INDEPENDENT_REVIEWER",
+      "payload_id": "V15-PAYLOAD::INDEPENDENT_REVIEWER::1abfa595b514e327",
+      "payload_digest": "sha256:3c8292b222bd4475e36554dc7f64b0988ee529be061690dd63e6374f79625f10",
+      "call_id": "V14-CALL::INDEPENDENT_REVIEWER::6d4d360bd6a2663b",
+      "call_digest": "sha256:a520738a8f6514b398d10c8d542e3294f39cbdbaa4bf829c86fc7bbfec92c6bd",
+      "state": "READY_UNPUBLISHED"
+    },
+    {
+      "role": "REPLAY_WITNESS",
+      "payload_id": "V15-PAYLOAD::REPLAY_WITNESS::a06aec49c902a215",
+      "payload_digest": "sha256:ac3ec296c8479514a5a51eeba546216f036288843d20ac92ff004e14d1bc60ee",
+      "call_id": "V14-CALL::REPLAY_WITNESS::d60fdbfe9caaa1c9",
+      "call_digest": "sha256:18a23dea2f5dc8acb99ac0ea5f2dd2b9fc199ffd2f41044a34b2ee4af3fe2415",
+      "state": "READY_UNPUBLISHED"
+    },
+    {
+      "role": "SOURCE_AUDITOR",
+      "payload_id": "V15-PAYLOAD::SOURCE_AUDITOR::89bb47f101a7020c",
+      "payload_digest": "sha256:502d009c9347dc357ad672077013a0adb3e64bfc2590fb5d3828358b80b53d20",
+      "call_id": "V14-CALL::SOURCE_AUDITOR::fd5ec85b9770fa37",
+      "call_digest": "sha256:9cc2b5c7b901c40ff2416c093496d786e198ee7396bc6ab5f04bc96fa5023224",
+      "state": "READY_UNPUBLISHED"
+    },
+    {
+      "role": "RETURN_AUDITOR",
+      "payload_id": "V15-PAYLOAD::RETURN_AUDITOR::6608c0454fcd9596",
+      "payload_digest": "sha256:378340758cbd0ff5dd7f6498a5552d5c80fc7228e1caa8d870e28aab6096769b",
+      "call_id": "V14-CALL::RETURN_AUDITOR::cbf26edcd34517d8",
+      "call_digest": "sha256:8ee08d05eec40c49a4d10e391a29966f6dd0a6cfc4076d26a65a161befce11a2",
+      "state": "READY_UNPUBLISHED"
+    }
+  ],
+  "prepared_payload_count": 5,
+  "published_payload_count": 0,
+  "publication_receipt_count": 0,
+  "status": "READY_FOR_EXTERNAL_PUBLICATION",
+  "publication_claimed": false,
+  "delivery_claimed": false,
+  "governance_authority_granted": false,
+  "truth_effect": "NONE",
+  "manifest_root": "sha256:79bd0947129b9cb2fa8a81d14a4656a670bfa52c81e74b633c8aacdcf7b6a31e"
+}

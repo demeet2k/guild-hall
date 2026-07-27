@@ -1,0 +1,61 @@
+{
+  "schema": "KC144.ParticipantHandoffManifest.V12",
+  "handoff_id": "KC144.PARTICIPANT.HANDOFF.V12",
+  "parent_batch_id": "V11-BATCH::c7e3ae7e8cfd126a75b41b4a",
+  "parent_batch_root": "sha256:b9322c5950d562f7a3f437ed8c939d98506db4edf34446e8332318513bca46b5",
+  "handoff_contract_digest": "sha256:44b247f972c80b12b8744891dd01ea5550a0e84002d20edd09360117ee179ecf",
+  "packet_rows": [
+    {
+      "role": "CUSTODIAN",
+      "packet_id": "V12-PACKET::CUSTODIAN::558eda0ae650fdf5",
+      "packet_digest": "sha256:4d9395dcaddda543e135072e0924b1c8b5f2a0520f67d9a078731a071dc9963c",
+      "challenge_id": "V10-CHALLENGE::5b73bcce63491f6bdbf6c3a8",
+      "challenge_digest": "sha256:ca936fec959c13c0bf68913c40832d0fe302b64d9686c6e1b96a37b20cd75f79",
+      "state": "READY_UNADDRESSED_UNDELIVERED"
+    },
+    {
+      "role": "INDEPENDENT_REVIEWER",
+      "packet_id": "V12-PACKET::INDEPENDENT_REVIEWER::75ee6c47b0b8113a",
+      "packet_digest": "sha256:9afa4fa3121c5d08851f4e49e958e3fb250a5c7be733db736bfe2f9d231b6889",
+      "challenge_id": "V10-CHALLENGE::0030380e24dfcbb96928ce30",
+      "challenge_digest": "sha256:6820cd000585cc4a877e39d562c305da7fa27ddb434f3bdc37b9bba804ecc42d",
+      "state": "READY_UNADDRESSED_UNDELIVERED"
+    },
+    {
+      "role": "REPLAY_WITNESS",
+      "packet_id": "V12-PACKET::REPLAY_WITNESS::91547891a3e5e33e",
+      "packet_digest": "sha256:537bbf219aed0e2201c84995e3e97d9eeaf86ac6fb2f33dad2de12a70cd300c4",
+      "challenge_id": "V10-CHALLENGE::662b5382d19664a5cacb395c",
+      "challenge_digest": "sha256:7b2e7636cbf319cd68a932c302554e9309aace79703e1a0336910c94a9c00595",
+      "state": "READY_UNADDRESSED_UNDELIVERED"
+    },
+    {
+      "role": "SOURCE_AUDITOR",
+      "packet_id": "V12-PACKET::SOURCE_AUDITOR::e09f265a08faa29e",
+      "packet_digest": "sha256:21106f4f0ec6c7e25da51c3384b76451c05ceb012b8af3af92d28fb144b895b9",
+      "challenge_id": "V10-CHALLENGE::87450a67eb08ac67a6d32fa2",
+      "challenge_digest": "sha256:a6b20b540c105cf97c10731f9cb8af5fbb325001a500b580d1c14adeb3fee2a0",
+      "state": "READY_UNADDRESSED_UNDELIVERED"
+    },
+    {
+      "role": "RETURN_AUDITOR",
+      "packet_id": "V12-PACKET::RETURN_AUDITOR::c3c15a4e86c54655",
+      "packet_digest": "sha256:3d448ae51ebe15b4b12f499faf7bd7550c3a11f1a1c4646c081e569f071c8769",
+      "challenge_id": "V10-CHALLENGE::d1e3a1001af0c4b61d53d9ab",
+      "challenge_digest": "sha256:1e75005149ce6dcda1d05b58ad2d496376bf1cc27457166f2868a3b434eb6e4a",
+      "state": "READY_UNADDRESSED_UNDELIVERED"
+    }
+  ],
+  "packet_count": 5,
+  "addressed_count": 0,
+  "delivered_count": 0,
+  "returned_response_count": 0,
+  "status": "READY_FOR_EXTERNAL_RECIPIENT_SELECTION_AND_DELIVERY",
+  "barrier": "FIVE_EXTERNAL_PARTICIPANT_HANDOFFS_REQUIRED",
+  "parallelism": "ALL_FIVE_PACKETS_MAY_BE_DELIVERED_IN_PARALLEL",
+  "governance_activated": false,
+  "production_certificate_issued": false,
+  "truth_effect": "NONE",
+  "next_seed": "KC144.V12::SELECT-INDEPENDENT-RECIPIENTS_DELIVER-FIVE-PACKETS_AND-ROUTE-SIGNED-RETURNS",
+  "manifest_root": "sha256:38bae310d945ff813afc98bfe60aa51d7a26c241ecee8f99b6f28d2d6bc7f4b7"
+}

@@ -1,0 +1,2281 @@
+{
+  "schema_version": "KC144-ATLAS-1.0",
+  "lookup_namespace": "KC144.V1",
+  "atlas_epoch": "EPOCH-B-EIGHT-BLOCK",
+  "framework_revision": "KC144.FINAL.2026-07-26",
+  "partition": [
+    6,
+    16,
+    21,
+    37,
+    10,
+    15,
+    27,
+    12
+  ],
+  "seats": [
+    {
+      "gid": 1,
+      "row": 1,
+      "col": 1,
+      "grid": "R01C01",
+      "block": "H6",
+      "station": "H01",
+      "title": "Address–Identity Registry",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {}
+    },
+    {
+      "gid": 2,
+      "row": 1,
+      "col": 2,
+      "grid": "R01C02",
+      "block": "H6",
+      "station": "H02",
+      "title": "Domain Projection–Seating and Alias Registry",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {}
+    },
+    {
+      "gid": 3,
+      "row": 1,
+      "col": 3,
+      "grid": "R01C03",
+      "block": "H6",
+      "station": "H03",
+      "title": "Mycelial Navigation Registry",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {}
+    },
+    {
+      "gid": 4,
+      "row": 1,
+      "col": 4,
+      "grid": "R01C04",
+      "block": "H6",
+      "station": "H04",
+      "title": "Invariant–Bridge–Defect Registry",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {}
+    },
+    {
+      "gid": 5,
+      "row": 1,
+      "col": 5,
+      "grid": "R01C05",
+      "block": "H6",
+      "station": "H05",
+      "title": "Source–Evidence–Version Ledger",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {}
+    },
+    {
+      "gid": 6,
+      "row": 1,
+      "col": 6,
+      "grid": "R01C06",
+      "block": "H6",
+      "station": "H06",
+      "title": "Activation–Replay–Reseed Hub",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {}
+    },
+    {
+      "gid": 7,
+      "row": 1,
+      "col": 7,
+      "grid": "R01C07",
+      "block": "X16",
+      "station": "X-11-SQ",
+      "title": "BODY_SEED — SQUARE",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "pole": "11",
+        "lens": "SQ"
+      }
+    },
+    {
+      "gid": 8,
+      "row": 1,
+      "col": 8,
+      "grid": "R01C08",
+      "block": "X16",
+      "station": "X-11-FL",
+      "title": "BODY_SEED — FLOWER",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "pole": "11",
+        "lens": "FL"
+      }
+    },
+    {
+      "gid": 9,
+      "row": 1,
+      "col": 9,
+      "grid": "R01C09",
+      "block": "X16",
+      "station": "X-11-CL",
+      "title": "BODY_SEED — CLOUD",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "pole": "11",
+        "lens": "CL"
+      }
+    },
+    {
+      "gid": 10,
+      "row": 1,
+      "col": 10,
+      "grid": "R01C10",
+      "block": "X16",
+      "station": "X-11-FR",
+      "title": "BODY_SEED — FRACTAL",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "pole": "11",
+        "lens": "FR"
+      }
+    },
+    {
+      "gid": 11,
+      "row": 1,
+      "col": 11,
+      "grid": "R01C11",
+      "block": "X16",
+      "station": "X-10-SQ",
+      "title": "TRANSFORM_PATH — SQUARE",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "pole": "10",
+        "lens": "SQ"
+      }
+    },
+    {
+      "gid": 12,
+      "row": 1,
+      "col": 12,
+      "grid": "R01C12",
+      "block": "X16",
+      "station": "X-10-FL",
+      "title": "TRANSFORM_PATH — FLOWER",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "pole": "10",
+        "lens": "FL"
+      }
+    },
+    {
+      "gid": 13,
+      "row": 2,
+      "col": 1,
+      "grid": "R02C01",
+      "block": "X16",
+      "station": "X-10-CL",
+      "title": "TRANSFORM_PATH — CLOUD",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "pole": "10",
+        "lens": "CL"
+      }
+    },
+    {
+      "gid": 14,
+      "row": 2,
+      "col": 2,
+      "grid": "R02C02",
+      "block": "X16",
+      "station": "X-10-FR",
+      "title": "TRANSFORM_PATH — FRACTAL",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "pole": "10",
+        "lens": "FR"
+      }
+    },
+    {
+      "gid": 15,
+      "row": 2,
+      "col": 3,
+      "grid": "R02C03",
+      "block": "X16",
+      "station": "X-00-SQ",
+      "title": "INVARIANT_DEFECT — SQUARE",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "pole": "00",
+        "lens": "SQ"
+      }
+    },
+    {
+      "gid": 16,
+      "row": 2,
+      "col": 4,
+      "grid": "R02C04",
+      "block": "X16",
+      "station": "X-00-FL",
+      "title": "INVARIANT_DEFECT — FLOWER",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "pole": "00",
+        "lens": "FL"
+      }
+    },
+    {
+      "gid": 17,
+      "row": 2,
+      "col": 5,
+      "grid": "R02C05",
+      "block": "X16",
+      "station": "X-00-CL",
+      "title": "INVARIANT_DEFECT — CLOUD",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "pole": "00",
+        "lens": "CL"
+      }
+    },
+    {
+      "gid": 18,
+      "row": 2,
+      "col": 6,
+      "grid": "R02C06",
+      "block": "X16",
+      "station": "X-00-FR",
+      "title": "INVARIANT_DEFECT — FRACTAL",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "pole": "00",
+        "lens": "FR"
+      }
+    },
+    {
+      "gid": 19,
+      "row": 2,
+      "col": 7,
+      "grid": "R02C07",
+      "block": "X16",
+      "station": "X-01-SQ",
+      "title": "RETURN_ADDRESS — SQUARE",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "pole": "01",
+        "lens": "SQ"
+      }
+    },
+    {
+      "gid": 20,
+      "row": 2,
+      "col": 8,
+      "grid": "R02C08",
+      "block": "X16",
+      "station": "X-01-FL",
+      "title": "RETURN_ADDRESS — FLOWER",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "pole": "01",
+        "lens": "FL"
+      }
+    },
+    {
+      "gid": 21,
+      "row": 2,
+      "col": 9,
+      "grid": "R02C09",
+      "block": "X16",
+      "station": "X-01-CL",
+      "title": "RETURN_ADDRESS — CLOUD",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "pole": "01",
+        "lens": "CL"
+      }
+    },
+    {
+      "gid": 22,
+      "row": 2,
+      "col": 10,
+      "grid": "R02C10",
+      "block": "X16",
+      "station": "X-01-FR",
+      "title": "RETURN_ADDRESS — FRACTAL",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "pole": "01",
+        "lens": "FR"
+      }
+    },
+    {
+      "gid": 23,
+      "row": 2,
+      "col": 11,
+      "grid": "R02C11",
+      "block": "BR21",
+      "station": "B01",
+      "title": "ADMIT / PLUS",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "ADMIT",
+        "lens": "PLUS",
+        "symbol": "+"
+      }
+    },
+    {
+      "gid": 24,
+      "row": 2,
+      "col": 12,
+      "grid": "R02C12",
+      "block": "BR21",
+      "station": "B02",
+      "title": "ADMIT / HINGE",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "ADMIT",
+        "lens": "HINGE",
+        "symbol": "⋈"
+      }
+    },
+    {
+      "gid": 25,
+      "row": 3,
+      "col": 1,
+      "grid": "R03C01",
+      "block": "BR21",
+      "station": "B03",
+      "title": "ADMIT / STAR",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "ADMIT",
+        "lens": "STAR",
+        "symbol": "*"
+      }
+    },
+    {
+      "gid": 26,
+      "row": 3,
+      "col": 2,
+      "grid": "R03C02",
+      "block": "BR21",
+      "station": "B04",
+      "title": "EXPAND / PLUS",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "EXPAND",
+        "lens": "PLUS",
+        "symbol": "+"
+      }
+    },
+    {
+      "gid": 27,
+      "row": 3,
+      "col": 3,
+      "grid": "R03C03",
+      "block": "BR21",
+      "station": "B05",
+      "title": "EXPAND / HINGE",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "EXPAND",
+        "lens": "HINGE",
+        "symbol": "⋈"
+      }
+    },
+    {
+      "gid": 28,
+      "row": 3,
+      "col": 4,
+      "grid": "R03C04",
+      "block": "BR21",
+      "station": "B06",
+      "title": "EXPAND / STAR",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "EXPAND",
+        "lens": "STAR",
+        "symbol": "*"
+      }
+    },
+    {
+      "gid": 29,
+      "row": 3,
+      "col": 5,
+      "grid": "R03C05",
+      "block": "BR21",
+      "station": "B07",
+      "title": "NAVIGATE / PLUS",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "NAVIGATE",
+        "lens": "PLUS",
+        "symbol": "+"
+      }
+    },
+    {
+      "gid": 30,
+      "row": 3,
+      "col": 6,
+      "grid": "R03C06",
+      "block": "BR21",
+      "station": "B08",
+      "title": "NAVIGATE / HINGE",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "NAVIGATE",
+        "lens": "HINGE",
+        "symbol": "⋈"
+      }
+    },
+    {
+      "gid": 31,
+      "row": 3,
+      "col": 7,
+      "grid": "R03C07",
+      "block": "BR21",
+      "station": "B09",
+      "title": "NAVIGATE / STAR",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "NAVIGATE",
+        "lens": "STAR",
+        "symbol": "*"
+      }
+    },
+    {
+      "gid": 32,
+      "row": 3,
+      "col": 8,
+      "grid": "R03C08",
+      "block": "BR21",
+      "station": "B10",
+      "title": "TRANSFORM / PLUS",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "TRANSFORM",
+        "lens": "PLUS",
+        "symbol": "+"
+      }
+    },
+    {
+      "gid": 33,
+      "row": 3,
+      "col": 9,
+      "grid": "R03C09",
+      "block": "BR21",
+      "station": "B11",
+      "title": "TRANSFORM / HINGE",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "TRANSFORM",
+        "lens": "HINGE",
+        "symbol": "⋈"
+      }
+    },
+    {
+      "gid": 34,
+      "row": 3,
+      "col": 10,
+      "grid": "R03C10",
+      "block": "BR21",
+      "station": "B12",
+      "title": "TRANSFORM / STAR",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "TRANSFORM",
+        "lens": "STAR",
+        "symbol": "*"
+      }
+    },
+    {
+      "gid": 35,
+      "row": 3,
+      "col": 11,
+      "grid": "R03C11",
+      "block": "BR21",
+      "station": "B13",
+      "title": "TEST / PLUS",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "TEST",
+        "lens": "PLUS",
+        "symbol": "+"
+      }
+    },
+    {
+      "gid": 36,
+      "row": 3,
+      "col": 12,
+      "grid": "R03C12",
+      "block": "BR21",
+      "station": "B14",
+      "title": "TEST / HINGE",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "TEST",
+        "lens": "HINGE",
+        "symbol": "⋈"
+      }
+    },
+    {
+      "gid": 37,
+      "row": 4,
+      "col": 1,
+      "grid": "R04C01",
+      "block": "BR21",
+      "station": "B15",
+      "title": "TEST / STAR",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "TEST",
+        "lens": "STAR",
+        "symbol": "*"
+      }
+    },
+    {
+      "gid": 38,
+      "row": 4,
+      "col": 2,
+      "grid": "R04C02",
+      "block": "BR21",
+      "station": "B16",
+      "title": "COMPRESS / PLUS",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "COMPRESS",
+        "lens": "PLUS",
+        "symbol": "+"
+      }
+    },
+    {
+      "gid": 39,
+      "row": 4,
+      "col": 3,
+      "grid": "R04C03",
+      "block": "BR21",
+      "station": "B17",
+      "title": "COMPRESS / HINGE",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "COMPRESS",
+        "lens": "HINGE",
+        "symbol": "⋈"
+      }
+    },
+    {
+      "gid": 40,
+      "row": 4,
+      "col": 4,
+      "grid": "R04C04",
+      "block": "BR21",
+      "station": "B18",
+      "title": "COMPRESS / STAR",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "COMPRESS",
+        "lens": "STAR",
+        "symbol": "*"
+      }
+    },
+    {
+      "gid": 41,
+      "row": 4,
+      "col": 5,
+      "grid": "R04C05",
+      "block": "BR21",
+      "station": "B19",
+      "title": "RETURN / PLUS",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "RETURN",
+        "lens": "PLUS",
+        "symbol": "+"
+      }
+    },
+    {
+      "gid": 42,
+      "row": 4,
+      "col": 6,
+      "grid": "R04C06",
+      "block": "BR21",
+      "station": "B20",
+      "title": "RETURN / HINGE",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "RETURN",
+        "lens": "HINGE",
+        "symbol": "⋈"
+      }
+    },
+    {
+      "gid": 43,
+      "row": 4,
+      "col": 7,
+      "grid": "R04C07",
+      "block": "BR21",
+      "station": "B21",
+      "title": "RETURN / STAR",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "stage": "RETURN",
+        "lens": "STAR",
+        "symbol": "*"
+      }
+    },
+    {
+      "gid": 44,
+      "row": 4,
+      "col": 8,
+      "grid": "R04C08",
+      "block": "F37",
+      "station": "F01",
+      "title": "Diagonal Latin-Square Address and Recursive Coordinate",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "T"
+      }
+    },
+    {
+      "gid": 45,
+      "row": 4,
+      "col": 9,
+      "grid": "R04C09",
+      "block": "F37",
+      "station": "F02",
+      "title": "Compactified Complex / Hilbert State",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "T"
+      }
+    },
+    {
+      "gid": 46,
+      "row": 4,
+      "col": 10,
+      "grid": "R04C10",
+      "block": "F37",
+      "station": "F03",
+      "title": "Rigged Distribution / Instrument",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "T"
+      }
+    },
+    {
+      "gid": 47,
+      "row": 4,
+      "col": 11,
+      "grid": "R04C11",
+      "block": "F37",
+      "station": "F04",
+      "title": "Orbit–Character",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "T"
+      }
+    },
+    {
+      "gid": 48,
+      "row": 4,
+      "col": 12,
+      "grid": "R04C12",
+      "block": "F37",
+      "station": "F05",
+      "title": "Exact Affine Motion",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "T"
+      }
+    },
+    {
+      "gid": 49,
+      "row": 5,
+      "col": 1,
+      "grid": "R05C01",
+      "block": "F37",
+      "station": "F06",
+      "title": "Binary-Octahedral / Quaternion Lift",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "T"
+      }
+    },
+    {
+      "gid": 50,
+      "row": 5,
+      "col": 2,
+      "grid": "R05C02",
+      "block": "F37",
+      "station": "F07",
+      "title": "Analytic Branch-Cover",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "T"
+      }
+    },
+    {
+      "gid": 51,
+      "row": 5,
+      "col": 3,
+      "grid": "R05C03",
+      "block": "F37",
+      "station": "F08",
+      "title": "Jet / Local-Asymptotic",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "T"
+      }
+    },
+    {
+      "gid": 52,
+      "row": 5,
+      "col": 4,
+      "grid": "R05C04",
+      "block": "F37",
+      "station": "F09",
+      "title": "Bulk–Boundary Totalized Channel",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "T"
+      }
+    },
+    {
+      "gid": 53,
+      "row": 5,
+      "col": 5,
+      "grid": "R05C05",
+      "block": "F37",
+      "station": "F10",
+      "title": "Observable Algebra",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "A"
+      }
+    },
+    {
+      "gid": 54,
+      "row": 5,
+      "col": 6,
+      "grid": "R05C06",
+      "block": "F37",
+      "station": "F11",
+      "title": "Commutant / Sector",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "A"
+      }
+    },
+    {
+      "gid": 55,
+      "row": 5,
+      "col": 7,
+      "grid": "R05C07",
+      "block": "F37",
+      "station": "F12",
+      "title": "Elliptic Two-Torsion",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "A"
+      }
+    },
+    {
+      "gid": 56,
+      "row": 5,
+      "col": 8,
+      "grid": "R05C08",
+      "block": "F37",
+      "station": "F13",
+      "title": "Root and Lattice Embodiment",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "A"
+      }
+    },
+    {
+      "gid": 57,
+      "row": 5,
+      "col": 9,
+      "grid": "R05C09",
+      "block": "F37",
+      "station": "F14",
+      "title": "Binary Code and Pauli Exactification",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "A"
+      }
+    },
+    {
+      "gid": 58,
+      "row": 5,
+      "col": 10,
+      "grid": "R05C10",
+      "block": "F37",
+      "station": "F15",
+      "title": "Clifford Spin Propagation",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "A"
+      }
+    },
+    {
+      "gid": 59,
+      "row": 5,
+      "col": 11,
+      "grid": "R05C11",
+      "block": "F37",
+      "station": "F16",
+      "title": "Finite Incidence Geometry",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "A"
+      }
+    },
+    {
+      "gid": 60,
+      "row": 5,
+      "col": 12,
+      "grid": "R05C12",
+      "block": "F37",
+      "station": "F17",
+      "title": "Quantum-Group Deformation",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "A"
+      }
+    },
+    {
+      "gid": 61,
+      "row": 6,
+      "col": 1,
+      "grid": "R06C01",
+      "block": "F37",
+      "station": "F18",
+      "title": "Twisted K-Theory and Cohomological Completion",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "A"
+      }
+    },
+    {
+      "gid": 62,
+      "row": 6,
+      "col": 2,
+      "grid": "R06C02",
+      "block": "F37",
+      "station": "F19",
+      "title": "Physical-Geometric Seating",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "G"
+      }
+    },
+    {
+      "gid": 63,
+      "row": 6,
+      "col": 3,
+      "grid": "R06C03",
+      "block": "F37",
+      "station": "F20",
+      "title": "G2 Reduced-Transport Geometry",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "G"
+      }
+    },
+    {
+      "gid": 64,
+      "row": 6,
+      "col": 4,
+      "grid": "R06C04",
+      "block": "F37",
+      "station": "F21",
+      "title": "Octonionic Exceptional Algebra",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "G"
+      }
+    },
+    {
+      "gid": 65,
+      "row": 6,
+      "col": 5,
+      "grid": "R06C05",
+      "block": "F37",
+      "station": "F22",
+      "title": "Kummer K3 Compactified Bridge",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "G"
+      }
+    },
+    {
+      "gid": 66,
+      "row": 6,
+      "col": 6,
+      "grid": "R06C06",
+      "block": "F37",
+      "station": "F23",
+      "title": "Visible Discrete Physical Symmetry / Compression-Carry",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "G"
+      }
+    },
+    {
+      "gid": 67,
+      "row": 6,
+      "col": 7,
+      "grid": "R06C07",
+      "block": "F37",
+      "station": "F24",
+      "title": "Symmetry-Protected Phase / Renormalization Shadow",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "G"
+      }
+    },
+    {
+      "gid": 68,
+      "row": 6,
+      "col": 8,
+      "grid": "R06C08",
+      "block": "F37",
+      "station": "F25",
+      "title": "Toric-Code Topological Realization",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "G"
+      }
+    },
+    {
+      "gid": 69,
+      "row": 6,
+      "col": 9,
+      "grid": "R06C09",
+      "block": "F37",
+      "station": "F26",
+      "title": "Kitaev Honeycomb and Nonabelian Lift",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "G"
+      }
+    },
+    {
+      "gid": 70,
+      "row": 6,
+      "col": 10,
+      "grid": "R06C10",
+      "block": "F37",
+      "station": "F27",
+      "title": "Dijkgraaf–Witten Finite-Gauge / Meta-Liminal",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "G"
+      }
+    },
+    {
+      "gid": 71,
+      "row": 6,
+      "col": 11,
+      "grid": "R06C11",
+      "block": "F37",
+      "station": "F28",
+      "title": "Question-Language and Codification",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "C"
+      }
+    },
+    {
+      "gid": 72,
+      "row": 6,
+      "col": 12,
+      "grid": "R06C12",
+      "block": "F37",
+      "station": "F29",
+      "title": "Modular Visibility",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "C"
+      }
+    },
+    {
+      "gid": 73,
+      "row": 7,
+      "col": 1,
+      "grid": "R07C01",
+      "block": "F37",
+      "station": "F30",
+      "title": "Moonshine and Graded-Representation Memory",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "C"
+      }
+    },
+    {
+      "gid": 74,
+      "row": 7,
+      "col": 2,
+      "grid": "R07C02",
+      "block": "F37",
+      "station": "F31",
+      "title": "E7 Lattice VOA / Cross-Symmetry Certificate",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "C"
+      }
+    },
+    {
+      "gid": 75,
+      "row": 7,
+      "col": 3,
+      "grid": "R07C03",
+      "block": "F37",
+      "station": "F32",
+      "title": "Global Conformal Body / Obligation",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "C"
+      }
+    },
+    {
+      "gid": 76,
+      "row": 7,
+      "col": 4,
+      "grid": "R07C04",
+      "block": "F37",
+      "station": "F33",
+      "title": "Subfactor, Rigid Fusion-Index, and Replay–Merkle",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "C"
+      }
+    },
+    {
+      "gid": 77,
+      "row": 7,
+      "col": 5,
+      "grid": "R07C05",
+      "block": "F37",
+      "station": "F34",
+      "title": "Motivic Envelope",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "C"
+      }
+    },
+    {
+      "gid": 78,
+      "row": 7,
+      "col": 6,
+      "grid": "R07C06",
+      "block": "F37",
+      "station": "F35",
+      "title": "Higher-Coherence Architecture and Unification Frontier",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "C"
+      }
+    },
+    {
+      "gid": 79,
+      "row": 7,
+      "col": 7,
+      "grid": "R07C07",
+      "block": "F37",
+      "station": "F36",
+      "title": "Derived Singularity, Empirical Closure, and Replay Memory",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "C"
+      }
+    },
+    {
+      "gid": 80,
+      "row": 7,
+      "col": 8,
+      "grid": "R07C08",
+      "block": "F37",
+      "station": "F37",
+      "title": "Integrable AQM Dynamical Capstone and Carrier Return",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "region": "C"
+      }
+    },
+    {
+      "gid": 81,
+      "row": 7,
+      "col": 9,
+      "grid": "R07C09",
+      "block": "IC10",
+      "station": "I01",
+      "title": "Identity and Provenance",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "gate_order": 1
+      }
+    },
+    {
+      "gid": 82,
+      "row": 7,
+      "col": 10,
+      "grid": "R07C10",
+      "block": "IC10",
+      "station": "I02",
+      "title": "Syntax, Normalization, and Dependency Declaration",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "gate_order": 2
+      }
+    },
+    {
+      "gid": 83,
+      "row": 7,
+      "col": 11,
+      "grid": "R07C11",
+      "block": "IC10",
+      "station": "I03",
+      "title": "Type, Unit, and Carrier",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "gate_order": 3
+      }
+    },
+    {
+      "gid": 84,
+      "row": 7,
+      "col": 12,
+      "grid": "R07C12",
+      "block": "IC10",
+      "station": "I04",
+      "title": "Scope, Corridor, and Evidence-Class Alignment",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "gate_order": 4
+      }
+    },
+    {
+      "gid": 85,
+      "row": 8,
+      "col": 1,
+      "grid": "R08C01",
+      "block": "IC10",
+      "station": "I05",
+      "title": "Invariant Preservation",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "gate_order": 5
+      }
+    },
+    {
+      "gid": 86,
+      "row": 8,
+      "col": 2,
+      "grid": "R08C02",
+      "block": "IC10",
+      "station": "I06",
+      "title": "Evidence Sufficiency and Independence",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "gate_order": 6
+      }
+    },
+    {
+      "gid": 87,
+      "row": 8,
+      "col": 3,
+      "grid": "R08C03",
+      "block": "IC10",
+      "station": "I07",
+      "title": "Dependency Closure and Replay Prerequisites",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "gate_order": 7
+      }
+    },
+    {
+      "gid": 88,
+      "row": 8,
+      "col": 4,
+      "grid": "R08C04",
+      "block": "IC10",
+      "station": "I08",
+      "title": "Bridge, Gluing, Overlap, and Return Defect",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "gate_order": 8
+      }
+    },
+    {
+      "gid": 89,
+      "row": 8,
+      "col": 5,
+      "grid": "R08C05",
+      "block": "IC10",
+      "station": "I09",
+      "title": "Audit and Replay Completeness",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "gate_order": 9
+      }
+    },
+    {
+      "gid": 90,
+      "row": 8,
+      "col": 6,
+      "grid": "R08C06",
+      "block": "IC10",
+      "station": "I10",
+      "title": "Promotion, Canonical Emission, and Reseed Authorization",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "gate_order": 10
+      }
+    },
+    {
+      "gid": 91,
+      "row": 8,
+      "col": 7,
+      "grid": "R08C07",
+      "block": "KC15",
+      "station": "K01",
+      "title": "Support Mask 1000",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "mask": "1000",
+        "active_poles": [
+          "11"
+        ]
+      }
+    },
+    {
+      "gid": 92,
+      "row": 8,
+      "col": 8,
+      "grid": "R08C08",
+      "block": "KC15",
+      "station": "K02",
+      "title": "Support Mask 0100",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "mask": "0100",
+        "active_poles": [
+          "10"
+        ]
+      }
+    },
+    {
+      "gid": 93,
+      "row": 8,
+      "col": 9,
+      "grid": "R08C09",
+      "block": "KC15",
+      "station": "K03",
+      "title": "Support Mask 1100",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "mask": "1100",
+        "active_poles": [
+          "11",
+          "10"
+        ]
+      }
+    },
+    {
+      "gid": 94,
+      "row": 8,
+      "col": 10,
+      "grid": "R08C10",
+      "block": "KC15",
+      "station": "K04",
+      "title": "Support Mask 0010",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "mask": "0010",
+        "active_poles": [
+          "00"
+        ]
+      }
+    },
+    {
+      "gid": 95,
+      "row": 8,
+      "col": 11,
+      "grid": "R08C11",
+      "block": "KC15",
+      "station": "K05",
+      "title": "Support Mask 1010",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "mask": "1010",
+        "active_poles": [
+          "11",
+          "00"
+        ]
+      }
+    },
+    {
+      "gid": 96,
+      "row": 8,
+      "col": 12,
+      "grid": "R08C12",
+      "block": "KC15",
+      "station": "K06",
+      "title": "Support Mask 0110",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "mask": "0110",
+        "active_poles": [
+          "10",
+          "00"
+        ]
+      }
+    },
+    {
+      "gid": 97,
+      "row": 9,
+      "col": 1,
+      "grid": "R09C01",
+      "block": "KC15",
+      "station": "K07",
+      "title": "Support Mask 1110",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "mask": "1110",
+        "active_poles": [
+          "11",
+          "10",
+          "00"
+        ]
+      }
+    },
+    {
+      "gid": 98,
+      "row": 9,
+      "col": 2,
+      "grid": "R09C02",
+      "block": "KC15",
+      "station": "K08",
+      "title": "Support Mask 0001",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "mask": "0001",
+        "active_poles": [
+          "01"
+        ]
+      }
+    },
+    {
+      "gid": 99,
+      "row": 9,
+      "col": 3,
+      "grid": "R09C03",
+      "block": "KC15",
+      "station": "K09",
+      "title": "Support Mask 1001",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "mask": "1001",
+        "active_poles": [
+          "11",
+          "01"
+        ]
+      }
+    },
+    {
+      "gid": 100,
+      "row": 9,
+      "col": 4,
+      "grid": "R09C04",
+      "block": "KC15",
+      "station": "K10",
+      "title": "Support Mask 0101",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "mask": "0101",
+        "active_poles": [
+          "10",
+          "01"
+        ]
+      }
+    },
+    {
+      "gid": 101,
+      "row": 9,
+      "col": 5,
+      "grid": "R09C05",
+      "block": "KC15",
+      "station": "K11",
+      "title": "Support Mask 1101",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "mask": "1101",
+        "active_poles": [
+          "11",
+          "10",
+          "01"
+        ]
+      }
+    },
+    {
+      "gid": 102,
+      "row": 9,
+      "col": 6,
+      "grid": "R09C06",
+      "block": "KC15",
+      "station": "K12",
+      "title": "Support Mask 0011",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "mask": "0011",
+        "active_poles": [
+          "00",
+          "01"
+        ]
+      }
+    },
+    {
+      "gid": 103,
+      "row": 9,
+      "col": 7,
+      "grid": "R09C07",
+      "block": "KC15",
+      "station": "K13",
+      "title": "Support Mask 1011",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "mask": "1011",
+        "active_poles": [
+          "11",
+          "00",
+          "01"
+        ]
+      }
+    },
+    {
+      "gid": 104,
+      "row": 9,
+      "col": 8,
+      "grid": "R09C08",
+      "block": "KC15",
+      "station": "K14",
+      "title": "Support Mask 0111",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "mask": "0111",
+        "active_poles": [
+          "10",
+          "00",
+          "01"
+        ]
+      }
+    },
+    {
+      "gid": 105,
+      "row": 9,
+      "col": 9,
+      "grid": "R09C09",
+      "block": "KC15",
+      "station": "K15",
+      "title": "Support Mask 1111",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "mask": "1111",
+        "active_poles": [
+          "11",
+          "10",
+          "00",
+          "01"
+        ]
+      }
+    },
+    {
+      "gid": 106,
+      "row": 9,
+      "col": 10,
+      "grid": "R09C10",
+      "block": "KC27",
+      "station": "P00",
+      "title": "Semantic Coordinate 000",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          0,
+          0,
+          0
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "COORDINATE_FROZEN_SEMANTICS_UNRESOLVED"
+      }
+    },
+    {
+      "gid": 107,
+      "row": 9,
+      "col": 11,
+      "grid": "R09C11",
+      "block": "KC27",
+      "station": "P01",
+      "title": "Semantic Coordinate 001",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          0,
+          0,
+          1
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "COORDINATE_FROZEN_SEMANTICS_UNRESOLVED"
+      }
+    },
+    {
+      "gid": 108,
+      "row": 9,
+      "col": 12,
+      "grid": "R09C12",
+      "block": "KC27",
+      "station": "P02",
+      "title": "Semantic Coordinate 002",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          0,
+          0,
+          2
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "COORDINATE_FROZEN_SEMANTICS_UNRESOLVED"
+      }
+    },
+    {
+      "gid": 109,
+      "row": 10,
+      "col": 1,
+      "grid": "R10C01",
+      "block": "KC27",
+      "station": "P03",
+      "title": "Semantic Coordinate 010",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          0,
+          1,
+          0
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "COORDINATE_FROZEN_SEMANTICS_UNRESOLVED"
+      }
+    },
+    {
+      "gid": 110,
+      "row": 10,
+      "col": 2,
+      "grid": "R10C02",
+      "block": "KC27",
+      "station": "P04",
+      "title": "Semantic Coordinate 011",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          0,
+          1,
+          1
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "COORDINATE_FROZEN_SEMANTICS_UNRESOLVED"
+      }
+    },
+    {
+      "gid": 111,
+      "row": 10,
+      "col": 3,
+      "grid": "R10C03",
+      "block": "KC27",
+      "station": "P05",
+      "title": "Semantic Coordinate 012",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          0,
+          1,
+          2
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "COORDINATE_FROZEN_SEMANTICS_UNRESOLVED"
+      }
+    },
+    {
+      "gid": 112,
+      "row": 10,
+      "col": 4,
+      "grid": "R10C04",
+      "block": "KC27",
+      "station": "P06",
+      "title": "Semantic Coordinate 020",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          0,
+          2,
+          0
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "COORDINATE_FROZEN_SEMANTICS_UNRESOLVED"
+      }
+    },
+    {
+      "gid": 113,
+      "row": 10,
+      "col": 5,
+      "grid": "R10C05",
+      "block": "KC27",
+      "station": "P07",
+      "title": "Semantic Coordinate 021",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          0,
+          2,
+          1
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "COORDINATE_FROZEN_SEMANTICS_UNRESOLVED"
+      }
+    },
+    {
+      "gid": 114,
+      "row": 10,
+      "col": 6,
+      "grid": "R10C06",
+      "block": "KC27",
+      "station": "P08",
+      "title": "Differential, Cohomological, and Boundary Calculus",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          0,
+          2,
+          2
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "SEEDED"
+      }
+    },
+    {
+      "gid": 115,
+      "row": 10,
+      "col": 7,
+      "grid": "R10C07",
+      "block": "KC27",
+      "station": "P09",
+      "title": "Addressing, Random Access, and Seed Retrieval",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          1,
+          0,
+          0
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "SEEDED"
+      }
+    },
+    {
+      "gid": 116,
+      "row": 10,
+      "col": 8,
+      "grid": "R10C08",
+      "block": "KC27",
+      "station": "P10",
+      "title": "BR21 Peer Runtime",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          1,
+          0,
+          1
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "SEEDED"
+      }
+    },
+    {
+      "gid": 117,
+      "row": 10,
+      "col": 9,
+      "grid": "R10C09",
+      "block": "KC27",
+      "station": "P11",
+      "title": "IC10 Promotion-Compiler Index",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          1,
+          0,
+          2
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "SEEDED"
+      }
+    },
+    {
+      "gid": 118,
+      "row": 10,
+      "col": 10,
+      "grid": "R10C10",
+      "block": "KC27",
+      "station": "P12",
+      "title": "CUT Branch-Complete Navigation",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          1,
+          1,
+          0
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "SEEDED"
+      }
+    },
+    {
+      "gid": 119,
+      "row": 10,
+      "col": 11,
+      "grid": "R10C11",
+      "block": "KC27",
+      "station": "P13",
+      "title": "Codec, Compression, and QSHRINK",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          1,
+          1,
+          1
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "SEEDED"
+      }
+    },
+    {
+      "gid": 120,
+      "row": 10,
+      "col": 12,
+      "grid": "R10C12",
+      "block": "KC27",
+      "station": "P14",
+      "title": "Memory, Merkle, and Content Addressing",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          1,
+          1,
+          2
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "SEEDED"
+      }
+    },
+    {
+      "gid": 121,
+      "row": 11,
+      "col": 1,
+      "grid": "R11C01",
+      "block": "KC27",
+      "station": "P15",
+      "title": "Semantic Coordinate 120",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          1,
+          2,
+          0
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "COORDINATE_FROZEN_SEMANTICS_UNRESOLVED"
+      }
+    },
+    {
+      "gid": 122,
+      "row": 11,
+      "col": 2,
+      "grid": "R11C02",
+      "block": "KC27",
+      "station": "P16",
+      "title": "Semantic Coordinate 121",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          1,
+          2,
+          1
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "COORDINATE_FROZEN_SEMANTICS_UNRESOLVED"
+      }
+    },
+    {
+      "gid": 123,
+      "row": 11,
+      "col": 3,
+      "grid": "R11C03",
+      "block": "KC27",
+      "station": "P17",
+      "title": "Semantic Coordinate 122",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          1,
+          2,
+          2
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "COORDINATE_FROZEN_SEMANTICS_UNRESOLVED"
+      }
+    },
+    {
+      "gid": 124,
+      "row": 11,
+      "col": 4,
+      "grid": "R11C04",
+      "block": "KC27",
+      "station": "P18",
+      "title": "Semantic Coordinate 200",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          2,
+          0,
+          0
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "COORDINATE_FROZEN_SEMANTICS_UNRESOLVED"
+      }
+    },
+    {
+      "gid": 125,
+      "row": 11,
+      "col": 5,
+      "grid": "R11C05",
+      "block": "KC27",
+      "station": "P19",
+      "title": "Semantic Coordinate 201",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          2,
+          0,
+          1
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "COORDINATE_FROZEN_SEMANTICS_UNRESOLVED"
+      }
+    },
+    {
+      "gid": 126,
+      "row": 11,
+      "col": 6,
+      "grid": "R11C06",
+      "block": "KC27",
+      "station": "P20",
+      "title": "Semantic Coordinate 202",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          2,
+          0,
+          2
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "COORDINATE_FROZEN_SEMANTICS_UNRESOLVED"
+      }
+    },
+    {
+      "gid": 127,
+      "row": 11,
+      "col": 7,
+      "grid": "R11C07",
+      "block": "KC27",
+      "station": "P21",
+      "title": "Semantic Coordinate 210",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          2,
+          1,
+          0
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "COORDINATE_FROZEN_SEMANTICS_UNRESOLVED"
+      }
+    },
+    {
+      "gid": 128,
+      "row": 11,
+      "col": 8,
+      "grid": "R11C08",
+      "block": "KC27",
+      "station": "P22",
+      "title": "Semantic Coordinate 211",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          2,
+          1,
+          1
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "COORDINATE_FROZEN_SEMANTICS_UNRESOLVED"
+      }
+    },
+    {
+      "gid": 129,
+      "row": 11,
+      "col": 9,
+      "grid": "R11C09",
+      "block": "KC27",
+      "station": "P23",
+      "title": "Semantic Coordinate 212",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          2,
+          1,
+          2
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "COORDINATE_FROZEN_SEMANTICS_UNRESOLVED"
+      }
+    },
+    {
+      "gid": 130,
+      "row": 11,
+      "col": 10,
+      "grid": "R11C10",
+      "block": "KC27",
+      "station": "P24",
+      "title": "Semantic Coordinate 220",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          2,
+          2,
+          0
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "COORDINATE_FROZEN_SEMANTICS_UNRESOLVED"
+      }
+    },
+    {
+      "gid": 131,
+      "row": 11,
+      "col": 11,
+      "grid": "R11C11",
+      "block": "KC27",
+      "station": "P25",
+      "title": "Semantic Coordinate 221",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          2,
+          2,
+          1
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "COORDINATE_FROZEN_SEMANTICS_UNRESOLVED"
+      }
+    },
+    {
+      "gid": 132,
+      "row": 11,
+      "col": 12,
+      "grid": "R11C12",
+      "block": "KC27",
+      "station": "P26",
+      "title": "Semantic Coordinate 222",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {
+        "coordinate": [
+          2,
+          2,
+          2
+        ],
+        "axis_legend_required": true,
+        "semantic_status": "COORDINATE_FROZEN_SEMANTICS_UNRESOLVED"
+      }
+    },
+    {
+      "gid": 133,
+      "row": 12,
+      "col": 1,
+      "grid": "R12C01",
+      "block": "SSN12",
+      "station": "M01",
+      "title": "Node-State and Station-Maturity Registry",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {}
+    },
+    {
+      "gid": 134,
+      "row": 12,
+      "col": 2,
+      "grid": "R12C02",
+      "block": "SSN12",
+      "station": "M02",
+      "title": "Edge-State, Bridge-State, and Route-Class Registry",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {}
+    },
+    {
+      "gid": 135,
+      "row": 12,
+      "col": 3,
+      "grid": "R12C03",
+      "block": "SSN12",
+      "station": "M03",
+      "title": "Epoch, Alias, and Coordinate-Crosswalk Registry",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {}
+    },
+    {
+      "gid": 136,
+      "row": 12,
+      "col": 4,
+      "grid": "R12C04",
+      "block": "SSN12",
+      "station": "M04",
+      "title": "Liminal, Disagreement, and J-Space Boundary Registry",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {}
+    },
+    {
+      "gid": 137,
+      "row": 12,
+      "col": 5,
+      "grid": "R12C05",
+      "block": "SSN12",
+      "station": "M05",
+      "title": "Activation, Observer, and Coverage Map",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {}
+    },
+    {
+      "gid": 138,
+      "row": 12,
+      "col": 6,
+      "grid": "R12C06",
+      "block": "SSN12",
+      "station": "M06",
+      "title": "Branch, Tombstone, Quarantine, and Rejected-Route Store",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {}
+    },
+    {
+      "gid": 139,
+      "row": 12,
+      "col": 7,
+      "grid": "R12C07",
+      "block": "SSN12",
+      "station": "M07",
+      "title": "Defect, Obligation, Evidence-Debt, and Repair Scheduler",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {}
+    },
+    {
+      "gid": 140,
+      "row": 12,
+      "col": 8,
+      "grid": "R12C08",
+      "block": "SSN12",
+      "station": "M08",
+      "title": "Healing Route and Unresolved-Bridge Resolver",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {}
+    },
+    {
+      "gid": 141,
+      "row": 12,
+      "col": 9,
+      "grid": "R12C09",
+      "block": "SSN12",
+      "station": "M09",
+      "title": "Path-Signature, Traversal, and Route Ledger",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {}
+    },
+    {
+      "gid": 142,
+      "row": 12,
+      "col": 10,
+      "grid": "R12C10",
+      "block": "SSN12",
+      "station": "M10",
+      "title": "Replay, Replica, and Cold-Boot Observatory",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {}
+    },
+    {
+      "gid": 143,
+      "row": 12,
+      "col": 11,
+      "grid": "R12C11",
+      "block": "SSN12",
+      "station": "M11",
+      "title": "Merge, Deployment, Authority, and Release Receipt",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {}
+    },
+    {
+      "gid": 144,
+      "row": 12,
+      "col": 12,
+      "grid": "R12C12",
+      "block": "SSN12",
+      "station": "M12",
+      "title": "Successor Certificate, Global Seed, and Prime Reentry",
+      "status": "FROZEN",
+      "aliases": [],
+      "metadata": {}
+    }
+  ],
+  "digest": "43e6ac822589042f20c6c2628d00aecc41f1ecb45186224b44cf57812ed04b82"
+}

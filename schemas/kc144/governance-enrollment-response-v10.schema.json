@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/governance-enrollment-response-v10.schema.json",
+  "type": "object",
+  "required": [
+    "schema", "response_id", "challenge", "member", "identity_claim_root",
+    "institution_root", "lineage_root", "external_identity_verification_root",
+    "conflict_disclosure_root", "conflict_status", "conflict_resolution_root",
+    "consent_root", "boundary_claim", "signature_b64"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.GovernanceEnrollmentResponse.V10"},
+    "response_id": {"type": "string", "minLength": 1},
+    "challenge": {"$ref": "governance-challenge-v10.schema.json"},
+    "member": {"type": "object"},
+    "identity_claim_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "institution_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "lineage_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "external_identity_verification_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "conflict_disclosure_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "conflict_status": {"enum": ["CLEAR", "RESOLVED", "DISCLOSED_PENDING_REVIEW"]},
+    "conflict_resolution_root": {
+      "anyOf": [
+        {"type": "null"},
+        {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+      ]
+    },
+    "consent_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "boundary_claim": {"const": "PARTICIPANT_CONSENT_NOT_SELF_RATIFICATION"},
+    "signature_b64": {"type": "string", "minLength": 86}
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "KC144.CandidateSelectionRuntimeState.V13",
+  "release": "KC144.CANDIDATE.SELECTION.RUNTIME.V13",
+  "parent_release": "KC144.PARTICIPANT.HANDOFF.RUNTIME.V12",
+  "selection_id": "KC144.CANDIDATE.COHORT.SELECTION.V13",
+  "selection_contract_digest": "sha256:5e65f703270e853a041795840fce06cd2a35c72c6011a24f5d6e39a7f60f1aa3",
+  "candidate_registry_root": "sha256:075c773f75026fe23d213fe041afe5f8e4bd244a29a08dc71ff3f55b5baba2a3",
+  "conflict_graph_root": "sha256:247da749be7e00ac9f152ecb7e97f840d90f780f1d5c7132e13a8a2f173986d0",
+  "solver_digest": "sha256:47e799fa356638a8e5f5b2a91619e0046af036d415ac030349a781870fe16243",
+  "nomination_count": 0,
+  "admitted_candidate_count": 0,
+  "solution_status": "NO_COHORT",
+  "selected_cohort": null,
+  "selected_pairwise_audits": 0,
+  "internal_readiness": {
+    "verdict": "PASS",
+    "checks": {
+      "v12_runtime_pass": true,
+      "selection_identity_exact": true,
+      "registry_integrity": true,
+      "ten_pair_law_exact": true,
+      "solver_fail_closed": true,
+      "no_inferred_live_candidates": true,
+      "no_authority_grant": true,
+      "no_delivery_claim": true,
+      "truth_effect_none": true
+    }
+  },
+  "barrier": "FIVE_EXTERNAL_CANDIDATE_NOMINATIONS_REQUIRED",
+  "governance_activated": false,
+  "production_certificate_issued": false,
+  "production_truth_effect": "NONE",
+  "frozen_crystal_mutated": false,
+  "next_seed": "KC144.V13::INGEST-REAL-CANDIDATE-NOMINATIONS-AND-SOLVE-INDEPENDENCE-QUALIFIED-COHORT",
+  "runtime_state_digest": "sha256:f976aa961e8e261f70c224bb313c826a9efcf06b6c8ff4e531f6b98b674a2278"
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/nomination-intake-contract-v14.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "intake_id", "roles", "role_call_count",
+    "submission_schema", "signature_algorithm", "signature_domain",
+    "required_nomination_fields", "publication_law", "signature_law",
+    "evidence_law", "routing_law", "assignment_law", "delivery_law",
+    "truth_effect", "contract_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.NominationIntakeContract.V14"},
+    "intake_id": {
+      "const": "KC144.CANDIDATE.NOMINATION.INTAKE.V14"
+    },
+    "roles": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true
+    },
+    "role_call_count": {"const": 5},
+    "submission_schema": {
+      "const": "KC144.SignedCandidateNomination.V14"
+    },
+    "signature_algorithm": {"const": "ED25519"},
+    "signature_domain": {
+      "const": "KC144.V14.CANDIDATE_NOMINATION"
+    },
+    "required_nomination_fields": {
+      "type": "array",
+      "minItems": 25,
+      "uniqueItems": true
+    },
+    "publication_law": {"type": "string", "minLength": 1},
+    "signature_law": {"type": "string", "minLength": 1},
+    "evidence_law": {"type": "string", "minLength": 1},
+    "routing_law": {"type": "string", "minLength": 1},
+    "assignment_law": {"type": "string", "minLength": 1},
+    "delivery_law": {"type": "string", "minLength": 1},
+    "truth_effect": {"const": "NONE"},
+    "contract_digest": {"$ref": "#/$defs/root"}
+  },
+  "$defs": {
+    "root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

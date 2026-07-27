@@ -1,0 +1,68 @@
+{
+  "schema": "KC144.ParticipantHandoffPacket.V12",
+  "handoff_id": "KC144.PARTICIPANT.HANDOFF.V12",
+  "packet_id": "V12-PACKET::REPLAY_WITNESS::91547891a3e5e33e",
+  "role": "REPLAY_WITNESS",
+  "batch_id": "V11-BATCH::c7e3ae7e8cfd126a75b41b4a",
+  "batch_root": "sha256:b9322c5950d562f7a3f437ed8c939d98506db4edf34446e8332318513bca46b5",
+  "challenge_id": "V10-CHALLENGE::662b5382d19664a5cacb395c",
+  "challenge_digest": "sha256:7b2e7636cbf319cd68a932c302554e9309aace79703e1a0336910c94a9c00595",
+  "challenge": {
+    "schema": "KC144.GovernanceChallenge.V10",
+    "challenge_id": "V10-CHALLENGE::662b5382d19664a5cacb395c",
+    "ceremony_id": "KC144.GOVERNANCE.CEREMONY.V10",
+    "epoch_id": "EPOCH-B-EIGHT-BLOCK",
+    "role": "REPLAY_WITNESS",
+    "governance_contract_digest": "sha256:a3e92b0e52880914667c09327b23c39de0ee9d1618b2e349e5f7304224f4ecd2",
+    "authority_registry_digest": "sha256:491b03e0f2e188bfbc4156dbe6693846fa58e11a1579738bba54d9eeab384fc8",
+    "handoff_bundle_root": "sha256:5a26b8be43df7df045c0a9beb4455b66b1e878468b74c1d1877ed5d789d6aea7",
+    "nonce": "15bb1012f1fb2bc046ac6ca15d25d4046161e7c5cb2f3f3d7d886be6d14f43a7",
+    "issued_at": "2026-07-27T08:39:35+00:00",
+    "expires_at": "2026-08-26T08:39:35+00:00",
+    "challenge_digest": "sha256:7b2e7636cbf319cd68a932c302554e9309aace79703e1a0336910c94a9c00595"
+  },
+  "handoff_contract_digest": "sha256:44b247f972c80b12b8744891dd01ea5550a0e84002d20edd09360117ee179ecf",
+  "dispatch_contract_digest": "sha256:8b7982cc2b38a8f23740c98bfbbeab9020650478dbbdf29bea70b03649af8bfb",
+  "ceremony_contract_digest": "sha256:a3e92b0e52880914667c09327b23c39de0ee9d1618b2e349e5f7304224f4ecd2",
+  "mission": "perform and attest independent reconstruction and replay without treating internal execution as external reproduction",
+  "required_capabilities": [
+    "independent execution environment",
+    "replay-root capture",
+    "difference and failure reporting"
+  ],
+  "universal_disqualifiers": [
+    "TEST-only identity",
+    "shared institution with another governance seat",
+    "shared lineage with another governance seat",
+    "shared public key or delegated private key",
+    "undisposed conflict",
+    "self-ratification claim"
+  ],
+  "required_attestation_roots": [
+    "identity_claim_root",
+    "institution_root",
+    "lineage_root",
+    "external_identity_verification_root",
+    "conflict_disclosure_root",
+    "consent_root"
+  ],
+  "response_schema": "KC144.GovernanceEnrollmentResponse.V10",
+  "signature_algorithm": "ED25519",
+  "signature_domain": "KC144.V10.GOVERNANCE_ENROLLMENT",
+  "canonicalization": "KC144 canonical JSON: UTF-8, sorted keys, compact separators",
+  "boundary_claim": "PARTICIPANT_CONSENT_NOT_SELF_RATIFICATION",
+  "private_key_instruction": "generate and retain the private key externally; return only the raw 32-byte public key encoded as base64 and the detached base64 signature",
+  "return_routes": {
+    "signed_response": "route through governance-response-route against the full immutable V11 batch",
+    "decline": "record DECLINED without filling the seat",
+    "conflict": "record CONFLICT_PENDING until a signed resolution root exists",
+    "expired": "preserve this packet and issue a new immutable batch",
+    "malformed": "preserve the rejected bytes and verification report"
+  },
+  "delivery_state": "READY_UNADDRESSED_UNDELIVERED",
+  "recipient_identity_root": null,
+  "delivery_receipt_root": null,
+  "governance_activated": false,
+  "truth_effect": "NONE",
+  "packet_digest": "sha256:537bbf219aed0e2201c84995e3e97d9eeaf86ac6fb2f33dad2de12a70cd300c4"
+}

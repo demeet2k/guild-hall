@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/governance-dispatch-contract-v11.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "dispatch_id", "ceremony_id", "epoch_id", "roles",
+    "challenge_count", "issuance_law", "routing_law", "assembly_law",
+    "expiration_law", "activation_law", "fixture_law", "truth_effect",
+    "contract_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.GovernanceDispatchContract.V11"},
+    "dispatch_id": {"const": "KC144.GOVERNANCE.DISPATCH.V11"},
+    "ceremony_id": {"const": "KC144.GOVERNANCE.CEREMONY.V10"},
+    "epoch_id": {"const": "EPOCH-B-EIGHT-BLOCK"},
+    "roles": {
+      "const": [
+        "CUSTODIAN", "INDEPENDENT_REVIEWER", "REPLAY_WITNESS",
+        "SOURCE_AUDITOR", "RETURN_AUDITOR"
+      ]
+    },
+    "challenge_count": {"const": 5},
+    "issuance_law": {"type": "string", "minLength": 1},
+    "routing_law": {"type": "string", "minLength": 1},
+    "assembly_law": {"type": "string", "minLength": 1},
+    "expiration_law": {"type": "string", "minLength": 1},
+    "activation_law": {"type": "string", "minLength": 1},
+    "fixture_law": {
+      "const": "LOCAL_OR_TEST_RESPONSES_HAVE_ZERO_PRODUCTION_EFFECT"
+    },
+    "truth_effect": {"const": "NONE"},
+    "contract_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

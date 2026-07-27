@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.invalid/schemas/node.schema.json",
+  "title": "KC144 Node",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "node_id",
+    "address",
+    "payload",
+    "invariants",
+    "sources",
+    "evidence_state",
+    "routes",
+    "branches",
+    "defects",
+    "return",
+    "continuation"
+  ],
+  "properties": {
+    "schema_version": {"const": "KC144-NODE-1.0"},
+    "node_id": {"type": "string", "minLength": 1},
+    "address": {
+      "type": "object",
+      "required": ["atlas_epoch", "gid", "grid", "station", "lookup_key", "version"],
+      "properties": {
+        "atlas_epoch": {"type": "string"},
+        "gid": {"type": "integer", "minimum": 1, "maximum": 144},
+        "grid": {"type": "string", "pattern": "^R(0[1-9]|1[0-2])C(0[1-9]|1[0-2])$"},
+        "station": {"type": "string"},
+        "lookup_key": {"type": "string"},
+        "domain": {"type": "string"},
+        "version": {"type": "string"},
+        "time_address": {"type": "object"}
+      },
+      "additionalProperties": true
+    },
+    "payload": {"type": "object"},
+    "invariants": {"type": "array", "items": {"type": "string"}},
+    "sources": {"type": "array", "items": {"type": "string"}},
+    "evidence_state": {
+      "enum": ["USER", "SOURCE", "DERIVED", "WITNESSED", "REPLAYED", "VERIFIED", "MODEL", "UNRESOLVED"]
+    },
+    "routes": {"type": "array", "items": {"type": "string"}},
+    "branches": {"type": "array", "items": {"type": "object"}},
+    "defects": {"type": "array", "items": {"type": "object"}},
+    "return": {"type": "object"},
+    "continuation": {
+      "type": "object",
+      "required": ["next_seed", "reentry_query"],
+      "properties": {
+        "next_seed": {"type": "string"},
+        "reentry_query": {"type": "string"}
+      }
+    }
+  },
+  "additionalProperties": true
+}
+

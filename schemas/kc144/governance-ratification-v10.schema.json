@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/governance-ratification-v10.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "ratification_id", "ceremony_root", "constitution_root_before",
+    "constitution_root_after", "rollback_root", "challenge_window_closed_at",
+    "challenge_disposition_root", "ratified_at", "anchors"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.GovernanceRatification.V10"},
+    "ratification_id": {"type": "string", "minLength": 1},
+    "ceremony_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "constitution_root_before": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "constitution_root_after": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "rollback_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "challenge_window_closed_at": {"type": "string", "minLength": 1},
+    "challenge_disposition_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "ratified_at": {"type": "string", "minLength": 1},
+    "anchors": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "anchor_id", "algorithm", "public_key_b64", "institution_root",
+          "checkpoint_ref", "checkpoint_root", "observed_at", "signature_b64"
+        ],
+        "properties": {
+          "anchor_id": {"type": "string", "minLength": 1},
+          "algorithm": {"const": "ED25519"},
+          "public_key_b64": {"type": "string", "minLength": 43},
+          "institution_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+          "checkpoint_ref": {"type": "string", "minLength": 1},
+          "checkpoint_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+          "observed_at": {"type": "string", "minLength": 1},
+          "signature_b64": {"type": "string", "minLength": 86}
+        }
+      }
+    }
+  }
+}

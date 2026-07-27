@@ -1,0 +1,22 @@
+{
+  "schema": "KC144.ParallelCampaignRelease.V8",
+  "release": "KC144.PARALLEL.CAMPAIGN.RUNTIME.V8",
+  "parent_release": "KC144.PRODUCTION.EVIDENCE.KERNEL.V7",
+  "verdict": "PASS",
+  "operational_status": "EXTERNAL_AUTHORITY_PIN_REQUIRED",
+  "campaign_shards": 16,
+  "campaign_packets": 232,
+  "maximum_parallel_width": 14,
+  "completed_shards": 0,
+  "production_certificate_issued": false,
+  "frozen_crystal_mutated": false,
+  "added_artifacts": [
+    "authority_enrollment_contract_v8.json",
+    "parallel_campaign_manifest_v8.json",
+    "parallel_campaign_runtime_state_v8.json",
+    "parallel_campaign_state_v8.json",
+    "run_to_barrier_v8.json"
+  ],
+  "next_seed": "KC144.V8::PIN-EXTERNAL-GOVERNANCE-TRUST-ANCHOR",
+  "release_digest": "sha256:1925ccb4494493f69bb0ef7abbda94f88d33e10cf893027179846afe3185a757"
+}

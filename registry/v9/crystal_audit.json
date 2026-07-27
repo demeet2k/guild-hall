@@ -1,0 +1,131 @@
+{
+  "schema": "KC144.CompleteCrystalAudit.V2",
+  "verdict": "PASS",
+  "checks_passed": 30,
+  "checks_total": 30,
+  "checks": [
+    {
+      "name": "144 unique seats",
+      "verdict": "PASS"
+    },
+    {
+      "name": "GID domain exact",
+      "verdict": "PASS"
+    },
+    {
+      "name": "12x12 address bijection",
+      "verdict": "PASS"
+    },
+    {
+      "name": "band partition",
+      "verdict": "PASS"
+    },
+    {
+      "name": "KC27 center",
+      "verdict": "PASS"
+    },
+    {
+      "name": "KC27 J mirror",
+      "verdict": "PASS"
+    },
+    {
+      "name": "KC54 edge set",
+      "verdict": "PASS"
+    },
+    {
+      "name": "KC54 duplex typed separately",
+      "verdict": "PASS"
+    },
+    {
+      "name": "KC15 Hasse",
+      "verdict": "PASS"
+    },
+    {
+      "name": "BR21 spine",
+      "verdict": "PASS"
+    },
+    {
+      "name": "X16 schedule class",
+      "verdict": "PASS"
+    },
+    {
+      "name": "X16 algebra class",
+      "verdict": "PASS"
+    },
+    {
+      "name": "global schedule denominator",
+      "verdict": "PASS"
+    },
+    {
+      "name": "global algebra denominator",
+      "verdict": "PASS"
+    },
+    {
+      "name": "typed union retained",
+      "verdict": "PASS"
+    },
+    {
+      "name": "grid D4 order four",
+      "verdict": "PASS"
+    },
+    {
+      "name": "X16 C4×C4 order",
+      "verdict": "PASS"
+    },
+    {
+      "name": "X16 V4 self inverse",
+      "verdict": "PASS"
+    },
+    {
+      "name": "BR21 mirror involution",
+      "verdict": "PASS"
+    },
+    {
+      "name": "KC15 S4 action",
+      "verdict": "PASS"
+    },
+    {
+      "name": "KC27 signed inversion",
+      "verdict": "PASS"
+    },
+    {
+      "name": "sigma cardinality",
+      "verdict": "PASS"
+    },
+    {
+      "name": "sigma truth effect",
+      "verdict": "PASS"
+    },
+    {
+      "name": "architectural labels complete",
+      "verdict": "PASS"
+    },
+    {
+      "name": "evidence residuals preserved",
+      "verdict": "PASS"
+    },
+    {
+      "name": "seven unmapped retained",
+      "verdict": "PASS"
+    },
+    {
+      "name": "five routed-only retained",
+      "verdict": "PASS"
+    },
+    {
+      "name": "digest stable",
+      "verdict": "PASS"
+    },
+    {
+      "name": "GID090 exact address",
+      "verdict": "PASS"
+    },
+    {
+      "name": "solid-state honestly held",
+      "verdict": "PASS"
+    }
+  ],
+  "crystal_digest": "sha256:920b03d50826c1f90ecfb0039cb2bba551f9733597a22bca8755bb8cbf9b39fb",
+  "upstream_lattice_cross_validation": "74/74",
+  "failures": []
+}

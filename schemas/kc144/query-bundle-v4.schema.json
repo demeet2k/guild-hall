@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/query-bundle-v4.schema.json",
+  "title": "KC144 H06 QueryBundle",
+  "type": "object",
+  "required": [
+    "query_id",
+    "goal",
+    "terms",
+    "domains",
+    "operators",
+    "invariants",
+    "boundaries",
+    "evidence_floor",
+    "start_coordinates",
+    "route_budget",
+    "return_mode",
+    "max_results"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "query_id": {"type": "string", "minLength": 1},
+    "goal": {"type": "string", "minLength": 1},
+    "terms": {"type": "array", "items": {"type": "string"}},
+    "domains": {
+      "type": "array",
+      "items": {
+        "enum": ["H6", "X16", "BR21", "F37", "IC10", "KC15", "KC27", "SSN12"]
+      }
+    },
+    "operators": {"type": "array", "items": {"type": "string"}},
+    "invariants": {"type": "array", "items": {"type": "string"}},
+    "boundaries": {"type": "array", "items": {"type": "string"}},
+    "evidence_floor": {
+      "enum": [
+        "STRUCTURAL",
+        "SOURCE_DECLARED",
+        "INDEPENDENT_REPLAY",
+        "PROMOTABLE"
+      ]
+    },
+    "start_coordinates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "integer", "minimum": 1, "maximum": 144}
+    },
+    "route_budget": {"type": "integer", "minimum": 0, "maximum": 144},
+    "return_mode": {
+      "enum": ["NONE", "RETRACE", "TYPED_RETRACE", "RETURN_ARM"]
+    },
+    "max_results": {"type": "integer", "minimum": 1, "maximum": 144}
+  }
+}

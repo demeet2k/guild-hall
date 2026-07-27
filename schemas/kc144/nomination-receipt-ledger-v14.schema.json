@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/nomination-receipt-ledger-v14.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "intake_id", "checked_at", "submission_count",
+    "admitted_count", "held_count", "duplicate_envelope_ids",
+    "duplicate_nomination_ids", "duplicate_candidate_ids", "receipts",
+    "admitted_candidate_registry_root", "authority_effect",
+    "truth_effect", "ledger_root"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.NominationReceiptLedger.V14"},
+    "intake_id": {
+      "const": "KC144.CANDIDATE.NOMINATION.INTAKE.V14"
+    },
+    "checked_at": {"type": "string", "minLength": 1},
+    "submission_count": {"type": "integer", "minimum": 0},
+    "admitted_count": {"type": "integer", "minimum": 0},
+    "held_count": {"type": "integer", "minimum": 0},
+    "duplicate_envelope_ids": {"type": "array", "uniqueItems": true},
+    "duplicate_nomination_ids": {"type": "array", "uniqueItems": true},
+    "duplicate_candidate_ids": {"type": "array", "uniqueItems": true},
+    "receipts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "envelope_id", "nomination_id", "candidate_id",
+          "eligible_roles", "verification_digest", "signature_verdict",
+          "duplicate_collision", "intake_verdict", "status",
+          "authority_effect", "receipt_digest"
+        ],
+        "properties": {
+          "envelope_id": {"type": "string", "minLength": 1},
+          "nomination_id": {"type": "string", "minLength": 1},
+          "candidate_id": {"type": "string", "minLength": 1},
+          "eligible_roles": {"type": "array", "minItems": 1},
+          "verification_digest": {"$ref": "#/$defs/root"},
+          "signature_verdict": {"enum": ["PASS", "HOLD"]},
+          "duplicate_collision": {"type": "boolean"},
+          "intake_verdict": {"enum": ["PASS", "HOLD"]},
+          "status": {
+            "enum": [
+              "ADMITTED_TO_V13_SOLVER",
+              "PRESERVED_NONCOUNTING_SUBMISSION"
+            ]
+          },
+          "authority_effect": {"const": "NONE"},
+          "receipt_digest": {"$ref": "#/$defs/root"}
+        }
+      }
+    },
+    "admitted_candidate_registry_root": {"$ref": "#/$defs/root"},
+    "authority_effect": {"const": "NONE"},
+    "truth_effect": {"const": "NONE"},
+    "ledger_root": {"$ref": "#/$defs/root"}
+  },
+  "$defs": {
+    "root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/nomination-intake-runtime-state-v14.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "release", "parent_release", "intake_id",
+    "intake_contract_digest", "batch_id", "batch_root",
+    "call_manifest_root", "receipt_ledger_root", "assignment_root",
+    "prepared_role_calls", "published_role_calls", "submission_count",
+    "admitted_submission_count", "held_submission_count",
+    "solution_status", "assigned_packet_count",
+    "addressed_packet_count", "delivered_packet_count",
+    "internal_readiness", "barrier", "governance_activated",
+    "production_certificate_issued", "production_truth_effect",
+    "frozen_crystal_mutated", "next_seed", "runtime_state_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.NominationIntakeRuntimeState.V14"},
+    "release": {
+      "const": "KC144.CANDIDATE.NOMINATION.INTAKE.RUNTIME.V14"
+    },
+    "parent_release": {
+      "const": "KC144.CANDIDATE.SELECTION.RUNTIME.V13"
+    },
+    "intake_id": {
+      "const": "KC144.CANDIDATE.NOMINATION.INTAKE.V14"
+    },
+    "intake_contract_digest": {"$ref": "#/$defs/root"},
+    "batch_id": {"type": "string", "minLength": 1},
+    "batch_root": {"$ref": "#/$defs/root"},
+    "call_manifest_root": {"$ref": "#/$defs/root"},
+    "receipt_ledger_root": {"$ref": "#/$defs/root"},
+    "assignment_root": {"$ref": "#/$defs/root"},
+    "prepared_role_calls": {"const": 5},
+    "published_role_calls": {"const": 0},
+    "submission_count": {"type": "integer", "minimum": 0},
+    "admitted_submission_count": {"type": "integer", "minimum": 0},
+    "held_submission_count": {"type": "integer", "minimum": 0},
+    "solution_status": {"type": "string", "minLength": 1},
+    "assigned_packet_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "addressed_packet_count": {"const": 0},
+    "delivered_packet_count": {"const": 0},
+    "internal_readiness": {
+      "type": "object",
+      "required": ["verdict", "checks"]
+    },
+    "barrier": {"type": "string", "minLength": 1},
+    "governance_activated": {"const": false},
+    "production_certificate_issued": {"const": false},
+    "production_truth_effect": {"const": "NONE"},
+    "frozen_crystal_mutated": {"const": false},
+    "next_seed": {"type": "string", "minLength": 1},
+    "runtime_state_digest": {"$ref": "#/$defs/root"}
+  },
+  "$defs": {
+    "root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

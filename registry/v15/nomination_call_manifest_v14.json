@@ -1,0 +1,59 @@
+{
+  "schema": "KC144.NominationCallManifest.V14",
+  "intake_id": "KC144.CANDIDATE.NOMINATION.INTAKE.V14",
+  "parent_batch_id": "V11-BATCH::c7e3ae7e8cfd126a75b41b4a",
+  "parent_batch_root": "sha256:b9322c5950d562f7a3f437ed8c939d98506db4edf34446e8332318513bca46b5",
+  "intake_contract_digest": "sha256:6f5f1e82d03e14b68d0795f7f618f446bddd9ec4436a9a92cf4f3d0fc198185f",
+  "call_rows": [
+    {
+      "role": "CUSTODIAN",
+      "call_id": "V14-CALL::CUSTODIAN::8abe29b03d1dea61",
+      "call_digest": "sha256:f2744aec6d1e87540d1e95390b933b08e68dfc5c55a85bb1f84a35e70110f77a",
+      "participant_packet_id": "V12-PACKET::CUSTODIAN::558eda0ae650fdf5",
+      "participant_packet_digest": "sha256:4d9395dcaddda543e135072e0924b1c8b5f2a0520f67d9a078731a071dc9963c",
+      "state": "READY_UNADDRESSED_UNPUBLISHED"
+    },
+    {
+      "role": "INDEPENDENT_REVIEWER",
+      "call_id": "V14-CALL::INDEPENDENT_REVIEWER::6d4d360bd6a2663b",
+      "call_digest": "sha256:a520738a8f6514b398d10c8d542e3294f39cbdbaa4bf829c86fc7bbfec92c6bd",
+      "participant_packet_id": "V12-PACKET::INDEPENDENT_REVIEWER::75ee6c47b0b8113a",
+      "participant_packet_digest": "sha256:9afa4fa3121c5d08851f4e49e958e3fb250a5c7be733db736bfe2f9d231b6889",
+      "state": "READY_UNADDRESSED_UNPUBLISHED"
+    },
+    {
+      "role": "REPLAY_WITNESS",
+      "call_id": "V14-CALL::REPLAY_WITNESS::d60fdbfe9caaa1c9",
+      "call_digest": "sha256:18a23dea2f5dc8acb99ac0ea5f2dd2b9fc199ffd2f41044a34b2ee4af3fe2415",
+      "participant_packet_id": "V12-PACKET::REPLAY_WITNESS::91547891a3e5e33e",
+      "participant_packet_digest": "sha256:537bbf219aed0e2201c84995e3e97d9eeaf86ac6fb2f33dad2de12a70cd300c4",
+      "state": "READY_UNADDRESSED_UNPUBLISHED"
+    },
+    {
+      "role": "SOURCE_AUDITOR",
+      "call_id": "V14-CALL::SOURCE_AUDITOR::fd5ec85b9770fa37",
+      "call_digest": "sha256:9cc2b5c7b901c40ff2416c093496d786e198ee7396bc6ab5f04bc96fa5023224",
+      "participant_packet_id": "V12-PACKET::SOURCE_AUDITOR::e09f265a08faa29e",
+      "participant_packet_digest": "sha256:21106f4f0ec6c7e25da51c3384b76451c05ceb012b8af3af92d28fb144b895b9",
+      "state": "READY_UNADDRESSED_UNPUBLISHED"
+    },
+    {
+      "role": "RETURN_AUDITOR",
+      "call_id": "V14-CALL::RETURN_AUDITOR::cbf26edcd34517d8",
+      "call_digest": "sha256:8ee08d05eec40c49a4d10e391a29966f6dd0a6cfc4076d26a65a161befce11a2",
+      "participant_packet_id": "V12-PACKET::RETURN_AUDITOR::c3c15a4e86c54655",
+      "participant_packet_digest": "sha256:3d448ae51ebe15b4b12f499faf7bd7550c3a11f1a1c4646c081e569f071c8769",
+      "state": "READY_UNADDRESSED_UNPUBLISHED"
+    }
+  ],
+  "call_count": 5,
+  "published_count": 0,
+  "addressed_count": 0,
+  "status": "READY_FOR_EXTERNAL_PUBLICATION",
+  "parallelism": "ALL_FIVE_ROLE_CALLS_MAY_BE_PUBLISHED_IN_PARALLEL",
+  "publication_claimed": false,
+  "delivery_claimed": false,
+  "governance_authority_granted": false,
+  "truth_effect": "NONE",
+  "manifest_root": "sha256:fc82581375a195d09a58b7769eb33bba719c7f7e4b7ddd7b5276dcf1ce1d6219"
+}

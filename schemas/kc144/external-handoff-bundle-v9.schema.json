@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/external-handoff-bundle-v9.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "handoff_id", "campaign_id", "campaign_manifest_digest",
+    "campaign_topology_root", "namespace", "ledger_digest", "request_count",
+    "packet_count", "requests", "bundle_root", "signing_instruction",
+    "return_instruction", "bundle_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ExternalHandoffBundle.V9"},
+    "handoff_id": {"const": "KC144.EXTERNAL.HANDOFF.V9"},
+    "campaign_id": {"const": "KC144.M12.PARALLEL.CAMPAIGN.V8"},
+    "campaign_manifest_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "campaign_topology_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "namespace": {"enum": ["PRODUCTION", "TEST"]},
+    "ledger_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "request_count": {"const": 16},
+    "packet_count": {"const": 232},
+    "requests": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "required": [
+          "schema", "request_id", "handoff_id", "campaign_id",
+          "campaign_topology_root", "campaign_shard_id", "phase", "namespace",
+          "epoch_id", "frozen_base_root", "crosswalk_digest", "graph_slice",
+          "graph_slice_digest", "evidence_kind", "subject_ids", "packet_count",
+          "dependencies", "required_payload_fields", "source_requirement",
+          "return_format", "truth_effect", "request_digest"
+        ]
+      }
+    },
+    "bundle_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "signing_instruction": {"type": "string", "minLength": 1},
+    "return_instruction": {"type": "string", "minLength": 1},
+    "bundle_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

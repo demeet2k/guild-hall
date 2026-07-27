@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/governance-ceremony-release-v10.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "release", "parent_release", "verdict", "operational_status",
+    "governance_roles", "filled_seats", "required_seats",
+    "governance_activated", "production_certificate_issued",
+    "frozen_crystal_mutated", "added_artifacts", "next_seed", "release_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.GovernanceCeremonyRelease.V10"},
+    "release": {"const": "KC144.GOVERNANCE.CEREMONY.RUNTIME.V10"},
+    "parent_release": {"const": "KC144.EXTERNAL.HANDOFF.RUNTIME.V9"},
+    "verdict": {"enum": ["PASS", "FAIL"]},
+    "operational_status": {"const": "FIVE_INDEPENDENT_PARTICIPANT_RESPONSES_REQUIRED"},
+    "governance_roles": {"const": 5},
+    "filled_seats": {"const": 0},
+    "required_seats": {"const": 5},
+    "governance_activated": {"const": false},
+    "production_certificate_issued": {"type": "boolean"},
+    "frozen_crystal_mutated": {"const": false},
+    "added_artifacts": {"type": "array", "minItems": 4},
+    "next_seed": {"const": "KC144.V10::ISSUE-FIVE-ROLE-BOUND-CHALLENGES"},
+    "release_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schema": "KC144.GovernanceRatificationContract.V10",
+  "ceremony_id": "KC144.GOVERNANCE.CEREMONY.V10",
+  "minimum_external_anchors": 2,
+  "signature_algorithm": "ED25519",
+  "signature_domain": "KC144.V10.GOVERNANCE_RATIFICATION",
+  "required_roots": [
+    "ceremony_root",
+    "constitution_root_before",
+    "constitution_root_after",
+    "rollback_root",
+    "challenge_disposition_root",
+    "checkpoint_root"
+  ],
+  "anchor_independence_law": "anchor IDs, keys, institutions, checkpoint references, and checkpoint roots are unique; anchor institutions are external to all participant institutions",
+  "historical_law": "activation never rewrites prior signatures; later revocation is evaluated against its effective time",
+  "truth_effect": "GOVERNANCE_REGISTRY_ONLY",
+  "contract_digest": "sha256:bd8cbb1d8a729cb2a1280ffdd3f62745bdabdca276fa1c156f07b07cf402c611"
+}

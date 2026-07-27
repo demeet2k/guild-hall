@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/declared-bridge.schema.json",
+  "title": "KC144 declared inter-band bridge registry",
+  "type": "object",
+  "required": [
+    "schema",
+    "count",
+    "standing",
+    "certified_transport_count",
+    "bridges"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {"const": "KC144.DeclaredBridgeRegistry.V3"},
+    "count": {"const": 28},
+    "standing": {
+      "const": "DECLARED_GRAPH_CONNECTIVITY_NOT_TRANSPORT_CERTIFICATION"
+    },
+    "certified_transport_count": {"const": 0},
+    "bridges": {
+      "type": "array",
+      "minItems": 28,
+      "maxItems": 28,
+      "items": {
+        "type": "object",
+        "required": [
+          "bridge_id",
+          "source",
+          "target",
+          "relation",
+          "declaration",
+          "standing"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "bridge_id": {"type": "string", "pattern": "^BR[0-9]{3}$"},
+          "source": {"type": "integer", "minimum": 1, "maximum": 144},
+          "target": {"type": "integer", "minimum": 1, "maximum": 144},
+          "relation": {"type": "string", "minLength": 1},
+          "declaration": {"type": "string", "minLength": 1},
+          "standing": {"const": "DECLARED_UNCERTIFIED"}
+        }
+      }
+    }
+  }
+}

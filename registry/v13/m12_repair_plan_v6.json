@@ -1,0 +1,81 @@
+{
+  "schema": "KC144.M12RepairPlan.V6",
+  "scheduler": "DEPENDENCY_DAG_WITH_PARALLEL_EVIDENCE_WAVES",
+  "tasks": [
+    {
+      "task_id": "R01_CERTIFY_BRIDGES",
+      "gate": "M12_BRIDGES_CERTIFIED_28",
+      "required": 28,
+      "admitted": 0,
+      "remaining": 28,
+      "dependencies": [],
+      "execution": "PARALLEL_WAVE",
+      "status": "READY"
+    },
+    {
+      "task_id": "R02_POPULATE_DOMAINS",
+      "gate": "M12_DOMAIN_POPULATION_144",
+      "required": 144,
+      "admitted": 86,
+      "remaining": 58,
+      "dependencies": [],
+      "execution": "PARALLEL_WAVE",
+      "status": "READY"
+    },
+    {
+      "task_id": "R03_REPLAY_STATIONS",
+      "gate": "M12_INDEPENDENT_REPLAY_144",
+      "required": 144,
+      "admitted": 0,
+      "remaining": 144,
+      "dependencies": [],
+      "execution": "PARALLEL_WAVE",
+      "status": "READY"
+    },
+    {
+      "task_id": "R04_CLOSE_BLOCKING_DEFECTS",
+      "gate": "M12_BLOCKING_DEFECTS_EMPTY",
+      "required": 1,
+      "admitted": 0,
+      "remaining": 1,
+      "dependencies": [
+        "R01_CERTIFY_BRIDGES",
+        "R02_POPULATE_DOMAINS",
+        "R03_REPLAY_STATIONS"
+      ],
+      "execution": "DEPENDENCY_BOUND",
+      "status": "BLOCKED"
+    },
+    {
+      "task_id": "R05_IC10_ADJUDICATE",
+      "gate": "M12_IC10_DECISION_PROMOTED",
+      "required": 1,
+      "admitted": 0,
+      "remaining": 1,
+      "dependencies": [
+        "R04_CLOSE_BLOCKING_DEFECTS"
+      ],
+      "execution": "DEPENDENCY_BOUND",
+      "status": "BLOCKED"
+    },
+    {
+      "task_id": "R06_M12_RECOMPUTE",
+      "gate": "M12_SOLID_STATE",
+      "required": 1,
+      "admitted": 0,
+      "remaining": 1,
+      "dependencies": [
+        "R05_IC10_ADJUDICATE"
+      ],
+      "execution": "DEPENDENCY_BOUND",
+      "status": "BLOCKED"
+    }
+  ],
+  "next_frontier": [
+    "R01_CERTIFY_BRIDGES",
+    "R02_POPULATE_DOMAINS",
+    "R03_REPLAY_STATIONS"
+  ],
+  "mutation_target": "APPEND_ONLY_EVIDENCE_OVERLAY",
+  "frozen_crystal_mutated": false
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/external-handoff-state-v9.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "handoff_id", "bundle_root", "bundle_digest", "namespace",
+    "ledger_digest", "governance_registry_digest", "authority_registry_digest",
+    "active_governance_members", "governance_threshold",
+    "eligible_campaign_authorities", "campaign_completed_shards",
+    "campaign_total_shards", "barrier", "production_truth_effect",
+    "frozen_crystal_mutated", "next_seed", "state_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ExternalHandoffState.V9"},
+    "handoff_id": {"const": "KC144.EXTERNAL.HANDOFF.V9"},
+    "bundle_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "bundle_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "namespace": {"enum": ["PRODUCTION", "TEST"]},
+    "ledger_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "governance_registry_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "authority_registry_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "active_governance_members": {"type": "integer", "minimum": 0, "maximum": 5},
+    "governance_threshold": {"const": 3},
+    "eligible_campaign_authorities": {"type": "array", "uniqueItems": true},
+    "campaign_completed_shards": {"type": "integer", "minimum": 0, "maximum": 16},
+    "campaign_total_shards": {"const": 16},
+    "barrier": {"type": "string", "minLength": 1},
+    "production_truth_effect": {"enum": ["NONE", "EVIDENCE_OVERLAY_ONLY"]},
+    "frozen_crystal_mutated": {"const": false},
+    "next_seed": {"type": "string", "minLength": 1},
+    "state_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

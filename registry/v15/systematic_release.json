@@ -1,0 +1,54 @@
+{
+  "schema": "KC144.SystematicRelease.V3",
+  "release": "KC144.SYSTEMATIC.FRAMEWORK.V3",
+  "verdict": "PASS",
+  "structural_population": "144/144",
+  "source_domain_population": "86/144",
+  "navigation": {
+    "components": 1,
+    "diameter": 18,
+    "radius": 9,
+    "center": [
+      {
+        "gid": 43,
+        "station": "B21"
+      }
+    ],
+    "reachable_from_H06": 144,
+    "max_hops_from_H06": 15,
+    "distinct_intra_adjacency_edges": 247,
+    "declared_bridge_records": 28,
+    "distinct_adjacency_edges": 274
+  },
+  "holonomy": {
+    "routes": 5,
+    "common_carry": [],
+    "all_pairwise_nonzero": true
+  },
+  "navigation_wave": {
+    "seed": "H06",
+    "coverage": "144/144",
+    "base_graph_mutated": false,
+    "truth_effect": "NONE"
+  },
+  "actual_live_promotions": 0,
+  "solid_state": "HOLD",
+  "nonclaims": [
+    "declared bridge connectivity is not transport certification",
+    "the replay ablation is not an independent live replay",
+    "the wave overlay does not mutate evidence or truth standing",
+    "no external federation was published",
+    "no solid-state certificate was issued"
+  ],
+  "artifacts": [
+    "crystal.json",
+    "crystal_audit.json",
+    "declared_bridges.json",
+    "frontier.json",
+    "holonomy.json",
+    "navigation.json",
+    "replay_ablation.json",
+    "station_bodies.json",
+    "wave_h06.json"
+  ]
+}

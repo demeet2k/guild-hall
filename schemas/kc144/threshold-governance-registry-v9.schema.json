@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/threshold-governance-registry-v9.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "governance_id", "epoch_id", "required_members", "threshold",
+    "members", "revoked_member_ids", "revocation_log", "law", "registry_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ThresholdGovernanceRegistry.V9"},
+    "governance_id": {"const": "KC144.THRESHOLD.GOVERNANCE.V9"},
+    "epoch_id": {"const": "EPOCH-B-EIGHT-BLOCK"},
+    "required_members": {"const": 5},
+    "threshold": {"const": 3},
+    "members": {
+      "type": "array",
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "member_id", "algorithm", "public_key_b64", "role", "status",
+          "independent", "test_only", "not_before", "not_after"
+        ],
+        "properties": {
+          "member_id": {"type": "string", "minLength": 1},
+          "algorithm": {"const": "ED25519"},
+          "public_key_b64": {"type": "string", "minLength": 43},
+          "role": {"type": "string", "minLength": 1},
+          "status": {"enum": ["ACTIVE", "REVOKED", "EXPIRED"]},
+          "independent": {"type": "boolean"},
+          "test_only": {"type": "boolean"},
+          "not_before": {"type": ["string", "null"]},
+          "not_after": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "revoked_member_ids": {"type": "array", "uniqueItems": true},
+    "revocation_log": {"type": "array"},
+    "law": {"type": "string", "minLength": 1},
+    "registry_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

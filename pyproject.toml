@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kc144-completed-crystal"
+version = "15.0.0"
+description = "Executable whole-crystal compiler for the KC144 framework"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "Proprietary"}
+authors = [{name = "Athenachka Collective"}]
+dependencies = ["cryptography>=43"]
+
+[project.scripts]
+kc144-crystal = "kc144_crystal.cli:main"
+athena-immune = "athena_immune.cli:main"
+athena-git-brain = "athena_git_brain.cli:main"
+kc144-internal-nav = "memory_crystal.internal_nav.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+kc144_crystal = ["data/*.json"]

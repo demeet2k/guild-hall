@@ -1,0 +1,25 @@
+{
+  "schema": "KC144.MYC.SKELETON.P04.SEED.V1",
+  "id": "KC144.MYC.SKELETON.P04",
+  "name": "FEDERATED-REPOSITORY-CONTRACT-ROLLOUT",
+  "status": "implemented-local-verified-publication-open",
+  "parents": [
+    "KC144.V1::GID005::H05::CANONICAL_SOURCE_EVIDENCE_VERSION_LEDGER",
+    "KC144.MYC.SKELETON.P03::CROSS-CARRIER-ADAPTER-COMPILER-AND-GIT-BRAIN-METRO"
+  ],
+  "control_plane": "demeet2k/Athena@850a7af91b2b418adfb70547a9473a182abd9b6a",
+  "repository_count": 12,
+  "contract_files": [
+    "SEED.json",
+    "PROVENANCE.json",
+    "RELATIONS.json",
+    "STATE.json",
+    "RETURN.md",
+    "README.md"
+  ],
+  "prepared_files": 60,
+  "non_destructive_law": "preexisting README.md is preserved; only five absent contract files are prepared",
+  "identity_law": "GitHub repository ID + full name + immutable commit",
+  "publication_state": "not_executed",
+  "next_seed": "KC144.MYC.SKELETON.P05::CROSS-CONTAINER-RESOURCE-OCCURRENCE-VERSION-RECONCILIATION"
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/governance-challenge-batch-v11.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "dispatch_id", "batch_id", "ceremony_id", "epoch_id",
+    "dispatch_contract_digest", "ceremony_contract_digest",
+    "authority_registry_digest", "handoff_bundle_root", "issued_at",
+    "expires_at", "roles", "challenges", "challenge_digests",
+    "challenge_count", "response_count", "status",
+    "governance_activated", "truth_effect", "batch_root"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.GovernanceChallengeBatch.V11"},
+    "dispatch_id": {"const": "KC144.GOVERNANCE.DISPATCH.V11"},
+    "batch_id": {
+      "type": "string",
+      "pattern": "^V11-BATCH::[0-9a-f]{24}$"
+    },
+    "ceremony_id": {"const": "KC144.GOVERNANCE.CEREMONY.V10"},
+    "epoch_id": {"const": "EPOCH-B-EIGHT-BLOCK"},
+    "dispatch_contract_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "ceremony_contract_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "authority_registry_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "handoff_bundle_root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "issued_at": {"type": "string", "minLength": 1},
+    "expires_at": {"type": "string", "minLength": 1},
+    "roles": {
+      "const": [
+        "CUSTODIAN", "INDEPENDENT_REVIEWER", "REPLAY_WITNESS",
+        "SOURCE_AUDITOR", "RETURN_AUDITOR"
+      ]
+    },
+    "challenges": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {"$ref": "governance-challenge-v10.schema.json"}
+    },
+    "challenge_digests": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^sha256:[0-9a-f]{64}$"
+      }
+    },
+    "challenge_count": {"const": 5},
+    "response_count": {"const": 0},
+    "status": {"const": "ISSUED_AWAITING_EXTERNAL_RESPONSES"},
+    "governance_activated": {"const": false},
+    "truth_effect": {"const": "NONE"},
+    "batch_root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

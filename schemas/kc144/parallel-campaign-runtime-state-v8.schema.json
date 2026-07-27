@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/parallel-campaign-runtime-state-v8.schema.json",
+  "title": "KC144 V8 parallel campaign runtime state",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "release",
+    "parent_release",
+    "campaign_id",
+    "campaign_manifest_digest",
+    "authority_enrollment_contract_digest",
+    "internal_readiness",
+    "campaign_state_digest",
+    "barrier_report_digest",
+    "barrier",
+    "production_certificate_issued",
+    "production_truth_effect",
+    "frozen_crystal_mutated",
+    "next_seed",
+    "runtime_state_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ParallelCampaignRuntimeState.V8"},
+    "release": {"const": "KC144.PARALLEL.CAMPAIGN.RUNTIME.V8"},
+    "parent_release": {"const": "KC144.PRODUCTION.EVIDENCE.KERNEL.V7"},
+    "campaign_id": {"const": "KC144.M12.PARALLEL.CAMPAIGN.V8"},
+    "campaign_manifest_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "authority_enrollment_contract_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "internal_readiness": {"type": "object"},
+    "campaign_state_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "barrier_report_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "barrier": {"type": "string", "minLength": 1},
+    "production_certificate_issued": {"type": "boolean"},
+    "production_truth_effect": {"const": "NONE"},
+    "frozen_crystal_mutated": {"const": false},
+    "next_seed": {"type": "string", "minLength": 1},
+    "runtime_state_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

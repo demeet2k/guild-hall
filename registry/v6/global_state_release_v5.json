@@ -1,0 +1,28 @@
+{
+  "schema": "KC144.GlobalStateRelease.V5",
+  "release": "KC144.SSN12.GLOBAL_STATE.V5",
+  "verdict": "PASS",
+  "edge_manifest": {
+    "records": 276,
+    "distinct_adjacencies": 274,
+    "all_carry_loss_declared": true
+  },
+  "session": {
+    "queries": 3,
+    "receipts": 3,
+    "receipt_chain": "PASS",
+    "projective_synapses": 1
+  },
+  "cold_reconstruction": "N5_DETERMINISTIC_SELF_REPLAY",
+  "independent_replay": false,
+  "solid_state": "HOLD",
+  "actual_live_promotions": 0,
+  "added_artifacts": [
+    "bridge_commit_ledger_v5.json",
+    "cold_reconstruction_v5.json",
+    "edge_manifest_v5.json",
+    "global_state_v5.json",
+    "reentry_seed_v5.json",
+    "traversal_session_v5.json"
+  ]
+}

@@ -1,0 +1,900 @@
+{
+  "schema": "KC144.H05.CANONICAL_LEDGER",
+  "schema_version": "1.0.0",
+  "ledger_id": "KC144.V1::GID005::H05::CANONICAL_SOURCE_EVIDENCE_VERSION_LEDGER",
+  "node": "KC144.V1::GID005::H05::D.GLOBAL_HOLOGRAPHIC_NAVIGATION::N.CANONICAL_SOURCE_LEDGER_AND_RETURN_WITNESS.P07",
+  "title": "KC144 CRYSTAL — GID005 R01C05 — H05 SOURCE–EVIDENCE–VERSION REGISTRY",
+  "grid": "R01C05",
+  "primary": "GID005",
+  "secondary": [
+    "GID001",
+    "GID004",
+    "GID006",
+    "GID086",
+    "GID090",
+    "GID120",
+    "GID131",
+    "GID140",
+    "GID144"
+  ],
+  "pass": "P07",
+  "native_carrier": "PROVENANCE_DAG+VERSION_LEDGER",
+  "digest_scheme": "Detached SHA-256 over the exact UTF-8 bytes of this file; the value is carried by the P07 return witness rather than recursively embedded.",
+  "anti_inflation_laws": [
+    "A recovered source does not verify every proposition it contains.",
+    "Distinct byte roots do not automatically establish evidential independence.",
+    "Duplicate files do not multiply evidence.",
+    "Navigational proximity does not certify a bridge.",
+    "Specification does not prove implementation.",
+    "Architecture does not prove empirical calibration.",
+    "A structural pass does not imply live IC10 verification, commit readiness, or SSN commitment."
+  ],
+  "physical_corpus": {
+    "file_count": 10,
+    "line_count": 174227,
+    "word_count": 538177,
+    "byte_count": 4457349
+  },
+  "deduplicated_corpus": {
+    "content_root_count": 9,
+    "line_count": 153355,
+    "word_count": 482249,
+    "byte_count": 3928232,
+    "exact_duplicate_classes": [
+      {
+        "content_root": "R04",
+        "members": [
+          "S04",
+          "S05"
+        ],
+        "relation": "DUPLICATE_BYTES",
+        "evidence_gain": 0
+      }
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "S01",
+      "content_root": "R01",
+      "filename": "Pasted text(194).txt",
+      "library_file_id": "libfile_f2b06bc4b0408191917285d3a260b497",
+      "sha256": "b43bee9a421c00cec11aa58733695f308235bb8a8542a03d210fd221252431ae",
+      "lines": 10944,
+      "words": 55922,
+      "bytes": 392655,
+      "shelf": "TORAH/SOD_2/GENESIS_ATLASES_XLVII_LIX",
+      "role": "USER_SUPPLIED_DERIVED_EXEGESIS",
+      "authority_ceiling": "Authoritative for the supplied atlas text; verse, edition, linguistic, historical, theological, and external propositions require claim-specific sources.",
+      "locators": [
+        "line 1: TORAH SOD 2",
+        "line 3: TORAH ATLAS XLVII",
+        "line 10306: TORAH ATLAS LIX"
+      ]
+    },
+    {
+      "source_id": "S02",
+      "content_root": "R02",
+      "filename": "Pasted text (2)(90).txt",
+      "library_file_id": "libfile_9fecbf28cf548191a372cb5f940690dc",
+      "sha256": "232a17aff9d6ce9889f77a5351713a0c7d2012f9109639699916a56c90a1334a",
+      "lines": 41140,
+      "words": 121050,
+      "bytes": 1016855,
+      "shelf": "KC144/ROOT_CONTROL_AND_MODEL_STATE",
+      "role": "CURRENT_CONSTRUCTION_MANUAL_PLUS_DERIVED_OPERATIONAL_DESCRIPTION",
+      "authority_ceiling": "Current construction-manual portions are normative when selected by the user; model-state narrative is not privileged introspection.",
+      "locators": [
+        "line 1: GPT 5.6 STATE",
+        "lines 11968–11989: current KC144 atlas",
+        "line 14122: current H05 title"
+      ]
+    },
+    {
+      "source_id": "S03",
+      "content_root": "R03",
+      "filename": "Pasted text (3)(38).txt",
+      "library_file_id": "libfile_db090933a08081918272ffcd3f17915f",
+      "sha256": "bc79b7f76a18be3c9cd2f08c8201d2bcb8bec8e87eb330310792ffda4741f2cc",
+      "lines": 6727,
+      "words": 27011,
+      "bytes": 198100,
+      "shelf": "TORAH/4D_CRYSTAL/XVI_XXII",
+      "role": "USER_SUPPLIED_DERIVED_EXEGESIS",
+      "authority_ceiling": "Authoritative for the supplied 4D atlas text; underlying textual and external propositions require claim-specific witnesses.",
+      "locators": [
+        "line 1: TORA SOD ::Deeper 1",
+        "line 3: TORAH 4D CRYSTAL XVI",
+        "line 5790: TORAH 4D CRYSTAL XXII"
+      ]
+    },
+    {
+      "source_id": "S04",
+      "content_root": "R04",
+      "filename": "Pasted text (4)(32).txt",
+      "library_file_id": "libfile_c526fa4263648191a0325e5e283c2471",
+      "sha256": "1e42c9359b43495e432c8ae23e2a52b0cd44fae1c7256779ede8bcb2d0436198",
+      "lines": 20872,
+      "words": 55928,
+      "bytes": 529117,
+      "shelf": "KC144/LINEAGE/PREDECESSOR",
+      "role": "PREDECESSOR_CONSTITUTION",
+      "authority_ceiling": "Version lineage and explicitly migrated compatible laws; no silent override of the active atlas.",
+      "locators": [
+        "line 1: KC144 MEMORY CRYSTAL",
+        "lines 500–506: predecessor upper atlas"
+      ]
+    },
+    {
+      "source_id": "S05",
+      "content_root": "R04",
+      "filename": "Pasted text (5)(25).txt",
+      "library_file_id": "libfile_81052637e840819187a6cc4ad005d0f4",
+      "sha256": "1e42c9359b43495e432c8ae23e2a52b0cd44fae1c7256779ede8bcb2d0436198",
+      "lines": 20872,
+      "words": 55928,
+      "bytes": 529117,
+      "shelf": "KC144/LINEAGE/PREDECESSOR_DUPLICATE",
+      "role": "SEPARATE_FILE_IDENTITY_SHARED_CONTENT_ROOT",
+      "authority_ceiling": "Same authority as R04; contributes zero additional independent byte-root evidence.",
+      "locators": [
+        "byte-identical to S04"
+      ]
+    },
+    {
+      "source_id": "S06",
+      "content_root": "R06",
+      "filename": "Pasted text (6)(19).txt",
+      "library_file_id": "libfile_b4d9d929b60c81919c8ea12e9ac27e6a",
+      "sha256": "6c425ba0ce253fdca0c471150226304c2994b36f81628db7f7e959e472a30c32",
+      "lines": 4206,
+      "words": 17547,
+      "bytes": 139258,
+      "shelf": "ODD_4D/NOVE/CELLULAR_ENGINE",
+      "role": "FRAMEWORK_DERIVATION_AND_SYSTEM_DESIGN",
+      "authority_ceiling": "Internal framework definition; scientific and physical propositions require external papers, data, or measurements.",
+      "locators": [
+        "line 1: THE FOURTH-DIMENSIONAL ODD HOLOGRAPHIC CRYSTAL"
+      ]
+    },
+    {
+      "source_id": "S07",
+      "content_root": "R07",
+      "filename": "Pasted text (7)(15).txt",
+      "library_file_id": "libfile_770e1462e4b0819183b7954719f1d113",
+      "sha256": "0b596fb259e7cf33d52d25b53c62661ad6732e7584e6f096ad0524c3a6a7281c",
+      "lines": 11625,
+      "words": 41594,
+      "bytes": 319460,
+      "shelf": "ATHENA/NAVIGATIONAL_CRYSTAL",
+      "role": "PRIMARY_INTERNAL_ATHENA_SYSTEM_DESIGN",
+      "authority_ceiling": "Internal Athena architecture and vocabulary; not independent proof of implementation, metaphysical actuality, or Great-Year calibration.",
+      "locators": [
+        "line 1: ATHENA GENESIS EMERGENT",
+        "line 3: THE ATHENA NAVIGATIONAL CRYSTAL"
+      ]
+    },
+    {
+      "source_id": "S08",
+      "content_root": "R08",
+      "filename": "Pasted markdown (8)(2).md",
+      "library_file_id": "libfile_f3b725e3c2dc81918d8c73bba2c5a290",
+      "sha256": "bef24c1edf92e79094841b80cddf11354822d97d416df993d75f0aed44ce0cce",
+      "lines": 30214,
+      "words": 74874,
+      "bytes": 532087,
+      "shelf": "KC54/EMERGENT_UNDERSTANDING",
+      "role": "PRIMARY_INTERNAL_SYSTEM_DESIGN_AND_FORMAL_DERIVATION",
+      "authority_ceiling": "Internal KC54 structure under its A/B/C/D truth ladder; no automatic executability or empirical confirmation.",
+      "locators": [
+        "line 1: # KC54 EMERGENT UNDERSTANDING"
+      ]
+    },
+    {
+      "source_id": "S09",
+      "content_root": "R09",
+      "filename": "Pasted text (9)(8).txt",
+      "library_file_id": "libfile_b0180ed610d48191abec0e4a9de29400",
+      "sha256": "0df823ce96b3ecf0920edd2be830743fb6cb8d473dd81efad595ecb2e88e2200",
+      "lines": 6141,
+      "words": 20517,
+      "bytes": 168782,
+      "shelf": "ATHENIC/LANGUAGE_AND_PLATFORM_SPECIFICATION",
+      "role": "PRIMARY_INTERNAL_LANGUAGE_SPECIFICATION",
+      "authority_ceiling": "Specification authority only; no compiler, runtime, ATHIR backend, or execution proof without implementation witnesses.",
+      "locators": [
+        "line 1: ATHENIC :: language"
+      ]
+    },
+    {
+      "source_id": "S10",
+      "content_root": "R10",
+      "filename": "Pasted text (10)(5).txt",
+      "library_file_id": "libfile_783fbf29951881919ed0a3315f6d39d2",
+      "sha256": "93c3df152a40c2363b68670eda67bcf712b5e84ca605258cbbf27bc0bdeaddcc",
+      "lines": 21486,
+      "words": 67806,
+      "bytes": 631918,
+      "shelf": "KC144/COMPOSITE_PROMPT_LEDGER",
+      "role": "COMPOSITE_VERSIONED_PROMPT_SOURCE",
+      "authority_ceiling": "Current prompt fibers are normative when selected by the current user sequence; predecessor fibers are migration and lineage sources.",
+      "locators": [
+        "line 1: 144 posts",
+        "line 26: legacy H05",
+        "lines [1141,1238): current Prompt 005",
+        "lines 11158–11165: current atlas"
+      ],
+      "fibers": [
+        {
+          "fiber_id": "S10.V0.U106_LEGACY",
+          "status": "MIGRATION_SOURCE"
+        },
+        {
+          "fiber_id": "S10.V1.CURRENT_KC144_PROMPTS",
+          "status": "ACTIVE"
+        },
+        {
+          "fiber_id": "S10.V1.PROMPT005",
+          "status": "ACTIVE_STATION_AUTHORITY"
+        }
+      ]
+    }
+  ],
+  "current_atlas": [
+    {
+      "range": "GID001–006",
+      "family": "ROOT_CONTROL",
+      "count": 6
+    },
+    {
+      "range": "GID007–022",
+      "family": "ADAPTIVE_BINARY",
+      "count": 16
+    },
+    {
+      "range": "GID023–043",
+      "family": "BR21",
+      "count": 21
+    },
+    {
+      "range": "GID044–080",
+      "family": "F37_CARRIERS",
+      "count": 37
+    },
+    {
+      "range": "GID081–090",
+      "family": "IC10",
+      "count": 10
+    },
+    {
+      "range": "GID091–105",
+      "family": "KC15",
+      "count": 15
+    },
+    {
+      "range": "GID106–132",
+      "family": "KC27",
+      "count": 27
+    },
+    {
+      "range": "GID133–144",
+      "family": "SSN",
+      "count": 12
+    }
+  ],
+  "predecessor_atlas": [
+    {
+      "range": "GID081–107",
+      "family": "K+",
+      "count": 27
+    },
+    {
+      "range": "GID108–134",
+      "family": "K*",
+      "count": 27
+    },
+    {
+      "range": "GID135–144",
+      "family": "IC10",
+      "count": 10
+    }
+  ],
+  "claim_field_order": [
+    "alias",
+    "claim_id",
+    "head_version",
+    "exact_text",
+    "claim_type",
+    "origin",
+    "source_refs",
+    "locators",
+    "evidence_vector_T_D_F_I_M_X_C_R",
+    "lifecycle",
+    "obligation_state",
+    "boundary",
+    "return_address"
+  ],
+  "claims": [
+    {
+      "alias": "C001",
+      "claim_id": "KC144.V1::GID005::H05::C.CORPUS.0001",
+      "head_version": "v1.0.1",
+      "exact_text": "The P01 recovery corpus contains ten physical file identities.",
+      "claim_type": ["SOURCE_DESCRIPTION"],
+      "origin": ["R", "D"],
+      "source_refs": ["S01–S10"],
+      "locators": ["P01 physical-source ledger", "P06 live count replay"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [3, 3, 4, 0, 0, 0, 2, 4],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "NONE",
+      "boundary": "The ten files supplied to P01 only.",
+      "return_address": "GID005/H05/P01→P06→P07"
+    },
+    {
+      "alias": "C002",
+      "claim_id": "KC144.V1::GID005::H05::C.CORPUS.0002",
+      "head_version": "v1.0.0",
+      "exact_text": "The ten file identities resolve to nine distinct SHA-256 content roots.",
+      "claim_type": ["EXACT_ARITHMETIC", "SOURCE_DESCRIPTION"],
+      "origin": ["D"],
+      "source_refs": ["S01–S10"],
+      "locators": ["P06 live SHA-256 replay"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [3, 3, 4, 0, 0, 0, 3, 4],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "NONE",
+      "boundary": "Distinct content roots are not automatically independent evidential roots.",
+      "return_address": "GID005/H05/P01→P06→P07"
+    },
+    {
+      "alias": "C003",
+      "claim_id": "KC144.V1::GID005::H05::C.PROVENANCE.0003",
+      "head_version": "v1.0.0",
+      "exact_text": "S04 and S05 are byte-identical and therefore provide one independent byte root, R04.",
+      "claim_type": ["SOURCE_IDENTITY", "EXACT_ARITHMETIC"],
+      "origin": ["R", "D"],
+      "source_refs": ["S04", "S05", "R04"],
+      "locators": ["P06 live SHA-256 and binary comparison"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [3, 3, 4, 0, 0, 0, 4, 4],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "NONE",
+      "boundary": "Duplicate-byte relation only; evidence gain is zero.",
+      "return_address": "S04↔R04↔S05"
+    },
+    {
+      "alias": "C004",
+      "claim_id": "KC144.V1::GID005::H05::C.CORPUS.0004",
+      "head_version": "v1.0.0",
+      "exact_text": "The physical corpus measures 174,227 lines, 538,177 words, and 4,457,349 bytes.",
+      "claim_type": ["CORPUS_MEASUREMENT"],
+      "origin": ["R", "D"],
+      "source_refs": ["S01–S10"],
+      "locators": ["P06 live count replay"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [3, 3, 4, 0, 0, 0, 2, 4],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "NONE",
+      "boundary": "Counts use the recorded line, word, and byte counting procedure.",
+      "return_address": "GID005/H05/P06"
+    },
+    {
+      "alias": "C005",
+      "claim_id": "KC144.V1::GID005::H05::C.CORPUS.0005",
+      "head_version": "v1.0.0",
+      "exact_text": "After removing one copy of R04, the independent-root corpus measures 153,355 lines, 482,249 words, and 3,928,232 bytes.",
+      "claim_type": ["EXACT_ARITHMETIC"],
+      "origin": ["D"],
+      "source_refs": ["C003", "C004"],
+      "locators": ["P06 subtraction replay"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [2, 3, 4, 0, 0, 0, 3, 4],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "NONE",
+      "boundary": "Independent-root means exact byte-root deduplication, not claim-level evidential independence.",
+      "return_address": "C005→C003,C004"
+    },
+    {
+      "alias": "C006",
+      "claim_id": "KC144.V1::GID005::H05::C.SOURCE_ROLE.0006",
+      "head_version": "v1.1.0",
+      "exact_text": "S01 is shelved as Torah Sod 2, carrying Genesis Atlases XLVII–LIX over Genesis 2:4–33.",
+      "claim_type": ["SOURCE_DESCRIPTION", "NAVIGATIONAL_ASSIGNMENT"],
+      "origin": ["R"],
+      "source_refs": ["S01", "R01"],
+      "locators": ["S01 lines 1, 3, 10306"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [3, 3, 2, 0, 0, 0, 2, 3],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "VERSE_AND_EDITION_BINDING_PENDING_PER_EXTERNAL_CLAIM",
+      "boundary": "Internal source role only.",
+      "return_address": "C006→S01/R01→TORAH"
+    },
+    {
+      "alias": "C007",
+      "claim_id": "KC144.V1::GID005::H05::C.SOURCE_ROLE.0007",
+      "head_version": "v1.0.1",
+      "exact_text": "S02 contains both an active KC144 construction-manual layer and a model-state narrative layer.",
+      "claim_type": ["SOURCE_DESCRIPTION", "VERSION_ASSERTION"],
+      "origin": ["R"],
+      "source_refs": ["S02", "R02"],
+      "locators": ["S02 line 1", "S02 line 14122"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [3, 3, 1, 0, 0, 0, 3, 3],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "NONE",
+      "boundary": "Model-state narrative is not privileged introspection.",
+      "return_address": "C007→S02/R02"
+    },
+    {
+      "alias": "C008",
+      "claim_id": "KC144.V1::GID005::H05::C.SOURCE_ROLE.0008",
+      "head_version": "v1.1.0",
+      "exact_text": "S03 is shelved as Torah 4D Crystal XVI–XXII.",
+      "claim_type": ["SOURCE_DESCRIPTION", "NAVIGATIONAL_ASSIGNMENT"],
+      "origin": ["R"],
+      "source_refs": ["S03", "R03"],
+      "locators": ["S03 lines 1, 3, 5790"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [3, 3, 2, 0, 0, 0, 2, 3],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "VERSE_AND_EDITION_BINDING_PENDING_PER_EXTERNAL_CLAIM",
+      "boundary": "Internal source role only.",
+      "return_address": "C008→S03/R03→TORAH_4D"
+    },
+    {
+      "alias": "C009",
+      "claim_id": "KC144.V1::GID005::H05::C.SOURCE_ROLE.0009",
+      "head_version": "v1.0.1",
+      "exact_text": "S04 carries a predecessor KC144 Memory Crystal constitution and predecessor station layout.",
+      "claim_type": ["VERSION_ASSERTION", "NAVIGATIONAL_ASSIGNMENT"],
+      "origin": ["R"],
+      "source_refs": ["S04", "R04"],
+      "locators": ["S04 line 1", "S04 lines 500–506"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [3, 3, 2, 0, 0, 0, 3, 3],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "NONE",
+      "boundary": "Predecessor lineage; not current construction authority.",
+      "return_address": "C009→S04/R04"
+    },
+    {
+      "alias": "C010",
+      "claim_id": "KC144.V1::GID005::H05::C.SOURCE_ROLE.0010",
+      "head_version": "v1.0.1",
+      "exact_text": "S05 is a separate physical file identity carrying the same predecessor content root as S04.",
+      "claim_type": ["SOURCE_IDENTITY"],
+      "origin": ["R", "D"],
+      "source_refs": ["S05", "R04", "C003", "C009"],
+      "locators": ["P06 live binary comparison"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [3, 3, 4, 0, 0, 0, 3, 4],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "NONE",
+      "boundary": "Separate file custody; shared evidential byte root.",
+      "return_address": "S05↔R04↔S04"
+    },
+    {
+      "alias": "C011",
+      "claim_id": "KC144.V1::GID005::H05::C.SOURCE_ROLE.0011",
+      "head_version": "v1.1.0",
+      "exact_text": "S06 is shelved as the Fourth-Dimensional Odd Holographic Crystal, including NOVE and cellular engine material.",
+      "claim_type": ["SOURCE_DESCRIPTION", "NAVIGATIONAL_ASSIGNMENT"],
+      "origin": ["R"],
+      "source_refs": ["S06", "R06"],
+      "locators": ["S06 line 1"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [3, 3, 2, 0, 0, 0, 2, 3],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "EXTERNAL_SCIENCE_SOURCE_REQUIRED_PER_EMPIRICAL_CLAIM",
+      "boundary": "Internal framework role only.",
+      "return_address": "C011→S06/R06→ODD_4D"
+    },
+    {
+      "alias": "C012",
+      "claim_id": "KC144.V1::GID005::H05::C.SOURCE_ROLE.0012",
+      "head_version": "v1.0.1",
+      "exact_text": "S07 is the principal recovered internal source for the Athena Navigational Crystal architecture.",
+      "claim_type": ["AUTHORITY_ASSERTION", "NAVIGATIONAL_ASSIGNMENT"],
+      "origin": ["R"],
+      "source_refs": ["S07", "R07"],
+      "locators": ["S07 lines 1 and 3"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [3, 3, 2, 0, 0, 0, 3, 3],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "NONE",
+      "boundary": "Principal recovered internal architecture source only.",
+      "return_address": "C012→S07/R07→ATHENA"
+    },
+    {
+      "alias": "C013",
+      "claim_id": "KC144.V1::GID005::H05::C.SOURCE_ROLE.0013",
+      "head_version": "v1.0.1",
+      "exact_text": "S08 is the principal recovered internal source for KC54 Emergent Understanding.",
+      "claim_type": ["AUTHORITY_ASSERTION", "NAVIGATIONAL_ASSIGNMENT"],
+      "origin": ["R"],
+      "source_refs": ["S08", "R08"],
+      "locators": ["S08 line 1"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [3, 3, 2, 0, 0, 0, 3, 3],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "NONE",
+      "boundary": "Internal KC54 source under its truth-level ladder.",
+      "return_address": "C013→S08/R08→KC54"
+    },
+    {
+      "alias": "C014",
+      "claim_id": "KC144.V1::GID005::H05::C.SOURCE_ROLE.0014",
+      "head_version": "v1.0.1",
+      "exact_text": "S09 is the principal recovered internal specification source for the Athenic language and ATHENA platform.",
+      "claim_type": ["SPECIFICATION", "NAVIGATIONAL_ASSIGNMENT"],
+      "origin": ["R"],
+      "source_refs": ["S09", "R09"],
+      "locators": ["S09 line 1"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [3, 3, 2, 0, 0, 0, 3, 3],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "IMPLEMENTATION_WITNESS_REQUIRED",
+      "boundary": "Specification authority only.",
+      "return_address": "C014→S09/R09→ATHENIC"
+    },
+    {
+      "alias": "C015",
+      "claim_id": "KC144.V1::GID005::H05::C.VERSION.0015",
+      "head_version": "v1.0.1",
+      "exact_text": "S10 is a composite prompt source containing both current and predecessor KC144 version fibers.",
+      "claim_type": ["VERSION_ASSERTION"],
+      "origin": ["R", "D"],
+      "source_refs": ["S10", "R10"],
+      "locators": ["S10 lines 1, 26, 1141"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [3, 3, 2, 0, 0, 0, 3, 3],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "NONE",
+      "boundary": "Internal version structure.",
+      "return_address": "C015→S10.V0,S10.V1"
+    },
+    {
+      "alias": "C016",
+      "claim_id": "KC144.V1::GID005::H05::C.VERSION.0016",
+      "head_version": "v1.0.1",
+      "exact_text": "S10.V1.PROMPT005 is the active station prompt for GID005 H05 Source–Evidence–Version Registry.",
+      "claim_type": ["VERSION_ASSERTION", "NORMATIVE_ASSIGNMENT"],
+      "origin": ["U", "R"],
+      "source_refs": ["S10.V1.PROMPT005", "U.CURRENT_SEQUENCE"],
+      "locators": ["S10 lines [1141,1238)"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [3, 3, 2, 0, 0, 0, 4, 3],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "NONE",
+      "boundary": "Current station-construction authority only.",
+      "return_address": "C016→S10.V1.PROMPT005"
+    },
+    {
+      "alias": "C017",
+      "claim_id": "KC144.V1::GID005::H05::C.VERSION.0017",
+      "head_version": "v1.0.1",
+      "exact_text": "S10.V0.U106_LEGACY preserves a predecessor H05 prompt titled Provenance, Contradictions, and Repair.",
+      "claim_type": ["VERSION_ASSERTION"],
+      "origin": ["R"],
+      "source_refs": ["S10.V0.U106_LEGACY"],
+      "locators": ["S10 line 26"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [3, 3, 2, 0, 0, 0, 3, 3],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "NONE",
+      "boundary": "Predecessor lineage only.",
+      "return_address": "C016→C017→S10.V0"
+    },
+    {
+      "alias": "C018",
+      "claim_id": "KC144.V1::GID005::H05::C.ATLAS.0018",
+      "head_version": "v1.0.1",
+      "exact_text": "The active KC144.V1 atlas assigns GID001–006 to H, 007–022 to X16, 023–043 to BR21, 044–080 to F37, 081–090 to IC10, 091–105 to KC15, 106–132 to KC27, and 133–144 to SSN.",
+      "claim_type": ["NAVIGATIONAL_ASSIGNMENT"],
+      "origin": ["U", "R", "D"],
+      "source_refs": ["S02", "S10.V1", "U.CURRENT_SEQUENCE"],
+      "locators": ["S02 lines 11968–11989", "S10 lines 11158–11165"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [3, 3, 3, 0, 0, 0, 3, 3],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "NONE",
+      "boundary": "Current atlas; predecessor preserved separately.",
+      "return_address": "C018→S02,S10.V1,U.CURRENT"
+    },
+    {
+      "alias": "C019",
+      "claim_id": "KC144.V1::GID005::H05::C.ATLAS.0019",
+      "head_version": "v1.0.1",
+      "exact_text": "The predecessor upper-atlas map assigns GID081–107 to K+, 108–134 to K*, and 135–144 to IC10.",
+      "claim_type": ["VERSION_ASSERTION", "NAVIGATIONAL_ASSIGNMENT"],
+      "origin": ["R"],
+      "source_refs": ["S04", "S05", "R04", "S10.V0"],
+      "locators": ["S04 lines 500–506"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [3, 3, 2, 0, 0, 0, 3, 3],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "NONE",
+      "boundary": "Predecessor atlas only.",
+      "return_address": "C019→S04/R04,S10.V0"
+    },
+    {
+      "alias": "C020",
+      "claim_id": "KC144.V1::GID005::H05::C.ATLAS.0020",
+      "head_version": "v1.0.0",
+      "exact_text": "For current construction, C018 governs; C019 remains available as predecessor lineage and migration context.",
+      "claim_type": ["POLICY", "VERSION_ASSERTION"],
+      "origin": ["U", "D"],
+      "source_refs": ["C016", "C018", "C019"],
+      "locators": ["H05 P01–P06 version ledger"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [2, 3, 3, 0, 0, 0, 4, 3],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "NONE",
+      "boundary": "Current construction only.",
+      "return_address": "C020→C018↔C019"
+    },
+    {
+      "alias": "C021",
+      "claim_id": "KC144.V1::GID005::H05::C.POLICY.0021",
+      "head_version": "v1.0.0",
+      "exact_text": "Recovering a source verifies neither every proposition inside it nor the source's authority outside its declared domain.",
+      "claim_type": ["POLICY", "AUTHORITY_ASSERTION"],
+      "origin": ["U", "D"],
+      "source_refs": ["H05/P00–P03"],
+      "locators": ["H05 provenance boundary"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [2, 3, 3, 0, 0, 0, 4, 4],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "NONE",
+      "boundary": "Root-control provenance policy.",
+      "return_address": "C021→H05/P00"
+    },
+    {
+      "alias": "C022",
+      "claim_id": "KC144.V1::GID005::H05::C.CORPUS.0022",
+      "head_version": "v1.0.0",
+      "exact_text": "The P01 S01–S10 source ledger contains zero web-source roots.",
+      "claim_type": ["ABSENCE_FROM_CORPUS"],
+      "origin": ["R", "D"],
+      "source_refs": ["S01–S10"],
+      "locators": ["P01 physical-source ledger"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [0, 3, 0, 0, 0, 0, 3, 4],
+      "lifecycle": "CHECKED_BOUNDED",
+      "obligation_state": "NONE",
+      "boundary": "Closed P01 S01–S10 ledger only; no universal absence implied.",
+      "return_address": "C022→P01/SOURCE_LEDGER"
+    },
+    {
+      "alias": "C023",
+      "claim_id": "KC144.V1::GID005::H05::C.GREAT_YEAR.0023",
+      "head_version": "v1.1.0",
+      "exact_text": "No independent empirical Great-Year calibration packet has yet been bound to the H05 ledger.",
+      "claim_type": ["MISSING_EVIDENCE", "ABSENCE_FROM_CURRENT_LEDGER"],
+      "origin": ["R", "X"],
+      "source_refs": ["S07"],
+      "locators": ["S07 Great-Year architecture; no admitted empirical packet"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [1, 2, 1, 0, 0, 0, 2, 2],
+      "lifecycle": "CHECKED_BOUNDED",
+      "obligation_state": "SOURCE_UNRESOLVED",
+      "boundary": "The bounded absence claim is checked; period, epoch, calibration, uncertainty, and empirical witness remain unresolved.",
+      "return_address": "C023→H06/GREAT_YEAR_RECOVERY_QUERY"
+    },
+    {
+      "alias": "C024",
+      "claim_id": "KC144.V1::GID005::H05::C.ATHENIC.0024",
+      "head_version": "v1.1.0",
+      "exact_text": "The current corpus recovers the Athenic specification but not an executable compiler/runtime/ATHIR backend witness.",
+      "claim_type": ["IMPLEMENTATION_GAP"],
+      "origin": ["R", "X"],
+      "source_refs": ["S09", "R09"],
+      "locators": ["S09 line 1; no admitted implementation witness"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [3, 3, 2, 0, 0, 0, 3, 3],
+      "lifecycle": "CHECKED_BOUNDED",
+      "obligation_state": "MISSING_NODE",
+      "boundary": "The bounded gap claim is checked; executable implementation remains absent.",
+      "return_address": "C024→ATHENIC/IMPLEMENTATION_RECOVERY"
+    },
+    {
+      "alias": "C025",
+      "claim_id": "KC144.V1::GID005::H05::C.ATHENA.0025",
+      "head_version": "v1.1.0",
+      "exact_text": "A dedicated primary source for the proposed Athena/Sophia comparative bridge has not yet been recovered into S01–S10.",
+      "claim_type": ["ABSENCE_FROM_CURRENT_LEDGER"],
+      "origin": ["X"],
+      "source_refs": [],
+      "locators": ["Closed S01–S10 source ledger"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [0, 1, 0, 0, 0, 0, 2, 2],
+      "lifecycle": "CHECKED_BOUNDED",
+      "obligation_state": "SOURCE_UNRESOLVED",
+      "boundary": "No equivalence or non-equivalence is inferred.",
+      "return_address": "C025→H06/ATHENA_SOPHIA_SOURCE_RECOVERY"
+    },
+    {
+      "alias": "C026",
+      "claim_id": "KC144.V1::GID005::H05::C.PROVENANCE.0026",
+      "head_version": "v1.0.0",
+      "exact_text": "The master shelf-population manifest is an assistant-produced derivative of S01–S10 and cannot independently corroborate those sources.",
+      "claim_type": ["DERIVATION", "AUTHORITY_ASSERTION"],
+      "origin": ["A", "D"],
+      "source_refs": ["R01", "R02", "R03", "R04", "R06", "R07", "R08", "R09", "R10"],
+      "locators": ["H05 construction provenance"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [2, 3, 3, 0, 0, 0, 4, 3],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "NONE",
+      "boundary": "Derivative navigation artifact only.",
+      "return_address": "C026→R01,R02,R03,R04,R06,R07,R08,R09,R10"
+    },
+    {
+      "alias": "C027",
+      "claim_id": "KC144.V1::GID005::H05::C.COORDINATE.0027",
+      "head_version": "v1.0.0",
+      "exact_text": "Under the declared uniform 144-sector projection, GID005 occupies [10°,12.5°) with center 11.25°.",
+      "claim_type": ["EXACT_ARITHMETIC", "NAVIGATIONAL_ASSIGNMENT"],
+      "origin": ["D", "E"],
+      "source_refs": ["C018"],
+      "locators": ["P03/P04 coordinate derivation"],
+      "evidence_vector_T_D_F_I_M_X_C_R": [0, 2, 4, 0, 0, 0, 3, 4],
+      "lifecycle": "PROMOTED_BOUNDED",
+      "obligation_state": "NONE",
+      "boundary": "Navigational projection only; no physical or causal claim.",
+      "return_address": "C027→GID005/H05→KC144/360"
+    }
+  ],
+  "patches": [
+    {
+      "patch_id": "PATCH.H05.P01.001",
+      "operation": "SPLIT_S10_VERSION_FIBERS",
+      "state": "APPLIED"
+    },
+    {
+      "patch_id": "PATCH.H05.P06.001",
+      "operation": "MATERIALIZE_CANONICAL_CIDS",
+      "state": "APPLIED"
+    },
+    {
+      "patch_id": "PATCH.H05.P06.002",
+      "operation": "ADD_REPLAYABLE_LINE_LOCATORS",
+      "state": "APPLIED"
+    },
+    {
+      "patch_id": "PATCH.H05.P06.003",
+      "operation": "ADD_SHELF_DERIVATION_WITNESSES",
+      "state": "APPLIED"
+    },
+    {
+      "patch_id": "PATCH.H05.P06.004",
+      "operation": "SEPARATE_BYTE_ROOT_COVERAGE_FROM_EVIDENCE_INDEPENDENCE",
+      "state": "APPLIED"
+    },
+    {
+      "patch_id": "PATCH.H05.P06.005",
+      "operation": "SPLIT_CLAIM_LIFECYCLE_FROM_TARGET_OBLIGATION",
+      "state": "APPLIED"
+    },
+    {
+      "patch_id": "PATCH.H05.P06.006",
+      "operation": "RELABEL_IC10_RESULT_AS_H05_LOCAL_SHADOW_AUDIT",
+      "state": "APPLIED"
+    }
+  ],
+  "audit_summary": {
+    "claims_total": 27,
+    "promoted_bounded": 23,
+    "checked_bounded": 4,
+    "refuted": 0,
+    "unresolved_direct_contradictions": 0,
+    "open_target_obligations": 3,
+    "local_source_replay": "PASS",
+    "h05_local_ic10_shadow_audit": "PASS_WITH_RESIDUE",
+    "ic10_live_execution": "NOT_RUN",
+    "ssn_commit_eligible": 0,
+    "ssn_commits": 0
+  },
+  "open_obligations": [
+    {
+      "obligation_id": "OBL.GREAT_YEAR.001",
+      "claim": "C023",
+      "state": "SOURCE_UNRESOLVED",
+      "requires": [
+        "period source",
+        "period unit",
+        "epoch",
+        "reference frame",
+        "calibration method",
+        "uncertainty",
+        "counterclaims",
+        "independent empirical witness"
+      ]
+    },
+    {
+      "obligation_id": "OBL.ATHENIC.001",
+      "claim": "C024",
+      "state": "MISSING_NODE",
+      "requires": [
+        "compiler or interpreter artifact",
+        "runtime environment",
+        "ATHIR backend witness",
+        "execution trace",
+        "replay procedure"
+      ]
+    },
+    {
+      "obligation_id": "OBL.ATHENA_SOPHIA.001",
+      "claim": "C025",
+      "state": "SOURCE_UNRESOLVED",
+      "requires": [
+        "dedicated primary comparison source",
+        "exact locator",
+        "typed comparison dimensions",
+        "counterclaim",
+        "authority boundary"
+      ]
+    }
+  ],
+  "navigation": {
+    "root": "KC144.V1::GID001–GID144",
+    "self": "GID005/H05/P07",
+    "previous": "GID005/H05/P06",
+    "next_seed": "KC144.V1::GID006::H06::D.GLOBAL_HOLOGRAPHIC_NAVIGATION::N.ACTIVATION_REPLAY_RESEED_HUB.P00",
+    "br21": "ADMIT→EXPAND→NAVIGATE→TRANSFORM→TEST→COMPRESS→RETURN",
+    "kc27": "C001–C027 occupy the 3×3×3 claim cube",
+    "kc54": "Every claim preserves source and claim faces",
+    "kc144": "GID005=R01C05",
+    "prime": {
+      "21": "3×7",
+      "27": "3^3",
+      "54": "2×3^3",
+      "144": "2^4×3^2",
+      "360": "2^3×3^2×5"
+    },
+    "circle_360": {
+      "gid005_sector": "[10°,12.5°)",
+      "gid005_center": "11.25°"
+    },
+    "great_year": "SOURCE_UNRESOLVED",
+    "liminal_states": [
+      "OPEN_BRIDGE",
+      "SOURCE_UNRESOLVED",
+      "MISSING_NODE",
+      "INELIGIBLE",
+      "⊥"
+    ],
+    "matrix_16x16": {
+      "rows": [
+        "CLAIM_ID",
+        "ADDRESS",
+        "SOURCE",
+        "LOCATOR",
+        "FRAGMENT",
+        "EXACT_TEXT",
+        "ORIGIN",
+        "CLAIM_TYPE",
+        "SCOPE",
+        "BOUNDARY",
+        "DERIVATION",
+        "DEPENDENCY",
+        "EVIDENCE",
+        "VERIFICATION",
+        "VERSION",
+        "LINEAGE_RETURN"
+      ],
+      "columns": [
+        "ADMIT",
+        "RECOVER",
+        "EXTRACT",
+        "TYPE",
+        "SCOPE",
+        "BIND",
+        "COMPARE",
+        "DERIVE",
+        "SUPPORT",
+        "REFUTE",
+        "VERIFY",
+        "REPLAY",
+        "CORRECT",
+        "SUPERSEDE",
+        "COMPRESS",
+        "RESEED"
+      ]
+    },
+    "four_poles": {
+      "11": "TRUE AETHER / canonical claim and source seed",
+      "10": "TRUE VECTOR / forward source-evidence-version path",
+      "00": "TRUE ZERO / explicit duplicate, absence, missing node, refusal, or unresolved state",
+      "01": "TRUE COVECTOR / correction, counterclaim, replay, lineage, and return"
+    }
+  },
+  "return_witness": {
+    "witness_id": "WITNESS.H05.P07.RETURN.001",
+    "source_replay": "PASS",
+    "claim_count": 27,
+    "source_identity_count": 10,
+    "content_root_count": 9,
+    "patch_count": 7,
+    "open_obligation_count": 3,
+    "canonical_digest": "DETACHED",
+    "return_route": "P07→P06→P05→P04→P03→P02→P01→P00→GID005/H05→KC144.V1",
+    "live_ic10": "NOT_RUN",
+    "ssn_commit": "NOT_RUN"
+  }
+}

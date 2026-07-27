@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/candidate-cohort-solver-v13.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "selection_id", "checked_at", "node_budget",
+    "explored_nodes", "budget_exhausted", "nomination_count",
+    "admitted_candidate_count", "nomination_verifications",
+    "duplicate_nomination_ids", "duplicate_candidate_ids",
+    "conflict_graph", "solution_status", "candidate_cohorts",
+    "selected_cohort", "selected_pair_audits",
+    "required_pairwise_audits", "selected_pairwise_audits", "barrier",
+    "governance_authority_granted", "packets_delivered",
+    "truth_effect", "solver_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.CandidateCohortSolver.V13"},
+    "selection_id": {
+      "const": "KC144.CANDIDATE.COHORT.SELECTION.V13"
+    },
+    "checked_at": {"type": "string", "minLength": 1},
+    "node_budget": {"type": "integer", "minimum": 1},
+    "explored_nodes": {"type": "integer", "minimum": 0},
+    "budget_exhausted": {"type": "boolean"},
+    "nomination_count": {"type": "integer", "minimum": 0},
+    "admitted_candidate_count": {"type": "integer", "minimum": 0},
+    "nomination_verifications": {"type": "array"},
+    "duplicate_nomination_ids": {"type": "array", "uniqueItems": true},
+    "duplicate_candidate_ids": {"type": "array", "uniqueItems": true},
+    "conflict_graph": {
+      "$ref": "candidate-conflict-graph-v13.schema.json"
+    },
+    "solution_status": {
+      "enum": [
+        "SOLVER_BUDGET_EXHAUSTED", "NO_COHORT", "MULTIPLE_COHORTS",
+        "UNIQUE_PROVISIONAL_COHORT"
+      ]
+    },
+    "candidate_cohorts": {"type": "array", "maxItems": 2},
+    "selected_cohort": {
+      "anyOf": [{"type": "null"}, {"type": "object"}]
+    },
+    "selected_pair_audits": {"type": "array", "maxItems": 10},
+    "required_pairwise_audits": {"const": 10},
+    "selected_pairwise_audits": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10
+    },
+    "barrier": {"type": "string", "minLength": 1},
+    "governance_authority_granted": {"const": false},
+    "packets_delivered": {"const": false},
+    "truth_effect": {"const": "NONE"},
+    "solver_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/external-handoff-run-v9.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "handoff_id", "bundle_root", "bundle_digest", "status",
+    "handoff_receipts", "handoff_held_shards", "campaign_report_digest",
+    "campaign_barrier", "final_ledger_digest", "production_truth_effect",
+    "frozen_crystal_mutated", "next_seed", "report_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ExternalHandoffRunReport.V9"},
+    "handoff_id": {"const": "KC144.EXTERNAL.HANDOFF.V9"},
+    "bundle_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "bundle_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "status": {"enum": ["BARRIER", "COMPLETE"]},
+    "handoff_receipts": {"type": "array"},
+    "handoff_held_shards": {"type": "array", "uniqueItems": true},
+    "campaign_report_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "campaign_barrier": {"type": "string", "minLength": 1},
+    "final_ledger_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "production_truth_effect": {"enum": ["NONE", "EVIDENCE_OVERLAY_ONLY"]},
+    "frozen_crystal_mutated": {"const": false},
+    "next_seed": {"type": "string", "minLength": 1},
+    "report_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

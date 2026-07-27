@@ -1,0 +1,14 @@
+{
+  "schema": "KC144.ColdReconstruction.V5",
+  "verdict": "PASS",
+  "checks": {
+    "edge_manifest_exact": true,
+    "receipt_root_exact": true,
+    "session_digest_exact": true
+  },
+  "replay_level": "N5_DETERMINISTIC_SELF_REPLAY",
+  "independent_replay": false,
+  "promotion_effect": "NONE",
+  "replayed_receipt_root": "sha256:17815a3b48d1c7cec64397f758d9db1cbb86d8e2d400f7a2da1ce6bf8145690d",
+  "replayed_session_digest": "sha256:d921b5793e29d3a927d646d4ca2a739b41be21828804d04bdb9426bb31ad3dc0"
+}

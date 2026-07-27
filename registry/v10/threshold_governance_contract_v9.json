@@ -1,0 +1,21 @@
+{
+  "schema": "KC144.ThresholdGovernanceContract.V9",
+  "governance_id": "KC144.THRESHOLD.GOVERNANCE.V9",
+  "epoch_id": "EPOCH-B-EIGHT-BLOCK",
+  "member_count": 5,
+  "threshold": 3,
+  "signature_algorithm": "ED25519",
+  "signature_domain": "KC144.V9.AUTHORITY_PIN",
+  "roles": [
+    "CUSTODIAN",
+    "INDEPENDENT_REVIEWER",
+    "REPLAY_WITNESS",
+    "SOURCE_AUDITOR",
+    "RETURN_AUDITOR"
+  ],
+  "revocation": "APPEND_ONLY_TRANSPARENT_LOG",
+  "candidate_law": "the candidate must first pass V8 proof-of-possession and cannot sign a governance approval for itself",
+  "quorum_law": "three distinct active independent non-test governance members must sign the same domain-separated proposal bytes",
+  "truth_effect": "NONE_UNTIL_QUORUM_AND_PIN",
+  "contract_digest": "sha256:f5acd14921b5b11afb128a813e05cefa0799029bf5c7aab7452f1edd914faa85"
+}

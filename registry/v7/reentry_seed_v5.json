@@ -1,0 +1,76 @@
+{
+  "schema": "KC144.ReentrySeed.V5",
+  "session_id": "KC144.V5.DEFAULT.CONSTELLATION",
+  "epoch": "EPOCH-B/V5",
+  "queries": [
+    {
+      "query_id": "KC144.V4.EXAMPLE.RETURNABLE",
+      "goal": "compile an activation route through return and adjudication",
+      "terms": [
+        "activation",
+        "return",
+        "adjudication"
+      ],
+      "domains": [],
+      "operators": [
+        "RETURN"
+      ],
+      "invariants": [
+        "return"
+      ],
+      "boundaries": [],
+      "evidence_floor": "STRUCTURAL",
+      "start_coordinates": [
+        6
+      ],
+      "route_budget": 18,
+      "return_mode": "RETURN_ARM",
+      "max_results": 12
+    },
+    {
+      "query_id": "KC144.V4.EXAMPLE.SOURCE-CARRIER",
+      "goal": "locate a source declared carrier with identity and evidence",
+      "terms": [
+        "carrier",
+        "identity",
+        "source"
+      ],
+      "domains": [
+        "F37"
+      ],
+      "operators": [],
+      "invariants": [],
+      "boundaries": [],
+      "evidence_floor": "SOURCE_DECLARED",
+      "start_coordinates": [
+        6
+      ],
+      "route_budget": 18,
+      "return_mode": "TYPED_RETRACE",
+      "max_results": 12
+    },
+    {
+      "query_id": "KC144.V4.EXAMPLE.INDEPENDENT-REFUSAL",
+      "goal": "locate independently replayed stations",
+      "terms": [
+        "replay"
+      ],
+      "domains": [],
+      "operators": [],
+      "invariants": [],
+      "boundaries": [],
+      "evidence_floor": "INDEPENDENT_REPLAY",
+      "start_coordinates": [
+        6
+      ],
+      "route_budget": 18,
+      "return_mode": "NONE",
+      "max_results": 12
+    }
+  ],
+  "execution_mode": "DETERMINISTIC_PARALLEL_BATCH",
+  "edge_manifest_digest": "sha256:175e47f51b66b49e24eca872334ad60ee842e928e733307fec654b1ace4aeaa8",
+  "expected_receipt_root": "sha256:17815a3b48d1c7cec64397f758d9db1cbb86d8e2d400f7a2da1ce6bf8145690d",
+  "expected_session_digest": "sha256:d921b5793e29d3a927d646d4ca2a739b41be21828804d04bdb9426bb31ad3dc0",
+  "seed_digest": "sha256:225a0aa769186bdbd6068dd84f6133e50992dee29d93c1365eb25166159e8832"
+}

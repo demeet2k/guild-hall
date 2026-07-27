@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.invalid/schemas/query.schema.json",
+  "title": "KC144 QueryBundle",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "query_id",
+    "goal",
+    "domains",
+    "invariants",
+    "boundaries",
+    "evidence_floor",
+    "start_coordinates",
+    "route_budget",
+    "return_mode"
+  ],
+  "properties": {
+    "schema_version": {"const": "KC144-QUERY-1.0"},
+    "query_id": {"type": "string"},
+    "goal": {"type": "string"},
+    "terms": {"type": "array", "items": {"type": "string"}},
+    "domains": {"type": "array", "items": {"type": "string"}},
+    "operators": {"type": "array", "items": {"type": "string"}},
+    "invariants": {"type": "array", "items": {"type": "string"}},
+    "boundaries": {"type": "array", "items": {"type": "string"}},
+    "evidence_floor": {"type": "string"},
+    "start_coordinates": {"type": "array", "items": {"type": "string"}},
+    "route_budget": {"type": "integer", "minimum": 0},
+    "return_mode": {"type": "string"},
+    "temporal_selector": {"type": "object"},
+    "source_selector": {"type": "object"},
+    "view_set": {"type": "array", "items": {"type": "string"}},
+    "defect_budget": {"type": "object"}
+  },
+  "additionalProperties": false
+}
+

@@ -1,0 +1,154 @@
+{
+  "schema": "KC144.M12RepairState.V6",
+  "release": "KC144.M12.REPAIR.COMPILER.V6",
+  "parent_release": "KC144.SSN12.GLOBAL_STATE.V5",
+  "frozen_base_state_root": "sha256:f45feeb8c66a892b6af7c547824c3c02a66d973bb0ee5cf264726bb100128699",
+  "base_global_state_digest": "sha256:f45feeb8c66a892b6af7c547824c3c02a66d973bb0ee5cf264726bb100128699",
+  "ledger_digest": "sha256:b76c6a986e18d7ec0b000780c220b913484c5888c41d3b431302ea844664afa6",
+  "ledger_integrity": {
+    "verdict": "PASS",
+    "checks": {
+      "schema": true,
+      "namespace": true,
+      "frozen_base": true,
+      "record_chain": true,
+      "production_context_chain": true,
+      "head_exact": true,
+      "ledger_digest": true
+    },
+    "records": 0,
+    "head_digest": "GENESIS"
+  },
+  "evidence": {
+    "namespace": "PRODUCTION",
+    "admitted_packet_counts": {
+      "BRIDGE_CERTIFICATION": 0,
+      "DOMAIN_POPULATION": 0,
+      "INDEPENDENT_REPLAY": 0,
+      "DEFECT_CLOSURE": 0,
+      "IC10_PROMOTION": 0
+    },
+    "observed_state": {
+      "certified_bridges": 0,
+      "domain_population": 86,
+      "independent_replays": 0,
+      "blocking_defects": 1,
+      "ic10_promoted": false
+    },
+    "production_effective_state": {
+      "certified_bridges": 0,
+      "domain_population": 86,
+      "independent_replays": 0,
+      "blocking_defects": 1,
+      "ic10_promoted": false
+    },
+    "open_defect_ids": [
+      "DEF-M12-OPEN-GATES"
+    ],
+    "production_truth_effect": "NONE"
+  },
+  "repair_plan": {
+    "schema": "KC144.M12RepairPlan.V6",
+    "scheduler": "DEPENDENCY_DAG_WITH_PARALLEL_EVIDENCE_WAVES",
+    "tasks": [
+      {
+        "task_id": "R01_CERTIFY_BRIDGES",
+        "gate": "M12_BRIDGES_CERTIFIED_28",
+        "required": 28,
+        "admitted": 0,
+        "remaining": 28,
+        "dependencies": [],
+        "execution": "PARALLEL_WAVE",
+        "status": "READY"
+      },
+      {
+        "task_id": "R02_POPULATE_DOMAINS",
+        "gate": "M12_DOMAIN_POPULATION_144",
+        "required": 144,
+        "admitted": 86,
+        "remaining": 58,
+        "dependencies": [],
+        "execution": "PARALLEL_WAVE",
+        "status": "READY"
+      },
+      {
+        "task_id": "R03_REPLAY_STATIONS",
+        "gate": "M12_INDEPENDENT_REPLAY_144",
+        "required": 144,
+        "admitted": 0,
+        "remaining": 144,
+        "dependencies": [],
+        "execution": "PARALLEL_WAVE",
+        "status": "READY"
+      },
+      {
+        "task_id": "R04_CLOSE_BLOCKING_DEFECTS",
+        "gate": "M12_BLOCKING_DEFECTS_EMPTY",
+        "required": 1,
+        "admitted": 0,
+        "remaining": 1,
+        "dependencies": [
+          "R01_CERTIFY_BRIDGES",
+          "R02_POPULATE_DOMAINS",
+          "R03_REPLAY_STATIONS"
+        ],
+        "execution": "DEPENDENCY_BOUND",
+        "status": "BLOCKED"
+      },
+      {
+        "task_id": "R05_IC10_ADJUDICATE",
+        "gate": "M12_IC10_DECISION_PROMOTED",
+        "required": 1,
+        "admitted": 0,
+        "remaining": 1,
+        "dependencies": [
+          "R04_CLOSE_BLOCKING_DEFECTS"
+        ],
+        "execution": "DEPENDENCY_BOUND",
+        "status": "BLOCKED"
+      },
+      {
+        "task_id": "R06_M12_RECOMPUTE",
+        "gate": "M12_SOLID_STATE",
+        "required": 1,
+        "admitted": 0,
+        "remaining": 1,
+        "dependencies": [
+          "R05_IC10_ADJUDICATE"
+        ],
+        "execution": "DEPENDENCY_BOUND",
+        "status": "BLOCKED"
+      }
+    ],
+    "next_frontier": [
+      "R01_CERTIFY_BRIDGES",
+      "R02_POPULATE_DOMAINS",
+      "R03_REPLAY_STATIONS"
+    ],
+    "mutation_target": "APPEND_ONLY_EVIDENCE_OVERLAY",
+    "frozen_crystal_mutated": false
+  },
+  "ssn12": {
+    "verdict": "HOLD",
+    "gates": {
+      "M12_NODE_ACTIVATION_144": "PASS",
+      "M12_EDGE_MANIFEST_FROZEN": "PASS",
+      "M12_TOTAL_RETURN": "PASS",
+      "M12_PROJECTIVE_COVERAGE": "PASS",
+      "M12_BRIDGES_CERTIFIED_28": "FAIL",
+      "M12_DOMAIN_POPULATION_144": "FAIL",
+      "M12_INDEPENDENT_REPLAY_144": "FAIL",
+      "M12_IC10_DECISION_PROMOTED": "FAIL",
+      "M12_BLOCKING_DEFECTS_EMPTY": "FAIL"
+    },
+    "passed": 4,
+    "total": 9,
+    "certificate": null,
+    "law": "coverage telemetry never substitutes for domain population, independent replay, certified transport, IC10 promotion, or debt closure"
+  },
+  "production_certificate_issued": false,
+  "truth_effect": "NONE",
+  "next_seed": "KC144.V6::EVIDENCE-INTAKE::PARALLEL-WAVE-01",
+  "successor_law": "KC144.V2::POPULATE_MATH144 is emitted only from a PRODUCTION ledger whose 28 bridge, 144 domain, 144 independent replay, zero-defect, and sole-authority IC10 gates all pass",
+  "repair_state_digest": "sha256:096b9a3b27573694d1bea05660b94d0feb0ce8c8f6e265756f16572bb76d0f2a"
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/participant-handoff-contract-v12.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "handoff_id", "parent_dispatch_id", "roles",
+    "packet_count", "selection_law", "delivery_law", "private_key_law",
+    "return_law", "decline_law", "activation_law", "truth_effect",
+    "contract_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ParticipantHandoffContract.V12"},
+    "handoff_id": {"const": "KC144.PARTICIPANT.HANDOFF.V12"},
+    "parent_dispatch_id": {"const": "KC144.GOVERNANCE.DISPATCH.V11"},
+    "roles": {
+      "const": [
+        "CUSTODIAN", "INDEPENDENT_REVIEWER", "REPLAY_WITNESS",
+        "SOURCE_AUDITOR", "RETURN_AUDITOR"
+      ]
+    },
+    "packet_count": {"const": 5},
+    "selection_law": {"type": "string", "minLength": 1},
+    "delivery_law": {"type": "string", "minLength": 1},
+    "private_key_law": {"type": "string", "minLength": 1},
+    "return_law": {"type": "string", "minLength": 1},
+    "decline_law": {"type": "string", "minLength": 1},
+    "activation_law": {"type": "string", "minLength": 1},
+    "truth_effect": {"const": "NONE"},
+    "contract_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/m12-evidence-packet-v6.schema.json",
+  "title": "KC144 V6 M12 evidence packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "packet_id",
+    "kind",
+    "subject_id",
+    "namespace",
+    "evidence_class",
+    "evidence_root",
+    "source_ref",
+    "replay_class",
+    "contradiction_class",
+    "repair_layer",
+    "trust_revision_witness",
+    "reentry_permit_id",
+    "payload",
+    "payload_digest",
+    "authority"
+  ],
+  "properties": {
+    "packet_id": {"type": "string", "minLength": 1},
+    "kind": {
+      "enum": [
+        "BRIDGE_CERTIFICATION",
+        "DOMAIN_POPULATION",
+        "INDEPENDENT_REPLAY",
+        "DEFECT_CLOSURE",
+        "IC10_PROMOTION"
+      ]
+    },
+    "subject_id": {"type": "string", "minLength": 1},
+    "namespace": {"enum": ["PRODUCTION", "TEST"]},
+    "evidence_class": {"enum": ["EXTERNAL", "TEST_FIXTURE"]},
+    "evidence_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "source_ref": {"type": "string", "minLength": 1},
+    "replay_class": {"enum": ["B2", "B3", "B4", "EXACT"]},
+    "contradiction_class": {
+      "enum": ["NONE_FOUND", "CONFIRMED", "CONTESTED", "UNRESOLVED"]
+    },
+    "repair_layer": {
+      "enum": ["TRANSPORT", "SOURCE_BINDING", "REPLAY", "DEFECT", "PROMOTION"]
+    },
+    "trust_revision_witness": {"type": "string", "minLength": 1},
+    "reentry_permit_id": {"type": "string", "minLength": 1},
+    "payload": {"type": "object"},
+    "payload_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authority_id",
+        "scope",
+        "signature_status",
+        "independent",
+        "test_only"
+      ],
+      "properties": {
+        "authority_id": {"type": "string", "minLength": 1},
+        "scope": {"type": "string", "minLength": 1},
+        "signature_status": {"enum": ["VERIFIED", "UNVERIFIED", "REVOKED"]},
+        "independent": {"type": "boolean"},
+        "test_only": {"type": "boolean"}
+      }
+    }
+  }
+}

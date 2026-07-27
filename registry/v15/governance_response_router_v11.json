@@ -1,0 +1,37 @@
+{
+  "schema": "KC144.GovernanceResponseRouter.V11",
+  "dispatch_id": "KC144.GOVERNANCE.DISPATCH.V11",
+  "batch_id": "V11-BATCH::c7e3ae7e8cfd126a75b41b4a",
+  "batch_root": "sha256:b9322c5950d562f7a3f437ed8c939d98506db4edf34446e8332318513bca46b5",
+  "verified_at": "2026-07-27T08:39:35+00:00",
+  "batch_state": {
+    "schema": "KC144.GovernanceChallengeBatchState.V11",
+    "batch_id": "V11-BATCH::c7e3ae7e8cfd126a75b41b4a",
+    "batch_root": "sha256:b9322c5950d562f7a3f437ed8c939d98506db4edf34446e8332318513bca46b5",
+    "checked_at": "2026-07-27T08:39:35+00:00",
+    "integrity": "PASS",
+    "lifecycle": "OPEN",
+    "accepting_responses": true,
+    "governance_activated": false,
+    "truth_effect": "NONE",
+    "state_digest": "sha256:cd17e1d8e5e68b4acfa2b847671e7abc325044fcbd14d7157be0ca5ba571fa29"
+  },
+  "supplied_response_count": 0,
+  "counted_response_count": 0,
+  "counted_roles": [],
+  "remaining_roles": [
+    "CUSTODIAN",
+    "INDEPENDENT_REVIEWER",
+    "REPLAY_WITNESS",
+    "SOURCE_AUDITOR",
+    "RETURN_AUDITOR"
+  ],
+  "response_reports": [],
+  "pending_society": null,
+  "status": "AWAITING_EXTERNAL_RESPONSES",
+  "barrier": "FIVE_INDEPENDENT_PARTICIPANT_RESPONSES_REQUIRED",
+  "governance_activated": false,
+  "production_certificate_issued": false,
+  "truth_effect": "NONE",
+  "router_digest": "sha256:fdf556434522a69685da51da5809e0d71b80fd99f107ee1327e7790361d7c7a8"
+}

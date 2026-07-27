@@ -1,0 +1,30 @@
+{
+  "schema": "KC144.MYC.SKELETON.P04.METRO.V1",
+  "root": "repo-athena",
+  "entry_routes": [
+    {"from": "conversation", "to": "H05", "relation": "yields-claim-and-source-occurrences"},
+    {"from": "google_doc", "to": "H05", "relation": "supplies-versioned-body"},
+    {"from": "H05", "to": "repo-athena", "relation": "grounds-control-plane"},
+    {"from": "repo-athena", "to": "federated-repository", "relation": "indexes-pinned-snapshot"},
+    {"from": "federated-repository", "to": "repo-athena", "relation": "returns-receipt-to"}
+  ],
+  "route_state": [
+    "resource_identity",
+    "revision_identity",
+    "occurrence_identity",
+    "prior_relation",
+    "prior_transform",
+    "authority_ceiling",
+    "return_obligation"
+  ],
+  "admission_faces": [
+    "address",
+    "source",
+    "transform",
+    "return",
+    "replay"
+  ],
+  "selection": "all-shortest-admissible-paths-with-candidate-multiplicity",
+  "promotion": "KC27→BR21_parallel→KC54→IC10→QSHRINK→SSN12",
+  "publication_state": "not_executed"
+}

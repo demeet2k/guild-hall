@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/application-transport-runtime-state-v15.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "release", "parent_release", "transport_id",
+    "transport_contract_digest", "batch_id", "batch_root",
+    "call_manifest_root", "publication_manifest_root",
+    "application_receipt_ledger_root", "assignment_root",
+    "prepared_publication_payloads", "published_publication_payloads",
+    "application_count", "admitted_application_count",
+    "held_application_count", "solution_status", "assigned_packet_count",
+    "delivered_packet_count", "internal_readiness", "barrier",
+    "governance_activated", "production_certificate_issued",
+    "production_truth_effect", "frozen_crystal_mutated", "next_seed",
+    "runtime_state_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ApplicationTransportRuntimeState.V15"},
+    "release": {
+      "const": "KC144.CANDIDATE.APPLICATION.TRANSPORT.RUNTIME.V15"
+    },
+    "parent_release": {
+      "const": "KC144.CANDIDATE.NOMINATION.INTAKE.RUNTIME.V14"
+    },
+    "transport_id": {
+      "const": "KC144.CANDIDATE.APPLICATION.TRANSPORT.V15"
+    },
+    "transport_contract_digest": {"$ref": "#/$defs/root"},
+    "batch_id": {"type": "string", "minLength": 1},
+    "batch_root": {"$ref": "#/$defs/root"},
+    "call_manifest_root": {"$ref": "#/$defs/root"},
+    "publication_manifest_root": {"$ref": "#/$defs/root"},
+    "application_receipt_ledger_root": {"$ref": "#/$defs/root"},
+    "assignment_root": {"$ref": "#/$defs/root"},
+    "prepared_publication_payloads": {"const": 5},
+    "published_publication_payloads": {"const": 0},
+    "application_count": {"type": "integer", "minimum": 0},
+    "admitted_application_count": {"type": "integer", "minimum": 0},
+    "held_application_count": {"type": "integer", "minimum": 0},
+    "solution_status": {"type": "string", "minLength": 1},
+    "assigned_packet_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "delivered_packet_count": {"const": 0},
+    "internal_readiness": {
+      "type": "object",
+      "required": ["verdict", "checks"]
+    },
+    "barrier": {"type": "string", "minLength": 1},
+    "governance_activated": {"const": false},
+    "production_certificate_issued": {"const": false},
+    "production_truth_effect": {"const": "NONE"},
+    "frozen_crystal_mutated": {"const": false},
+    "next_seed": {"type": "string", "minLength": 1},
+    "runtime_state_digest": {"$ref": "#/$defs/root"}
+  },
+  "$defs": {
+    "root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

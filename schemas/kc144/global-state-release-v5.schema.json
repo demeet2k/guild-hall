@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/global-state-release-v5.schema.json",
+  "title": "KC144 V5 global-state release",
+  "type": "object",
+  "required": [
+    "schema",
+    "release",
+    "verdict",
+    "edge_manifest",
+    "session",
+    "cold_reconstruction",
+    "independent_replay",
+    "solid_state",
+    "actual_live_promotions",
+    "added_artifacts"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.GlobalStateRelease.V5"},
+    "release": {"const": "KC144.SSN12.GLOBAL_STATE.V5"},
+    "verdict": {"enum": ["PASS", "FAIL"]},
+    "edge_manifest": {
+      "type": "object",
+      "required": ["records", "distinct_adjacencies", "all_carry_loss_declared"],
+      "properties": {
+        "records": {"const": 276},
+        "distinct_adjacencies": {"const": 274},
+        "all_carry_loss_declared": {"const": true}
+      }
+    },
+    "session": {
+      "type": "object",
+      "required": ["queries", "receipts", "receipt_chain", "projective_synapses"],
+      "properties": {
+        "queries": {"type": "integer", "minimum": 1},
+        "receipts": {"type": "integer", "minimum": 1},
+        "receipt_chain": {"const": "PASS"},
+        "projective_synapses": {"type": "integer", "minimum": 0}
+      }
+    },
+    "cold_reconstruction": {"const": "N5_DETERMINISTIC_SELF_REPLAY"},
+    "independent_replay": {"const": false},
+    "solid_state": {"const": "HOLD"},
+    "actual_live_promotions": {"const": 0},
+    "added_artifacts": {"type": "array", "items": {"type": "string"}}
+  }
+}

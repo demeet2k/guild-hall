@@ -1,0 +1,182 @@
+{
+  "schema": "KC144.RouteHolonomy.V3",
+  "question": "I09 fails on all 144 seats: one defect or 144?",
+  "destination": {
+    "gid": 90,
+    "resolution": "one gate; two modes; 87 causal replay units; 144 instances"
+  },
+  "routes": {
+    "A_X16_CONTRACT": {
+      "path": [
+        7,
+        11,
+        15,
+        19
+      ],
+      "grammar": "contract",
+      "path_valid": true,
+      "carry": [
+        "instance_count:144",
+        "operator_count:1",
+        "return_classes:typed",
+        "zero_split:86_constraint/58_missing"
+      ],
+      "result": "two failure modes with different return classes",
+      "adjudication_target": 90
+    },
+    "B_BR21_ADVERSARIAL": {
+      "path": [
+        25,
+        28,
+        31,
+        34,
+        37,
+        40,
+        43
+      ],
+      "grammar": "adversarial",
+      "path_valid": true,
+      "carry": [
+        "collapse_not_invertible",
+        "falsifier:single_seat_replay",
+        "gate_may_be_composite",
+        "loss_requires_carry",
+        "return_type:pseudoinverse",
+        "reversibility_requires_carry",
+        "self_supplied_replay_packet"
+      ],
+      "result": "one-defect language is a lossy projection unless carry is retained",
+      "adjudication_target": 90
+    },
+    "C_KC27_CUBE": {
+      "path": [
+        110,
+        119,
+        128
+      ],
+      "grammar": "localize-compress-lift",
+      "path_valid": true,
+      "carry": [
+        "compression:exact_with_two_element_carry",
+        "lift:closed_verifier_property",
+        "rank:1_in_gate_space"
+      ],
+      "result": "rank one in gate space and a configuration property after scale lift",
+      "adjudication_target": 90
+    },
+    "D_KC15_SUPPORT": {
+      "path": [
+        91,
+        95,
+        101,
+        105
+      ],
+      "grammar": "expressibility",
+      "path_valid": true,
+      "carry": [
+        "answer:one_obligation_144_instances",
+        "expressible:count",
+        "expressible:invariant",
+        "expressible:ratio",
+        "wellposedness:full_support"
+      ],
+      "result": "one return obligation with 144 instances; question needs full support",
+      "adjudication_target": 90
+    },
+    "E_IC10_ADJUDICATION": {
+      "path": [
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90
+      ],
+      "grammar": "adjudication",
+      "path_valid": true,
+      "carry": [
+        "analysis_replay:B4",
+        "corridor:this_sweep",
+        "defect:self_chosen_parameter",
+        "verdict:structural_hold_empirical"
+      ],
+      "result": "analysis is reproducible while subjects remain independently unwitnessed",
+      "adjudication_target": 90
+    }
+  },
+  "all_paths_valid": true,
+  "shared_carry_all_routes": [],
+  "all_pairwise_holonomy_nonzero": true,
+  "pairwise": [
+    {
+      "left": "A_X16_CONTRACT",
+      "right": "B_BR21_ADVERSARIAL",
+      "omega": 11,
+      "shared": 0
+    },
+    {
+      "left": "A_X16_CONTRACT",
+      "right": "C_KC27_CUBE",
+      "omega": 7,
+      "shared": 0
+    },
+    {
+      "left": "A_X16_CONTRACT",
+      "right": "D_KC15_SUPPORT",
+      "omega": 9,
+      "shared": 0
+    },
+    {
+      "left": "A_X16_CONTRACT",
+      "right": "E_IC10_ADJUDICATION",
+      "omega": 8,
+      "shared": 0
+    },
+    {
+      "left": "B_BR21_ADVERSARIAL",
+      "right": "C_KC27_CUBE",
+      "omega": 10,
+      "shared": 0
+    },
+    {
+      "left": "B_BR21_ADVERSARIAL",
+      "right": "D_KC15_SUPPORT",
+      "omega": 12,
+      "shared": 0
+    },
+    {
+      "left": "B_BR21_ADVERSARIAL",
+      "right": "E_IC10_ADJUDICATION",
+      "omega": 11,
+      "shared": 0
+    },
+    {
+      "left": "C_KC27_CUBE",
+      "right": "D_KC15_SUPPORT",
+      "omega": 8,
+      "shared": 0
+    },
+    {
+      "left": "C_KC27_CUBE",
+      "right": "E_IC10_ADJUDICATION",
+      "omega": 7,
+      "shared": 0
+    },
+    {
+      "left": "D_KC15_SUPPORT",
+      "right": "E_IC10_ADJUDICATION",
+      "omega": 9,
+      "shared": 0
+    }
+  ],
+  "laws_earned": [
+    "same destination does not imply same path",
+    "shared value does not imply shared cause",
+    "structure alone never promotes"
+  ],
+  "truth_effect": "NONE"
+}

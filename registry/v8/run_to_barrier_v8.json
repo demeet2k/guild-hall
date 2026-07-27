@@ -1,0 +1,34 @@
+{
+  "schema": "KC144.RunToBarrierReport.V8",
+  "campaign_id": "KC144.M12.PARALLEL.CAMPAIGN.V8",
+  "campaign_manifest_digest": "sha256:4f8442c5de3c65fe6e04fb80421b34f6a4b03bf82ec96de3bad43b79893a071e",
+  "status": "BARRIER",
+  "initial_ledger_digest": "sha256:b76c6a986e18d7ec0b000780c220b913484c5888c41d3b431302ea844664afa6",
+  "final_ledger_digest": "sha256:b76c6a986e18d7ec0b000780c220b913484c5888c41d3b431302ea844664afa6",
+  "receipts": [],
+  "admitted_shards": [],
+  "held_shards": [],
+  "unknown_shards": [],
+  "deferred_shards": [],
+  "net_delta": {
+    "observed_state": {
+      "certified_bridges": 0,
+      "domain_population": 0,
+      "independent_replays": 0,
+      "blocking_defects": 0,
+      "ic10_promoted": 0
+    },
+    "production_effective_state": {
+      "certified_bridges": 0,
+      "domain_population": 0,
+      "independent_replays": 0,
+      "blocking_defects": 0,
+      "ic10_promoted": 0
+    }
+  },
+  "barrier": "EXTERNAL_AUTHORITY_PIN_REQUIRED",
+  "next_seed": "KC144.V8::PIN-EXTERNAL-GOVERNANCE-TRUST-ANCHOR",
+  "production_truth_effect": "NONE",
+  "frozen_crystal_mutated": false,
+  "report_digest": "sha256:1e3d942db54d0a9da0573fbd0d731b193895b4564b2904d422e98af7aca5ef43"
+}

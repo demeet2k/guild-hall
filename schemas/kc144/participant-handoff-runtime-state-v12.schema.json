@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/participant-handoff-runtime-state-v12.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "release", "parent_release", "handoff_id",
+    "handoff_contract_digest", "batch_id", "batch_root", "manifest_root",
+    "prepared_packets", "addressed_packets", "delivered_packets",
+    "counted_responses", "internal_readiness", "barrier",
+    "governance_activated", "production_certificate_issued",
+    "production_truth_effect", "frozen_crystal_mutated", "next_seed",
+    "runtime_state_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ParticipantHandoffRuntimeState.V12"},
+    "release": {"const": "KC144.PARTICIPANT.HANDOFF.RUNTIME.V12"},
+    "parent_release": {"const": "KC144.GOVERNANCE.DISPATCH.RUNTIME.V11"},
+    "handoff_id": {"const": "KC144.PARTICIPANT.HANDOFF.V12"},
+    "handoff_contract_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "batch_id": {
+      "type": "string",
+      "pattern": "^V11-BATCH::[0-9a-f]{24}$"
+    },
+    "batch_root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "manifest_root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "prepared_packets": {"const": 5},
+    "addressed_packets": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "delivered_packets": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "counted_responses": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "internal_readiness": {
+      "type": "object",
+      "required": ["verdict", "checks"]
+    },
+    "barrier": {"type": "string", "minLength": 1},
+    "governance_activated": {"const": false},
+    "production_certificate_issued": {"const": false},
+    "production_truth_effect": {"const": "NONE"},
+    "frozen_crystal_mutated": {"const": false},
+    "next_seed": {"type": "string", "minLength": 1},
+    "runtime_state_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

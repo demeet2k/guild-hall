@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/governance-challenge-v10.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "challenge_id", "ceremony_id", "epoch_id", "role",
+    "governance_contract_digest", "authority_registry_digest",
+    "handoff_bundle_root", "nonce", "issued_at", "expires_at",
+    "challenge_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.GovernanceChallenge.V10"},
+    "challenge_id": {"type": "string", "minLength": 1},
+    "ceremony_id": {"const": "KC144.GOVERNANCE.CEREMONY.V10"},
+    "epoch_id": {"const": "EPOCH-B-EIGHT-BLOCK"},
+    "role": {"type": "string", "minLength": 1},
+    "governance_contract_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "authority_registry_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "handoff_bundle_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "nonce": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "issued_at": {"type": "string", "minLength": 1},
+    "expires_at": {"type": "string", "minLength": 1},
+    "challenge_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

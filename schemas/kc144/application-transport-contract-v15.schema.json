@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/application-transport-contract-v15.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "transport_id", "roles", "publication_payload_count",
+    "application_schema", "signature_algorithm", "signature_domain",
+    "double_signature_law", "role_binding_law", "replay_law",
+    "publication_law", "evidence_law", "routing_law", "truth_effect",
+    "contract_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ApplicationTransportContract.V15"},
+    "transport_id": {
+      "const": "KC144.CANDIDATE.APPLICATION.TRANSPORT.V15"
+    },
+    "roles": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true
+    },
+    "publication_payload_count": {"const": 5},
+    "application_schema": {
+      "const": "KC144.BatchBoundCandidateApplication.V15"
+    },
+    "signature_algorithm": {"const": "ED25519"},
+    "signature_domain": {
+      "const": "KC144.V15.BATCH_BOUND_CANDIDATE_APPLICATION"
+    },
+    "double_signature_law": {"type": "string", "minLength": 1},
+    "role_binding_law": {"type": "string", "minLength": 1},
+    "replay_law": {"type": "string", "minLength": 1},
+    "publication_law": {"type": "string", "minLength": 1},
+    "evidence_law": {"type": "string", "minLength": 1},
+    "routing_law": {"type": "string", "minLength": 1},
+    "truth_effect": {"const": "NONE"},
+    "contract_digest": {"$ref": "#/$defs/root"}
+  },
+  "$defs": {
+    "root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

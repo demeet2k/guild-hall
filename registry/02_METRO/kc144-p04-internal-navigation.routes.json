@@ -1,0 +1,26 @@
+{
+  "schema": "KC144.INTERNAL-NAV.P04.METRO.V1",
+  "canonical_runtime": "KC27_ADMIT -> [BR21 || KC27] <-> KC54 -> IC10 -> SSN -> SUCCESSOR",
+  "root_route": [
+    "GID003/H03/P03-CARRIERS",
+    "GID005/H05/REGISTRIES",
+    "GID006/H06/QUERY-REPLAY",
+    "GID029/B07/NAVIGATE-PLUS",
+    "GID030/B08/NAVIGATE-HINGE",
+    "GID043/B21/RETURN-STAR",
+    "GID090/I10/PROMOTION",
+    "GID133/M01/NODE-STATE",
+    "GID144/M12/SOLID-STATE-RETURN"
+  ],
+  "route_priority": [
+    {"kind": "exact-address", "weight": 1.0},
+    {"kind": "exact-predecessor", "weight": 1.0},
+    {"kind": "exact-lookup-key", "weight": 0.98},
+    {"kind": "valid-checkpoint", "weight": 0.96},
+    {"kind": "source-witness", "weight": 0.94},
+    {"kind": "graph-continuity", "weight": 0.82},
+    {"kind": "semantic-continuity", "weight": 0.45}
+  ],
+  "weight_boundary": "weights rank attention only; truth is carried independently",
+  "return_mode": "SynthesisPacket + ReplayPacket"
+}

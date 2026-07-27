@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/route-holonomy.schema.json",
+  "title": "KC144 route holonomy report",
+  "type": "object",
+  "required": [
+    "schema",
+    "question",
+    "destination",
+    "routes",
+    "shared_carry_all_routes",
+    "pairwise",
+    "all_paths_valid",
+    "all_pairwise_holonomy_nonzero"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.RouteHolonomy.V3"},
+    "question": {"type": "string", "minLength": 1},
+    "destination": {
+      "type": "object",
+      "required": ["gid", "resolution"],
+      "properties": {
+        "gid": {"type": "integer", "minimum": 1, "maximum": 144},
+        "resolution": {"type": "string", "minLength": 1}
+      }
+    },
+    "routes": {
+      "type": "object",
+      "minProperties": 2,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "path",
+          "grammar",
+          "path_valid",
+          "carry",
+          "result",
+          "adjudication_target"
+        ],
+        "properties": {
+          "path": {
+            "type": "array",
+            "minItems": 2,
+            "items": {"type": "integer", "minimum": 1, "maximum": 144}
+          },
+          "grammar": {"type": "string", "minLength": 1},
+          "path_valid": {"type": "boolean"},
+          "carry": {"type": "array", "items": {"type": "string"}},
+          "result": {"type": "string", "minLength": 1},
+          "adjudication_target": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 144
+          }
+        }
+      }
+    },
+    "shared_carry_all_routes": {"type": "array", "items": {"type": "string"}},
+    "pairwise": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["left", "right", "omega", "shared"],
+        "properties": {
+          "left": {"type": "string"},
+          "right": {"type": "string"},
+          "omega": {"type": "integer", "minimum": 0},
+          "shared": {"type": "integer", "minimum": 0}
+        }
+      }
+    },
+    "all_paths_valid": {"type": "boolean"},
+    "all_pairwise_holonomy_nonzero": {"type": "boolean"}
+  }
+}

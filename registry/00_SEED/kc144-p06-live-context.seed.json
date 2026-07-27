@@ -1,0 +1,19 @@
+{
+  "schema": "KC144.INTERNAL-NAV.P06.SEED.V1",
+  "id": "KC144.INTERNAL-NAV.P06",
+  "name": "LIVE-CONTEXT-INGESTION-AND-ATLAS-COVERAGE-EXPANSION",
+  "status": "implemented-local-live-source-verified",
+  "parent": "KC144.INTERNAL-NAV.P05",
+  "stations": [
+    "GID002/H02 ACTIVE 144-SEAT ATLAS REGISTRY",
+    "GID005/H05 IMMUTABLE SOURCE OBSERVATION AND VERSION LINEAGE",
+    "GID006/H06 LIVE CONTEXT COMPILER AND REENTRY",
+    "GID131/KC27-P25 SOURCE ATLAS",
+    "GID133/SSN-M01 NODE STATE",
+    "GID143/SSN-M11 MULTI-LAYER COVERAGE AUDIT"
+  ],
+  "noncollapse_law": "registered atlas seat != retrieval hit != source-bound content atom != promoted invariant",
+  "ingestion_law": "only an exact source substring carrying its own GID token and matching the active atlas may populate a content atom",
+  "drift_law": "new immutable source revisions extend lineage; missing or changed checkpointed observations cause STALE reentry",
+  "next_seed": "KC144.INTERNAL-NAV.P07::EDGE-MANIFEST-FREEZE-AND-REPLAY-SUITE-BINDING"
+}

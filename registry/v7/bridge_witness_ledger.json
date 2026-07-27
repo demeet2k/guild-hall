@@ -1,0 +1,8 @@
+{
+  "schema": "KC144.BridgeWitnessLedger.V4",
+  "production_packets": [],
+  "certified_bridge_ids": [],
+  "certified_transport_count": 0,
+  "declared_transport_open": 28,
+  "promotion_effect": "NONE"
+}

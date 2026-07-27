@@ -1,0 +1,29 @@
+{
+  "schema": "KC144.MYC.SKELETON.P03.METRO.V1",
+  "state": ["coordinate", "prior_relation", "prior_transform"],
+  "route_contracts": [
+    {
+      "id": "R-C-D",
+      "from": "conversation",
+      "to": "google_doc",
+      "relation": "grounds",
+      "inverse": "contextualizes"
+    },
+    {
+      "id": "R-D-G",
+      "from": "google_doc",
+      "to": "git_repository",
+      "relation": "compresses-to",
+      "inverse": "returns-to"
+    },
+    {
+      "id": "R-L-G",
+      "from": "local_file",
+      "to": "git_repository",
+      "relation": "committed-as",
+      "inverse": "materializes-as"
+    }
+  ],
+  "selection": "all-shortest-admissible-paths",
+  "collision_policy": "return-tagged-candidate-set"
+}

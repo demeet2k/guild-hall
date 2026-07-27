@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/station-body.schema.json",
+  "title": "KC144 holographic station body",
+  "type": "object",
+  "required": [
+    "gid",
+    "grid",
+    "band",
+    "station",
+    "architectural_label",
+    "evidence_status",
+    "domain_state",
+    "governing_question",
+    "four_pole",
+    "native_routes",
+    "band_invariant",
+    "return_obligation",
+    "promotion_effect",
+    "raw_cid"
+  ],
+  "properties": {
+    "gid": {"type": "integer", "minimum": 1, "maximum": 144},
+    "grid": {"type": "string", "pattern": "^R(0[1-9]|1[0-2])C(0[1-9]|1[0-2])$"},
+    "band": {
+      "enum": ["H6", "X16", "BR21", "F37", "IC10", "KC15", "KC27", "SSN12"]
+    },
+    "station": {"type": "string", "minLength": 1},
+    "architectural_label": {"type": "string", "minLength": 1},
+    "evidence_status": {
+      "enum": ["DOCUMENTED", "DERIVED", "ROUTED_ONLY", "UNMAPPED"]
+    },
+    "domain_state": {
+      "enum": ["SOURCE_DECLARED", "GENERATOR_ONLY", "ROUTE_ONLY", "UNMAPPED"]
+    },
+    "governing_question": {"type": "string", "minLength": 1},
+    "four_pole": {
+      "type": "object",
+      "required": ["11", "10", "00", "01"],
+      "additionalProperties": false,
+      "properties": {
+        "11": {"type": "string"},
+        "10": {"type": "string"},
+        "00": {"type": "string"},
+        "01": {"type": "string"}
+      }
+    },
+    "native_routes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["to_gid", "relation", "semantics", "standing"],
+        "properties": {
+          "to_gid": {"type": "integer", "minimum": 1, "maximum": 144},
+          "relation": {"type": "string"},
+          "semantics": {"type": "string"},
+          "standing": {"const": "STRUCTURAL"}
+        }
+      }
+    },
+    "band_invariant": {"type": "string", "minLength": 1},
+    "return_obligation": {"type": "string", "minLength": 1},
+    "promotion_effect": {"const": "NONE"},
+    "raw_cid": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

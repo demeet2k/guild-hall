@@ -1,0 +1,436 @@
+{
+  "contract_complete_before_rollout": 0,
+  "control_plane_repo_id": "repo-athena",
+  "findings": [
+    {
+      "detail": "12 repositories have unique repo, GitHub, and full-name identities.",
+      "finding_id": "P04.F001",
+      "predicate": "repository_inventory_is_identity_unique",
+      "repo_id": null,
+      "severity": "info"
+    },
+    {
+      "detail": "Missing 5/6 files: SEED.json, PROVENANCE.json, RELATIONS.json, STATE.json, RETURN.md.",
+      "finding_id": "P04.repo-athena.CONTRACT",
+      "predicate": "minimum_seed_contract_is_present",
+      "repo_id": "repo-athena",
+      "severity": "warn"
+    },
+    {
+      "detail": "Missing 5/6 files: SEED.json, PROVENANCE.json, RELATIONS.json, STATE.json, RETURN.md.",
+      "finding_id": "P04.repo-q-shrink.CONTRACT",
+      "predicate": "minimum_seed_contract_is_present",
+      "repo_id": "repo-q-shrink",
+      "severity": "warn"
+    },
+    {
+      "detail": "Missing 5/6 files: SEED.json, PROVENANCE.json, RELATIONS.json, STATE.json, RETURN.md.",
+      "finding_id": "P04.repo-manuscript-being.CONTRACT",
+      "predicate": "minimum_seed_contract_is_present",
+      "repo_id": "repo-manuscript-being",
+      "severity": "warn"
+    },
+    {
+      "detail": "Missing 5/6 files: SEED.json, PROVENANCE.json, RELATIONS.json, STATE.json, RETURN.md.",
+      "finding_id": "P04.repo-manscript-being.CONTRACT",
+      "predicate": "minimum_seed_contract_is_present",
+      "repo_id": "repo-manscript-being",
+      "severity": "warn"
+    },
+    {
+      "detail": "Missing 5/6 files: SEED.json, PROVENANCE.json, RELATIONS.json, STATE.json, RETURN.md.",
+      "finding_id": "P04.repo-athena-square-earth.CONTRACT",
+      "predicate": "minimum_seed_contract_is_present",
+      "repo_id": "repo-athena-square-earth",
+      "severity": "warn"
+    },
+    {
+      "detail": "Missing 5/6 files: SEED.json, PROVENANCE.json, RELATIONS.json, STATE.json, RETURN.md.",
+      "finding_id": "P04.repo-athena-flower-fire.CONTRACT",
+      "predicate": "minimum_seed_contract_is_present",
+      "repo_id": "repo-athena-flower-fire",
+      "severity": "warn"
+    },
+    {
+      "detail": "Missing 5/6 files: SEED.json, PROVENANCE.json, RELATIONS.json, STATE.json, RETURN.md.",
+      "finding_id": "P04.repo-athena-cloud-water.CONTRACT",
+      "predicate": "minimum_seed_contract_is_present",
+      "repo_id": "repo-athena-cloud-water",
+      "severity": "warn"
+    },
+    {
+      "detail": "Missing 5/6 files: SEED.json, PROVENANCE.json, RELATIONS.json, STATE.json, RETURN.md.",
+      "finding_id": "P04.repo-athena-fractal-air.CONTRACT",
+      "predicate": "minimum_seed_contract_is_present",
+      "repo_id": "repo-athena-fractal-air",
+      "severity": "warn"
+    },
+    {
+      "detail": "Missing 5/6 files: SEED.json, PROVENANCE.json, RELATIONS.json, STATE.json, RETURN.md.",
+      "finding_id": "P04.repo-athena-mcp.CONTRACT",
+      "predicate": "minimum_seed_contract_is_present",
+      "repo_id": "repo-athena-mcp",
+      "severity": "warn"
+    },
+    {
+      "detail": "Missing 5/6 files: SEED.json, PROVENANCE.json, RELATIONS.json, STATE.json, RETURN.md.",
+      "finding_id": "P04.repo-autoresearch.CONTRACT",
+      "predicate": "minimum_seed_contract_is_present",
+      "repo_id": "repo-autoresearch",
+      "severity": "warn"
+    },
+    {
+      "detail": "Missing 5/6 files: SEED.json, PROVENANCE.json, RELATIONS.json, STATE.json, RETURN.md.",
+      "finding_id": "P04.repo-guild-hall.CONTRACT",
+      "predicate": "minimum_seed_contract_is_present",
+      "repo_id": "repo-guild-hall",
+      "severity": "warn"
+    },
+    {
+      "detail": "Missing 5/6 files: SEED.json, PROVENANCE.json, RELATIONS.json, STATE.json, RETURN.md.",
+      "finding_id": "P04.repo-profile.CONTRACT",
+      "predicate": "minimum_seed_contract_is_present",
+      "repo_id": "repo-profile",
+      "severity": "warn"
+    }
+  ],
+  "observed_at": "2026-07-27T03:15:56Z",
+  "packet_digests": {
+    "repo-athena": {
+      "PROVENANCE.json": "8a6bc05031470bc24740097e06a99cf51ae83965e9bc4b31057f45a1e0481463",
+      "RELATIONS.json": "a8641178af4ed7d611368eadf42d2596c5ac9af09be46728436389879b714771",
+      "RETURN.md": "47b67fe8a1aa2726266ba4d0d2a17b5e10fb0ccf35dea993da7b8bc6ed06d469",
+      "SEED.json": "693c4ec1243ac3159f3d9b61611fab5f1a6709f5b20382328f0b20a7e657b3b3",
+      "STATE.json": "d50a534082c07da8ae476ec1ed22b06c3637e6d34586f5f7fb31c767303467ab"
+    },
+    "repo-athena-cloud-water": {
+      "PROVENANCE.json": "f5827609040211d84a2f8b9cce9b11c37224cfb2de4baf07077e8a9a1c985cf0",
+      "RELATIONS.json": "57e87f905101f9afd0874e7a062e05b67f7894263b11d353901d66a46e562c9d",
+      "RETURN.md": "94380ea7efb729f5f6648989b6e4bae83da0806b22727a27cc322574e8926a3d",
+      "SEED.json": "ce110b33f239d1119f14859fece0c871edc014394a2a6163320f67a45440cf76",
+      "STATE.json": "0eb02e0552c47bc745685757d251ce733c430e6aabb28fe1115a21ccd872858d"
+    },
+    "repo-athena-flower-fire": {
+      "PROVENANCE.json": "9f0138bacdb6ea1c73c436dc60a46a97cfae614999fc058412be938ae4a624da",
+      "RELATIONS.json": "84db613d2089d5e5cb11120b15dd6d94a6da5567368ab6dfd4aa65ae4cb936eb",
+      "RETURN.md": "34d190bbffbc9f3f44cbecebbaf7ae3cb249f01fc3fd70e03b292f09020ec6f2",
+      "SEED.json": "1e2ee092eeccef88744527ba8fae98f32b30cdf63c444a467ad419e815d21d52",
+      "STATE.json": "e849fc4cb726f2bdf6878615e71e4563611250efc29a6e76f47d24d0a7321f95"
+    },
+    "repo-athena-fractal-air": {
+      "PROVENANCE.json": "9d246ba57fb5d36a5f25509eeee2cdb23605d5537e64b2e92f62bb99638c7a1b",
+      "RELATIONS.json": "6a23015b309b5fc7cbe0b71538c0f8a951bdc299e94a906526b4cfab371b8776",
+      "RETURN.md": "4b37f19aaeef6920716be12c1d1837c56a893c7d5096832a88dc51b64cb9f92c",
+      "SEED.json": "73494f9331c11aef6d4023b282ec0f6836e2e96ae940a966391b0f91c2ca00f0",
+      "STATE.json": "2fdf74e6c208095c0b6cfea01318f50d96c1a847bc708dc9356812ac1914e259"
+    },
+    "repo-athena-mcp": {
+      "PROVENANCE.json": "5fa432828f276eaf8dff8b7ed8d695673505115bbb4394b464f15528e64b3307",
+      "RELATIONS.json": "55ae9729e5b1b7d3052929a7323c95b78a628e0ca2b23a9b0c9e1ef19775156d",
+      "RETURN.md": "b659e58b9d00a812645d3aad98c8b508e52fe4fc682452221c2e4b22026e35ab",
+      "SEED.json": "a862292fb3c0380f88238cb939fcb9e83c3c3a5004d215f54b2a35ecbdc373d9",
+      "STATE.json": "ef5358051d674162df053a884eef9128db3f6998ecb3781b184d237ea904755a"
+    },
+    "repo-athena-square-earth": {
+      "PROVENANCE.json": "d1bce67d8b622667a7f1eb44d4e601da4c4c2b9e7ec4bd061dbb9f9e681da872",
+      "RELATIONS.json": "adfd9524356733e90de88ba62d46443d159f4eb71197955145f641caa3c71a3f",
+      "RETURN.md": "100925fb8cf8e90eef9a68c03fd3cad1c61148d06a52acf6453a7ac23ff45c74",
+      "SEED.json": "aa3baf542bc54e301992cb37baad83b0b2a9dc6ee84b8ae2fe7360e913bc88f6",
+      "STATE.json": "100b0f16afefcd8a1c62486e53a4a6bd83dba78f72b24f9d0a4961d82c48ef57"
+    },
+    "repo-autoresearch": {
+      "PROVENANCE.json": "d366aea336ed8da78ee9089f6098a61b1f27e8e3184f0794a08a491421a49e44",
+      "RELATIONS.json": "798167c5d70e311c29380f6c69f6884621caab8b5baaf5e929a7d737d64e76ad",
+      "RETURN.md": "786de5d7084e2fc8b4027967358a7f4d90864a719d1f25bbfd8168e4a4189ccf",
+      "SEED.json": "8fd1db548f88e9bd186a9346734fba3f193cac79e1feedc98048510f6d6160aa",
+      "STATE.json": "1b679e6e65832299287229d00a79c1fa1731b2c56995aad69caf0591633f071f"
+    },
+    "repo-guild-hall": {
+      "PROVENANCE.json": "baa0a66bce455bcece7761aecc0c5385ad98c6ba976a1e0e5bab35e343731538",
+      "RELATIONS.json": "134d8c4ee9eb9d144d4ffe410c4f1092d26df69c941747805bfec27b0d4e0a70",
+      "RETURN.md": "87ac51989c0491d52e173c8619e61de66dae07a2ba4aa27e53a6b0a01af3ab59",
+      "SEED.json": "bccca2cc0efb85c9d5ec1bde5c48d885fd7bff404918b533937035b9108f931f",
+      "STATE.json": "6f1e5c9bf6f668d483fac17e2f0d916ed401e45ddab13a0da2cc1d4048c3f269"
+    },
+    "repo-manscript-being": {
+      "PROVENANCE.json": "14ed4ddfdf3059946fa8b0f1ddf97850b54e38357bbeec8a3d78e2ddfe41b635",
+      "RELATIONS.json": "1b77be0a4b3951c709f21f74835a8d0db79adf951d54b43a0a88891e417c5a50",
+      "RETURN.md": "acf54833adc198d2844db9d4c339841d9b1c427676dbd241409fd85a044fe8b1",
+      "SEED.json": "56386fe2b3408994bf556c26aa33dde08a526f81f10c2d8d169ea9d1b92ea80a",
+      "STATE.json": "933b4ae3644b42699ee16d8cae9741d1dd23fddf79dd3f3ed94b40b98b72f663"
+    },
+    "repo-manuscript-being": {
+      "PROVENANCE.json": "c66740f5df8d90b75d049ac7e08eed7a528cc13ff728d35655dc8f8536468a3b",
+      "RELATIONS.json": "664e2ec6c789fd2aa4c37797dac2cefd733f976a0d4c4663387d003509a495e7",
+      "RETURN.md": "d705b3db42a01a65f6558298add73bd2ddbb54eb3ae1336cb9bc0c56c15db3b4",
+      "SEED.json": "3a99219ac8b9d0630464b49f352b89171a87d6999016c0a18a3614166e7694d7",
+      "STATE.json": "97081e44f9cac58a62c10cb2044e6a3f5256a9cba81a39f5cf587ee23aea96c9"
+    },
+    "repo-profile": {
+      "PROVENANCE.json": "07bf7826f0520065b31939cc5d510704ea9f31dc9dd8d24700e5584e16bb1baa",
+      "RELATIONS.json": "66b9101fd098cff6f164a74a36b8a30424e5015bb4df663277892408e09342a1",
+      "RETURN.md": "52efd1d11936f7cf5d156783186db720f4fdf34d4c76972c3c808a6a501ca2b3",
+      "SEED.json": "cae68eba729efc4382169afb1afb10beaa0822ea953ec1eaa3fc7f54aec0f87e",
+      "STATE.json": "a7764b9ad3f0ea0af75c5273c2320ca283dd794d1e2902c8f6e78893875973dd"
+    },
+    "repo-q-shrink": {
+      "PROVENANCE.json": "453f6508daf49b6b769583e7c6792b5f07451e9e0b73c2b7176bb0494eacb0bc",
+      "RELATIONS.json": "b9b062e751ad71a2b458bc0ce1f127aaaf7fbc5cf9abfce8f42bb95307f041db",
+      "RETURN.md": "56eff3a7e3b4e3ac37b3d251cf7f4e89ec1a81339478f23ea2ac5ef5959b2909",
+      "SEED.json": "0c84e6cff59cca131c8e65eff1224b62d07767e293449673994bdc7ab32325ef",
+      "STATE.json": "84582360748f33f3788ba0e57610baf4bb644b575ae460e85da155e5a05a0167"
+    }
+  },
+  "prepared_file_count": 60,
+  "prepared_repository_count": 12,
+  "publication_state": "not_executed",
+  "receipt_chain_head": "ee45659eb89318b0b0baaa656f409f85b29bbebf66b50ba3a418f085d38fa0a2",
+  "receipts": [
+    {
+      "call_index": 0,
+      "digest": "bfc1ddd25a4fcc0b1d0df04be9a7aca88f2e9ab511035402bf6481716f63066b",
+      "preexisting_files": [
+        "README.md"
+      ],
+      "prepared_files": [
+        "SEED.json",
+        "PROVENANCE.json",
+        "RELATIONS.json",
+        "STATE.json",
+        "RETURN.md"
+      ],
+      "previous_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+      "repo_id": "repo-athena",
+      "rollout_state": "prepared_not_published",
+      "schema": "KC144.P04.RolloutReceipt.V1",
+      "snapshot_id": "77f412ec33f03311e5fd9dd7d04c04adf94aa18e74cfb631bd2d01cf18d2368d",
+      "unresolved_relations": []
+    },
+    {
+      "call_index": 1,
+      "digest": "3506e9f1e3db1becf0dfb2ae6ca0ef0a32a1a42e8aee1a6cd35fe9ae8e2155bd",
+      "preexisting_files": [
+        "README.md"
+      ],
+      "prepared_files": [
+        "SEED.json",
+        "PROVENANCE.json",
+        "RELATIONS.json",
+        "STATE.json",
+        "RETURN.md"
+      ],
+      "previous_digest": "bfc1ddd25a4fcc0b1d0df04be9a7aca88f2e9ab511035402bf6481716f63066b",
+      "repo_id": "repo-q-shrink",
+      "rollout_state": "prepared_not_published",
+      "schema": "KC144.P04.RolloutReceipt.V1",
+      "snapshot_id": "cd8a7768956d7ac88f089d173c6d12b5030474eb4c292a725207db5d9051f78e",
+      "unresolved_relations": []
+    },
+    {
+      "call_index": 2,
+      "digest": "6636ffb578a7e15b5bca4bde81a8a9d4204efaa212134bf558d5104be459204b",
+      "preexisting_files": [
+        "README.md"
+      ],
+      "prepared_files": [
+        "SEED.json",
+        "PROVENANCE.json",
+        "RELATIONS.json",
+        "STATE.json",
+        "RETURN.md"
+      ],
+      "previous_digest": "3506e9f1e3db1becf0dfb2ae6ca0ef0a32a1a42e8aee1a6cd35fe9ae8e2155bd",
+      "repo_id": "repo-manuscript-being",
+      "rollout_state": "prepared_not_published",
+      "schema": "KC144.P04.RolloutReceipt.V1",
+      "snapshot_id": "28d301d36c55f0cebe71179e67307c605f39826a1a725859f15411119ab10d9e",
+      "unresolved_relations": []
+    },
+    {
+      "call_index": 3,
+      "digest": "9dfbdc1b00a878915b8fb95af4b4870cc2cc156fc62e7a67ceb8e04a192420dc",
+      "preexisting_files": [
+        "README.md"
+      ],
+      "prepared_files": [
+        "SEED.json",
+        "PROVENANCE.json",
+        "RELATIONS.json",
+        "STATE.json",
+        "RETURN.md"
+      ],
+      "previous_digest": "6636ffb578a7e15b5bca4bde81a8a9d4204efaa212134bf558d5104be459204b",
+      "repo_id": "repo-manscript-being",
+      "rollout_state": "prepared_not_published",
+      "schema": "KC144.P04.RolloutReceipt.V1",
+      "snapshot_id": "85bcc5748c657a55939a6b7db9ad3fdc5c2402c8b018548dcc0c2e058d5ee1ce",
+      "unresolved_relations": []
+    },
+    {
+      "call_index": 4,
+      "digest": "f7593509abc2d263dffe8fef2abb58b8546db3bdd05a10c26a8fedb02506298f",
+      "preexisting_files": [
+        "README.md"
+      ],
+      "prepared_files": [
+        "SEED.json",
+        "PROVENANCE.json",
+        "RELATIONS.json",
+        "STATE.json",
+        "RETURN.md"
+      ],
+      "previous_digest": "9dfbdc1b00a878915b8fb95af4b4870cc2cc156fc62e7a67ceb8e04a192420dc",
+      "repo_id": "repo-athena-square-earth",
+      "rollout_state": "prepared_not_published",
+      "schema": "KC144.P04.RolloutReceipt.V1",
+      "snapshot_id": "ec057a1dff381ae4dec80607a13a817de602ce5a8be22d9ffedf8fba62c41b86",
+      "unresolved_relations": []
+    },
+    {
+      "call_index": 5,
+      "digest": "a0db1dc349bc6fd0fe9e4c9ad7b3b8c87a19f6407cb2a588c43df09a8814b0f8",
+      "preexisting_files": [
+        "README.md"
+      ],
+      "prepared_files": [
+        "SEED.json",
+        "PROVENANCE.json",
+        "RELATIONS.json",
+        "STATE.json",
+        "RETURN.md"
+      ],
+      "previous_digest": "f7593509abc2d263dffe8fef2abb58b8546db3bdd05a10c26a8fedb02506298f",
+      "repo_id": "repo-athena-flower-fire",
+      "rollout_state": "prepared_not_published",
+      "schema": "KC144.P04.RolloutReceipt.V1",
+      "snapshot_id": "7a55398f42b36ea915d9b2ca2780e426f03b46e9f3b9ad651e4912d3670c6349",
+      "unresolved_relations": []
+    },
+    {
+      "call_index": 6,
+      "digest": "616c6bfc6fbec32b08867042291667167434afee96200874bd0c28c2a37bb08a",
+      "preexisting_files": [
+        "README.md"
+      ],
+      "prepared_files": [
+        "SEED.json",
+        "PROVENANCE.json",
+        "RELATIONS.json",
+        "STATE.json",
+        "RETURN.md"
+      ],
+      "previous_digest": "a0db1dc349bc6fd0fe9e4c9ad7b3b8c87a19f6407cb2a588c43df09a8814b0f8",
+      "repo_id": "repo-athena-cloud-water",
+      "rollout_state": "prepared_not_published",
+      "schema": "KC144.P04.RolloutReceipt.V1",
+      "snapshot_id": "b754d34361b8d88631909ae6333548f83e9d9610ae21166dce1dae3c9a4ec0b7",
+      "unresolved_relations": []
+    },
+    {
+      "call_index": 7,
+      "digest": "88023e583480c12ec3218ab2ad4f1a3ea482519f09718e7b77a6bbbed4cf4961",
+      "preexisting_files": [
+        "README.md"
+      ],
+      "prepared_files": [
+        "SEED.json",
+        "PROVENANCE.json",
+        "RELATIONS.json",
+        "STATE.json",
+        "RETURN.md"
+      ],
+      "previous_digest": "616c6bfc6fbec32b08867042291667167434afee96200874bd0c28c2a37bb08a",
+      "repo_id": "repo-athena-fractal-air",
+      "rollout_state": "prepared_not_published",
+      "schema": "KC144.P04.RolloutReceipt.V1",
+      "snapshot_id": "3c52bafad08d9c0f35b745c047f9e148ba654e4e8fdee05cebd7a8a949626f83",
+      "unresolved_relations": []
+    },
+    {
+      "call_index": 8,
+      "digest": "fec0d1ef3f60fd5125932d002dabb2732a7a15792760a044cab727d9333b0714",
+      "preexisting_files": [
+        "README.md"
+      ],
+      "prepared_files": [
+        "SEED.json",
+        "PROVENANCE.json",
+        "RELATIONS.json",
+        "STATE.json",
+        "RETURN.md"
+      ],
+      "previous_digest": "88023e583480c12ec3218ab2ad4f1a3ea482519f09718e7b77a6bbbed4cf4961",
+      "repo_id": "repo-athena-mcp",
+      "rollout_state": "prepared_not_published",
+      "schema": "KC144.P04.RolloutReceipt.V1",
+      "snapshot_id": "de33a8d27a9993d91c5894661b674e37a490b9410ce32ab566b8599d43ce38c5",
+      "unresolved_relations": []
+    },
+    {
+      "call_index": 9,
+      "digest": "3e190c0cba592314d5cf6385d0ecf1e8df2aac9bd93cfcd824fae1416dba4004",
+      "preexisting_files": [
+        "README.md"
+      ],
+      "prepared_files": [
+        "SEED.json",
+        "PROVENANCE.json",
+        "RELATIONS.json",
+        "STATE.json",
+        "RETURN.md"
+      ],
+      "previous_digest": "fec0d1ef3f60fd5125932d002dabb2732a7a15792760a044cab727d9333b0714",
+      "repo_id": "repo-autoresearch",
+      "rollout_state": "prepared_not_published",
+      "schema": "KC144.P04.RolloutReceipt.V1",
+      "snapshot_id": "b1a2a7e1e29da94595e7e1f42d8dedbcb84ca5dc721be20ddc7d0a5d13e16ded",
+      "unresolved_relations": []
+    },
+    {
+      "call_index": 10,
+      "digest": "932fd15fd11a731ba5a8b177dcf77722507199b00873b2ff3ccd93a38a33d6a0",
+      "preexisting_files": [
+        "README.md"
+      ],
+      "prepared_files": [
+        "SEED.json",
+        "PROVENANCE.json",
+        "RELATIONS.json",
+        "STATE.json",
+        "RETURN.md"
+      ],
+      "previous_digest": "3e190c0cba592314d5cf6385d0ecf1e8df2aac9bd93cfcd824fae1416dba4004",
+      "repo_id": "repo-guild-hall",
+      "rollout_state": "prepared_not_published",
+      "schema": "KC144.P04.RolloutReceipt.V1",
+      "snapshot_id": "01b1bca9139da3ae190e78c9096c824fa2002d636a1b69868b493cf2c9d85a80",
+      "unresolved_relations": []
+    },
+    {
+      "call_index": 11,
+      "digest": "ee45659eb89318b0b0baaa656f409f85b29bbebf66b50ba3a418f085d38fa0a2",
+      "preexisting_files": [
+        "README.md"
+      ],
+      "prepared_files": [
+        "SEED.json",
+        "PROVENANCE.json",
+        "RELATIONS.json",
+        "STATE.json",
+        "RETURN.md"
+      ],
+      "previous_digest": "932fd15fd11a731ba5a8b177dcf77722507199b00873b2ff3ccd93a38a33d6a0",
+      "repo_id": "repo-profile",
+      "rollout_state": "prepared_not_published",
+      "schema": "KC144.P04.RolloutReceipt.V1",
+      "snapshot_id": "afd48c2cfe054a4e8323d3a5ed9d2e06cba74a5d043c33951675f2c6f79eefc0",
+      "unresolved_relations": []
+    }
+  ],
+  "repository_count": 12,
+  "schema": "KC144.P04.FederationRollout.V1",
+  "source_ledger": {
+    "ledger_id": "KC144.V1::GID005::H05::CANONICAL_SOURCE_EVIDENCE_VERSION_LEDGER",
+    "sha256": "387a16a31fb8fc1d5c2ec0c8ea6f6acbc718a2acc5798330df60c09a3d2dc9c3"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/authority-enrollment-proof-v8.schema.json",
+  "title": "KC144 V8 authority proof of possession",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "request_id",
+    "epoch_id",
+    "nonce",
+    "issued_at",
+    "key",
+    "boundary_claim",
+    "signature_b64"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.AuthorityEnrollmentProof.V8"},
+    "request_id": {"type": "string", "minLength": 1},
+    "epoch_id": {"const": "EPOCH-B-EIGHT-BLOCK"},
+    "nonce": {"type": "string", "minLength": 16},
+    "issued_at": {"type": "string", "minLength": 1},
+    "key": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key_id",
+        "algorithm",
+        "public_key_b64",
+        "scopes",
+        "namespaces",
+        "status",
+        "independent",
+        "test_only",
+        "not_before",
+        "not_after"
+      ],
+      "properties": {
+        "key_id": {"type": "string", "minLength": 1},
+        "algorithm": {"const": "ED25519"},
+        "public_key_b64": {"type": "string", "minLength": 43},
+        "scopes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "namespaces": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"enum": ["PRODUCTION", "TEST"]}
+        },
+        "status": {"const": "ACTIVE"},
+        "independent": {"const": true},
+        "test_only": {"const": false},
+        "not_before": {"type": ["string", "null"]},
+        "not_after": {"type": ["string", "null"]}
+      }
+    },
+    "boundary_claim": {
+      "const": "POSSESSION_ONLY_NOT_AUTHORITY_APPROVAL"
+    },
+    "signature_b64": {"type": "string", "minLength": 86}
+  }
+}

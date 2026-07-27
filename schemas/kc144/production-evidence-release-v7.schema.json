@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/production-evidence-release-v7.schema.json",
+  "title": "KC144 V7 production evidence release",
+  "type": "object",
+  "required": [
+    "schema",
+    "release",
+    "parent_release",
+    "verdict",
+    "operational_status",
+    "m12_status",
+    "production_certificate_issued",
+    "frozen_crystal_mutated",
+    "added_artifacts",
+    "next_seed",
+    "release_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ProductionEvidenceRelease.V7"},
+    "release": {"const": "KC144.PRODUCTION.EVIDENCE.KERNEL.V7"},
+    "parent_release": {"const": "KC144.M12.REPAIR.COMPILER.V6"},
+    "verdict": {"enum": ["PASS", "FAIL"]},
+    "operational_status": {
+      "enum": ["READY", "READY_AWAITING_PINNED_EXTERNAL_AUTHORITY"]
+    },
+    "m12_status": {"enum": ["HOLD", "CERTIFIED"]},
+    "production_certificate_issued": {"type": "boolean"},
+    "frozen_crystal_mutated": {"const": false},
+    "added_artifacts": {"type": "array", "minItems": 5},
+    "next_seed": {"type": "string", "minLength": 1},
+    "release_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/governance-ratification-contract-v10.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "ceremony_id", "minimum_external_anchors",
+    "signature_algorithm", "signature_domain", "required_roots",
+    "anchor_independence_law", "historical_law", "truth_effect",
+    "contract_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.GovernanceRatificationContract.V10"},
+    "ceremony_id": {"const": "KC144.GOVERNANCE.CEREMONY.V10"},
+    "minimum_external_anchors": {"const": 2},
+    "signature_algorithm": {"const": "ED25519"},
+    "signature_domain": {"const": "KC144.V10.GOVERNANCE_RATIFICATION"},
+    "required_roots": {"type": "array", "minItems": 6, "uniqueItems": true},
+    "anchor_independence_law": {"type": "string", "minLength": 1},
+    "historical_law": {"type": "string", "minLength": 1},
+    "truth_effect": {"const": "GOVERNANCE_REGISTRY_ONLY"},
+    "contract_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athenachka.local/schemas/trust-revision-entry.schema.json",
+  "title": "TrustRevisionEntry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "revision_id",
+    "cycle_id",
+    "contradiction_id",
+    "subject_edge",
+    "prior_trust_vector",
+    "proposed_delta",
+    "accepted_delta",
+    "resulting_trust_vector",
+    "evidence_refs",
+    "dimension_witness_refs",
+    "dimensions_changed",
+    "dimensions_unchanged",
+    "reason_codes",
+    "authorization_status",
+    "packet_hash"
+  ],
+  "properties": {
+    "schema_version": {"const": "TRUST_REVISION_ENTRY/1"},
+    "revision_id": {"type": "string", "minLength": 1},
+    "cycle_id": {"type": "string", "minLength": 1},
+    "contradiction_id": {"type": "string", "minLength": 1},
+    "subject_edge": {"type": "string", "minLength": 1},
+    "prior_trust_vector": {"$ref": "#/$defs/trustVector"},
+    "proposed_delta": {"$ref": "#/$defs/deltaVector"},
+    "accepted_delta": {"$ref": "#/$defs/deltaVector"},
+    "resulting_trust_vector": {"$ref": "#/$defs/trustVector"},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "dimension_witness_refs": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {"type": "string"}
+      }
+    },
+    "repair_receipt_refs": {"type": "array", "items": {"type": "string"}},
+    "replay_receipt_ref": {"type": "string"},
+    "residual_refs": {"type": "array", "items": {"type": "string"}},
+    "dimensions_changed": {"type": "array", "items": {"type": "string"}},
+    "dimensions_unchanged": {"type": "array", "items": {"type": "string"}},
+    "reason_codes": {"type": "array", "items": {"type": "string"}},
+    "proposer": {"type": "string"},
+    "reviewer": {"type": "string"},
+    "replay_auditor": {"type": "string"},
+    "authorization_status": {"enum": ["AUTHORIZED", "REFUSED"]},
+    "previous_revision_hash": {"type": ["string", "null"]},
+    "created_at": {"type": "string"},
+    "packet_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  },
+  "$defs": {
+    "trustVector": {
+      "type": "object",
+      "required": [
+        "epistemic",
+        "procedural",
+        "replay",
+        "boundary",
+        "correction",
+        "relational"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "epistemic": {"type": "number", "minimum": 0, "maximum": 1},
+        "procedural": {"type": "number", "minimum": 0, "maximum": 1},
+        "replay": {"type": "number", "minimum": 0, "maximum": 1},
+        "boundary": {"type": "number", "minimum": 0, "maximum": 1},
+        "correction": {"type": "number", "minimum": 0, "maximum": 1},
+        "relational": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "deltaVector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "epistemic",
+        "procedural",
+        "replay",
+        "boundary",
+        "correction",
+        "relational"
+      ],
+      "properties": {
+        "epistemic": {"type": "number", "minimum": -1, "maximum": 1},
+        "procedural": {"type": "number", "minimum": -1, "maximum": 1},
+        "replay": {"type": "number", "minimum": -1, "maximum": 1},
+        "boundary": {"type": "number", "minimum": -1, "maximum": 1},
+        "correction": {"type": "number", "minimum": -1, "maximum": 1},
+        "relational": {"type": "number", "minimum": -1, "maximum": 1}
+      }
+    }
+  }
+}
+

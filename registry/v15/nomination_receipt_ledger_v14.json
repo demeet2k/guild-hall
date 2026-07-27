@@ -1,0 +1,16 @@
+{
+  "schema": "KC144.NominationReceiptLedger.V14",
+  "intake_id": "KC144.CANDIDATE.NOMINATION.INTAKE.V14",
+  "checked_at": "2026-07-27T08:39:35+00:00",
+  "submission_count": 0,
+  "admitted_count": 0,
+  "held_count": 0,
+  "duplicate_envelope_ids": [],
+  "duplicate_nomination_ids": [],
+  "duplicate_candidate_ids": [],
+  "receipts": [],
+  "admitted_candidate_registry_root": "sha256:075c773f75026fe23d213fe041afe5f8e4bd244a29a08dc71ff3f55b5baba2a3",
+  "authority_effect": "NONE",
+  "truth_effect": "NONE",
+  "ledger_root": "sha256:f7170ef912940da336d2553c1662dac6cb5ef76e5c2d6d77122e3b5e330133dd"
+}

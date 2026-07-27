@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/candidate-nomination-v13.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "nomination_id", "candidate_id", "status", "test_only",
+    "algorithm", "public_key_b64", "eligible_roles",
+    "identity_claim_root", "external_identity_verification_root",
+    "external_independence_verification_root", "institution_root",
+    "lineage_root", "jurisdiction_root", "primary_domain_root",
+    "authority_root", "funding_root", "data_control_root",
+    "staff_control_root", "technology_control_root",
+    "conflict_disclosure_root", "conflict_status",
+    "conflict_resolution_root", "nomination_evidence_root",
+    "not_before", "not_after"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.CandidateNomination.V13"},
+    "nomination_id": {"type": "string", "minLength": 1},
+    "candidate_id": {"type": "string", "minLength": 1},
+    "status": {"const": "NOMINATED"},
+    "test_only": {"type": "boolean"},
+    "algorithm": {"const": "ED25519"},
+    "public_key_b64": {"type": "string", "minLength": 43},
+    "eligible_roles": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "CUSTODIAN", "INDEPENDENT_REVIEWER", "REPLAY_WITNESS",
+          "SOURCE_AUDITOR", "RETURN_AUDITOR"
+        ]
+      }
+    },
+    "identity_claim_root": {"$ref": "#/$defs/root"},
+    "external_identity_verification_root": {"$ref": "#/$defs/root"},
+    "external_independence_verification_root": {"$ref": "#/$defs/root"},
+    "institution_root": {"$ref": "#/$defs/root"},
+    "lineage_root": {"$ref": "#/$defs/root"},
+    "jurisdiction_root": {"$ref": "#/$defs/root"},
+    "primary_domain_root": {"$ref": "#/$defs/root"},
+    "authority_root": {"$ref": "#/$defs/root"},
+    "funding_root": {"$ref": "#/$defs/root"},
+    "data_control_root": {"$ref": "#/$defs/root"},
+    "staff_control_root": {"$ref": "#/$defs/root"},
+    "technology_control_root": {"$ref": "#/$defs/root"},
+    "conflict_disclosure_root": {"$ref": "#/$defs/root"},
+    "conflict_status": {
+      "enum": ["CLEAR", "RESOLVED", "DISCLOSED_PENDING_REVIEW"]
+    },
+    "conflict_resolution_root": {
+      "anyOf": [{"type": "null"}, {"$ref": "#/$defs/root"}]
+    },
+    "nomination_evidence_root": {"$ref": "#/$defs/root"},
+    "not_before": {"type": "string", "minLength": 1},
+    "not_after": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

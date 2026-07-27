@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/cohort-packet-assignment-manifest-v14.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "intake_id", "parent_batch_id", "parent_batch_root",
+    "call_manifest_root", "solver_digest", "solution_status",
+    "assignment_state", "bindings", "assigned_count",
+    "required_pairwise_audits", "selected_pairwise_audits",
+    "selected_pair_audit_digests", "addressed_packets",
+    "delivered_packets", "barrier", "selection_authority",
+    "governance_authority_granted", "production_certificate_issued",
+    "truth_effect", "assignment_root"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.CohortPacketAssignmentManifest.V14"},
+    "intake_id": {
+      "const": "KC144.CANDIDATE.NOMINATION.INTAKE.V14"
+    },
+    "parent_batch_id": {
+      "type": "string",
+      "pattern": "^V11-BATCH::[0-9a-f]{24}$"
+    },
+    "parent_batch_root": {"$ref": "#/$defs/root"},
+    "call_manifest_root": {"$ref": "#/$defs/root"},
+    "solver_digest": {"$ref": "#/$defs/root"},
+    "solution_status": {
+      "enum": [
+        "SOLVER_BUDGET_EXHAUSTED", "NO_COHORT", "MULTIPLE_COHORTS",
+        "UNIQUE_PROVISIONAL_COHORT"
+      ]
+    },
+    "assignment_state": {
+      "enum": [
+        "NO_COHORT_NO_BINDING", "AMBIGUOUS_COHORT_NO_BINDING",
+        "SOLVER_HOLD_NO_BINDING", "UNIQUE_PROVISIONAL_COHORT_BOUND"
+      ]
+    },
+    "bindings": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "role", "call_id", "candidate_id", "nomination_id",
+          "participant_packet_id", "participant_packet_digest",
+          "binding_state", "binding_digest"
+        ],
+        "properties": {
+          "role": {"type": "string", "minLength": 1},
+          "call_id": {"type": "string", "minLength": 1},
+          "candidate_id": {"type": "string", "minLength": 1},
+          "nomination_id": {"type": "string", "minLength": 1},
+          "participant_packet_id": {"type": "string", "minLength": 1},
+          "participant_packet_digest": {"$ref": "#/$defs/root"},
+          "binding_state": {
+            "const": "PROVISIONAL_UNADDRESSED_UNDELIVERED"
+          },
+          "binding_digest": {"$ref": "#/$defs/root"}
+        }
+      }
+    },
+    "assigned_count": {"type": "integer", "minimum": 0, "maximum": 5},
+    "required_pairwise_audits": {"const": 10},
+    "selected_pairwise_audits": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10
+    },
+    "selected_pair_audit_digests": {
+      "type": "array",
+      "maxItems": 10,
+      "items": {"$ref": "#/$defs/root"}
+    },
+    "addressed_packets": {"const": 0},
+    "delivered_packets": {"const": 0},
+    "barrier": {"type": "string", "minLength": 1},
+    "selection_authority": {"const": "V13_UNIQUE_SOLUTION_ONLY"},
+    "governance_authority_granted": {"const": false},
+    "production_certificate_issued": {"const": false},
+    "truth_effect": {"const": "NONE"},
+    "assignment_root": {"$ref": "#/$defs/root"}
+  },
+  "$defs": {
+    "root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

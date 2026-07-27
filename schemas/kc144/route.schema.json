@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athena.invalid/schemas/route.schema.json",
+  "title": "KC144 Typed Route",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "route_id",
+    "source",
+    "target",
+    "edge_type",
+    "source_carrier",
+    "target_carrier",
+    "corridor",
+    "preserved_invariants",
+    "defect",
+    "return_class",
+    "witness"
+  ],
+  "properties": {
+    "schema_version": {"const": "KC144-ROUTE-1.0"},
+    "route_id": {"type": "string"},
+    "source": {"type": "string"},
+    "target": {"type": "string"},
+    "edge_type": {"type": "string"},
+    "source_carrier": {"type": "string"},
+    "target_carrier": {"type": "string"},
+    "corridor": {"type": "object"},
+    "preserved_invariants": {"type": "array", "items": {"type": "string"}},
+    "defect": {"type": "object"},
+    "return_class": {
+      "enum": ["EXACT", "PARTIAL", "LOSSY", "MULTIVALUED", "CONDITIONAL", "COMPENSATING", "MODEL", "ONE_WAY", "OBSTRUCTED"]
+    },
+    "return": {"type": "object"},
+    "irreversibility_witness": {"type": "object"},
+    "witness": {"type": "object"},
+    "status": {"type": "string"}
+  },
+  "additionalProperties": true
+}
+

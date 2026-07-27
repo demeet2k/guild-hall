@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/participant-handoff-packet-v12.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "handoff_id", "packet_id", "role", "batch_id",
+    "batch_root", "challenge_id", "challenge_digest", "challenge",
+    "handoff_contract_digest", "dispatch_contract_digest",
+    "ceremony_contract_digest", "mission", "required_capabilities",
+    "universal_disqualifiers", "required_attestation_roots",
+    "response_schema", "signature_algorithm", "signature_domain",
+    "canonicalization", "boundary_claim", "private_key_instruction",
+    "return_routes", "delivery_state", "recipient_identity_root",
+    "delivery_receipt_root", "governance_activated", "truth_effect",
+    "packet_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ParticipantHandoffPacket.V12"},
+    "handoff_id": {"const": "KC144.PARTICIPANT.HANDOFF.V12"},
+    "packet_id": {
+      "type": "string",
+      "pattern": "^V12-PACKET::[A-Z_]+::[0-9a-f]{16}$"
+    },
+    "role": {
+      "enum": [
+        "CUSTODIAN", "INDEPENDENT_REVIEWER", "REPLAY_WITNESS",
+        "SOURCE_AUDITOR", "RETURN_AUDITOR"
+      ]
+    },
+    "batch_id": {
+      "type": "string",
+      "pattern": "^V11-BATCH::[0-9a-f]{24}$"
+    },
+    "batch_root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "challenge_id": {
+      "type": "string",
+      "pattern": "^V10-CHALLENGE::[0-9a-f]{24}$"
+    },
+    "challenge_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "challenge": {"$ref": "governance-challenge-v10.schema.json"},
+    "handoff_contract_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "dispatch_contract_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "ceremony_contract_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "mission": {"type": "string", "minLength": 1},
+    "required_capabilities": {
+      "type": "array",
+      "minItems": 3,
+      "uniqueItems": true
+    },
+    "universal_disqualifiers": {
+      "type": "array",
+      "minItems": 6,
+      "uniqueItems": true
+    },
+    "required_attestation_roots": {
+      "type": "array",
+      "minItems": 6,
+      "uniqueItems": true
+    },
+    "response_schema": {
+      "const": "KC144.GovernanceEnrollmentResponse.V10"
+    },
+    "signature_algorithm": {"const": "ED25519"},
+    "signature_domain": {
+      "const": "KC144.V10.GOVERNANCE_ENROLLMENT"
+    },
+    "canonicalization": {"type": "string", "minLength": 1},
+    "boundary_claim": {
+      "const": "PARTICIPANT_CONSENT_NOT_SELF_RATIFICATION"
+    },
+    "private_key_instruction": {"type": "string", "minLength": 1},
+    "return_routes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "signed_response", "decline", "conflict", "expired", "malformed"
+      ],
+      "properties": {
+        "signed_response": {"type": "string", "minLength": 1},
+        "decline": {"type": "string", "minLength": 1},
+        "conflict": {"type": "string", "minLength": 1},
+        "expired": {"type": "string", "minLength": 1},
+        "malformed": {"type": "string", "minLength": 1}
+      }
+    },
+    "delivery_state": {"const": "READY_UNADDRESSED_UNDELIVERED"},
+    "recipient_identity_root": {"type": "null"},
+    "delivery_receipt_root": {"type": "null"},
+    "governance_activated": {"const": false},
+    "truth_effect": {"const": "NONE"},
+    "packet_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

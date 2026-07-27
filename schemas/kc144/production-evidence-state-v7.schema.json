@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/production-evidence-state-v7.schema.json",
+  "title": "KC144 V7 production evidence state",
+  "type": "object",
+  "required": [
+    "schema",
+    "release",
+    "parent_release",
+    "epoch_id",
+    "epoch_census",
+    "frozen_base_state_root",
+    "crosswalk_digest",
+    "graph_slice_registry_digest",
+    "authority_registry_digest",
+    "internal_readiness",
+    "external_readiness",
+    "m12",
+    "production_certificate_issued",
+    "production_truth_effect",
+    "frozen_crystal_mutated",
+    "next_seed",
+    "state_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ProductionEvidenceState.V7"},
+    "release": {"const": "KC144.PRODUCTION.EVIDENCE.KERNEL.V7"},
+    "parent_release": {"const": "KC144.M12.REPAIR.COMPILER.V6"},
+    "epoch_id": {"const": "EPOCH-B-EIGHT-BLOCK"},
+    "epoch_census": {"const": "6+16+21+37+10+15+27+12"},
+    "frozen_base_state_root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "crosswalk_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "graph_slice_registry_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "authority_registry_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "internal_readiness": {"type": "object"},
+    "external_readiness": {"type": "object"},
+    "m12": {"type": "object"},
+    "production_certificate_issued": {"type": "boolean"},
+    "production_truth_effect": {"const": "NONE"},
+    "frozen_crystal_mutated": {"const": false},
+    "next_seed": {"type": "string", "minLength": 1},
+    "state_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schema": "KC144.MYC.SKELETON.P03.SEED.V1",
+  "id": "KC144.MYC.SKELETON.P03",
+  "name": "CROSS-CARRIER-ADAPTER-COMPILER-AND-GIT-BRAIN-METRO",
+  "status": "implemented-local-verified",
+  "parent": "KC144.MYC.SKELETON.COORDINATE.003",
+  "carriers": ["conversation", "google_doc", "local_file", "git_repository"],
+  "canonicalization": "KC144.CANON.JSON.V1",
+  "hash_policy": "sha256",
+  "identity_law": "carrier-tag + namespace + object + immutable revision + fragment",
+  "non_collapse_law": "shared wording, shared digest, or coactivation is insufficient for identity",
+  "next_seed": "KC144.MYC.SKELETON.P04::FEDERATED-REPOSITORY-CONTRACT-ROLLOUT"
+}

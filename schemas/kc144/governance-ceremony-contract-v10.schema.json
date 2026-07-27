@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/governance-ceremony-contract-v10.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "ceremony_id", "epoch_id", "roles", "member_count",
+    "authority_threshold", "enrollment_signature_domain",
+    "ratification_signature_domain", "challenge_nonce", "independence_law",
+    "conflict_law", "activation_law", "fixture_law", "truth_effect",
+    "contract_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.GovernanceCeremonyContract.V10"},
+    "ceremony_id": {"const": "KC144.GOVERNANCE.CEREMONY.V10"},
+    "epoch_id": {"const": "EPOCH-B-EIGHT-BLOCK"},
+    "roles": {"type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true},
+    "member_count": {"const": 5},
+    "authority_threshold": {"const": 3},
+    "enrollment_signature_domain": {"const": "KC144.V10.GOVERNANCE_ENROLLMENT"},
+    "ratification_signature_domain": {"const": "KC144.V10.GOVERNANCE_RATIFICATION"},
+    "challenge_nonce": {"const": "32_RANDOM_BYTES_HEX"},
+    "independence_law": {"type": "string", "minLength": 1},
+    "conflict_law": {"type": "string", "minLength": 1},
+    "activation_law": {"type": "string", "minLength": 1},
+    "fixture_law": {"const": "LOCAL_OR_TEST_PROOFS_NEVER_ACTIVATE_PRODUCTION"},
+    "truth_effect": {"const": "NONE_UNTIL_EXTERNAL_RATIFICATION"},
+    "contract_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/m12-repair-release-v6.schema.json",
+  "title": "KC144 V6 M12 repair-compiler release",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "release",
+    "parent_release",
+    "verdict",
+    "operational_status",
+    "production_packets_admitted",
+    "production_certificate_issued",
+    "open_gates",
+    "next_frontier",
+    "next_seed",
+    "frozen_crystal_mutated",
+    "added_artifacts",
+    "release_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.M12RepairRelease.V6"},
+    "release": {"const": "KC144.M12.REPAIR.COMPILER.V6"},
+    "parent_release": {"const": "KC144.SSN12.GLOBAL_STATE.V5"},
+    "verdict": {"enum": ["PASS", "FAIL"]},
+    "operational_status": {"enum": ["HOLD", "CERTIFIED"]},
+    "production_packets_admitted": {"type": "integer", "minimum": 0},
+    "production_certificate_issued": {"type": "boolean"},
+    "open_gates": {"type": "array", "items": {"type": "string"}},
+    "next_frontier": {"type": "array", "items": {"type": "string"}},
+    "next_seed": {
+      "enum": [
+        "KC144.V6::EVIDENCE-INTAKE::PARALLEL-WAVE-01",
+        "KC144.V2::POPULATE_MATH144"
+      ]
+    },
+    "frozen_crystal_mutated": {"const": false},
+    "added_artifacts": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "release_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

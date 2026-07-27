@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/governance-ceremony-plan-v10.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "ceremony_id", "ceremony_contract_digest",
+    "governance_contract_digest", "authority_registry_digest",
+    "handoff_bundle_root", "seats", "filled_seats", "required_seats",
+    "status", "barrier", "next_seed", "plan_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.GovernanceCeremonyPlan.V10"},
+    "ceremony_id": {"const": "KC144.GOVERNANCE.CEREMONY.V10"},
+    "ceremony_contract_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "governance_contract_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "authority_registry_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "handoff_bundle_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "seats": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["seat", "role", "status", "challenge_command", "required_response"],
+        "properties": {
+          "seat": {"type": "integer", "minimum": 1, "maximum": 5},
+          "role": {"type": "string", "minLength": 1},
+          "status": {"const": "AWAITING_EXTERNAL_PARTICIPANT"},
+          "challenge_command": {"type": "string", "minLength": 1},
+          "required_response": {"const": "SIGNED_GOVERNANCE_ENROLLMENT_RESPONSE_V10"}
+        }
+      }
+    },
+    "filled_seats": {"const": 0},
+    "required_seats": {"const": 5},
+    "status": {"const": "AWAITING_EXTERNAL_PARTICIPANTS"},
+    "barrier": {"const": "FIVE_INDEPENDENT_PARTICIPANT_RESPONSES_REQUIRED"},
+    "next_seed": {"const": "KC144.V10::ISSUE-FIVE-ROLE-BOUND-CHALLENGES"},
+    "plan_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

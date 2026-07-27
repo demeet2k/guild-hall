@@ -1,0 +1,88 @@
+{
+  "schema": "KC144.Release.V5",
+  "release": "KC144.SSN12.GLOBAL_STATE.V5",
+  "status": "GLOBAL_STATE_AND_REENTRY_COMPLETE",
+  "crystal_digest": "sha256:920b03d50826c1f90ecfb0039cb2bba551f9733597a22bca8755bb8cbf9b39fb",
+  "verification": {
+    "integrated_tests": "185/185 PASS",
+    "new_crystal_audit": "30/30 PASS",
+    "upstream_lattice": "74/74 PASS",
+    "verification_runs": "11/11 PASS",
+    "signed_handoff": "PASS with TEST_LOCAL_EPHEMERAL_UNPINNED trust ceiling"
+  },
+  "population": {
+    "addresses": "144/144",
+    "architectural_labels": "144/144",
+    "documented": 86,
+    "generator_derived": 46,
+    "routed_only": 5,
+    "unmapped": 7
+  },
+  "navigation": {
+    "native_components": 8,
+    "declared_graph_components": 1,
+    "distinct_intra_adjacency_edges": 247,
+    "declared_bridge_records": 28,
+    "distinct_adjacency_edges": 274,
+    "diameter": 18,
+    "radius": 9,
+    "center": "GID043/B21",
+    "reachable_from_H06": "144/144",
+    "max_hops_from_H06": 15
+  },
+  "systematic_runtime": {
+    "station_bodies": "144/144",
+    "route_holonomy": "5 valid routes; all pairwise nonzero; empty common carry",
+    "default_wave": "144/144 reached; frozen graph unchanged",
+    "actual_live_promotions": 0,
+    "solid_state": "HOLD"
+  },
+  "mycelium_runtime": {
+    "query_contract": "H06_QUERY_BUNDLE",
+    "attractor_selection": "PARETO_NONSCALAR",
+    "evidence_floors": [
+      "STRUCTURAL",
+      "SOURCE_DECLARED",
+      "INDEPENDENT_REPLAY",
+      "PROMOTABLE"
+    ],
+    "return_modes": [
+      "NONE",
+      "RETRACE",
+      "TYPED_RETRACE",
+      "RETURN_ARM"
+    ],
+    "bridge_witness_gate": "EXECUTABLE",
+    "certified_production_bridges": "0/28",
+    "graph_mutation": false,
+    "truth_effect": "NONE"
+  },
+  "global_state_runtime": {
+    "typed_relation_records": 276,
+    "distinct_adjacencies": 274,
+    "edge_manifest": "FROZEN",
+    "carry_loss_declared": "276/276",
+    "default_session_receipts": 3,
+    "default_wave_node_coverage": "144/144",
+    "default_explicit_node_coverage": "21/144",
+    "default_neural_edge_coverage": "219/276",
+    "projective_synapses": 1,
+    "cold_reconstruction": "N5_DETERMINISTIC_SELF_REPLAY",
+    "independent_replay": false,
+    "m12": "4/9 PASS · HOLD · NO CERTIFICATE",
+    "production_bridge_commits": 0
+  },
+  "nonclaims": [
+    "No external repository write or deployment was performed.",
+    "No independent live cold replay was performed.",
+    "No solid-state certificate was issued.",
+    "Mathematical transformation does not promote evidence.",
+    "Declared graph connectivity does not certify bridge transport.",
+    "The recorded ablation is a structural counterfactual, not an independent live replay.",
+    "Synthetic bridge-witness fixtures do not enter the production witness ledger.",
+    "Query ranking, route compilation, and return planning do not promote evidence.",
+    "N5 deterministic self-replay is not independent empirical replay.",
+    "Wave activation coverage is not explicit route or edge coverage.",
+    "Projective synapses are overlays and never mutate the frozen graph."
+  ]
+}

@@ -1,0 +1,723 @@
+{
+  "schema": "KC144.CompiledQuerySet.V4",
+  "queries": [
+    {
+      "schema": "KC144.CompiledQuery.V4",
+      "status": "COMPILED",
+      "query": {
+        "query_id": "KC144.V4.EXAMPLE.RETURNABLE",
+        "goal": "compile an activation route through return and adjudication",
+        "terms": [
+          "activation",
+          "return",
+          "adjudication"
+        ],
+        "domains": [],
+        "operators": [
+          "RETURN"
+        ],
+        "invariants": [
+          "return"
+        ],
+        "boundaries": [],
+        "evidence_floor": "STRUCTURAL",
+        "start_coordinates": [
+          6
+        ],
+        "route_budget": 18,
+        "return_mode": "RETURN_ARM",
+        "max_results": 12
+      },
+      "crystal_digest": "sha256:920b03d50826c1f90ecfb0039cb2bba551f9733597a22bca8755bb8cbf9b39fb",
+      "base_graph_mutated": false,
+      "evidence_overlay_mutated": false,
+      "evidence_eligible": 144,
+      "semantic_candidates": 144,
+      "pareto_frontier_size": 1,
+      "selected": [
+        {
+          "gid": 6,
+          "station": "H06",
+          "band": "H6",
+          "architectural_label": "Activation–Replay–Reseed Hub",
+          "evidence_status": "DOCUMENTED",
+          "domain_state": "SOURCE_DECLARED",
+          "nearest_start": 6,
+          "goal_hits": 2,
+          "term_hits": 2,
+          "operator_hits": 1,
+          "invariant_hits": 0,
+          "boundary_hits": 0,
+          "distance": 0,
+          "rank_vector": {
+            "goal_hits": 2,
+            "term_hits": 2,
+            "operator_hits": 1,
+            "invariant_hits": 0,
+            "boundary_hits": 0,
+            "distance": 0
+          },
+          "forward_route": {
+            "path": [
+              6
+            ],
+            "segments": [],
+            "hops": 0
+          },
+          "return_plan": {
+            "mode": "RETURN_ARM",
+            "path": [
+              6,
+              1,
+              144,
+              143,
+              142,
+              141,
+              43,
+              41,
+              42,
+              43,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90,
+              119,
+              144,
+              1
+            ],
+            "segments": [
+              {
+                "source": 6,
+                "target": 1,
+                "selected_relation": "H6_RING",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "H6_RING",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 1,
+                "target": 144,
+                "selected_relation": "SUCCESSOR_RESEED",
+                "selected_standing": "DECLARED_UNCERTIFIED",
+                "available_relations": [
+                  {
+                    "relation": "SUCCESSOR_RESEED",
+                    "standing": "DECLARED_UNCERTIFIED",
+                    "bridge_id": "BR019"
+                  }
+                ],
+                "bridge_id": "BR019"
+              },
+              {
+                "source": 144,
+                "target": 143,
+                "selected_relation": "SSN12_CHAIN",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "SSN12_CHAIN",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 143,
+                "target": 142,
+                "selected_relation": "SSN12_CHAIN",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "SSN12_CHAIN",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 142,
+                "target": 141,
+                "selected_relation": "SSN12_CHAIN",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "SSN12_CHAIN",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 141,
+                "target": 43,
+                "selected_relation": "RETURN_TO_SIGNATURE",
+                "selected_standing": "DECLARED_UNCERTIFIED",
+                "available_relations": [
+                  {
+                    "relation": "RETURN_TO_SIGNATURE",
+                    "standing": "DECLARED_UNCERTIFIED",
+                    "bridge_id": "BR012"
+                  }
+                ],
+                "bridge_id": "BR012"
+              },
+              {
+                "source": 43,
+                "target": 41,
+                "selected_relation": "BR21_LENS",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "BR21_LENS",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 41,
+                "target": 42,
+                "selected_relation": "BR21_LENS",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "BR21_LENS",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 42,
+                "target": 43,
+                "selected_relation": "BR21_LENS",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "BR21_LENS",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 43,
+                "target": 81,
+                "selected_relation": "RETURN_TO_IC10",
+                "selected_standing": "DECLARED_UNCERTIFIED",
+                "available_relations": [
+                  {
+                    "relation": "RETURN_TO_IC10",
+                    "standing": "DECLARED_UNCERTIFIED",
+                    "bridge_id": "BR003"
+                  }
+                ],
+                "bridge_id": "BR003"
+              },
+              {
+                "source": 81,
+                "target": 82,
+                "selected_relation": "IC10_CHAIN",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "IC10_CHAIN",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 82,
+                "target": 83,
+                "selected_relation": "IC10_CHAIN",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "IC10_CHAIN",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 83,
+                "target": 84,
+                "selected_relation": "IC10_CHAIN",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "IC10_CHAIN",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 84,
+                "target": 85,
+                "selected_relation": "IC10_CHAIN",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "IC10_CHAIN",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 85,
+                "target": 86,
+                "selected_relation": "IC10_CHAIN",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "IC10_CHAIN",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 86,
+                "target": 87,
+                "selected_relation": "IC10_CHAIN",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "IC10_CHAIN",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 87,
+                "target": 88,
+                "selected_relation": "IC10_CHAIN",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "IC10_CHAIN",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 88,
+                "target": 89,
+                "selected_relation": "IC10_CHAIN",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "IC10_CHAIN",
+                    "standing": "STRUCTURAL"
+                  },
+                  {
+                    "relation": "I08_TO_I09",
+                    "standing": "DECLARED_UNCERTIFIED",
+                    "bridge_id": "BR020"
+                  }
+                ]
+              },
+              {
+                "source": 89,
+                "target": 90,
+                "selected_relation": "IC10_CHAIN",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "IC10_CHAIN",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 90,
+                "target": 119,
+                "selected_relation": "PROMOTION_TO_QSHRINK",
+                "selected_standing": "DECLARED_UNCERTIFIED",
+                "available_relations": [
+                  {
+                    "relation": "PROMOTION_TO_QSHRINK",
+                    "standing": "DECLARED_UNCERTIFIED",
+                    "bridge_id": "BR017"
+                  }
+                ],
+                "bridge_id": "BR017"
+              },
+              {
+                "source": 119,
+                "target": 144,
+                "selected_relation": "QSHRINK_TO_M12",
+                "selected_standing": "DECLARED_UNCERTIFIED",
+                "available_relations": [
+                  {
+                    "relation": "QSHRINK_TO_M12",
+                    "standing": "DECLARED_UNCERTIFIED",
+                    "bridge_id": "BR018"
+                  }
+                ],
+                "bridge_id": "BR018"
+              },
+              {
+                "source": 144,
+                "target": 1,
+                "selected_relation": "SUCCESSOR_RESEED",
+                "selected_standing": "DECLARED_UNCERTIFIED",
+                "available_relations": [
+                  {
+                    "relation": "SUCCESSOR_RESEED",
+                    "standing": "DECLARED_UNCERTIFIED",
+                    "bridge_id": "BR019"
+                  }
+                ],
+                "bridge_id": "BR019"
+              }
+            ],
+            "standing": "DECLARED_RETURN_ARM_TO_GID001_PRIME",
+            "open_bridge_ids": [
+              "BR003",
+              "BR012",
+              "BR017",
+              "BR018",
+              "BR019"
+            ]
+          },
+          "open_bridge_ids": [
+            "BR003",
+            "BR012",
+            "BR017",
+            "BR018",
+            "BR019"
+          ],
+          "route_standing": "DECLARED_ROUTE_WITH_OPEN_TRANSPORT_CERTIFICATION",
+          "promotion_effect": "NONE"
+        }
+      ],
+      "refusal": null,
+      "ranking_law": "Pareto dominance over disclosed semantic/operator/invariant/boundary hits and graph distance; no hidden scalar score",
+      "truth_effect": "NONE",
+      "result_digest": "sha256:5cb46ba1891d32be26aceb1237c7b4a8294e96026805ecdf19d9fc6bbe3a30f9"
+    },
+    {
+      "schema": "KC144.CompiledQuery.V4",
+      "status": "COMPILED",
+      "query": {
+        "query_id": "KC144.V4.EXAMPLE.SOURCE-CARRIER",
+        "goal": "locate a source declared carrier with identity and evidence",
+        "terms": [
+          "carrier",
+          "identity",
+          "source"
+        ],
+        "domains": [
+          "F37"
+        ],
+        "operators": [],
+        "invariants": [],
+        "boundaries": [],
+        "evidence_floor": "SOURCE_DECLARED",
+        "start_coordinates": [
+          6
+        ],
+        "route_budget": 18,
+        "return_mode": "TYPED_RETRACE",
+        "max_results": 12
+      },
+      "crystal_digest": "sha256:920b03d50826c1f90ecfb0039cb2bba551f9733597a22bca8755bb8cbf9b39fb",
+      "base_graph_mutated": false,
+      "evidence_overlay_mutated": false,
+      "evidence_eligible": 25,
+      "semantic_candidates": 25,
+      "pareto_frontier_size": 1,
+      "selected": [
+        {
+          "gid": 76,
+          "station": "F33",
+          "band": "F37",
+          "architectural_label": "Subfactor, Rigid Fusion-Index, and Replay–Merkle",
+          "evidence_status": "DOCUMENTED",
+          "domain_state": "SOURCE_DECLARED",
+          "nearest_start": 6,
+          "goal_hits": 3,
+          "term_hits": 2,
+          "operator_hits": 0,
+          "invariant_hits": 0,
+          "boundary_hits": 0,
+          "distance": 7,
+          "rank_vector": {
+            "goal_hits": 3,
+            "term_hits": 2,
+            "operator_hits": 0,
+            "invariant_hits": 0,
+            "boundary_hits": 0,
+            "distance": 7
+          },
+          "forward_route": {
+            "path": [
+              6,
+              1,
+              144,
+              143,
+              142,
+              141,
+              43,
+              76
+            ],
+            "segments": [
+              {
+                "source": 6,
+                "target": 1,
+                "selected_relation": "H6_RING",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "H6_RING",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 1,
+                "target": 144,
+                "selected_relation": "SUCCESSOR_RESEED",
+                "selected_standing": "DECLARED_UNCERTIFIED",
+                "available_relations": [
+                  {
+                    "relation": "SUCCESSOR_RESEED",
+                    "standing": "DECLARED_UNCERTIFIED",
+                    "bridge_id": "BR019"
+                  }
+                ],
+                "bridge_id": "BR019"
+              },
+              {
+                "source": 144,
+                "target": 143,
+                "selected_relation": "SSN12_CHAIN",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "SSN12_CHAIN",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 143,
+                "target": 142,
+                "selected_relation": "SSN12_CHAIN",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "SSN12_CHAIN",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 142,
+                "target": 141,
+                "selected_relation": "SSN12_CHAIN",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "SSN12_CHAIN",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 141,
+                "target": 43,
+                "selected_relation": "RETURN_TO_SIGNATURE",
+                "selected_standing": "DECLARED_UNCERTIFIED",
+                "available_relations": [
+                  {
+                    "relation": "RETURN_TO_SIGNATURE",
+                    "standing": "DECLARED_UNCERTIFIED",
+                    "bridge_id": "BR012"
+                  }
+                ],
+                "bridge_id": "BR012"
+              },
+              {
+                "source": 43,
+                "target": 76,
+                "selected_relation": "RETURN_TO_REPLAY",
+                "selected_standing": "DECLARED_UNCERTIFIED",
+                "available_relations": [
+                  {
+                    "relation": "RETURN_TO_REPLAY",
+                    "standing": "DECLARED_UNCERTIFIED",
+                    "bridge_id": "BR011"
+                  }
+                ],
+                "bridge_id": "BR011"
+              }
+            ],
+            "hops": 7
+          },
+          "return_plan": {
+            "mode": "TYPED_RETRACE",
+            "path": [
+              76,
+              43,
+              141,
+              142,
+              143,
+              144,
+              1,
+              6
+            ],
+            "segments": [
+              {
+                "source": 76,
+                "target": 43,
+                "selected_relation": "RETURN_TO_REPLAY",
+                "selected_standing": "DECLARED_UNCERTIFIED",
+                "available_relations": [
+                  {
+                    "relation": "RETURN_TO_REPLAY",
+                    "standing": "DECLARED_UNCERTIFIED",
+                    "bridge_id": "BR011"
+                  }
+                ],
+                "bridge_id": "BR011"
+              },
+              {
+                "source": 43,
+                "target": 141,
+                "selected_relation": "RETURN_TO_SIGNATURE",
+                "selected_standing": "DECLARED_UNCERTIFIED",
+                "available_relations": [
+                  {
+                    "relation": "RETURN_TO_SIGNATURE",
+                    "standing": "DECLARED_UNCERTIFIED",
+                    "bridge_id": "BR012"
+                  }
+                ],
+                "bridge_id": "BR012"
+              },
+              {
+                "source": 141,
+                "target": 142,
+                "selected_relation": "SSN12_CHAIN",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "SSN12_CHAIN",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 142,
+                "target": 143,
+                "selected_relation": "SSN12_CHAIN",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "SSN12_CHAIN",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 143,
+                "target": 144,
+                "selected_relation": "SSN12_CHAIN",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "SSN12_CHAIN",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              },
+              {
+                "source": 144,
+                "target": 1,
+                "selected_relation": "SUCCESSOR_RESEED",
+                "selected_standing": "DECLARED_UNCERTIFIED",
+                "available_relations": [
+                  {
+                    "relation": "SUCCESSOR_RESEED",
+                    "standing": "DECLARED_UNCERTIFIED",
+                    "bridge_id": "BR019"
+                  }
+                ],
+                "bridge_id": "BR019"
+              },
+              {
+                "source": 1,
+                "target": 6,
+                "selected_relation": "H6_RING",
+                "selected_standing": "STRUCTURAL",
+                "available_relations": [
+                  {
+                    "relation": "H6_RING",
+                    "standing": "STRUCTURAL"
+                  }
+                ]
+              }
+            ],
+            "standing": "TYPED_AS_TYPED_RETURN_REQUIRED_PENDING_TRANSPORT_WITNESS",
+            "open_bridge_ids": [
+              "BR011",
+              "BR012",
+              "BR019"
+            ]
+          },
+          "open_bridge_ids": [
+            "BR011",
+            "BR012",
+            "BR019"
+          ],
+          "route_standing": "DECLARED_ROUTE_WITH_OPEN_TRANSPORT_CERTIFICATION",
+          "promotion_effect": "NONE"
+        }
+      ],
+      "refusal": null,
+      "ranking_law": "Pareto dominance over disclosed semantic/operator/invariant/boundary hits and graph distance; no hidden scalar score",
+      "truth_effect": "NONE",
+      "result_digest": "sha256:d6a479cfff9317bd76d6a9872113e0f950a16126ad5626aa9163e6feff8e0cd4"
+    },
+    {
+      "schema": "KC144.CompiledQuery.V4",
+      "status": "REFUSED",
+      "query": {
+        "query_id": "KC144.V4.EXAMPLE.INDEPENDENT-REFUSAL",
+        "goal": "locate independently replayed stations",
+        "terms": [
+          "replay"
+        ],
+        "domains": [],
+        "operators": [],
+        "invariants": [],
+        "boundaries": [],
+        "evidence_floor": "INDEPENDENT_REPLAY",
+        "start_coordinates": [
+          6
+        ],
+        "route_budget": 18,
+        "return_mode": "NONE",
+        "max_results": 12
+      },
+      "crystal_digest": "sha256:920b03d50826c1f90ecfb0039cb2bba551f9733597a22bca8755bb8cbf9b39fb",
+      "base_graph_mutated": false,
+      "evidence_overlay_mutated": false,
+      "evidence_eligible": 0,
+      "semantic_candidates": 0,
+      "pareto_frontier_size": 0,
+      "selected": [],
+      "refusal": {
+        "code": "EVIDENCE_FLOOR_UNSATISFIED",
+        "detail": "no station currently satisfies INDEPENDENT_REPLAY; the query compiler cannot manufacture that standing"
+      },
+      "ranking_law": "Pareto dominance over disclosed semantic/operator/invariant/boundary hits and graph distance; no hidden scalar score",
+      "truth_effect": "NONE",
+      "result_digest": "sha256:f737b2bc5163ec98a3a9eca44e615d687527d0342f7038d04b438bf02bfbdddb"
+    }
+  ]
+}

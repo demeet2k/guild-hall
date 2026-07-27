@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/mycelium-release-v4.schema.json",
+  "title": "KC144 V4 mycelium release",
+  "type": "object",
+  "required": [
+    "schema",
+    "release",
+    "verdict",
+    "base_release",
+    "query_runtime",
+    "bridge_runtime",
+    "actual_live_promotions",
+    "solid_state",
+    "added_artifacts"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.MyceliumRelease.V4"},
+    "release": {"const": "KC144.MYCELIUM.FRAMEWORK.V4"},
+    "verdict": {"enum": ["PASS", "FAIL"]},
+    "base_release": {"const": "KC144.SYSTEMATIC.FRAMEWORK.V3"},
+    "query_runtime": {
+      "type": "object",
+      "required": ["contract", "ranking", "graph_mutation", "truth_effect"],
+      "properties": {
+        "contract": {"const": "H06_QUERY_BUNDLE"},
+        "ranking": {"const": "PARETO_NONSCALAR"},
+        "graph_mutation": {"const": false},
+        "truth_effect": {"const": "NONE"}
+      }
+    },
+    "bridge_runtime": {
+      "type": "object",
+      "required": ["declared", "certified", "admission_gate"],
+      "properties": {
+        "declared": {"const": 28},
+        "certified": {"type": "integer", "minimum": 0, "maximum": 28},
+        "admission_gate": {"const": "EXECUTABLE"}
+      }
+    },
+    "actual_live_promotions": {"const": 0},
+    "solid_state": {"const": "HOLD"},
+    "added_artifacts": {"type": "array", "items": {"type": "string"}}
+  }
+}

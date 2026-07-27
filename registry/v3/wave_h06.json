@@ -1,0 +1,4520 @@
+{
+  "schema": "KC144.NavigationWave.V3",
+  "query": {
+    "query_id": "KC144.V3.DEFAULT.H06",
+    "starts": [
+      6
+    ],
+    "route_budget": 18,
+    "decay": 0.85
+  },
+  "mode": "PARALLEL_BOUNDED_WAVEFRONT_OVER_ALL_DECLARED_RELATIONS",
+  "base_graph_mutated": false,
+  "reached": 144,
+  "coverage": "144/144",
+  "frontier": [],
+  "interference_nodes": [],
+  "nodes": [
+    {
+      "gid": 1,
+      "arrivals": {
+        "6": {
+          "distance": 1,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 1,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.85,
+      "path_signature": "sha256:dbb5a2276df2192c54ca4e93fd908ee14276aa35ff33f3bcafb51bd2a02ba69c"
+    },
+    {
+      "gid": 2,
+      "arrivals": {
+        "6": {
+          "distance": 2,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 2,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.7225,
+      "path_signature": "sha256:458dfd9779ce29a395a079385f684d57668aab8d1670bd665171b40ee645641e"
+    },
+    {
+      "gid": 3,
+      "arrivals": {
+        "6": {
+          "distance": 3,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 3,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.614125,
+      "path_signature": "sha256:37988e419a011f6201aaad9ecefa94d0d6c5a938ad233ebff98ce6574a4e9fdf"
+    },
+    {
+      "gid": 4,
+      "arrivals": {
+        "6": {
+          "distance": 2,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 2,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.7225,
+      "path_signature": "sha256:4678f2a1d44e4da82f1dad05bd07ac5c9687d367f59fa29f80e9857514f1e043"
+    },
+    {
+      "gid": 5,
+      "arrivals": {
+        "6": {
+          "distance": 1,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 1,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.85,
+      "path_signature": "sha256:459245c74a427cd528775aaf7945ab20759ce8fc80a14f98bcd31e2bea5e268d"
+    },
+    {
+      "gid": 6,
+      "arrivals": {
+        "6": {
+          "distance": 0,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 0,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 1.0,
+      "path_signature": "sha256:f0feaa48e728f06e4656d3f0650df62893a08c08c6e321e3976bb62541fe6809"
+    },
+    {
+      "gid": 7,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:0070f07960631897968d31ea831760a25317a2adaa4b3523d41e08069f2978e3"
+    },
+    {
+      "gid": 8,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 4
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:4d4718089613f71ffd98fc22f70d60f97ec0a3e0a8d3d6bafc61e6b5e70f322b"
+    },
+    {
+      "gid": 9,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:c36ee77202827748909dd2c0301fb70b89c65166701a500dd1cb38b75595f53a"
+    },
+    {
+      "gid": 10,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:320f11b8923e347e7679d8a6c1a57db47b0e8315e61f00ae0eb392a78965ea3e"
+    },
+    {
+      "gid": 11,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:45b0e280c3b6580325ef1e77fa7e7aa277385fa6b518fd18a46d19c1f1dd3441"
+    },
+    {
+      "gid": 12,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 4
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:c4002dfd59dfd03c6744fbbf578d3c7266f8c0cb0d5c9ef7b67862061428b337"
+    },
+    {
+      "gid": 13,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:cede8b823d73b7f38bb16899000a72dc73f5feef2563392748a7e2df3252d89b"
+    },
+    {
+      "gid": 14,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:4852e7f290bed6ccaad384c9d28d393206d42a0f719bb8ecacac541daef00843"
+    },
+    {
+      "gid": 15,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 4
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:d0633348739232a1f03859b36d0feb02ec6e65c0a481639f1b4e0c53d4edbed1"
+    },
+    {
+      "gid": 16,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:2c8ae8e226798bcb4e05c825561e089b4cd58d2e196d9f9231755655ab5e1fda"
+    },
+    {
+      "gid": 17,
+      "arrivals": {
+        "6": {
+          "distance": 7,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 7,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.320577088281,
+      "path_signature": "sha256:4d4a8bd8e83b2b51d5e00c2f774c53cafc9f74ac275f62410721f5cc18127610"
+    },
+    {
+      "gid": 18,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:74f58487dd72288bd99c85a59f159f133d1db776049420e7cf49709a41bbaa01"
+    },
+    {
+      "gid": 19,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:a9d6702f5c75c3d0d661b575e49cd98bf39242f1e9be51179dbd66d2387bc42d"
+    },
+    {
+      "gid": 20,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:f68e50995e1c791314d9ee852e407757ec262fc3375130d3873a0de9338e6105"
+    },
+    {
+      "gid": 21,
+      "arrivals": {
+        "6": {
+          "distance": 7,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 7,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.320577088281,
+      "path_signature": "sha256:303251f01188509441557d3cdf439bb157b48f08699c12609f1c812724806c78"
+    },
+    {
+      "gid": 22,
+      "arrivals": {
+        "6": {
+          "distance": 7,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 7,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.320577088281,
+      "path_signature": "sha256:bc34b63b2c7cc16a81f341af7aa32d88c9316322ab5fc7207fef14338cba1f20"
+    },
+    {
+      "gid": 23,
+      "arrivals": {
+        "6": {
+          "distance": 7,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 7,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.320577088281,
+      "path_signature": "sha256:f432c63b0a6db506140edc5f42cf9f246a96f3231051f370749db2618a7588e6"
+    },
+    {
+      "gid": 24,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:210b2bcc1e3a5f69237c951b44b3460deb087e947299115aba9ebdd2e6cc9345"
+    },
+    {
+      "gid": 25,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:5ec4c13e784d2b5a4c211286c7b8f4c1667b220ab598b72e69479fc292bfd562"
+    },
+    {
+      "gid": 26,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 3
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:6c94ad22ba3ede9327dfd02e797614bea4ee28eb489f954b06c7887ffea161b3"
+    },
+    {
+      "gid": 27,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 8
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:cd2960dfd589c8bd9c706b0795f124f2ea9e967959b70c49ca29c09bc1534317"
+    },
+    {
+      "gid": 28,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 8
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:5b057420baa0414da2cce46835ea0e4d159ef13c7831b6da2d14247f6f54f8cf"
+    },
+    {
+      "gid": 29,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 7
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:852a2f80a9fcb36a40a584f03c7747356d0af50e7598bfdbddbbf8f7366c3fd8"
+    },
+    {
+      "gid": 30,
+      "arrivals": {
+        "6": {
+          "distance": 10,
+          "shortest_path_count": 21
+        }
+      },
+      "nearest_distance": 10,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.196874404341,
+      "path_signature": "sha256:66ee32936c6fbf4cf88cbae74e68acdcca497f9f13bce29d1704963b0f69fce2"
+    },
+    {
+      "gid": 31,
+      "arrivals": {
+        "6": {
+          "distance": 10,
+          "shortest_path_count": 22
+        }
+      },
+      "nearest_distance": 10,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.196874404341,
+      "path_signature": "sha256:f5a0d36856e3343720945e95e82033de5dcada02f5b780ecf9436d14f4cf81b2"
+    },
+    {
+      "gid": 32,
+      "arrivals": {
+        "6": {
+          "distance": 10,
+          "shortest_path_count": 14
+        }
+      },
+      "nearest_distance": 10,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.196874404341,
+      "path_signature": "sha256:403cf295bd9f49d32a096998da78f4ab823481d5418677b69e25a2d23bb34950"
+    },
+    {
+      "gid": 33,
+      "arrivals": {
+        "6": {
+          "distance": 10,
+          "shortest_path_count": 7
+        }
+      },
+      "nearest_distance": 10,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.196874404341,
+      "path_signature": "sha256:b05d659392eeb32d3da3a8c8fdd7bc30111bfc1d8df3be89f45de8d5c2c4ad07"
+    },
+    {
+      "gid": 34,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:09bf8c5c1dd9f1fd27d9a3336a94a84ca7ccf95cddffd2cbef29d150b6dbf4a0"
+    },
+    {
+      "gid": 35,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 5
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:9578be43b86a51702d46108f0f40df556b394a6b3401ea632f7cce041a7f5d25"
+    },
+    {
+      "gid": 36,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 5
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:f22935f63adfdacc42b5d92010ecedba01b805a505c575bb69587021568c0989"
+    },
+    {
+      "gid": 37,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:6024b2030ce2dcb2292d09f9b75cd9f1a15e2bf0be37b69252cc946f0ddc2dca"
+    },
+    {
+      "gid": 38,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 3
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:ecc84a6c52bdaf41393b9ebf3e7f16178e9d623696f4c9a20699eded651b0fe4"
+    },
+    {
+      "gid": 39,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 3
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:e360eb0e718b78dcbeba5f69ca9553dd0e943520fa2c4c37bb62eb6d88768ee4"
+    },
+    {
+      "gid": 40,
+      "arrivals": {
+        "6": {
+          "distance": 7,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 7,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.320577088281,
+      "path_signature": "sha256:ea43e4c34d3f40b6cd4fde12fd5fd19f909e0a4db8493678df3c58cc7e96ca64"
+    },
+    {
+      "gid": 41,
+      "arrivals": {
+        "6": {
+          "distance": 7,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 7,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.320577088281,
+      "path_signature": "sha256:dd8c92111a4d119a22f95b0e9673ecf79c12f186976ab36fde687b73a857619c"
+    },
+    {
+      "gid": 42,
+      "arrivals": {
+        "6": {
+          "distance": 7,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 7,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.320577088281,
+      "path_signature": "sha256:b4d0a92c8f4b8b0fa6c764f10097c0a90e04054fcbe701e9be21fdaca8b04a1f"
+    },
+    {
+      "gid": 43,
+      "arrivals": {
+        "6": {
+          "distance": 6,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 6,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.377149515625,
+      "path_signature": "sha256:519b9f7097756ecbaf842b1345e47129f5d3abf063f3f4d06b25d048ddb6ec61"
+    },
+    {
+      "gid": 44,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:e6b57d013eedb19fd0a4f7c0afb4f5cf18303a689bb04ef4f389d6efb5a0b00a"
+    },
+    {
+      "gid": 45,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:90dc429b6bedf845caa2413c2f07dba33d23223e4b10fdf3f317e5492ec2f553"
+    },
+    {
+      "gid": 46,
+      "arrivals": {
+        "6": {
+          "distance": 10,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 10,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.196874404341,
+      "path_signature": "sha256:6dc9be185913ee376b56de46ff74a2491e381e2513cb0d9c5feeadc366d2f45a"
+    },
+    {
+      "gid": 47,
+      "arrivals": {
+        "6": {
+          "distance": 10,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 10,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.196874404341,
+      "path_signature": "sha256:d6421f3192761c005a0f3e671850e5fb42329d65bc4f9ad60d9f0828ee9ba7e6"
+    },
+    {
+      "gid": 48,
+      "arrivals": {
+        "6": {
+          "distance": 11,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 11,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.16734324369,
+      "path_signature": "sha256:ab940240ad88f8559a7f3545f02190dc294588f6c272f9de1ca5049d82a149fb"
+    },
+    {
+      "gid": 49,
+      "arrivals": {
+        "6": {
+          "distance": 12,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 12,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.142241757136,
+      "path_signature": "sha256:32cff18356c8e8672696b9e0dd34c6d465ef5e13f76c1ab6b8e6c67358cb9bb9"
+    },
+    {
+      "gid": 50,
+      "arrivals": {
+        "6": {
+          "distance": 13,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 13,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.120905493566,
+      "path_signature": "sha256:fa1fa7847bec9ffd5f8ebb8e3e3f0bc7b5de35d5da4a7767d13a3ec3cd3a2f14"
+    },
+    {
+      "gid": 51,
+      "arrivals": {
+        "6": {
+          "distance": 14,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 14,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.102769669531,
+      "path_signature": "sha256:4eaf72476e34df48edd27c64a950b6c46db79710729041d09a5c03c7e20ac852"
+    },
+    {
+      "gid": 52,
+      "arrivals": {
+        "6": {
+          "distance": 15,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 15,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.087354219101,
+      "path_signature": "sha256:cadd80df6f91337460410bcba49d42ad6117cbd4df2eab9111213316f528cfd6"
+    },
+    {
+      "gid": 53,
+      "arrivals": {
+        "6": {
+          "distance": 15,
+          "shortest_path_count": 7
+        }
+      },
+      "nearest_distance": 15,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.087354219101,
+      "path_signature": "sha256:c2e7126c89e9b9efe818eb82ee331fae3bb6e02634defa8b8c1e37bd5afa1b40"
+    },
+    {
+      "gid": 54,
+      "arrivals": {
+        "6": {
+          "distance": 14,
+          "shortest_path_count": 7
+        }
+      },
+      "nearest_distance": 14,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.102769669531,
+      "path_signature": "sha256:79c7a46c8626fbe342a06766d74b6dc798e4a3a60f5d487e64751c382eea4638"
+    },
+    {
+      "gid": 55,
+      "arrivals": {
+        "6": {
+          "distance": 13,
+          "shortest_path_count": 7
+        }
+      },
+      "nearest_distance": 13,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.120905493566,
+      "path_signature": "sha256:dae5d5c44db73490f92f5999557005124bf2aecb440fc5c1f555992a0a3d1f72"
+    },
+    {
+      "gid": 56,
+      "arrivals": {
+        "6": {
+          "distance": 12,
+          "shortest_path_count": 7
+        }
+      },
+      "nearest_distance": 12,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.142241757136,
+      "path_signature": "sha256:8191dbb002f74a3cb388a2a8b61af42b774ffa18d2d17cf1ed761279a44321b5"
+    },
+    {
+      "gid": 57,
+      "arrivals": {
+        "6": {
+          "distance": 11,
+          "shortest_path_count": 7
+        }
+      },
+      "nearest_distance": 11,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.16734324369,
+      "path_signature": "sha256:ad16249a7421a7bc4b3fe9f2989757d09ca6a9e568ece8a2e62199775128c66e"
+    },
+    {
+      "gid": 58,
+      "arrivals": {
+        "6": {
+          "distance": 10,
+          "shortest_path_count": 7
+        }
+      },
+      "nearest_distance": 10,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.196874404341,
+      "path_signature": "sha256:28b06c0456702f295cf979f09b9268b9d14c3fc17720c8352c30d9c28d791fe0"
+    },
+    {
+      "gid": 59,
+      "arrivals": {
+        "6": {
+          "distance": 11,
+          "shortest_path_count": 8
+        }
+      },
+      "nearest_distance": 11,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.16734324369,
+      "path_signature": "sha256:ebf9135b61d7c27aa531918ed5e892e8b4dde485614659ab32a3a0a55531f098"
+    },
+    {
+      "gid": 60,
+      "arrivals": {
+        "6": {
+          "distance": 10,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 10,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.196874404341,
+      "path_signature": "sha256:fc380e051d5c495b13cd733e452fa30a7af9c4febf3dd9d21499d981c649f257"
+    },
+    {
+      "gid": 61,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:565cfbe2db1eee1a7cc948582fe0f68f533160c229b486da398264f7c9855187"
+    },
+    {
+      "gid": 62,
+      "arrivals": {
+        "6": {
+          "distance": 10,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 10,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.196874404341,
+      "path_signature": "sha256:e7a3b953a175917d1cd7194ca74ab2883d19eb54b6538921b6012de27217eecd"
+    },
+    {
+      "gid": 63,
+      "arrivals": {
+        "6": {
+          "distance": 11,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 11,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.16734324369,
+      "path_signature": "sha256:b351d3eccfc76ecce92ed8ccc173ea5377a61e4f7c07785e8d74a2f240ff20ee"
+    },
+    {
+      "gid": 64,
+      "arrivals": {
+        "6": {
+          "distance": 11,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 11,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.16734324369,
+      "path_signature": "sha256:c1477e5a97611fed55408c604d41b91e66cdc69cc968ccdbac7ce4854d389b5c"
+    },
+    {
+      "gid": 65,
+      "arrivals": {
+        "6": {
+          "distance": 10,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 10,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.196874404341,
+      "path_signature": "sha256:dfe6f12ffe837c04a0492b0cc938dea384edce251806d89997032fb197189ede"
+    },
+    {
+      "gid": 66,
+      "arrivals": {
+        "6": {
+          "distance": 11,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 11,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.16734324369,
+      "path_signature": "sha256:64d0d319bc14b7538086a136be05940b7a49060dcdb2ef3657574efa4192bb63"
+    },
+    {
+      "gid": 67,
+      "arrivals": {
+        "6": {
+          "distance": 12,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 12,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.142241757136,
+      "path_signature": "sha256:ee7d55bca2a7b71fccdce4711412cad405f1f5e8d7b6538399f5302ae1d81955"
+    },
+    {
+      "gid": 68,
+      "arrivals": {
+        "6": {
+          "distance": 13,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 13,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.120905493566,
+      "path_signature": "sha256:f7d805c58cf26c93dd98f85ae301d603a1586b79940d58403b89d2b0664fc6f8"
+    },
+    {
+      "gid": 69,
+      "arrivals": {
+        "6": {
+          "distance": 14,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 14,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.102769669531,
+      "path_signature": "sha256:d85c50ef29dd9800d50aabf815352051b63c11ed32cb053643d88d78c4a6c7fc"
+    },
+    {
+      "gid": 70,
+      "arrivals": {
+        "6": {
+          "distance": 13,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 13,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.120905493566,
+      "path_signature": "sha256:489750ec1a3304dc649579cbb0fcb1c91f69b9a4572b69c00a27c342fe5c8012"
+    },
+    {
+      "gid": 71,
+      "arrivals": {
+        "6": {
+          "distance": 12,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 12,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.142241757136,
+      "path_signature": "sha256:c0ad76b0bc9423689da28b93d13fae15cba8d1484c51ddbfe543ce45ce115c8b"
+    },
+    {
+      "gid": 72,
+      "arrivals": {
+        "6": {
+          "distance": 11,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 11,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.16734324369,
+      "path_signature": "sha256:dc678e430043971b024de312b0e7856f74de8a5b8cd0135bffef53257b3508bc"
+    },
+    {
+      "gid": 73,
+      "arrivals": {
+        "6": {
+          "distance": 10,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 10,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.196874404341,
+      "path_signature": "sha256:1a702d8e0d53b6f78906bc2dfbcd621ffe9be53993ea917c8ba75e34d41691f0"
+    },
+    {
+      "gid": 74,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:47b219864cee4f1a93df774d4ccb3c73b1d204df13db6d4e7a41936883119690"
+    },
+    {
+      "gid": 75,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:f0923aafcdc7f0852a28390198cec0bd0d80342521d304d5a6feda220843d89b"
+    },
+    {
+      "gid": 76,
+      "arrivals": {
+        "6": {
+          "distance": 7,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 7,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.320577088281,
+      "path_signature": "sha256:f5098c833d18c112fcd6a48601c7d4e5688a13163427ad8d983850ef49e34a9c"
+    },
+    {
+      "gid": 77,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:04ef30c830764cdb1fa80840211eada004bb543fc9ded71f5266a8a99a336347"
+    },
+    {
+      "gid": 78,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:0d58103f8bd2b34062212343151b4ebba5eeeb5b1b5b16ba733d02eb8b9bc914"
+    },
+    {
+      "gid": 79,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:f71695da127675eb4a4d2af83fc9f67479c62f2d2e83b1892232579109d6e78a"
+    },
+    {
+      "gid": 80,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:9898fb71b482d8c215de045a3dbb0b93cfc873906d95efa46e33bb2d87e6f80f"
+    },
+    {
+      "gid": 81,
+      "arrivals": {
+        "6": {
+          "distance": 7,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 7,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.320577088281,
+      "path_signature": "sha256:3b18ccbd140cacbabb008e2d7efa97995803e1d70b74649844e82597b97750db"
+    },
+    {
+      "gid": 82,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:ca6dc93cd6aee27f88fa350402b8641cebcb05888eac130de4c36f4d65d0694a"
+    },
+    {
+      "gid": 83,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:1dff03d0d447d0ee60dca1c941c4bf96347429abad75875adabbfeeb78f55497"
+    },
+    {
+      "gid": 84,
+      "arrivals": {
+        "6": {
+          "distance": 10,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 10,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.196874404341,
+      "path_signature": "sha256:e13ddfff890622fa95ec582a4872b25308875c5b335be4ac2464aff84527f8b8"
+    },
+    {
+      "gid": 85,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:7c3a5e88a57c40860464b8ffabc63603dd48f7776b6080b98d08b7db07e75587"
+    },
+    {
+      "gid": 86,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:f1dcf6f8035550c8021d7003b37c7f0e98393a12fdfa6d31ee954cab20278035"
+    },
+    {
+      "gid": 87,
+      "arrivals": {
+        "6": {
+          "distance": 7,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 7,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.320577088281,
+      "path_signature": "sha256:f5aa9c915c2186135ffbe2f663f3f21ce7bcd55159a8e150b464a70574a00369"
+    },
+    {
+      "gid": 88,
+      "arrivals": {
+        "6": {
+          "distance": 6,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 6,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.377149515625,
+      "path_signature": "sha256:d18006395e7284f87c97fb2d933244a61753c8660ef01a62570ec522ba69f4c9"
+    },
+    {
+      "gid": 89,
+      "arrivals": {
+        "6": {
+          "distance": 5,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 5,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.4437053125,
+      "path_signature": "sha256:770201f2bac79feb1b5a202fc97790d199d1edb20bae0afea9c8a398aabee50d"
+    },
+    {
+      "gid": 90,
+      "arrivals": {
+        "6": {
+          "distance": 4,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 4,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.52200625,
+      "path_signature": "sha256:da3d8b8fe95f8a31a24a6e2455ac4d6101fba8ccc4518ddbbe3a680ec523facb"
+    },
+    {
+      "gid": 91,
+      "arrivals": {
+        "6": {
+          "distance": 10,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 10,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.196874404341,
+      "path_signature": "sha256:5231eb9f9bbec128a0b2e0f31316cc9e5e72e48d6077edeada094afa9dc30fb9"
+    },
+    {
+      "gid": 92,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:100d38ca35689ab8f2e1934bb2273a1146ec266c51e8f17215e23ddda9bb0a19"
+    },
+    {
+      "gid": 93,
+      "arrivals": {
+        "6": {
+          "distance": 10,
+          "shortest_path_count": 4
+        }
+      },
+      "nearest_distance": 10,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.196874404341,
+      "path_signature": "sha256:83c3e40a72070ff519b6ca29312970486ff519bacbc13228acf0209814114bc3"
+    },
+    {
+      "gid": 94,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:0ea8396b88cec4f1126175eee3b71ac3ab5e2201f3357e439116d3fa484eee49"
+    },
+    {
+      "gid": 95,
+      "arrivals": {
+        "6": {
+          "distance": 10,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 10,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.196874404341,
+      "path_signature": "sha256:a236a4f1306fef52d306535aa0e526006d41aaddba0eea0f5bc501f2b574b825"
+    },
+    {
+      "gid": 96,
+      "arrivals": {
+        "6": {
+          "distance": 11,
+          "shortest_path_count": 6
+        }
+      },
+      "nearest_distance": 11,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.16734324369,
+      "path_signature": "sha256:2e7ed219f36ab0fea75a07326fb851094796c30d4842ad602f72338185e3ece4"
+    },
+    {
+      "gid": 97,
+      "arrivals": {
+        "6": {
+          "distance": 10,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 10,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.196874404341,
+      "path_signature": "sha256:6670c15ae55535675eacaabf93e5e0f2be953a120c34bdf8088aa3ff8e8b7e22"
+    },
+    {
+      "gid": 98,
+      "arrivals": {
+        "6": {
+          "distance": 10,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 10,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.196874404341,
+      "path_signature": "sha256:115e9dcc0605bf1e70dc21f149bfeba754aa80c7b0b813e4141258923ce05b22"
+    },
+    {
+      "gid": 99,
+      "arrivals": {
+        "6": {
+          "distance": 10,
+          "shortest_path_count": 3
+        }
+      },
+      "nearest_distance": 10,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.196874404341,
+      "path_signature": "sha256:b79f8248dab9072adb4090681c3b377d86619f2a77f4a65f1295f6dcaba1ca55"
+    },
+    {
+      "gid": 100,
+      "arrivals": {
+        "6": {
+          "distance": 10,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 10,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.196874404341,
+      "path_signature": "sha256:accefbf4798ab017547c36188a0c6d003b50b8dce4ace865613e8ad5f0f8e9ae"
+    },
+    {
+      "gid": 101,
+      "arrivals": {
+        "6": {
+          "distance": 11,
+          "shortest_path_count": 4
+        }
+      },
+      "nearest_distance": 11,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.16734324369,
+      "path_signature": "sha256:d536bdc7e7fb6e75f2ec4ad8e3575dc3286c53d03dbfe392580e529bd92cebbc"
+    },
+    {
+      "gid": 102,
+      "arrivals": {
+        "6": {
+          "distance": 11,
+          "shortest_path_count": 6
+        }
+      },
+      "nearest_distance": 11,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.16734324369,
+      "path_signature": "sha256:50ba7d6d100d49c4d1fd24cf4af383bf54e4aa67504ea2c5652def9d315299b6"
+    },
+    {
+      "gid": 103,
+      "arrivals": {
+        "6": {
+          "distance": 11,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 11,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.16734324369,
+      "path_signature": "sha256:18b8998820be0ac6e697cea9722857b5d0fdef991d7014b5ade522563d7b840f"
+    },
+    {
+      "gid": 104,
+      "arrivals": {
+        "6": {
+          "distance": 11,
+          "shortest_path_count": 6
+        }
+      },
+      "nearest_distance": 11,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.16734324369,
+      "path_signature": "sha256:9e83261986f1e57d1439f10b3364af06ea70abddebb7555fdeb38fe6d9b3f9a0"
+    },
+    {
+      "gid": 105,
+      "arrivals": {
+        "6": {
+          "distance": 12,
+          "shortest_path_count": 18
+        }
+      },
+      "nearest_distance": 12,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.142241757136,
+      "path_signature": "sha256:9e05221c211a08b2d9ef9777f287088e9cfbc06bc83853766e52be1042e0bdd0"
+    },
+    {
+      "gid": 106,
+      "arrivals": {
+        "6": {
+          "distance": 1,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 1,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.85,
+      "path_signature": "sha256:a4f934dc22db498d012fef6cffad3f77955b4a0b54b2671def4ce400c2301846"
+    },
+    {
+      "gid": 107,
+      "arrivals": {
+        "6": {
+          "distance": 2,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 2,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.7225,
+      "path_signature": "sha256:8161454552005422ac319929c2e45cbe8f58f52475b335c7455421564befc583"
+    },
+    {
+      "gid": 108,
+      "arrivals": {
+        "6": {
+          "distance": 3,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 3,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.614125,
+      "path_signature": "sha256:ec5f37eac843c645e3be51b6597bcfeaf6cf4ae8dbd0beb90a5da73563cf3b64"
+    },
+    {
+      "gid": 109,
+      "arrivals": {
+        "6": {
+          "distance": 2,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 2,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.7225,
+      "path_signature": "sha256:c572247933372e4879039ca684120c12444dc500559ae10f30a005243d0d3ef7"
+    },
+    {
+      "gid": 110,
+      "arrivals": {
+        "6": {
+          "distance": 3,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 3,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.614125,
+      "path_signature": "sha256:a376190f8b1bd37bd788327975d13fe25966fb2847eafaa5c7eeea76f774c4ee"
+    },
+    {
+      "gid": 111,
+      "arrivals": {
+        "6": {
+          "distance": 4,
+          "shortest_path_count": 3
+        }
+      },
+      "nearest_distance": 4,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.52200625,
+      "path_signature": "sha256:fc3762dcc6a902125559471145b2c449d77f65c90791c54d47733ab81ca026b6"
+    },
+    {
+      "gid": 112,
+      "arrivals": {
+        "6": {
+          "distance": 3,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 3,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.614125,
+      "path_signature": "sha256:897389fef0100ead8ca52d1f5dc0df7339d4644ae312f53f8991b909cf8936d1"
+    },
+    {
+      "gid": 113,
+      "arrivals": {
+        "6": {
+          "distance": 4,
+          "shortest_path_count": 3
+        }
+      },
+      "nearest_distance": 4,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.52200625,
+      "path_signature": "sha256:b6fec5b9c3065c398c6b43ebd3bfaf45cfdeefdd72b158acd3053a093d6f088c"
+    },
+    {
+      "gid": 114,
+      "arrivals": {
+        "6": {
+          "distance": 4,
+          "shortest_path_count": 3
+        }
+      },
+      "nearest_distance": 4,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.52200625,
+      "path_signature": "sha256:4b104b0a1e97bb88205e1eb01595655811811fedcbf5e881d18b884de3926abc"
+    },
+    {
+      "gid": 115,
+      "arrivals": {
+        "6": {
+          "distance": 2,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 2,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.7225,
+      "path_signature": "sha256:10eb9a540cbc83031022429c2af094004a133256dfb045e07589a7fe71eac14e"
+    },
+    {
+      "gid": 116,
+      "arrivals": {
+        "6": {
+          "distance": 3,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 3,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.614125,
+      "path_signature": "sha256:a2cc3b517d1fbaa1a9532c93984a19ef511a15f4a691b4e4eedcc28ab8246d06"
+    },
+    {
+      "gid": 117,
+      "arrivals": {
+        "6": {
+          "distance": 4,
+          "shortest_path_count": 3
+        }
+      },
+      "nearest_distance": 4,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.52200625,
+      "path_signature": "sha256:441d19bd9d672b7fa4ffb134b8b3da3219222bc5c0af44bd8bb4ac17fe51ee4f"
+    },
+    {
+      "gid": 118,
+      "arrivals": {
+        "6": {
+          "distance": 3,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 3,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.614125,
+      "path_signature": "sha256:e6fb6708609c86dc3c779182856a4bf0e6bdc71f2e2453bbd0e9a62c67ffbdb1"
+    },
+    {
+      "gid": 119,
+      "arrivals": {
+        "6": {
+          "distance": 3,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 3,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.614125,
+      "path_signature": "sha256:24c7852ff03d1b67a778828dd7b6d314236e832f6a3b789328b35ffcc9a5b1a1"
+    },
+    {
+      "gid": 120,
+      "arrivals": {
+        "6": {
+          "distance": 4,
+          "shortest_path_count": 7
+        }
+      },
+      "nearest_distance": 4,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.52200625,
+      "path_signature": "sha256:7ac7227a982c059fa52878ce0997452d169fa47ee1d7ee7cfd564e6a69d8211c"
+    },
+    {
+      "gid": 121,
+      "arrivals": {
+        "6": {
+          "distance": 4,
+          "shortest_path_count": 3
+        }
+      },
+      "nearest_distance": 4,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.52200625,
+      "path_signature": "sha256:19080150844db8ad9e431ea6a2bc611eae9698d24fc610f0ebbd5d6a2eb3438d"
+    },
+    {
+      "gid": 122,
+      "arrivals": {
+        "6": {
+          "distance": 4,
+          "shortest_path_count": 7
+        }
+      },
+      "nearest_distance": 4,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.52200625,
+      "path_signature": "sha256:1376c9f1506d4d78a315b0d34f405aa1463315bf9062e66ff4140fb81b4b00cf"
+    },
+    {
+      "gid": 123,
+      "arrivals": {
+        "6": {
+          "distance": 3,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 3,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.614125,
+      "path_signature": "sha256:920de95461642eff057b1269dcfd7b9701dec1fff347d9fcee8e5c28c48a35e3"
+    },
+    {
+      "gid": 124,
+      "arrivals": {
+        "6": {
+          "distance": 3,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 3,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.614125,
+      "path_signature": "sha256:ebd2519d79dd8d6368e3edcebb8afe672197df70bd96389d9fd706cf259029bc"
+    },
+    {
+      "gid": 125,
+      "arrivals": {
+        "6": {
+          "distance": 4,
+          "shortest_path_count": 3
+        }
+      },
+      "nearest_distance": 4,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.52200625,
+      "path_signature": "sha256:beb477cb93715f801ddb0a245535d2fdf119a21235664580ce7ac95a48eed39f"
+    },
+    {
+      "gid": 126,
+      "arrivals": {
+        "6": {
+          "distance": 4,
+          "shortest_path_count": 3
+        }
+      },
+      "nearest_distance": 4,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.52200625,
+      "path_signature": "sha256:de70bae7b1758f8e48634dc6a8eeacee4aa6fef167544bed37c56bb2129d234b"
+    },
+    {
+      "gid": 127,
+      "arrivals": {
+        "6": {
+          "distance": 4,
+          "shortest_path_count": 3
+        }
+      },
+      "nearest_distance": 4,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.52200625,
+      "path_signature": "sha256:32cf465ec4b4a124ea30fbc229c8abe2c8b78fec113f439bff30831e7d27900a"
+    },
+    {
+      "gid": 128,
+      "arrivals": {
+        "6": {
+          "distance": 4,
+          "shortest_path_count": 7
+        }
+      },
+      "nearest_distance": 4,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.52200625,
+      "path_signature": "sha256:86bb1bf74255d93a7d6d2621e80c91cfabc957afdefc547d406a22744adb8857"
+    },
+    {
+      "gid": 129,
+      "arrivals": {
+        "6": {
+          "distance": 3,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 3,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.614125,
+      "path_signature": "sha256:44df1cfbe51f6117d14a9a6d5b73afccd198332ab0511ad54b6be21f10e34624"
+    },
+    {
+      "gid": 130,
+      "arrivals": {
+        "6": {
+          "distance": 4,
+          "shortest_path_count": 3
+        }
+      },
+      "nearest_distance": 4,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.52200625,
+      "path_signature": "sha256:318c1e8ad537b871c15b647703d004b7a6d38a7beef4cd53d34ed2a0d93fdd8c"
+    },
+    {
+      "gid": 131,
+      "arrivals": {
+        "6": {
+          "distance": 3,
+          "shortest_path_count": 2
+        }
+      },
+      "nearest_distance": 3,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.614125,
+      "path_signature": "sha256:8da36751fc0de4186d2df5a1eb2b1e9ef794b38d5379be08d0470d2b812e3245"
+    },
+    {
+      "gid": 132,
+      "arrivals": {
+        "6": {
+          "distance": 2,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 2,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.7225,
+      "path_signature": "sha256:26ce580c572233d4d144106a4a8f07da7b6908bab053107377b21ffb6377ac93"
+    },
+    {
+      "gid": 133,
+      "arrivals": {
+        "6": {
+          "distance": 13,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 13,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.120905493566,
+      "path_signature": "sha256:00e1308d3d6f9492f2cb1e93cbc191880f4c3be980506f316bcabd410cf57bb3"
+    },
+    {
+      "gid": 134,
+      "arrivals": {
+        "6": {
+          "distance": 12,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 12,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.142241757136,
+      "path_signature": "sha256:292dd8c12f6eed245910126008216046c3cdb7795daba311469d0e89be54d3b9"
+    },
+    {
+      "gid": 135,
+      "arrivals": {
+        "6": {
+          "distance": 11,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 11,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.16734324369,
+      "path_signature": "sha256:fca0486e81458e2712b7389a8210290e9060ea54b903f7d4d568ed78dc1644dd"
+    },
+    {
+      "gid": 136,
+      "arrivals": {
+        "6": {
+          "distance": 10,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 10,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.196874404341,
+      "path_signature": "sha256:77b55cd51d5d14dd07ba2f1f14a02884a9094ec4388df197d45895cdefba2d91"
+    },
+    {
+      "gid": 137,
+      "arrivals": {
+        "6": {
+          "distance": 9,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 9,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.231616946283,
+      "path_signature": "sha256:acd265f1ca39c87296edbcef38912014dfe775460f3032f8a75e23cb01c30b46"
+    },
+    {
+      "gid": 138,
+      "arrivals": {
+        "6": {
+          "distance": 8,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 8,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.272490525039,
+      "path_signature": "sha256:d2324c938bfa4bf8286a2e380bde12b1245e82a945f7693b26d490e68860e404"
+    },
+    {
+      "gid": 139,
+      "arrivals": {
+        "6": {
+          "distance": 7,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 7,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.320577088281,
+      "path_signature": "sha256:7b34c7094b15d148cf3ae3bbe45337eea0603f8c2017cf77f29e66d10ec20f56"
+    },
+    {
+      "gid": 140,
+      "arrivals": {
+        "6": {
+          "distance": 6,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 6,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.377149515625,
+      "path_signature": "sha256:357376df97a15d2f64a29c73fc4e41d12e6e55760db66d501d6f889594a06a8d"
+    },
+    {
+      "gid": 141,
+      "arrivals": {
+        "6": {
+          "distance": 5,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 5,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.4437053125,
+      "path_signature": "sha256:a3667972c0faa94e0b3257a901b23223fa2e4ba75d969d064f482c7c3174a792"
+    },
+    {
+      "gid": 142,
+      "arrivals": {
+        "6": {
+          "distance": 4,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 4,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.52200625,
+      "path_signature": "sha256:7b7321831c3b120756615d8b5626f1c76e6d4938368cd88591133cab00c3770d"
+    },
+    {
+      "gid": 143,
+      "arrivals": {
+        "6": {
+          "distance": 3,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 3,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.614125,
+      "path_signature": "sha256:fbbca8d3b78eb646aca40705bb3cc1e85a8bc935672890e5383e5f071e150093"
+    },
+    {
+      "gid": 144,
+      "arrivals": {
+        "6": {
+          "distance": 2,
+          "shortest_path_count": 1
+        }
+      },
+      "nearest_distance": 2,
+      "basin": [
+        6
+      ],
+      "interference": false,
+      "activation": 0.7225,
+      "path_signature": "sha256:3c846ac7f09d9807d369934c977d0affd4a34f051a9f467868dd8bfed7ab4db5"
+    }
+  ],
+  "relation_weight_overlay": [
+    {
+      "source": 1,
+      "target": 2,
+      "relation": "H6_RING",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "relation": "H6_RING",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "relation": "H6_RING",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "relation": "H6_RING",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "relation": "H6_RING",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "relation": "H6_RING",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 6,
+      "target": 106,
+      "relation": "ACTIVATION_TO_KC27",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 7,
+      "target": 19,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 7,
+      "target": 91,
+      "relation": "POLE_SUPPORT",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 8,
+      "target": 16,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 8,
+      "target": 20,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 9,
+      "target": 17,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 9,
+      "target": 21,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 10,
+      "target": 22,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 11,
+      "target": 14,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 11,
+      "target": 19,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 12,
+      "target": 13,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 12,
+      "target": 16,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 12,
+      "target": 20,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 13,
+      "target": 17,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 13,
+      "target": 21,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 13,
+      "target": 92,
+      "relation": "POLE_SUPPORT",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 14,
+      "target": 22,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 15,
+      "target": 16,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 15,
+      "target": 18,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 15,
+      "target": 19,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 15,
+      "target": 93,
+      "relation": "POLE_SUPPORT",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 16,
+      "target": 17,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 16,
+      "target": 61,
+      "relation": "INVARIANT_TO_OBSTRUCTION",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 17,
+      "target": 18,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 18,
+      "target": 22,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 19,
+      "target": 22,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 19,
+      "target": 94,
+      "relation": "POLE_SUPPORT",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 20,
+      "target": 21,
+      "relation": "X16_ALGEBRA",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 21,
+      "target": 43,
+      "relation": "RETURN_CLOUD",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 22,
+      "target": 43,
+      "relation": "RESEED_RETURN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 23,
+      "target": 24,
+      "relation": "BR21_LENS",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 23,
+      "target": 25,
+      "relation": "BR21_LENS",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 23,
+      "target": 26,
+      "relation": "BR21_OPERATOR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 23,
+      "target": 43,
+      "relation": "BR21_MIRROR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 24,
+      "target": 27,
+      "relation": "BR21_OPERATOR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 24,
+      "target": 42,
+      "relation": "BR21_MIRROR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 25,
+      "target": 28,
+      "relation": "BR21_OPERATOR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 25,
+      "target": 41,
+      "relation": "BR21_MIRROR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 26,
+      "target": 27,
+      "relation": "BR21_LENS",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 26,
+      "target": 28,
+      "relation": "BR21_LENS",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 26,
+      "target": 29,
+      "relation": "BR21_OPERATOR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 26,
+      "target": 40,
+      "relation": "BR21_MIRROR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 27,
+      "target": 30,
+      "relation": "BR21_OPERATOR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 27,
+      "target": 39,
+      "relation": "BR21_MIRROR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 28,
+      "target": 31,
+      "relation": "BR21_OPERATOR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 28,
+      "target": 38,
+      "relation": "BR21_MIRROR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 29,
+      "target": 30,
+      "relation": "BR21_LENS",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 29,
+      "target": 31,
+      "relation": "BR21_LENS",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 29,
+      "target": 32,
+      "relation": "BR21_OPERATOR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 29,
+      "target": 37,
+      "relation": "BR21_MIRROR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 29,
+      "target": 44,
+      "relation": "NAVIGATE_TO_CARRIER",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 29,
+      "target": 58,
+      "relation": "NAVIGATE_TO_CARRIER",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 30,
+      "target": 36,
+      "relation": "BR21_MIRROR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 31,
+      "target": 34,
+      "relation": "BR21_OPERATOR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 31,
+      "target": 35,
+      "relation": "BR21_MIRROR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 32,
+      "target": 34,
+      "relation": "BR21_LENS",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 32,
+      "target": 34,
+      "relation": "BR21_MIRROR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 32,
+      "target": 35,
+      "relation": "BR21_OPERATOR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 33,
+      "target": 34,
+      "relation": "BR21_LENS",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 33,
+      "target": 36,
+      "relation": "BR21_OPERATOR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 34,
+      "target": 37,
+      "relation": "BR21_OPERATOR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 34,
+      "target": 47,
+      "relation": "TRANSFORM_TO_CARRIER",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 35,
+      "target": 37,
+      "relation": "BR21_LENS",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 35,
+      "target": 38,
+      "relation": "BR21_OPERATOR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 36,
+      "target": 37,
+      "relation": "BR21_LENS",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 36,
+      "target": 39,
+      "relation": "BR21_OPERATOR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 37,
+      "target": 40,
+      "relation": "BR21_OPERATOR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 38,
+      "target": 40,
+      "relation": "BR21_LENS",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 38,
+      "target": 41,
+      "relation": "BR21_OPERATOR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 39,
+      "target": 40,
+      "relation": "BR21_LENS",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 39,
+      "target": 42,
+      "relation": "BR21_OPERATOR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 40,
+      "target": 43,
+      "relation": "BR21_OPERATOR",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 40,
+      "target": 88,
+      "relation": "REPAIR_TO_I08",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 41,
+      "target": 43,
+      "relation": "BR21_LENS",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 41,
+      "target": 44,
+      "relation": "RETURN_TO_CARRIER",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 42,
+      "target": 43,
+      "relation": "BR21_LENS",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 43,
+      "target": 76,
+      "relation": "RETURN_TO_REPLAY",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 43,
+      "target": 81,
+      "relation": "RETURN_TO_IC10",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 43,
+      "target": 141,
+      "relation": "RETURN_TO_SIGNATURE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 44,
+      "target": 45,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 44,
+      "target": 81,
+      "relation": "CARRIER_TO_IDENTITY",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 45,
+      "target": 46,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 47,
+      "target": 48,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 48,
+      "target": 49,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 49,
+      "target": 50,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 50,
+      "target": 51,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 51,
+      "target": 52,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 53,
+      "target": 54,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 54,
+      "target": 55,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 55,
+      "target": 56,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 56,
+      "target": 57,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 57,
+      "target": 58,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 58,
+      "target": 59,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 59,
+      "target": 60,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 60,
+      "target": 61,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 61,
+      "target": 30,
+      "relation": "OBSTRUCTION_ROUTE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 61,
+      "target": 62,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 62,
+      "target": 63,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 64,
+      "target": 65,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 65,
+      "target": 66,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 66,
+      "target": 67,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 67,
+      "target": 68,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 68,
+      "target": 69,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 69,
+      "target": 70,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 70,
+      "target": 71,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 71,
+      "target": 72,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 72,
+      "target": 73,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 73,
+      "target": 74,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 74,
+      "target": 75,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 75,
+      "target": 76,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 76,
+      "target": 77,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 77,
+      "target": 78,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 79,
+      "target": 80,
+      "relation": "F37_RAIL",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 80,
+      "target": 81,
+      "relation": "PUBLICATION_TO_IDENTITY",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 81,
+      "target": 82,
+      "relation": "IC10_CHAIN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 82,
+      "target": 83,
+      "relation": "IC10_CHAIN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 83,
+      "target": 84,
+      "relation": "IC10_CHAIN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 84,
+      "target": 85,
+      "relation": "IC10_CHAIN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 85,
+      "target": 65,
+      "relation": "DRIFT_WARNING",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 85,
+      "target": 86,
+      "relation": "IC10_CHAIN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 86,
+      "target": 87,
+      "relation": "IC10_CHAIN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 87,
+      "target": 88,
+      "relation": "IC10_CHAIN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 88,
+      "target": 89,
+      "relation": "I08_TO_I09",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 88,
+      "target": 89,
+      "relation": "IC10_CHAIN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 89,
+      "target": 90,
+      "relation": "IC10_CHAIN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 90,
+      "target": 119,
+      "relation": "PROMOTION_TO_QSHRINK",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 91,
+      "target": 96,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 92,
+      "target": 95,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 92,
+      "target": 98,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 92,
+      "target": 99,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 93,
+      "target": 96,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 94,
+      "target": 97,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 94,
+      "target": 99,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 94,
+      "target": 100,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 95,
+      "target": 101,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 95,
+      "target": 102,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 97,
+      "target": 102,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 97,
+      "target": 103,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 98,
+      "target": 101,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 98,
+      "target": 104,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 99,
+      "target": 102,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 99,
+      "target": 104,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 100,
+      "target": 103,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 100,
+      "target": 104,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 101,
+      "target": 105,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 102,
+      "target": 105,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 103,
+      "target": 105,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 104,
+      "target": 105,
+      "relation": "KC15_HASSE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 106,
+      "target": 107,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 106,
+      "target": 109,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 106,
+      "target": 115,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 106,
+      "target": 132,
+      "relation": "KC27_J",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 107,
+      "target": 108,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 107,
+      "target": 110,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 107,
+      "target": 116,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 107,
+      "target": 131,
+      "relation": "KC27_J",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 108,
+      "target": 111,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 108,
+      "target": 117,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 108,
+      "target": 130,
+      "relation": "KC27_J",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 109,
+      "target": 110,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 109,
+      "target": 112,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 109,
+      "target": 118,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 109,
+      "target": 129,
+      "relation": "KC27_J",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 110,
+      "target": 111,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 110,
+      "target": 113,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 110,
+      "target": 128,
+      "relation": "KC27_J",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 112,
+      "target": 113,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 112,
+      "target": 121,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 112,
+      "target": 126,
+      "relation": "KC27_J",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 114,
+      "target": 123,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 114,
+      "target": 124,
+      "relation": "KC27_J",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 115,
+      "target": 116,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 115,
+      "target": 118,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 115,
+      "target": 123,
+      "relation": "KC27_J",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 115,
+      "target": 124,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 116,
+      "target": 117,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 116,
+      "target": 122,
+      "relation": "KC27_J",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 116,
+      "target": 125,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 118,
+      "target": 120,
+      "relation": "KC27_J",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 118,
+      "target": 121,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 118,
+      "target": 127,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 119,
+      "target": 120,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 119,
+      "target": 122,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 119,
+      "target": 128,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 119,
+      "target": 144,
+      "relation": "QSHRINK_TO_M12",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 120,
+      "target": 123,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 120,
+      "target": 129,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 122,
+      "target": 123,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 122,
+      "target": 131,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 123,
+      "target": 132,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 124,
+      "target": 125,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 124,
+      "target": 127,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 126,
+      "target": 129,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 128,
+      "target": 129,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 128,
+      "target": 131,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 129,
+      "target": 132,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 130,
+      "target": 131,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 131,
+      "target": 132,
+      "relation": "KC54_EDGE",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 133,
+      "target": 134,
+      "relation": "SSN12_CHAIN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 134,
+      "target": 135,
+      "relation": "SSN12_CHAIN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 135,
+      "target": 136,
+      "relation": "SSN12_CHAIN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 136,
+      "target": 137,
+      "relation": "SSN12_CHAIN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 137,
+      "target": 138,
+      "relation": "SSN12_CHAIN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 138,
+      "target": 139,
+      "relation": "SSN12_CHAIN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 139,
+      "target": 140,
+      "relation": "SSN12_CHAIN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 140,
+      "target": 17,
+      "relation": "HEALING_TO_DEFECT",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 140,
+      "target": 141,
+      "relation": "SSN12_CHAIN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 141,
+      "target": 142,
+      "relation": "SSN12_CHAIN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 142,
+      "target": 143,
+      "relation": "SSN12_CHAIN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 143,
+      "target": 144,
+      "relation": "SSN12_CHAIN",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    },
+    {
+      "source": 144,
+      "target": 1,
+      "relation": "SUCCESSOR_RESEED",
+      "wave_sources": [
+        6
+      ],
+      "weight": 1,
+      "truth_effect": "NONE"
+    }
+  ],
+  "laws": [
+    "weights schedule attention; they do not certify truth",
+    "the overlay is append-only and does not mutate the frozen graph",
+    "route budget bounds traversal; unvisited does not mean nonexistent"
+  ]
+}

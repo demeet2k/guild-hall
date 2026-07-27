@@ -1,0 +1,45 @@
+{
+  "schema": "KC144.INTERNAL-NAV.P06.ROUTES.V1",
+  "routes": [
+    {
+      "id": "P06.R01",
+      "from": "LIVE_CONNECTOR_OBSERVATION",
+      "to": "GID005/H05",
+      "relation": "registers-immutable-occurrence",
+      "inverse": "returns-carrier-source-revision-fragment",
+      "preserves": ["carrier", "source_id", "revision", "fragment", "evidence_root"]
+    },
+    {
+      "id": "P06.R02",
+      "from": "GID005/H05",
+      "to": "GID002/H02",
+      "relation": "submits-coordinate-claim",
+      "inverse": "returns-atlas-match-or-mismatch",
+      "preserves": ["epoch", "gid", "station", "claim_basis"]
+    },
+    {
+      "id": "P06.R03",
+      "from": "GID002/H02",
+      "to": "GID006/H06",
+      "relation": "admits-explicit-source-bound-content",
+      "inverse": "returns-admission-receipt",
+      "preserves": ["exact_excerpt", "gid_token", "station", "source_lineage"]
+    },
+    {
+      "id": "P06.R04",
+      "from": "GID006/H06",
+      "to": "GID143/SSN-M11",
+      "relation": "reports-layered-coverage",
+      "inverse": "returns-open-content-frontier",
+      "preserves": ["structural_coverage", "content_coverage", "source_bound_coverage", "carrier_coverage"]
+    },
+    {
+      "id": "P06.R05",
+      "from": "GID143/SSN-M11",
+      "to": "GID006/H06",
+      "relation": "reenters-with-live-context-manifest",
+      "inverse": "returns-checkpoint-status",
+      "preserves": ["atlas_digests", "observation_digests", "claim_ids", "receipt_prefix"]
+    }
+  ]
+}

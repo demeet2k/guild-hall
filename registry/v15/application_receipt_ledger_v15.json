@@ -1,0 +1,21 @@
+{
+  "schema": "KC144.ApplicationReceiptLedger.V15",
+  "transport_id": "KC144.CANDIDATE.APPLICATION.TRANSPORT.V15",
+  "batch_id": "V11-BATCH::c7e3ae7e8cfd126a75b41b4a",
+  "batch_root": "sha256:b9322c5950d562f7a3f437ed8c939d98506db4edf34446e8332318513bca46b5",
+  "call_manifest_root": "sha256:fc82581375a195d09a58b7769eb33bba719c7f7e4b7ddd7b5276dcf1ce1d6219",
+  "checked_at": "2026-07-27T08:39:35+00:00",
+  "application_count": 0,
+  "admitted_application_count": 0,
+  "held_application_count": 0,
+  "duplicate_application_ids": [],
+  "duplicate_envelope_ids": [],
+  "duplicate_nomination_ids": [],
+  "duplicate_candidate_ids": [],
+  "receipts": [],
+  "admitted_v14_envelope_set_root": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "publication_effect": "NONE",
+  "authority_effect": "NONE",
+  "truth_effect": "NONE",
+  "ledger_root": "sha256:240d32135765bb9dad5879aa18f55d3f28daa6cd91c7f720aee6e41d20939457"
+}

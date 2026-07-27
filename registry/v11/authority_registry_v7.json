@@ -1,0 +1,8 @@
+{
+  "schema": "KC144.AuthorityRegistry.V7",
+  "epoch_id": "EPOCH-B-EIGHT-BLOCK",
+  "keys": [],
+  "revoked_key_ids": [],
+  "law": "no production evidence is admitted without an active pinned Ed25519 key whose scope, namespace, independence, and validity interval cover the signed envelope",
+  "registry_digest": "sha256:491b03e0f2e188bfbc4156dbe6693846fa58e11a1579738bba54d9eeab384fc8"
+}

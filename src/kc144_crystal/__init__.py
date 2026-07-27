@@ -1,0 +1,271 @@
+"""KC144 whole-crystal compiler.
+
+The public surface is deliberately small: generate the lattice, apply typed
+transformations, crystallize the registry, and audit the result.
+"""
+
+from .audit import audit_crystal
+from .application_v15 import (
+    BatchBoundCandidateApplication,
+    CandidateCallBinding,
+    application_publication_manifest,
+    application_publication_manifest_integrity,
+    application_publication_payload,
+    application_publication_payload_integrity,
+    application_receipt_ledger,
+    application_receipt_ledger_integrity,
+    application_signing_bytes,
+    application_transport_contract,
+    verify_batch_bound_application,
+)
+from .bridge2pc import CommitAuthorization, commit_bridge, prepare_bridge_commit
+from .campaign_v8 import (
+    AuthorityEnrollmentProof,
+    authority_enrollment_contract,
+    campaign_manifest,
+    campaign_state,
+    run_to_barrier,
+    validate_campaign_envelope,
+    verify_authority_enrollment,
+)
+from .ceremony_v10 import (
+    ExternalCheckpointReceipt,
+    GovernanceChallenge,
+    GovernanceEnrollmentResponse,
+    GovernanceRatification,
+    activate_governance_society,
+    assemble_pending_society,
+    create_governance_challenge,
+    governance_ceremony_contract,
+    governance_ceremony_plan,
+    governance_ratification_contract,
+    pending_society_integrity,
+    verify_enrollment_response,
+    verify_governance_ratification,
+)
+from .crosswalk import domain_binding_for_subject
+from .dispatch_v11 import (
+    challenge_batch_integrity,
+    governance_challenge_batch_state,
+    governance_dispatch_contract,
+    governance_dispatch_plan,
+    issue_governance_challenge_batch,
+    route_governance_responses,
+)
+from .edge_manifest import freeze_edge_manifest
+from .evidence_v7 import (
+    AuthorityKey,
+    SignedEvidenceEnvelope,
+    admit_signed_envelope,
+    authority_registry_integrity,
+    empty_authority_registry,
+    production_evidence_contract,
+    seal_authority_registry,
+    verify_signed_envelope,
+)
+from .holonomy import measure_holonomy
+from .handoff_v9 import (
+    AuthorityPinProposal,
+    GovernanceApproval,
+    GovernanceMember,
+    empty_governance_registry,
+    governance_registry_integrity,
+    handoff_bundle,
+    handoff_state,
+    pin_authority_from_proposal,
+    run_handoff_to_barrier,
+    seal_governance_registry,
+    source_harvest_contract,
+    threshold_governance_contract,
+    verify_authority_pin_proposal,
+    verify_source_harvest,
+)
+from .handoff_v12 import (
+    participant_handoff_contract,
+    participant_handoff_manifest,
+    participant_handoff_manifest_integrity,
+    participant_handoff_packet,
+    participant_handoff_packet_integrity,
+    verify_response_for_handoff_packet,
+)
+from .lattice import generate_edges, generate_seats
+from .navigation import bridge_registry, navigation_report
+from .nomination_v14 import (
+    SignedCandidateNomination,
+    cohort_packet_assignment_manifest,
+    cohort_packet_assignment_manifest_integrity,
+    nomination_call_manifest,
+    nomination_call_manifest_integrity,
+    nomination_intake_contract,
+    nomination_receipt_ledger,
+    nomination_receipt_ledger_integrity,
+    nomination_role_call,
+    nomination_role_call_integrity,
+    nomination_signing_bytes,
+    verify_signed_candidate_nomination,
+)
+from .population import crystallize
+from .query import QueryBundle, compile_query
+from .repair import (
+    EvidenceAuthority,
+    M12EvidencePacket,
+    admit_evidence,
+    empty_repair_ledger,
+    evidence_packet_contract,
+    repair_plan,
+    verify_repair_ledger,
+)
+from .station import build_station_bodies
+from .session import SessionSpec, cold_reconstruct, compile_session
+from .selection_v13 import (
+    CandidateNomination,
+    candidate_pair_audit,
+    candidate_registry,
+    candidate_registry_integrity,
+    candidate_selection_contract,
+    solve_candidate_cohort,
+    verify_candidate_nomination,
+)
+from .wave import WaveQuery, propagate
+from .v4 import compile_mycelium_framework
+from .v5 import compile_global_state
+from .v6 import compile_repair_framework
+from .v7 import compile_production_evidence_kernel
+from .v8 import compile_parallel_campaign_runtime
+from .v9 import compile_external_handoff_runtime
+from .v10 import compile_governance_ceremony_runtime
+from .v11 import compile_governance_dispatch_runtime
+from .v12 import compile_participant_handoff_runtime
+from .v13 import compile_candidate_selection_runtime
+from .v14 import compile_nomination_intake_runtime
+from .v15 import compile_application_transport_runtime
+from .witness import BridgeWitnessPacket, evaluate_bridge_witness
+
+__all__ = [
+    "WaveQuery",
+    "BridgeWitnessPacket",
+    "CommitAuthorization",
+    "EvidenceAuthority",
+    "AuthorityKey",
+    "AuthorityEnrollmentProof",
+    "AuthorityPinProposal",
+    "GovernanceApproval",
+    "GovernanceMember",
+    "GovernanceChallenge",
+    "GovernanceEnrollmentResponse",
+    "GovernanceRatification",
+    "CandidateNomination",
+    "SignedCandidateNomination",
+    "CandidateCallBinding",
+    "BatchBoundCandidateApplication",
+    "ExternalCheckpointReceipt",
+    "M12EvidencePacket",
+    "SignedEvidenceEnvelope",
+    "QueryBundle",
+    "SessionSpec",
+    "audit_crystal",
+    "build_station_bodies",
+    "bridge_registry",
+    "crystallize",
+    "compile_mycelium_framework",
+    "compile_query",
+    "compile_global_state",
+    "compile_repair_framework",
+    "compile_production_evidence_kernel",
+    "compile_parallel_campaign_runtime",
+    "compile_external_handoff_runtime",
+    "compile_governance_ceremony_runtime",
+    "compile_governance_dispatch_runtime",
+    "compile_participant_handoff_runtime",
+    "compile_candidate_selection_runtime",
+    "compile_nomination_intake_runtime",
+    "compile_application_transport_runtime",
+    "compile_session",
+    "commit_bridge",
+    "cold_reconstruct",
+    "generate_edges",
+    "generate_seats",
+    "measure_holonomy",
+    "navigation_report",
+    "propagate",
+    "evaluate_bridge_witness",
+    "evidence_packet_contract",
+    "empty_repair_ledger",
+    "empty_authority_registry",
+    "empty_governance_registry",
+    "freeze_edge_manifest",
+    "prepare_bridge_commit",
+    "admit_evidence",
+    "admit_signed_envelope",
+    "activate_governance_society",
+    "assemble_pending_society",
+    "authority_enrollment_contract",
+    "authority_registry_integrity",
+    "domain_binding_for_subject",
+    "campaign_manifest",
+    "campaign_state",
+    "candidate_pair_audit",
+    "candidate_registry",
+    "candidate_registry_integrity",
+    "candidate_selection_contract",
+    "application_publication_manifest",
+    "application_publication_manifest_integrity",
+    "application_publication_payload",
+    "application_publication_payload_integrity",
+    "application_receipt_ledger",
+    "application_receipt_ledger_integrity",
+    "application_signing_bytes",
+    "application_transport_contract",
+    "cohort_packet_assignment_manifest",
+    "cohort_packet_assignment_manifest_integrity",
+    "create_governance_challenge",
+    "challenge_batch_integrity",
+    "governance_challenge_batch_state",
+    "governance_dispatch_contract",
+    "governance_dispatch_plan",
+    "issue_governance_challenge_batch",
+    "route_governance_responses",
+    "governance_registry_integrity",
+    "governance_ceremony_contract",
+    "governance_ceremony_plan",
+    "governance_ratification_contract",
+    "pending_society_integrity",
+    "handoff_bundle",
+    "handoff_state",
+    "nomination_call_manifest",
+    "nomination_call_manifest_integrity",
+    "nomination_intake_contract",
+    "nomination_receipt_ledger",
+    "nomination_receipt_ledger_integrity",
+    "nomination_role_call",
+    "nomination_role_call_integrity",
+    "nomination_signing_bytes",
+    "participant_handoff_contract",
+    "participant_handoff_manifest",
+    "participant_handoff_manifest_integrity",
+    "participant_handoff_packet",
+    "participant_handoff_packet_integrity",
+    "verify_response_for_handoff_packet",
+    "production_evidence_contract",
+    "repair_plan",
+    "run_to_barrier",
+    "run_handoff_to_barrier",
+    "verify_repair_ledger",
+    "seal_authority_registry",
+    "seal_governance_registry",
+    "source_harvest_contract",
+    "solve_candidate_cohort",
+    "threshold_governance_contract",
+    "verify_signed_envelope",
+    "validate_campaign_envelope",
+    "verify_authority_enrollment",
+    "verify_authority_pin_proposal",
+    "verify_source_harvest",
+    "verify_candidate_nomination",
+    "verify_signed_candidate_nomination",
+    "verify_batch_bound_application",
+    "verify_enrollment_response",
+    "verify_governance_ratification",
+    "pin_authority_from_proposal",
+]
+__version__ = "15.0.0"

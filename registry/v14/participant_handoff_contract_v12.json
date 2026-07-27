@@ -1,0 +1,21 @@
+{
+  "schema": "KC144.ParticipantHandoffContract.V12",
+  "handoff_id": "KC144.PARTICIPANT.HANDOFF.V12",
+  "parent_dispatch_id": "KC144.GOVERNANCE.DISPATCH.V11",
+  "roles": [
+    "CUSTODIAN",
+    "INDEPENDENT_REVIEWER",
+    "REPLAY_WITNESS",
+    "SOURCE_AUDITOR",
+    "RETURN_AUDITOR"
+  ],
+  "packet_count": 5,
+  "selection_law": "recipient selection is external; no packet may name, infer, or claim a participant before identity and independence are actually established",
+  "delivery_law": "packet preparation is not addressing or delivery; delivery is observed only by a batch-matched signed enrollment response or separate external transport evidence",
+  "private_key_law": "participants generate and retain their own ED25519 private keys; private keys are never returned",
+  "return_law": "a return must contain the complete signed V10 enrollment response and exact issued challenge; partial attestations do not fill a governance seat",
+  "decline_law": "decline, conflict, expiration, malformed return, and silence remain distinct non-counting outcomes",
+  "activation_law": "V12 prepares and verifies handoffs only; governance activation still requires five responses, pending-society assembly, and two-anchor V10 ratification",
+  "truth_effect": "NONE",
+  "contract_digest": "sha256:44b247f972c80b12b8744891dd01ea5550a0e84002d20edd09360117ee179ecf"
+}

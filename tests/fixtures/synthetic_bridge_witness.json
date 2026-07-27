@@ -1,0 +1,28 @@
+{
+  "packet_id": "SYNTHETIC-TEST-BR001",
+  "bridge_id": "BR001",
+  "source": 41,
+  "target": 81,
+  "transport": "synthetic identity-preserving test transport",
+  "preserved_invariants": [
+    "GID identity",
+    "raw CID"
+  ],
+  "declared_loss": "NONE_IN_SYNTHETIC_TEST_CORRIDOR",
+  "corridor": "SYNTHETIC_TEST_ONLY",
+  "return_path": [
+    81,
+    41
+  ],
+  "attestations": [
+    {
+      "witness_id": "SYNTHETIC-W01",
+      "evidence_root": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "author_id": "author-A",
+      "verifier_id": "verifier-B",
+      "replay_class": "B3",
+      "signature_status": "VERIFIED",
+      "authority": true
+    }
+  ]
+}

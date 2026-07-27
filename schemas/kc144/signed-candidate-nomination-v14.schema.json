@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/signed-candidate-nomination-v14.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "envelope_id", "nomination", "signature_domain",
+    "signature_b64"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.SignedCandidateNomination.V14"},
+    "envelope_id": {"type": "string", "minLength": 1},
+    "nomination": {"$ref": "candidate-nomination-v13.schema.json"},
+    "signature_domain": {
+      "const": "KC144.V14.CANDIDATE_NOMINATION"
+    },
+    "signature_b64": {"type": "string", "minLength": 86}
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/run-to-barrier-v8.schema.json",
+  "title": "KC144 V8 run-to-barrier report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "campaign_id",
+    "campaign_manifest_digest",
+    "status",
+    "initial_ledger_digest",
+    "final_ledger_digest",
+    "receipts",
+    "admitted_shards",
+    "held_shards",
+    "unknown_shards",
+    "deferred_shards",
+    "net_delta",
+    "barrier",
+    "next_seed",
+    "production_truth_effect",
+    "frozen_crystal_mutated",
+    "report_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.RunToBarrierReport.V8"},
+    "campaign_id": {"const": "KC144.M12.PARALLEL.CAMPAIGN.V8"},
+    "campaign_manifest_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "status": {"enum": ["BARRIER", "COMPLETE"]},
+    "initial_ledger_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "final_ledger_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "receipts": {"type": "array"},
+    "admitted_shards": {"type": "array", "uniqueItems": true},
+    "held_shards": {"type": "array", "uniqueItems": true},
+    "unknown_shards": {"type": "array", "uniqueItems": true},
+    "deferred_shards": {"type": "array", "uniqueItems": true},
+    "net_delta": {"type": "object"},
+    "barrier": {"type": "string", "minLength": 1},
+    "next_seed": {"type": "string", "minLength": 1},
+    "production_truth_effect": {
+      "enum": ["NONE", "EVIDENCE_OVERLAY_ONLY"]
+    },
+    "frozen_crystal_mutated": {"const": false},
+    "report_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

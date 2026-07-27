@@ -1,0 +1,38 @@
+{
+  "schema": "KC144.SourceHarvestContract.V9",
+  "harvest_law": "one immutable source object is acquired and hashed once, then fanned out through individually witnessed subject claims",
+  "source_fields": [
+    "source_id",
+    "source_ref",
+    "content_digest",
+    "acquired_at",
+    "provenance_root",
+    "independent"
+  ],
+  "claim_fields": [
+    "subject_id",
+    "extraction_digest",
+    "relevance_digest",
+    "residual_state"
+  ],
+  "residual_states": [
+    "NONE",
+    "VALUE_MISSING",
+    "CARRIER_UNRESOLVED",
+    "SEMANTICS_CONTESTED",
+    "SOURCE_INACCESSIBLE",
+    "BOUNDARY_UNTESTED",
+    "RETURN_UNVERIFIED",
+    "ORDER_UNTESTED"
+  ],
+  "contamination_laws": [
+    "LATEST_WINS_FORBIDDEN",
+    "NO_BRANCH_ERASURE",
+    "NO_SOURCE_INFLATION",
+    "NO_AESTHETIC_PROMOTION",
+    "NO_MISSING_MEASUREMENT_AS_ZERO",
+    "NO_PRODUCTION_FIXTURE_OR_PLACEHOLDER"
+  ],
+  "truth_effect": "NONE_UNTIL_SIGNED_ENVELOPE_ADMISSION",
+  "contract_digest": "sha256:2ff9598c7558a9c72760cfa805d52d6b8d1505b6f56c3653dc42f9ae0ea46cb1"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "KC144.INTERNAL-NAV.P06.LAWS.V1",
+  "laws": [
+    {"id": "LC01", "predicate": "atlas_cell_identity_is_epoch_plus_gid"},
+    {"id": "LC02", "predicate": "atlas_registration_is_structural_and_never_counts_as_content"},
+    {"id": "LC03", "predicate": "observation_identity_binds_carrier_source_revision_and_fragment"},
+    {"id": "LC04", "predicate": "same_observation_identity_with_changed_payload_is_collision"},
+    {"id": "LC05", "predicate": "new_revision_appends_lineage_and_never_overwrites_predecessor"},
+    {"id": "LC06", "predicate": "explicit_coordinate_admission_requires_exact_excerpt_gid_token"},
+    {"id": "LC07", "predicate": "station_must_match_canonical_station_or_registered_alias"},
+    {"id": "LC08", "predicate": "derived_search_candidate_and_unmapped_claims_are_quarantined"},
+    {"id": "LC09", "predicate": "search_hit_is_retrieved_content_not_source_bound_content"},
+    {"id": "LC10", "predicate": "carrier_coverage_does_not_imply_gid_content_coverage"},
+    {"id": "LC11", "predicate": "checkpoint_commits_to_atlas_observation_and_claim_manifests"},
+    {"id": "LC12", "predicate": "missing_or_changed_checkpointed_source_observation_is_source_decay"},
+    {"id": "LC13", "predicate": "monotonic_live_context_addition_yields_valid_with_drift"},
+    {"id": "LC14", "predicate": "same_evidence_root_never_counts_as_independent_witnesses"},
+    {"id": "LC15", "predicate": "connector_result_metadata_is_preserved_without_raw_credential_material"}
+  ]
+}

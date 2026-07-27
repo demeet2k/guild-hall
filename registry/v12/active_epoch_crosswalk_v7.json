@@ -1,0 +1,790 @@
+{
+  "schema": "KC144.ActiveEpochCrosswalk.V7",
+  "epoch_id": "EPOCH-B-EIGHT-BLOCK",
+  "epoch_census": "6+16+21+37+10+15+27+12",
+  "kc15": {
+    "runtime_view": "CARDINALITY_GRADED",
+    "canonical_view": "BINARY_LSB_FIRST",
+    "entries": [
+      {
+        "runtime_gid": 91,
+        "canonical_gid": 91,
+        "support": [
+          "11"
+        ],
+        "runtime_station": "{11}",
+        "canonical_label": "Support Mask 1000",
+        "relation": "IDENTITY"
+      },
+      {
+        "runtime_gid": 92,
+        "canonical_gid": 92,
+        "support": [
+          "10"
+        ],
+        "runtime_station": "{10}",
+        "canonical_label": "Support Mask 0100",
+        "relation": "IDENTITY"
+      },
+      {
+        "runtime_gid": 93,
+        "canonical_gid": 94,
+        "support": [
+          "00"
+        ],
+        "runtime_station": "{00}",
+        "canonical_label": "Support Mask 0010",
+        "relation": "TYPED_PERMUTATION"
+      },
+      {
+        "runtime_gid": 94,
+        "canonical_gid": 98,
+        "support": [
+          "01"
+        ],
+        "runtime_station": "{01}",
+        "canonical_label": "Support Mask 0001",
+        "relation": "TYPED_PERMUTATION"
+      },
+      {
+        "runtime_gid": 95,
+        "canonical_gid": 93,
+        "support": [
+          "11",
+          "10"
+        ],
+        "runtime_station": "{11,10}",
+        "canonical_label": "Support Mask 1100",
+        "relation": "TYPED_PERMUTATION"
+      },
+      {
+        "runtime_gid": 96,
+        "canonical_gid": 95,
+        "support": [
+          "11",
+          "00"
+        ],
+        "runtime_station": "{11,00}",
+        "canonical_label": "Support Mask 1010",
+        "relation": "TYPED_PERMUTATION"
+      },
+      {
+        "runtime_gid": 97,
+        "canonical_gid": 99,
+        "support": [
+          "11",
+          "01"
+        ],
+        "runtime_station": "{11,01}",
+        "canonical_label": "Support Mask 1001",
+        "relation": "TYPED_PERMUTATION"
+      },
+      {
+        "runtime_gid": 98,
+        "canonical_gid": 96,
+        "support": [
+          "10",
+          "00"
+        ],
+        "runtime_station": "{10,00}",
+        "canonical_label": "Support Mask 0110",
+        "relation": "TYPED_PERMUTATION"
+      },
+      {
+        "runtime_gid": 99,
+        "canonical_gid": 100,
+        "support": [
+          "10",
+          "01"
+        ],
+        "runtime_station": "{10,01}",
+        "canonical_label": "Support Mask 0101",
+        "relation": "TYPED_PERMUTATION"
+      },
+      {
+        "runtime_gid": 100,
+        "canonical_gid": 102,
+        "support": [
+          "00",
+          "01"
+        ],
+        "runtime_station": "{00,01}",
+        "canonical_label": "Support Mask 0011",
+        "relation": "TYPED_PERMUTATION"
+      },
+      {
+        "runtime_gid": 101,
+        "canonical_gid": 97,
+        "support": [
+          "11",
+          "10",
+          "00"
+        ],
+        "runtime_station": "{11,10,00}",
+        "canonical_label": "Support Mask 1110",
+        "relation": "TYPED_PERMUTATION"
+      },
+      {
+        "runtime_gid": 102,
+        "canonical_gid": 101,
+        "support": [
+          "11",
+          "10",
+          "01"
+        ],
+        "runtime_station": "{11,10,01}",
+        "canonical_label": "Support Mask 1101",
+        "relation": "TYPED_PERMUTATION"
+      },
+      {
+        "runtime_gid": 103,
+        "canonical_gid": 103,
+        "support": [
+          "11",
+          "00",
+          "01"
+        ],
+        "runtime_station": "{11,00,01}",
+        "canonical_label": "Support Mask 1011",
+        "relation": "IDENTITY"
+      },
+      {
+        "runtime_gid": 104,
+        "canonical_gid": 104,
+        "support": [
+          "10",
+          "00",
+          "01"
+        ],
+        "runtime_station": "{10,00,01}",
+        "canonical_label": "Support Mask 0111",
+        "relation": "IDENTITY"
+      },
+      {
+        "runtime_gid": 105,
+        "canonical_gid": 105,
+        "support": [
+          "11",
+          "10",
+          "00",
+          "01"
+        ],
+        "runtime_station": "{11,10,00,01}",
+        "canonical_label": "Support Mask 1111",
+        "relation": "IDENTITY"
+      }
+    ],
+    "bijection": true,
+    "relocated": 10
+  },
+  "kc27": {
+    "runtime_view": "SIGNED_XYZ",
+    "canonical_view": "TERNARY_ABC",
+    "entries": [
+      {
+        "gid": 106,
+        "station": "P00",
+        "runtime_xyz": [
+          -1,
+          -1,
+          -1
+        ],
+        "canonical_abc": [
+          0,
+          0,
+          0
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Semantic Coordinate 000"
+      },
+      {
+        "gid": 107,
+        "station": "P01",
+        "runtime_xyz": [
+          0,
+          -1,
+          -1
+        ],
+        "canonical_abc": [
+          0,
+          0,
+          1
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Semantic Coordinate 001"
+      },
+      {
+        "gid": 108,
+        "station": "P02",
+        "runtime_xyz": [
+          1,
+          -1,
+          -1
+        ],
+        "canonical_abc": [
+          0,
+          0,
+          2
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Semantic Coordinate 002"
+      },
+      {
+        "gid": 109,
+        "station": "P03",
+        "runtime_xyz": [
+          -1,
+          0,
+          -1
+        ],
+        "canonical_abc": [
+          0,
+          1,
+          0
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Semantic Coordinate 010"
+      },
+      {
+        "gid": 110,
+        "station": "P04",
+        "runtime_xyz": [
+          0,
+          0,
+          -1
+        ],
+        "canonical_abc": [
+          0,
+          1,
+          1
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Semantic Coordinate 011"
+      },
+      {
+        "gid": 111,
+        "station": "P05",
+        "runtime_xyz": [
+          1,
+          0,
+          -1
+        ],
+        "canonical_abc": [
+          0,
+          1,
+          2
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Semantic Coordinate 012"
+      },
+      {
+        "gid": 112,
+        "station": "P06",
+        "runtime_xyz": [
+          -1,
+          1,
+          -1
+        ],
+        "canonical_abc": [
+          0,
+          2,
+          0
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Semantic Coordinate 020"
+      },
+      {
+        "gid": 113,
+        "station": "P07",
+        "runtime_xyz": [
+          0,
+          1,
+          -1
+        ],
+        "canonical_abc": [
+          0,
+          2,
+          1
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Semantic Coordinate 021"
+      },
+      {
+        "gid": 114,
+        "station": "P08",
+        "runtime_xyz": [
+          1,
+          1,
+          -1
+        ],
+        "canonical_abc": [
+          0,
+          2,
+          2
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Differential, Cohomological, and Boundary Calculus"
+      },
+      {
+        "gid": 115,
+        "station": "P09",
+        "runtime_xyz": [
+          -1,
+          -1,
+          0
+        ],
+        "canonical_abc": [
+          1,
+          0,
+          0
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Addressing, Random Access, and Seed Retrieval"
+      },
+      {
+        "gid": 116,
+        "station": "P10",
+        "runtime_xyz": [
+          0,
+          -1,
+          0
+        ],
+        "canonical_abc": [
+          1,
+          0,
+          1
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "BR21 Peer Runtime"
+      },
+      {
+        "gid": 117,
+        "station": "P11",
+        "runtime_xyz": [
+          1,
+          -1,
+          0
+        ],
+        "canonical_abc": [
+          1,
+          0,
+          2
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "IC10 Promotion-Compiler Index"
+      },
+      {
+        "gid": 118,
+        "station": "P12",
+        "runtime_xyz": [
+          -1,
+          0,
+          0
+        ],
+        "canonical_abc": [
+          1,
+          1,
+          0
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "CUT Branch-Complete Navigation"
+      },
+      {
+        "gid": 119,
+        "station": "P13",
+        "runtime_xyz": [
+          0,
+          0,
+          0
+        ],
+        "canonical_abc": [
+          1,
+          1,
+          1
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Codec, Compression, and QSHRINK"
+      },
+      {
+        "gid": 120,
+        "station": "P14",
+        "runtime_xyz": [
+          1,
+          0,
+          0
+        ],
+        "canonical_abc": [
+          1,
+          1,
+          2
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Memory, Merkle, and Content Addressing"
+      },
+      {
+        "gid": 121,
+        "station": "P15",
+        "runtime_xyz": [
+          -1,
+          1,
+          0
+        ],
+        "canonical_abc": [
+          1,
+          2,
+          0
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Semantic Coordinate 120"
+      },
+      {
+        "gid": 122,
+        "station": "P16",
+        "runtime_xyz": [
+          0,
+          1,
+          0
+        ],
+        "canonical_abc": [
+          1,
+          2,
+          1
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Semantic Coordinate 121"
+      },
+      {
+        "gid": 123,
+        "station": "P17",
+        "runtime_xyz": [
+          1,
+          1,
+          0
+        ],
+        "canonical_abc": [
+          1,
+          2,
+          2
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Semantic Coordinate 122"
+      },
+      {
+        "gid": 124,
+        "station": "P18",
+        "runtime_xyz": [
+          -1,
+          -1,
+          1
+        ],
+        "canonical_abc": [
+          2,
+          0,
+          0
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Semantic Coordinate 200"
+      },
+      {
+        "gid": 125,
+        "station": "P19",
+        "runtime_xyz": [
+          0,
+          -1,
+          1
+        ],
+        "canonical_abc": [
+          2,
+          0,
+          1
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Semantic Coordinate 201"
+      },
+      {
+        "gid": 126,
+        "station": "P20",
+        "runtime_xyz": [
+          1,
+          -1,
+          1
+        ],
+        "canonical_abc": [
+          2,
+          0,
+          2
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Semantic Coordinate 202"
+      },
+      {
+        "gid": 127,
+        "station": "P21",
+        "runtime_xyz": [
+          -1,
+          0,
+          1
+        ],
+        "canonical_abc": [
+          2,
+          1,
+          0
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Semantic Coordinate 210"
+      },
+      {
+        "gid": 128,
+        "station": "P22",
+        "runtime_xyz": [
+          0,
+          0,
+          1
+        ],
+        "canonical_abc": [
+          2,
+          1,
+          1
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Semantic Coordinate 211"
+      },
+      {
+        "gid": 129,
+        "station": "P23",
+        "runtime_xyz": [
+          1,
+          0,
+          1
+        ],
+        "canonical_abc": [
+          2,
+          1,
+          2
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Semantic Coordinate 212"
+      },
+      {
+        "gid": 130,
+        "station": "P24",
+        "runtime_xyz": [
+          -1,
+          1,
+          1
+        ],
+        "canonical_abc": [
+          2,
+          2,
+          0
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Semantic Coordinate 220"
+      },
+      {
+        "gid": 131,
+        "station": "P25",
+        "runtime_xyz": [
+          0,
+          1,
+          1
+        ],
+        "canonical_abc": [
+          2,
+          2,
+          1
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Semantic Coordinate 221"
+      },
+      {
+        "gid": 132,
+        "station": "P26",
+        "runtime_xyz": [
+          1,
+          1,
+          1
+        ],
+        "canonical_abc": [
+          2,
+          2,
+          2
+        ],
+        "transform": "(a,b,c)=(z+1,y+1,x+1)",
+        "exact": true,
+        "canonical_label": "Semantic Coordinate 222"
+      }
+    ],
+    "exact": true
+  },
+  "ssn12": {
+    "relation": "PAIRED_ROLE_VIEWS",
+    "entries": [
+      {
+        "gid": 133,
+        "station": "M01",
+        "runtime_instrument_role": "node-state ledger",
+        "canonical_registry_role": "Node-State and Station-Maturity Registry",
+        "relation": "RUNTIME_INSTRUMENT_PROJECTS_TO_CANONICAL_REGISTRY",
+        "overwrite_allowed": false
+      },
+      {
+        "gid": 134,
+        "station": "M02",
+        "runtime_instrument_role": "edge-state ledger",
+        "canonical_registry_role": "Edge-State, Bridge-State, and Route-Class Registry",
+        "relation": "RUNTIME_INSTRUMENT_PROJECTS_TO_CANONICAL_REGISTRY",
+        "overwrite_allowed": false
+      },
+      {
+        "gid": 135,
+        "station": "M03",
+        "runtime_instrument_role": "parallel wave engine",
+        "canonical_registry_role": "Epoch, Alias, and Coordinate-Crosswalk Registry",
+        "relation": "RUNTIME_INSTRUMENT_PROJECTS_TO_CANONICAL_REGISTRY",
+        "overwrite_allowed": false
+      },
+      {
+        "gid": 136,
+        "station": "M04",
+        "runtime_instrument_role": "in-between region ledger",
+        "canonical_registry_role": "Liminal, Disagreement, and J-Space Boundary Registry",
+        "relation": "RUNTIME_INSTRUMENT_PROJECTS_TO_CANONICAL_REGISTRY",
+        "overwrite_allowed": false
+      },
+      {
+        "gid": 137,
+        "station": "M05",
+        "runtime_instrument_role": "hybrid-density map",
+        "canonical_registry_role": "Activation, Observer, and Coverage Map",
+        "relation": "RUNTIME_INSTRUMENT_PROJECTS_TO_CANONICAL_REGISTRY",
+        "overwrite_allowed": false
+      },
+      {
+        "gid": 138,
+        "station": "M06",
+        "runtime_instrument_role": "thought-pattern matrix",
+        "canonical_registry_role": "Branch, Tombstone, Quarantine, and Rejected-Route Store",
+        "relation": "RUNTIME_INSTRUMENT_PROJECTS_TO_CANONICAL_REGISTRY",
+        "overwrite_allowed": false
+      },
+      {
+        "gid": 139,
+        "station": "M07",
+        "runtime_instrument_role": "J-space commitment boundary",
+        "canonical_registry_role": "Defect, Obligation, Evidence-Debt, and Repair Scheduler",
+        "relation": "RUNTIME_INSTRUMENT_PROJECTS_TO_CANONICAL_REGISTRY",
+        "overwrite_allowed": false
+      },
+      {
+        "gid": 140,
+        "station": "M08",
+        "runtime_instrument_role": "healing and gap ledger",
+        "canonical_registry_role": "Healing Route and Unresolved-Bridge Resolver",
+        "relation": "RUNTIME_INSTRUMENT_PROJECTS_TO_CANONICAL_REGISTRY",
+        "overwrite_allowed": false
+      },
+      {
+        "gid": 141,
+        "station": "M09",
+        "runtime_instrument_role": "path-signature registry",
+        "canonical_registry_role": "Path-Signature, Traversal, and Route Ledger",
+        "relation": "RUNTIME_INSTRUMENT_PROJECTS_TO_CANONICAL_REGISTRY",
+        "overwrite_allowed": false
+      },
+      {
+        "gid": 142,
+        "station": "M10",
+        "runtime_instrument_role": "projective-synapse map",
+        "canonical_registry_role": "Replay, Replica, and Cold-Boot Observatory",
+        "relation": "RUNTIME_INSTRUMENT_PROJECTS_TO_CANONICAL_REGISTRY",
+        "overwrite_allowed": false
+      },
+      {
+        "gid": 143,
+        "station": "M11",
+        "runtime_instrument_role": "route-coverage audit",
+        "canonical_registry_role": "Merge, Deployment, Authority, and Release Receipt",
+        "relation": "RUNTIME_INSTRUMENT_PROJECTS_TO_CANONICAL_REGISTRY",
+        "overwrite_allowed": false
+      },
+      {
+        "gid": 144,
+        "station": "M12",
+        "runtime_instrument_role": "solid-state certificate",
+        "canonical_registry_role": "Successor Certificate, Global Seed, and Prime Reentry",
+        "relation": "RUNTIME_INSTRUMENT_PROJECTS_TO_CANONICAL_REGISTRY",
+        "overwrite_allowed": false
+      }
+    ],
+    "collapse_forbidden": true
+  },
+  "f37_branch_ledger": {
+    "entries": [
+      {
+        "gid": 63,
+        "station": "F20",
+        "canonical_label": "G2 Reduced-Transport Geometry",
+        "preserved_branches": [
+          "Berger holonomy / G2 reduced transport",
+          "Fisher Information"
+        ],
+        "status": "CONTESTED"
+      },
+      {
+        "gid": 70,
+        "station": "F27",
+        "canonical_label": "Dijkgraaf–Witten Finite-Gauge / Meta-Liminal",
+        "preserved_branches": [
+          "Dijkgraaf-Witten finite gauge envelope",
+          "Meta-Liminal Tower"
+        ],
+        "status": "CONTESTED_COMPOSITE"
+      },
+      {
+        "gid": 73,
+        "station": "F30",
+        "canonical_label": "Moonshine and Graded-Representation Memory",
+        "preserved_branches": [
+          "moonshine as carrier identity",
+          "moonshine as supported property"
+        ],
+        "status": "UNRESOLVED_SOURCE_ROLE"
+      }
+    ],
+    "latest_wins_forbidden": true
+  },
+  "laws": [
+    "a crosswalk transports identity but does not promote content",
+    "runtime and canonical views remain addressable after translation",
+    "conflicted carrier branches survive until a signed adjudication",
+    "the frozen V6 crystal is not mutated"
+  ],
+  "crosswalk_digest": "sha256:ceaefdd844bdccd433be8e620567a9a1b04749a8437ba79eee92a0b15fea3344"
+}

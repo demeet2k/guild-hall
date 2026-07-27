@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/traversal-session-v5.schema.json",
+  "title": "KC144 V5 traversal session",
+  "type": "object",
+  "required": [
+    "schema",
+    "spec",
+    "crystal_digest",
+    "edge_manifest_digest",
+    "receipts",
+    "receipt_root",
+    "observatory",
+    "truth_effect",
+    "session_digest",
+    "reentry_seed"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.TraversalSession.V5"},
+    "spec": {"$ref": "session-spec-v5.schema.json"},
+    "crystal_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "edge_manifest_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "receipts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "sequence",
+          "previous_receipt_digest",
+          "query",
+          "compiled_result_digest",
+          "status",
+          "explicit_visited_nodes",
+          "explicit_edges",
+          "wave_reached_nodes",
+          "neural_relation_overlay",
+          "route_signature",
+          "branch_ledger",
+          "unresolved",
+          "truth_effect",
+          "receipt_digest"
+        ],
+        "properties": {
+          "sequence": {"type": "integer", "minimum": 1},
+          "previous_receipt_digest": {"type": "string"},
+          "query": {"$ref": "query-bundle-v4.schema.json"},
+          "status": {"enum": ["COMPILED", "REFUSED"]},
+          "truth_effect": {"const": "NONE"},
+          "receipt_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "receipt_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "observatory": {
+      "type": "object",
+      "minProperties": 12,
+      "maxProperties": 12,
+      "required": [
+        "M01_NODE_STATE_LEDGER",
+        "M02_EDGE_STATE_LEDGER",
+        "M03_PARALLEL_WAVE_ENGINE",
+        "M04_IN_BETWEEN_REGION_LEDGER",
+        "M05_HYBRID_DENSITY_MAP",
+        "M06_THOUGHT_PATTERN_MATRIX",
+        "M07_COMMITMENT_BOUNDARY",
+        "M08_HEALING_AND_GAP_LEDGER",
+        "M09_PATH_SIGNATURE_REGISTRY",
+        "M10_PROJECTIVE_SYNAPSE_MAP",
+        "M11_ROUTE_COVERAGE_AUDIT",
+        "M12_SOLID_STATE"
+      ]
+    },
+    "truth_effect": {"const": "NONE"},
+    "session_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "reentry_seed": {"$ref": "reentry-seed-v5.schema.json"}
+  }
+}

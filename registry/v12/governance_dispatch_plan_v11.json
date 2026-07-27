@@ -1,0 +1,17 @@
+{
+  "schema": "KC144.GovernanceDispatchPlan.V11",
+  "dispatch_id": "KC144.GOVERNANCE.DISPATCH.V11",
+  "parent_ceremony_id": "KC144.GOVERNANCE.CEREMONY.V10",
+  "dispatch_contract_digest": "sha256:8b7982cc2b38a8f23740c98bfbbeab9020650478dbbdf29bea70b03649af8bfb",
+  "authority_registry_digest": "sha256:491b03e0f2e188bfbc4156dbe6693846fa58e11a1579738bba54d9eeab384fc8",
+  "handoff_bundle_root": "sha256:5a26b8be43df7df045c0a9beb4455b66b1e878468b74c1d1877ed5d789d6aea7",
+  "batch_id": "V11-BATCH::c7e3ae7e8cfd126a75b41b4a",
+  "batch_root": "sha256:b9322c5950d562f7a3f437ed8c939d98506db4edf34446e8332318513bca46b5",
+  "status": "AWAITING_EXTERNAL_RESPONSES",
+  "barrier": "FIVE_INDEPENDENT_PARTICIPANT_RESPONSES_REQUIRED",
+  "next_seed": "KC144.V11::AWAIT-FIVE-SIGNED-ROLE-BOUND-RESPONSES",
+  "parallelism": "ALL_FIVE_ROLE_RESPONSES_ROUTE_IN_ONE_WAVE",
+  "governance_activated": false,
+  "truth_effect": "NONE",
+  "plan_digest": "sha256:50756c4d90f174dfbf723f4f4cea2ec4404ea4bdb4bbe685373141b50b3c4fb2"
+}

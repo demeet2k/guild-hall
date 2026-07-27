@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/candidate-nomination-registry-v13.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "selection_id", "nominations", "nomination_count",
+    "authority_effect", "truth_effect", "registry_root"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.CandidateNominationRegistry.V13"},
+    "selection_id": {
+      "const": "KC144.CANDIDATE.COHORT.SELECTION.V13"
+    },
+    "nominations": {
+      "type": "array",
+      "items": {"$ref": "candidate-nomination-v13.schema.json"}
+    },
+    "nomination_count": {"type": "integer", "minimum": 0},
+    "authority_effect": {"const": "NONE"},
+    "truth_effect": {"const": "NONE"},
+    "registry_root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

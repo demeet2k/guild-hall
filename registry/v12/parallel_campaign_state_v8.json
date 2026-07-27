@@ -1,0 +1,212 @@
+{
+  "schema": "KC144.ParallelCampaignState.V8",
+  "campaign_id": "KC144.M12.PARALLEL.CAMPAIGN.V8",
+  "campaign_manifest_digest": "sha256:4f8442c5de3c65fe6e04fb80421b34f6a4b03bf82ec96de3bad43b79893a071e",
+  "namespace": "PRODUCTION",
+  "ledger_digest": "sha256:b76c6a986e18d7ec0b000780c220b913484c5888c41d3b431302ea844664afa6",
+  "authority_registry_digest": "sha256:491b03e0f2e188bfbc4156dbe6693846fa58e11a1579738bba54d9eeab384fc8",
+  "eligible_authority_ids": [],
+  "completed_shards": 0,
+  "total_shards": 16,
+  "admitted_campaign_packets": 0,
+  "total_campaign_packets": 232,
+  "structurally_ready_shards": [
+    "A_BRIDGE_ALL",
+    "A_DOMAIN_F37_CLEAR",
+    "A_DOMAIN_F37_ADJUDICATED",
+    "A_DOMAIN_KC15",
+    "A_DOMAIN_KC27",
+    "A_DOMAIN_SSN12",
+    "A_REPLAY_H6",
+    "A_REPLAY_X16",
+    "A_REPLAY_O21",
+    "A_REPLAY_F37",
+    "A_REPLAY_C10",
+    "A_REPLAY_KC15",
+    "A_REPLAY_KC27",
+    "A_REPLAY_SSN12"
+  ],
+  "actionable_shards": [],
+  "shards": [
+    {
+      "shard_id": "A_BRIDGE_ALL",
+      "phase": "A_FRONTIER",
+      "status": "EXTERNAL_AUTHORITY_BARRIER",
+      "admitted_packets": 0,
+      "required_packets": 28,
+      "remaining_packets": 28,
+      "dependencies": []
+    },
+    {
+      "shard_id": "A_DOMAIN_F37_CLEAR",
+      "phase": "A_FRONTIER",
+      "status": "EXTERNAL_AUTHORITY_BARRIER",
+      "admitted_packets": 0,
+      "required_packets": 9,
+      "remaining_packets": 9,
+      "dependencies": []
+    },
+    {
+      "shard_id": "A_DOMAIN_F37_ADJUDICATED",
+      "phase": "A_FRONTIER",
+      "status": "EXTERNAL_AUTHORITY_BARRIER",
+      "admitted_packets": 0,
+      "required_packets": 3,
+      "remaining_packets": 3,
+      "dependencies": []
+    },
+    {
+      "shard_id": "A_DOMAIN_KC15",
+      "phase": "A_FRONTIER",
+      "status": "EXTERNAL_AUTHORITY_BARRIER",
+      "admitted_packets": 0,
+      "required_packets": 15,
+      "remaining_packets": 15,
+      "dependencies": []
+    },
+    {
+      "shard_id": "A_DOMAIN_KC27",
+      "phase": "A_FRONTIER",
+      "status": "EXTERNAL_AUTHORITY_BARRIER",
+      "admitted_packets": 0,
+      "required_packets": 27,
+      "remaining_packets": 27,
+      "dependencies": []
+    },
+    {
+      "shard_id": "A_DOMAIN_SSN12",
+      "phase": "A_FRONTIER",
+      "status": "EXTERNAL_AUTHORITY_BARRIER",
+      "admitted_packets": 0,
+      "required_packets": 4,
+      "remaining_packets": 4,
+      "dependencies": []
+    },
+    {
+      "shard_id": "A_REPLAY_H6",
+      "phase": "A_FRONTIER",
+      "status": "EXTERNAL_AUTHORITY_BARRIER",
+      "admitted_packets": 0,
+      "required_packets": 6,
+      "remaining_packets": 6,
+      "dependencies": []
+    },
+    {
+      "shard_id": "A_REPLAY_X16",
+      "phase": "A_FRONTIER",
+      "status": "EXTERNAL_AUTHORITY_BARRIER",
+      "admitted_packets": 0,
+      "required_packets": 16,
+      "remaining_packets": 16,
+      "dependencies": []
+    },
+    {
+      "shard_id": "A_REPLAY_O21",
+      "phase": "A_FRONTIER",
+      "status": "EXTERNAL_AUTHORITY_BARRIER",
+      "admitted_packets": 0,
+      "required_packets": 21,
+      "remaining_packets": 21,
+      "dependencies": []
+    },
+    {
+      "shard_id": "A_REPLAY_F37",
+      "phase": "A_FRONTIER",
+      "status": "EXTERNAL_AUTHORITY_BARRIER",
+      "admitted_packets": 0,
+      "required_packets": 37,
+      "remaining_packets": 37,
+      "dependencies": []
+    },
+    {
+      "shard_id": "A_REPLAY_C10",
+      "phase": "A_FRONTIER",
+      "status": "EXTERNAL_AUTHORITY_BARRIER",
+      "admitted_packets": 0,
+      "required_packets": 10,
+      "remaining_packets": 10,
+      "dependencies": []
+    },
+    {
+      "shard_id": "A_REPLAY_KC15",
+      "phase": "A_FRONTIER",
+      "status": "EXTERNAL_AUTHORITY_BARRIER",
+      "admitted_packets": 0,
+      "required_packets": 15,
+      "remaining_packets": 15,
+      "dependencies": []
+    },
+    {
+      "shard_id": "A_REPLAY_KC27",
+      "phase": "A_FRONTIER",
+      "status": "EXTERNAL_AUTHORITY_BARRIER",
+      "admitted_packets": 0,
+      "required_packets": 27,
+      "remaining_packets": 27,
+      "dependencies": []
+    },
+    {
+      "shard_id": "A_REPLAY_SSN12",
+      "phase": "A_FRONTIER",
+      "status": "EXTERNAL_AUTHORITY_BARRIER",
+      "admitted_packets": 0,
+      "required_packets": 12,
+      "remaining_packets": 12,
+      "dependencies": []
+    },
+    {
+      "shard_id": "B_DEFECT_CLOSURE",
+      "phase": "B_DEFECT",
+      "status": "BLOCKED_BY_DEPENDENCY",
+      "admitted_packets": 0,
+      "required_packets": 1,
+      "remaining_packets": 1,
+      "dependencies": [
+        "A_BRIDGE_ALL",
+        "A_DOMAIN_F37_CLEAR",
+        "A_DOMAIN_F37_ADJUDICATED",
+        "A_DOMAIN_KC15",
+        "A_DOMAIN_KC27",
+        "A_DOMAIN_SSN12",
+        "A_REPLAY_H6",
+        "A_REPLAY_X16",
+        "A_REPLAY_O21",
+        "A_REPLAY_F37",
+        "A_REPLAY_C10",
+        "A_REPLAY_KC15",
+        "A_REPLAY_KC27",
+        "A_REPLAY_SSN12"
+      ]
+    },
+    {
+      "shard_id": "C_IC10_PROMOTION",
+      "phase": "C_PROMOTION",
+      "status": "BLOCKED_BY_DEPENDENCY",
+      "admitted_packets": 0,
+      "required_packets": 1,
+      "remaining_packets": 1,
+      "dependencies": [
+        "B_DEFECT_CLOSURE"
+      ]
+    }
+  ],
+  "barrier": "EXTERNAL_AUTHORITY_PIN_REQUIRED",
+  "observed_state": {
+    "certified_bridges": 0,
+    "domain_population": 86,
+    "independent_replays": 0,
+    "blocking_defects": 1,
+    "ic10_promoted": false
+  },
+  "production_effective_state": {
+    "certified_bridges": 0,
+    "domain_population": 86,
+    "independent_replays": 0,
+    "blocking_defects": 1,
+    "ic10_promoted": false
+  },
+  "production_truth_effect": "NONE",
+  "frozen_crystal_mutated": false,
+  "next_seed": "KC144.V8::PIN-EXTERNAL-GOVERNANCE-TRUST-ANCHOR",
+  "state_digest": "sha256:aed3dc4b66c6868988de34a65b8b31f58714e66ef96e4959d9e377c6e834e34f"
+}

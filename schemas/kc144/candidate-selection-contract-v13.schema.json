@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/candidate-selection-contract-v13.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "selection_id", "roles", "required_candidates",
+    "required_pairwise_audits", "independence_dimensions",
+    "hard_control_dimensions", "admission_law", "cohort_law",
+    "ambiguity_law", "budget_law", "promotion_law", "truth_effect",
+    "contract_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.CandidateSelectionContract.V13"},
+    "selection_id": {
+      "const": "KC144.CANDIDATE.COHORT.SELECTION.V13"
+    },
+    "roles": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true
+    },
+    "required_candidates": {"const": 5},
+    "required_pairwise_audits": {"const": 10},
+    "independence_dimensions": {
+      "type": "array",
+      "minItems": 11,
+      "uniqueItems": true
+    },
+    "hard_control_dimensions": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true
+    },
+    "admission_law": {"type": "string", "minLength": 1},
+    "cohort_law": {"type": "string", "minLength": 1},
+    "ambiguity_law": {"type": "string", "minLength": 1},
+    "budget_law": {"type": "string", "minLength": 1},
+    "promotion_law": {"type": "string", "minLength": 1},
+    "truth_effect": {"const": "NONE"},
+    "contract_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

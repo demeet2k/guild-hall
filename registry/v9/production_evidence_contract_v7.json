@@ -1,0 +1,21 @@
+{
+  "schema": "KC144.ProductionEvidenceContract.V7",
+  "epoch_id": "EPOCH-B-EIGHT-BLOCK",
+  "epoch_census": "6+16+21+37+10+15+27+12",
+  "crosswalk_digest": "sha256:ceaefdd844bdccd433be8e620567a9a1b04749a8437ba79eee92a0b15fea3344",
+  "active_graph_slice": "X16_ALGEBRA",
+  "graph_slice_registry_digest": "sha256:d4dddebee91f1c4dafc962449e308e57a89e259a6c883a77aed16946c9fb5080",
+  "signature_algorithm": "ED25519",
+  "envelope_atomicity": "ALL_PACKETS_OR_NONE",
+  "production_contradiction_law": {
+    "NONE_FOUND": "ADMISSIBLE_IF_ALL_OTHER_GATES_PASS",
+    "CONFIRMED": "DEFECT_CLOSURE_ONLY",
+    "CONTESTED": "PRESERVE_AND_HOLD",
+    "UNRESOLVED": "PRESERVE_AND_HOLD"
+  },
+  "domain_binding_law": "every domain-population packet must reproduce its active-epoch canonical/runtime coordinate binding; preserved F37 conflicts also require a signed resolution receipt",
+  "ic10_law": "promotion requires conjunctive PASS for both IC10_constitutional and IC10_immune vectors",
+  "compression_law": "one signed causal envelope may carry many subject packets; every affected subject retains an individual receipt",
+  "direct_v6_production_admission": "FORBIDDEN_WITHOUT_V7_ENVELOPE_CONTEXT",
+  "direct_v5_bridge_commit": "FORBIDDEN_WITHOUT_V7_ENVELOPE_CONTEXT"
+}

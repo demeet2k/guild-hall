@@ -1,0 +1,108 @@
+{
+  "schema": "KC144.Supersession.V5",
+  "active_namespace": "KC144.V5",
+  "active_revision": "KC144.SSN12.GLOBAL_STATE.V5",
+  "lineage": [
+    {
+      "stage": "conceptual corpus",
+      "artifacts": [
+        "Myth Mining series",
+        "Math–Myth series",
+        "Meta Memory Navigation",
+        "Meta Observer",
+        "Searching Athena",
+        "UF Language",
+        "Averroean Framework"
+      ],
+      "standing": "source strata; not executable authority"
+    },
+    {
+      "stage": "canonical constitution and frozen atlas",
+      "artifacts": [
+        "KC144_Unified_Completed_Framework_Final",
+        "KC144_Unified_Framework_Implementation"
+      ],
+      "standing": "architectural authority retained"
+    },
+    {
+      "stage": "runtime federation and navigation",
+      "artifacts": [
+        "KC144 P03",
+        "KC144 P04",
+        "KC144 P05",
+        "KC144 P06",
+        "Athena Git Brain v2"
+      ],
+      "standing": "P06 supersedes P04/P05 navigation behavior; P04 federation compiler remains active"
+    },
+    {
+      "stage": "immune and gate execution",
+      "artifacts": [
+        "Athena Core v7 Immune Kernel P02",
+        "GID051 RA13",
+        "GID082",
+        "GID090"
+      ],
+      "standing": "executable witnesses retained with their declared trust ceilings"
+    },
+    {
+      "stage": "whole-crystal compilation",
+      "artifacts": [
+        "CRYSTAL lattice",
+        "kc144_crystal"
+      ],
+      "standing": "active structural compiler and population boundary"
+    },
+    {
+      "stage": "systematic station and navigation runtime",
+      "artifacts": [
+        "KC144_FULL",
+        "KC144_NAVIGATION",
+        "kc144_crystal.station",
+        "kc144_crystal.navigation",
+        "kc144_crystal.holonomy",
+        "kc144_crystal.wave",
+        "kc144_crystal.systematic"
+      ],
+      "standing": "active V3 runtime; query overlays are non-mutating and non-promoting"
+    },
+    {
+      "stage": "mycelium query and witnessed-return runtime",
+      "artifacts": [
+        "kc144_crystal.query",
+        "kc144_crystal.witness",
+        "kc144_crystal.v4",
+        "MYCELIUM_FRAMEWORK_V4"
+      ],
+      "standing": "active V4 runtime; query compilation is operational and all empirical witness gates remain honest"
+    },
+    {
+      "stage": "global state and SSN12 replay runtime",
+      "artifacts": [
+        "kc144_crystal.edge_manifest",
+        "kc144_crystal.session",
+        "kc144_crystal.bridge2pc",
+        "kc144_crystal.v5",
+        "GLOBAL_STATE_FRAMEWORK_V5"
+      ],
+      "standing": "active V5 runtime; cumulative navigation is receipt-bound, replayable, and non-promoting"
+    }
+  ],
+  "resolutions": {
+    "atlas_labels_vs_lattice_gaps": "labels populate architectural_label; lattice audit controls evidence_status",
+    "X16_32_vs_40": "two typed edge classes over one vertex set",
+    "KC54_54_vs_54": "edge set and duplex are distinct typed objects",
+    "37_operator_vs_37_carrier": "sigma plus 37 is coactivation only, not identity or evidence transport",
+    "completion": "framework complete; live empirical states remain explicit gates rather than missing architecture",
+    "declared_connectivity_vs_transport": "28 bridges establish one graph component but remain uncertified for truth transport",
+    "route_convergence_vs_holonomy": "five routes converge while retaining empty common carry and nonzero pairwise holonomy",
+    "replay_multiplicity": "one gate, two failure modes, 87 causal replay units, 144 affected instances",
+    "semantic_ranking_vs_scalarization": "V4 retains a disclosed Pareto vector instead of a hidden aggregate score",
+    "structural_route_vs_certified_transport": "compiled routes expose every uncertified bridge; beta witness admission is separate",
+    "returnability": "forward resolution and return compilation are both explicit and separately audited",
+    "wave_coverage_vs_traversal": "activated nodes, explicit route nodes, activated relations, and explicit relations remain four separate measures",
+    "self_replay_vs_independence": "exact N5 deterministic reconstruction does not satisfy independent replay",
+    "projective_synapse_vs_base_edge": "coactivation thickens an overlay without modifying the frozen graph",
+    "solid_state": "M12 is conjunctive and emits no certificate while any empirical or authority gate remains open"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schema": "KC144.CandidateSelectionContract.V13",
+  "selection_id": "KC144.CANDIDATE.COHORT.SELECTION.V13",
+  "roles": [
+    "CUSTODIAN",
+    "INDEPENDENT_REVIEWER",
+    "REPLAY_WITNESS",
+    "SOURCE_AUDITOR",
+    "RETURN_AUDITOR"
+  ],
+  "required_candidates": 5,
+  "required_pairwise_audits": 10,
+  "independence_dimensions": [
+    "identity_claim_root",
+    "public_key_b64",
+    "institution_root",
+    "lineage_root",
+    "jurisdiction_root",
+    "primary_domain_root",
+    "authority_root",
+    "funding_root",
+    "data_control_root",
+    "staff_control_root",
+    "technology_control_root"
+  ],
+  "hard_control_dimensions": [
+    "authority_root",
+    "funding_root",
+    "data_control_root",
+    "staff_control_root",
+    "technology_control_root"
+  ],
+  "admission_law": "nominations are declared candidates only; syntactic admission and graph selection grant no governance authority",
+  "cohort_law": "one distinct eligible candidate fills each role and every one of the ten candidate pairs must be free of identity, key, institution, lineage, jurisdiction, domain, and hard-control collisions",
+  "ambiguity_law": "NO_COHORT and MULTIPLE_COHORTS both produce no selected cohort; multiple lawful cohorts require explicit source-authorized selection",
+  "budget_law": "solver budget exhaustion is HOLD and never implies uniqueness",
+  "promotion_law": "even a unique cohort is provisional until exact V12 packets are delivered and V10 signed responses independently verify",
+  "truth_effect": "NONE",
+  "contract_digest": "sha256:5e65f703270e853a041795840fce06cd2a35c72c6011a24f5d6e39a7f60f1aa3"
+}

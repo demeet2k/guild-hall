@@ -1,0 +1,33 @@
+{
+  "schema": "KC144.NominationIntakeRelease.V14",
+  "release": "KC144.CANDIDATE.NOMINATION.INTAKE.RUNTIME.V14",
+  "parent_release": "KC144.CANDIDATE.SELECTION.RUNTIME.V13",
+  "verdict": "PASS",
+  "operational_status": "FIVE_EXTERNAL_CANDIDATE_NOMINATIONS_REQUIRED",
+  "prepared_role_calls": 5,
+  "published_role_calls": 0,
+  "submission_count": 0,
+  "admitted_submission_count": 0,
+  "held_submission_count": 0,
+  "solution_status": "NO_COHORT",
+  "assigned_packet_count": 0,
+  "addressed_packet_count": 0,
+  "delivered_packet_count": 0,
+  "governance_activated": false,
+  "production_certificate_issued": false,
+  "frozen_crystal_mutated": false,
+  "added_artifacts": [
+    "cohort_packet_assignment_manifest_v14.json",
+    "nomination_call_custodian_v14.json",
+    "nomination_call_independent_reviewer_v14.json",
+    "nomination_call_manifest_v14.json",
+    "nomination_call_replay_witness_v14.json",
+    "nomination_call_return_auditor_v14.json",
+    "nomination_call_source_auditor_v14.json",
+    "nomination_intake_contract_v14.json",
+    "nomination_intake_runtime_state_v14.json",
+    "nomination_receipt_ledger_v14.json"
+  ],
+  "next_seed": "KC144.V14::PUBLISH-FIVE-ROLE-CALLS-AND-INGEST-REAL-SIGNED-NOMINATIONS",
+  "release_digest": "sha256:d5ac0ff3519b0fc65d58039c7b5b3fa0608623cb9d41ef1f3a56bbd265bee17c"
+}

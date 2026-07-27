@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/nomination-call-manifest-v14.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "intake_id", "parent_batch_id", "parent_batch_root",
+    "intake_contract_digest", "call_rows", "call_count",
+    "published_count", "addressed_count", "status", "parallelism",
+    "publication_claimed", "delivery_claimed",
+    "governance_authority_granted", "truth_effect", "manifest_root"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.NominationCallManifest.V14"},
+    "intake_id": {
+      "const": "KC144.CANDIDATE.NOMINATION.INTAKE.V14"
+    },
+    "parent_batch_id": {
+      "type": "string",
+      "pattern": "^V11-BATCH::[0-9a-f]{24}$"
+    },
+    "parent_batch_root": {"$ref": "#/$defs/root"},
+    "intake_contract_digest": {"$ref": "#/$defs/root"},
+    "call_rows": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "role", "call_id", "call_digest", "participant_packet_id",
+          "participant_packet_digest", "state"
+        ],
+        "properties": {
+          "role": {"type": "string", "minLength": 1},
+          "call_id": {"type": "string", "minLength": 1},
+          "call_digest": {"$ref": "#/$defs/root"},
+          "participant_packet_id": {"type": "string", "minLength": 1},
+          "participant_packet_digest": {"$ref": "#/$defs/root"},
+          "state": {"const": "READY_UNADDRESSED_UNPUBLISHED"}
+        }
+      }
+    },
+    "call_count": {"const": 5},
+    "published_count": {"const": 0},
+    "addressed_count": {"const": 0},
+    "status": {"const": "READY_FOR_EXTERNAL_PUBLICATION"},
+    "parallelism": {
+      "const": "ALL_FIVE_ROLE_CALLS_MAY_BE_PUBLISHED_IN_PARALLEL"
+    },
+    "publication_claimed": {"const": false},
+    "delivery_claimed": {"const": false},
+    "governance_authority_granted": {"const": false},
+    "truth_effect": {"const": "NONE"},
+    "manifest_root": {"$ref": "#/$defs/root"}
+  },
+  "$defs": {
+    "root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

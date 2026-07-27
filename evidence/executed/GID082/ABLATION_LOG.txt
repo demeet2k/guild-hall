@@ -1,0 +1,51 @@
+================================================================================================
+ABLATION :: which blocker binds?      cells show  gates_PASS/9  ->  verdict
+================================================================================================
+candidate   baseline             +canon               +party               +both                
+------------------------------------------------------------------------------------------------
+GID020      5/9 REJECT           6/9 REJECT           5/9 HOLD             6/9 REPAIR           
+GID044      9/9 PROMOTE_WITH_CARRY9/9 PROMOTE_WITH_CARRY9/9 PROMOTE_WITH_CARRY9/9 PROMOTE_WITH_CARRY
+GID043      5/9 REJECT           6/9 REJECT           5/9 HOLD             6/9 REPAIR           
+GID088      5/9 REJECT           6/9 REJECT           5/9 HOLD             6/9 REPAIR           
+GID024      7/9 REJECT           8/9 REJECT           7/9 HOLD             8/9 HOLD             
+------------------------------------------------------------------------------------------------
+  baseline    total gates PASS = 31/45   promotions = 1/5
+  +canon      total gates PASS = 35/45   promotions = 1/5
+  +party      total gates PASS = 31/45   promotions = 1/5
+  +both       total gates PASS = 35/45   promotions = 1/5
+
+================================================================================================
+RESULT
+================================================================================================
+  +canon  : gates +4   verdicts changed: 0/5
+  +party  : gates +0   verdicts changed: 4/5
+  +both   : verdicts changed: 4/5
+
+  H1 (+canon alone changes zero verdicts) : CONFIRMED
+  H3 (the party is the binding constraint) : CONFIRMED
+
+  Candidates still REJECTED with BOTH repairs applied: 4/5
+     GID020: 6/9 gates -> REPAIR
+     GID043: 6/9 gates -> REPAIR
+     GID088: 6/9 gates -> REPAIR
+     GID024: 8/9 gates -> HOLD
+
+================================================================================================
+DECONFOUNDING :: +party bundled two changes. Isolating them.
+================================================================================================
+candidate   baseline              +verifier_only        +steward_only         +both_of_those        
+------------------------------------------------------------------------------------------------
+GID020      5/9 REJECT            5/9 REJECT            5/9 REJECT            5/9 HOLD              
+GID044      9/9 PROMOTE_WITH_CARRY9/9 PROMOTE_WITH_CARRY9/9 PROMOTE_WITH_CARRY9/9 PROMOTE_WITH_CARRY
+GID043      5/9 REJECT            5/9 REJECT            5/9 REJECT            5/9 HOLD              
+GID088      5/9 REJECT            5/9 REJECT            5/9 REJECT            5/9 HOLD              
+GID024      7/9 REJECT            7/9 HOLD              7/9 REJECT            7/9 HOLD              
+------------------------------------------------------------------------------------------------
+  +verifier_only   verdicts changed vs baseline: 1/5
+  +steward_only    verdicts changed vs baseline: 0/5
+  +both_of_those   verdicts changed vs baseline: 4/5
+
+  -> SUPERADDITIVE INTERACTION: verifier alone 1/5, stewardship alone 0/5, together 4/5.
+     Neither factor is sufficient. Both are necessary.
+     A verifier with no authority to allow is as inert as authority
+     with no verifier. The corpus had neither.

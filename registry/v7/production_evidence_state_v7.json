@@ -1,0 +1,60 @@
+{
+  "schema": "KC144.ProductionEvidenceState.V7",
+  "release": "KC144.PRODUCTION.EVIDENCE.KERNEL.V7",
+  "parent_release": "KC144.M12.REPAIR.COMPILER.V6",
+  "epoch_id": "EPOCH-B-EIGHT-BLOCK",
+  "epoch_census": "6+16+21+37+10+15+27+12",
+  "frozen_base_state_root": "sha256:f45feeb8c66a892b6af7c547824c3c02a66d973bb0ee5cf264726bb100128699",
+  "crosswalk_digest": "sha256:ceaefdd844bdccd433be8e620567a9a1b04749a8437ba79eee92a0b15fea3344",
+  "graph_slice_registry_digest": "sha256:d4dddebee91f1c4dafc962449e308e57a89e259a6c883a77aed16946c9fb5080",
+  "authority_registry_digest": "sha256:491b03e0f2e188bfbc4156dbe6693846fa58e11a1579738bba54d9eeab384fc8",
+  "internal_readiness": {
+    "verdict": "PASS",
+    "checks": {
+      "active_epoch_exact": true,
+      "kc15_crosswalk_bijective": true,
+      "kc15_difference_preserved": true,
+      "kc27_crosswalk_exact": true,
+      "ssn12_role_views_preserved": true,
+      "f37_conflicts_preserved": true,
+      "graph_schedule_exact": true,
+      "graph_algebra_exact": true,
+      "graph_multiplex_exact": true,
+      "domain_population_bindings_complete": true,
+      "authority_registry_integrity": true,
+      "admitted_envelopes_reverified": true,
+      "direct_unsigned_production_closed": true,
+      "paired_ic10_required": true,
+      "atomic_envelope_required": true
+    }
+  },
+  "external_readiness": {
+    "pinned_active_keys": 0,
+    "signed_envelopes": 0,
+    "signed_envelopes_reverified": 0,
+    "status": "READY_AWAITING_PINNED_EXTERNAL_AUTHORITY"
+  },
+  "m12": {
+    "verdict": "HOLD",
+    "gates": {
+      "M12_NODE_ACTIVATION_144": "PASS",
+      "M12_EDGE_MANIFEST_FROZEN": "PASS",
+      "M12_TOTAL_RETURN": "PASS",
+      "M12_PROJECTIVE_COVERAGE": "PASS",
+      "M12_BRIDGES_CERTIFIED_28": "FAIL",
+      "M12_DOMAIN_POPULATION_144": "FAIL",
+      "M12_INDEPENDENT_REPLAY_144": "FAIL",
+      "M12_IC10_DECISION_PROMOTED": "FAIL",
+      "M12_BLOCKING_DEFECTS_EMPTY": "FAIL"
+    },
+    "passed": 4,
+    "total": 9,
+    "certificate": null,
+    "law": "coverage telemetry never substitutes for domain population, independent replay, certified transport, IC10 promotion, or debt closure"
+  },
+  "production_certificate_issued": false,
+  "production_truth_effect": "NONE",
+  "frozen_crystal_mutated": false,
+  "next_seed": "KC144.V7::PIN-EXTERNAL-AUTHORITY-AND-SIGN-PARALLEL-WAVE",
+  "state_digest": "sha256:bacf35d1b3f15bb3f8bb3b5511077ae1ff550d508718b3b08e20628edb9f3f32"
+}

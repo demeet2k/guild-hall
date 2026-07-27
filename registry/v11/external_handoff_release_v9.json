@@ -1,0 +1,24 @@
+{
+  "schema": "KC144.ExternalHandoffRelease.V9",
+  "release": "KC144.EXTERNAL.HANDOFF.RUNTIME.V9",
+  "parent_release": "KC144.PARALLEL.CAMPAIGN.RUNTIME.V8",
+  "verdict": "PASS",
+  "operational_status": "THRESHOLD_GOVERNANCE_MEMBERS_REQUIRED",
+  "governance_members": 0,
+  "governance_threshold": 3,
+  "handoff_requests": 16,
+  "handoff_packets": 232,
+  "production_certificate_issued": false,
+  "frozen_crystal_mutated": false,
+  "added_artifacts": [
+    "external_handoff_bundle_v9.json",
+    "external_handoff_run_v9.json",
+    "external_handoff_runtime_state_v9.json",
+    "external_handoff_state_v9.json",
+    "source_harvest_contract_v9.json",
+    "threshold_governance_contract_v9.json",
+    "threshold_governance_registry_v9.json"
+  ],
+  "next_seed": "KC144.V9::ENROLL-FIVE-INDEPENDENT-GOVERNANCE-MEMBERS",
+  "release_digest": "sha256:28b6d3e0c3ef5defbe0fff0cafb6a53955948dcdc5b5b469a02ba686ff14dfec"
+}

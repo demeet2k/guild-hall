@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/governance-dispatch-runtime-state-v11.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "release", "parent_release", "dispatch_id",
+    "dispatch_contract_digest", "plan_digest", "batch_id", "batch_root",
+    "batch_issued", "counted_responses", "required_responses",
+    "internal_readiness", "barrier", "governance_activated",
+    "production_certificate_issued", "production_truth_effect",
+    "frozen_crystal_mutated", "next_seed", "runtime_state_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.GovernanceDispatchRuntimeState.V11"},
+    "release": {"const": "KC144.GOVERNANCE.DISPATCH.RUNTIME.V11"},
+    "parent_release": {"const": "KC144.GOVERNANCE.CEREMONY.RUNTIME.V10"},
+    "dispatch_id": {"const": "KC144.GOVERNANCE.DISPATCH.V11"},
+    "dispatch_contract_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "plan_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "batch_id": {
+      "anyOf": [
+        {"type": "null"},
+        {"type": "string", "pattern": "^V11-BATCH::[0-9a-f]{24}$"}
+      ]
+    },
+    "batch_root": {
+      "anyOf": [
+        {"type": "null"},
+        {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+      ]
+    },
+    "batch_issued": {"type": "boolean"},
+    "counted_responses": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "required_responses": {"const": 5},
+    "internal_readiness": {
+      "type": "object",
+      "required": ["verdict", "checks"]
+    },
+    "barrier": {"type": "string", "minLength": 1},
+    "governance_activated": {"const": false},
+    "production_certificate_issued": {"const": false},
+    "production_truth_effect": {"const": "NONE"},
+    "frozen_crystal_mutated": {"const": false},
+    "next_seed": {"type": "string", "minLength": 1},
+    "runtime_state_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

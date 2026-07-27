@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/source-harvest-contract-v9.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "harvest_law", "source_fields", "claim_fields",
+    "residual_states", "contamination_laws", "truth_effect", "contract_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.SourceHarvestContract.V9"},
+    "harvest_law": {"type": "string", "minLength": 1},
+    "source_fields": {"type": "array", "minItems": 6, "uniqueItems": true},
+    "claim_fields": {"type": "array", "minItems": 4, "uniqueItems": true},
+    "residual_states": {"type": "array", "minItems": 8, "uniqueItems": true},
+    "contamination_laws": {"type": "array", "minItems": 6, "uniqueItems": true},
+    "truth_effect": {"const": "NONE_UNTIL_SIGNED_ENVELOPE_ADMISSION"},
+    "contract_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/governance-response-router-v11.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "dispatch_id", "batch_id", "batch_root", "verified_at",
+    "batch_state", "supplied_response_count", "counted_response_count",
+    "counted_roles", "remaining_roles", "response_reports",
+    "pending_society", "status", "barrier", "governance_activated",
+    "production_certificate_issued", "truth_effect", "router_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.GovernanceResponseRouter.V11"},
+    "dispatch_id": {"const": "KC144.GOVERNANCE.DISPATCH.V11"},
+    "batch_id": {
+      "type": "string",
+      "pattern": "^V11-BATCH::[0-9a-f]{24}$"
+    },
+    "batch_root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "verified_at": {"type": "string", "minLength": 1},
+    "batch_state": {
+      "type": "object",
+      "required": [
+        "schema", "batch_id", "batch_root", "checked_at", "integrity",
+        "lifecycle", "accepting_responses", "governance_activated",
+        "truth_effect", "state_digest"
+      ]
+    },
+    "supplied_response_count": {"type": "integer", "minimum": 0},
+    "counted_response_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "counted_roles": {
+      "type": "array",
+      "maxItems": 5,
+      "uniqueItems": true
+    },
+    "remaining_roles": {
+      "type": "array",
+      "maxItems": 5,
+      "uniqueItems": true
+    },
+    "response_reports": {"type": "array"},
+    "pending_society": {
+      "anyOf": [{"type": "null"}, {"type": "object"}]
+    },
+    "status": {
+      "enum": [
+        "INTAKE_HOLD", "PENDING_SOCIETY_ASSEMBLED",
+        "AWAITING_EXTERNAL_RESPONSES"
+      ]
+    },
+    "barrier": {
+      "enum": [
+        "VALID_CHALLENGE_BATCH_REQUIRED",
+        "CHALLENGE_BATCH_NOT_YET_OPEN",
+        "CHALLENGE_BATCH_REISSUE_REQUIRED",
+        "EXTERNAL_RATIFICATION_REQUIRED",
+        "FIVE_INDEPENDENT_PARTICIPANT_RESPONSES_REQUIRED",
+        "REMAINING_EXTERNAL_PARTICIPANT_RESPONSES_REQUIRED"
+      ]
+    },
+    "governance_activated": {"const": false},
+    "production_certificate_issued": {"const": false},
+    "truth_effect": {"const": "NONE"},
+    "router_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

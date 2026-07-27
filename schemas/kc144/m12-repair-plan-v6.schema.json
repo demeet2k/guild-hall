@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/m12-repair-plan-v6.schema.json",
+  "title": "KC144 V6 dependency-aware M12 repair plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "scheduler",
+    "tasks",
+    "next_frontier",
+    "mutation_target",
+    "frozen_crystal_mutated"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.M12RepairPlan.V6"},
+    "scheduler": {"const": "DEPENDENCY_DAG_WITH_PARALLEL_EVIDENCE_WAVES"},
+    "tasks": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "task_id",
+          "gate",
+          "required",
+          "admitted",
+          "remaining",
+          "dependencies",
+          "execution",
+          "status"
+        ],
+        "properties": {
+          "task_id": {"type": "string", "pattern": "^R0[1-6]_"},
+          "gate": {"type": "string", "minLength": 1},
+          "required": {"type": "integer", "minimum": 1},
+          "admitted": {"type": "integer", "minimum": 0},
+          "remaining": {"type": "integer", "minimum": 0},
+          "dependencies": {"type": "array", "items": {"type": "string"}},
+          "execution": {"enum": ["PARALLEL_WAVE", "DEPENDENCY_BOUND"]},
+          "status": {"enum": ["READY", "BLOCKED", "COMPLETE"]}
+        }
+      }
+    },
+    "next_frontier": {"type": "array", "items": {"type": "string"}},
+    "mutation_target": {"const": "APPEND_ONLY_EVIDENCE_OVERLAY"},
+    "frozen_crystal_mutated": {"const": false}
+  }
+}

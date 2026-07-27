@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/external-handoff-runtime-state-v9.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "release", "parent_release", "handoff_id", "bundle_root",
+    "bundle_digest", "governance_contract_digest", "governance_registry_digest",
+    "source_harvest_contract_digest", "internal_readiness",
+    "handoff_state_digest", "run_report_digest", "barrier",
+    "production_certificate_issued", "production_truth_effect",
+    "frozen_crystal_mutated", "next_seed", "runtime_state_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ExternalHandoffRuntimeState.V9"},
+    "release": {"const": "KC144.EXTERNAL.HANDOFF.RUNTIME.V9"},
+    "parent_release": {"const": "KC144.PARALLEL.CAMPAIGN.RUNTIME.V8"},
+    "handoff_id": {"const": "KC144.EXTERNAL.HANDOFF.V9"},
+    "bundle_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "bundle_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "governance_contract_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "governance_registry_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "source_harvest_contract_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "internal_readiness": {"type": "object"},
+    "handoff_state_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "run_report_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "barrier": {"type": "string", "minLength": 1},
+    "production_certificate_issued": {"type": "boolean"},
+    "production_truth_effect": {"const": "NONE"},
+    "frozen_crystal_mutated": {"const": false},
+    "next_seed": {"type": "string", "minLength": 1},
+    "runtime_state_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

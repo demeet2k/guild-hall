@@ -1,0 +1,21 @@
+{
+  "schema": "KC144.GovernanceCeremonyRelease.V10",
+  "release": "KC144.GOVERNANCE.CEREMONY.RUNTIME.V10",
+  "parent_release": "KC144.EXTERNAL.HANDOFF.RUNTIME.V9",
+  "verdict": "PASS",
+  "operational_status": "FIVE_INDEPENDENT_PARTICIPANT_RESPONSES_REQUIRED",
+  "governance_roles": 5,
+  "filled_seats": 0,
+  "required_seats": 5,
+  "governance_activated": false,
+  "production_certificate_issued": false,
+  "frozen_crystal_mutated": false,
+  "added_artifacts": [
+    "governance_ceremony_contract_v10.json",
+    "governance_ceremony_plan_v10.json",
+    "governance_ceremony_runtime_state_v10.json",
+    "governance_ratification_contract_v10.json"
+  ],
+  "next_seed": "KC144.V10::ISSUE-FIVE-ROLE-BOUND-CHALLENGES",
+  "release_digest": "sha256:71eeece111414b63519540a17617d7e283ddae0e5906f4be892c37ef5f74588a"
+}

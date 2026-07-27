@@ -1,0 +1,26 @@
+{
+  "schema": "KC144.MyceliumRelease.V4",
+  "release": "KC144.MYCELIUM.FRAMEWORK.V4",
+  "verdict": "PASS",
+  "base_release": "KC144.SYSTEMATIC.FRAMEWORK.V3",
+  "query_runtime": {
+    "contract": "H06_QUERY_BUNDLE",
+    "ranking": "PARETO_NONSCALAR",
+    "graph_mutation": false,
+    "truth_effect": "NONE"
+  },
+  "bridge_runtime": {
+    "declared": 28,
+    "certified": 0,
+    "admission_gate": "EXECUTABLE"
+  },
+  "actual_live_promotions": 0,
+  "solid_state": "HOLD",
+  "added_artifacts": [
+    "bridge_witness_contract.json",
+    "bridge_witness_ledger.json",
+    "compiled_queries.json",
+    "frontier_v4.json",
+    "query_contract.json"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "KC144.CandidateConflictGraph.V13",
+  "selection_id": "KC144.CANDIDATE.COHORT.SELECTION.V13",
+  "nodes": [],
+  "pair_audits": [],
+  "node_count": 0,
+  "admitted_node_count": 0,
+  "edge_count": 0,
+  "truth_effect": "NONE",
+  "graph_root": "sha256:247da749be7e00ac9f152ecb7e97f840d90f780f1d5c7132e13a8a2f173986d0"
+}

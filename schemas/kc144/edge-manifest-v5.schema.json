@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/edge-manifest-v5.schema.json",
+  "title": "KC144 frozen typed-edge manifest",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "node_count",
+    "relation_record_count",
+    "distinct_adjacency_count",
+    "standing_census",
+    "all_edges_declare_carry",
+    "all_edges_declare_loss",
+    "records",
+    "manifest_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.FrozenEdgeManifest.V5"},
+    "status": {"const": "FROZEN"},
+    "node_count": {"const": 144},
+    "relation_record_count": {"const": 276},
+    "distinct_adjacency_count": {"const": 274},
+    "standing_census": {
+      "type": "object",
+      "required": ["STRUCTURAL", "DECLARED_UNCERTIFIED"],
+      "properties": {
+        "STRUCTURAL": {"const": 248},
+        "DECLARED_UNCERTIFIED": {"const": 28}
+      }
+    },
+    "all_edges_declare_carry": {"const": true},
+    "all_edges_declare_loss": {"const": true},
+    "records": {
+      "type": "array",
+      "minItems": 276,
+      "maxItems": 276,
+      "items": {
+        "type": "object",
+        "required": [
+          "edge_id",
+          "source",
+          "target",
+          "relation",
+          "semantics",
+          "standing",
+          "carry",
+          "loss",
+          "graph_view",
+          "semantic_direction",
+          "truth_effect"
+        ],
+        "properties": {
+          "edge_id": {"type": "string", "pattern": "^EDGE-[0-9a-f]{20}$"},
+          "source": {"type": "integer", "minimum": 1, "maximum": 144},
+          "target": {"type": "integer", "minimum": 1, "maximum": 144},
+          "relation": {"type": "string", "minLength": 1},
+          "semantics": {"type": "string", "minLength": 1},
+          "standing": {"enum": ["STRUCTURAL", "DECLARED_UNCERTIFIED"]},
+          "carry": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "loss": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "graph_view": {"const": "UNDIRECTED_TRAVERSAL"},
+          "semantic_direction": {"type": "string"},
+          "truth_effect": {"const": "NONE"}
+        }
+      }
+    },
+    "manifest_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "KC144.ParticipantHandoffRelease.V12",
+  "release": "KC144.PARTICIPANT.HANDOFF.RUNTIME.V12",
+  "parent_release": "KC144.GOVERNANCE.DISPATCH.RUNTIME.V11",
+  "verdict": "PASS",
+  "operational_status": "FIVE_EXTERNAL_PARTICIPANT_HANDOFFS_REQUIRED",
+  "prepared_packets": 5,
+  "addressed_packets": 0,
+  "delivered_packets": 0,
+  "counted_responses": 0,
+  "required_responses": 5,
+  "governance_activated": false,
+  "production_certificate_issued": false,
+  "frozen_crystal_mutated": false,
+  "added_artifacts": [
+    "participant_handoff_contract_v12.json",
+    "participant_handoff_manifest_v12.json",
+    "participant_handoff_runtime_state_v12.json",
+    "participant_packet_custodian_v12.json",
+    "participant_packet_independent_reviewer_v12.json",
+    "participant_packet_replay_witness_v12.json",
+    "participant_packet_return_auditor_v12.json",
+    "participant_packet_source_auditor_v12.json"
+  ],
+  "next_seed": "KC144.V12::SELECT-INDEPENDENT-RECIPIENTS_DELIVER-FIVE-PACKETS_AND-ROUTE-SIGNED-RETURNS",
+  "release_digest": "sha256:ad87d16e3c83620b4cbc61b72c44942971f3778f7e0eb6967779c03fbaaa83ba"
+}

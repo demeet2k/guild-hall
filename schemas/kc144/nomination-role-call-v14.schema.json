@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/nomination-role-call-v14.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "intake_id", "call_id", "role", "batch_id",
+    "batch_root", "challenge_id", "challenge_digest",
+    "participant_packet_id", "participant_packet_digest",
+    "intake_contract_digest", "selection_contract_digest", "mission",
+    "required_capabilities", "required_nomination_fields",
+    "required_independence_dimensions", "submission_schema",
+    "signature_algorithm", "signature_domain", "private_key_instruction",
+    "boundary_claim", "call_state", "publication_receipt_root",
+    "recipient_identity_root", "governance_authority_granted",
+    "truth_effect", "call_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.NominationRoleCall.V14"},
+    "intake_id": {
+      "const": "KC144.CANDIDATE.NOMINATION.INTAKE.V14"
+    },
+    "call_id": {
+      "type": "string",
+      "pattern": "^V14-CALL::[A-Z_]+::[0-9a-f]{16}$"
+    },
+    "role": {"$ref": "#/$defs/role"},
+    "batch_id": {
+      "type": "string",
+      "pattern": "^V11-BATCH::[0-9a-f]{24}$"
+    },
+    "batch_root": {"$ref": "#/$defs/root"},
+    "challenge_id": {"type": "string", "minLength": 1},
+    "challenge_digest": {"$ref": "#/$defs/root"},
+    "participant_packet_id": {"type": "string", "minLength": 1},
+    "participant_packet_digest": {"$ref": "#/$defs/root"},
+    "intake_contract_digest": {"$ref": "#/$defs/root"},
+    "selection_contract_digest": {"$ref": "#/$defs/root"},
+    "mission": {"type": "string", "minLength": 1},
+    "required_capabilities": {
+      "type": "array",
+      "minItems": 3,
+      "uniqueItems": true
+    },
+    "required_nomination_fields": {
+      "type": "array",
+      "minItems": 25,
+      "uniqueItems": true
+    },
+    "required_independence_dimensions": {
+      "type": "array",
+      "minItems": 11,
+      "uniqueItems": true
+    },
+    "submission_schema": {
+      "const": "KC144.SignedCandidateNomination.V14"
+    },
+    "signature_algorithm": {"const": "ED25519"},
+    "signature_domain": {
+      "const": "KC144.V14.CANDIDATE_NOMINATION"
+    },
+    "private_key_instruction": {"type": "string", "minLength": 1},
+    "boundary_claim": {
+      "const": "NOMINATION_IS_NOT_SELECTION_DELIVERY_ENROLLMENT_OR_AUTHORITY"
+    },
+    "call_state": {"const": "READY_UNADDRESSED_UNPUBLISHED"},
+    "publication_receipt_root": {"type": "null"},
+    "recipient_identity_root": {"type": "null"},
+    "governance_authority_granted": {"const": false},
+    "truth_effect": {"const": "NONE"},
+    "call_digest": {"$ref": "#/$defs/root"}
+  },
+  "$defs": {
+    "root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "role": {
+      "enum": [
+        "CUSTODIAN", "INDEPENDENT_REVIEWER", "REPLAY_WITNESS",
+        "SOURCE_AUDITOR", "RETURN_AUDITOR"
+      ]
+    }
+  }
+}

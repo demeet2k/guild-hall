@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/m12-repair-state-v6.schema.json",
+  "title": "KC144 V6 recomputed M12 repair state",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "release",
+    "parent_release",
+    "frozen_base_state_root",
+    "base_global_state_digest",
+    "ledger_digest",
+    "ledger_integrity",
+    "evidence",
+    "repair_plan",
+    "ssn12",
+    "production_certificate_issued",
+    "truth_effect",
+    "next_seed",
+    "successor_law",
+    "repair_state_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.M12RepairState.V6"},
+    "release": {"const": "KC144.M12.REPAIR.COMPILER.V6"},
+    "parent_release": {"const": "KC144.SSN12.GLOBAL_STATE.V5"},
+    "frozen_base_state_root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "base_global_state_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "ledger_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "ledger_integrity": {"type": "object"},
+    "evidence": {"type": "object"},
+    "repair_plan": {"$ref": "m12-repair-plan-v6.schema.json"},
+    "ssn12": {"type": "object"},
+    "production_certificate_issued": {"type": "boolean"},
+    "truth_effect": {"enum": ["NONE", "AUTHORIZED_SUCCESSOR_ONLY"]},
+    "next_seed": {
+      "enum": [
+        "KC144.V6::EVIDENCE-INTAKE::PARALLEL-WAVE-01",
+        "KC144.V2::POPULATE_MATH144"
+      ]
+    },
+    "successor_law": {"type": "string", "minLength": 1},
+    "repair_state_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

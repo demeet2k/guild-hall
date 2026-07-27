@@ -1,0 +1,4407 @@
+{
+  "schema": "KC144.CompleteCrystal.V2",
+  "namespace": "KC144.V2",
+  "framework_revision": "KC144.COMPLETE.CRYSTAL.2026-07-26",
+  "method": "DISJOINT_ORBIT_GENERATION_PLUS_EVIDENCE_OVERLAY",
+  "equation": "H6 ⊔ (K4×L4) ⊔ (O7×L3) ⊔ F37 ⊔ C10 ⊔ (2^K4\\{∅}) ⊔ T3^3 ⊔ S12",
+  "status": {
+    "framework": "EXECUTABLE_CRYSTAL_COMPLETE",
+    "structural_population": "144/144",
+    "address_bijection": "PASS",
+    "source_content": "PARTIAL_WITH_TYPED_RESIDUALS",
+    "external_federation": "REFERENCE_RECEIPTS_ONLY_NOT_DEPLOYED",
+    "solid_state": "HOLD_PENDING_LIVE_COVERAGE_AND_INDEPENDENT_COLD_REPLAY"
+  },
+  "laws": [
+    "generation does not promote truth",
+    "rotation is a typed view or automorphism, never silent identity collapse",
+    "architectural label and evidence status are independent fields",
+    "KC54 edge-set and KC54 duplex are distinct typed objects",
+    "X16 schedule and algebra edge classes share vertices but are not merged",
+    "QSHRINK follows joint return plus IC10 promotion; it never precedes them",
+    "unmapped source content remains a residual instead of being invented"
+  ],
+  "band_counts": {
+    "H6": 6,
+    "X16": 16,
+    "BR21": 21,
+    "F37": 37,
+    "IC10": 10,
+    "KC15": 15,
+    "KC27": 27,
+    "SSN12": 12
+  },
+  "evidence_census": {
+    "DOCUMENTED": 86,
+    "UNMAPPED": 7,
+    "ROUTED_ONLY": 5,
+    "DERIVED": 46
+  },
+  "edge_census": {
+    "H6_RING": 6,
+    "X16_ALGEBRA": 40,
+    "X16_SCHEDULE": 32,
+    "BR21_LENS": 21,
+    "BR21_OPERATOR": 18,
+    "F37_RAIL": 36,
+    "IC10_CHAIN": 9,
+    "KC15_HASSE": 28,
+    "KC54_EDGE": 54,
+    "SSN12_CHAIN": 11
+  },
+  "edge_denominators": {
+    "schedule_reading": 215,
+    "algebra_reading": 223,
+    "both_typed_classes_stored": 255
+  },
+  "transformations": {
+    "law": "transformations generate addresses, relations, and coactivations; truth_effect is always NONE",
+    "groups": {
+      "address_plane": {
+        "group": "D4",
+        "order": 8,
+        "identity": "source GID retained"
+      },
+      "X16_schedule": {
+        "group": "C4×C4",
+        "order": 16
+      },
+      "X16_algebra": {
+        "action": "V4×C4",
+        "order": 16
+      },
+      "BR21_rotations": {
+        "group": "C7×C3",
+        "order": 21
+      },
+      "BR21_mirror": {
+        "group": "C2",
+        "order": 2
+      },
+      "F37_rail": {
+        "group": "C2",
+        "order": 2
+      },
+      "KC15": {
+        "group": "S4",
+        "order": 24
+      },
+      "KC27": {
+        "group": "B3 signed permutations",
+        "order": 48
+      }
+    },
+    "typed_nonidentities": {
+      "SIGMA_PLUS_37": "37↔37 candidate coactivation; not evidence transport",
+      "KC54_edges": "54 cube rails E(P3□P3□P3)",
+      "KC54_duplex": "54 node shadows KC27+⊕KC27*"
+    }
+  },
+  "seats": [
+    {
+      "gid": 1,
+      "grid": "R01C01",
+      "band": "H6",
+      "station": "H01",
+      "structural_role": "Address–Identity Registry",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 1
+      },
+      "architectural_label": "Address–Identity Registry",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 2,
+      "grid": "R01C02",
+      "band": "H6",
+      "station": "H02",
+      "structural_role": "Domain Projection–Seating and Alias Registry",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 2
+      },
+      "architectural_label": "Domain Projection–Seating and Alias Registry",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 3,
+      "grid": "R01C03",
+      "band": "H6",
+      "station": "H03",
+      "structural_role": "Typed Route–Transformation Registry",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 3
+      },
+      "architectural_label": "Mycelial Navigation Registry",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 4,
+      "grid": "R01C04",
+      "band": "H6",
+      "station": "H04",
+      "structural_role": "Invariant–Bridge–Defect Registry",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 4
+      },
+      "architectural_label": "Invariant–Bridge–Defect Registry",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 5,
+      "grid": "R01C05",
+      "band": "H6",
+      "station": "H05",
+      "structural_role": "Source–Evidence–Version Registry",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 5
+      },
+      "architectural_label": "Source–Evidence–Version Ledger",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 6,
+      "grid": "R01C06",
+      "band": "H6",
+      "station": "H06",
+      "structural_role": "Activation–Replay–Reseed Hub",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 6
+      },
+      "architectural_label": "Activation–Replay–Reseed Hub",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 7,
+      "grid": "R01C07",
+      "band": "X16",
+      "station": "X-11-SQ",
+      "structural_role": "exact object identity",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "pole": "11",
+        "lens": "SQ"
+      },
+      "architectural_label": "BODY_SEED — SQUARE",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 8,
+      "grid": "R01C08",
+      "band": "X16",
+      "station": "X-11-FL",
+      "structural_role": "construction / constructor",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "pole": "11",
+        "lens": "FL"
+      },
+      "architectural_label": "BODY_SEED — FLOWER",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 9,
+      "grid": "R01C09",
+      "band": "X16",
+      "station": "X-11-CL",
+      "structural_role": "uncertainty / candidate fiber",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "pole": "11",
+        "lens": "CL"
+      },
+      "architectural_label": "BODY_SEED — CLOUD",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 10,
+      "grid": "R01C10",
+      "band": "X16",
+      "station": "X-11-FR",
+      "structural_role": "recursive body",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "pole": "11",
+        "lens": "FR"
+      },
+      "architectural_label": "BODY_SEED — FRACTAL",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 11,
+      "grid": "R01C11",
+      "band": "X16",
+      "station": "X-10-SQ",
+      "structural_role": "operator declaration",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "pole": "10",
+        "lens": "SQ"
+      },
+      "architectural_label": "TRANSFORM_PATH — SQUARE",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 12,
+      "grid": "R01C12",
+      "band": "X16",
+      "station": "X-10-FL",
+      "structural_role": "execution",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "pole": "10",
+        "lens": "FL"
+      },
+      "architectural_label": "TRANSFORM_PATH — FLOWER",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 13,
+      "grid": "R02C01",
+      "band": "X16",
+      "station": "X-10-CL",
+      "structural_role": "branch carrier",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "pole": "10",
+        "lens": "CL"
+      },
+      "architectural_label": "TRANSFORM_PATH — CLOUD",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 14,
+      "grid": "R02C02",
+      "band": "X16",
+      "station": "X-10-FR",
+      "structural_role": "recursive composition",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "pole": "10",
+        "lens": "FR"
+      },
+      "architectural_label": "TRANSFORM_PATH — FRACTAL",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 15,
+      "grid": "R02C03",
+      "band": "X16",
+      "station": "X-00-SQ",
+      "structural_role": "zero taxonomy",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "pole": "00",
+        "lens": "SQ"
+      },
+      "architectural_label": "INVARIANT_DEFECT — SQUARE",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 16,
+      "grid": "R02C04",
+      "band": "X16",
+      "station": "X-00-FL",
+      "structural_role": "invariant enforcement",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "pole": "00",
+        "lens": "FL"
+      },
+      "architectural_label": "INVARIANT_DEFECT — FLOWER",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 17,
+      "grid": "R02C05",
+      "band": "X16",
+      "station": "X-00-CL",
+      "structural_role": "defect / obstruction cloud",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "pole": "00",
+        "lens": "CL"
+      },
+      "architectural_label": "INVARIANT_DEFECT — CLOUD",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 18,
+      "grid": "R02C06",
+      "band": "X16",
+      "station": "X-00-FR",
+      "structural_role": "multiscale invariance",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "pole": "00",
+        "lens": "FR"
+      },
+      "architectural_label": "INVARIANT_DEFECT — FRACTAL",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 19,
+      "grid": "R02C07",
+      "band": "X16",
+      "station": "X-01-SQ",
+      "structural_role": "return contract",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "pole": "01",
+        "lens": "SQ"
+      },
+      "architectural_label": "RETURN_ADDRESS — SQUARE",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 20,
+      "grid": "R02C08",
+      "band": "X16",
+      "station": "X-01-FL",
+      "structural_role": "return mechanics",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "pole": "01",
+        "lens": "FL"
+      },
+      "architectural_label": "RETURN_ADDRESS — FLOWER",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 21,
+      "grid": "R02C09",
+      "band": "X16",
+      "station": "X-01-CL",
+      "structural_role": "multivalued return",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "pole": "01",
+        "lens": "CL"
+      },
+      "architectural_label": "RETURN_ADDRESS — CLOUD",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 22,
+      "grid": "R02C10",
+      "band": "X16",
+      "station": "X-01-FR",
+      "structural_role": "recursive reseed / cold boot",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "pole": "01",
+        "lens": "FR"
+      },
+      "architectural_label": "RETURN_ADDRESS — FRACTAL",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 23,
+      "grid": "R02C11",
+      "band": "BR21",
+      "station": "B01",
+      "structural_role": "ADMIT/PLUS",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "ADMIT",
+        "lens": "PLUS",
+        "index": 1,
+        "mirror_index": 21
+      },
+      "architectural_label": "ADMIT / PLUS",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 24,
+      "grid": "R02C12",
+      "band": "BR21",
+      "station": "B02",
+      "structural_role": "ADMIT/HINGE",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "ADMIT",
+        "lens": "HINGE",
+        "index": 2,
+        "mirror_index": 20
+      },
+      "architectural_label": "ADMIT / HINGE",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 25,
+      "grid": "R03C01",
+      "band": "BR21",
+      "station": "B03",
+      "structural_role": "ADMIT/STAR",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "ADMIT",
+        "lens": "STAR",
+        "index": 3,
+        "mirror_index": 19
+      },
+      "architectural_label": "ADMIT / STAR",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 26,
+      "grid": "R03C02",
+      "band": "BR21",
+      "station": "B04",
+      "structural_role": "EXPAND/PLUS",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "EXPAND",
+        "lens": "PLUS",
+        "index": 4,
+        "mirror_index": 18
+      },
+      "architectural_label": "EXPAND / PLUS",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 27,
+      "grid": "R03C03",
+      "band": "BR21",
+      "station": "B05",
+      "structural_role": "EXPAND/HINGE",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "EXPAND",
+        "lens": "HINGE",
+        "index": 5,
+        "mirror_index": 17
+      },
+      "architectural_label": "EXPAND / HINGE",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 28,
+      "grid": "R03C04",
+      "band": "BR21",
+      "station": "B06",
+      "structural_role": "EXPAND/STAR",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "EXPAND",
+        "lens": "STAR",
+        "index": 6,
+        "mirror_index": 16
+      },
+      "architectural_label": "EXPAND / STAR",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 29,
+      "grid": "R03C05",
+      "band": "BR21",
+      "station": "B07",
+      "structural_role": "NAVIGATE/PLUS",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "NAVIGATE",
+        "lens": "PLUS",
+        "index": 7,
+        "mirror_index": 15
+      },
+      "architectural_label": "NAVIGATE / PLUS",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 30,
+      "grid": "R03C06",
+      "band": "BR21",
+      "station": "B08",
+      "structural_role": "NAVIGATE/HINGE",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "NAVIGATE",
+        "lens": "HINGE",
+        "index": 8,
+        "mirror_index": 14
+      },
+      "architectural_label": "NAVIGATE / HINGE",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 31,
+      "grid": "R03C07",
+      "band": "BR21",
+      "station": "B09",
+      "structural_role": "NAVIGATE/STAR",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "NAVIGATE",
+        "lens": "STAR",
+        "index": 9,
+        "mirror_index": 13
+      },
+      "architectural_label": "NAVIGATE / STAR",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 32,
+      "grid": "R03C08",
+      "band": "BR21",
+      "station": "B10",
+      "structural_role": "TRANSFORM/PLUS",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "TRANSFORM",
+        "lens": "PLUS",
+        "index": 10,
+        "mirror_index": 12
+      },
+      "architectural_label": "TRANSFORM / PLUS",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 33,
+      "grid": "R03C09",
+      "band": "BR21",
+      "station": "B11",
+      "structural_role": "TRANSFORM/HINGE",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "TRANSFORM",
+        "lens": "HINGE",
+        "index": 11,
+        "mirror_index": 11
+      },
+      "architectural_label": "TRANSFORM / HINGE",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 34,
+      "grid": "R03C10",
+      "band": "BR21",
+      "station": "B12",
+      "structural_role": "TRANSFORM/STAR",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "TRANSFORM",
+        "lens": "STAR",
+        "index": 12,
+        "mirror_index": 10
+      },
+      "architectural_label": "TRANSFORM / STAR",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 35,
+      "grid": "R03C11",
+      "band": "BR21",
+      "station": "B13",
+      "structural_role": "TEST/PLUS",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "TEST",
+        "lens": "PLUS",
+        "index": 13,
+        "mirror_index": 9
+      },
+      "architectural_label": "TEST / PLUS",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 36,
+      "grid": "R03C12",
+      "band": "BR21",
+      "station": "B14",
+      "structural_role": "TEST/HINGE",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "TEST",
+        "lens": "HINGE",
+        "index": 14,
+        "mirror_index": 8
+      },
+      "architectural_label": "TEST / HINGE",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 37,
+      "grid": "R04C01",
+      "band": "BR21",
+      "station": "B15",
+      "structural_role": "TEST/STAR",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "TEST",
+        "lens": "STAR",
+        "index": 15,
+        "mirror_index": 7
+      },
+      "architectural_label": "TEST / STAR",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 38,
+      "grid": "R04C02",
+      "band": "BR21",
+      "station": "B16",
+      "structural_role": "COMPRESS/PLUS",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "COMPRESS",
+        "lens": "PLUS",
+        "index": 16,
+        "mirror_index": 6
+      },
+      "architectural_label": "COMPRESS / PLUS",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 39,
+      "grid": "R04C03",
+      "band": "BR21",
+      "station": "B17",
+      "structural_role": "COMPRESS/HINGE",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "COMPRESS",
+        "lens": "HINGE",
+        "index": 17,
+        "mirror_index": 5
+      },
+      "architectural_label": "COMPRESS / HINGE",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 40,
+      "grid": "R04C04",
+      "band": "BR21",
+      "station": "B18",
+      "structural_role": "COMPRESS/STAR",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "COMPRESS",
+        "lens": "STAR",
+        "index": 18,
+        "mirror_index": 4
+      },
+      "architectural_label": "COMPRESS / STAR",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 41,
+      "grid": "R04C05",
+      "band": "BR21",
+      "station": "B19",
+      "structural_role": "RETURN/PLUS",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "RETURN",
+        "lens": "PLUS",
+        "index": 19,
+        "mirror_index": 3
+      },
+      "architectural_label": "RETURN / PLUS",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 42,
+      "grid": "R04C06",
+      "band": "BR21",
+      "station": "B20",
+      "structural_role": "RETURN/HINGE",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "RETURN",
+        "lens": "HINGE",
+        "index": 20,
+        "mirror_index": 2
+      },
+      "architectural_label": "RETURN / HINGE",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 43,
+      "grid": "R04C07",
+      "band": "BR21",
+      "station": "B21",
+      "structural_role": "RETURN/STAR",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "family": "RETURN",
+        "lens": "STAR",
+        "index": 21,
+        "mirror_index": 1
+      },
+      "architectural_label": "RETURN / STAR",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 44,
+      "grid": "R04C08",
+      "band": "F37",
+      "station": "F01",
+      "structural_role": "diagonal Latin-square address carrier",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 1,
+        "coactivation_candidate_gid": 7
+      },
+      "architectural_label": "Diagonal Latin-Square Address and Recursive Coordinate",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 45,
+      "grid": "R04C09",
+      "band": "F37",
+      "station": "F02",
+      "structural_role": "compactified complex / Hilbert",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 2,
+        "coactivation_candidate_gid": 8
+      },
+      "architectural_label": "Compactified Complex / Hilbert State",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 46,
+      "grid": "R04C10",
+      "band": "F37",
+      "station": "F03",
+      "structural_role": "rigged distributions and instruments",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 3,
+        "coactivation_candidate_gid": 9
+      },
+      "architectural_label": "Rigged Distribution / Instrument",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 47,
+      "grid": "R04C11",
+      "band": "F37",
+      "station": "F04",
+      "structural_role": "orbit–character",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 4,
+        "coactivation_candidate_gid": 10
+      },
+      "architectural_label": "Orbit–Character",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 48,
+      "grid": "R04C12",
+      "band": "F37",
+      "station": "F05",
+      "structural_role": "affine motion",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 5,
+        "coactivation_candidate_gid": 11
+      },
+      "architectural_label": "Exact Affine Motion",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 49,
+      "grid": "R05C01",
+      "band": "F37",
+      "station": "F06",
+      "structural_role": "binary-octahedral quaternion lift",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 6,
+        "coactivation_candidate_gid": 12
+      },
+      "architectural_label": "Binary-Octahedral / Quaternion Lift",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 50,
+      "grid": "R05C02",
+      "band": "F37",
+      "station": "F07",
+      "structural_role": "branch cover / analytic continuation",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 7,
+        "coactivation_candidate_gid": 13
+      },
+      "architectural_label": "Analytic Branch-Cover",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 51,
+      "grid": "R05C03",
+      "band": "F37",
+      "station": "F08",
+      "structural_role": "jets / local-asymptotic",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 8,
+        "coactivation_candidate_gid": 14
+      },
+      "architectural_label": "Jet / Local-Asymptotic",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 52,
+      "grid": "R05C04",
+      "band": "F37",
+      "station": "F09",
+      "structural_role": "bulk–boundary totalized channel",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 9,
+        "coactivation_candidate_gid": 15
+      },
+      "architectural_label": "Bulk–Boundary Totalized Channel",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 53,
+      "grid": "R05C05",
+      "band": "F37",
+      "station": "F10",
+      "structural_role": "observable algebra",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 10,
+        "coactivation_candidate_gid": 16
+      },
+      "architectural_label": "Observable Algebra",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 54,
+      "grid": "R05C06",
+      "band": "F37",
+      "station": "F11",
+      "structural_role": "commutant / sector",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 11,
+        "coactivation_candidate_gid": 17
+      },
+      "architectural_label": "Commutant / Sector",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 55,
+      "grid": "R05C07",
+      "band": "F37",
+      "station": "F12",
+      "structural_role": "UNMAPPED — address generated; source role not declared",
+      "evidence_status": "UNMAPPED",
+      "coordinates": {
+        "index": 12,
+        "coactivation_candidate_gid": 18
+      },
+      "architectural_label": "Elliptic Two-Torsion",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "ADDRESS_ONLY",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 56,
+      "grid": "R05C08",
+      "band": "F37",
+      "station": "F13",
+      "structural_role": "route endpoint; source role not declared",
+      "evidence_status": "ROUTED_ONLY",
+      "coordinates": {
+        "index": 13,
+        "coactivation_candidate_gid": 19
+      },
+      "architectural_label": "Root and Lattice Embodiment",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "ROUTE_ENDPOINT_ONLY",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 57,
+      "grid": "R05C09",
+      "band": "F37",
+      "station": "F14",
+      "structural_role": "commutant–Laplacian",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 14,
+        "coactivation_candidate_gid": 20
+      },
+      "architectural_label": "Binary Code and Pauli Exactification",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 58,
+      "grid": "R05C10",
+      "band": "F37",
+      "station": "F15",
+      "structural_role": "gain graph",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 15,
+        "coactivation_candidate_gid": 21
+      },
+      "architectural_label": "Clifford Spin Propagation",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 59,
+      "grid": "R05C11",
+      "band": "F37",
+      "station": "F16",
+      "structural_role": "route endpoint; source role not declared",
+      "evidence_status": "ROUTED_ONLY",
+      "coordinates": {
+        "index": 16,
+        "coactivation_candidate_gid": 22
+      },
+      "architectural_label": "Finite Incidence Geometry",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "ROUTE_ENDPOINT_ONLY",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 60,
+      "grid": "R05C12",
+      "band": "F37",
+      "station": "F17",
+      "structural_role": "sheaf / holonomy",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 17,
+        "coactivation_candidate_gid": 23
+      },
+      "architectural_label": "Quantum-Group Deformation",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 61,
+      "grid": "R06C01",
+      "band": "F37",
+      "station": "F18",
+      "structural_role": "cohomology / gluing / obstruction",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 18,
+        "coactivation_candidate_gid": 24
+      },
+      "architectural_label": "Twisted K-Theory and Cohomological Completion",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 62,
+      "grid": "R06C02",
+      "band": "F37",
+      "station": "F19",
+      "structural_role": "UNMAPPED — address generated; source role not declared",
+      "evidence_status": "UNMAPPED",
+      "coordinates": {
+        "index": 19,
+        "coactivation_candidate_gid": 25
+      },
+      "architectural_label": "Physical-Geometric Seating",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "ADDRESS_ONLY",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 63,
+      "grid": "R06C03",
+      "band": "F37",
+      "station": "F20",
+      "structural_role": "UNMAPPED — address generated; source role not declared",
+      "evidence_status": "UNMAPPED",
+      "coordinates": {
+        "index": 20,
+        "coactivation_candidate_gid": 26
+      },
+      "architectural_label": "G2 Reduced-Transport Geometry",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "ADDRESS_ONLY",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 64,
+      "grid": "R06C04",
+      "band": "F37",
+      "station": "F21",
+      "structural_role": "UNMAPPED — address generated; source role not declared",
+      "evidence_status": "UNMAPPED",
+      "coordinates": {
+        "index": 21,
+        "coactivation_candidate_gid": 27
+      },
+      "architectural_label": "Octonionic Exceptional Algebra",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "ADDRESS_ONLY",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 65,
+      "grid": "R06C05",
+      "band": "F37",
+      "station": "F22",
+      "structural_role": "early warning",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 22,
+        "coactivation_candidate_gid": 28
+      },
+      "architectural_label": "Kummer K3 Compactified Bridge",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 66,
+      "grid": "R06C06",
+      "band": "F37",
+      "station": "F23",
+      "structural_role": "compression / carry",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 23,
+        "coactivation_candidate_gid": 29
+      },
+      "architectural_label": "Visible Discrete Physical Symmetry / Compression-Carry",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 67,
+      "grid": "R06C07",
+      "band": "F37",
+      "station": "F24",
+      "structural_role": "renormalization",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 24,
+        "coactivation_candidate_gid": 30
+      },
+      "architectural_label": "Symmetry-Protected Phase / Renormalization Shadow",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 68,
+      "grid": "R06C08",
+      "band": "F37",
+      "station": "F25",
+      "structural_role": "UNMAPPED — address generated; source role not declared",
+      "evidence_status": "UNMAPPED",
+      "coordinates": {
+        "index": 25,
+        "coactivation_candidate_gid": 31
+      },
+      "architectural_label": "Toric-Code Topological Realization",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "ADDRESS_ONLY",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 69,
+      "grid": "R06C09",
+      "band": "F37",
+      "station": "F26",
+      "structural_role": "hysteresis / path-dependence",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 26,
+        "coactivation_candidate_gid": 32
+      },
+      "architectural_label": "Kitaev Honeycomb and Nonabelian Lift",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 70,
+      "grid": "R06C10",
+      "band": "F37",
+      "station": "F27",
+      "structural_role": "route endpoint; source role not declared",
+      "evidence_status": "ROUTED_ONLY",
+      "coordinates": {
+        "index": 27,
+        "coactivation_candidate_gid": 33
+      },
+      "architectural_label": "Dijkgraaf–Witten Finite-Gauge / Meta-Liminal",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "ROUTE_ENDPOINT_ONLY",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 71,
+      "grid": "R06C11",
+      "band": "F37",
+      "station": "F28",
+      "structural_role": "question language",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 28,
+        "coactivation_candidate_gid": 34
+      },
+      "architectural_label": "Question-Language and Codification",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 72,
+      "grid": "R06C12",
+      "band": "F37",
+      "station": "F29",
+      "structural_role": "corridor",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 29,
+        "coactivation_candidate_gid": 35
+      },
+      "architectural_label": "Modular Visibility",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 73,
+      "grid": "R07C01",
+      "band": "F37",
+      "station": "F30",
+      "structural_role": "route endpoint; source role not declared",
+      "evidence_status": "ROUTED_ONLY",
+      "coordinates": {
+        "index": 30,
+        "coactivation_candidate_gid": 36
+      },
+      "architectural_label": "Moonshine and Graded-Representation Memory",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "ROUTE_ENDPOINT_ONLY",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 74,
+      "grid": "R07C02",
+      "band": "F37",
+      "station": "F31",
+      "structural_role": "certificates",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 31,
+        "coactivation_candidate_gid": 37
+      },
+      "architectural_label": "E7 Lattice VOA / Cross-Symmetry Certificate",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 75,
+      "grid": "R07C03",
+      "band": "F37",
+      "station": "F32",
+      "structural_role": "route endpoint; source role not declared",
+      "evidence_status": "ROUTED_ONLY",
+      "coordinates": {
+        "index": 32,
+        "coactivation_candidate_gid": 38
+      },
+      "architectural_label": "Global Conformal Body / Obligation",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "ROUTE_ENDPOINT_ONLY",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 76,
+      "grid": "R07C04",
+      "band": "F37",
+      "station": "F33",
+      "structural_role": "replay / Merkle",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 33,
+        "coactivation_candidate_gid": 39
+      },
+      "architectural_label": "Subfactor, Rigid Fusion-Index, and Replay–Merkle",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 77,
+      "grid": "R07C05",
+      "band": "F37",
+      "station": "F34",
+      "structural_role": "UNMAPPED — address generated; source role not declared",
+      "evidence_status": "UNMAPPED",
+      "coordinates": {
+        "index": 34,
+        "coactivation_candidate_gid": 40
+      },
+      "architectural_label": "Motivic Envelope",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "ADDRESS_ONLY",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 78,
+      "grid": "R07C06",
+      "band": "F37",
+      "station": "F35",
+      "structural_role": "carrier unification frontier",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 35,
+        "coactivation_candidate_gid": 41
+      },
+      "architectural_label": "Higher-Coherence Architecture and Unification Frontier",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 79,
+      "grid": "R07C07",
+      "band": "F37",
+      "station": "F36",
+      "structural_role": "UNMAPPED — address generated; source role not declared",
+      "evidence_status": "UNMAPPED",
+      "coordinates": {
+        "index": 36,
+        "coactivation_candidate_gid": 42
+      },
+      "architectural_label": "Derived Singularity, Empirical Closure, and Replay Memory",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "ADDRESS_ONLY",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 80,
+      "grid": "R07C08",
+      "band": "F37",
+      "station": "F37",
+      "structural_role": "compiler / publication atlas",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 37,
+        "coactivation_candidate_gid": 43
+      },
+      "architectural_label": "Integrable AQM Dynamical Capstone and Carrier Return",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 81,
+      "grid": "R07C09",
+      "band": "IC10",
+      "station": "I01",
+      "structural_role": "identity / provenance",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 1
+      },
+      "architectural_label": "Identity and Provenance",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 82,
+      "grid": "R07C10",
+      "band": "IC10",
+      "station": "I02",
+      "structural_role": "syntax / normalization",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 2
+      },
+      "architectural_label": "Syntax, Normalization, and Dependency Declaration",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 83,
+      "grid": "R07C11",
+      "band": "IC10",
+      "station": "I03",
+      "structural_role": "type / unit / carrier",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 3
+      },
+      "architectural_label": "Type, Unit, and Carrier",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 84,
+      "grid": "R07C12",
+      "band": "IC10",
+      "station": "I04",
+      "structural_role": "scope / regime / corridor",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 4
+      },
+      "architectural_label": "Scope, Corridor, and Evidence-Class Alignment",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 85,
+      "grid": "R08C01",
+      "band": "IC10",
+      "station": "I05",
+      "structural_role": "invariant preservation",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 5
+      },
+      "architectural_label": "Invariant Preservation",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 86,
+      "grid": "R08C02",
+      "band": "IC10",
+      "station": "I06",
+      "structural_role": "evidence sufficiency",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 6
+      },
+      "architectural_label": "Evidence Sufficiency and Independence",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 87,
+      "grid": "R08C03",
+      "band": "IC10",
+      "station": "I07",
+      "structural_role": "dependency closure",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 7
+      },
+      "architectural_label": "Dependency Closure and Replay Prerequisites",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 88,
+      "grid": "R08C04",
+      "band": "IC10",
+      "station": "I08",
+      "structural_role": "bridge / glue / return",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 8
+      },
+      "architectural_label": "Bridge, Gluing, Overlap, and Return Defect",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 89,
+      "grid": "R08C05",
+      "band": "IC10",
+      "station": "I09",
+      "structural_role": "replay completeness",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 9
+      },
+      "architectural_label": "Audit and Replay Completeness",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 90,
+      "grid": "R08C06",
+      "band": "IC10",
+      "station": "I10",
+      "structural_role": "promotion / canonical emission / reseed",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 10
+      },
+      "architectural_label": "Promotion, Canonical Emission, and Reseed Authorization",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 91,
+      "grid": "R08C07",
+      "band": "KC15",
+      "station": "{11}",
+      "structural_role": "support mask 1000",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "support": [
+          "11"
+        ],
+        "mask": "1000",
+        "cardinality": 1
+      },
+      "architectural_label": "Support Mask 1000",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 92,
+      "grid": "R08C08",
+      "band": "KC15",
+      "station": "{10}",
+      "structural_role": "support mask 0100",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "support": [
+          "10"
+        ],
+        "mask": "0100",
+        "cardinality": 1
+      },
+      "architectural_label": "Support Mask 0100",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 93,
+      "grid": "R08C09",
+      "band": "KC15",
+      "station": "{00}",
+      "structural_role": "support mask 0010",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "support": [
+          "00"
+        ],
+        "mask": "0010",
+        "cardinality": 1
+      },
+      "architectural_label": "Support Mask 1100",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 94,
+      "grid": "R08C10",
+      "band": "KC15",
+      "station": "{01}",
+      "structural_role": "support mask 0001",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "support": [
+          "01"
+        ],
+        "mask": "0001",
+        "cardinality": 1
+      },
+      "architectural_label": "Support Mask 0010",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 95,
+      "grid": "R08C11",
+      "band": "KC15",
+      "station": "{11,10}",
+      "structural_role": "support mask 1100",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "support": [
+          "11",
+          "10"
+        ],
+        "mask": "1100",
+        "cardinality": 2
+      },
+      "architectural_label": "Support Mask 1010",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 96,
+      "grid": "R08C12",
+      "band": "KC15",
+      "station": "{11,00}",
+      "structural_role": "support mask 1010",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "support": [
+          "11",
+          "00"
+        ],
+        "mask": "1010",
+        "cardinality": 2
+      },
+      "architectural_label": "Support Mask 0110",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 97,
+      "grid": "R09C01",
+      "band": "KC15",
+      "station": "{11,01}",
+      "structural_role": "support mask 1001",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "support": [
+          "11",
+          "01"
+        ],
+        "mask": "1001",
+        "cardinality": 2
+      },
+      "architectural_label": "Support Mask 1110",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 98,
+      "grid": "R09C02",
+      "band": "KC15",
+      "station": "{10,00}",
+      "structural_role": "support mask 0110",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "support": [
+          "10",
+          "00"
+        ],
+        "mask": "0110",
+        "cardinality": 2
+      },
+      "architectural_label": "Support Mask 0001",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 99,
+      "grid": "R09C03",
+      "band": "KC15",
+      "station": "{10,01}",
+      "structural_role": "support mask 0101",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "support": [
+          "10",
+          "01"
+        ],
+        "mask": "0101",
+        "cardinality": 2
+      },
+      "architectural_label": "Support Mask 1001",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 100,
+      "grid": "R09C04",
+      "band": "KC15",
+      "station": "{00,01}",
+      "structural_role": "support mask 0011",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "support": [
+          "00",
+          "01"
+        ],
+        "mask": "0011",
+        "cardinality": 2
+      },
+      "architectural_label": "Support Mask 0101",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 101,
+      "grid": "R09C05",
+      "band": "KC15",
+      "station": "{11,10,00}",
+      "structural_role": "support mask 1110",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "support": [
+          "11",
+          "10",
+          "00"
+        ],
+        "mask": "1110",
+        "cardinality": 3
+      },
+      "architectural_label": "Support Mask 1101",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 102,
+      "grid": "R09C06",
+      "band": "KC15",
+      "station": "{11,10,01}",
+      "structural_role": "support mask 1101",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "support": [
+          "11",
+          "10",
+          "01"
+        ],
+        "mask": "1101",
+        "cardinality": 3
+      },
+      "architectural_label": "Support Mask 0011",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 103,
+      "grid": "R09C07",
+      "band": "KC15",
+      "station": "{11,00,01}",
+      "structural_role": "support mask 1011",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "support": [
+          "11",
+          "00",
+          "01"
+        ],
+        "mask": "1011",
+        "cardinality": 3
+      },
+      "architectural_label": "Support Mask 1011",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 104,
+      "grid": "R09C08",
+      "band": "KC15",
+      "station": "{10,00,01}",
+      "structural_role": "support mask 0111",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "support": [
+          "10",
+          "00",
+          "01"
+        ],
+        "mask": "0111",
+        "cardinality": 3
+      },
+      "architectural_label": "Support Mask 0111",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 105,
+      "grid": "R09C09",
+      "band": "KC15",
+      "station": "{11,10,00,01}",
+      "structural_role": "support mask 1111",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "support": [
+          "11",
+          "10",
+          "00",
+          "01"
+        ],
+        "mask": "1111",
+        "cardinality": 4
+      },
+      "architectural_label": "Support Mask 1111",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 106,
+      "grid": "R09C10",
+      "band": "KC27",
+      "station": "P00",
+      "structural_role": "(-1,-1,-1)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          -1,
+          -1,
+          -1
+        ],
+        "index": 0,
+        "mirror_gid": 132,
+        "ring": 3
+      },
+      "architectural_label": "Semantic Coordinate 000",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 107,
+      "grid": "R09C11",
+      "band": "KC27",
+      "station": "P01",
+      "structural_role": "(0,-1,-1)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          0,
+          -1,
+          -1
+        ],
+        "index": 1,
+        "mirror_gid": 131,
+        "ring": 2
+      },
+      "architectural_label": "Semantic Coordinate 001",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 108,
+      "grid": "R09C12",
+      "band": "KC27",
+      "station": "P02",
+      "structural_role": "(1,-1,-1)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          1,
+          -1,
+          -1
+        ],
+        "index": 2,
+        "mirror_gid": 130,
+        "ring": 3
+      },
+      "architectural_label": "Semantic Coordinate 002",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 109,
+      "grid": "R10C01",
+      "band": "KC27",
+      "station": "P03",
+      "structural_role": "(-1,0,-1)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          -1,
+          0,
+          -1
+        ],
+        "index": 3,
+        "mirror_gid": 129,
+        "ring": 2
+      },
+      "architectural_label": "Semantic Coordinate 010",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 110,
+      "grid": "R10C02",
+      "band": "KC27",
+      "station": "P04",
+      "structural_role": "(0,0,-1)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          0,
+          0,
+          -1
+        ],
+        "index": 4,
+        "mirror_gid": 128,
+        "ring": 1
+      },
+      "architectural_label": "Semantic Coordinate 011",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 111,
+      "grid": "R10C03",
+      "band": "KC27",
+      "station": "P05",
+      "structural_role": "(1,0,-1)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          1,
+          0,
+          -1
+        ],
+        "index": 5,
+        "mirror_gid": 127,
+        "ring": 2
+      },
+      "architectural_label": "Semantic Coordinate 012",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 112,
+      "grid": "R10C04",
+      "band": "KC27",
+      "station": "P06",
+      "structural_role": "(-1,1,-1)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          -1,
+          1,
+          -1
+        ],
+        "index": 6,
+        "mirror_gid": 126,
+        "ring": 3
+      },
+      "architectural_label": "Semantic Coordinate 020",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 113,
+      "grid": "R10C05",
+      "band": "KC27",
+      "station": "P07",
+      "structural_role": "(0,1,-1)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          0,
+          1,
+          -1
+        ],
+        "index": 7,
+        "mirror_gid": 125,
+        "ring": 2
+      },
+      "architectural_label": "Semantic Coordinate 021",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 114,
+      "grid": "R10C06",
+      "band": "KC27",
+      "station": "P08",
+      "structural_role": "(1,1,-1)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          1,
+          1,
+          -1
+        ],
+        "index": 8,
+        "mirror_gid": 124,
+        "ring": 3
+      },
+      "architectural_label": "Differential, Cohomological, and Boundary Calculus",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 115,
+      "grid": "R10C07",
+      "band": "KC27",
+      "station": "P09",
+      "structural_role": "(-1,-1,0)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          -1,
+          -1,
+          0
+        ],
+        "index": 9,
+        "mirror_gid": 123,
+        "ring": 2
+      },
+      "architectural_label": "Addressing, Random Access, and Seed Retrieval",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 116,
+      "grid": "R10C08",
+      "band": "KC27",
+      "station": "P10",
+      "structural_role": "(0,-1,0)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          0,
+          -1,
+          0
+        ],
+        "index": 10,
+        "mirror_gid": 122,
+        "ring": 1
+      },
+      "architectural_label": "BR21 Peer Runtime",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 117,
+      "grid": "R10C09",
+      "band": "KC27",
+      "station": "P11",
+      "structural_role": "(1,-1,0)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          1,
+          -1,
+          0
+        ],
+        "index": 11,
+        "mirror_gid": 121,
+        "ring": 2
+      },
+      "architectural_label": "IC10 Promotion-Compiler Index",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 118,
+      "grid": "R10C10",
+      "band": "KC27",
+      "station": "P12",
+      "structural_role": "(-1,0,0)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          -1,
+          0,
+          0
+        ],
+        "index": 12,
+        "mirror_gid": 120,
+        "ring": 1
+      },
+      "architectural_label": "CUT Branch-Complete Navigation",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 119,
+      "grid": "R10C11",
+      "band": "KC27",
+      "station": "P13",
+      "structural_role": "(0,0,0)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          0,
+          0,
+          0
+        ],
+        "index": 13,
+        "mirror_gid": 119,
+        "ring": 0
+      },
+      "architectural_label": "Codec, Compression, and QSHRINK",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 120,
+      "grid": "R10C12",
+      "band": "KC27",
+      "station": "P14",
+      "structural_role": "(1,0,0)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          1,
+          0,
+          0
+        ],
+        "index": 14,
+        "mirror_gid": 118,
+        "ring": 1
+      },
+      "architectural_label": "Memory, Merkle, and Content Addressing",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 121,
+      "grid": "R11C01",
+      "band": "KC27",
+      "station": "P15",
+      "structural_role": "(-1,1,0)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          -1,
+          1,
+          0
+        ],
+        "index": 15,
+        "mirror_gid": 117,
+        "ring": 2
+      },
+      "architectural_label": "Semantic Coordinate 120",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 122,
+      "grid": "R11C02",
+      "band": "KC27",
+      "station": "P16",
+      "structural_role": "(0,1,0)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          0,
+          1,
+          0
+        ],
+        "index": 16,
+        "mirror_gid": 116,
+        "ring": 1
+      },
+      "architectural_label": "Semantic Coordinate 121",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 123,
+      "grid": "R11C03",
+      "band": "KC27",
+      "station": "P17",
+      "structural_role": "(1,1,0)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          1,
+          1,
+          0
+        ],
+        "index": 17,
+        "mirror_gid": 115,
+        "ring": 2
+      },
+      "architectural_label": "Semantic Coordinate 122",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 124,
+      "grid": "R11C04",
+      "band": "KC27",
+      "station": "P18",
+      "structural_role": "(-1,-1,1)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          -1,
+          -1,
+          1
+        ],
+        "index": 18,
+        "mirror_gid": 114,
+        "ring": 3
+      },
+      "architectural_label": "Semantic Coordinate 200",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 125,
+      "grid": "R11C05",
+      "band": "KC27",
+      "station": "P19",
+      "structural_role": "(0,-1,1)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          0,
+          -1,
+          1
+        ],
+        "index": 19,
+        "mirror_gid": 113,
+        "ring": 2
+      },
+      "architectural_label": "Semantic Coordinate 201",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 126,
+      "grid": "R11C06",
+      "band": "KC27",
+      "station": "P20",
+      "structural_role": "(1,-1,1)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          1,
+          -1,
+          1
+        ],
+        "index": 20,
+        "mirror_gid": 112,
+        "ring": 3
+      },
+      "architectural_label": "Semantic Coordinate 202",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 127,
+      "grid": "R11C07",
+      "band": "KC27",
+      "station": "P21",
+      "structural_role": "(-1,0,1)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          -1,
+          0,
+          1
+        ],
+        "index": 21,
+        "mirror_gid": 111,
+        "ring": 2
+      },
+      "architectural_label": "Semantic Coordinate 210",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 128,
+      "grid": "R11C08",
+      "band": "KC27",
+      "station": "P22",
+      "structural_role": "(0,0,1)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          0,
+          0,
+          1
+        ],
+        "index": 22,
+        "mirror_gid": 110,
+        "ring": 1
+      },
+      "architectural_label": "Semantic Coordinate 211",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 129,
+      "grid": "R11C09",
+      "band": "KC27",
+      "station": "P23",
+      "structural_role": "(1,0,1)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          1,
+          0,
+          1
+        ],
+        "index": 23,
+        "mirror_gid": 109,
+        "ring": 2
+      },
+      "architectural_label": "Semantic Coordinate 212",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 130,
+      "grid": "R11C10",
+      "band": "KC27",
+      "station": "P24",
+      "structural_role": "(-1,1,1)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          -1,
+          1,
+          1
+        ],
+        "index": 24,
+        "mirror_gid": 108,
+        "ring": 3
+      },
+      "architectural_label": "Semantic Coordinate 220",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 131,
+      "grid": "R11C11",
+      "band": "KC27",
+      "station": "P25",
+      "structural_role": "(0,1,1)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          0,
+          1,
+          1
+        ],
+        "index": 25,
+        "mirror_gid": 107,
+        "ring": 2
+      },
+      "architectural_label": "Semantic Coordinate 221",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 132,
+      "grid": "R11C12",
+      "band": "KC27",
+      "station": "P26",
+      "structural_role": "(1,1,1)",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "coord": [
+          1,
+          1,
+          1
+        ],
+        "index": 26,
+        "mirror_gid": 106,
+        "ring": 3
+      },
+      "architectural_label": "Semantic Coordinate 222",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 133,
+      "grid": "R12C01",
+      "band": "SSN12",
+      "station": "M01",
+      "structural_role": "node-state ledger",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "index": 1
+      },
+      "architectural_label": "Node-State and Station-Maturity Registry",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 134,
+      "grid": "R12C02",
+      "band": "SSN12",
+      "station": "M02",
+      "structural_role": "edge-state ledger",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 2
+      },
+      "architectural_label": "Edge-State, Bridge-State, and Route-Class Registry",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 135,
+      "grid": "R12C03",
+      "band": "SSN12",
+      "station": "M03",
+      "structural_role": "parallel wave engine",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 3
+      },
+      "architectural_label": "Epoch, Alias, and Coordinate-Crosswalk Registry",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 136,
+      "grid": "R12C04",
+      "band": "SSN12",
+      "station": "M04",
+      "structural_role": "in-between region ledger",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "index": 4
+      },
+      "architectural_label": "Liminal, Disagreement, and J-Space Boundary Registry",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 137,
+      "grid": "R12C05",
+      "band": "SSN12",
+      "station": "M05",
+      "structural_role": "hybrid-density map",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 5
+      },
+      "architectural_label": "Activation, Observer, and Coverage Map",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 138,
+      "grid": "R12C06",
+      "band": "SSN12",
+      "station": "M06",
+      "structural_role": "thought-pattern matrix",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 6
+      },
+      "architectural_label": "Branch, Tombstone, Quarantine, and Rejected-Route Store",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 139,
+      "grid": "R12C07",
+      "band": "SSN12",
+      "station": "M07",
+      "structural_role": "J-space commitment boundary",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "index": 7
+      },
+      "architectural_label": "Defect, Obligation, Evidence-Debt, and Repair Scheduler",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 140,
+      "grid": "R12C08",
+      "band": "SSN12",
+      "station": "M08",
+      "structural_role": "healing and gap ledger",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 8
+      },
+      "architectural_label": "Healing Route and Unresolved-Bridge Resolver",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 141,
+      "grid": "R12C09",
+      "band": "SSN12",
+      "station": "M09",
+      "structural_role": "path-signature registry",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 9
+      },
+      "architectural_label": "Path-Signature, Traversal, and Route Ledger",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 142,
+      "grid": "R12C10",
+      "band": "SSN12",
+      "station": "M10",
+      "structural_role": "projective-synapse map",
+      "evidence_status": "DERIVED",
+      "coordinates": {
+        "index": 10
+      },
+      "architectural_label": "Replay, Replica, and Cold-Boot Observatory",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "GENERATOR_FORCED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 143,
+      "grid": "R12C11",
+      "band": "SSN12",
+      "station": "M11",
+      "structural_role": "route-coverage audit",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 11
+      },
+      "architectural_label": "Merge, Deployment, Authority, and Release Receipt",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    },
+    {
+      "gid": 144,
+      "grid": "R12C12",
+      "band": "SSN12",
+      "station": "M12",
+      "structural_role": "solid-state certificate",
+      "evidence_status": "DOCUMENTED",
+      "coordinates": {
+        "index": 12
+      },
+      "architectural_label": "Successor Certificate, Global Seed, and Prime Reentry",
+      "architectural_status": "FROZEN",
+      "aliases": [],
+      "population_basis": "SOURCE_DOCUMENTED",
+      "promotion_effect": "NONE"
+    }
+  ],
+  "edges": [
+    {
+      "source": 1,
+      "target": 2,
+      "edge_class": "H6_RING",
+      "semantics": "control-cycle"
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "edge_class": "H6_RING",
+      "semantics": "control-cycle"
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "edge_class": "H6_RING",
+      "semantics": "control-cycle"
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "edge_class": "H6_RING",
+      "semantics": "control-cycle"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "edge_class": "H6_RING",
+      "semantics": "control-cycle"
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "edge_class": "H6_RING",
+      "semantics": "control-cycle"
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "C4 lens relation"
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 lens schedule"
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "C4 lens relation"
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 lens schedule"
+    },
+    {
+      "source": 7,
+      "target": 11,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 7,
+      "target": 11,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 pole schedule"
+    },
+    {
+      "source": 7,
+      "target": 15,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 7,
+      "target": 19,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 7,
+      "target": 19,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 pole schedule"
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "C4 lens relation"
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 lens schedule"
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 pole schedule"
+    },
+    {
+      "source": 8,
+      "target": 16,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 8,
+      "target": 20,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 8,
+      "target": 20,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 pole schedule"
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "C4 lens relation"
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 lens schedule"
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 pole schedule"
+    },
+    {
+      "source": 9,
+      "target": 17,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 9,
+      "target": 21,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 9,
+      "target": 21,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 pole schedule"
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 pole schedule"
+    },
+    {
+      "source": 10,
+      "target": 18,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 10,
+      "target": 22,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 10,
+      "target": 22,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 pole schedule"
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "C4 lens relation"
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 lens schedule"
+    },
+    {
+      "source": 11,
+      "target": 14,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "C4 lens relation"
+    },
+    {
+      "source": 11,
+      "target": 14,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 lens schedule"
+    },
+    {
+      "source": 11,
+      "target": 15,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 11,
+      "target": 15,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 pole schedule"
+    },
+    {
+      "source": 11,
+      "target": 19,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 12,
+      "target": 13,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "C4 lens relation"
+    },
+    {
+      "source": 12,
+      "target": 13,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 lens schedule"
+    },
+    {
+      "source": 12,
+      "target": 16,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 12,
+      "target": 16,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 pole schedule"
+    },
+    {
+      "source": 12,
+      "target": 20,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 13,
+      "target": 14,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "C4 lens relation"
+    },
+    {
+      "source": 13,
+      "target": 14,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 lens schedule"
+    },
+    {
+      "source": 13,
+      "target": 17,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 13,
+      "target": 17,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 pole schedule"
+    },
+    {
+      "source": 13,
+      "target": 21,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 14,
+      "target": 18,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 14,
+      "target": 18,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 pole schedule"
+    },
+    {
+      "source": 14,
+      "target": 22,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 15,
+      "target": 16,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "C4 lens relation"
+    },
+    {
+      "source": 15,
+      "target": 16,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 lens schedule"
+    },
+    {
+      "source": 15,
+      "target": 18,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "C4 lens relation"
+    },
+    {
+      "source": 15,
+      "target": 18,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 lens schedule"
+    },
+    {
+      "source": 15,
+      "target": 19,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 15,
+      "target": 19,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 pole schedule"
+    },
+    {
+      "source": 16,
+      "target": 17,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "C4 lens relation"
+    },
+    {
+      "source": 16,
+      "target": 17,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 lens schedule"
+    },
+    {
+      "source": 16,
+      "target": 20,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 16,
+      "target": 20,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 pole schedule"
+    },
+    {
+      "source": 17,
+      "target": 18,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "C4 lens relation"
+    },
+    {
+      "source": 17,
+      "target": 18,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 lens schedule"
+    },
+    {
+      "source": 17,
+      "target": 21,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 17,
+      "target": 21,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 pole schedule"
+    },
+    {
+      "source": 18,
+      "target": 22,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "K4 pole relation"
+    },
+    {
+      "source": 18,
+      "target": 22,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 pole schedule"
+    },
+    {
+      "source": 19,
+      "target": 20,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "C4 lens relation"
+    },
+    {
+      "source": 19,
+      "target": 20,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 lens schedule"
+    },
+    {
+      "source": 19,
+      "target": 22,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "C4 lens relation"
+    },
+    {
+      "source": 19,
+      "target": 22,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 lens schedule"
+    },
+    {
+      "source": 20,
+      "target": 21,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "C4 lens relation"
+    },
+    {
+      "source": 20,
+      "target": 21,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 lens schedule"
+    },
+    {
+      "source": 21,
+      "target": 22,
+      "edge_class": "X16_ALGEBRA",
+      "semantics": "C4 lens relation"
+    },
+    {
+      "source": 21,
+      "target": 22,
+      "edge_class": "X16_SCHEDULE",
+      "semantics": "C4 lens schedule"
+    },
+    {
+      "source": 23,
+      "target": 24,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 23,
+      "target": 25,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 23,
+      "target": 26,
+      "edge_class": "BR21_OPERATOR",
+      "semantics": "P7 operator rail"
+    },
+    {
+      "source": 24,
+      "target": 25,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 24,
+      "target": 27,
+      "edge_class": "BR21_OPERATOR",
+      "semantics": "P7 operator rail"
+    },
+    {
+      "source": 25,
+      "target": 28,
+      "edge_class": "BR21_OPERATOR",
+      "semantics": "P7 operator rail"
+    },
+    {
+      "source": 26,
+      "target": 27,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 26,
+      "target": 28,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 26,
+      "target": 29,
+      "edge_class": "BR21_OPERATOR",
+      "semantics": "P7 operator rail"
+    },
+    {
+      "source": 27,
+      "target": 28,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 27,
+      "target": 30,
+      "edge_class": "BR21_OPERATOR",
+      "semantics": "P7 operator rail"
+    },
+    {
+      "source": 28,
+      "target": 31,
+      "edge_class": "BR21_OPERATOR",
+      "semantics": "P7 operator rail"
+    },
+    {
+      "source": 29,
+      "target": 30,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 29,
+      "target": 31,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 29,
+      "target": 32,
+      "edge_class": "BR21_OPERATOR",
+      "semantics": "P7 operator rail"
+    },
+    {
+      "source": 30,
+      "target": 31,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 30,
+      "target": 33,
+      "edge_class": "BR21_OPERATOR",
+      "semantics": "P7 operator rail"
+    },
+    {
+      "source": 31,
+      "target": 34,
+      "edge_class": "BR21_OPERATOR",
+      "semantics": "P7 operator rail"
+    },
+    {
+      "source": 32,
+      "target": 33,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 32,
+      "target": 34,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 32,
+      "target": 35,
+      "edge_class": "BR21_OPERATOR",
+      "semantics": "P7 operator rail"
+    },
+    {
+      "source": 33,
+      "target": 34,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 33,
+      "target": 36,
+      "edge_class": "BR21_OPERATOR",
+      "semantics": "P7 operator rail"
+    },
+    {
+      "source": 34,
+      "target": 37,
+      "edge_class": "BR21_OPERATOR",
+      "semantics": "P7 operator rail"
+    },
+    {
+      "source": 35,
+      "target": 36,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 35,
+      "target": 37,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 35,
+      "target": 38,
+      "edge_class": "BR21_OPERATOR",
+      "semantics": "P7 operator rail"
+    },
+    {
+      "source": 36,
+      "target": 37,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 36,
+      "target": 39,
+      "edge_class": "BR21_OPERATOR",
+      "semantics": "P7 operator rail"
+    },
+    {
+      "source": 37,
+      "target": 40,
+      "edge_class": "BR21_OPERATOR",
+      "semantics": "P7 operator rail"
+    },
+    {
+      "source": 38,
+      "target": 39,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 38,
+      "target": 40,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 38,
+      "target": 41,
+      "edge_class": "BR21_OPERATOR",
+      "semantics": "P7 operator rail"
+    },
+    {
+      "source": 39,
+      "target": 40,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 39,
+      "target": 42,
+      "edge_class": "BR21_OPERATOR",
+      "semantics": "P7 operator rail"
+    },
+    {
+      "source": 40,
+      "target": 43,
+      "edge_class": "BR21_OPERATOR",
+      "semantics": "P7 operator rail"
+    },
+    {
+      "source": 41,
+      "target": 42,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 41,
+      "target": 43,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 42,
+      "target": 43,
+      "edge_class": "BR21_LENS",
+      "semantics": "K3 lens relation"
+    },
+    {
+      "source": 44,
+      "target": 45,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 45,
+      "target": 46,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 46,
+      "target": 47,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 47,
+      "target": 48,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 48,
+      "target": 49,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 49,
+      "target": 50,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 50,
+      "target": 51,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 51,
+      "target": 52,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 52,
+      "target": 53,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 53,
+      "target": 54,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 54,
+      "target": 55,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 55,
+      "target": 56,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 56,
+      "target": 57,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 57,
+      "target": 58,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 58,
+      "target": 59,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 59,
+      "target": 60,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 60,
+      "target": 61,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 61,
+      "target": 62,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 62,
+      "target": 63,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 63,
+      "target": 64,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 64,
+      "target": 65,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 65,
+      "target": 66,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 66,
+      "target": 67,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 67,
+      "target": 68,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 68,
+      "target": 69,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 69,
+      "target": 70,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 70,
+      "target": 71,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 71,
+      "target": 72,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 72,
+      "target": 73,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 73,
+      "target": 74,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 74,
+      "target": 75,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 75,
+      "target": 76,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 76,
+      "target": 77,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 77,
+      "target": 78,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 78,
+      "target": 79,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 79,
+      "target": 80,
+      "edge_class": "F37_RAIL",
+      "semantics": "P37 carrier address rail"
+    },
+    {
+      "source": 81,
+      "target": 82,
+      "edge_class": "IC10_CHAIN",
+      "semantics": "ordered promotion gates"
+    },
+    {
+      "source": 82,
+      "target": 83,
+      "edge_class": "IC10_CHAIN",
+      "semantics": "ordered promotion gates"
+    },
+    {
+      "source": 83,
+      "target": 84,
+      "edge_class": "IC10_CHAIN",
+      "semantics": "ordered promotion gates"
+    },
+    {
+      "source": 84,
+      "target": 85,
+      "edge_class": "IC10_CHAIN",
+      "semantics": "ordered promotion gates"
+    },
+    {
+      "source": 85,
+      "target": 86,
+      "edge_class": "IC10_CHAIN",
+      "semantics": "ordered promotion gates"
+    },
+    {
+      "source": 86,
+      "target": 87,
+      "edge_class": "IC10_CHAIN",
+      "semantics": "ordered promotion gates"
+    },
+    {
+      "source": 87,
+      "target": 88,
+      "edge_class": "IC10_CHAIN",
+      "semantics": "ordered promotion gates"
+    },
+    {
+      "source": 88,
+      "target": 89,
+      "edge_class": "IC10_CHAIN",
+      "semantics": "ordered promotion gates"
+    },
+    {
+      "source": 89,
+      "target": 90,
+      "edge_class": "IC10_CHAIN",
+      "semantics": "ordered promotion gates"
+    },
+    {
+      "source": 91,
+      "target": 95,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 91,
+      "target": 96,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 91,
+      "target": 97,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 92,
+      "target": 95,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 92,
+      "target": 98,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 92,
+      "target": 99,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 93,
+      "target": 96,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 93,
+      "target": 98,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 93,
+      "target": 100,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 94,
+      "target": 97,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 94,
+      "target": 99,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 94,
+      "target": 100,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 95,
+      "target": 101,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 95,
+      "target": 102,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 96,
+      "target": 101,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 96,
+      "target": 103,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 97,
+      "target": 102,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 97,
+      "target": 103,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 98,
+      "target": 101,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 98,
+      "target": 104,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 99,
+      "target": 102,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 99,
+      "target": 104,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 100,
+      "target": 103,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 100,
+      "target": 104,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 101,
+      "target": 105,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 102,
+      "target": 105,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 103,
+      "target": 105,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 104,
+      "target": 105,
+      "edge_class": "KC15_HASSE",
+      "semantics": "nonempty B4 Hasse cover"
+    },
+    {
+      "source": 106,
+      "target": 107,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 106,
+      "target": 109,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 106,
+      "target": 115,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 107,
+      "target": 108,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 107,
+      "target": 110,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 107,
+      "target": 116,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 108,
+      "target": 111,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 108,
+      "target": 117,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 109,
+      "target": 110,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 109,
+      "target": 112,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 109,
+      "target": 118,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 110,
+      "target": 111,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 110,
+      "target": 113,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 110,
+      "target": 119,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 111,
+      "target": 114,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 111,
+      "target": 120,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 112,
+      "target": 113,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 112,
+      "target": 121,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 113,
+      "target": 114,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 113,
+      "target": 122,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 114,
+      "target": 123,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 115,
+      "target": 116,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 115,
+      "target": 118,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 115,
+      "target": 124,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 116,
+      "target": 117,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 116,
+      "target": 119,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 116,
+      "target": 125,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 117,
+      "target": 120,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 117,
+      "target": 126,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 118,
+      "target": 119,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 118,
+      "target": 121,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 118,
+      "target": 127,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 119,
+      "target": 120,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 119,
+      "target": 122,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 119,
+      "target": 128,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 120,
+      "target": 123,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 120,
+      "target": 129,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 121,
+      "target": 122,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 121,
+      "target": 130,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 122,
+      "target": 123,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 122,
+      "target": 131,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 123,
+      "target": 132,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 124,
+      "target": 125,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 124,
+      "target": 127,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 125,
+      "target": 126,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 125,
+      "target": 128,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 126,
+      "target": 129,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 127,
+      "target": 128,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 127,
+      "target": 130,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 128,
+      "target": 129,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 128,
+      "target": 131,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 129,
+      "target": 132,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 130,
+      "target": 131,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 131,
+      "target": 132,
+      "edge_class": "KC54_EDGE",
+      "semantics": "KC27 cube rail"
+    },
+    {
+      "source": 133,
+      "target": 134,
+      "edge_class": "SSN12_CHAIN",
+      "semantics": "observatory sequence"
+    },
+    {
+      "source": 134,
+      "target": 135,
+      "edge_class": "SSN12_CHAIN",
+      "semantics": "observatory sequence"
+    },
+    {
+      "source": 135,
+      "target": 136,
+      "edge_class": "SSN12_CHAIN",
+      "semantics": "observatory sequence"
+    },
+    {
+      "source": 136,
+      "target": 137,
+      "edge_class": "SSN12_CHAIN",
+      "semantics": "observatory sequence"
+    },
+    {
+      "source": 137,
+      "target": 138,
+      "edge_class": "SSN12_CHAIN",
+      "semantics": "observatory sequence"
+    },
+    {
+      "source": 138,
+      "target": 139,
+      "edge_class": "SSN12_CHAIN",
+      "semantics": "observatory sequence"
+    },
+    {
+      "source": 139,
+      "target": 140,
+      "edge_class": "SSN12_CHAIN",
+      "semantics": "observatory sequence"
+    },
+    {
+      "source": 140,
+      "target": 141,
+      "edge_class": "SSN12_CHAIN",
+      "semantics": "observatory sequence"
+    },
+    {
+      "source": 141,
+      "target": 142,
+      "edge_class": "SSN12_CHAIN",
+      "semantics": "observatory sequence"
+    },
+    {
+      "source": 142,
+      "target": 143,
+      "edge_class": "SSN12_CHAIN",
+      "semantics": "observatory sequence"
+    },
+    {
+      "source": 143,
+      "target": 144,
+      "edge_class": "SSN12_CHAIN",
+      "semantics": "observatory sequence"
+    }
+  ],
+  "residuals": [
+    {
+      "gid": 55,
+      "station": "F12",
+      "architectural_label": "Elliptic Two-Torsion",
+      "evidence_status": "UNMAPPED",
+      "required_resolution": "bind an exact source excerpt and witness"
+    },
+    {
+      "gid": 56,
+      "station": "F13",
+      "architectural_label": "Root and Lattice Embodiment",
+      "evidence_status": "ROUTED_ONLY",
+      "required_resolution": "bind a role-defining source excerpt"
+    },
+    {
+      "gid": 59,
+      "station": "F16",
+      "architectural_label": "Finite Incidence Geometry",
+      "evidence_status": "ROUTED_ONLY",
+      "required_resolution": "bind a role-defining source excerpt"
+    },
+    {
+      "gid": 62,
+      "station": "F19",
+      "architectural_label": "Physical-Geometric Seating",
+      "evidence_status": "UNMAPPED",
+      "required_resolution": "bind an exact source excerpt and witness"
+    },
+    {
+      "gid": 63,
+      "station": "F20",
+      "architectural_label": "G2 Reduced-Transport Geometry",
+      "evidence_status": "UNMAPPED",
+      "required_resolution": "bind an exact source excerpt and witness"
+    },
+    {
+      "gid": 64,
+      "station": "F21",
+      "architectural_label": "Octonionic Exceptional Algebra",
+      "evidence_status": "UNMAPPED",
+      "required_resolution": "bind an exact source excerpt and witness"
+    },
+    {
+      "gid": 68,
+      "station": "F25",
+      "architectural_label": "Toric-Code Topological Realization",
+      "evidence_status": "UNMAPPED",
+      "required_resolution": "bind an exact source excerpt and witness"
+    },
+    {
+      "gid": 70,
+      "station": "F27",
+      "architectural_label": "Dijkgraaf–Witten Finite-Gauge / Meta-Liminal",
+      "evidence_status": "ROUTED_ONLY",
+      "required_resolution": "bind a role-defining source excerpt"
+    },
+    {
+      "gid": 73,
+      "station": "F30",
+      "architectural_label": "Moonshine and Graded-Representation Memory",
+      "evidence_status": "ROUTED_ONLY",
+      "required_resolution": "bind a role-defining source excerpt"
+    },
+    {
+      "gid": 75,
+      "station": "F32",
+      "architectural_label": "Global Conformal Body / Obligation",
+      "evidence_status": "ROUTED_ONLY",
+      "required_resolution": "bind a role-defining source excerpt"
+    },
+    {
+      "gid": 77,
+      "station": "F34",
+      "architectural_label": "Motivic Envelope",
+      "evidence_status": "UNMAPPED",
+      "required_resolution": "bind an exact source excerpt and witness"
+    },
+    {
+      "gid": 79,
+      "station": "F36",
+      "architectural_label": "Derived Singularity, Empirical Closure, and Replay Memory",
+      "evidence_status": "UNMAPPED",
+      "required_resolution": "bind an exact source excerpt and witness"
+    }
+  ],
+  "digest": "sha256:920b03d50826c1f90ecfb0039cb2bba551f9733597a22bca8755bb8cbf9b39fb"
+}

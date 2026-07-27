@@ -1,0 +1,55 @@
+{
+  "schema": "KC144.SystematicFrontier.V4",
+  "status": "FRAMEWORK_COMPLETE_LIVE_OBLIGATIONS_OPEN",
+  "obligations": [
+    {
+      "id": "FRT-I09-DOCUMENTED",
+      "count": 86,
+      "action": "independent replay of each source-documented station",
+      "cannot_self_supply": true
+    },
+    {
+      "id": "FRT-I09-GENERATOR",
+      "count": 1,
+      "action": "independent cold replay of the complete generator",
+      "cannot_self_supply": true
+    },
+    {
+      "id": "FRT-DOMAIN",
+      "count": 58,
+      "action": "bind source-domain residents without converting structure into evidence",
+      "explicit_F37_residuals": [
+        55,
+        56,
+        59,
+        62,
+        63,
+        64,
+        68,
+        70,
+        73,
+        75,
+        77,
+        79
+      ]
+    },
+    {
+      "id": "FRT-BRIDGES",
+      "count": 28,
+      "action": "replace declared connectivity with beta-tuple transport witnesses"
+    },
+    {
+      "id": "FRT-FEDERATION",
+      "count": 12,
+      "action": "pin live repository commits and publish prepared contracts"
+    },
+    {
+      "id": "FRT-SOLID",
+      "count": 1,
+      "action": "issue M12 only after live coverage, returnability, and authority checks"
+    }
+  ],
+  "next_seed": "KC144.V4::MYCELIUM-PASS-003::QUERY_ROUTE_RETURN_COMPILER",
+  "promotion_effect": "NONE",
+  "new_runtime_capability": "H06 QueryBundle -> evidence-filtered Pareto attractors -> typed route -> bridge exposure -> return plan"
+}

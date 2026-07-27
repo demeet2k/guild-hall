@@ -1,0 +1,20 @@
+{
+  "schema": "KC144.ExternalHandoffState.V9",
+  "handoff_id": "KC144.EXTERNAL.HANDOFF.V9",
+  "bundle_root": "sha256:5a26b8be43df7df045c0a9beb4455b66b1e878468b74c1d1877ed5d789d6aea7",
+  "bundle_digest": "sha256:3c70bcda8c2fbb741009ea1f01629e1bcd41c4974c5369afe635f3d3b72c9979",
+  "namespace": "PRODUCTION",
+  "ledger_digest": "sha256:b76c6a986e18d7ec0b000780c220b913484c5888c41d3b431302ea844664afa6",
+  "governance_registry_digest": "sha256:28d630ed644552b198356bb4a25b628da2ddb589eab5ba6180ee031dbab72d8c",
+  "authority_registry_digest": "sha256:491b03e0f2e188bfbc4156dbe6693846fa58e11a1579738bba54d9eeab384fc8",
+  "active_governance_members": 0,
+  "governance_threshold": 3,
+  "eligible_campaign_authorities": [],
+  "campaign_completed_shards": 0,
+  "campaign_total_shards": 16,
+  "barrier": "THRESHOLD_GOVERNANCE_MEMBERS_REQUIRED",
+  "production_truth_effect": "NONE",
+  "frozen_crystal_mutated": false,
+  "next_seed": "KC144.V9::ENROLL-FIVE-INDEPENDENT-GOVERNANCE-MEMBERS",
+  "state_digest": "sha256:9b4b6af3ee3d763fb1b5ade334fa92d0152915fc063553f25f9915035cddc59d"
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/reentry-seed-v5.schema.json",
+  "title": "KC144 V5 reentry seed",
+  "type": "object",
+  "required": [
+    "schema",
+    "session_id",
+    "epoch",
+    "queries",
+    "execution_mode",
+    "edge_manifest_digest",
+    "expected_receipt_root",
+    "expected_session_digest",
+    "seed_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ReentrySeed.V5"},
+    "session_id": {"type": "string", "minLength": 1},
+    "epoch": {"type": "string", "minLength": 1},
+    "queries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "query-bundle-v4.schema.json"}
+    },
+    "execution_mode": {"const": "DETERMINISTIC_PARALLEL_BATCH"},
+    "edge_manifest_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "expected_receipt_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "expected_session_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "seed_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

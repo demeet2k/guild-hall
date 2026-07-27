@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/threshold-governance-contract-v9.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "governance_id", "epoch_id", "member_count", "threshold",
+    "signature_algorithm", "signature_domain", "roles", "revocation",
+    "candidate_law", "quorum_law", "truth_effect", "contract_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ThresholdGovernanceContract.V9"},
+    "governance_id": {"const": "KC144.THRESHOLD.GOVERNANCE.V9"},
+    "epoch_id": {"const": "EPOCH-B-EIGHT-BLOCK"},
+    "member_count": {"const": 5},
+    "threshold": {"const": 3},
+    "signature_algorithm": {"const": "ED25519"},
+    "signature_domain": {"const": "KC144.V9.AUTHORITY_PIN"},
+    "roles": {"type": "array", "minItems": 5, "uniqueItems": true},
+    "revocation": {"const": "APPEND_ONLY_TRANSPARENT_LOG"},
+    "candidate_law": {"type": "string", "minLength": 1},
+    "quorum_law": {"type": "string", "minLength": 1},
+    "truth_effect": {"const": "NONE_UNTIL_QUORUM_AND_PIN"},
+    "contract_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

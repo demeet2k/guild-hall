@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/parallel-campaign-state-v8.schema.json",
+  "title": "KC144 V8 parallel campaign state",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "campaign_id",
+    "campaign_manifest_digest",
+    "namespace",
+    "ledger_digest",
+    "authority_registry_digest",
+    "eligible_authority_ids",
+    "completed_shards",
+    "total_shards",
+    "admitted_campaign_packets",
+    "total_campaign_packets",
+    "structurally_ready_shards",
+    "actionable_shards",
+    "shards",
+    "barrier",
+    "observed_state",
+    "production_effective_state",
+    "production_truth_effect",
+    "frozen_crystal_mutated",
+    "next_seed",
+    "state_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ParallelCampaignState.V8"},
+    "campaign_id": {"const": "KC144.M12.PARALLEL.CAMPAIGN.V8"},
+    "campaign_manifest_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "namespace": {"enum": ["PRODUCTION", "TEST"]},
+    "ledger_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "authority_registry_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "eligible_authority_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "completed_shards": {"type": "integer", "minimum": 0, "maximum": 16},
+    "total_shards": {"const": 16},
+    "admitted_campaign_packets": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 232
+    },
+    "total_campaign_packets": {"const": 232},
+    "structurally_ready_shards": {"type": "array"},
+    "actionable_shards": {"type": "array"},
+    "shards": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16
+    },
+    "barrier": {
+      "enum": [
+        "INVALID_REPAIR_LEDGER",
+        "INVALID_AUTHORITY_REGISTRY",
+        "EXTERNAL_AUTHORITY_PIN_REQUIRED",
+        "SIGNED_EVIDENCE_REQUIRED",
+        "PRODUCTION_CAMPAIGN_COMPLETE",
+        "TEST_CAMPAIGN_COMPLETE_NO_PRODUCTION_EFFECT"
+      ]
+    },
+    "observed_state": {"type": "object"},
+    "production_effective_state": {"type": "object"},
+    "production_truth_effect": {
+      "enum": ["NONE", "EVIDENCE_OVERLAY_ONLY"]
+    },
+    "frozen_crystal_mutated": {"const": false},
+    "next_seed": {"type": "string", "minLength": 1},
+    "state_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

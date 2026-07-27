@@ -1,0 +1,209 @@
+{
+  "schema": "KC144.SourceManifest.V5",
+  "compiled_at": "2026-07-26",
+  "hash_algorithm": "sha256",
+  "sources": [
+    {
+      "name": "KC144_COMPLETED_CRYSTAL(1).zip",
+      "sha256": "8466d9cc98e5eac5f087823a39971e4aa648c588bb656b743e679fcd3d05ba89",
+      "role": "V2 executable release base"
+    },
+    {
+      "name": "KC144_FULL.zip",
+      "sha256": "1253ca23f39bdd36d67d6b70b99535ecc26a1494f27cc46a2dabf891f296ef69",
+      "role": "complete lattice, station-population, navigation, and adjudication synthesis"
+    },
+    {
+      "name": "KC144_NAVIGATION.zip",
+      "sha256": "00c514dfc5aef1298019401da8c5d0010e62d0cae0e350918974541d12138b91",
+      "role": "five-route navigation and holonomy synthesis"
+    },
+    {
+      "name": "ATHENA-CORE-V7-IMMUNE-KERNEL-P02(1).zip",
+      "sha256": "2821e459bca7c615317733315e09b75b4473b8f84a908c5ebacb1979c509ffcf",
+      "role": "immune-runtime"
+    },
+    {
+      "name": "Athena_Git_Brain_v2(1).zip",
+      "sha256": "432e365dde107edff88d4852fad2383336e5d61565b5eb3aaf5c49190e4ac1c2",
+      "role": "git-brain-runtime"
+    },
+    {
+      "name": "Averroean Framework(1).docx",
+      "sha256": "87ec62a24eafe801b64b31a4ee31f4f2c7ea13e02a70d8d0b90918d15cb598b1",
+      "role": "conceptual-source"
+    },
+    {
+      "name": "CRYSTAL_bundle.zip",
+      "sha256": "129fddff6556fde4ef046a0c0bd83e5fd1f33bf039c65c1417a4692ab289fdae",
+      "role": "generator-and-cross-validation"
+    },
+    {
+      "name": "GID082_bundle.zip",
+      "sha256": "e3884c3d3595b6390ef5128572bde72b48b5fb71937427450970371802e98107",
+      "role": "canonicalization-and-answerability-witness"
+    },
+    {
+      "name": "GID090_bundle.zip",
+      "sha256": "a5ba7e76bfdd87d8c00e1d7bba77ee68b12da57414df96b90292977ca0ad7037",
+      "role": "promotion-kernel-witness"
+    },
+    {
+      "name": "KC144_INTERNAL_NAV_P04(1).zip",
+      "sha256": "53e253a9884da01c257483e3cec58d8687c9a6fc8730cc6672463e4bd4cd7764",
+      "role": "internal-navigation-predecessor"
+    },
+    {
+      "name": "KC144_INTERNAL_NAV_P05(1).zip",
+      "sha256": "6b6f5e9ecc6742136c65069c4cb3d50e2f1081e105a41ec4f1efacbad5eb7ddd",
+      "role": "reentry-healing-predecessor"
+    },
+    {
+      "name": "KC144_INTERNAL_NAV_P06(1).zip",
+      "sha256": "c889a2281ce1cbed07c25babb4f20ebee0cb2d23218159d9d7d0bf92a0e8c375",
+      "role": "active-internal-navigation-runtime"
+    },
+    {
+      "name": "KC144_P03_GIT_BRAIN_METRO(1).zip",
+      "sha256": "ec3a85f25f951ea05eeca55e7f2e37b0b877d67e772fbec1f311d45bf1a1ab98",
+      "role": "cross-carrier-metro"
+    },
+    {
+      "name": "KC144_Unified_Completed_Framework_Final(1).docx",
+      "sha256": "f1f00e8066a64636fc106a6adff72c64eea24706c87963c02950cfe1f28ecbbf",
+      "role": "canonical-framework-text"
+    },
+    {
+      "name": "KC144_Unified_Completed_Framework_V1(1).zip",
+      "sha256": "361c2857b7db4534ae4084533cd0f279154721e07bde5d9c9aef5fcec619aa9b",
+      "role": "federation-runtime-and-receipts"
+    },
+    {
+      "name": "KC144_Unified_Framework_Implementation (1).zip",
+      "sha256": "7fab75768066d7a07dd65e749510cc81413b6225e7b4aa0a4f21c662184e12b6",
+      "role": "frozen-atlas-and-router"
+    },
+    {
+      "name": "KC144_Unified_Framework_Implementation(1).zip",
+      "sha256": "7fab75768066d7a07dd65e749510cc81413b6225e7b4aa0a4f21c662184e12b6",
+      "role": "exact-duplicate",
+      "duplicate_of": "KC144_Unified_Framework_Implementation (1).zip"
+    },
+    {
+      "name": "MATH=MYTH 2__ ATHENA(1).docx",
+      "sha256": "c58233665491b2f265ea6ce861cfddb93e0aa2eb30a4a7948884f9715f0020ab",
+      "role": "conceptual-source"
+    },
+    {
+      "name": "MATH_MYTH ROUTING__ FUN.docx",
+      "sha256": "c4317e00828efd82c7a2be04bd591aca7d72299d076d39b1b1d33b8500f8cfe4",
+      "role": "conceptual-source"
+    },
+    {
+      "name": "META MEMORY NAVIGATION(1).docx",
+      "sha256": "8821f360fab0b2dc995cea7119f305900ffaa94c3d021020693eb68e3880b617",
+      "role": "conceptual-source"
+    },
+    {
+      "name": "META MEMORY NAVIGATION(2).docx",
+      "sha256": "462e9d17552ff26c7001acde86bd72ed765aa582e2b2da553594d3731014143a",
+      "role": "conceptual-source"
+    },
+    {
+      "name": "META OBSERVER FRAM(1).docx",
+      "sha256": "f1757eeb1d8a3b9390dabf270da302b49d0404c2974e22de03f62670a04edaef",
+      "role": "conceptual-source"
+    },
+    {
+      "name": "MYTHIC MINING.docx",
+      "sha256": "6f20f472fd451ef496aac9631609efa1680f3e65f45ec730e47860b309e66098",
+      "role": "conceptual-source"
+    },
+    {
+      "name": "Math Myth --deeper integration.docx",
+      "sha256": "ca08d66bbf41258ae73eddbf26f4ba4f3e9be336457fb79b71a56e9f56560f71",
+      "role": "conceptual-source"
+    },
+    {
+      "name": "Myth Mining 1.1.docx",
+      "sha256": "eb1d01573f75e29d1e97e27b3aaa1ca4adab12314aa62bf05f7f4ad5d11e6803",
+      "role": "conceptual-source"
+    },
+    {
+      "name": "Myth Mining 1.docx",
+      "sha256": "05a0bf508c320b8191800ad65078ea697f43f06d088e9a04e39f3bd3ff2432f7",
+      "role": "conceptual-source"
+    },
+    {
+      "name": "Myth Mining 2.1.docx",
+      "sha256": "3b4d792961dbdbb26689e87e5f73ce636ba8657b2db9273dd9253505cfe4f608",
+      "role": "conceptual-source"
+    },
+    {
+      "name": "Myth Mining 2.docx",
+      "sha256": "e9d70bb668a7c54aff902d55ab647ceecfc529910497ded073cfa30c5019b866",
+      "role": "conceptual-source"
+    },
+    {
+      "name": "Myth Mining 3.1.docx",
+      "sha256": "6c07dd1c7af9a0aaa7baeb9eac684e746f86435d772a5ca2157b80a9c1697047",
+      "role": "conceptual-source"
+    },
+    {
+      "name": "Myth Mining 3.docx",
+      "sha256": "514f64797457da0e3cd89330b62c083814223e65f894d012699472535904d53e",
+      "role": "conceptual-source"
+    },
+    {
+      "name": "Myth Mining 4.docx",
+      "sha256": "ae0cad93512dfdb61da3cb5ce8881e186d12ff464f8976ef1f1091d0db601a77",
+      "role": "conceptual-source"
+    },
+    {
+      "name": "Myth Mining 5(1).docx",
+      "sha256": "9b8af7acdbfc508a749e8db3bb75a4331e4b1ce655d18a484a3bd6302b69ea62",
+      "role": "conceptual-source"
+    },
+    {
+      "name": "Myth Mining 5.1.docx",
+      "sha256": "fb91027dac1df234607ddd2067bc584d36d22aad62516bca3fe6c10bcdc0f86c",
+      "role": "conceptual-source"
+    },
+    {
+      "name": "Myth Mining 5.docx",
+      "sha256": "04aee61983f20f38f53f2fca25a3b8e131c74939c11e4b90c2221d1f583100aa",
+      "role": "conceptual-source"
+    },
+    {
+      "name": "SEARCHING ATHENA(1).docx",
+      "sha256": "e57cb37764e9bb2721bb7df03408a74a0641ef009341545be9916aea414de7b6",
+      "role": "conceptual-source"
+    },
+    {
+      "name": "UF-LANGUAGE(1).docx",
+      "sha256": "664c40749bb2f879a8dc97c6c59967f388a7c02b808fd0ca65867d08d553d698",
+      "role": "conceptual-source"
+    },
+    {
+      "name": "gid051_f08_ra13_handoff.tar.gz",
+      "sha256": "83d939f9bc66d6b6d2aa543ecb64a6e36e64be4fe2cff5d9cbbe8ea843f3288f",
+      "role": "signed-local-replay-handoff"
+    },
+    {
+      "name": "gid051_f08_ra13_manifest.sig",
+      "sha256": "5045a92e0a0d8fed8eb8da382517f43103bd21ab4d0285c3d36feab6d91534f3",
+      "role": "detached-signature"
+    }
+  ],
+  "trust_notes": [
+    "The two Unified Framework Implementation archives are byte-identical.",
+    "GID051 RA13 verifies cryptographically but declares TEST_LOCAL_EPHEMERAL_UNPINNED, IC10 HOLD, QSHRINK HOLD, and authority false.",
+    "Conceptual DOCX sources are provenance inputs; the executable registry does not silently treat them as independent empirical witnesses.",
+    "KC144_FULL and KC144_NAVIGATION are synthesis inputs, not independent empirical replays.",
+    "The V3 query wave writes metadata only; it cannot alter source standing or promotion.",
+    "V4 is an executable extension over the same frozen source set and introduces no new empirical witness.",
+    "The V4 production bridge-witness ledger is empty; synthetic tests demonstrate mechanics only.",
+    "V5 freezes and replays the existing state but introduces no new empirical source or authority.",
+    "V5 N5 reconstruction is same-runtime deterministic replay and is never counted as an independent witness."
+  ]
+}

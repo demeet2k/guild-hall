@@ -1,0 +1,25 @@
+{
+  "schema": "KC144.INTERNAL-NAV.P05.SEED.V1",
+  "id": "KC144.INTERNAL-NAV.P05",
+  "name": "AUTOMATIC-REENTRY-AND-COVERAGE-HEALING",
+  "status": "implemented-local-verified",
+  "parent": "KC144.INTERNAL-NAV.P04",
+  "stations": [
+    "GID006/H06 CHECKPOINT + SESSIONCLOSE + WARM REENTRY",
+    "GID140/SSN-M08 HEALING AND GAP LEDGER",
+    "GID143/SSN-M11 ROUTE-COVERAGE AND RETURN AUDIT",
+    "GID144/SSN-M12 SOLID-STATE ELIGIBILITY"
+  ],
+  "reentry_states": [
+    "VALID",
+    "VALID_WITH_DRIFT",
+    "STALE",
+    "AMBIGUOUS",
+    "ORPHANED",
+    "CORRUPT",
+    "FOREIGN_VERSION"
+  ],
+  "healing_boundary": "healing may type an absence as SOURCE_UNRESOLVED; it may not manufacture the missing node body",
+  "solid_state_law": "solid state is ledger-derived only when node, edge, return, source, replay and projective coverage all equal one",
+  "next_seed": "KC144.INTERNAL-NAV.P06::LIVE-CONTEXT-INGESTION-AND-ATLAS-COVERAGE-EXPANSION"
+}

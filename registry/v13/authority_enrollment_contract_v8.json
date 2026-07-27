@@ -1,0 +1,20 @@
+{
+  "schema": "KC144.AuthorityEnrollmentContract.V8",
+  "epoch_id": "EPOCH-B-EIGHT-BLOCK",
+  "algorithm": "ED25519",
+  "proof_fields": [
+    "request_id",
+    "epoch_id",
+    "nonce",
+    "issued_at",
+    "key",
+    "boundary_claim",
+    "signature_b64"
+  ],
+  "required_boundary_claim": "POSSESSION_ONLY_NOT_AUTHORITY_APPROVAL",
+  "cryptographic_effect": "PROVES_PRIVATE_KEY_POSSESSION",
+  "governance_effect": "NONE",
+  "pinning_law": "a valid proof of possession is necessary but never sufficient for authority enrollment; an external governance decision must pin the key into the production registry",
+  "anti_self_authorization_law": "the candidate key cannot approve its own independence, evidence standing, or production authority",
+  "contract_digest": "sha256:e10cf31b4ebedec830f508297a230b7b4fe94baa0ecf3f294103294367bdbea4"
+}

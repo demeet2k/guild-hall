@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/authority-registry-v7.schema.json",
+  "title": "KC144 V7 authority registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "epoch_id",
+    "keys",
+    "revoked_key_ids",
+    "law",
+    "registry_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.AuthorityRegistry.V7"},
+    "epoch_id": {"const": "EPOCH-B-EIGHT-BLOCK"},
+    "keys": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "key_id",
+          "algorithm",
+          "public_key_b64",
+          "scopes",
+          "namespaces",
+          "status",
+          "independent",
+          "test_only",
+          "not_before",
+          "not_after"
+        ],
+        "properties": {
+          "key_id": {"type": "string", "minLength": 1},
+          "algorithm": {"const": "ED25519"},
+          "public_key_b64": {"type": "string", "minLength": 43},
+          "scopes": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "namespaces": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"enum": ["PRODUCTION", "TEST"]}
+          },
+          "status": {"enum": ["ACTIVE", "REVOKED", "EXPIRED"]},
+          "independent": {"type": "boolean"},
+          "test_only": {"type": "boolean"},
+          "not_before": {"type": ["string", "null"]},
+          "not_after": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "revoked_key_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "law": {"type": "string", "minLength": 1},
+    "registry_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

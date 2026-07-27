@@ -1,0 +1,16 @@
+{
+  "schema": "KC144.BridgeWitnessContract.V4",
+  "notation": "beta_ij=<F_i,F_j,T_ij,K_preserved,Delta_ij,R_ji,W_ij>",
+  "required_replay_classes": [
+    "B3",
+    "B4"
+  ],
+  "required_signature_status": "VERIFIED",
+  "laws": [
+    "adjacency does not certify transport",
+    "returnability is checked on the declared graph",
+    "the verifier must be distinct from the author",
+    "bridge certification has no station-promotion effect",
+    "test fixtures never enter the production witness ledger"
+  ]
+}
