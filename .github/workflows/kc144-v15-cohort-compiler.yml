@@ -14,6 +14,7 @@ concurrency:
 env:
   KC144_LEDGER_BRANCH: kc144-v15-pass-ledger
   KC144_SNAPSHOT_BRANCH: kc144-v15-cohort-snapshots
+  KC144_COMPILER_COMMIT: da12f8cc61e960c87c182e263daaad6091a1a91d
 
 jobs:
   compile:
@@ -35,7 +36,7 @@ jobs:
       - name: Check out compiler
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
-          ref: ${{ github.sha }}
+          ref: ${{ env.KC144_COMPILER_COMMIT }}
           path: compiler
           fetch-depth: 1
           persist-credentials: false
@@ -55,7 +56,7 @@ jobs:
           compiler_commit="$(git -C compiler rev-parse HEAD)"
           ledger_commit="$(git -C ledger-checkout rev-parse HEAD)"
           ledger_tree="$(git -C ledger-checkout rev-parse HEAD^{tree})"
-          test "$compiler_commit" = "$GITHUB_SHA"
+          test "$compiler_commit" = "$KC144_COMPILER_COMMIT"
           python3 compiler/tools/kc144_v15_cohort_snapshot.py \
             --ledger-root ledger-checkout/ledger/v15 \
             --ledger-commit "$ledger_commit" \
