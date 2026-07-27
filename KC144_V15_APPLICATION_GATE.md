@@ -167,8 +167,11 @@ technical_pass(s) DOES NOT IMPLY independent_candidate(s)
 The live barrier remains:
 
 ```text
-FIVE_VALID_INDEPENDENT_BATCH_BOUND_APPLICATIONS_REQUIRED
+FIVE_REAL_EXTERNALLY_VERIFIED_INDEPENDENT_APPLICATIONS_REQUIRED
 ```
+
+The [current fixed-tree snapshot](https://github.com/demeet2k/guild-hall/blob/kc144-v15-cohort-snapshots/cohort/v15/snapshots/sha256/b7/b7835f3b8ba011e5c0b2c160bbe8cf299d7741896cdfc0903c09e9ad22b2a446.snapshot.json)
+contains no counting candidate and fills no role.
 
 ## Truth boundary
 

@@ -72,8 +72,15 @@ conflicts.
 Current live barrier:
 
 ```text
-FIVE_VALID_INDEPENDENT_BATCH_BOUND_APPLICATIONS_REQUIRED
+FIVE_REAL_EXTERNALLY_VERIFIED_INDEPENDENT_APPLICATIONS_REQUIRED
 ```
+
+Current fixed-tree cohort state:
+
+- [snapshot `sha256:b7835f3b…a446`](https://github.com/demeet2k/guild-hall/blob/kc144-v15-cohort-snapshots/cohort/v15/snapshots/sha256/b7/b7835f3b8ba011e5c0b2c160bbe8cf299d7741896cdfc0903c09e9ad22b2a446.snapshot.json)
+- one technical application; one synthetic exclusion
+- zero counting candidates; zero of five roles filled
+- governance authority `false`; production truth effect `NONE`
 
 Canonical continuation:
 

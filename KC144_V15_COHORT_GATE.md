@@ -2,9 +2,14 @@
 
 ```text
 LOOKUP_KEY::KC144.V15::FIXED_TREE_COHORT_GATE
-INPUT::kc144-v15-pass-ledger@<EXACT_COMMIT_AND_TREE>
+INPUT_BRANCH::kc144-v15-pass-ledger
+INPUT_COMMIT::3cf7436693796baecb4a484cc819801a64defd4e
+INPUT_TREE::4e527281ffd372a05f0ac4e055b27b96ed0bc984
+COMPILER_COMMIT::da12f8cc61e960c87c182e263daaad6091a1a91d
 COMPILER::tools/kc144_v15_cohort_snapshot.py
 SNAPSHOT_REGISTRY::kc144-v15-cohort-snapshots
+SNAPSHOT_COMMIT::18e984ccf710d071640559f6752b5ae14418483d
+SNAPSHOT_DIGEST::sha256:b7835f3b8ba011e5c0b2c160bbe8cf299d7741896cdfc0903c09e9ad22b2a446
 GLOBAL_DUPLICATE_SYMMETRY::ACTIVE
 SYNTHETIC_EXCLUSION::ACTIVE
 EXTERNAL_ADJUDICATION_TRUST_ROOT_COUNT::0
@@ -31,6 +36,18 @@ C:
 
 There is no wall-clock field in the map. The same three coordinates must produce
 the same canonical bytes and SHA-256 digest.
+
+## Current compiled coordinate
+
+The current fixed tree contains one technical application observation. The
+application is the declared synthetic test from issue #11, and the additive
+exclusion record applies to its application digest. Consequently the snapshot
+contains one excluded technical application, zero unexcluded applications, zero
+counting candidates, and an empty five-role vector.
+
+- [Snapshot object](https://github.com/demeet2k/guild-hall/blob/kc144-v15-cohort-snapshots/cohort/v15/snapshots/sha256/b7/b7835f3b8ba011e5c0b2c160bbe8cf299d7741896cdfc0903c09e9ad22b2a446.snapshot.json)
+- [Ledger-tree/compiler binding](https://github.com/demeet2k/guild-hall/blob/kc144-v15-cohort-snapshots/cohort/v15/sources/ledger-trees/4e527281ffd372a05f0ac4e055b27b96ed0bc984/da12f8cc61e960c87c182e263daaad6091a1a91d.json)
+- [Synthetic exclusion record](https://github.com/demeet2k/guild-hall/blob/kc144-v15-pass-ledger/ledger/v15/exclusions/github-issues/000000000011.json)
 
 ## Global evaluation order
 

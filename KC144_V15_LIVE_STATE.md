@@ -10,6 +10,10 @@ CRYPTOGRAPHIC_PASS_LEDGER::kc144-v15-pass-ledger
 COHORT_SNAPSHOT_REGISTRY::kc144-v15-cohort-snapshots
 GLOBAL_DUPLICATE_SYMMETRY::ACTIVE
 EXTERNAL_ADJUDICATION_TRUST_ROOT_COUNT::0
+TECHNICAL_APPLICATIONS::1
+EXCLUDED_SYNTHETIC_APPLICATIONS::1
+COUNTING_CANDIDATES::0
+FILLED_ROLE_VECTOR::0/5
 COUNTING_COHORT::NOT_YET_CONSTITUTED
 IDENTITY_INDEPENDENCE_EXTERNALLY_PROVEN::FALSE
 GOVERNANCE_AUTHORITY_GRANTED::FALSE
@@ -51,6 +55,7 @@ crosses the external-adjudication boundary.
 - [Append-only PASS ledger](https://github.com/demeet2k/guild-hall/tree/kc144-v15-pass-ledger/ledger/v15)
 - [Fixed-tree cohort gate](https://github.com/demeet2k/guild-hall/blob/main/KC144_V15_COHORT_GATE.md)
 - [Cohort snapshot registry](https://github.com/demeet2k/guild-hall/tree/kc144-v15-cohort-snapshots/cohort/v15)
+- [Current fixed-tree snapshot](https://github.com/demeet2k/guild-hall/blob/kc144-v15-cohort-snapshots/cohort/v15/snapshots/sha256/b7/b7835f3b8ba011e5c0b2c160bbe8cf299d7741896cdfc0903c09e9ad22b2a446.snapshot.json)
 - [Open a signed application](https://github.com/demeet2k/guild-hall/issues/new?template=kc144-v15-application.yml)
 
 ## Executed verification matrix
