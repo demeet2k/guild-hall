@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/agent-run-plan-v1.schema.json",
+  "title": "KC144 content-addressed agent run plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "lookup_key", "parent_lookup_key", "frozen_source", "receipt_runtime",
+    "input_snapshot_digest", "capacity", "tasks", "task_registry",
+    "execution_waves", "merge_order", "retryable_error_codes",
+    "spawn_fallback", "truth_effect", "plan_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.AgentRunPlan.V1"},
+    "lookup_key": {"const": "KC144.V1::CONTENT_ADDRESSED_AGENT_RUN_RECEIPTS"},
+    "parent_lookup_key": {"const": "KC144.V1::PARALLEL_ROUTE_CRYSTAL"},
+    "frozen_source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository", "commit", "tree"],
+      "properties": {
+        "repository": {"const": "demeet2k/guild-hall"},
+        "commit": {"type": "string", "minLength": 1},
+        "tree": {"type": "string", "minLength": 1}
+      }
+    },
+    "receipt_runtime": {"type": "object", "minProperties": 1},
+    "input_snapshot_digest": {"$ref": "#/$defs/digest"},
+    "capacity": {"const": 5},
+    "tasks": {"$ref": "#/$defs/digests"},
+    "task_registry": {
+      "type": "object",
+      "minProperties": 2,
+      "additionalProperties": {
+        "$ref": "agent-task-v1.schema.json"
+      }
+    },
+    "execution_waves": {
+      "type": "array", "minItems": 2,
+      "items": {
+        "type": "array", "minItems": 1, "maxItems": 5, "uniqueItems": true,
+        "items": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "merge_order": {"$ref": "#/$defs/digests"},
+    "retryable_error_codes": {
+      "type": "array", "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^E_[A-Z0-9_]+$"}
+    },
+    "spawn_fallback": {
+      "const": "LOCAL_CANONICAL_EXECUTION_UNLESS_INDEPENDENT_REQUIRED"
+    },
+    "truth_effect": {"const": "NONE"},
+    "plan_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "digests": {
+      "type": "array", "uniqueItems": true,
+      "items": {"$ref": "#/$defs/digest"}
+    }
+  }
+}

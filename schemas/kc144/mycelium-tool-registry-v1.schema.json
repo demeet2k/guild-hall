@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/mycelium-tool-registry-v1.schema.json",
+  "title": "KC144 mycelium tool registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "keyspace", "descriptors", "alias_index",
+    "base_graph_mutated", "content_transport_certified",
+    "governance_authority_granted", "truth_effect", "registry_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.MyceliumToolRegistry.V1"},
+    "keyspace": {"const": "EXACT_LOOKUP_KEY"},
+    "descriptors": {
+      "type": "object", "minProperties": 1,
+      "additionalProperties": {
+        "$ref": "mycelium-tool-descriptor-v1.schema.json"
+      }
+    },
+    "alias_index": {
+      "type": "object", "minProperties": 1,
+      "additionalProperties": {
+        "const": "KC144.V1::CONTENT_ADDRESSED_AGENT_RUN_RECEIPTS"
+      }
+    },
+    "base_graph_mutated": {"const": false},
+    "content_transport_certified": {"const": false},
+    "governance_authority_granted": {"const": false},
+    "truth_effect": {"const": "NONE"},
+    "registry_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

@@ -5,6 +5,11 @@ import json
 from pathlib import Path
 
 from .audit import audit_crystal
+from .agent_receipts import (
+    build_agent_run_plan,
+    compile_agent_run_receipts,
+    verify_agent_run_receipts,
+)
 from .application_v15 import (
     BatchBoundCandidateApplication,
     application_publication_payload,
@@ -92,6 +97,7 @@ from .selection_v13 import (
     solve_candidate_cohort,
 )
 from .systematic import compile_systematic_framework, frontier_ledger
+from .tool_registry import locate_mycelium_tool, mycelium_tool_registry
 from .transform import (
     br_mirror,
     coactivation_sigma,
@@ -176,6 +182,42 @@ def build_parser() -> argparse.ArgumentParser:
     parallel_routes.add_argument("--immutable-tree")
     parallel_routes.add_argument("--compiler-commit")
     parallel_routes.add_argument("--compiler-tree")
+
+    commands.add_parser(
+        "mycelium-tools",
+        help="emit the content-addressed mycelium tool registry",
+    )
+    locate_tool = commands.add_parser(
+        "mycelium-locate",
+        help="resolve one exact tool lookup key or complete alias",
+    )
+    locate_tool.add_argument("query")
+    locate_tool.add_argument("--starts", default="6")
+    locate_tool.add_argument("--budget", type=int, default=18)
+
+    agent_plan = commands.add_parser(
+        "agent-run-plan",
+        help="compile a content-addressed plan for a parallel-route snapshot",
+    )
+    agent_plan.add_argument("source")
+
+    agent_run = commands.add_parser(
+        "agent-run-receipts",
+        help="execute and seal a deterministic agent-run receipt bundle",
+    )
+    agent_run.add_argument("source")
+    agent_run.add_argument("--workers", type=int, default=5)
+    agent_run.add_argument("--output")
+    agent_run.add_argument("--runtime-commit")
+    agent_run.add_argument("--runtime-tree")
+    agent_run.add_argument("--source-snapshot-digest")
+
+    agent_verify = commands.add_parser(
+        "agent-run-verify",
+        help="verify a content-addressed agent-run receipt bundle",
+    )
+    agent_verify.add_argument("bundle")
+    agent_verify.add_argument("--source")
 
     systematic = commands.add_parser("systematic", help="compile every V3 registry")
     systematic.add_argument("--output", default="registry/v3")
@@ -700,6 +742,83 @@ def main(argv: list[str] | None = None) -> int:
         else:
             _json(result)
         return 0
+
+    if args.command == "mycelium-tools":
+        _json(mycelium_tool_registry())
+        return 0
+
+    if args.command == "mycelium-locate":
+        starts = tuple(int(value) for value in _csv(args.starts))
+        report = locate_mycelium_tool(
+            args.query,
+            start_coordinates=starts,
+            route_budget=args.budget,
+        )
+        _json(report)
+        return 0 if report["status"] == "FOUND" else 2
+
+    if args.command == "agent-run-plan":
+        source = json.loads(Path(args.source).read_text(encoding="utf-8"))
+        _json(build_agent_run_plan(source))
+        return 0
+
+    if args.command == "agent-run-receipts":
+        source = json.loads(Path(args.source).read_text(encoding="utf-8"))
+        binding_values = {
+            "runtime_commit": args.runtime_commit,
+            "runtime_tree": args.runtime_tree,
+            "source_snapshot_digest": args.source_snapshot_digest,
+        }
+        supplied = {key: value for key, value in binding_values.items() if value}
+        if supplied and len(supplied) != len(binding_values):
+            raise SystemExit(
+                "all three runtime-binding options are required together"
+            )
+        report = compile_agent_run_receipts(
+            source,
+            executor_workers=args.workers,
+            runtime_binding=supplied or None,
+        )
+        if args.output:
+            destination = Path(args.output)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_text(
+                json.dumps(
+                    report,
+                    ensure_ascii=False,
+                    sort_keys=True,
+                    separators=(",", ":"),
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            _json(
+                {
+                    "schema": report["schema"],
+                    "output": str(destination),
+                    "run_id": report["manifest"]["run_id"],
+                    "manifest_digest": report["manifest"]["manifest_digest"],
+                    "audit_root": report["manifest"]["audit_root"],
+                    "accepted_receipts": len(report["receipts"]),
+                    "production_truth_effect": report[
+                        "production_truth_effect"
+                    ],
+                }
+            )
+        else:
+            _json(report)
+        return 0
+
+    if args.command == "agent-run-verify":
+        bundle = json.loads(Path(args.bundle).read_text(encoding="utf-8"))
+        source = (
+            json.loads(Path(args.source).read_text(encoding="utf-8"))
+            if args.source
+            else None
+        )
+        report = verify_agent_run_receipts(bundle, source_crystal=source)
+        _json(report)
+        return 0 if report["verdict"] == "PASS" else 2
 
     if args.command == "systematic":
         release = compile_systematic_framework(args.output)

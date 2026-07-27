@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/agent-lease-v1.schema.json",
+  "title": "KC144 immutable logical agent lease",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "run_id", "plan_digest", "work_id", "task_id", "attempt",
+    "logical_epoch", "logical_slot", "input_manifest_digest",
+    "allowed_capabilities", "read_set", "write_set", "output_schema",
+    "expires_after_epoch", "supersedes_lease_id", "deadline_policy", "lease_id"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.AgentLease.V1"},
+    "run_id": {"$ref": "#/$defs/digest"},
+    "plan_digest": {"$ref": "#/$defs/digest"},
+    "work_id": {"$ref": "#/$defs/digest"},
+    "task_id": {"type": "string", "minLength": 1},
+    "attempt": {"type": "integer", "minimum": 1},
+    "logical_epoch": {"type": "integer", "minimum": 0},
+    "logical_slot": {"type": "integer", "minimum": 0},
+    "input_manifest_digest": {"$ref": "#/$defs/digest"},
+    "allowed_capabilities": {"$ref": "#/$defs/strings"},
+    "read_set": {"$ref": "#/$defs/strings"},
+    "write_set": {"$ref": "#/$defs/strings"},
+    "output_schema": {"const": "KC144.AgentTaskResult.V1"},
+    "expires_after_epoch": {"type": "integer", "minimum": 0},
+    "supersedes_lease_id": {
+      "oneOf": [{"type": "null"}, {"$ref": "#/$defs/digest"}]
+    },
+    "deadline_policy": {"const": "EXPLICIT_LOGICAL_EPOCH_TRANSITION"},
+    "lease_id": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "strings": {
+      "type": "array", "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}

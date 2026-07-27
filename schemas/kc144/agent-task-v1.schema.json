@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/agent-task-v1.schema.json",
+  "title": "KC144 content-addressed agent task",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "task_id", "phase", "instruction_digest", "execution_mode",
+    "depends_on", "capabilities", "read_set", "write_set",
+    "expected_result_digest", "base_digest", "priority", "attempt_limit",
+    "output_schema", "independent_agent_required", "merge_authority",
+    "truth_effect", "work_id"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.AgentTask.V1"},
+    "task_id": {"type": "string", "minLength": 1},
+    "phase": {"enum": ["ROUTE_SIMULATION", "DETERMINISTIC_REDUCTION"]},
+    "instruction_digest": {"$ref": "#/$defs/digest"},
+    "execution_mode": {"enum": ["PARALLEL_WORKER", "DETERMINISTIC_REDUCER"]},
+    "depends_on": {"$ref": "#/$defs/digests"},
+    "capabilities": {"$ref": "#/$defs/strings"},
+    "read_set": {"$ref": "#/$defs/strings"},
+    "write_set": {"$ref": "#/$defs/strings"},
+    "expected_result_digest": {"$ref": "#/$defs/digest"},
+    "base_digest": {"$ref": "#/$defs/digest"},
+    "priority": {"type": "integer"},
+    "attempt_limit": {"type": "integer", "minimum": 1},
+    "output_schema": {"const": "KC144.AgentTaskResult.V1"},
+    "independent_agent_required": {"type": "boolean"},
+    "merge_authority": {"type": "boolean"},
+    "truth_effect": {"const": "NONE"},
+    "work_id": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "digests": {
+      "type": "array", "uniqueItems": true,
+      "items": {"$ref": "#/$defs/digest"}
+    },
+    "strings": {
+      "type": "array", "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}

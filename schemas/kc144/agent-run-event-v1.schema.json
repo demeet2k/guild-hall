@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/agent-run-event-v1.schema.json",
+  "title": "KC144 canonical agent-run audit event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "run_id", "sequence", "logical_epoch", "event_type",
+    "work_id", "attempt", "lease_id", "subject_digest", "decision",
+    "reason_codes", "previous_event_hash", "event_hash"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.AgentRunEvent.V1"},
+    "run_id": {"$ref": "#/$defs/digest"},
+    "sequence": {"type": "integer", "minimum": 0},
+    "logical_epoch": {"type": "integer", "minimum": 0},
+    "event_type": {
+      "enum": [
+        "RUN_OPENED", "PLAN_VALIDATED", "CAPACITY_FIXED", "EPOCH_OPENED",
+        "WAVE_SELECTED", "LEASE_GRANTED", "RESULT_RECEIVED", "RESULT_ACCEPTED",
+        "RESULT_REJECTED", "RESULT_QUARANTINED", "SNAPSHOT_COMMITTED",
+        "LEASE_EXPIRED", "LEASE_REVOKED", "RETRY_SCHEDULED", "TASK_BLOCKED",
+        "RUN_COMPLETED", "RUN_FAILED"
+      ]
+    },
+    "work_id": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/digest"}]},
+    "attempt": {"type": ["integer", "null"], "minimum": 1},
+    "lease_id": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/digest"}]},
+    "subject_digest": {"$ref": "#/$defs/digest"},
+    "decision": {"type": ["string", "null"]},
+    "reason_codes": {
+      "type": "array", "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "previous_event_hash": {"$ref": "#/$defs/digest"},
+    "event_hash": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

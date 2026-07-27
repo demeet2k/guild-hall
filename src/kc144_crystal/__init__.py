@@ -5,6 +5,17 @@ transformations, crystallize the registry, and audit the result.
 """
 
 from .audit import audit_crystal
+from .agent_receipts import (
+    AgentReceiptError,
+    LeaseGrant,
+    agent_run_receipt_contract,
+    build_agent_run_plan,
+    compile_agent_run_receipts,
+    issue_lease,
+    retry_allowed,
+    validate_task_result,
+    verify_agent_run_receipts,
+)
 from .application_v15 import (
     BatchBoundCandidateApplication,
     CandidateCallBinding,
@@ -134,6 +145,11 @@ from .selection_v13 import (
     solve_candidate_cohort,
     verify_candidate_nomination,
 )
+from .tool_registry import (
+    agent_run_receipt_tool_descriptor,
+    locate_mycelium_tool,
+    mycelium_tool_registry,
+)
 from .wave import WaveQuery, propagate
 from .v4 import compile_mycelium_framework
 from .v5 import compile_global_state
@@ -150,7 +166,9 @@ from .v15 import compile_application_transport_runtime
 from .witness import BridgeWitnessPacket, evaluate_bridge_witness
 
 __all__ = [
+    "AgentReceiptError",
     "AgentTask",
+    "LeaseGrant",
     "RouteSimulation",
     "WaveQuery",
     "BridgeWitnessPacket",
@@ -178,9 +196,11 @@ __all__ = [
     "bridge_registry",
     "crystallize",
     "compile_mycelium_framework",
+    "compile_agent_run_receipts",
     "compile_execution_waves",
     "compile_parallel_route_crystal",
     "compile_query",
+    "build_agent_run_plan",
     "coordinate_delta",
     "coordinate_vector",
     "compile_global_state",
@@ -201,6 +221,14 @@ __all__ = [
     "generate_seats",
     "measure_holonomy",
     "navigation_report",
+    "agent_run_receipt_contract",
+    "agent_run_receipt_tool_descriptor",
+    "mycelium_tool_registry",
+    "locate_mycelium_tool",
+    "issue_lease",
+    "retry_allowed",
+    "validate_task_result",
+    "verify_agent_run_receipts",
     "propagate",
     "evaluate_bridge_witness",
     "evidence_packet_contract",

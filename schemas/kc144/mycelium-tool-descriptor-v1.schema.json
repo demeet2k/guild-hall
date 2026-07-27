@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/mycelium-tool-descriptor-v1.schema.json",
+  "title": "KC144 content-addressed mycelium tool descriptor",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "lookup_key", "parent_lookup_key", "aliases", "capabilities",
+    "coordinate_bindings", "commands", "input_schemas", "output_schemas",
+    "base_graph_mutated", "content_transport_certified",
+    "governance_authority_granted", "production_truth_effect",
+    "descriptor_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.MyceliumToolDescriptor.V1"},
+    "lookup_key": {"const": "KC144.V1::CONTENT_ADDRESSED_AGENT_RUN_RECEIPTS"},
+    "parent_lookup_key": {"const": "KC144.V1::PARALLEL_ROUTE_CRYSTAL"},
+    "aliases": {"$ref": "#/$defs/strings"},
+    "capabilities": {"$ref": "#/$defs/strings"},
+    "coordinate_bindings": {
+      "type": "array", "minItems": 6, "uniqueItems": true,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["gid", "station", "grid", "band", "role", "meaning"],
+        "properties": {
+          "gid": {"type": "integer", "minimum": 1, "maximum": 144},
+          "station": {"type": "string"},
+          "grid": {"type": "string", "pattern": "^R[0-9]{2}C[0-9]{2}$"},
+          "band": {"type": "string"},
+          "role": {"type": "string"},
+          "meaning": {"type": "string"}
+        }
+      }
+    },
+    "commands": {
+      "type": "object", "additionalProperties": false,
+      "required": ["locate", "plan", "run", "verify"],
+      "properties": {
+        "locate": {"$ref": "#/$defs/strings"},
+        "plan": {"$ref": "#/$defs/strings"},
+        "run": {"$ref": "#/$defs/strings"},
+        "verify": {"$ref": "#/$defs/strings"}
+      }
+    },
+    "input_schemas": {"$ref": "#/$defs/strings"},
+    "output_schemas": {"$ref": "#/$defs/strings"},
+    "base_graph_mutated": {"const": false},
+    "content_transport_certified": {"const": false},
+    "governance_authority_granted": {"const": false},
+    "production_truth_effect": {"const": "NONE"},
+    "descriptor_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "strings": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}

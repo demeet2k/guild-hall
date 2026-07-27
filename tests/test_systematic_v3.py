@@ -143,7 +143,7 @@ class SystematicCompilerTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             release = compile_systematic_framework(temporary)
             self.assertEqual(release["verdict"], "PASS")
-            self.assertEqual(len(release["artifacts"]), 9)
+            self.assertEqual(len(release["artifacts"]), 10)
             for filename in release["artifacts"] + ["systematic_release.json"]:
                 document = json.loads((Path(temporary) / filename).read_text(encoding="utf-8"))
                 self.assertIsInstance(document, dict)

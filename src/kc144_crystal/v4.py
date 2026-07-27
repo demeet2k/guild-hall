@@ -4,8 +4,10 @@ import json
 from pathlib import Path
 from typing import Any
 
+from .agent_receipts import agent_run_receipt_contract
 from .query import QueryBundle, compile_query, query_contract
 from .systematic import compile_systematic_framework, frontier_ledger
+from .tool_registry import locate_mycelium_tool
 from .witness import bridge_witness_contract
 
 
@@ -63,6 +65,12 @@ def compile_mycelium_framework(output_directory: str | Path) -> dict[str, Any]:
             "declared_transport_open": 28,
             "promotion_effect": "NONE",
         },
+        "agent_run_receipt_contract.json": agent_run_receipt_contract(),
+        "agent_run_receipt_location.json": locate_mycelium_tool(
+            "KC144.V1::CONTENT_ADDRESSED_AGENT_RUN_RECEIPTS",
+            start_coordinates=(6,),
+            route_budget=18,
+        ),
         "frontier_v4.json": {
             **frontier_ledger(),
             "schema": "KC144.SystematicFrontier.V4",
@@ -105,6 +113,21 @@ def compile_mycelium_framework(output_directory: str | Path) -> dict[str, Any]:
             "declared": 28,
             "certified": 0,
             "admission_gate": "EXECUTABLE",
+        },
+        "tool_runtime": {
+            "lookup_key": (
+                "KC144.V1::CONTENT_ADDRESSED_AGENT_RUN_RECEIPTS"
+            ),
+            "location_status": documents[
+                "agent_run_receipt_location.json"
+            ]["status"],
+            "coordinate_routes": len(
+                documents["agent_run_receipt_location.json"][
+                    "coordinate_routes"
+                ]
+            ),
+            "base_graph_mutated": False,
+            "truth_effect": "NONE",
         },
         "actual_live_promotions": 0,
         "solid_state": "HOLD",

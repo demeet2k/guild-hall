@@ -9,6 +9,7 @@ from .holonomy import measure_holonomy, replay_ablation
 from .navigation import DECLARED_BRIDGES, bridge_registry, navigation_report
 from .population import crystallize
 from .station import station_population_report
+from .tool_registry import mycelium_tool_registry
 from .wave import WaveQuery, propagate
 
 
@@ -72,6 +73,7 @@ def compile_systematic_framework(output_directory: str | Path) -> dict[str, Any]
         "wave_h06.json": propagate(
             WaveQuery("KC144.V3.DEFAULT.H06", starts=(6,), route_budget=18)
         ),
+        "tool_registry_v1.json": mycelium_tool_registry(),
         "frontier.json": frontier_ledger(),
     }
     for filename, document in artifacts.items():
@@ -124,6 +126,19 @@ def compile_systematic_framework(output_directory: str | Path) -> dict[str, Any]
             "seed": "H06",
             "coverage": artifacts["wave_h06.json"]["coverage"],
             "base_graph_mutated": artifacts["wave_h06.json"]["base_graph_mutated"],
+            "truth_effect": "NONE",
+        },
+        "mycelium_tools": {
+            "registered": len(
+                artifacts["tool_registry_v1.json"]["descriptors"]
+            ),
+            "lookup_keys": sorted(
+                artifacts["tool_registry_v1.json"]["descriptors"]
+            ),
+            "registry_digest": artifacts["tool_registry_v1.json"][
+                "registry_digest"
+            ],
+            "base_graph_mutated": False,
             "truth_effect": "NONE",
         },
         "actual_live_promotions": 0,

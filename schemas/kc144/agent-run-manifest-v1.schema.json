@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/agent-run-manifest-v1.schema.json",
+  "title": "KC144 content-addressed agent-run manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "lookup_key", "run_id", "plan_digest",
+    "root_input_manifest_digest", "accepted_receipts",
+    "quarantined_receipts", "terminal_task_states", "output_snapshot_digest",
+    "event_count", "audit_root", "executor_claim",
+    "independent_witness_count", "governance_authority_granted",
+    "content_transport_certified", "truth_effect", "manifest_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.AgentRunManifest.V1"},
+    "lookup_key": {"const": "KC144.V1::CONTENT_ADDRESSED_AGENT_RUN_RECEIPTS"},
+    "run_id": {"$ref": "#/$defs/digest"},
+    "plan_digest": {"$ref": "#/$defs/digest"},
+    "root_input_manifest_digest": {"$ref": "#/$defs/digest"},
+    "accepted_receipts": {"$ref": "#/$defs/digests"},
+    "quarantined_receipts": {"$ref": "#/$defs/digests"},
+    "terminal_task_states": {
+      "type": "object", "minProperties": 1,
+      "additionalProperties": {"enum": ["ACCEPTED", "REJECTED", "QUARANTINED"]}
+    },
+    "output_snapshot_digest": {"$ref": "#/$defs/digest"},
+    "event_count": {"type": "integer", "minimum": 1},
+    "audit_root": {"$ref": "#/$defs/digest"},
+    "executor_claim": {"const": "LOCAL_DETERMINISTIC_SIMULATION"},
+    "independent_witness_count": {"const": 0},
+    "governance_authority_granted": {"const": false},
+    "content_transport_certified": {"const": false},
+    "truth_effect": {"const": "NONE"},
+    "manifest_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "digests": {
+      "type": "array", "uniqueItems": true,
+      "items": {"$ref": "#/$defs/digest"}
+    }
+  }
+}

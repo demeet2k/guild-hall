@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/agent-run-receipt-v1.schema.json",
+  "title": "KC144 immutable result-validation receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "run_id", "plan_digest", "work_id", "attempt", "lease_id",
+    "result_digest", "decision", "validation_errors", "artifact_digests",
+    "pre_merge_snapshot_digest", "post_merge_snapshot_digest", "receipt_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.AgentRunReceipt.V1"},
+    "run_id": {"$ref": "#/$defs/digest"},
+    "plan_digest": {"$ref": "#/$defs/digest"},
+    "work_id": {"$ref": "#/$defs/digest"},
+    "attempt": {"type": "integer", "minimum": 1},
+    "lease_id": {"$ref": "#/$defs/digest"},
+    "result_digest": {"$ref": "#/$defs/digest"},
+    "decision": {"enum": ["ACCEPTED", "REJECTED", "QUARANTINED"]},
+    "validation_errors": {
+      "type": "array", "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^E_[A-Z0-9_]+$"}
+    },
+    "artifact_digests": {
+      "type": "array", "uniqueItems": true,
+      "items": {"$ref": "#/$defs/digest"}
+    },
+    "pre_merge_snapshot_digest": {"$ref": "#/$defs/digest"},
+    "post_merge_snapshot_digest": {"$ref": "#/$defs/digest"},
+    "receipt_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}
