@@ -1,0 +1,22 @@
+{
+  "schema": "KC144.LedgerExclusion.V15",
+  "exclusion_id": "KC144.V15::EXCLUSION::GITHUB_ISSUE_000000000011",
+  "application_digest": "sha256:328b25ac1f02c4a536395e5991345e65ca57f8e7e9049a4cda378a3db59ab57f",
+  "issue_number": 11,
+  "source_binding_path": "ledger/v15/sources/github-issues/000000000011.json",
+  "classification": "SYNTHETIC_TEST_ARTIFACT",
+  "classification_basis": [
+    "issue title explicitly declares synthetic cryptographic-positive ledger test",
+    "issue body declares SYNTHETIC_CRYPTOGRAPHIC_POSITIVE_TEST::TRUE",
+    "issue body declares EXTERNAL_IDENTITY_PROVEN::FALSE",
+    "issue body declares EXTERNAL_INDEPENDENCE_PROVEN::FALSE",
+    "issue body declares COUNTING_EFFECT::NONE",
+    "issue is closed"
+  ],
+  "evidence_locator": "https://github.com/demeet2k/guild-hall/issues/11",
+  "authority_scope": "PUBLIC_REPOSITORY_TEST_CLASSIFICATION_ONLY",
+  "counting_effect": "NONE",
+  "identity_independence_externally_proven": false,
+  "governance_authority_granted": false,
+  "production_truth_effect": "NONE"
+}

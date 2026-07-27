@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/ledger-exclusion-v15.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "exclusion_id",
+    "application_digest",
+    "issue_number",
+    "source_binding_path",
+    "classification",
+    "classification_basis",
+    "evidence_locator",
+    "authority_scope",
+    "counting_effect",
+    "identity_independence_externally_proven",
+    "governance_authority_granted",
+    "production_truth_effect"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.LedgerExclusion.V15"},
+    "exclusion_id": {"type": "string", "minLength": 1},
+    "application_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "issue_number": {"type": "integer", "minimum": 1},
+    "source_binding_path": {"type": "string", "minLength": 1},
+    "classification": {"const": "SYNTHETIC_TEST_ARTIFACT"},
+    "classification_basis": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "evidence_locator": {"type": "string", "minLength": 1},
+    "authority_scope": {
+      "const": "PUBLIC_REPOSITORY_TEST_CLASSIFICATION_ONLY"
+    },
+    "counting_effect": {"const": "NONE"},
+    "identity_independence_externally_proven": {"const": false},
+    "governance_authority_granted": {"const": false},
+    "production_truth_effect": {"const": "NONE"}
+  }
+}
