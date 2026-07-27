@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athenachka.collective/schemas/kc144/tool-dispatch-plan-v1.schema.json",
+  "title": "KC144 Tool Dispatch Plan V1",
+  "type": "object",
+  "required": [
+    "schema",
+    "lookup_key",
+    "request_id",
+    "tool_registry_digest",
+    "head_registry_digest",
+    "operation",
+    "status",
+    "error_codes",
+    "canonical_worker_capacity",
+    "execution_waves",
+    "preflight_reports",
+    "holonomy",
+    "base_graph_mutated",
+    "content_transport_certified",
+    "governance_authority_granted",
+    "truth_effect",
+    "plan_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ToolDispatchPlan.V1"},
+    "lookup_key": {"const": "KC144.V1::MYCELIUM_LOCATABLE_TOOL_DISPATCH"},
+    "parent_lookup_key": {"const": "KC144.V1::CONTENT_ADDRESSED_AGENT_RUN_RECEIPTS"},
+    "request_id": {"$ref": "#/$defs/digest"},
+    "tool_registry_digest": {"$ref": "#/$defs/digest"},
+    "head_registry_digest": {"$ref": "#/$defs/digest"},
+    "resolved_lookup_key": {"type": ["string", "null"]},
+    "descriptor_digest": {
+      "anyOf": [{"$ref": "#/$defs/digest"}, {"type": "null"}]
+    },
+    "resolution": {"enum": ["EXACT_LOOKUP_KEY", "EXACT_ALIAS", "AMBIGUOUS_EXACT_ALIAS", "NONE"]},
+    "operation": {"type": "string"},
+    "handler_id": {"type": ["string", "null"]},
+    "required_capabilities": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "status": {"enum": ["READY", "BLOCKED"]},
+    "error_codes": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "canonical_worker_capacity": {"const": 5},
+    "requested_capacity_excluded_from_identity": {"const": true},
+    "task_ids": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "string"}},
+    "execution_waves": {"type": "array", "minItems": 3, "maxItems": 3},
+    "preflight_reports": {"type": "array", "minItems": 5, "maxItems": 5},
+    "holonomy": {"type": "object"},
+    "base_graph_mutated": {"const": false},
+    "content_transport_certified": {"const": false},
+    "governance_authority_granted": {"const": false},
+    "truth_effect": {"const": "NONE"},
+    "plan_digest": {"$ref": "#/$defs/digest"}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

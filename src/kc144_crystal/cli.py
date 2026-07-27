@@ -98,6 +98,14 @@ from .selection_v13 import (
 )
 from .systematic import compile_systematic_framework, frontier_ledger
 from .tool_registry import locate_mycelium_tool, mycelium_tool_registry
+from .tool_dispatch import (
+    build_dispatch_head_registry,
+    compile_tool_dispatch_runtime,
+    compile_tool_dispatch_plan,
+    dispatch_mycelium_tool,
+    tool_dispatch_contract,
+    verify_tool_dispatch_result,
+)
 from .transform import (
     br_mirror,
     coactivation_sigma,
@@ -218,6 +226,51 @@ def build_parser() -> argparse.ArgumentParser:
     )
     agent_verify.add_argument("bundle")
     agent_verify.add_argument("--source")
+
+    commands.add_parser(
+        "tool-dispatch-contract",
+        help="emit the fail-closed content-addressed dispatch contract",
+    )
+    dispatch_heads = commands.add_parser(
+        "tool-dispatch-heads",
+        help="freeze the code-identity head registry for dispatch replay",
+    )
+    dispatch_heads.add_argument("--implementation-commit", required=True)
+    dispatch_heads.add_argument("--implementation-tree", required=True)
+    dispatch_heads.add_argument("--supersedes-registry-digest")
+    dispatch_plan = commands.add_parser(
+        "tool-dispatch-plan",
+        help="compile five-lane preflight for a dispatch request",
+    )
+    dispatch_plan.add_argument("request")
+    dispatch_plan.add_argument("heads")
+    dispatch_plan.add_argument("--workers", type=int, default=5)
+    dispatch_run = commands.add_parser(
+        "tool-dispatch",
+        help="execute only an exactly registered in-process tool handler",
+    )
+    dispatch_run.add_argument("request")
+    dispatch_run.add_argument("heads")
+    dispatch_run.add_argument("--workers", type=int, default=5)
+    dispatch_run.add_argument("--output")
+    dispatch_verify = commands.add_parser(
+        "tool-dispatch-verify",
+        help="verify and cold-replay a dispatch result",
+    )
+    dispatch_verify.add_argument("result")
+    dispatch_verify.add_argument("heads")
+    dispatch_verify.add_argument(
+        "--no-cold-replay", action="store_true"
+    )
+    dispatch_runtime = commands.add_parser(
+        "tool-dispatch-runtime",
+        help="compile the complete frozen V1 tool-dispatch release",
+    )
+    dispatch_runtime.add_argument("--output", default="registry/tool-dispatch/v1")
+    dispatch_runtime.add_argument("--implementation-commit", required=True)
+    dispatch_runtime.add_argument("--implementation-tree", required=True)
+    dispatch_runtime.add_argument("--source", required=True)
+    dispatch_runtime.add_argument("--bundle", required=True)
 
     systematic = commands.add_parser("systematic", help="compile every V3 registry")
     systematic.add_argument("--output", default="registry/v3")
@@ -819,6 +872,84 @@ def main(argv: list[str] | None = None) -> int:
         report = verify_agent_run_receipts(bundle, source_crystal=source)
         _json(report)
         return 0 if report["verdict"] == "PASS" else 2
+
+    if args.command == "tool-dispatch-contract":
+        _json(tool_dispatch_contract())
+        return 0
+
+    if args.command == "tool-dispatch-heads":
+        _json(
+            build_dispatch_head_registry(
+                implementation_commit=args.implementation_commit,
+                implementation_tree=args.implementation_tree,
+                supersedes_registry_digest=args.supersedes_registry_digest,
+            )
+        )
+        return 0
+
+    if args.command == "tool-dispatch-plan":
+        request = json.loads(Path(args.request).read_text(encoding="utf-8"))
+        heads = json.loads(Path(args.heads).read_text(encoding="utf-8"))
+        report = compile_tool_dispatch_plan(
+            request,
+            head_registry=heads,
+            executor_workers=args.workers,
+        )
+        _json(report)
+        return 0 if report["status"] == "READY" else 2
+
+    if args.command == "tool-dispatch":
+        request = json.loads(Path(args.request).read_text(encoding="utf-8"))
+        heads = json.loads(Path(args.heads).read_text(encoding="utf-8"))
+        report = dispatch_mycelium_tool(
+            request,
+            head_registry=heads,
+            executor_workers=args.workers,
+        )
+        if args.output:
+            destination = Path(args.output)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_text(
+                json.dumps(
+                    report,
+                    ensure_ascii=False,
+                    sort_keys=True,
+                    separators=(",", ":"),
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+        _json(report)
+        return 0 if report["status"] == "EXECUTED" else 2
+
+    if args.command == "tool-dispatch-verify":
+        result = json.loads(Path(args.result).read_text(encoding="utf-8"))
+        heads = json.loads(Path(args.heads).read_text(encoding="utf-8"))
+        report = verify_tool_dispatch_result(
+            result,
+            head_registry=heads,
+            cold_replay=not args.no_cold_replay,
+        )
+        _json(report)
+        return 0 if report["verdict"] == "PASS" else 2
+
+    if args.command == "tool-dispatch-runtime":
+        source = json.loads(Path(args.source).read_text(encoding="utf-8"))
+        bundle = json.loads(Path(args.bundle).read_text(encoding="utf-8"))
+        report = compile_tool_dispatch_runtime(
+            args.output,
+            implementation_commit=args.implementation_commit,
+            implementation_tree=args.implementation_tree,
+            parallel_route_snapshot=source,
+            run_receipt_bundle=bundle,
+        )
+        _json(report)
+        return (
+            0
+            if report["dispatch_status"] == "EXECUTED"
+            and report["verification_verdict"] == "PASS"
+            else 2
+        )
 
     if args.command == "systematic":
         release = compile_systematic_framework(args.output)

@@ -164,6 +164,27 @@ The full extension is frozen in `MYCELIUM_FRAMEWORK_V4.md`; its compiler emits
 the inherited V3 registries and the V4 query and witness surfaces under
 `registry/v4`.
 
+## Mycelium-locatable tool dispatch
+
+The dispatch overlay turns an exact mycelium location into a safe executable
+path without treating descriptor command text as code. Four content-addressed
+cards are registered: the five-route crystal, agent-run receipts, the dispatcher
+itself, and the exact P31 live-navigation lineage. The first three bind to a
+closed in-process handler table. P31 remains locator-only and returns
+`E_EXTERNAL_RUNTIME_REQUIRED` until its archive has an exact verified adapter.
+
+Every request freezes its input manifest, tool registry, implementation heads,
+capability ceiling, route budget, and zero-effect boundary. Five independent
+preflight lanes—identity, source head, capability, route/return, and
+authority/effect—run as one canonical width-five wave. Their reducer either
+authorizes one exact handler/operation pair or emits a content-addressed blocked
+result. Worker capacities one through five cannot change the output bytes.
+
+The M12 receipt binds the forward path, exact reverse, audit chain, open BR019
+dependency, handler output, and replay capsule. Cold replay proves deterministic
+execution but adds neither independent evidence nor transport certification.
+The full contract is frozen in `MYCELIUM_TOOL_DISPATCH_V1.md`.
+
 ## V5 global-state extension
 
 V5 freezes all 276 typed relation records, assigns stable edge identities, and

@@ -53,6 +53,7 @@ PYTHONPATH=src python3 -m kc144_crystal nomination-intake \
 PYTHONPATH=src python3 -m kc144_crystal application-transport \
   --output registry/v15 \
   --challenge-batch registry/v11/governance_challenge_batch_v11.json
+PYTHONPATH=src python3 -m kc144_crystal tool-dispatch-contract
 PYTHONPATH=src python3 -m unittest discover -s tests -v
 ```
 
@@ -155,6 +156,12 @@ PYTHONPATH=src python3 -m kc144_crystal candidate-application-verify \
   registry/v11/governance_challenge_batch_v11.json \
   batch-bound-candidate-application.json \
   --checked-at 2026-07-27T12:00:00+00:00
+PYTHONPATH=src python3 -m kc144_crystal tool-dispatch-plan \
+  request.json head-registry.json --workers 5
+PYTHONPATH=src python3 -m kc144_crystal tool-dispatch \
+  request.json head-registry.json --workers 5 --output result.json
+PYTHONPATH=src python3 -m kc144_crystal tool-dispatch-verify \
+  result.json head-registry.json
 PYTHONPATH=src python3 -m kc144_crystal rotate 110 kc27-J
 PYTHONPATH=src python3 -m kc144_crystal rotate 7 sigma
 ```
@@ -170,6 +177,12 @@ PYTHONPATH=src python3 -m kc144_crystal rotate 7 sigma
 - A bounded wavefront can populate query-specific weights, basins,
   interference, and stable path signatures without mutating the crystal.
 - Five route grammars retain nonzero holonomy despite convergent destination.
+- Four content-addressed tool cards are exactly locatable through the
+  mycelium; three use a closed in-process handler table while P31 remains an
+  exact locator-only external runtime.
+- Dispatch compiles five independent preflight lanes, reduces them
+  deterministically, seals an exact KC54 return, and returns typed blocked
+  receipts instead of guessing or executing command strings.
 - H06 QueryBundles compile to evidence-filtered, non-scalar Pareto
   attractors, exact paths, bridge exposure, and explicit returns.
 - The beta bridge-witness gate is executable; all 28 production bridges remain

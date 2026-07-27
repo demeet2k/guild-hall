@@ -147,8 +147,22 @@ from .selection_v13 import (
 )
 from .tool_registry import (
     agent_run_receipt_tool_descriptor,
+    dispatch_tool_descriptor,
     locate_mycelium_tool,
     mycelium_tool_registry,
+    p31_live_navigate_tool_descriptor,
+    parallel_route_tool_descriptor,
+)
+from .tool_dispatch import (
+    ToolDispatchError,
+    build_dispatch_head_registry,
+    build_tool_dispatch_request,
+    compile_tool_dispatch_plan,
+    compile_tool_dispatch_runtime,
+    dispatch_mycelium_tool,
+    tool_dispatch_contract,
+    verify_dispatch_head_registry,
+    verify_tool_dispatch_result,
 )
 from .wave import WaveQuery, propagate
 from .v4 import compile_mycelium_framework
@@ -167,6 +181,7 @@ from .witness import BridgeWitnessPacket, evaluate_bridge_witness
 
 __all__ = [
     "AgentReceiptError",
+    "ToolDispatchError",
     "AgentTask",
     "LeaseGrant",
     "RouteSimulation",
@@ -223,8 +238,19 @@ __all__ = [
     "navigation_report",
     "agent_run_receipt_contract",
     "agent_run_receipt_tool_descriptor",
+    "parallel_route_tool_descriptor",
+    "dispatch_tool_descriptor",
+    "p31_live_navigate_tool_descriptor",
     "mycelium_tool_registry",
     "locate_mycelium_tool",
+    "build_dispatch_head_registry",
+    "build_tool_dispatch_request",
+    "compile_tool_dispatch_plan",
+    "compile_tool_dispatch_runtime",
+    "dispatch_mycelium_tool",
+    "verify_dispatch_head_registry",
+    "verify_tool_dispatch_result",
+    "tool_dispatch_contract",
     "issue_lease",
     "retry_allowed",
     "validate_task_result",

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athenachka.collective/schemas/kc144/tool-dispatch-result-v1.schema.json",
+  "title": "KC144 Tool Dispatch Result V1",
+  "type": "object",
+  "required": [
+    "schema",
+    "lookup_key",
+    "request",
+    "request_id",
+    "plan",
+    "plan_digest",
+    "status",
+    "error_codes",
+    "audit_events",
+    "audit_root",
+    "holonomy_receipt",
+    "replay_capsule",
+    "independent_witness_count",
+    "base_graph_mutated",
+    "content_transport_certified",
+    "governance_authority_granted",
+    "production_truth_effect",
+    "result_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ToolDispatchResult.V1"},
+    "lookup_key": {"const": "KC144.V1::MYCELIUM_LOCATABLE_TOOL_DISPATCH"},
+    "request": {"type": "object"},
+    "request_id": {"$ref": "#/$defs/digest"},
+    "plan": {"type": "object"},
+    "plan_digest": {"$ref": "#/$defs/digest"},
+    "status": {"enum": ["EXECUTED", "BLOCKED", "FAILED"]},
+    "error_codes": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "resolved_lookup_key": {"type": ["string", "null"]},
+    "descriptor_digest": {
+      "anyOf": [{"$ref": "#/$defs/digest"}, {"type": "null"}]
+    },
+    "operation": {"type": "string"},
+    "handler_id": {"type": ["string", "null"]},
+    "output": {"type": ["object", "null"]},
+    "output_digest": {
+      "anyOf": [{"$ref": "#/$defs/digest"}, {"type": "null"}]
+    },
+    "audit_events": {"type": "array", "minItems": 4, "maxItems": 4},
+    "audit_root": {"$ref": "#/$defs/digest"},
+    "holonomy_receipt": {"type": "object"},
+    "replay_capsule": {"type": "object"},
+    "independent_witness_count": {"const": 0},
+    "base_graph_mutated": {"const": false},
+    "content_transport_certified": {"const": false},
+    "governance_authority_granted": {"const": false},
+    "production_truth_effect": {"const": "NONE"},
+    "result_digest": {"$ref": "#/$defs/digest"}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

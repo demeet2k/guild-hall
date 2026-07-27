@@ -71,6 +71,16 @@ def compile_mycelium_framework(output_directory: str | Path) -> dict[str, Any]:
             start_coordinates=(6,),
             route_budget=18,
         ),
+        "tool_dispatch_location.json": locate_mycelium_tool(
+            "KC144.V1::MYCELIUM_LOCATABLE_TOOL_DISPATCH",
+            start_coordinates=(6,),
+            route_budget=18,
+        ),
+        "p31_live_navigate_location.json": locate_mycelium_tool(
+            "KC144.P31::LIVE_COGNITION_NAVIGATE",
+            start_coordinates=(6,),
+            route_budget=18,
+        ),
         "frontier_v4.json": {
             **frontier_ledger(),
             "schema": "KC144.SystematicFrontier.V4",
@@ -126,6 +136,16 @@ def compile_mycelium_framework(output_directory: str | Path) -> dict[str, Any]:
                     "coordinate_routes"
                 ]
             ),
+            "base_graph_mutated": False,
+            "truth_effect": "NONE",
+        },
+        "dispatch_runtime": {
+            "lookup_key": "KC144.V1::MYCELIUM_LOCATABLE_TOOL_DISPATCH",
+            "location_status": documents["tool_dispatch_location.json"][
+                "status"
+            ],
+            "registered_execution": "STATIC_IN_PROCESS_HANDLER_ALLOWLIST_ONLY",
+            "p31_binding": "LOCATOR_ONLY_EXTERNAL_RUNTIME_REQUIRED",
             "base_graph_mutated": False,
             "truth_effect": "NONE",
         },

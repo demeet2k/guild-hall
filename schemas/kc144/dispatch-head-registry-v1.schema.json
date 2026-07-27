@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://athenachka.collective/schemas/kc144/dispatch-head-registry-v1.schema.json",
+  "title": "KC144 Dispatch Head Registry V1",
+  "type": "object",
+  "required": [
+    "schema",
+    "lookup_key",
+    "repository",
+    "publication_parent",
+    "implementation_head",
+    "source_heads",
+    "standing",
+    "meaning_of_authoritative",
+    "governance_authority_granted",
+    "content_transport_certified",
+    "truth_effect",
+    "registry_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.DispatchHeadRegistry.V1"},
+    "lookup_key": {"const": "KC144.V1::MYCELIUM_LOCATABLE_TOOL_DISPATCH"},
+    "repository": {"const": "demeet2k/guild-hall"},
+    "publication_parent": {"$ref": "#/$defs/gitHead"},
+    "implementation_head": {"$ref": "#/$defs/gitHead"},
+    "source_heads": {"type": "object"},
+    "supersedes_registry_digest": {
+      "anyOf": [{"$ref": "#/$defs/digest"}, {"type": "null"}]
+    },
+    "standing": {"const": "FROZEN_PUBLIC_CODE_IDENTITY"},
+    "meaning_of_authoritative": {"const": "SELECTED_CODE_IDENTITY_FOR_DETERMINISTIC_REPLAY_ONLY"},
+    "governance_authority_granted": {"const": false},
+    "content_transport_certified": {"const": false},
+    "truth_effect": {"const": "NONE"},
+    "registry_digest": {"$ref": "#/$defs/digest"}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "gitHead": {
+      "type": "object",
+      "required": ["commit", "tree"],
+      "properties": {
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "tree": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+      },
+      "additionalProperties": false
+    }
+  }
+}

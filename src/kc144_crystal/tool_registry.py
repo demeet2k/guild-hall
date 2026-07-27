@@ -4,12 +4,19 @@ import re
 import unicodedata
 from typing import Any, Iterable
 
-from .agent_receipts import LOOKUP_KEY, content_address
+from .agent_receipts import (
+    LOOKUP_KEY as AGENT_RECEIPT_LOOKUP_KEY,
+    PARENT_LOOKUP_KEY as PARALLEL_ROUTE_LOOKUP_KEY,
+    content_address,
+)
 from .lattice import generate_seats
 from .navigation import adjacency, navigation_relations, shortest_path
 
 
-_ALIASES = (
+DISPATCH_LOOKUP_KEY = "KC144.V1::MYCELIUM_LOCATABLE_TOOL_DISPATCH"
+P31_LIVE_LOOKUP_KEY = "KC144.P31::LIVE_COGNITION_NAVIGATE"
+
+_AGENT_RECEIPT_ALIASES = (
     "agent receipts",
     "content addressed agent run",
     "deterministic parallel receipts",
@@ -17,7 +24,7 @@ _ALIASES = (
     "run receipt verifier",
 )
 
-_BINDINGS = (
+_DISPATCH_BINDINGS = (
     (
         3,
         "LOCATE",
@@ -50,6 +57,25 @@ _BINDINGS = (
     ),
 )
 
+_PARALLEL_ROUTE_ALIASES = (
+    "parallel route crystal",
+    "five route simulations",
+    "kc144 route crystal",
+)
+
+_DISPATCH_ALIASES = (
+    "mycelium tool dispatch",
+    "dynamic tool dispatch",
+    "locate and execute tool",
+    "content addressed dispatch",
+)
+
+_P31_LIVE_ALIASES = (
+    "p31 live navigate",
+    "live cognition navigate",
+    "tool kc144 live navigate",
+)
+
 
 def _normalize_alias(value: str) -> str:
     normalized = unicodedata.normalize("NFKC", value).lower()
@@ -57,9 +83,9 @@ def _normalize_alias(value: str) -> str:
     return normalized
 
 
-def agent_run_receipt_tool_descriptor() -> dict[str, Any]:
+def _bindings() -> list[dict[str, Any]]:
     seats = {seat.gid: seat for seat in generate_seats()}
-    bindings = [
+    return [
         {
             "gid": gid,
             "station": seats[gid].station,
@@ -68,13 +94,26 @@ def agent_run_receipt_tool_descriptor() -> dict[str, Any]:
             "role": role,
             "meaning": meaning,
         }
-        for gid, role, meaning in _BINDINGS
+        for gid, role, meaning in _DISPATCH_BINDINGS
     ]
+
+
+def _seal_descriptor(body: dict[str, Any]) -> dict[str, Any]:
+    return {
+        **body,
+        "descriptor_digest": content_address(
+            "kc144.mycelium.tool-descriptor", body
+        ),
+    }
+
+
+def agent_run_receipt_tool_descriptor() -> dict[str, Any]:
     body = {
         "schema": "KC144.MyceliumToolDescriptor.V1",
-        "lookup_key": LOOKUP_KEY,
-        "parent_lookup_key": "KC144.V1::PARALLEL_ROUTE_CRYSTAL",
-        "aliases": list(_ALIASES),
+        "lookup_key": AGENT_RECEIPT_LOOKUP_KEY,
+        "tool_uri": "tool://kc144/agent-run-receipts",
+        "parent_lookup_key": PARALLEL_ROUTE_LOOKUP_KEY,
+        "aliases": list(_AGENT_RECEIPT_ALIASES),
         "capabilities": [
             "CONTENT_ADDRESS_TASKS",
             "COMPILE_DEPENDENCY_WAVES",
@@ -84,12 +123,34 @@ def agent_run_receipt_tool_descriptor() -> dict[str, Any]:
             "SEAL_AUDIT_CHAIN",
             "VERIFY_RUN_REPLAY",
         ],
-        "coordinate_bindings": bindings,
+        "coordinate_bindings": _bindings(),
+        "execution_binding": "IN_PROCESS_ONLY",
+        "handler_id": "kc144.agent-receipts.v1",
+        "operations": {
+            "plan": {
+                "required_inputs": ["parallel_route_snapshot"],
+                "required_capabilities": ["CONTENT_ADDRESS_TASKS"],
+            },
+            "run": {
+                "required_inputs": ["parallel_route_snapshot"],
+                "optional_inputs": ["runtime_binding"],
+                "required_capabilities": [
+                    "COMPILE_DEPENDENCY_WAVES",
+                    "DETERMINISTIC_REDUCE",
+                    "SEAL_AUDIT_CHAIN",
+                ],
+            },
+            "verify": {
+                "required_inputs": ["run_receipt_bundle"],
+                "optional_inputs": ["parallel_route_snapshot"],
+                "required_capabilities": ["VERIFY_RUN_REPLAY"],
+            },
+        },
         "commands": {
             "locate": [
                 "kc144-crystal",
                 "mycelium-locate",
-                LOOKUP_KEY,
+                AGENT_RECEIPT_LOOKUP_KEY,
             ],
             "plan": [
                 "kc144-crystal",
@@ -125,23 +186,165 @@ def agent_run_receipt_tool_descriptor() -> dict[str, Any]:
         "governance_authority_granted": False,
         "production_truth_effect": "NONE",
     }
-    return {
-        **body,
-        "descriptor_digest": content_address(
-            "kc144.mycelium.tool-descriptor", body
-        ),
+    return _seal_descriptor(body)
+
+
+def parallel_route_tool_descriptor() -> dict[str, Any]:
+    body = {
+        "schema": "KC144.MyceliumToolDescriptor.V1",
+        "lookup_key": PARALLEL_ROUTE_LOOKUP_KEY,
+        "tool_uri": "tool://kc144/parallel-routes",
+        "parent_lookup_key": None,
+        "aliases": list(_PARALLEL_ROUTE_ALIASES),
+        "capabilities": [
+            "COMPILE_FIVE_ROUTE_SIMULATIONS",
+            "DETERMINISTIC_REDUCE",
+            "MEASURE_PAIRWISE_HOLONOMY",
+        ],
+        "coordinate_bindings": _bindings(),
+        "execution_binding": "IN_PROCESS_ONLY",
+        "handler_id": "kc144.parallel-routes.v1",
+        "operations": {
+            "compile": {
+                "required_inputs": [],
+                "optional_inputs": ["coordinate_binding"],
+                "required_capabilities": [
+                    "COMPILE_FIVE_ROUTE_SIMULATIONS",
+                    "DETERMINISTIC_REDUCE",
+                ],
+            }
+        },
+        "commands": {
+            "compile": [
+                "kc144-crystal",
+                "parallel-routes",
+                "--workers",
+                "5",
+            ]
+        },
+        "input_schemas": [],
+        "output_schemas": ["KC144.ParallelRouteCrystal.V1"],
+        "base_graph_mutated": False,
+        "content_transport_certified": False,
+        "governance_authority_granted": False,
+        "production_truth_effect": "NONE",
     }
+    return _seal_descriptor(body)
+
+
+def dispatch_tool_descriptor() -> dict[str, Any]:
+    body = {
+        "schema": "KC144.MyceliumToolDescriptor.V1",
+        "lookup_key": DISPATCH_LOOKUP_KEY,
+        "tool_uri": "tool://kc144/tool-dispatch",
+        "parent_lookup_key": AGENT_RECEIPT_LOOKUP_KEY,
+        "aliases": list(_DISPATCH_ALIASES),
+        "capabilities": [
+            "RESOLVE_EXACT_TOOL_CARD",
+            "BIND_AUTHORITATIVE_HEADS",
+            "COMPILE_FAIL_CLOSED_DISPATCH",
+            "EXECUTE_REGISTERED_IN_PROCESS_HANDLER",
+            "SEAL_KC54_RETURN_RECEIPT",
+            "VERIFY_COLD_REPLAY",
+        ],
+        "coordinate_bindings": _bindings(),
+        "execution_binding": "IN_PROCESS_ONLY",
+        "handler_id": "kc144.tool-dispatch.v1",
+        "operations": {
+            "registry": {
+                "required_inputs": [],
+                "required_capabilities": ["RESOLVE_EXACT_TOOL_CARD"],
+            },
+            "locate": {
+                "required_inputs": ["query"],
+                "required_capabilities": ["RESOLVE_EXACT_TOOL_CARD"],
+            },
+        },
+        "commands": {
+            "registry": ["kc144-crystal", "mycelium-tools"],
+            "locate": [
+                "kc144-crystal",
+                "mycelium-locate",
+                "{query}",
+            ],
+        },
+        "input_schemas": ["KC144.ToolDispatchRequest.V1"],
+        "output_schemas": [
+            "KC144.ToolDispatchPlan.V1",
+            "KC144.ToolDispatchResult.V1",
+            "KC144.ToolDispatchVerification.V1",
+        ],
+        "base_graph_mutated": False,
+        "content_transport_certified": False,
+        "governance_authority_granted": False,
+        "production_truth_effect": "NONE",
+    }
+    return _seal_descriptor(body)
+
+
+def p31_live_navigate_tool_descriptor() -> dict[str, Any]:
+    body = {
+        "schema": "KC144.MyceliumToolDescriptor.V1",
+        "lookup_key": P31_LIVE_LOOKUP_KEY,
+        "tool_uri": "tool://kc144/live.navigate",
+        "parent_lookup_key": "KC144.P30::1f40beaa81e8c0ba956ce835",
+        "aliases": list(_P31_LIVE_ALIASES),
+        "capabilities": ["P31_LIVE_RUNTIME"],
+        "coordinate_bindings": _bindings(),
+        "execution_binding": "EXTERNAL_RUNTIME_REQUIRED",
+        "handler_id": None,
+        "operations": {
+            "navigate": {
+                "required_inputs": ["query"],
+                "required_capabilities": ["P31_LIVE_RUNTIME"],
+            }
+        },
+        "commands": {
+            "navigate": ["tool://kc144/live.navigate"],
+        },
+        "input_schemas": ["KC144.P31.Query.V1"],
+        "output_schemas": ["KC144.P31.MyceliumReceipt.V1"],
+        "lineage": {
+            "release_id": "KC144_P31_LIVE_COGNITION_OS_V3_3",
+            "result_id": "KC144.P31::db5a6446ce54cf4bc53515be",
+            "archive_sha256": (
+                "sha256:"
+                "77629d53ef00c970cf115d7cbf94d5e4c9b97928814a702ada8d3f883212d091"
+            ),
+            "structural_parent_result_id": (
+                "KC144.P30::1f40beaa81e8c0ba956ce835"
+            ),
+        },
+        "base_graph_mutated": False,
+        "content_transport_certified": False,
+        "governance_authority_granted": False,
+        "production_truth_effect": "NONE",
+    }
+    return _seal_descriptor(body)
 
 
 def mycelium_tool_registry() -> dict[str, Any]:
-    descriptor = agent_run_receipt_tool_descriptor()
+    descriptors = {
+        descriptor["lookup_key"]: descriptor
+        for descriptor in (
+            parallel_route_tool_descriptor(),
+            agent_run_receipt_tool_descriptor(),
+            dispatch_tool_descriptor(),
+            p31_live_navigate_tool_descriptor(),
+        )
+    }
+    aliases: dict[str, list[str]] = {}
+    for lookup_key, descriptor in descriptors.items():
+        for alias in descriptor["aliases"]:
+            aliases.setdefault(_normalize_alias(alias), []).append(lookup_key)
     alias_index = {
-        _normalize_alias(alias): LOOKUP_KEY for alias in descriptor["aliases"]
+        alias: sorted(set(lookup_keys))
+        for alias, lookup_keys in sorted(aliases.items())
     }
     body = {
-        "schema": "KC144.MyceliumToolRegistry.V1",
+        "schema": "KC144.MyceliumToolRegistry.V2",
         "keyspace": "EXACT_LOOKUP_KEY",
-        "descriptors": {LOOKUP_KEY: descriptor},
+        "descriptors": descriptors,
         "alias_index": alias_index,
         "base_graph_mutated": False,
         "content_transport_certified": False,
@@ -247,11 +450,35 @@ def locate_mycelium_tool(
         resolved = query
         resolution = "EXACT_LOOKUP_KEY"
     else:
-        resolved = registry["alias_index"].get(_normalize_alias(query))
+        candidates = registry["alias_index"].get(_normalize_alias(query), [])
+        if len(candidates) > 1:
+            body = {
+                "schema": "KC144.MyceliumToolLocation.V2",
+                "query": query,
+                "resolved_lookup_key": None,
+                "candidate_lookup_keys": candidates,
+                "status": "AMBIGUOUS",
+                "resolution": "AMBIGUOUS_EXACT_ALIAS",
+                "start_coordinates": list(start_coordinates),
+                "route_budget": route_budget,
+                "coordinate_routes": [],
+                "commands": {},
+                "base_graph_mutated": False,
+                "content_transport_certified": False,
+                "governance_authority_granted": False,
+                "production_truth_effect": "NONE",
+            }
+            return {
+                **body,
+                "location_digest": content_address(
+                    "kc144.mycelium.tool-location", body
+                ),
+            }
+        resolved = candidates[0] if candidates else None
         resolution = "EXACT_ALIAS" if resolved else "NONE"
     if resolved is None:
         body = {
-            "schema": "KC144.MyceliumToolLocation.V1",
+            "schema": "KC144.MyceliumToolLocation.V2",
             "query": query,
             "resolved_lookup_key": None,
             "status": "NOT_FOUND",
@@ -288,7 +515,7 @@ def locate_mycelium_tool(
         for binding in descriptor["coordinate_bindings"]
     ]
     body = {
-        "schema": "KC144.MyceliumToolLocation.V1",
+        "schema": "KC144.MyceliumToolLocation.V2",
         "query": query,
         "resolved_lookup_key": resolved,
         "status": "FOUND",

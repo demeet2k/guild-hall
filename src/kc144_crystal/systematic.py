@@ -62,6 +62,7 @@ def frontier_ledger() -> dict[str, Any]:
 def compile_systematic_framework(output_directory: str | Path) -> dict[str, Any]:
     output = Path(output_directory)
     output.mkdir(parents=True, exist_ok=True)
+    tool_registry = mycelium_tool_registry()
     artifacts = {
         "crystal.json": crystallize(),
         "crystal_audit.json": audit_crystal(),
@@ -73,7 +74,7 @@ def compile_systematic_framework(output_directory: str | Path) -> dict[str, Any]
         "wave_h06.json": propagate(
             WaveQuery("KC144.V3.DEFAULT.H06", starts=(6,), route_budget=18)
         ),
-        "tool_registry_v1.json": mycelium_tool_registry(),
+        "tool_registry_v1.json": tool_registry,
         "frontier.json": frontier_ledger(),
     }
     for filename, document in artifacts.items():
