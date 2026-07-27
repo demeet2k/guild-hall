@@ -1,0 +1,14 @@
+{
+  "schema": "KC144.ParallelRouteSnapshotBinding.V1",
+  "immutable_commit": "1b653e39d7c09ba8b93a800860244242cd98d397",
+  "immutable_tree": "d2e2f9b92fafdfd17be5088a4a8e6e3a5db1322b",
+  "compiler_commit": "77c67543b0d6df946d7ffa7d17242bf869c3ad1b",
+  "compiler_tree": "0fdb2184b9c9777f557102a84c44ac034991fe5f",
+  "snapshot_digest": "sha256:c8e1a1a7c55a144b7bf20b49ff3fd01ca292a0cd34f134ce0a0abf0d9ac0bc1d",
+  "snapshot_file_sha256": "sha256:55edf1d37b065229863544c556954537b2b8a6c7dc355a92960832336d1e3188",
+  "snapshot_path": "registry/parallel-navigation/v1/snapshots/sha256/c8/c8e1a1a7c55a144b7bf20b49ff3fd01ca292a0cd34f134ce0a0abf0d9ac0bc1d.json",
+  "simulation_count": 5,
+  "maximum_parallel_width": 5,
+  "governance_authority_granted": false,
+  "production_truth_effect": "NONE"
+}
