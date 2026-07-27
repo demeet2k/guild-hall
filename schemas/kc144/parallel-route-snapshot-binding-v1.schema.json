@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/parallel-route-snapshot-binding-v1.schema.json",
+  "title": "KC144 parallel-route snapshot binding",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "immutable_commit",
+    "immutable_tree",
+    "compiler_commit",
+    "compiler_tree",
+    "snapshot_digest",
+    "snapshot_file_sha256",
+    "snapshot_path",
+    "simulation_count",
+    "maximum_parallel_width",
+    "governance_authority_granted",
+    "production_truth_effect"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ParallelRouteSnapshotBinding.V1"},
+    "immutable_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "immutable_tree": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "compiler_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "compiler_tree": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "snapshot_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "snapshot_file_sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "snapshot_path": {
+      "type": "string",
+      "pattern": "^registry/parallel-navigation/v1/snapshots/sha256/[0-9a-f]{2}/[0-9a-f]{64}\\.json$"
+    },
+    "simulation_count": {"const": 5},
+    "maximum_parallel_width": {"const": 5},
+    "governance_authority_granted": {"const": false},
+    "production_truth_effect": {"const": "NONE"}
+  }
+}
