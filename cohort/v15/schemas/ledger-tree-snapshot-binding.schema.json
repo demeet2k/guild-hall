@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/ledger-tree-snapshot-binding-v15.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "ledger_branch",
+    "ledger_commit",
+    "ledger_tree",
+    "compiler_commit",
+    "snapshot_digest",
+    "snapshot_path",
+    "cohort_state",
+    "counting_candidate_count",
+    "filled_role_count",
+    "governance_authority_granted",
+    "production_truth_effect"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.LedgerTreeSnapshotBinding.V15"},
+    "ledger_branch": {"const": "kc144-v15-pass-ledger"},
+    "ledger_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "ledger_tree": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "compiler_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "snapshot_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "snapshot_path": {"type": "string", "minLength": 1},
+    "cohort_state": {"type": "string"},
+    "counting_candidate_count": {"type": "integer", "minimum": 0},
+    "filled_role_count": {"type": "integer", "minimum": 0, "maximum": 5},
+    "governance_authority_granted": {"const": false},
+    "production_truth_effect": {"const": "NONE"}
+  }
+}

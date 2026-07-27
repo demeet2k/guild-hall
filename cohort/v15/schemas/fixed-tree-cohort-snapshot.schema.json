@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/fixed-tree-cohort-snapshot-v15.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "compiler_schema",
+    "compiler_commit",
+    "ledger",
+    "receipt_observation_count",
+    "technical_application_count",
+    "excluded_application_count",
+    "unexcluded_application_count",
+    "duplicate_application_count",
+    "globally_unique_application_count",
+    "identity_independence_confirmed_count",
+    "counting_candidate_count",
+    "global_duplicate_sets",
+    "applications",
+    "role_vector",
+    "filled_role_count",
+    "required_role_count",
+    "cohort_state",
+    "next_barrier",
+    "synthetic_counting_effect",
+    "governance_authority_granted",
+    "production_truth_effect"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.FixedTreeCohortSnapshot.V15"},
+    "compiler_schema": {"const": "KC144.CohortSnapshotCompiler.V15"},
+    "compiler_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["branch", "commit", "tree"],
+      "properties": {
+        "branch": {"const": "kc144-v15-pass-ledger"},
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "tree": {"type": "string", "pattern": "^[0-9a-f]{40}$"}
+      }
+    },
+    "receipt_observation_count": {"type": "integer", "minimum": 0},
+    "technical_application_count": {"type": "integer", "minimum": 0},
+    "excluded_application_count": {"type": "integer", "minimum": 0},
+    "unexcluded_application_count": {"type": "integer", "minimum": 0},
+    "duplicate_application_count": {"type": "integer", "minimum": 0},
+    "globally_unique_application_count": {"type": "integer", "minimum": 0},
+    "identity_independence_confirmed_count": {"type": "integer", "minimum": 0},
+    "counting_candidate_count": {"type": "integer", "minimum": 0},
+    "global_duplicate_sets": {"type": "object"},
+    "applications": {"type": "array"},
+    "role_vector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "CUSTODIAN",
+        "INDEPENDENT_REVIEWER",
+        "REPLAY_WITNESS",
+        "SOURCE_AUDITOR",
+        "RETURN_AUDITOR"
+      ],
+      "properties": {
+        "CUSTODIAN": {"type": "array"},
+        "INDEPENDENT_REVIEWER": {"type": "array"},
+        "REPLAY_WITNESS": {"type": "array"},
+        "SOURCE_AUDITOR": {"type": "array"},
+        "RETURN_AUDITOR": {"type": "array"}
+      }
+    },
+    "filled_role_count": {"type": "integer", "minimum": 0, "maximum": 5},
+    "required_role_count": {"const": 5},
+    "cohort_state": {"type": "string"},
+    "next_barrier": {"type": "string"},
+    "synthetic_counting_effect": {"const": "NONE"},
+    "governance_authority_granted": {"const": false},
+    "production_truth_effect": {"const": "NONE"}
+  }
+}

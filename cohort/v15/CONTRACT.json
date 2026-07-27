@@ -1,0 +1,16 @@
+{
+  "schema": "KC144.CohortSnapshotContract.V15",
+  "snapshot_registry_id": "KC144.V15.FIXED_TREE_COHORT_SNAPSHOTS",
+  "ledger_branch": "kc144-v15-pass-ledger",
+  "compiler_path": "tools/kc144_v15_cohort_snapshot.py",
+  "determinism_law": "one ledger commit, ledger tree, and compiler commit produce one canonical snapshot digest",
+  "source_grouping_law": "multiple source observations of one application digest are grouped before candidate evaluation",
+  "duplicate_symmetry_law": "every application sharing a duplicate identifier, public key digest, or independence dimension is marked; first-writer priority is forbidden",
+  "exclusion_law": "an explicit valid synthetic-test exclusion makes the entire application digest non-counting",
+  "identity_law": "self-declared roots and signatures prove neither external identity nor independence",
+  "adjudication_law": "counting requires admissible external adjudication under a non-empty independently governed trust-root registry",
+  "role_vector_law": "each of the five roles requires one globally unique and externally verified independent application",
+  "append_law": "snapshot and ledger-tree binding paths are immutable and branch ref updates are non-force fast-forwards",
+  "governance_authority_granted": false,
+  "production_truth_effect": "NONE"
+}

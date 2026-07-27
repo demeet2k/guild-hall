@@ -1,0 +1,11 @@
+{
+  "schema": "KC144.ExternalAdjudicationTrustRoots.V15",
+  "registry_id": "KC144.V15.EXTERNAL_ADJUDICATION_TRUST_ROOTS",
+  "trust_roots": [],
+  "trust_root_count": 0,
+  "automatic_adjudication_admission": false,
+  "status": "AWAITING_INDEPENDENTLY_GOVERNED_EXTERNAL_TRUST_ROOTS",
+  "identity_independence_externally_proven": false,
+  "governance_authority_granted": false,
+  "production_truth_effect": "NONE"
+}

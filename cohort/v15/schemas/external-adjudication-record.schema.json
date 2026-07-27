@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/external-adjudication-record-v15.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "application_digest",
+    "evidence_bundle_root",
+    "reviewer_attestations",
+    "declared_decision",
+    "automatic_counting_effect",
+    "governance_authority_granted",
+    "production_truth_effect"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.ExternalAdjudicationRecord.V15"},
+    "application_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "evidence_bundle_root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "reviewer_attestations": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"type": "object"}
+    },
+    "declared_decision": {
+      "enum": ["VERIFIED_EXTERNAL", "HOLD", "REJECTED"]
+    },
+    "automatic_counting_effect": {"const": "NONE_WITHOUT_TRUST_ROOTS"},
+    "governance_authority_granted": {"const": false},
+    "production_truth_effect": {"const": "NONE"}
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema": "KC144.CohortSnapshotGenesis.V15",
+  "snapshot_registry_id": "KC144.V15.FIXED_TREE_COHORT_SNAPSHOTS",
+  "branch": "kc144-v15-cohort-snapshots",
+  "base_commit": "1b653e39d7c09ba8b93a800860244242cd98d397",
+  "base_tree": "d2e2f9b92fafdfd17be5088a4a8e6e3a5db1322b",
+  "snapshot_count": 0,
+  "counting_candidate_count": 0,
+  "filled_role_count": 0,
+  "governance_authority_granted": false,
+  "production_truth_effect": "NONE"
+}
