@@ -1,0 +1,25 @@
+{
+  "schema": "athena.repository-contract-receipt/v2",
+  "repository": "demeet2k/guild-hall",
+  "resource": "athena.repo.guild-hall",
+  "verdict": "PROPOSED",
+  "base_commit": "742eaab8be2801575d1dd1895ce64b8d3d0237c6",
+  "contract_commit": "82177884569c71e219b082997f68c204c43be953",
+  "control_commit": "3d33fbcd6248fc2dc2991fbbab5e93a7eb184246",
+  "checked": [
+    ".athena/repo.json",
+    ".athena/exports.jsonl",
+    ".athena/imports.lock.json",
+    ".athena/edges.jsonl",
+    ".athena/status.json",
+    "RETURN.md"
+  ],
+  "invariants": {
+    "existing_code_changed": false,
+    "existing_history_rewritten": false,
+    "control_import_is_immutable": true,
+    "forward_edge_has_return": true,
+    "promotion_claimed": false
+  },
+  "next": "Pin the completed proposal head in the Athena federation lock."
+}
