@@ -1,0 +1,50 @@
+{
+  "authority_domain": [
+    "issues",
+    "quests",
+    "coordination"
+  ],
+  "build": {
+    "command": null,
+    "status": "not_applicable"
+  },
+  "contract_release": "KC144.MYC.P04.DRAFT1",
+  "current_version": "git:742eaab",
+  "default_branch": "main",
+  "entry_points": [
+    "README.md",
+    "QUESTS.md"
+  ],
+  "federation_status": "declared",
+  "kc_projections": [
+    "COORDINATION.GUILD-HALL"
+  ],
+  "privacy": {
+    "contract_public": true,
+    "raw_corpus_allowed": false,
+    "secrets_allowed": false
+  },
+  "repository": "demeet2k/guild-hall",
+  "repository_id": "1178566334",
+  "return": {
+    "allowed_defect": [
+      "coordination-is-not-code-authority"
+    ],
+    "class": "provenance_only",
+    "required_carry": [
+      "decision_id",
+      "issue_or_quest",
+      "authority_owner"
+    ],
+    "target": "athena://resource/athena.federation.root@2.0.0-p04"
+  },
+  "role": "coordination",
+  "schema": "athena.repository-portal/v2",
+  "source_commit": "742eaab8be2801575d1dd1895ce64b8d3d0237c6",
+  "successor_seed": "P05::COORDINATION-RECEIPT-BINDING",
+  "test": {
+    "command": null,
+    "status": "not_applicable"
+  },
+  "visibility": "public"
+}

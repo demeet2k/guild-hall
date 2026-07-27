@@ -1,0 +1,58 @@
+{
+  "contract_release": "KC144.MYC.P04.DRAFT1",
+  "defects": [
+    "coordination-is-not-code-authority"
+  ],
+  "gates": {
+    "I01_identity": {
+      "verdict": "PASS",
+      "witness": "repository_id:1178566334"
+    },
+    "I02_type_normalization": {
+      "verdict": "PASS",
+      "witness": "athena.repository-portal/v2"
+    },
+    "I03_source_provenance": {
+      "verdict": "PASS",
+      "witness": "742eaab8be2801575d1dd1895ce64b8d3d0237c6"
+    },
+    "I04_carrier_preconditions": {
+      "verdict": "PASS",
+      "witness": "athena.repository-portal/v2"
+    },
+    "I05_invariant_preservation": {
+      "verdict": "HOLD",
+      "witness": null
+    },
+    "I06_defect_boundary": {
+      "verdict": "PASS",
+      "witness": [
+        "coordination-is-not-code-authority"
+      ]
+    },
+    "I07_return": {
+      "verdict": "PASS",
+      "witness": "RETURN.md"
+    },
+    "I08_replay": {
+      "verdict": "HOLD",
+      "witness": null
+    },
+    "I09_authority_policy": {
+      "verdict": "PASS",
+      "witness": [
+        "issues",
+        "quests",
+        "coordination"
+      ]
+    },
+    "I10_migration_successor": {
+      "verdict": "HOLD",
+      "witness": "P05::COORDINATION-RECEIPT-BINDING"
+    }
+  },
+  "repository": "demeet2k/guild-hall",
+  "schema": "athena.repository-status/v2",
+  "successor_seed": "P05::COORDINATION-RECEIPT-BINDING",
+  "verdict": "HOLD[PORTAL_BRANCH_UNMERGED,RUNTIME_REPLAY_UNWITNESSED]"
+}
