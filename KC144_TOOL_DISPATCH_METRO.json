@@ -81,9 +81,9 @@
   "content_transport_certified": false,
   "governance_authority_granted": false,
   "production_truth_effect": "NONE",
-  "next_seed": "KC144.V4.3::MATH144.P42::BIND_EXACT_SOURCE_ENUMERATION_WITNESS_INGEST_FIRST_FIVE_NONLEAKING_HELDOUT_OUTCOMES_RECEIVE_EXTERNAL_IC10_EDGE_AUTHORIZATION_EXECUTE_THIRD_EDGE_ONCE_AND_FREEZE_POST_EDGE_WATCH_MACROCYCLE_11",
-  "previous_next_seed": "KC144.V4.2::MATH144.P41::HYDRATE_REMAINING_22_BODY_HEADS_BIND_CURRENT_REPOSITORY_TREES_FREEZE_NONLEAKING_HELDOUT_COHORT_EXECUTE_THIRD_EDGE_ONLY_IF_ELIGIBLE_AND_RECEIVE_INDEPENDENT_IC10_RETURN_MACROCYCLE_10",
-  "successor": {
+  "next_seed": "KC144.V4.4::MATH144.P43::ADMIT_EXACT_SOURCE_ENUMERATION_WITNESS_COMPLETE_NONLEAKING_HELDOUT_COHORT_RECEIVE_INDEPENDENT_IC10_AUTHORIZATION_EXECUTE_P41_EDGE_003_EXACTLY_ONCE_AND_EVALUATE_FORWARD_POST_EDGE_WATCH_MACROCYCLE_12",
+  "previous_next_seed": "KC144.V4.3::MATH144.P42::BIND_EXACT_SOURCE_ENUMERATION_WITNESS_INGEST_FIRST_FIVE_NONLEAKING_HELDOUT_OUTCOMES_RECEIVE_EXTERNAL_IC10_EDGE_AUTHORIZATION_EXECUTE_THIRD_EDGE_ONCE_AND_FREEZE_POST_EDGE_WATCH_MACROCYCLE_11",
+  "predecessor": {
     "schema": "KC144.P41.SourceTreeCohortMetro.V1",
     "branch": "kc144-source-tree-cohort-p41-v1",
     "public_parent": {
@@ -222,5 +222,111 @@
       "registry": "https://github.com/demeet2k/guild-hall/tree/82b1b5b9e76ae49180d2e36182cadc31e2de5862/registry/p41-source-tree-cohort/v1"
     },
     "next_seed": "KC144.V4.3::MATH144.P42::BIND_EXACT_SOURCE_ENUMERATION_WITNESS_INGEST_FIRST_FIVE_NONLEAKING_HELDOUT_OUTCOMES_RECEIVE_EXTERNAL_IC10_EDGE_AUTHORIZATION_EXECUTE_THIRD_EDGE_ONCE_AND_FREEZE_POST_EDGE_WATCH_MACROCYCLE_11"
+  },
+  "successor": {
+    "schema": "KC144.P42.ExactEdgeTransactionMetro.V1",
+    "branch": "kc144-exact-edge-transaction-p42-v1",
+    "public_parent": {
+      "result_id": "KC144.P41.CANDIDATE::482d03a3ff02af3e5656468d",
+      "release_digest": "sha256:482d03a3ff02af3e5656468d345e6ece6fb40f2daaaa0a508d38b6042a4eb1c9",
+      "release_commit": "82b1b5b9e76ae49180d2e36182cadc31e2de5862",
+      "release_tree": "0d7d06492bbee838626f0191f3ccad68f2a1452c"
+    },
+    "implementation": {
+      "commit": "d9f4904b033cb5039af2516dc1bb257113802f75",
+      "tree": "4826261e3f9944e963e1545a1b03388d23332c49"
+    },
+    "release_snapshot": {
+      "commit": "d661fcd6de5c897e2bf614b9f377789dd59b27c7",
+      "tree": "37dd1399c4bc5f0d23d61a1d8543be3651ae14cf",
+      "result_id": "KC144.P42.CANDIDATE::57435ce8483f620adc52b3c6",
+      "release_digest": "sha256:57435ce8483f620adc52b3c6ddd02f4b69816d00ef5fbabe43a6b0ee657518c7",
+      "status": "CANDIDATE_HOLD"
+    },
+    "roots": {
+      "contract": "sha256:06f94707bd9f939ed4e22bc841a8626622fe8a7d8d64e6918fec5b4d52657f8b",
+      "signer_registry": "sha256:8472d297c17b349649bd29781b54cc53350a6f724f01b1607e73e440867ae798",
+      "enumeration_evaluation": "sha256:0f736f2eea388dd4a62c940b7a82bf0c8aecf2f83029974b9316598b3b9595cd",
+      "heldout_cohort": "sha256:c3264fa7255c82da7136c1417c0338ac74466963ba90dee91e6094160b050fa6",
+      "authorization_evaluation": "sha256:b0186cc89ddc6290fa5c0f2ba3fcd808b7a3f35db4c488f07fa9684fbbd4e09a",
+      "edge_transaction": "sha256:f3568e8ee5bdbb6412274457c7009c0d71035f4905607ba31de45a76b058c025",
+      "post_edge_watch": "sha256:87fd938ac38077e941ccb443f9fe1be9cf8dc6952c2265203f1f235054e6038a",
+      "parallel_lineage": "sha256:bf7d47f77a03061c5716ca9c8d06a4e1bc8c32223a20a7353081bf88a47e91e0",
+      "envelope": "sha256:a62a5a5775e4d48406a405572ba916efdab5acb22e48a3149fc1616d26beef68"
+    },
+    "topology": {
+      "external_signer_roles": [
+        "SOURCE_ENUMERATION_CUSTODIAN",
+        "IC10_EDGE_AUTHORIZER"
+      ],
+      "distinct_identity_control_required": true,
+      "exact_source_enumeration": {
+        "required": 1,
+        "accepted": 0,
+        "status": "HOLD"
+      },
+      "heldout_cohort": {
+        "required": 5,
+        "accepted": 0,
+        "minimum_event_types": 2,
+        "minimum_surfaces": 3,
+        "minimum_routes": 3,
+        "continuation_events_admitted": 0,
+        "status": "HOLD"
+      },
+      "independent_ic10_authorization": {
+        "required": 1,
+        "accepted": 0,
+        "status": "HOLD"
+      },
+      "third_edge": {
+        "edge_id": "P41.EDGE.003",
+        "a": "KC144.V1::GID084::I04",
+        "b": "KC144.V1::GID047::F04",
+        "status": "HELD_NOT_EXECUTED",
+        "execution_count": 0,
+        "canonical_graph_mutations": 0
+      },
+      "post_edge_watch": "HELD_NOT_ARMED",
+      "parallel_p42_relation": "PARALLEL_LABEL_COLLISION_NOT_PARENT_NOT_MERGED",
+      "lanes": [
+        "PUBLIC_P41_PARENT_BIND",
+        "EXACT_SOURCE_ENUMERATION_WITNESS_INTAKE",
+        "CUMULATIVE_NONLEAKING_OUTCOME_INTAKE",
+        "HELDOUT_COHORT_FREEZE",
+        "INDEPENDENT_IC10_EDGE_AUTHORIZATION",
+        "EXACTLY_ONCE_EDGE_TRANSACTION_PREPARE",
+        "THIRD_EDGE_EXECUTE_OR_HOLD",
+        "FORWARD_POST_EDGE_WATCH",
+        "PARALLEL_P42_NONCOLLAPSE",
+        "M12_RETURN"
+      ]
+    },
+    "verification": {
+      "verdict": "PASS",
+      "fresh_checkout_tests": {
+        "ran": 468,
+        "passed": 466,
+        "skipped": 2,
+        "failures": 0,
+        "errors": 0
+      },
+      "verification_matrix": {
+        "passed": 25,
+        "total": 25
+      },
+      "production_authority": "HOLD",
+      "truth_effect": "NONE",
+      "production_mutated": false
+    },
+    "links": {
+      "branch": "https://github.com/demeet2k/guild-hall/tree/kc144-exact-edge-transaction-p42-v1",
+      "implementation": "https://github.com/demeet2k/guild-hall/commit/d9f4904b033cb5039af2516dc1bb257113802f75",
+      "release": "https://github.com/demeet2k/guild-hall/commit/d661fcd6de5c897e2bf614b9f377789dd59b27c7",
+      "framework": "https://github.com/demeet2k/guild-hall/blob/d661fcd6de5c897e2bf614b9f377789dd59b27c7/P42_EXACT_EDGE_TRANSACTION_FRAMEWORK.md",
+      "runtime": "https://github.com/demeet2k/guild-hall/blob/d9f4904b033cb5039af2516dc1bb257113802f75/src/kc144_crystal/p42_runtime.py",
+      "registry": "https://github.com/demeet2k/guild-hall/tree/d661fcd6de5c897e2bf614b9f377789dd59b27c7/registry/p42-edge-transaction/v1"
+    },
+    "next_seed": "KC144.V4.4::MATH144.P43::ADMIT_EXACT_SOURCE_ENUMERATION_WITNESS_COMPLETE_NONLEAKING_HELDOUT_COHORT_RECEIVE_INDEPENDENT_IC10_AUTHORIZATION_EXECUTE_P41_EDGE_003_EXACTLY_ONCE_AND_EVALUATE_FORWARD_POST_EDGE_WATCH_MACROCYCLE_12"
   }
 }

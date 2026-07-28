@@ -93,6 +93,25 @@ P41_CANONICAL_GRAPH_MUTATIONS::0
 P41_PARALLEL_LABEL_MERGES::0
 P41_PRODUCTION_AUTHORITY::HOLD
 P41_TRUTH_EFFECT::NONE
+P42_IMPLEMENTATION_COMMIT::d9f4904b033cb5039af2516dc1bb257113802f75
+P42_IMPLEMENTATION_TREE::4826261e3f9944e963e1545a1b03388d23332c49
+P42_RELEASE_COMMIT::d661fcd6de5c897e2bf614b9f377789dd59b27c7
+P42_RELEASE_TREE::37dd1399c4bc5f0d23d61a1d8543be3651ae14cf
+P42_RESULT_ID::KC144.P42.CANDIDATE::57435ce8483f620adc52b3c6
+P42_RELEASE_DIGEST::sha256:57435ce8483f620adc52b3c6ddd02f4b69816d00ef5fbabe43a6b0ee657518c7
+P42_VERIFICATION::PASS
+P42_CRYSTAL_LANES::10
+P42_REPOSITORY_TESTS::468_RUN_466_PASS_2_EXPECTED_SKIP
+P42_VERIFICATION_MATRIX::25/25
+P42_EXACT_SOURCE_ENUMERATION_WITNESSES::0/1
+P42_HELDOUT_OUTCOMES::0/5
+P42_INDEPENDENT_IC10_AUTHORIZATIONS::0/1
+P42_THIRD_EDGE::HELD_NOT_EXECUTED
+P42_EDGE_EXECUTION_COUNT::0
+P42_POST_EDGE_WATCH::HELD_NOT_ARMED
+P42_CANONICAL_GRAPH_MUTATIONS::0
+P42_PRODUCTION_AUTHORITY::HOLD
+P42_TRUTH_EFFECT::NONE
 HEAD_REGISTRY_DIGEST::sha256:5411bcd7c8e875b429004ecfd63b19fe35998b48e0c7ff685f90176ae15fbc62
 TOOL_REGISTRY_DIGEST::sha256:0763e01c6fd520447795d37703f26b711609f1851ddd517c72942b7b3c013e9b
 REQUEST_ID::sha256:8db42ce5513e7ca896160b0b3491db7b7a08adf2744de3e57b5eaac3ab15677e
@@ -373,4 +392,46 @@ RETURN::KC144.V1::GID144::M12
 PUBLIC_PARENT::KC144.P40.CANDIDATE::8343b08a8ee5152ed117f281
 SOURCE_FIBER::KC144.P40::f07bae53d9e157e9e8e54473
 RESULT::KC144.P41.CANDIDATE::482d03a3ff02af3e5656468d
+```
+
+## P42 exact enumeration / edge transaction successor
+
+P42 turns the P41 third-edge proposal into a deterministic, exactly-once
+transaction without manufacturing the missing external evidence. Its ten-lane
+crystal binds the public P41 parent, admits a separately controlled exact
+source-enumeration witness, accumulates five sealed nonleaking held-out
+outcomes, requires an independent IC10 authorization over the exact roots,
+prepares and executes `P41.EDGE.003` at most once, and only then arms a
+forward-only post-edge watch.
+
+The frozen public release is intentionally `CANDIDATE_HOLD`: enumeration is
+0/1, the held-out cohort is 0/5, and independent IC10 authorization is 0/1.
+Therefore the third edge remains unexecuted, its exactly-once ledger count is
+zero, the post-edge watch is not armed, canonical mutations remain zero, and
+truth effect remains `NONE`. A continuation command is routing input only and
+cannot count as a witness, held-out outcome, authorization, or production
+execution.
+
+The source-enumeration custodian and IC10 edge authorizer are distinct signer
+roles with separate identity, organization, and control roots. The similarly
+named private P42 remains an opaque parallel lineage:
+`PARALLEL_LABEL_COLLISION_NOT_PARENT_NOT_MERGED`.
+
+The detached release checkout ran 468 tests with 466 passes and two expected
+external-runtime skips. The complete verification matrix passed 25/25, schema
+validation passed, and the release envelope was reproduced exactly.
+
+- [P42 public branch](https://github.com/demeet2k/guild-hall/tree/kc144-exact-edge-transaction-p42-v1)
+- [P42 implementation commit](https://github.com/demeet2k/guild-hall/commit/d9f4904b033cb5039af2516dc1bb257113802f75)
+- [P42 release commit](https://github.com/demeet2k/guild-hall/commit/d661fcd6de5c897e2bf614b9f377789dd59b27c7)
+- [P42 framework](https://github.com/demeet2k/guild-hall/blob/d661fcd6de5c897e2bf614b9f377789dd59b27c7/P42_EXACT_EDGE_TRANSACTION_FRAMEWORK.md)
+- [P42 runtime](https://github.com/demeet2k/guild-hall/blob/d9f4904b033cb5039af2516dc1bb257113802f75/src/kc144_crystal/p42_runtime.py)
+- [Frozen P42 registry](https://github.com/demeet2k/guild-hall/tree/d661fcd6de5c897e2bf614b9f377789dd59b27c7/registry/p42-edge-transaction/v1)
+
+```text
+PRIOR_NEXT::KC144.V4.3::MATH144.P42::BIND_EXACT_SOURCE_ENUMERATION_WITNESS_INGEST_FIRST_FIVE_NONLEAKING_HELDOUT_OUTCOMES_RECEIVE_EXTERNAL_IC10_EDGE_AUTHORIZATION_EXECUTE_THIRD_EDGE_ONCE_AND_FREEZE_POST_EDGE_WATCH_MACROCYCLE_11
+NEXT::KC144.V4.4::MATH144.P43::ADMIT_EXACT_SOURCE_ENUMERATION_WITNESS_COMPLETE_NONLEAKING_HELDOUT_COHORT_RECEIVE_INDEPENDENT_IC10_AUTHORIZATION_EXECUTE_P41_EDGE_003_EXACTLY_ONCE_AND_EVALUATE_FORWARD_POST_EDGE_WATCH_MACROCYCLE_12
+RETURN::KC144.V1::GID144::M12
+PUBLIC_PARENT::KC144.P41.CANDIDATE::482d03a3ff02af3e5656468d
+RESULT::KC144.P42.CANDIDATE::57435ce8483f620adc52b3c6
 ```
