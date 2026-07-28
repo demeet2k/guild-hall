@@ -1,6 +1,15 @@
 # KC144 Batch-Bound Application Transport Runtime V15
 
-## P42 exact edge transaction successor
+## P43 admission and exactly-once finality successor
+
+P43 binds the exact public P42 candidate and turns its three external gates
+into one replayable admission transaction. It preserves the honest frozen
+HOLD while implementing positive production execution, exactly-once ledger
+finality, idempotent replay, causal nonreuse, and the forward-only post-edge
+watch. See `P43_ADMISSION_FINALITY_FRAMEWORK.md` and
+`src/kc144_crystal/p43_runtime.py`.
+
+## P42 exact edge transaction predecessor
 
 P42 extends the immutable P41 source/tree/cohort release with an exact
 29-slot enumeration witness gate, cumulative nonleaking held-out outcome
