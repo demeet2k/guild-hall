@@ -31,3 +31,16 @@ The public reference has an exact frozen P43 parent whose external production
 gates remain unsatisfied. P44 therefore honestly remains `CANDIDATE_HOLD` with
 zero forward outcomes, no finalized production edge, no frozen effect, zero
 canonical mutations, production authority `HOLD`, and truth effect `NONE`.
+
+## Exact implementation and verification receipt
+
+```text
+IMPLEMENTATION_COMMIT::0616d4d391bcec661c4d493dc4a8b81413af8640
+IMPLEMENTATION_TREE::ce731a5a4b964d483f81f93788b3f1276db5db0b
+RESULT::KC144.P44.CANDIDATE::1073b6a2be78da5a66b068e2
+RELEASE_DIGEST::sha256:1073b6a2be78da5a66b068e2da8f23dccb0a0e4d6c01a0ab3f042fd55649e6fb
+REPOSITORY_TESTS::488_RUN_486_PASS_2_EXPECTED_SKIP
+VERIFICATION_MATRIX::27/27_PASS
+PRODUCTION_AUTHORITY::HOLD
+TRUTH_EFFECT::NONE
+```

@@ -1,0 +1,1 @@
+{"authorization_events_reused":0,"continuation_events_admitted":0,"event_count":0,"event_type_count":0,"events":[],"execution_cutoff":null,"rejected":[],"required_event_count":5,"route_count":0,"schema":"KC144.P44.ForwardOutcomeWindow.V1","status":"HOLD","truth_effect":"NONE","window_digest":"sha256:01ea954cf0456f361906b25a8ce757a7b76b41debefa00990e6574c3a603eeef"}
