@@ -81,9 +81,9 @@
   "content_transport_certified": false,
   "governance_authority_granted": false,
   "production_truth_effect": "NONE",
-  "next_seed": "KC144.V4.4::MATH144.P43::ADMIT_EXACT_SOURCE_ENUMERATION_WITNESS_COMPLETE_NONLEAKING_HELDOUT_COHORT_RECEIVE_INDEPENDENT_IC10_AUTHORIZATION_EXECUTE_P41_EDGE_003_EXACTLY_ONCE_AND_EVALUATE_FORWARD_POST_EDGE_WATCH_MACROCYCLE_12",
-  "previous_next_seed": "KC144.V4.3::MATH144.P42::BIND_EXACT_SOURCE_ENUMERATION_WITNESS_INGEST_FIRST_FIVE_NONLEAKING_HELDOUT_OUTCOMES_RECEIVE_EXTERNAL_IC10_EDGE_AUTHORIZATION_EXECUTE_THIRD_EDGE_ONCE_AND_FREEZE_POST_EDGE_WATCH_MACROCYCLE_11",
-  "predecessor": {
+  "next_seed": "KC144.V4.5::MATH144.P44::ACCUMULATE_FORWARD_POST_EDGE_OUTCOMES_VERIFY_EXACTLY_ONCE_LEDGER_FINALITY_MEASURE_NONDEGRADATION_ACROSS_DIVERSE_ROUTES_AND_FREEZE_CANONICAL_EDGE_EFFECT_MACROCYCLE_13",
+  "previous_next_seed": "KC144.V4.4::MATH144.P43::ADMIT_EXACT_SOURCE_ENUMERATION_WITNESS_COMPLETE_NONLEAKING_HELDOUT_COHORT_RECEIVE_INDEPENDENT_IC10_AUTHORIZATION_EXECUTE_P41_EDGE_003_EXACTLY_ONCE_AND_EVALUATE_FORWARD_POST_EDGE_WATCH_MACROCYCLE_12",
+  "predecessor_history": {
     "schema": "KC144.P41.SourceTreeCohortMetro.V1",
     "branch": "kc144-source-tree-cohort-p41-v1",
     "public_parent": {
@@ -223,7 +223,7 @@
     },
     "next_seed": "KC144.V4.3::MATH144.P42::BIND_EXACT_SOURCE_ENUMERATION_WITNESS_INGEST_FIRST_FIVE_NONLEAKING_HELDOUT_OUTCOMES_RECEIVE_EXTERNAL_IC10_EDGE_AUTHORIZATION_EXECUTE_THIRD_EDGE_ONCE_AND_FREEZE_POST_EDGE_WATCH_MACROCYCLE_11"
   },
-  "successor": {
+  "predecessor": {
     "schema": "KC144.P42.ExactEdgeTransactionMetro.V1",
     "branch": "kc144-exact-edge-transaction-p42-v1",
     "public_parent": {
@@ -328,5 +328,75 @@
       "registry": "https://github.com/demeet2k/guild-hall/tree/d661fcd6de5c897e2bf614b9f377789dd59b27c7/registry/p42-edge-transaction/v1"
     },
     "next_seed": "KC144.V4.4::MATH144.P43::ADMIT_EXACT_SOURCE_ENUMERATION_WITNESS_COMPLETE_NONLEAKING_HELDOUT_COHORT_RECEIVE_INDEPENDENT_IC10_AUTHORIZATION_EXECUTE_P41_EDGE_003_EXACTLY_ONCE_AND_EVALUATE_FORWARD_POST_EDGE_WATCH_MACROCYCLE_12"
+  },
+  "successor": {
+    "schema": "KC144.P43.AdmissionFinalityMetro.V1",
+    "branch": "kc144-admission-finality-p43-v1",
+    "public_parent": {
+      "result_id": "KC144.P42.CANDIDATE::57435ce8483f620adc52b3c6",
+      "release_digest": "sha256:57435ce8483f620adc52b3c6ddd02f4b69816d00ef5fbabe43a6b0ee657518c7",
+      "release_commit": "d661fcd6de5c897e2bf614b9f377789dd59b27c7",
+      "release_tree": "37dd1399c4bc5f0d23d61a1d8543be3651ae14cf"
+    },
+    "implementation": {
+      "commit": "704f9d525bcf0eec858939a1f2fc5cfc7e936ebc",
+      "tree": "f7779ca4abe1a12f1096d49dd35bdc2f56b1cdfe"
+    },
+    "release_snapshot": {
+      "commit": "9a8818825697dd6501ed5286503018fd1d0a7466",
+      "tree": "31583ff01a91175093f969283c61106a55ac2455",
+      "result_id": "KC144.P43.CANDIDATE::240473a1935faad593c1b8d5",
+      "release_digest": "sha256:240473a1935faad593c1b8d5ea74b7171cac43bfac63ad597e0161238c424aa2",
+      "status": "CANDIDATE_HOLD"
+    },
+    "topology": {
+      "exact_enumeration": "0/1",
+      "heldout_cohort": "0/5",
+      "independent_ic10": "0/1",
+      "third_edge": "HELD_NOT_EXECUTED",
+      "execution_count": 0,
+      "exactly_once_final": false,
+      "post_edge_watch": "HELD_NOT_ARMED",
+      "canonical_graph_mutations": 0,
+      "parallel_p43_relation": "PARALLEL_LABEL_COLLISION_NOT_PARENT_NOT_MERGED",
+      "lanes": [
+        "PUBLIC_P42_PARENT_BIND",
+        "EXACT_ENUMERATION_ADMISSION",
+        "NONLEAKING_COHORT_COMPLETION",
+        "INDEPENDENT_IC10_AUTHORIZATION_ADMISSION",
+        "P41_EDGE_003_EXACTLY_ONCE_EXECUTION",
+        "TRANSACTION_FINALITY_AND_REPLAY",
+        "FORWARD_POST_EDGE_WATCH_EVALUATION",
+        "CAUSAL_NONREUSE_AND_TRUTH_NONCOLLAPSE",
+        "PARALLEL_P43_NONCOLLAPSE",
+        "M12_RETURN_AND_P44_RESEED"
+      ]
+    },
+    "verification": {
+      "verdict": "PASS",
+      "fresh_checkout_tests": {
+        "ran": 478,
+        "passed": 476,
+        "skipped": 2,
+        "failures": 0,
+        "errors": 0
+      },
+      "verification_matrix": {
+        "passed": 26,
+        "total": 26
+      },
+      "production_authority": "HOLD",
+      "truth_effect": "NONE",
+      "production_mutated": false
+    },
+    "links": {
+      "branch": "https://github.com/demeet2k/guild-hall/tree/kc144-admission-finality-p43-v1",
+      "implementation": "https://github.com/demeet2k/guild-hall/commit/704f9d525bcf0eec858939a1f2fc5cfc7e936ebc",
+      "release": "https://github.com/demeet2k/guild-hall/commit/9a8818825697dd6501ed5286503018fd1d0a7466",
+      "framework": "https://github.com/demeet2k/guild-hall/blob/9a8818825697dd6501ed5286503018fd1d0a7466/P43_ADMISSION_FINALITY_FRAMEWORK.md",
+      "runtime": "https://github.com/demeet2k/guild-hall/blob/704f9d525bcf0eec858939a1f2fc5cfc7e936ebc/src/kc144_crystal/p43_runtime.py",
+      "registry": "https://github.com/demeet2k/guild-hall/tree/9a8818825697dd6501ed5286503018fd1d0a7466/registry/p43-admission-finality/v1"
+    },
+    "next_seed": "KC144.V4.5::MATH144.P44::ACCUMULATE_FORWARD_POST_EDGE_OUTCOMES_VERIFY_EXACTLY_ONCE_LEDGER_FINALITY_MEASURE_NONDEGRADATION_ACROSS_DIVERSE_ROUTES_AND_FREEZE_CANONICAL_EDGE_EFFECT_MACROCYCLE_13"
   }
 }

@@ -112,6 +112,26 @@ P42_POST_EDGE_WATCH::HELD_NOT_ARMED
 P42_CANONICAL_GRAPH_MUTATIONS::0
 P42_PRODUCTION_AUTHORITY::HOLD
 P42_TRUTH_EFFECT::NONE
+P43_IMPLEMENTATION_COMMIT::704f9d525bcf0eec858939a1f2fc5cfc7e936ebc
+P43_IMPLEMENTATION_TREE::f7779ca4abe1a12f1096d49dd35bdc2f56b1cdfe
+P43_RELEASE_COMMIT::9a8818825697dd6501ed5286503018fd1d0a7466
+P43_RELEASE_TREE::31583ff01a91175093f969283c61106a55ac2455
+P43_RESULT_ID::KC144.P43.CANDIDATE::240473a1935faad593c1b8d5
+P43_RELEASE_DIGEST::sha256:240473a1935faad593c1b8d5ea74b7171cac43bfac63ad597e0161238c424aa2
+P43_VERIFICATION::PASS
+P43_CRYSTAL_LANES::10
+P43_REPOSITORY_TESTS::478_RUN_476_PASS_2_EXPECTED_SKIP
+P43_VERIFICATION_MATRIX::26/26
+P43_EXACT_SOURCE_ENUMERATION_WITNESSES::0/1
+P43_HELDOUT_OUTCOMES::0/5
+P43_INDEPENDENT_IC10_AUTHORIZATIONS::0/1
+P43_THIRD_EDGE::HELD_NOT_EXECUTED
+P43_EDGE_EXECUTION_COUNT::0
+P43_EXACTLY_ONCE_FINAL::FALSE
+P43_POST_EDGE_WATCH::HELD_NOT_ARMED
+P43_CANONICAL_GRAPH_MUTATIONS::0
+P43_PRODUCTION_AUTHORITY::HOLD
+P43_TRUTH_EFFECT::NONE
 HEAD_REGISTRY_DIGEST::sha256:5411bcd7c8e875b429004ecfd63b19fe35998b48e0c7ff685f90176ae15fbc62
 TOOL_REGISTRY_DIGEST::sha256:0763e01c6fd520447795d37703f26b711609f1851ddd517c72942b7b3c013e9b
 REQUEST_ID::sha256:8db42ce5513e7ca896160b0b3491db7b7a08adf2744de3e57b5eaac3ab15677e
@@ -434,4 +454,44 @@ NEXT::KC144.V4.4::MATH144.P43::ADMIT_EXACT_SOURCE_ENUMERATION_WITNESS_COMPLETE_N
 RETURN::KC144.V1::GID144::M12
 PUBLIC_PARENT::KC144.P41.CANDIDATE::482d03a3ff02af3e5656468d
 RESULT::KC144.P42.CANDIDATE::57435ce8483f620adc52b3c6
+```
+
+## P43 admission / exactly-once finality successor
+
+P43 is the executable admission and finality layer over the frozen P42
+transaction. It revalidates the exact enumeration witness, complete
+nonleaking five-event cohort, and independently controlled IC10 authorization
+as one root-bound input bundle. Only when all three pass can
+`P41.EDGE.003` execute in the production namespace.
+
+The runtime proves the complete positive path without claiming that its test
+fixtures are external evidence. A production-ready packet produces exactly one
+ledger record and arms the forward watch. A repeated packet is idempotent;
+test simulation cannot mutate; missing or mismatched gates hold; tampering
+breaks replay; and post-edge observations cannot be retroactive or reused from
+the authorization cohort.
+
+The published reference remains `CANDIDATE_HOLD`: all three external inputs
+are absent, execution count is zero, finality is pending, the watch is
+unarmed, canonical mutations are zero, production authority is `HOLD`, and
+truth effect is `NONE`. The similarly named private P43 remains an opaque
+parallel lineage and is neither parent nor merge target.
+
+The detached published tree ran 478 tests with 476 passes and two expected
+external-runtime skips. The integrated matrix passed 26/26 and exact replay
+reproduced the frozen envelope.
+
+- [P43 public branch](https://github.com/demeet2k/guild-hall/tree/kc144-admission-finality-p43-v1)
+- [P43 implementation commit](https://github.com/demeet2k/guild-hall/commit/704f9d525bcf0eec858939a1f2fc5cfc7e936ebc)
+- [P43 release commit](https://github.com/demeet2k/guild-hall/commit/9a8818825697dd6501ed5286503018fd1d0a7466)
+- [P43 framework](https://github.com/demeet2k/guild-hall/blob/9a8818825697dd6501ed5286503018fd1d0a7466/P43_ADMISSION_FINALITY_FRAMEWORK.md)
+- [P43 runtime](https://github.com/demeet2k/guild-hall/blob/704f9d525bcf0eec858939a1f2fc5cfc7e936ebc/src/kc144_crystal/p43_runtime.py)
+- [Frozen P43 registry](https://github.com/demeet2k/guild-hall/tree/9a8818825697dd6501ed5286503018fd1d0a7466/registry/p43-admission-finality/v1)
+
+```text
+PRIOR_NEXT::KC144.V4.4::MATH144.P43::ADMIT_EXACT_SOURCE_ENUMERATION_WITNESS_COMPLETE_NONLEAKING_HELDOUT_COHORT_RECEIVE_INDEPENDENT_IC10_AUTHORIZATION_EXECUTE_P41_EDGE_003_EXACTLY_ONCE_AND_EVALUATE_FORWARD_POST_EDGE_WATCH_MACROCYCLE_12
+NEXT::KC144.V4.5::MATH144.P44::ACCUMULATE_FORWARD_POST_EDGE_OUTCOMES_VERIFY_EXACTLY_ONCE_LEDGER_FINALITY_MEASURE_NONDEGRADATION_ACROSS_DIVERSE_ROUTES_AND_FREEZE_CANONICAL_EDGE_EFFECT_MACROCYCLE_13
+RETURN::KC144.V1::GID144::M12
+PUBLIC_PARENT::KC144.P42.CANDIDATE::57435ce8483f620adc52b3c6
+RESULT::KC144.P43.CANDIDATE::240473a1935faad593c1b8d5
 ```
