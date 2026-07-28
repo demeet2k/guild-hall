@@ -149,8 +149,11 @@
     "verification": {
       "verdict": "PASS",
       "fresh_checkout_tests": {
-        "passed": 431,
-        "total": 431
+        "ran": 431,
+        "passed": 429,
+        "skipped": 2,
+        "failures": 0,
+        "errors": 0
       },
       "production_authority": "HOLD",
       "truth_effect": "NONE",

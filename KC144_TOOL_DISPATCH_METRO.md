@@ -48,7 +48,7 @@ P39_LIVE_OUTCOMES::0
 P39_INDEPENDENT_IC10_RETURNS::0
 P39_IC10_THRESHOLD::3_OF_5
 P39_CRYSTAL_LANES::7
-P39_FRESH_CHECKOUT_TESTS::431/431
+P39_FRESH_CHECKOUT_TESTS::431_RUN_429_PASS_2_EXPECTED_SKIP
 P39_CANONICAL_WEIGHT_UPDATES::0
 P39_SUCCESSOR_ACTIVATED::FALSE
 P39_PRODUCTION_AUTHORITY::HOLD
@@ -219,8 +219,9 @@ calibration, and policy roots and pass all ten IC10 gates.
 
 The frozen public release correctly remains `CANDIDATE_HOLD`: zero qualifying
 live outcomes and zero independent returns currently exist. P39 fabricates
-neither. Its runtime, cold replay, release checksums, and complete 431-test
-repository suite pass.
+neither. Its runtime, cold replay, and release checksums pass. The repository
+runner completed 431 cases with 429 passes and two expected skips for an exact
+P31 archive that is intentionally external to a fresh checkout.
 
 - [P39 public branch](https://github.com/demeet2k/guild-hall/tree/kc144-live-outcome-ic10-v1)
 - [P39 implementation commit](https://github.com/demeet2k/guild-hall/commit/762a556cece499ce3fc12a265aa9f665006ce8aa)
