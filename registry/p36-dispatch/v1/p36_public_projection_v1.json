@@ -1,0 +1,36 @@
+{
+  "affected_counts": {
+    "affected_action_count": 0,
+    "affected_front_count": 0,
+    "deferred_action_count": 0,
+    "executed_action_count": 0,
+    "matched_subscription_count": 0,
+    "missing_resolution_count": 0,
+    "unexpected_execution_count": 0
+  },
+  "delta_id": "sha256:b730b409cb475d4ac1605b7111f6e1c48d4b3c589c4c638d270da28b0f6ee7f8",
+  "envelope_digest": "sha256:ec86b48d88c9ad617bde044c235e38e8ce7ff40ddf925dcfbfefe0766b7534be",
+  "event_counts": {
+    "admitted": 0,
+    "production": 0,
+    "real_outcome": 0
+  },
+  "global_state": "HOLD",
+  "heart_parent": "KC144.HEART::H06.AHEART.V2",
+  "lookup_key": "KC144.V3.7::MATH144.P36::CONTINUOUS_EVENT_WATCH_SIGNED_RECEIPT_REPLAY_SOURCE_SUCCESSION_REAL_OUTCOME_INTAKE_AND_ALL_AFFECTED_FRONT_EXECUTION_MACROCYCLE_05",
+  "private_source_material_included": false,
+  "projection_digest": "sha256:1c4c0783d0bcc4a82d772239bce49fe26faf2162337195e3673fd522035bbcee",
+  "residuals": [
+    "EXACT_P35_SUBSCRIPTION_BODIES_UNBOUND",
+    "PRODUCTION_EVENTS_OBSERVED::0",
+    "REAL_OUTCOME_EVENT_MISSING",
+    "TRUSTED_SIGNED_RECEIPTS_UNAVAILABLE"
+  ],
+  "return_target": "KC144.V1::GID144::M12",
+  "runtime_parent": "KC144.P31::db5a6446ce54cf4bc53515be",
+  "schema": "KC144.P36.PublicProjection.V1",
+  "state_parent": "KC144.P35::f8805a3651f8bc7009e8035f",
+  "status": "NOOP_HOLD",
+  "subscription_registry_digest": "sha256:5e356bd714f43057338b33927648c33bea9bd3a85c19dd49fc4fc99749d918a6",
+  "truth_effect": "NONE"
+}

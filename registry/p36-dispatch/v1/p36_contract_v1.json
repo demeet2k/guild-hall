@@ -1,0 +1,61 @@
+{
+  "census": {
+    "action_subscriptions": 360,
+    "carrier_subscriptions": 37,
+    "event_classes": 18,
+    "gid_subscriptions": 144
+  },
+  "contract_digest": "sha256:bfd3e9c473339c410fc39cdb2bca06b7f8aa7428d5fb46d42fad9adc5a9db7c0",
+  "entry": "KC144.V1::GID006::H06",
+  "evidence_ledger": "KC144.V1::GID005::H05",
+  "lanes": [
+    {
+      "heart_role": "WHO_I_AM",
+      "lane": "CONTINUOUS_EVENT_WATCH",
+      "parallel_group": 1
+    },
+    {
+      "heart_role": "I_AM_ATHENA",
+      "lane": "SIGNED_RECEIPT_REPLAY",
+      "parallel_group": 1
+    },
+    {
+      "heart_role": "WHO_I_AM+I_AM_ATHENA",
+      "lane": "SOURCE_SUCCESSION",
+      "parallel_group": 1
+    },
+    {
+      "heart_role": "LOVE×SELFHOOD",
+      "lane": "REAL_OUTCOME_INTAKE",
+      "parallel_group": 1
+    },
+    {
+      "heart_role": "SELF_BECOMING",
+      "lane": "AFFECTED_FRONT_EXECUTION",
+      "parallel_group": 2
+    }
+  ],
+  "lineage": {
+    "heart_parent": "KC144.HEART::H06.AHEART.V2",
+    "runtime_archive_sha256": "sha256:77629d53ef00c970cf115d7cbf94d5e4c9b97928814a702ada8d3f883212d091",
+    "runtime_parent": "KC144.P31::db5a6446ce54cf4bc53515be",
+    "runtime_release": "KC144_P31_LIVE_COGNITION_OS_V3_3",
+    "state_parent": "KC144.P35::f8805a3651f8bc7009e8035f"
+  },
+  "lookup_key": "KC144.V3.7::MATH144.P36::CONTINUOUS_EVENT_WATCH_SIGNED_RECEIPT_REPLAY_SOURCE_SUCCESSION_REAL_OUTCOME_INTAKE_AND_ALL_AFFECTED_FRONT_EXECUTION_MACROCYCLE_05",
+  "merge_law": "VERIFY_ALL_FIVE_RECEIPTS_THEN_COMMIT_ONE_COMPARE_AND_SWAP_DELTA",
+  "nexus": "KC144.V1::GID003::H03",
+  "noncollapse": [
+    "P31_REPLAY_IS_NOT_INDEPENDENT_EVIDENCE",
+    "EVENT_ADMISSION_IS_NOT_PROPOSITION_PROMOTION",
+    "SIGNATURE_VALIDITY_IS_NOT_AUTHORITY",
+    "CONNECTOR_RETRIEVAL_IS_NOT_PUBLICATION_CONSENT",
+    "USER_CHOICE_IS_NOT_EMPIRICAL_RESULT",
+    "SUBSCRIPTION_IS_NOT_EXECUTION"
+  ],
+  "production_authority": "HOLD",
+  "return": "KC144.V1::GID144::M12",
+  "route_ledger": "KC144.V1::GID141::M09",
+  "schema": "KC144.P36.Contract.V1",
+  "truth_effect": "NONE"
+}

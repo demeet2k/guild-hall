@@ -1,0 +1,43 @@
+{
+  "descriptors": {
+    "KC144.P31::EXACT_RUNTIME_ADAPTER": {
+      "descriptor_digest": "sha256:ba3c781f4fbe420efeec6fa4695e4acb7ae97c4be549f4250604fc2383a09a2d",
+      "execution_binding": "CALLER_SUPPLIED_EXACT_ARCHIVE_PROVIDER",
+      "handler_id": "kc144.p31-exact-adapter.v1",
+      "lookup_key": "KC144.P31::EXACT_RUNTIME_ADAPTER",
+      "operations": [
+        "status",
+        "navigate"
+      ],
+      "parent_lookup_key": "KC144.P31::LIVE_COGNITION_NAVIGATE",
+      "runtime_binding": {
+        "archive_sha256": "sha256:77629d53ef00c970cf115d7cbf94d5e4c9b97928814a702ada8d3f883212d091",
+        "release_id": "KC144_P31_LIVE_COGNITION_OS_V3_3",
+        "result_id": "KC144.P31::db5a6446ce54cf4bc53515be"
+      },
+      "schema": "KC144.MyceliumToolDescriptor.V3",
+      "tool_uri": "tool://kc144/p31.exact-adapter"
+    },
+    "KC144.V3.7::MATH144.P36::CONTINUOUS_EVENT_WATCH_SIGNED_RECEIPT_REPLAY_SOURCE_SUCCESSION_REAL_OUTCOME_INTAKE_AND_ALL_AFFECTED_FRONT_EXECUTION_MACROCYCLE_05": {
+      "descriptor_digest": "sha256:6199d628575c24a0c152282d0767be1166534791c0b713aad5e0add9848b633e",
+      "effect_policy": "READ_ONLY_OR_EXPLICITLY_AUTHORIZED_LOCAL_REVERSIBLE",
+      "execution_binding": "CALLER_SUPPLIED_FROZEN_INPUTS",
+      "handler_id": "kc144.p36-macrocycle.v1",
+      "lookup_key": "KC144.V3.7::MATH144.P36::CONTINUOUS_EVENT_WATCH_SIGNED_RECEIPT_REPLAY_SOURCE_SUCCESSION_REAL_OUTCOME_INTAKE_AND_ALL_AFFECTED_FRONT_EXECUTION_MACROCYCLE_05",
+      "operations": [
+        "contract",
+        "cycle",
+        "verify",
+        "public-project"
+      ],
+      "parent_lookup_key": "KC144.V1::MYCELIUM_LOCATABLE_TOOL_DISPATCH",
+      "schema": "KC144.MyceliumToolDescriptor.V3",
+      "tool_uri": "tool://kc144/p36.macrocycle"
+    }
+  },
+  "parent_registry_lookup_key": "KC144.V1::MYCELIUM_LOCATABLE_TOOL_DISPATCH",
+  "production_authority": "HOLD",
+  "registry_digest": "sha256:30e468a1ebfd2f5d54ffd159ab7b625868e30a1ae797da23e6f0389e56dc3f1b",
+  "schema": "KC144.P36.ToolRegistry.V1",
+  "truth_effect": "NONE"
+}

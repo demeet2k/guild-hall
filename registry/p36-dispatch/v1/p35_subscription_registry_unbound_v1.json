@@ -1,0 +1,14 @@
+{
+  "counts": {
+    "action_subscriptions": 360,
+    "carrier_subscriptions": 37,
+    "event_classes": 18,
+    "gid_subscriptions": 144
+  },
+  "production_eligible": false,
+  "registry_digest": "sha256:5e356bd714f43057338b33927648c33bea9bd3a85c19dd49fc4fc99749d918a6",
+  "schema": "KC144.P36.SubscriptionRegistry.V1",
+  "standing": "SOURCE_DECLARED_EXACT_BODIES_NOT_MATERIALIZED",
+  "state_parent": "KC144.P35::f8805a3651f8bc7009e8035f",
+  "subscriptions": []
+}

@@ -1,0 +1,29 @@
+{
+  "contract_digest": "sha256:bfd3e9c473339c410fc39cdb2bca06b7f8aa7428d5fb46d42fad9adc5a9db7c0",
+  "delta_id": "sha256:b730b409cb475d4ac1605b7111f6e1c48d4b3c589c4c638d270da28b0f6ee7f8",
+  "envelope_digest": "sha256:ec86b48d88c9ad617bde044c235e38e8ce7ff40ddf925dcfbfefe0766b7534be",
+  "implementation": {
+    "commit": "f35697e4baf8afa00f1a2a91a1eff18aa8acfe5f",
+    "repository": "demeet2k/guild-hall",
+    "tree": "30377647415d9df054da9db8b536d4363d43d702"
+  },
+  "lineage": {
+    "heart_parent": "KC144.HEART::H06.AHEART.V2",
+    "runtime_archive_sha256": "sha256:77629d53ef00c970cf115d7cbf94d5e4c9b97928814a702ada8d3f883212d091",
+    "runtime_parent": "KC144.P31::db5a6446ce54cf4bc53515be",
+    "runtime_release": "KC144_P31_LIVE_COGNITION_OS_V3_3",
+    "state_parent": "KC144.P35::f8805a3651f8bc7009e8035f"
+  },
+  "next_seed": "KC144.V3.8::MATH144.P37::EXACT_P35_SUBSCRIPTION_REGISTRY_BINDING_TRUSTED_SIGNER_ENROLLMENT_AND_FIRST_GENUINE_CONSENTED_EVENT_REPLAY_MACROCYCLE_06",
+  "production_authority": "HOLD",
+  "public_projection_digest": "sha256:1c4c0783d0bcc4a82d772239bce49fe26faf2162337195e3673fd522035bbcee",
+  "release_digest": "sha256:2dc88c9f2bf39ccb97e883f2c10a2269a628cadf96a50097d4f9fb1a2d808782",
+  "release_id": "KC144_P36_EVENT_RUNTIME_CANDIDATE_V1",
+  "result_id": "KC144.P36.CANDIDATE::2dc88c9f2bf39ccb97e883f2",
+  "schema": "KC144.P36.Release.V1",
+  "status": "CANDIDATE_HOLD",
+  "subscription_registry_digest": "sha256:5e356bd714f43057338b33927648c33bea9bd3a85c19dd49fc4fc99749d918a6",
+  "tool_registry_digest": "sha256:30e468a1ebfd2f5d54ffd159ab7b625868e30a1ae797da23e6f0389e56dc3f1b",
+  "truth_effect": "NONE",
+  "verification_verdict": "PASS"
+}

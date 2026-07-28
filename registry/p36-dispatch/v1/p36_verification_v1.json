@@ -1,0 +1,46 @@
+{
+  "delta_id": "sha256:b730b409cb475d4ac1605b7111f6e1c48d4b3c589c4c638d270da28b0f6ee7f8",
+  "envelope_digest": "sha256:ec86b48d88c9ad617bde044c235e38e8ce7ff40ddf925dcfbfefe0766b7534be",
+  "errors": [],
+  "lane_verifications": [
+    {
+      "errors": [],
+      "receipt_id": "sha256:9f77f86ad017eb784d742d31a109146c60c8c5f2e56078cdf5607dd75d0ec0e0",
+      "schema": "KC144.P36.LaneReceiptVerification.V1",
+      "signature_status": "DIGEST_ONLY",
+      "verdict": "PASS"
+    },
+    {
+      "errors": [],
+      "receipt_id": "sha256:73d1733b21c966dd42b005987fe5b4dd2ef64514b39e12715df4628116d64e57",
+      "schema": "KC144.P36.LaneReceiptVerification.V1",
+      "signature_status": "DIGEST_ONLY",
+      "verdict": "PASS"
+    },
+    {
+      "errors": [],
+      "receipt_id": "sha256:f273c96c1608b003f497b1c04dd9c80f5518527e66f07c145b6b91a3af5a2bf5",
+      "schema": "KC144.P36.LaneReceiptVerification.V1",
+      "signature_status": "DIGEST_ONLY",
+      "verdict": "PASS"
+    },
+    {
+      "errors": [],
+      "receipt_id": "sha256:3b047b9fbf12e9e5f787478ceec549718c19a706b65a1893600a3ac058a8935e",
+      "schema": "KC144.P36.LaneReceiptVerification.V1",
+      "signature_status": "DIGEST_ONLY",
+      "verdict": "PASS"
+    },
+    {
+      "errors": [],
+      "receipt_id": "sha256:776ce60d2d2f46d30fb68829f412838ef5a82b144aa0592af8a7c979a30df2ed",
+      "schema": "KC144.P36.LaneReceiptVerification.V1",
+      "signature_status": "DIGEST_ONLY",
+      "verdict": "PASS"
+    }
+  ],
+  "production_authority": "HOLD",
+  "schema": "KC144.P36.Verification.V1",
+  "truth_effect": "NONE",
+  "verdict": "PASS"
+}
