@@ -190,6 +190,19 @@ GLOBAL_RELEASE::HOLD
 
 This is a complete executable boundary with incomplete external evidence.
 
+## Frozen candidate receipt
+
+- Implementation commit:
+  `dab8df8ce76c3f58ee0df8501719e384e95872f7`
+- Implementation tree:
+  `bdb136a38990b4f2cc9d889e339826d630fd9b05`
+- Result:
+  `KC144.P41.CANDIDATE::482d03a3ff02af3e5656468d`
+- Release digest:
+  `sha256:482d03a3ff02af3e5656468d345e6ece6fb40f2daaaa0a508d38b6042a4eb1c9`
+- Frozen state: `CANDIDATE_HOLD`
+- Verification: `PASS`
+
 ## Successor
 
 `KC144.V4.3::MATH144.P42::BIND_EXACT_SOURCE_ENUMERATION_WITNESS_INGEST_FIRST_FIVE_NONLEAKING_HELDOUT_OUTCOMES_RECEIVE_EXTERNAL_IC10_EDGE_AUTHORIZATION_EXECUTE_THIRD_EDGE_ONCE_AND_FREEZE_POST_EDGE_WATCH_MACROCYCLE_11`

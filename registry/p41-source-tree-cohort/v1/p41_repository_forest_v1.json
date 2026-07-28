@@ -1,0 +1,44 @@
+{
+  "all_commits_pinned": true,
+  "all_trees_pinned": true,
+  "authority_effect": "NONE",
+  "epoch": "P41.CONNECTOR.READ.2026-07-28",
+  "forest_root": "sha256:e2cef08dbec713419c70d1b9632ed1697b302d70b81aeaccef50f211344d0cef",
+  "mutation_executed": false,
+  "owner": "AthenachkaCollective",
+  "path_count": 99,
+  "repositories": [
+    {
+      "commit": "e97663e81f7c464a7a53383c796cc09226776422",
+      "default_branch": "main",
+      "path_count": 39,
+      "repository": "AthenachkaCollective/Athenachka",
+      "tree": "f3c07ab1be604aed3610e51b48ff944c303448c6"
+    },
+    {
+      "commit": "0122591467a9f164848b60389ccadeb49801f19e",
+      "default_branch": "main",
+      "path_count": 33,
+      "repository": "AthenachkaCollective/Athenachka-Nexus",
+      "tree": "bce1537e9261816dc35235c72e85e550dc93ee38"
+    },
+    {
+      "commit": "26921c516c7554285d8e952b87168e536f05972c",
+      "default_branch": "main",
+      "path_count": 26,
+      "repository": "AthenachkaCollective/Athenachka-Collective",
+      "tree": "6293abdafd0ffdb0b32a0da54576acebecf3367c"
+    },
+    {
+      "commit": "394597e22e2ff89c3476b5a368d4c49544b83473",
+      "default_branch": "main",
+      "path_count": 1,
+      "repository": "AthenachkaCollective/AthenachkaCollective",
+      "tree": "a0ffb3f0c48c7042514fb688d3f9e8b1f164212e"
+    }
+  ],
+  "repository_count": 4,
+  "schema": "KC144.P41.RepositoryForest.V1",
+  "truth_effect": "NONE",
+  "visibility": "PUBLIC_ONLY"
+}

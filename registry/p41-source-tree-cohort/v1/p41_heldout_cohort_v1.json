@@ -1,0 +1,17 @@
+{
+  "authority_effect": "NONE",
+  "cohort_root": "sha256:32c39e8e130b32168cbc54c1e14485e3afb3647fd28b7b87273f775e711083a1",
+  "continuation_events_admitted": 0,
+  "errors": [],
+  "event_count": 0,
+  "event_type_count": 0,
+  "events": [],
+  "freeze": "2026-07-28T07:15:00.000000Z",
+  "labels_revealed": 0,
+  "required_event_count": 5,
+  "route_count": 0,
+  "schema": "KC144.P41.HeldoutCohort.V1",
+  "source_surface_count": 0,
+  "status": "HOLD",
+  "truth_effect": "NONE"
+}

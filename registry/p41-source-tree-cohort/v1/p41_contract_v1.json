@@ -1,0 +1,106 @@
+{
+  "contract_digest": "sha256:f13b8f2c33e99f343f214e2fe6eeb8a57559f73e8ffa18922b8a7ade95c4c244",
+  "default_state": "HOLD_EXTERNAL_HELDOUT_AND_IC10_INPUTS_ABSENT",
+  "edge_law": "SOURCE_COMMITMENT_COHORT_COMPLETE_AND_PUBLIC_REPOSITORY_FOREST_PINNED_AND_NONLEAKING_HELDOUT_COHORT_READY_AND_INDEPENDENT_IC10_RETURN_VERIFIED_THEN_EXECUTE_EXACTLY_ONCE",
+  "lanes": [
+    {
+      "lane": "PUBLIC_P40_PARENT_BIND",
+      "lane_id": "P41.L01",
+      "parallel_group": 1,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "SIBLING_SOURCE_FIBER_BIND",
+      "lane_id": "P41.L02",
+      "parallel_group": 1,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "HISTORICAL_BODY_REHYDRATION",
+      "lane_id": "P41.L03",
+      "parallel_group": 1,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "PUBLIC_REPOSITORY_TREE_BIND",
+      "lane_id": "P41.L04",
+      "parallel_group": 1,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "NONLEAKING_HELDOUT_COHORT_FREEZE",
+      "lane_id": "P41.L05",
+      "parallel_group": 2,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "INDEPENDENT_IC10_RETURN_INTAKE",
+      "lane_id": "P41.L06",
+      "parallel_group": 2,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "THIRD_EDGE_ELIGIBILITY_AND_EXECUTION",
+      "lane_id": "P41.L07",
+      "parallel_group": 3,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "PARALLEL_P41_NONCOLLAPSE",
+      "lane_id": "P41.L08",
+      "parallel_group": 3,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "M12_RETURN",
+      "lane_id": "P41.L09",
+      "parallel_group": 3,
+      "return": "KC144.V1::GID144::M12"
+    }
+  ],
+  "lookup_key": "KC144.V4.2::MATH144.P41::HYDRATE_REMAINING_22_BODY_HEADS_BIND_CURRENT_REPOSITORY_TREES_FREEZE_NONLEAKING_HELDOUT_COHORT_EXECUTE_THIRD_EDGE_ONLY_IF_ELIGIBLE_AND_RECEIVE_INDEPENDENT_IC10_RETURN_MACROCYCLE_10",
+  "next_seed": "KC144.V4.3::MATH144.P42::BIND_EXACT_SOURCE_ENUMERATION_WITNESS_INGEST_FIRST_FIVE_NONLEAKING_HELDOUT_OUTCOMES_RECEIVE_EXTERNAL_IC10_EDGE_AUTHORIZATION_EXECUTE_THIRD_EDGE_ONCE_AND_FREEZE_POST_EDGE_WATCH_MACROCYCLE_11",
+  "noncollapse": [
+    "PUBLIC_P40_PARENT_IS_NOT_SOURCE_SIBLING_P40",
+    "RECONSTRUCTED_COUNT_MATCH_IS_NOT_ORIGINAL_ENUMERATION_WITNESS",
+    "BODY_RETRIEVAL_IS_NOT_HELDOUT_OUTCOME",
+    "REPOSITORY_HEAD_IS_NOT_REPOSITORY_TREE",
+    "REPOSITORY_TREE_BINDING_IS_NOT_MERGE_OR_DEPLOYMENT",
+    "CONTINUATION_COMMAND_IS_NOT_HELDOUT_OUTCOME",
+    "SEALED_OUTCOME_COMMITMENT_IS_NOT_UNBLINDED_LABEL",
+    "TEST_EDGE_EXECUTION_IS_NOT_PRODUCTION_GRAPH_MUTATION",
+    "SIGNED_RETURN_IS_NOT_VALID_UNLESS_REGISTRY_AND_ROOTS_MATCH",
+    "PARALLEL_P41_LABEL_IS_NOT_THIS_P41_LINEAGE",
+    "PUBLICATION_IS_NOT_TRUTH_OR_AUTHORITY_PROMOTION"
+  ],
+  "privacy_law": "PUBLIC_RELEASE_CONTAINS_ONLY_ONE_WAY_SOURCE_COMMITMENTS_AND_NEVER_RAW_PRIVATE_LOCATORS_TITLES_REVISIONS_OR_BODY_BYTES",
+  "public_parent": {
+    "binding_digest": "sha256:2a4ec6d6d84938962b4122474bc776824b477c811e0dd6dcd3cb44b54b052484",
+    "relation": "EXACT_PUBLIC_PARENT",
+    "release_commit": "ba252f77832520f069ff84af45982df2fdab6017",
+    "release_digest": "sha256:8343b08a8ee5152ed117f28189c3172c7a56e8d9912e004b8ea8461c5bb18150",
+    "release_tree": "92ac9565b2f6e229722faf2a4b02e543ab07072e",
+    "result_id": "KC144.P40.CANDIDATE::8343b08a8ee5152ed117f281",
+    "schema": "KC144.P41.PublicParentBinding.V1",
+    "verification": "PINNED_RELEASE_IDENTITY"
+  },
+  "route": [
+    "KC144.V1::GID005::H05",
+    "KC144.V1::GID084::I04",
+    "KC144.V1::GID047::F04",
+    "KC144.V1::GID090::IC10",
+    "KC144.V1::GID141::M09",
+    "KC144.V1::GID144::M12"
+  ],
+  "schema": "KC144.P41.Contract.V1",
+  "source_fiber": {
+    "relation": "TYPED_SOURCE_FIBER_NOT_PUBLIC_PARENT",
+    "result_id": "KC144.P40::f07bae53d9e157e9e8e54473"
+  },
+  "third_edge": {
+    "edge_id": "P41.EDGE.003",
+    "operation": "BIDIRECTIONAL_CAUSAL_ABLATION",
+    "source": "KC144.V1::GID084::I04",
+    "target": "KC144.V1::GID047::F04"
+  }
+}
