@@ -1,0 +1,77 @@
+{
+  "schema": "KC144.ToolDispatchMetro.V1",
+  "lookup_key": "KC144.V1::MYCELIUM_LOCATABLE_TOOL_DISPATCH",
+  "branch": "kc144-mycelium-tool-dispatch-v1",
+  "parent": {
+    "lookup_key": "KC144.V1::CONTENT_ADDRESSED_AGENT_RUN_RECEIPTS",
+    "commit": "4f3bd71a1e88130109edd03437b72f21c0e14096",
+    "bundle_digest": "sha256:52b8b2896a7bd1fff45dc3df84ac031172a3bc469375e3d3c775c8e9cb0aef59"
+  },
+  "implementation": {
+    "commit": "829e654b2df0225a901d49b84ef37a95d5b04752",
+    "tree": "22a72d6f4d59060c9ade16889ac031bf387cbab6"
+  },
+  "receipt_snapshot": {
+    "commit": "d700b77accd2be51ea2f013a0cfe1514cfcf6be5",
+    "tree": "7b8e205504a8260955deac7d94ee48becf14a184",
+    "head_registry_digest": "sha256:5411bcd7c8e875b429004ecfd63b19fe35998b48e0c7ff685f90176ae15fbc62",
+    "tool_registry_digest": "sha256:0763e01c6fd520447795d37703f26b711609f1851ddd517c72942b7b3c013e9b",
+    "request_id": "sha256:8db42ce5513e7ca896160b0b3491db7b7a08adf2744de3e57b5eaac3ab15677e",
+    "plan_digest": "sha256:82a1b9fb4ab62ebdc7d985504a2e071ec08c3aa4f8336d65fb62053015c5766d",
+    "result_digest": "sha256:1870bb8a584c49d0e0760d613cf9520da90edd063d5a4a641cb966f835de4c42",
+    "audit_root": "sha256:c0e1c6e8128523f579857e54221363395a6280f76cffe468bbe86a41972cd1a5",
+    "holonomy_digest": "sha256:59c4d6065c37dad2d830cf8e5fafeb9e29283654ff4ec1930697776c4fe5f911",
+    "release_digest": "sha256:a1db27c16312ee09471e835fd7172498f16d8b1d476effc11f00f20fa4117ec2"
+  },
+  "execution": {
+    "registered_tools": 4,
+    "preflight_lanes": [
+      "IDENTITY",
+      "SOURCE_HEAD",
+      "CAPABILITY",
+      "ROUTE_RETURN",
+      "AUTHORITY_EFFECT"
+    ],
+    "maximum_parallel_width": 5,
+    "worker_capacities_verified": [1, 2, 3, 4, 5],
+    "canonical_bytes_identical": true,
+    "dispatch_status": "EXECUTED",
+    "verification_verdict": "PASS",
+    "replay_status": "REPLAY_STABLE",
+    "fresh_checkout_tests": {
+      "passed": 353,
+      "total": 353
+    }
+  },
+  "mycelium": {
+    "activation": "GID006/H06",
+    "registry": "GID003/H03",
+    "source_binding": "GID005/H05",
+    "route_ledger": "GID141/M09",
+    "return": "GID144/M12",
+    "translation_defect": 0,
+    "open_bridge_ids": ["BR019"],
+    "base_graph_mutated": false
+  },
+  "p31": {
+    "lookup_key": "KC144.P31::LIVE_COGNITION_NAVIGATE",
+    "release_id": "KC144_P31_LIVE_COGNITION_OS_V3_3",
+    "result_id": "KC144.P31::db5a6446ce54cf4bc53515be",
+    "archive_digest": "sha256:77629d53ef00c970cf115d7cbf94d5e4c9b97928814a702ada8d3f883212d091",
+    "structural_parent_result_id": "KC144.P30::1f40beaa81e8c0ba956ce835",
+    "execution_binding": "LOCATOR_ONLY_EXTERNAL_RUNTIME_REQUIRED"
+  },
+  "links": {
+    "branch": "https://github.com/demeet2k/guild-hall/tree/kc144-mycelium-tool-dispatch-v1",
+    "framework": "https://github.com/demeet2k/guild-hall/blob/829e654b2df0225a901d49b84ef37a95d5b04752/MYCELIUM_TOOL_DISPATCH_V1.md",
+    "engine": "https://github.com/demeet2k/guild-hall/blob/829e654b2df0225a901d49b84ef37a95d5b04752/src/kc144_crystal/tool_dispatch.py",
+    "registry": "https://github.com/demeet2k/guild-hall/tree/d700b77accd2be51ea2f013a0cfe1514cfcf6be5/registry/tool-dispatch/v1",
+    "result": "https://github.com/demeet2k/guild-hall/blob/d700b77accd2be51ea2f013a0cfe1514cfcf6be5/registry/tool-dispatch/v1/results/sha256/18/1870bb8a584c49d0e0760d613cf9520da90edd063d5a4a641cb966f835de4c42.json"
+  },
+  "independent_witness_count": 0,
+  "real_external_applications": 0,
+  "content_transport_certified": false,
+  "governance_authority_granted": false,
+  "production_truth_effect": "NONE",
+  "next_seed": "KC144.V1::P31_EXACT_RUNTIME_ADAPTER_AND_WITNESSED_TOOL_OUTCOME_INTAKE"
+}
