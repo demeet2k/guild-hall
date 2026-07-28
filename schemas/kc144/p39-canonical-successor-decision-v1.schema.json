@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.invalid/schemas/p39-canonical-successor-decision-v1.schema.json",
+  "title": "KC144 P39 Canonical Successor Decision V1",
+  "type": "object",
+  "required": [
+    "schema", "candidate_root", "corpus_root", "calibration_digest",
+    "convergence_evaluation_digest", "decision", "reason",
+    "proposed_weights", "canonical_weight_updates_executed",
+    "successor_activated", "production_mutated", "truth_effect",
+    "evidence_effect", "authority_effect", "return", "next_seed",
+    "decision_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.P39.CanonicalSuccessorDecision.V1"},
+    "candidate_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "corpus_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "calibration_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "convergence_evaluation_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "decision": {"enum": ["HOLD", "SUCCESSOR_READY"]},
+    "reason": {"type": "string"},
+    "proposed_weights": {"type": "array"},
+    "canonical_weight_updates_executed": {"const": 0},
+    "successor_activated": {"const": false},
+    "production_mutated": {"const": false},
+    "truth_effect": {"const": "NONE"},
+    "evidence_effect": {"const": "NONE"},
+    "authority_effect": {"enum": ["NONE", "SUCCESSOR_AUTHORIZATION"]},
+    "return": {"const": "KC144.V1::GID144::M12"},
+    "next_seed": {"type": "string"},
+    "decision_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

@@ -104,6 +104,16 @@ from .p38_runtime import (
     route_source_events,
     verify_p38_cycle,
 )
+from .p39_runtime import (
+    P39_CUTOFF,
+    calibrate_weights,
+    compile_live_outcome_corpus,
+    compile_p39_cycle,
+    compile_p39_release,
+    p39_contract,
+    p39_policy,
+    verify_p39_cycle,
+)
 from .query import QueryBundle, compile_query, query_contract
 from .repair import (
     M12EvidencePacket,
@@ -398,6 +408,46 @@ def build_parser() -> argparse.ArgumentParser:
     p38_release.add_argument("--implementation-tree", required=True)
     p38_release.add_argument("--registry-directory")
     p38_release.add_argument("--source-events")
+    commands.add_parser(
+        "p39-contract",
+        help="emit the P39 live-outcome and three-of-five IC10 contract",
+    )
+    commands.add_parser(
+        "p39-policy",
+        help="emit the deterministic P39 calibration and convergence policy",
+    )
+    p39_corpus = commands.add_parser(
+        "p39-corpus",
+        help="verify and partition signed live outcome observations",
+    )
+    p39_corpus.add_argument("observations")
+    p39_corpus.add_argument("--cutoff", default=P39_CUTOFF)
+    p39_calibrate = commands.add_parser(
+        "p39-calibrate",
+        help="propose deterministic weights from a verified P39 corpus",
+    )
+    p39_calibrate.add_argument("corpus")
+    p39_cycle = commands.add_parser(
+        "p39-cycle",
+        help="compile one complete P39 outcome/IC10 macrocycle",
+    )
+    p39_cycle.add_argument("--observations")
+    p39_cycle.add_argument("--signer-registry")
+    p39_cycle.add_argument("--ic10-returns")
+    p39_cycle.add_argument("--cutoff", default=P39_CUTOFF)
+    p39_cycle.add_argument("--output")
+    p39_verify = commands.add_parser(
+        "p39-verify",
+        help="verify one frozen P39 macrocycle",
+    )
+    p39_verify.add_argument("envelope")
+    p39_release = commands.add_parser(
+        "p39-release",
+        help="materialize the honest-HOLD P39 reference release",
+    )
+    p39_release.add_argument("--output", default="registry/p39-live-outcome/v1")
+    p39_release.add_argument("--implementation-commit", required=True)
+    p39_release.add_argument("--implementation-tree", required=True)
 
     systematic = commands.add_parser("systematic", help="compile every V3 registry")
     systematic.add_argument("--output", default="registry/v3")
@@ -1252,6 +1302,86 @@ def main(argv: list[str] | None = None) -> int:
             implementation_tree=args.implementation_tree,
             registry_directory=args.registry_directory,
             source_events=source_events,
+        )
+        _json(report)
+        return 0 if report["verification_verdict"] == "PASS" else 2
+
+    if args.command == "p39-contract":
+        _json(p39_contract())
+        return 0
+
+    if args.command == "p39-policy":
+        _json(p39_policy())
+        return 0
+
+    if args.command == "p39-corpus":
+        observations = json.loads(
+            Path(args.observations).read_text(encoding="utf-8")
+        )
+        report = compile_live_outcome_corpus(
+            observations,
+            cutoff=args.cutoff,
+        )
+        _json(report)
+        return 0 if report["status"] == "CORPUS_READY" else 2
+
+    if args.command == "p39-calibrate":
+        corpus = json.loads(Path(args.corpus).read_text(encoding="utf-8"))
+        report = calibrate_weights(corpus)
+        _json(report)
+        return 0 if report["status"] == "CALIBRATION_READY" else 2
+
+    if args.command == "p39-cycle":
+        observations = (
+            json.loads(Path(args.observations).read_text(encoding="utf-8"))
+            if args.observations
+            else []
+        )
+        signer_registry = (
+            json.loads(
+                Path(args.signer_registry).read_text(encoding="utf-8")
+            )
+            if args.signer_registry
+            else None
+        )
+        ic10_returns = (
+            json.loads(Path(args.ic10_returns).read_text(encoding="utf-8"))
+            if args.ic10_returns
+            else []
+        )
+        report = compile_p39_cycle(
+            observations=observations,
+            signer_registry=signer_registry,
+            ic10_returns=ic10_returns,
+            cutoff=args.cutoff,
+        )
+        if args.output:
+            destination = Path(args.output)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_text(
+                json.dumps(
+                    report,
+                    ensure_ascii=False,
+                    sort_keys=True,
+                    separators=(",", ":"),
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+        _json(report)
+        return 0 if verify_p39_cycle(report)["verdict"] == "PASS" else 2
+
+    if args.command == "p39-verify":
+        envelope = json.loads(Path(args.envelope).read_text(encoding="utf-8"))
+        report = verify_p39_cycle(envelope)
+        _json(report)
+        return 0 if report["verdict"] == "PASS" else 2
+
+    if args.command == "p39-release":
+        report = compile_p39_release(
+            args.output,
+            implementation_commit=args.implementation_commit,
+            implementation_tree=args.implementation_tree,
         )
         _json(report)
         return 0 if report["verification_verdict"] == "PASS" else 2

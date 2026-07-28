@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.invalid/schemas/p39-release-v1.schema.json",
+  "title": "KC144 P39 Release V1",
+  "type": "object",
+  "required": [
+    "schema", "release_id", "status", "implementation", "parent_result_id",
+    "parent_release_digest", "contract_digest", "policy_digest",
+    "corpus_root", "calibration_digest", "convergence_evaluation_digest",
+    "decision_digest", "envelope_digest", "verification_verdict",
+    "live_outcomes", "independent_ic10_returns",
+    "canonical_weight_updates_executed", "successor_activated",
+    "production_authority", "truth_effect", "next_seed",
+    "release_digest", "result_id"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.P39.Release.V1"},
+    "status": {"enum": ["CANDIDATE_HOLD", "READY_FOR_P40_ACTIVATION"]},
+    "release_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "result_id": {"type": "string", "pattern": "^KC144\\.P39\\."},
+    "canonical_weight_updates_executed": {"const": 0},
+    "successor_activated": {"const": false},
+    "truth_effect": {"const": "NONE"}
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.invalid/schemas/p39-ic10-convergence-return-v1.schema.json",
+  "title": "KC144 P39 IC10 Convergence Return V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "candidate_root", "corpus_root", "calibration_digest",
+    "policy_digest", "signer_id", "organization_id", "control_root",
+    "key_id", "issued_at", "expires_at", "nonce", "decision", "gates",
+    "return_target", "return_id", "signature"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.P39.IC10ConvergenceReturn.V1"},
+    "candidate_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "corpus_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "calibration_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "policy_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "signer_id": {"type": "string", "minLength": 1},
+    "organization_id": {"type": "string", "minLength": 1},
+    "control_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "key_id": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "issued_at": {"type": "string"},
+    "expires_at": {"type": "string"},
+    "nonce": {"type": "string", "minLength": 1},
+    "decision": {"const": "AUTHORIZE_CANONICAL_SUCCESSOR"},
+    "gates": {"type": "array", "minItems": 10, "maxItems": 10},
+    "return_target": {"const": "KC144.V1::GID144::M12"},
+    "return_id": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "signature": {"type": "object"}
+  }
+}

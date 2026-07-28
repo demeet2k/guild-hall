@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.invalid/schemas/p39-live-outcome-observation-v1.schema.json",
+  "title": "KC144 P39 Live Outcome Observation V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "outcome_class", "origin_class", "observed_at",
+    "source_surface", "source_commitment", "evidence_unit", "route_id",
+    "partition", "metric", "value", "observer_id", "observer_key_id",
+    "observer_public_key", "consent_scope", "source_verified",
+    "route_generated", "test_only", "truth_effect", "authority_effect",
+    "observation_id", "signature"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.P39.LiveOutcomeObservation.V1"},
+    "outcome_class": {"enum": ["TASK_OUTCOME", "EMPIRICAL_RESULT"]},
+    "origin_class": {"enum": ["PRODUCTION", "USER_OBSERVED", "CONNECTOR_OBSERVED"]},
+    "observed_at": {"type": "string"},
+    "source_surface": {"type": "string", "minLength": 1},
+    "source_commitment": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "evidence_unit": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "route_id": {"type": "string", "minLength": 1},
+    "partition": {"enum": ["CALIBRATION", "HELD_OUT"]},
+    "metric": {"const": "success"},
+    "value": {"type": "number", "minimum": 0, "maximum": 1},
+    "observer_id": {"type": "string", "minLength": 1},
+    "observer_key_id": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "observer_public_key": {"type": "string", "minLength": 1},
+    "consent_scope": {"type": "array", "uniqueItems": true},
+    "source_verified": {"const": true},
+    "route_generated": {"const": false},
+    "test_only": {"const": false},
+    "truth_effect": {"const": "NONE"},
+    "authority_effect": {"const": "NONE"},
+    "observation_id": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "signature": {"type": "object"}
+  }
+}

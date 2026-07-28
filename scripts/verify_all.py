@@ -34,6 +34,22 @@ def main() -> int:
     env["PYTHONPATH"] = str(ROOT / "src")
     runs = [
         run(
+            "P39 live-outcome and independent-IC10 runtime",
+            [
+                sys.executable,
+                "-m",
+                "kc144_crystal",
+                "p39-release",
+                "--output",
+                "registry/p39-live-outcome/v1",
+                "--implementation-commit",
+                "800ed1873ac5f04937f5a52f5204258e01262164",
+                "--implementation-tree",
+                "a751a49451490463531dd761812a619b30288cb0",
+            ],
+            env=env,
+        ),
+        run(
             "application transport V15 runtime",
             [
                 sys.executable,
@@ -256,7 +272,7 @@ def main() -> int:
     ]
     passed = sum(run_result["exit_code"] == 0 for run_result in runs)
     report = {
-        "schema": "KC144.VerificationMatrix.V15",
+        "schema": "KC144.VerificationMatrix.P39",
         "verdict": "PASS" if passed == len(runs) else "FAIL",
         "passed": passed,
         "total": len(runs),
