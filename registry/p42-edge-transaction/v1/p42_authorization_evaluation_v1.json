@@ -1,0 +1,13 @@
+{
+  "accepted_authorization_count": 0,
+  "accepted_authorizations": [],
+  "authority_effect": "NONE",
+  "evaluation_digest": "sha256:b0186cc89ddc6290fa5c0f2ba3fcd808b7a3f35db4c488f07fa9684fbbd4e09a",
+  "registry_root": "sha256:8472d297c17b349649bd29781b54cc53350a6f724f01b1607e73e440867ae798",
+  "registry_valid": true,
+  "rejected_authorizations": [],
+  "required_independent_authorizations": 1,
+  "schema": "KC144.P42.AuthorizationEvaluation.V1",
+  "status": "HOLD",
+  "truth_effect": "NONE"
+}

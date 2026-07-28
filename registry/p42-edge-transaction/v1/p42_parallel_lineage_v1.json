@@ -1,0 +1,14 @@
+{
+  "authority_effect": "NONE",
+  "lineage_digest": "sha256:bf7d47f77a03061c5716ca9c8d06a4e1bc8c32223a20a7353081bf88a47e91e0",
+  "merge_executed": false,
+  "parallel_label": "ATHENA_GIT_BRAIN_V2.P42",
+  "private_receipt_embedded": false,
+  "private_repository_locator_published": false,
+  "private_semantic_role": "PRESERVED_OPAQUE_NOT_INFERRED",
+  "relation": "PARALLEL_LABEL_COLLISION_NOT_PARENT_NOT_MERGED",
+  "renumbering_executed": false,
+  "schema": "KC144.P42.ParallelLineage.V1",
+  "this_p42_role": "ENUMERATION_OUTCOME_AUTHORIZATION_EDGE_TRANSACTION_AND_POST_EDGE_WATCH",
+  "truth_effect": "NONE"
+}

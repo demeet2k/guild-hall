@@ -1,0 +1,15 @@
+{
+  "accepted_witness": null,
+  "accepted_witness_count": 0,
+  "authority_effect": "NONE",
+  "errors": [
+    "WITNESS_ABSENT"
+  ],
+  "evaluation_digest": "sha256:0f736f2eea388dd4a62c940b7a82bf0c8aecf2f83029974b9316598b3b9595cd",
+  "registry_root": "sha256:8472d297c17b349649bd29781b54cc53350a6f724f01b1607e73e440867ae798",
+  "registry_valid": true,
+  "schema": "KC144.P42.EnumerationEvaluation.V1",
+  "source_manifest_root": "sha256:2d9606c0d13a85095278acc77e4b237da3131202ea3702190ec8d09b27f240bb",
+  "status": "HOLD",
+  "truth_effect": "NONE"
+}

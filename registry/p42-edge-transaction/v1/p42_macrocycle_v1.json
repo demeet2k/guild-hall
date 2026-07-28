@@ -1,0 +1,279 @@
+{
+  "authorization_evaluation": {
+    "accepted_authorization_count": 0,
+    "accepted_authorizations": [],
+    "authority_effect": "NONE",
+    "evaluation_digest": "sha256:b0186cc89ddc6290fa5c0f2ba3fcd808b7a3f35db4c488f07fa9684fbbd4e09a",
+    "registry_root": "sha256:8472d297c17b349649bd29781b54cc53350a6f724f01b1607e73e440867ae798",
+    "registry_valid": true,
+    "rejected_authorizations": [],
+    "required_independent_authorizations": 1,
+    "schema": "KC144.P42.AuthorizationEvaluation.V1",
+    "status": "HOLD",
+    "truth_effect": "NONE"
+  },
+  "contract_digest": "sha256:06f94707bd9f939ed4e22bc841a8626622fe8a7d8d64e6918fec5b4d52657f8b",
+  "edge_candidate": {
+    "edge": {
+      "edge_id": "P41.EDGE.003",
+      "operation": "BIDIRECTIONAL_CAUSAL_ABLATION",
+      "source": "KC144.V1::GID084::I04",
+      "target": "KC144.V1::GID047::F04"
+    },
+    "enumeration_evaluation_digest": "sha256:0f736f2eea388dd4a62c940b7a82bf0c8aecf2f83029974b9316598b3b9595cd",
+    "expected_execution_count": 1,
+    "heldout_cohort_root": "sha256:c3264fa7255c82da7136c1417c0338ac74466963ba90dee91e6094160b050fa6",
+    "heldout_events": [],
+    "mutation_scope": "CANONICAL_PROPOSAL_EDGE_LEDGER_ONLY",
+    "public_parent_result_id": "KC144.P41.CANDIDATE::482d03a3ff02af3e5656468d",
+    "repository_forest_root": "sha256:e2cef08dbec713419c70d1b9632ed1697b302d70b81aeaccef50f211344d0cef",
+    "schema": "KC144.P42.EdgeTransactionCandidate.V1",
+    "source_manifest_root": "sha256:2d9606c0d13a85095278acc77e4b237da3131202ea3702190ec8d09b27f240bb",
+    "transaction_root": "sha256:eea5d4f6cd75eddd27c71e27315508cfdf3fdb3a5ae1c3c50e8c31848d1203b2"
+  },
+  "edge_transaction": {
+    "authority_effect": "NONE",
+    "candidate": {
+      "edge": {
+        "edge_id": "P41.EDGE.003",
+        "operation": "BIDIRECTIONAL_CAUSAL_ABLATION",
+        "source": "KC144.V1::GID084::I04",
+        "target": "KC144.V1::GID047::F04"
+      },
+      "enumeration_evaluation_digest": "sha256:0f736f2eea388dd4a62c940b7a82bf0c8aecf2f83029974b9316598b3b9595cd",
+      "expected_execution_count": 1,
+      "heldout_cohort_root": "sha256:c3264fa7255c82da7136c1417c0338ac74466963ba90dee91e6094160b050fa6",
+      "heldout_events": [],
+      "mutation_scope": "CANONICAL_PROPOSAL_EDGE_LEDGER_ONLY",
+      "public_parent_result_id": "KC144.P41.CANDIDATE::482d03a3ff02af3e5656468d",
+      "repository_forest_root": "sha256:e2cef08dbec713419c70d1b9632ed1697b302d70b81aeaccef50f211344d0cef",
+      "schema": "KC144.P42.EdgeTransactionCandidate.V1",
+      "source_manifest_root": "sha256:2d9606c0d13a85095278acc77e4b237da3131202ea3702190ec8d09b27f240bb",
+      "transaction_root": "sha256:eea5d4f6cd75eddd27c71e27315508cfdf3fdb3a5ae1c3c50e8c31848d1203b2"
+    },
+    "canonical_graph_mutations": 0,
+    "enumeration_gate": "HOLD",
+    "evidence_effect": "NONE",
+    "execution_count_after": 0,
+    "execution_count_before": 0,
+    "execution_record": null,
+    "execution_status": "HELD_NOT_EXECUTED",
+    "heldout_gate": "HOLD",
+    "ic10_gate": "HOLD",
+    "ledger_after": [],
+    "ledger_before": [],
+    "ledger_mutated": false,
+    "ledger_valid": true,
+    "production_mutated": false,
+    "role_independence": false,
+    "schema": "KC144.P42.ExactlyOnceEdgeTransaction.V1",
+    "test_simulation": false,
+    "transaction_digest": "sha256:f3568e8ee5bdbb6412274457c7009c0d71035f4905607ba31de45a76b058c025",
+    "truth_effect": "NONE"
+  },
+  "enumeration_evaluation": {
+    "accepted_witness": null,
+    "accepted_witness_count": 0,
+    "authority_effect": "NONE",
+    "errors": [
+      "WITNESS_ABSENT"
+    ],
+    "evaluation_digest": "sha256:0f736f2eea388dd4a62c940b7a82bf0c8aecf2f83029974b9316598b3b9595cd",
+    "registry_root": "sha256:8472d297c17b349649bd29781b54cc53350a6f724f01b1607e73e440867ae798",
+    "registry_valid": true,
+    "schema": "KC144.P42.EnumerationEvaluation.V1",
+    "source_manifest_root": "sha256:2d9606c0d13a85095278acc77e4b237da3131202ea3702190ec8d09b27f240bb",
+    "status": "HOLD",
+    "truth_effect": "NONE"
+  },
+  "envelope_digest": "sha256:a62a5a5775e4d48406a405572ba916efdab5acb22e48a3149fc1616d26beef68",
+  "execution_time": "2026-07-28T08:45:00.000000Z",
+  "heldout_cohort": {
+    "authority_effect": "NONE",
+    "cohort_root": "sha256:c3264fa7255c82da7136c1417c0338ac74466963ba90dee91e6094160b050fa6",
+    "continuation_events_admitted": 0,
+    "errors": [],
+    "event_count": 0,
+    "event_type_count": 0,
+    "events": [],
+    "freeze": "2026-07-28T08:45:00.000000Z",
+    "labels_revealed": 0,
+    "required_event_count": 5,
+    "route_count": 0,
+    "schema": "KC144.P42.CumulativeHeldoutCohort.V1",
+    "source_cohort_root": "sha256:32c39e8e130b32168cbc54c1e14485e3afb3647fd28b7b87273f775e711083a1",
+    "source_schema": "KC144.P41.HeldoutCohort.V1",
+    "source_surface_count": 0,
+    "status": "HOLD",
+    "truth_effect": "NONE"
+  },
+  "lane_receipts": [
+    {
+      "lane": "PUBLIC_P41_PARENT_BIND",
+      "lane_id": "P42.L01",
+      "payload_digest": "sha256:b76327032a5c4f911fc4839e027120f051bee8d07ecd7e08bc3f2a5f584abbf5",
+      "receipt_id": "sha256:e8d84c0d0fef730602b1e872d7b0a1638ebbd9e107e99c8d59f0e991787e549a",
+      "return": "KC144.V1::GID144::M12",
+      "schema": "KC144.P42.LaneReceipt.V1",
+      "truth_effect": "NONE"
+    },
+    {
+      "lane": "EXACT_SOURCE_ENUMERATION_WITNESS_INTAKE",
+      "lane_id": "P42.L02",
+      "payload_digest": "sha256:6ee57b6ab05363a15da81ccd4736c9a4eb0a548a0c953bd1ba83e4cc56c93f29",
+      "receipt_id": "sha256:31e1b03371b22b26f91f094488c630a27243586af8be31d17682b0731d5f0577",
+      "return": "KC144.V1::GID144::M12",
+      "schema": "KC144.P42.LaneReceipt.V1",
+      "truth_effect": "NONE"
+    },
+    {
+      "lane": "CUMULATIVE_NONLEAKING_OUTCOME_INTAKE",
+      "lane_id": "P42.L03",
+      "payload_digest": "sha256:813b88801d1a5b16906d6b52b33121f800207eaa3cab447b9b29c03edc26713f",
+      "receipt_id": "sha256:10935e9bf8f55a2512a5217a8d2978c9ee3330d93aafe51ce2e981049e92fb3e",
+      "return": "KC144.V1::GID144::M12",
+      "schema": "KC144.P42.LaneReceipt.V1",
+      "truth_effect": "NONE"
+    },
+    {
+      "lane": "HELDOUT_COHORT_FREEZE",
+      "lane_id": "P42.L04",
+      "payload_digest": "sha256:188607f03c2b4953898156203070d84284e44a92b539eeec1fcbbec8a7e5a526",
+      "receipt_id": "sha256:8e3c1cdfd9215a5b336a7d886d6648d77af123607b008aed3c91b563934173ab",
+      "return": "KC144.V1::GID144::M12",
+      "schema": "KC144.P42.LaneReceipt.V1",
+      "truth_effect": "NONE"
+    },
+    {
+      "lane": "INDEPENDENT_IC10_EDGE_AUTHORIZATION",
+      "lane_id": "P42.L05",
+      "payload_digest": "sha256:8aed2c8e40bcd27daa76300cb82d16ecb3b77c08a66355e319b97626ff3bcfc1",
+      "receipt_id": "sha256:30aab98b01562575137c0d482b471b2ffa02fd1a8391738e92e93abd9a11b325",
+      "return": "KC144.V1::GID144::M12",
+      "schema": "KC144.P42.LaneReceipt.V1",
+      "truth_effect": "NONE"
+    },
+    {
+      "lane": "EXACTLY_ONCE_EDGE_TRANSACTION_PREPARE",
+      "lane_id": "P42.L06",
+      "payload_digest": "sha256:81e601e2b1a5ffc3c5ebe9779e570e1b7606833ee329dc756ba7ac39010125f2",
+      "receipt_id": "sha256:956fb91ad2257b2adf56a20bd52066bab7d49200082c38ddd1ce9d1b170ff156",
+      "return": "KC144.V1::GID144::M12",
+      "schema": "KC144.P42.LaneReceipt.V1",
+      "truth_effect": "NONE"
+    },
+    {
+      "lane": "THIRD_EDGE_EXECUTE_OR_HOLD",
+      "lane_id": "P42.L07",
+      "payload_digest": "sha256:881652446ad632b3d27705a201bf57b27224ed123fda53829abc49ff189b5214",
+      "receipt_id": "sha256:393e6aea12cc0053bb9ca134aebbf45aa853ccb2ca03f7995fa63ffa29da2f16",
+      "return": "KC144.V1::GID144::M12",
+      "schema": "KC144.P42.LaneReceipt.V1",
+      "truth_effect": "NONE"
+    },
+    {
+      "lane": "FORWARD_POST_EDGE_WATCH",
+      "lane_id": "P42.L08",
+      "payload_digest": "sha256:5ff37477217d26e05c8bb5292deccee2531770fb251568da75239c3f50308c2d",
+      "receipt_id": "sha256:fc651fb449ff80ab253925f50eb3c385e0f3a713248e14807b1548e2997b805f",
+      "return": "KC144.V1::GID144::M12",
+      "schema": "KC144.P42.LaneReceipt.V1",
+      "truth_effect": "NONE"
+    },
+    {
+      "lane": "PARALLEL_P42_NONCOLLAPSE",
+      "lane_id": "P42.L09",
+      "payload_digest": "sha256:d736bd7b59dc262fb596ae158643bdb6be2b60414cef885b15e767fe1d57ab72",
+      "receipt_id": "sha256:d25cb8fcaf774678c50365bba7bece04575162fd51b655bd0ddde1f1faab05b6",
+      "return": "KC144.V1::GID144::M12",
+      "schema": "KC144.P42.LaneReceipt.V1",
+      "truth_effect": "NONE"
+    },
+    {
+      "lane": "M12_RETURN",
+      "lane_id": "P42.L10",
+      "payload_digest": "sha256:4bc43c586a7849461c3c48599a8b984b36cd56870f156f9bf54c85c493b2de81",
+      "receipt_id": "sha256:5680188674e867d71fdbdbbeaa745b1500b1e501e6ae986e36e1eb2da2327bda",
+      "return": "KC144.V1::GID144::M12",
+      "schema": "KC144.P42.LaneReceipt.V1",
+      "truth_effect": "NONE"
+    }
+  ],
+  "namespace": "PRODUCTION",
+  "parallel_lineage": {
+    "authority_effect": "NONE",
+    "lineage_digest": "sha256:bf7d47f77a03061c5716ca9c8d06a4e1bc8c32223a20a7353081bf88a47e91e0",
+    "merge_executed": false,
+    "parallel_label": "ATHENA_GIT_BRAIN_V2.P42",
+    "private_receipt_embedded": false,
+    "private_repository_locator_published": false,
+    "private_semantic_role": "PRESERVED_OPAQUE_NOT_INFERRED",
+    "relation": "PARALLEL_LABEL_COLLISION_NOT_PARENT_NOT_MERGED",
+    "renumbering_executed": false,
+    "schema": "KC144.P42.ParallelLineage.V1",
+    "this_p42_role": "ENUMERATION_OUTCOME_AUTHORIZATION_EDGE_TRANSACTION_AND_POST_EDGE_WATCH",
+    "truth_effect": "NONE"
+  },
+  "post_edge_watch": {
+    "authority_effect": "NONE",
+    "authorization_events_reused": 0,
+    "cutoff": null,
+    "errors": [],
+    "event_count": 0,
+    "events": [],
+    "retroactive_events_admitted": 0,
+    "schema": "KC144.P42.PostEdgeWatch.V1",
+    "status": "HELD_NOT_ARMED",
+    "truth_effect": "NONE",
+    "watch_digest": "sha256:87fd938ac38077e941ccb443f9fe1be9cf8dc6952c2265203f1f235054e6038a"
+  },
+  "public_parent_binding": {
+    "binding_digest": "sha256:418bf4c46905abb458209d6279a5e480dcab3d6880f6bff32e23359c40387642",
+    "relation": "EXACT_PUBLIC_PARENT",
+    "release_commit": "82b1b5b9e76ae49180d2e36182cadc31e2de5862",
+    "release_digest": "sha256:482d03a3ff02af3e5656468d345e6ece6fb40f2daaaa0a508d38b6042a4eb1c9",
+    "release_tree": "0d7d06492bbee838626f0191f3ccad68f2a1452c",
+    "result_id": "KC144.P41.CANDIDATE::482d03a3ff02af3e5656468d",
+    "schema": "KC144.P42.PublicParentBinding.V1",
+    "verification": "PINNED_RELEASE_IDENTITY"
+  },
+  "schema": "KC144.P42.Macrocycle.V1",
+  "signer_registry": {
+    "authority": "EXTERNAL_REGISTRY_REQUIRED",
+    "entries": [],
+    "registry_root": "sha256:8472d297c17b349649bd29781b54cc53350a6f724f01b1607e73e440867ae798",
+    "schema": "KC144.P42.SignerRegistry.V1"
+  },
+  "state": {
+    "authority_effect": "NONE",
+    "canonical_graph_mutations": 0,
+    "delta_id": "sha256:33aabe3b7030e325bb767ca52fc5ebb896a9a46bee9887f403b72952b59552a1",
+    "deployments": 0,
+    "edge_execution_count": 0,
+    "enumeration_witnesses": 0,
+    "evidence_effect": "NONE",
+    "global_release": "HOLD",
+    "heldout_outcomes": 0,
+    "independent_ic10_authorizations": 0,
+    "model_weight_mutations": 0,
+    "next_seed": "KC144.V4.4::MATH144.P43::ADMIT_EXACT_SOURCE_ENUMERATION_WITNESS_COMPLETE_NONLEAKING_HELDOUT_COHORT_RECEIVE_INDEPENDENT_IC10_AUTHORIZATION_EXECUTE_P41_EDGE_003_EXACTLY_ONCE_AND_EVALUATE_FORWARD_POST_EDGE_WATCH_MACROCYCLE_12",
+    "parallel_p42_merges": 0,
+    "post_edge_outcomes": 0,
+    "post_edge_watch": "HELD_NOT_ARMED",
+    "production_mutated": false,
+    "promotions": 0,
+    "public_parent_result_id": "KC144.P41.CANDIDATE::482d03a3ff02af3e5656468d",
+    "required_heldout_outcomes": 5,
+    "residuals": [
+      "EXACT_SOURCE_ENUMERATION_WITNESS_PENDING",
+      "FIRST_FIVE_NONLEAKING_HELDOUT_OUTCOMES_PENDING",
+      "INDEPENDENT_IC10_EDGE_AUTHORIZATION_PENDING",
+      "P41_EDGE_003_HELD",
+      "POST_EDGE_WATCH_NOT_ARMED"
+    ],
+    "return": "KC144.V1::GID144::M12",
+    "schema": "KC144.P42.StateDelta.V1",
+    "third_edge": "HELD_NOT_EXECUTED",
+    "truth_effect": "NONE"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "cohort_law": "AT_LEAST_FIVE_POST_FREEZE_SEALED_TASK_OR_EMPIRICAL_OUTCOMES_TWO_EVENT_TYPES_THREE_SURFACES_THREE_ROUTES_NO_CONTINUATION_SUBSTITUTION",
+  "contract_digest": "sha256:06f94707bd9f939ed4e22bc841a8626622fe8a7d8d64e6918fec5b4d52657f8b",
+  "default_state": "HOLD_EXTERNAL_ENUMERATION_OUTCOMES_AND_IC10_ABSENT",
+  "enumeration_law": "EXACT_29_SLOT_ORDER_AND_EVERY_LOCATOR_AND_BODY_COMMITMENT_MUST_MATCH_THE_PINNED_P41_SOURCE_MANIFEST",
+  "lanes": [
+    {
+      "lane": "PUBLIC_P41_PARENT_BIND",
+      "lane_id": "P42.L01",
+      "parallel_group": 1,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "EXACT_SOURCE_ENUMERATION_WITNESS_INTAKE",
+      "lane_id": "P42.L02",
+      "parallel_group": 1,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "CUMULATIVE_NONLEAKING_OUTCOME_INTAKE",
+      "lane_id": "P42.L03",
+      "parallel_group": 1,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "HELDOUT_COHORT_FREEZE",
+      "lane_id": "P42.L04",
+      "parallel_group": 1,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "INDEPENDENT_IC10_EDGE_AUTHORIZATION",
+      "lane_id": "P42.L05",
+      "parallel_group": 2,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "EXACTLY_ONCE_EDGE_TRANSACTION_PREPARE",
+      "lane_id": "P42.L06",
+      "parallel_group": 2,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "THIRD_EDGE_EXECUTE_OR_HOLD",
+      "lane_id": "P42.L07",
+      "parallel_group": 2,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "FORWARD_POST_EDGE_WATCH",
+      "lane_id": "P42.L08",
+      "parallel_group": 2,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "PARALLEL_P42_NONCOLLAPSE",
+      "lane_id": "P42.L09",
+      "parallel_group": 3,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "M12_RETURN",
+      "lane_id": "P42.L10",
+      "parallel_group": 3,
+      "return": "KC144.V1::GID144::M12"
+    }
+  ],
+  "lookup_key": "KC144.V4.3::MATH144.P42::BIND_EXACT_SOURCE_ENUMERATION_WITNESS_INGEST_FIRST_FIVE_NONLEAKING_HELDOUT_OUTCOMES_RECEIVE_EXTERNAL_IC10_EDGE_AUTHORIZATION_EXECUTE_THIRD_EDGE_ONCE_AND_FREEZE_POST_EDGE_WATCH_MACROCYCLE_11",
+  "next_seed": "KC144.V4.4::MATH144.P43::ADMIT_EXACT_SOURCE_ENUMERATION_WITNESS_COMPLETE_NONLEAKING_HELDOUT_COHORT_RECEIVE_INDEPENDENT_IC10_AUTHORIZATION_EXECUTE_P41_EDGE_003_EXACTLY_ONCE_AND_EVALUATE_FORWARD_POST_EDGE_WATCH_MACROCYCLE_12",
+  "noncollapse": [
+    "P41_COMMITMENT_COHORT_IS_NOT_EXACT_ORIGINAL_ENUMERATION_WITNESS",
+    "CONTINUATION_CHOICE_IS_NOT_HELDOUT_CALIBRATION_OUTCOME",
+    "ENUMERATION_CUSTODIAN_IS_NOT_IC10_EDGE_AUTHORIZER",
+    "SIGNED_WITNESS_IS_NOT_VALID_WITHOUT_ENROLLED_CONTROL_PROOF",
+    "EDGE_AUTHORIZATION_IS_NOT_GENERAL_GOVERNANCE_AUTHORITY",
+    "TEST_SIMULATION_IS_NOT_PRODUCTION_EXECUTION",
+    "EDGE_EXECUTION_IS_NOT_TRUTH_PROMOTION",
+    "POST_EDGE_WATCH_CANNOT_AUTHORIZE_ITS_OWN_CAUSAL_PREDECESSOR",
+    "REPLAY_IS_NOT_INDEPENDENT_EVIDENCE",
+    "PARALLEL_P42_LABEL_IS_NOT_THIS_P42_LINEAGE",
+    "PUBLICATION_IS_NOT_DEPLOYMENT_OR_MODEL_WEIGHT_MUTATION"
+  ],
+  "public_parent": {
+    "binding_digest": "sha256:418bf4c46905abb458209d6279a5e480dcab3d6880f6bff32e23359c40387642",
+    "relation": "EXACT_PUBLIC_PARENT",
+    "release_commit": "82b1b5b9e76ae49180d2e36182cadc31e2de5862",
+    "release_digest": "sha256:482d03a3ff02af3e5656468d345e6ece6fb40f2daaaa0a508d38b6042a4eb1c9",
+    "release_tree": "0d7d06492bbee838626f0191f3ccad68f2a1452c",
+    "result_id": "KC144.P41.CANDIDATE::482d03a3ff02af3e5656468d",
+    "schema": "KC144.P42.PublicParentBinding.V1",
+    "verification": "PINNED_RELEASE_IDENTITY"
+  },
+  "required_external_roles": [
+    "SOURCE_ENUMERATION_CUSTODIAN",
+    "IC10_EDGE_AUTHORIZER"
+  ],
+  "role_independence": "ENUMERATION_CUSTODIAN_AND_IC10_AUTHORIZER_MUST_HAVE_DISTINCT_SIGNERS_ORGANIZATIONS_AND_CONTROL_ROOTS",
+  "route": [
+    "KC144.V1::GID005::H05",
+    "KC144.V1::GID084::I04",
+    "KC144.V1::GID047::F04",
+    "KC144.V1::GID090::IC10",
+    "KC144.V1::GID141::M09",
+    "KC144.V1::GID144::M12"
+  ],
+  "schema": "KC144.P42.Contract.V1",
+  "transaction_law": "ALL_ROOTS_AND_EXTERNAL_ROLES_READY_AND_EXECUTION_LEDGER_EMPTY_THEN_EXECUTE_P41_EDGE_003_EXACTLY_ONCE",
+  "watch_law": "ARM_ONLY_AFTER_PRODUCTION_EXECUTION_AND_ACCEPT_ONLY_STRICTLY_LATER_OUTCOMES_NOT_REUSED_FROM_THE_AUTHORIZATION_COHORT"
+}

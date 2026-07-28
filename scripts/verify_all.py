@@ -34,6 +34,22 @@ def main() -> int:
     env["PYTHONPATH"] = str(ROOT / "src")
     runs = [
         run(
+            "P42 enumeration, outcome, IC10, edge transaction, and post-edge watch",
+            [
+                sys.executable,
+                "-m",
+                "kc144_crystal",
+                "p42-release",
+                "--output",
+                "registry/p42-edge-transaction/v1",
+                "--implementation-commit",
+                "d9f4904b033cb5039af2516dc1bb257113802f75",
+                "--implementation-tree",
+                "4826261e3f9944e963e1545a1b03388d23332c49",
+            ],
+            env=env,
+        ),
+        run(
             "P41 source-tree cohort, third-edge, and IC10 boundary",
             [
                 sys.executable,
@@ -304,7 +320,7 @@ def main() -> int:
     ]
     passed = sum(run_result["exit_code"] == 0 for run_result in runs)
     report = {
-        "schema": "KC144.VerificationMatrix.P41",
+        "schema": "KC144.VerificationMatrix.P42",
         "verdict": "PASS" if passed == len(runs) else "FAIL",
         "passed": passed,
         "total": len(runs),
