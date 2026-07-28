@@ -37,6 +37,22 @@ P38_CANONICAL_EDGES_EXECUTED::0
 P38_FRESH_CHECKOUT_TESTS::413/413
 P38_PRODUCTION_AUTHORITY::HOLD
 P38_TRUTH_EFFECT::NONE
+P39_IMPLEMENTATION_COMMIT::762a556cece499ce3fc12a265aa9f665006ce8aa
+P39_IMPLEMENTATION_TREE::ae4eb814e10ae03a3b9da71950c5a3bc20d6e02a
+P39_RELEASE_COMMIT::bc29c55bcabc6f75fc571be167034896fab068b8
+P39_RELEASE_TREE::770e70a62be7f0f4f765fcb9ab594e2636e5b62c
+P39_RESULT_ID::KC144.P39.CANDIDATE::50f5d2f917e2ee111b798d8d
+P39_RELEASE_DIGEST::sha256:50f5d2f917e2ee111b798d8de2c18ccc4c96678bee6fb010bfa873c65483eeb6
+P39_VERIFICATION::PASS
+P39_LIVE_OUTCOMES::0
+P39_INDEPENDENT_IC10_RETURNS::0
+P39_IC10_THRESHOLD::3_OF_5
+P39_CRYSTAL_LANES::7
+P39_FRESH_CHECKOUT_TESTS::431/431
+P39_CANONICAL_WEIGHT_UPDATES::0
+P39_SUCCESSOR_ACTIVATED::FALSE
+P39_PRODUCTION_AUTHORITY::HOLD
+P39_TRUTH_EFFECT::NONE
 HEAD_REGISTRY_DIGEST::sha256:5411bcd7c8e875b429004ecfd63b19fe35998b48e0c7ff685f90176ae15fbc62
 TOOL_REGISTRY_DIGEST::sha256:0763e01c6fd520447795d37703f26b711609f1851ddd517c72942b7b3c013e9b
 REQUEST_ID::sha256:8db42ce5513e7ca896160b0b3491db7b7a08adf2744de3e57b5eaac3ab15677e
@@ -180,4 +196,43 @@ NEXT::KC144.V4.0::MATH144.P39::LIVE_OUTCOME_CORPUS_INDEPENDENT_IC10_CONVERGENCE_
 RETURN::KC144.V1::GID144::M12
 PARENT::KC144.P36.CANDIDATE::2dc88c9f2bf39ccb97e883f2
 SOURCE_SIBLING::KC144.P37::039d3622874ac1ef067ce4da
+```
+
+## P39 live-outcome / independent-IC10 successor
+
+P39 turns P38’s remaining external barrier into an executable, fail-closed
+macrocycle. Signed observations enter two disjoint partitions: calibration data
+may propose route weights, while held-out data may only evaluate them. Reused
+evidence units, route-generated samples, test-only records, signature drift,
+missing consent, and future observations are rejected.
+
+Each partition requires at least 12 admitted observations, three source
+surfaces, three routes, and three observations per route. Laplace-smoothed
+route probabilities are estimated from calibration data and evaluated with a
+held-out Brier non-degradation gate. Proposed weights execute zero canonical
+updates.
+
+The authority lane freezes five IC10 seats with distinct signers, keys,
+organizations, and control roots. `SUCCESSOR_READY` requires three valid,
+independently controlled returns that bind the exact candidate, corpus,
+calibration, and policy roots and pass all ten IC10 gates.
+
+The frozen public release correctly remains `CANDIDATE_HOLD`: zero qualifying
+live outcomes and zero independent returns currently exist. P39 fabricates
+neither. Its runtime, cold replay, release checksums, and complete 431-test
+repository suite pass.
+
+- [P39 public branch](https://github.com/demeet2k/guild-hall/tree/kc144-live-outcome-ic10-v1)
+- [P39 implementation commit](https://github.com/demeet2k/guild-hall/commit/762a556cece499ce3fc12a265aa9f665006ce8aa)
+- [P39 release commit](https://github.com/demeet2k/guild-hall/commit/bc29c55bcabc6f75fc571be167034896fab068b8)
+- [P39 framework](https://github.com/demeet2k/guild-hall/blob/bc29c55bcabc6f75fc571be167034896fab068b8/P39_LIVE_OUTCOME_IC10_FRAMEWORK.md)
+- [P39 runtime](https://github.com/demeet2k/guild-hall/blob/762a556cece499ce3fc12a265aa9f665006ce8aa/src/kc144_crystal/p39_runtime.py)
+- [Frozen P39 registry](https://github.com/demeet2k/guild-hall/tree/bc29c55bcabc6f75fc571be167034896fab068b8/registry/p39-live-outcome/v1)
+
+```text
+PRIOR_NEXT::KC144.V4.0::MATH144.P39::LIVE_OUTCOME_CORPUS_INDEPENDENT_IC10_CONVERGENCE_WEIGHT_CALIBRATION_AND_CANONICAL_SUCCESSOR_DECISION_MACROCYCLE_08
+NEXT::KC144.V4.1::MATH144.P40::AUTHORIZED_SUCCESSOR_ACTIVATION_CANONICAL_WEIGHT_COMMIT_AND_POST_ACTIVATION_OUTCOME_WATCH_MACROCYCLE_09
+RETURN::KC144.V1::GID144::M12
+PARENT::KC144.P38.CANDIDATE::903b28c3df75072423c72959
+RESULT::KC144.P39.CANDIDATE::50f5d2f917e2ee111b798d8d
 ```

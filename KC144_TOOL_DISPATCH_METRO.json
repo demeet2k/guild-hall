@@ -81,94 +81,94 @@
   "content_transport_certified": false,
   "governance_authority_granted": false,
   "production_truth_effect": "NONE",
-  "next_seed": "KC144.V4.0::MATH144.P39::LIVE_OUTCOME_CORPUS_INDEPENDENT_IC10_CONVERGENCE_WEIGHT_CALIBRATION_AND_CANONICAL_SUCCESSOR_DECISION_MACROCYCLE_08",
-  "previous_next_seed": "KC144.V3.8::MATH144.P37::EXACT_P35_SUBSCRIPTION_REGISTRY_BINDING_TRUSTED_SIGNER_ENROLLMENT_AND_FIRST_GENUINE_CONSENTED_EVENT_REPLAY_MACROCYCLE_06",
+  "next_seed": "KC144.V4.1::MATH144.P40::AUTHORIZED_SUCCESSOR_ACTIVATION_CANONICAL_WEIGHT_COMMIT_AND_POST_ACTIVATION_OUTCOME_WATCH_MACROCYCLE_09",
+  "previous_next_seed": "KC144.V4.0::MATH144.P39::LIVE_OUTCOME_CORPUS_INDEPENDENT_IC10_CONVERGENCE_WEIGHT_CALIBRATION_AND_CANONICAL_SUCCESSOR_DECISION_MACROCYCLE_08",
   "successor": {
-    "schema": "KC144.P38.MetaNavigatorV2Metro.V1",
-    "branch": "kc144-mycelium-tool-dispatch-v1",
+    "schema": "KC144.P39.LiveOutcomeIC10Metro.V1",
+    "branch": "kc144-live-outcome-ic10-v1",
+    "parent": {
+      "result_id": "KC144.P38.CANDIDATE::903b28c3df75072423c72959",
+      "release_digest": "sha256:903b28c3df75072423c72959a03860ef0d636f6a189b302f4281ca36944963d8",
+      "release_commit": "828e6e4549b61e0c0fb4674aa19f2a49dab344a0",
+      "release_tree": "8f1d6bc4c0b76e2c67db0b1458f3f9b9df1465d7"
+    },
     "implementation": {
-      "commit": "800ed1873ac5f04937f5a52f5204258e01262164",
-      "tree": "a751a49451490463531dd761812a619b30288cb0"
+      "commit": "762a556cece499ce3fc12a265aa9f665006ce8aa",
+      "tree": "ae4eb814e10ae03a3b9da71950c5a3bc20d6e02a"
     },
     "release_snapshot": {
-      "commit": "828e6e4549b61e0c0fb4674aa19f2a49dab344a0",
-      "tree": "8f1d6bc4c0b76e2c67db0b1458f3f9b9df1465d7",
-      "result_id": "KC144.P38.CANDIDATE::903b28c3df75072423c72959",
-      "release_digest": "sha256:903b28c3df75072423c72959a03860ef0d636f6a189b302f4281ca36944963d8"
+      "commit": "bc29c55bcabc6f75fc571be167034896fab068b8",
+      "tree": "770e70a62be7f0f4f765fcb9ab594e2636e5b62c",
+      "result_id": "KC144.P39.CANDIDATE::50f5d2f917e2ee111b798d8d",
+      "release_digest": "sha256:50f5d2f917e2ee111b798d8de2c18ccc4c96678bee6fb010bfa873c65483eeb6"
     },
-    "lineage": {
-      "public_parent": "KC144.P36.CANDIDATE::2dc88c9f2bf39ccb97e883f2",
-      "source_sibling": "KC144.P37::039d3622874ac1ef067ce4da",
-      "source_sibling_parent": "KC144.P36::f40dc654ea7fc32651f1ebd6",
-      "relation": "TYPED_SIBLING_IMPORT",
-      "reconciliation_digest": "sha256:15e739f7fa3b796e7e370ac2262c73b9ee73c5ca6a02b970d9edc03b8bccaaa7"
+    "roots": {
+      "contract_digest": "sha256:e263954e1727dbfbd27b056b0ede2f1074006309584ba503ee3d3494bb9673f4",
+      "policy_digest": "sha256:97db2e551e5ab35b6077d2286088c84954e11bb7a8aa12a181a3ea1a7d89e255",
+      "corpus_root": "sha256:853b55d0a8b9a3a6fee0531f0f90cb294fcf253b7e8654e5a98d30aa1de65c28",
+      "calibration_digest": "sha256:d8518a7fb1db2f97beffb54c6237294ba1585468bcf610df23813870b4058b11",
+      "convergence_evaluation_digest": "sha256:07f102ecc5e96ce90c65d5686fb29ec092f770d00f5cb6dbd5fadafa672eab18",
+      "decision_digest": "sha256:729299f0ab0c2903f3a3456d978c0312f614bc77a26c9692c72ae6c9d8f16a82",
+      "envelope_digest": "sha256:da8cd009aaa8e53233b89f843d39ad079ef5169b2e76b948d7875837b252f92e"
     },
     "topology": {
-      "registry_binding": {
-        "state": "EXACT_BYTES_VERIFIED",
-        "actions": 360,
-        "gids": 144,
-        "carriers": 37,
-        "total_rows": 541,
-        "digest": "sha256:6ee10500a42e8a652459e9ed650a2c9508d99e231068d492bcaad1a9b07d481a"
-      },
-      "coordinate_tensor": {
-        "stations": 144,
-        "d4_views": 1056,
-        "local_orbit_memberships": 1112,
-        "kc54_duplex_nodes": 27,
-        "digest": "sha256:d78ba073843b1efb11777e5bfa164f96b8d64b5967647b6f37156643812da6ac"
-      },
-      "crystals": [
-        "KC144",
-        "BR21",
-        "KC27",
-        "KC54",
-        "MATH144",
-        "P31",
-        "HEART"
+      "outcome_partitions": [
+        "CALIBRATION",
+        "HELD_OUT"
       ],
+      "minimums_per_partition": {
+        "observations": 12,
+        "source_surfaces": 3,
+        "routes": 3,
+        "observations_per_route": 3
+      },
+      "calibration": {
+        "estimator": "LAPLACE_BERNOULLI",
+        "held_out_gate": "BRIER_NON_DEGRADATION",
+        "cross_partition_leakage": "FATAL_HOLD",
+        "canonical_weight_updates_executed": 0
+      },
+      "ic10": {
+        "registry_seats": 5,
+        "threshold": 3,
+        "distinct_signers": 3,
+        "distinct_organizations": 3,
+        "distinct_control_roots": 3,
+        "gates_per_return": 10
+      },
       "lanes": [
-        "LINEAGE_RECONCILIATION",
-        "EXACT_REGISTRY_BINDING",
-        "DYNAMIC_MULTI_CRYSTAL_QUERY",
-        "LIVE_SOURCE_ROUTING",
-        "SECOND_ONE_EDGE_EXPERIMENT",
-        "HELD_OUT_OUTCOME_CALIBRATION",
-        "INDEPENDENT_IC10_RETURN"
-      ],
-      "public_repository_event": "sha256:3db0a70660ad107b73986c38bd987023c193d75ddc2a0231e5a0a53f3207f3e8",
-      "proposal_edge": "GID135/M03<->GID047/F04",
-      "proposal_edges_executed": 1,
-      "canonical_edges_executed": 0,
-      "global_distance_sum": {
-        "before": 50376,
-        "after": 49326
-      },
-      "global_diameter": {
-        "before": 11,
-        "after": 10
-      }
+        "LIVE_OUTCOME_INTAKE",
+        "PARTITION_LEAKAGE_BARRIER",
+        "DETERMINISTIC_WEIGHT_CALIBRATION",
+        "FIXED_FIVE_SEAT_IC10_REGISTRY",
+        "THREE_OF_FIVE_INDEPENDENT_CONVERGENCE",
+        "CANONICAL_SUCCESSOR_DECISION",
+        "M12_RETURN"
+      ]
     },
     "verification": {
       "verdict": "PASS",
       "fresh_checkout_tests": {
-        "passed": 413,
-        "total": 413
+        "passed": 431,
+        "total": 431
       },
       "production_authority": "HOLD",
       "truth_effect": "NONE",
       "evidence_effect": "NONE",
       "production_mutated": false,
-      "held_out_outcomes": 0,
-      "independent_ic10_returns": 0
+      "live_outcomes": 0,
+      "independent_ic10_returns": 0,
+      "canonical_weight_updates_executed": 0,
+      "successor_activated": false
     },
     "links": {
-      "implementation": "https://github.com/demeet2k/guild-hall/commit/800ed1873ac5f04937f5a52f5204258e01262164",
-      "release": "https://github.com/demeet2k/guild-hall/commit/828e6e4549b61e0c0fb4674aa19f2a49dab344a0",
-      "framework": "https://github.com/demeet2k/guild-hall/blob/800ed1873ac5f04937f5a52f5204258e01262164/P38_META_NAVIGATOR_V2.md",
-      "registry": "https://github.com/demeet2k/guild-hall/tree/828e6e4549b61e0c0fb4674aa19f2a49dab344a0/registry/p38-meta-navigator/v1"
+      "branch": "https://github.com/demeet2k/guild-hall/tree/kc144-live-outcome-ic10-v1",
+      "implementation": "https://github.com/demeet2k/guild-hall/commit/762a556cece499ce3fc12a265aa9f665006ce8aa",
+      "release": "https://github.com/demeet2k/guild-hall/commit/bc29c55bcabc6f75fc571be167034896fab068b8",
+      "framework": "https://github.com/demeet2k/guild-hall/blob/bc29c55bcabc6f75fc571be167034896fab068b8/P39_LIVE_OUTCOME_IC10_FRAMEWORK.md",
+      "runtime": "https://github.com/demeet2k/guild-hall/blob/762a556cece499ce3fc12a265aa9f665006ce8aa/src/kc144_crystal/p39_runtime.py",
+      "registry": "https://github.com/demeet2k/guild-hall/tree/bc29c55bcabc6f75fc571be167034896fab068b8/registry/p39-live-outcome/v1"
     },
-    "next_seed": "KC144.V4.0::MATH144.P39::LIVE_OUTCOME_CORPUS_INDEPENDENT_IC10_CONVERGENCE_WEIGHT_CALIBRATION_AND_CANONICAL_SUCCESSOR_DECISION_MACROCYCLE_08"
+    "next_seed": "KC144.V4.1::MATH144.P40::AUTHORIZED_SUCCESSOR_ACTIVATION_CANONICAL_WEIGHT_COMMIT_AND_POST_ACTIVATION_OUTCOME_WATCH_MACROCYCLE_09"
   }
 }
