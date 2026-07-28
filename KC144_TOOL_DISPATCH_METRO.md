@@ -552,3 +552,43 @@ RETURN::KC144.V1::GID144::M12
 PUBLIC_PARENT::KC144.P43.CANDIDATE::240473a1935faad593c1b8d5
 RESULT::KC144.P44.CANDIDATE::1073b6a2be78da5a66b068e2
 ```
+
+## P45 reversible edge-retention successor
+
+P45 admits only a replay-valid frozen P44 edge-effect receipt and then requires
+a second, causally disjoint forward outcome window. The second window must
+contain at least five eligible outcomes across three routes, three source
+surfaces, and both task and empirical event classes.
+
+For every route and surface present in the first window, P45 compares the mean
+candidate-minus-baseline effect across both windows. Each dimension must
+reappear and remain within the fixed `0.15` drift ceiling. Second-window
+nondegradation is evaluated independently.
+
+The decision lattice is deliberately reversible. Complete stable,
+nondegrading evidence emits `RETAIN_EDGE_REVERSIBLY`; complete degrading or
+unstable evidence emits `RETRACT_EDGE_PROPOSAL`; incomplete evidence emits
+`HOLD`. None of these mutates the graph, calibrates route weights, establishes
+truth, or substitutes for an independent IC10 canonicalization authorization.
+
+The public release remains `CANDIDATE_HOLD`: its exact P44 parent has no frozen
+positive-path edge effect, so first-window and second-window counts remain
+zero, route/surface stability is unmeasured, graph mutations remain zero,
+truth effect is `NONE`, and production authority remains `HOLD`. The focused
+suite passed 10/10, the detached tree ran 498 tests with 496 passes and two
+expected skips, and the integrated matrix passed 28/28.
+
+- [P45 public branch](https://github.com/demeet2k/guild-hall/tree/kc144-reversible-edge-retention-p45-v1)
+- [P45 implementation commit](https://github.com/demeet2k/guild-hall/commit/cdec9b592fcaf4cdd06a1f59d3c5e914135f0d48)
+- [P45 release commit](https://github.com/demeet2k/guild-hall/commit/f885b290c16b9759edd6e626b61c695105018a64)
+- [P45 framework](https://github.com/demeet2k/guild-hall/blob/f885b290c16b9759edd6e626b61c695105018a64/P45_REVERSIBLE_EDGE_RETENTION_FRAMEWORK.md)
+- [P45 runtime](https://github.com/demeet2k/guild-hall/blob/cdec9b592fcaf4cdd06a1f59d3c5e914135f0d48/src/kc144_crystal/p45_runtime.py)
+- [Frozen P45 registry](https://github.com/demeet2k/guild-hall/tree/f885b290c16b9759edd6e626b61c695105018a64/registry/p45-edge-retention/v1)
+
+```text
+PRIOR_NEXT::KC144.V4.6::MATH144.P45::ADMIT_CANONICAL_EDGE_EFFECT_RECEIPT_ACCUMULATE_SECOND_FORWARD_OUTCOME_WINDOW_COMPARE_ROUTE_AND_SURFACE_STABILITY_AND_DECIDE_REVERSIBLE_EDGE_RETENTION_MACROCYCLE_14
+NEXT::KC144.V4.7::MATH144.P46::ADMIT_REVERSIBLE_EDGE_RETENTION_DECISION_ACCUMULATE_THIRD_FORWARD_WINDOW_VERIFY_TEMPORAL_STABILITY_AND_RECEIVE_INDEPENDENT_IC10_CANONICALIZATION_AUTHORIZATION_MACROCYCLE_15
+RETURN::KC144.V1::GID144::M12
+PUBLIC_PARENT::KC144.P44.CANDIDATE::1073b6a2be78da5a66b068e2
+RESULT::KC144.P45.CANDIDATE::a4e840837d138e31520634b1
+```

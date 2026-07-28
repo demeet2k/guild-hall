@@ -81,8 +81,8 @@
   "content_transport_certified": false,
   "governance_authority_granted": false,
   "production_truth_effect": "NONE",
-  "next_seed": "KC144.V4.6::MATH144.P45::ADMIT_CANONICAL_EDGE_EFFECT_RECEIPT_ACCUMULATE_SECOND_FORWARD_OUTCOME_WINDOW_COMPARE_ROUTE_AND_SURFACE_STABILITY_AND_DECIDE_REVERSIBLE_EDGE_RETENTION_MACROCYCLE_14",
-  "previous_next_seed": "KC144.V4.5::MATH144.P44::ACCUMULATE_FORWARD_POST_EDGE_OUTCOMES_VERIFY_EXACTLY_ONCE_LEDGER_FINALITY_MEASURE_NONDEGRADATION_ACROSS_DIVERSE_ROUTES_AND_FREEZE_CANONICAL_EDGE_EFFECT_MACROCYCLE_13",
+  "next_seed": "KC144.V4.7::MATH144.P46::ADMIT_REVERSIBLE_EDGE_RETENTION_DECISION_ACCUMULATE_THIRD_FORWARD_WINDOW_VERIFY_TEMPORAL_STABILITY_AND_RECEIVE_INDEPENDENT_IC10_CANONICALIZATION_AUTHORIZATION_MACROCYCLE_15",
+  "previous_next_seed": "KC144.V4.6::MATH144.P45::ADMIT_CANONICAL_EDGE_EFFECT_RECEIPT_ACCUMULATE_SECOND_FORWARD_OUTCOME_WINDOW_COMPARE_ROUTE_AND_SURFACE_STABILITY_AND_DECIDE_REVERSIBLE_EDGE_RETENTION_MACROCYCLE_14",
   "predecessor_history": {
     "schema": "KC144.P41.SourceTreeCohortMetro.V1",
     "branch": "kc144-source-tree-cohort-p41-v1",
@@ -329,7 +329,7 @@
     },
     "next_seed": "KC144.V4.4::MATH144.P43::ADMIT_EXACT_SOURCE_ENUMERATION_WITNESS_COMPLETE_NONLEAKING_HELDOUT_COHORT_RECEIVE_INDEPENDENT_IC10_AUTHORIZATION_EXECUTE_P41_EDGE_003_EXACTLY_ONCE_AND_EVALUATE_FORWARD_POST_EDGE_WATCH_MACROCYCLE_12"
   },
-  "current_parent": {
+  "predecessor_parent": {
     "schema": "KC144.P43.AdmissionFinalityMetro.V1",
     "branch": "kc144-admission-finality-p43-v1",
     "public_parent": {
@@ -399,7 +399,7 @@
     },
     "next_seed": "KC144.V4.5::MATH144.P44::ACCUMULATE_FORWARD_POST_EDGE_OUTCOMES_VERIFY_EXACTLY_ONCE_LEDGER_FINALITY_MEASURE_NONDEGRADATION_ACROSS_DIVERSE_ROUTES_AND_FREEZE_CANONICAL_EDGE_EFFECT_MACROCYCLE_13"
   },
-  "successor": {
+  "current_parent": {
     "schema": "KC144.P44.ForwardEdgeEffectMetro.V1",
     "branch": "kc144-forward-edge-effect-p44-v1",
     "public_parent": {
@@ -469,5 +469,80 @@
       "registry": "https://github.com/demeet2k/guild-hall/tree/1022d7735c38c5557fbaadfeba7aeb5e6aef4a0c/registry/p44-edge-effect/v1"
     },
     "next_seed": "KC144.V4.6::MATH144.P45::ADMIT_CANONICAL_EDGE_EFFECT_RECEIPT_ACCUMULATE_SECOND_FORWARD_OUTCOME_WINDOW_COMPARE_ROUTE_AND_SURFACE_STABILITY_AND_DECIDE_REVERSIBLE_EDGE_RETENTION_MACROCYCLE_14"
+  },
+  "successor": {
+    "schema": "KC144.P45.ReversibleEdgeRetentionMetro.V1",
+    "branch": "kc144-reversible-edge-retention-p45-v1",
+    "public_parent": {
+      "result_id": "KC144.P44.CANDIDATE::1073b6a2be78da5a66b068e2",
+      "release_digest": "sha256:1073b6a2be78da5a66b068e2da8f23dccb0a0e4d6c01a0ab3f042fd55649e6fb",
+      "release_commit": "1022d7735c38c5557fbaadfeba7aeb5e6aef4a0c",
+      "release_tree": "068e950092013d5a4f74db4a027da0838a58c345"
+    },
+    "implementation": {
+      "commit": "cdec9b592fcaf4cdd06a1f59d3c5e914135f0d48",
+      "tree": "58ed8e2a090311dda126179e7536c599974c9ea0"
+    },
+    "release_snapshot": {
+      "commit": "f885b290c16b9759edd6e626b61c695105018a64",
+      "tree": "55785a15d7e28b8ce3b0bf5418d9418cc2aa9dcc",
+      "result_id": "KC144.P45.CANDIDATE::a4e840837d138e31520634b1",
+      "release_digest": "sha256:a4e840837d138e31520634b1927a4375ce80e2cde999070ffa51ada9ed71bc7e",
+      "status": "CANDIDATE_HOLD"
+    },
+    "topology": {
+      "p44_edge_effect_admitted": false,
+      "first_window_outcomes": 0,
+      "second_window_outcomes": 0,
+      "required_second_window_outcomes": 5,
+      "second_window_routes": 0,
+      "required_second_window_routes": 3,
+      "second_window_surfaces": 0,
+      "required_second_window_surfaces": 3,
+      "route_stability": "HOLD",
+      "surface_stability": "HOLD",
+      "second_window_nondegradation": "HOLD",
+      "retention_decision": "HOLD",
+      "canonical_graph_mutations": 0,
+      "parallel_p45_relation": "PARALLEL_LABEL_COLLISION_NOT_PARENT_NOT_MERGED",
+      "lanes": [
+        "PUBLIC_P44_PARENT_BIND",
+        "CANONICAL_EDGE_EFFECT_ADMISSION",
+        "SECOND_FORWARD_OUTCOME_INTAKE",
+        "CROSS_WINDOW_CAUSAL_NONREUSE",
+        "ROUTE_STABILITY_COMPARISON",
+        "SURFACE_STABILITY_COMPARISON",
+        "SECOND_WINDOW_NONDEGRADATION",
+        "REVERSIBLE_EDGE_RETENTION_DECISION",
+        "PARALLEL_P45_NONCOLLAPSE",
+        "M12_RETURN_AND_P46_RESEED"
+      ]
+    },
+    "verification": {
+      "verdict": "PASS",
+      "fresh_checkout_tests": {
+        "ran": 498,
+        "passed": 496,
+        "skipped": 2,
+        "failures": 0,
+        "errors": 0
+      },
+      "verification_matrix": {
+        "passed": 28,
+        "total": 28
+      },
+      "production_authority": "HOLD",
+      "truth_effect": "NONE",
+      "production_mutated": false
+    },
+    "links": {
+      "branch": "https://github.com/demeet2k/guild-hall/tree/kc144-reversible-edge-retention-p45-v1",
+      "implementation": "https://github.com/demeet2k/guild-hall/commit/cdec9b592fcaf4cdd06a1f59d3c5e914135f0d48",
+      "release": "https://github.com/demeet2k/guild-hall/commit/f885b290c16b9759edd6e626b61c695105018a64",
+      "framework": "https://github.com/demeet2k/guild-hall/blob/f885b290c16b9759edd6e626b61c695105018a64/P45_REVERSIBLE_EDGE_RETENTION_FRAMEWORK.md",
+      "runtime": "https://github.com/demeet2k/guild-hall/blob/cdec9b592fcaf4cdd06a1f59d3c5e914135f0d48/src/kc144_crystal/p45_runtime.py",
+      "registry": "https://github.com/demeet2k/guild-hall/tree/f885b290c16b9759edd6e626b61c695105018a64/registry/p45-edge-retention/v1"
+    },
+    "next_seed": "KC144.V4.7::MATH144.P46::ADMIT_REVERSIBLE_EDGE_RETENTION_DECISION_ACCUMULATE_THIRD_FORWARD_WINDOW_VERIFY_TEMPORAL_STABILITY_AND_RECEIVE_INDEPENDENT_IC10_CANONICALIZATION_AUTHORIZATION_MACROCYCLE_15"
   }
 }
