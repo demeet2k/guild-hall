@@ -132,6 +132,12 @@ from .p41_runtime import (
     p41_source_manifest,
     verify_p41_cycle,
 )
+from .p42_runtime import (
+    compile_p42_cycle,
+    compile_p42_release,
+    p42_contract,
+    verify_p42_cycle,
+)
 from .query import QueryBundle, compile_query, query_contract
 from .repair import (
     M12EvidencePacket,
@@ -550,6 +556,39 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p41_release.add_argument("--implementation-commit", required=True)
     p41_release.add_argument("--implementation-tree", required=True)
+    commands.add_parser(
+        "p42-contract",
+        help="emit the P42 enumeration/outcome/authorization/edge transaction contract",
+    )
+    p42_cycle = commands.add_parser(
+        "p42-cycle",
+        help="compile one complete P42 exactly-once edge transaction macrocycle",
+    )
+    p42_cycle.add_argument("--signer-registry")
+    p42_cycle.add_argument("--enumeration-witness")
+    p42_cycle.add_argument("--events")
+    p42_cycle.add_argument("--edge-authorizations")
+    p42_cycle.add_argument("--execution-ledger")
+    p42_cycle.add_argument("--post-edge-events")
+    p42_cycle.add_argument(
+        "--namespace", choices=("PRODUCTION", "TEST"), default="PRODUCTION"
+    )
+    p42_cycle.add_argument("--execution-time")
+    p42_cycle.add_argument("--output")
+    p42_verify = commands.add_parser(
+        "p42-verify",
+        help="verify and cold-replay one frozen P42 macrocycle",
+    )
+    p42_verify.add_argument("envelope")
+    p42_release = commands.add_parser(
+        "p42-release",
+        help="materialize the honest-HOLD P42 reference release",
+    )
+    p42_release.add_argument(
+        "--output", default="registry/p42-edge-transaction/v1"
+    )
+    p42_release.add_argument("--implementation-commit", required=True)
+    p42_release.add_argument("--implementation-tree", required=True)
 
     systematic = commands.add_parser("systematic", help="compile every V3 registry")
     systematic.add_argument("--output", default="registry/v3")
@@ -1641,6 +1680,65 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "p41-release":
         report = compile_p41_release(
+            args.output,
+            implementation_commit=args.implementation_commit,
+            implementation_tree=args.implementation_tree,
+        )
+        _json(report)
+        return 0 if report["verification_verdict"] == "PASS" else 2
+
+    if args.command == "p42-contract":
+        _json(p42_contract())
+        return 0
+
+    if args.command == "p42-cycle":
+        def read_optional(path: str | None, default: object) -> object:
+            return (
+                json.loads(Path(path).read_text(encoding="utf-8"))
+                if path
+                else default
+            )
+
+        kwargs = {
+            "signer_registry": read_optional(args.signer_registry, None),
+            "enumeration_witness": read_optional(
+                args.enumeration_witness, None
+            ),
+            "heldout_events": read_optional(args.events, []),
+            "edge_authorizations": read_optional(
+                args.edge_authorizations, []
+            ),
+            "execution_ledger": read_optional(args.execution_ledger, []),
+            "post_edge_events": read_optional(args.post_edge_events, []),
+            "namespace": args.namespace,
+        }
+        if args.execution_time:
+            kwargs["execution_time"] = args.execution_time
+        report = compile_p42_cycle(**kwargs)
+        if args.output:
+            destination = Path(args.output)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_text(
+                json.dumps(
+                    report,
+                    ensure_ascii=False,
+                    sort_keys=True,
+                    separators=(",", ":"),
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+        _json(report)
+        return 0 if verify_p42_cycle(report)["verdict"] == "PASS" else 2
+
+    if args.command == "p42-verify":
+        envelope = json.loads(Path(args.envelope).read_text(encoding="utf-8"))
+        report = verify_p42_cycle(envelope)
+        _json(report)
+        return 0 if report["verdict"] == "PASS" else 2
+
+    if args.command == "p42-release":
+        report = compile_p42_release(
             args.output,
             implementation_commit=args.implementation_commit,
             implementation_tree=args.implementation_tree,

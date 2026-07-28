@@ -1,5 +1,18 @@
 # KC144 Batch-Bound Application Transport Runtime V15
 
+## P42 exact edge transaction successor
+
+P42 extends the immutable P41 source/tree/cohort release with an exact
+29-slot enumeration witness gate, cumulative nonleaking held-out outcome
+intake, independent-role Ed25519 enrollment, root-bound IC10 authorization,
+an exactly-once edge execution ledger, and a strictly forward post-edge watch.
+
+The frozen release remains fail-closed with zero external enumeration
+witnesses, zero qualifying held-out outcomes, zero IC10 authorizations, zero
+edge executions, and zero truth or production-authority effect. See
+`P42_EXACT_EDGE_TRANSACTION_FRAMEWORK.md` and
+`src/kc144_crystal/p42_runtime.py`.
+
 This package is the completed executable framework: the 144-seat system is
 compiled as one crystal from generators and typed mathematical actions, then
 queried through non-mutating wave and H06 QueryBundle runtimes, and accumulated

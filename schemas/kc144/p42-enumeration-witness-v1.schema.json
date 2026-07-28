@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/p42-enumeration-witness-v1.schema.json",
+  "title": "KC144 P42 Source Enumeration Witness V1",
+  "type": "object",
+  "required": ["schema", "source_manifest_root", "ordered_rows", "signature", "witness_digest"],
+  "properties": {
+    "schema": {"const": "KC144.P42.SourceEnumerationWitness.V1"},
+    "source_manifest_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "ordered_rows": {"type": "array", "minItems": 29, "maxItems": 29},
+    "signature": {"type": "string", "minLength": 40},
+    "witness_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

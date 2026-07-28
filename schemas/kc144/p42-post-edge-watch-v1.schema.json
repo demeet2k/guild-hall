@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/p42-post-edge-watch-v1.schema.json",
+  "title": "KC144 P42 Post Edge Watch V1",
+  "type": "object",
+  "required": ["schema", "status", "events", "watch_digest"],
+  "properties": {
+    "schema": {"const": "KC144.P42.PostEdgeWatch.V1"},
+    "status": {"enum": ["HELD_NOT_ARMED", "ARMED"]},
+    "events": {"type": "array"},
+    "watch_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/p42-contract-v1.schema.json",
+  "title": "KC144 P42 Contract V1",
+  "type": "object",
+  "required": ["schema", "lookup_key", "lanes", "next_seed", "contract_digest"],
+  "properties": {
+    "schema": {"const": "KC144.P42.Contract.V1"},
+    "lookup_key": {"type": "string", "minLength": 1},
+    "lanes": {"type": "array", "minItems": 10, "maxItems": 10},
+    "next_seed": {"type": "string", "minLength": 1},
+    "contract_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

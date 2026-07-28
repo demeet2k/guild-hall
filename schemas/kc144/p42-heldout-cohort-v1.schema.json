@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/p42-heldout-cohort-v1.schema.json",
+  "title": "KC144 P42 Cumulative Heldout Cohort V1",
+  "type": "object",
+  "required": ["schema", "events", "event_count", "status", "cohort_root"],
+  "properties": {
+    "schema": {"const": "KC144.P42.CumulativeHeldoutCohort.V1"},
+    "events": {"type": "array"},
+    "event_count": {"type": "integer", "minimum": 0},
+    "status": {"enum": ["HOLD", "COHORT_READY"]},
+    "cohort_root": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

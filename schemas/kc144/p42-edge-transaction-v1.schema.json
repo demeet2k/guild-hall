@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.local/schemas/p42-edge-transaction-v1.schema.json",
+  "title": "KC144 P42 Exactly Once Edge Transaction V1",
+  "type": "object",
+  "required": ["schema", "execution_status", "execution_count_after", "transaction_digest"],
+  "properties": {
+    "schema": {"const": "KC144.P42.ExactlyOnceEdgeTransaction.V1"},
+    "execution_status": {
+      "enum": ["HELD_NOT_EXECUTED", "SIMULATED_EXECUTION", "EXECUTED", "ALREADY_EXECUTED_IDEMPOTENT"]
+    },
+    "execution_count_after": {"type": "integer", "minimum": 0, "maximum": 1},
+    "transaction_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}
