@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.invalid/schemas/p38-source-event-v1.schema.json",
+  "title": "KC144 P38 Typed Source Event V1",
+  "type": "object",
+  "required": [
+    "schema",
+    "source_class",
+    "observed_at",
+    "source",
+    "consent",
+    "source_verified",
+    "truth_effect",
+    "evidence_effect",
+    "authority_effect",
+    "event_id"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.P38.SourceEvent.V1"},
+    "source_class": {
+      "enum": ["GOOGLE_DOC_REVISION", "REPOSITORY_BYTES", "LOCAL_ARTIFACT_BYTES"]
+    },
+    "observed_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{6}Z$"
+    },
+    "source": {"type": "object"},
+    "files": {"type": "array"},
+    "public_summary": {"type": "object"},
+    "consent": {
+      "type": "object",
+      "required": ["scope", "publication_allowed"]
+    },
+    "source_verified": {"const": true},
+    "truth_effect": {"const": "NONE"},
+    "evidence_effect": {"const": "NONE"},
+    "authority_effect": {"const": "NONE"},
+    "event_id": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

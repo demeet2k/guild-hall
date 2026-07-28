@@ -90,6 +90,20 @@ from .p36_runtime import (
     public_projection,
     verify_p36_cycle,
 )
+from .p37_reconciliation import (
+    bind_exact_p35_registry,
+    p37_public_reconciliation,
+)
+from .p38_runtime import (
+    P38_CUTOFF,
+    compile_multi_crystal_query,
+    compile_p38_cycle,
+    compile_p38_release,
+    coordinate_tensor_144,
+    p38_contract,
+    route_source_events,
+    verify_p38_cycle,
+)
 from .query import QueryBundle, compile_query, query_contract
 from .repair import (
     M12EvidencePacket,
@@ -329,6 +343,61 @@ def build_parser() -> argparse.ArgumentParser:
     p36_release.add_argument("--output", default="registry/p36-dispatch/v1")
     p36_release.add_argument("--implementation-commit", required=True)
     p36_release.add_argument("--implementation-tree", required=True)
+
+    commands.add_parser(
+        "p37-reconcile",
+        help="emit the non-collapsing public-P36/source-P37 reconciliation",
+    )
+    p35_bind = commands.add_parser(
+        "p35-registry-bind",
+        help="verify and commit to all exact P35 subscription registry bytes",
+    )
+    p35_bind.add_argument("directory")
+    commands.add_parser(
+        "p38-contract",
+        help="emit the seven-lane P38 Meta Navigator V2 contract",
+    )
+    commands.add_parser(
+        "p38-coordinate-tensor",
+        help="emit all 144 simultaneous mathematical transformation views",
+    )
+    p38_query = commands.add_parser(
+        "p38-query",
+        help="compile one typed query across the selected crystal lenses",
+    )
+    p38_query.add_argument("query")
+    p38_source = commands.add_parser(
+        "p38-source-route",
+        help="route typed source events without conflating source surfaces",
+    )
+    p38_source.add_argument("events")
+    p38_source.add_argument("--cutoff", default=P38_CUTOFF)
+    p38_cycle = commands.add_parser(
+        "p38-cycle",
+        help="compile one complete seven-lane P38 macrocycle",
+    )
+    p38_cycle.add_argument("query")
+    p38_cycle.add_argument("registry_binding")
+    p38_cycle.add_argument("--source-events")
+    p38_cycle.add_argument("--outcomes")
+    p38_cycle.add_argument("--signer-registry")
+    p38_cycle.add_argument("--ic10-returns")
+    p38_cycle.add_argument("--cutoff", default=P38_CUTOFF)
+    p38_cycle.add_argument("--output")
+    p38_verify = commands.add_parser(
+        "p38-verify",
+        help="verify one frozen P38 macrocycle",
+    )
+    p38_verify.add_argument("envelope")
+    p38_release = commands.add_parser(
+        "p38-release",
+        help="materialize the candidate-HOLD P38 reference release",
+    )
+    p38_release.add_argument("--output", default="registry/p38-meta-navigator/v1")
+    p38_release.add_argument("--implementation-commit", required=True)
+    p38_release.add_argument("--implementation-tree", required=True)
+    p38_release.add_argument("--registry-directory")
+    p38_release.add_argument("--source-events")
 
     systematic = commands.add_parser("systematic", help="compile every V3 registry")
     systematic.add_argument("--output", default="registry/v3")
@@ -1080,6 +1149,109 @@ def main(argv: list[str] | None = None) -> int:
             args.output,
             implementation_commit=args.implementation_commit,
             implementation_tree=args.implementation_tree,
+        )
+        _json(report)
+        return 0 if report["verification_verdict"] == "PASS" else 2
+
+    if args.command == "p37-reconcile":
+        _json(p37_public_reconciliation())
+        return 0
+
+    if args.command == "p35-registry-bind":
+        _json(bind_exact_p35_registry(args.directory))
+        return 0
+
+    if args.command == "p38-contract":
+        _json(p38_contract())
+        return 0
+
+    if args.command == "p38-coordinate-tensor":
+        _json(coordinate_tensor_144())
+        return 0
+
+    if args.command == "p38-query":
+        query_value = json.loads(Path(args.query).read_text(encoding="utf-8"))
+        _json(compile_multi_crystal_query(query_value))
+        return 0
+
+    if args.command == "p38-source-route":
+        events = json.loads(Path(args.events).read_text(encoding="utf-8"))
+        report = route_source_events(events, cutoff=args.cutoff)
+        _json(report)
+        return 0 if not any(
+            row["status"] == "REJECTED" for row in report["receipts"]
+        ) else 2
+
+    if args.command == "p38-cycle":
+        query_value = json.loads(Path(args.query).read_text(encoding="utf-8"))
+        binding = json.loads(
+            Path(args.registry_binding).read_text(encoding="utf-8")
+        )
+        source_events = (
+            json.loads(Path(args.source_events).read_text(encoding="utf-8"))
+            if args.source_events
+            else []
+        )
+        outcomes = (
+            json.loads(Path(args.outcomes).read_text(encoding="utf-8"))
+            if args.outcomes
+            else []
+        )
+        signer_registry = (
+            json.loads(
+                Path(args.signer_registry).read_text(encoding="utf-8")
+            )
+            if args.signer_registry
+            else None
+        )
+        ic10_returns = (
+            json.loads(Path(args.ic10_returns).read_text(encoding="utf-8"))
+            if args.ic10_returns
+            else []
+        )
+        report = compile_p38_cycle(
+            query=query_value,
+            registry_binding=binding,
+            source_events=source_events,
+            outcomes=outcomes,
+            signer_registry=signer_registry,
+            ic10_returns=ic10_returns,
+            cutoff=args.cutoff,
+        )
+        if args.output:
+            destination = Path(args.output)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_text(
+                json.dumps(
+                    report,
+                    ensure_ascii=False,
+                    sort_keys=True,
+                    separators=(",", ":"),
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+        _json(report)
+        return 0 if verify_p38_cycle(report)["verdict"] == "PASS" else 2
+
+    if args.command == "p38-verify":
+        envelope = json.loads(Path(args.envelope).read_text(encoding="utf-8"))
+        report = verify_p38_cycle(envelope)
+        _json(report)
+        return 0 if report["verdict"] == "PASS" else 2
+
+    if args.command == "p38-release":
+        source_events = (
+            json.loads(Path(args.source_events).read_text(encoding="utf-8"))
+            if args.source_events
+            else []
+        )
+        report = compile_p38_release(
+            args.output,
+            implementation_commit=args.implementation_commit,
+            implementation_tree=args.implementation_tree,
+            registry_directory=args.registry_directory,
+            source_events=source_events,
         )
         _json(report)
         return 0 if report["verification_verdict"] == "PASS" else 2

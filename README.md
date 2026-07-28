@@ -179,6 +179,57 @@ PYTHONPATH=src python3 -m kc144_crystal rotate 110 kc27-J
 PYTHONPATH=src python3 -m kc144_crystal rotate 7 sigma
 ```
 
+## P38 Meta Navigator V2
+
+P38 observes the completed crystal as one typed transformation field instead
+of advancing one prose step at a time. It reconciles the public P36 branch
+with the independently recovered source P37 without pretending that their
+different P36 parents are equal. The public branch remains rooted at
+`KC144.P36.CANDIDATE::2dc88c9f2bf39ccb97e883f2`; P37 enters as an immutable
+sibling capsule at `KC144.P37::039d3622874ac1ef067ce4da`.
+
+The runtime executes seven dependency-aware lanes:
+
+1. non-collapsing lineage reconciliation;
+2. exact 360/144/37 P35 registry-byte verification;
+3. dynamic routing across KC144, BR21, KC27, KC54, MATH144, P31, and Heart;
+4. typed source routing that keeps Google Doc revisions distinct from Git
+   commit/tree/blob identities;
+5. the measured `GID135/M03 <-> GID047/F04` second edge in a copied proposal
+   graph only;
+6. held-out outcome calibration with minimum corpus and diversity gates; and
+7. proof-of-possession signer enrollment plus an independently signed IC10
+   return.
+
+Every one of the 144 coordinates is emitted with its D4 address orbit, native
+band transformation orbit, return obligation, and—where applicable—KC54
+duplex shadow. These are typed mathematical views, not claims that distinct
+objects are identical.
+
+```bash
+PYTHONPATH=src python3 -m kc144_crystal p37-reconcile
+PYTHONPATH=src python3 -m kc144_crystal p35-registry-bind /path/to/math144-p35
+PYTHONPATH=src python3 -m kc144_crystal p38-contract
+PYTHONPATH=src python3 -m kc144_crystal p38-coordinate-tensor
+PYTHONPATH=src python3 -m kc144_crystal p38-query p38-query.json
+PYTHONPATH=src python3 -m kc144_crystal p38-source-route p38-events.json
+PYTHONPATH=src python3 -m kc144_crystal p38-cycle \
+  p38-query.json p35-binding.json \
+  --source-events p38-events.json \
+  --outcomes held-out-outcomes.json \
+  --signer-registry trusted-signers.json \
+  --ic10-returns independent-returns.json \
+  --output p38-cycle.json
+PYTHONPATH=src python3 -m kc144_crystal p38-verify p38-cycle.json
+```
+
+The reference release is deliberately `CANDIDATE_HOLD`. Exact registry bytes
+and a public Git byte event can lawfully execute the second proposal edge, but
+they cannot manufacture a held-out outcome corpus or an independent IC10
+return. Signer enrollment proves key possession and scope; it grants no
+authority by itself. No proposal edge, calibration proposal, or publication
+mutates the canonical graph or promotes truth.
+
 ## What “completed” means here
 
 - Framework, namespace, address law, generators, typed transformations,

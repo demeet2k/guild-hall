@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.invalid/schemas/p38-signer-registry-v1.schema.json",
+  "title": "KC144 P38 Trusted Signer Registry V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "entries", "authority_granted_by_enrollment", "registry_digest"],
+  "properties": {
+    "schema": {"const": "KC144.P38.TrustedSignerRegistry.V1"},
+    "entries": {"type": "array"},
+    "authority_granted_by_enrollment": {"const": false},
+    "registry_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}
