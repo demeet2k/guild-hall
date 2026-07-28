@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.example/schemas/p41-heldout-cohort-v1.schema.json",
+  "title": "KC144 P41 nonleaking held-out cohort",
+  "type": "object",
+  "required": [
+    "schema",
+    "freeze",
+    "events",
+    "event_count",
+    "required_event_count",
+    "labels_revealed",
+    "continuation_events_admitted",
+    "status",
+    "cohort_root"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.P41.HeldoutCohort.V1"},
+    "events": {"type": "array"},
+    "event_count": {"type": "integer", "minimum": 0},
+    "required_event_count": {"const": 5},
+    "labels_revealed": {"const": 0},
+    "continuation_events_admitted": {"const": 0},
+    "status": {"enum": ["HOLD", "COHORT_READY"]},
+    "cohort_root": {"pattern": "^sha256:[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

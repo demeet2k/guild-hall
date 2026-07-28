@@ -123,6 +123,15 @@ from .p40_runtime import (
     p40_sibling_capsule,
     verify_p40_cycle,
 )
+from .p41_runtime import (
+    compile_p41_cycle,
+    compile_p41_release,
+    freeze_heldout_cohort,
+    p41_contract,
+    p41_repository_forest,
+    p41_source_manifest,
+    verify_p41_cycle,
+)
 from .query import QueryBundle, compile_query, query_contract
 from .repair import (
     M12EvidencePacket,
@@ -499,6 +508,48 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p40_release.add_argument("--implementation-commit", required=True)
     p40_release.add_argument("--implementation-tree", required=True)
+    commands.add_parser(
+        "p41-contract",
+        help="emit the P41 source/tree/cohort/edge/IC10 contract",
+    )
+    commands.add_parser(
+        "p41-source",
+        help="emit the nonleaking 29-body source commitment manifest",
+    )
+    commands.add_parser(
+        "p41-trees",
+        help="emit the exact public AthenachkaCollective repository forest",
+    )
+    p41_cohort = commands.add_parser(
+        "p41-cohort",
+        help="freeze a nonleaking held-out outcome cohort",
+    )
+    p41_cohort.add_argument("--events")
+    p41_cycle = commands.add_parser(
+        "p41-cycle",
+        help="compile one complete P41 source/tree/cohort/edge/IC10 macrocycle",
+    )
+    p41_cycle.add_argument("--events")
+    p41_cycle.add_argument("--ic10-registry")
+    p41_cycle.add_argument("--ic10-returns")
+    p41_cycle.add_argument(
+        "--namespace", choices=("PRODUCTION", "TEST"), default="PRODUCTION"
+    )
+    p41_cycle.add_argument("--output")
+    p41_verify = commands.add_parser(
+        "p41-verify",
+        help="verify and cold-replay one frozen P41 macrocycle",
+    )
+    p41_verify.add_argument("envelope")
+    p41_release = commands.add_parser(
+        "p41-release",
+        help="materialize the nonleaking honest-HOLD P41 reference release",
+    )
+    p41_release.add_argument(
+        "--output", default="registry/p41-source-tree-cohort/v1"
+    )
+    p41_release.add_argument("--implementation-commit", required=True)
+    p41_release.add_argument("--implementation-tree", required=True)
 
     systematic = commands.add_parser("systematic", help="compile every V3 registry")
     systematic.add_argument("--output", default="registry/v3")
@@ -1512,6 +1563,84 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "p40-release":
         report = compile_p40_release(
+            args.output,
+            implementation_commit=args.implementation_commit,
+            implementation_tree=args.implementation_tree,
+        )
+        _json(report)
+        return 0 if report["verification_verdict"] == "PASS" else 2
+
+    if args.command == "p41-contract":
+        _json(p41_contract())
+        return 0
+
+    if args.command == "p41-source":
+        _json(p41_source_manifest())
+        return 0
+
+    if args.command == "p41-trees":
+        _json(p41_repository_forest())
+        return 0
+
+    if args.command == "p41-cohort":
+        events = (
+            json.loads(Path(args.events).read_text(encoding="utf-8"))
+            if args.events
+            else []
+        )
+        _json(freeze_heldout_cohort(events))
+        return 0
+
+    if args.command == "p41-cycle":
+        events = (
+            json.loads(Path(args.events).read_text(encoding="utf-8"))
+            if args.events
+            else []
+        )
+        registry = (
+            json.loads(
+                Path(args.ic10_registry).read_text(encoding="utf-8")
+            )
+            if args.ic10_registry
+            else None
+        )
+        returns = (
+            json.loads(
+                Path(args.ic10_returns).read_text(encoding="utf-8")
+            )
+            if args.ic10_returns
+            else []
+        )
+        report = compile_p41_cycle(
+            heldout_events=events,
+            ic10_registry=registry,
+            ic10_returns=returns,
+            namespace=args.namespace,
+        )
+        if args.output:
+            destination = Path(args.output)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_text(
+                json.dumps(
+                    report,
+                    ensure_ascii=False,
+                    sort_keys=True,
+                    separators=(",", ":"),
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+        _json(report)
+        return 0 if verify_p41_cycle(report)["verdict"] == "PASS" else 2
+
+    if args.command == "p41-verify":
+        envelope = json.loads(Path(args.envelope).read_text(encoding="utf-8"))
+        report = verify_p41_cycle(envelope)
+        _json(report)
+        return 0 if report["verdict"] == "PASS" else 2
+
+    if args.command == "p41-release":
+        report = compile_p41_release(
             args.output,
             implementation_commit=args.implementation_commit,
             implementation_tree=args.implementation_tree,

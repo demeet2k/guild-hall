@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.example/schemas/p41-macrocycle-v1.schema.json",
+  "title": "KC144 P41 source-tree-cohort macrocycle",
+  "type": "object",
+  "required": [
+    "schema",
+    "contract_digest",
+    "namespace",
+    "public_parent_binding",
+    "source_manifest",
+    "repository_forest",
+    "heldout_cohort",
+    "ic10_evaluation",
+    "third_edge_execution",
+    "parallel_lineage",
+    "lane_receipts",
+    "state",
+    "envelope_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.P41.Macrocycle.V1"},
+    "namespace": {"enum": ["PRODUCTION", "TEST"]},
+    "lane_receipts": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9
+    },
+    "envelope_digest": {"pattern": "^sha256:[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.example/schemas/p41-repository-forest-v1.schema.json",
+  "title": "KC144 P41 public repository forest",
+  "type": "object",
+  "required": [
+    "schema",
+    "visibility",
+    "repositories",
+    "repository_count",
+    "all_commits_pinned",
+    "all_trees_pinned",
+    "forest_root"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.P41.RepositoryForest.V1"},
+    "visibility": {"const": "PUBLIC_ONLY"},
+    "repositories": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "repository",
+          "default_branch",
+          "commit",
+          "tree",
+          "path_count"
+        ],
+        "properties": {
+          "repository": {"type": "string"},
+          "default_branch": {"type": "string"},
+          "commit": {"pattern": "^[0-9a-f]{40}$"},
+          "tree": {"pattern": "^[0-9a-f]{40}$"},
+          "path_count": {"type": "integer", "minimum": 0}
+        },
+        "additionalProperties": false
+      }
+    },
+    "forest_root": {"pattern": "^sha256:[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

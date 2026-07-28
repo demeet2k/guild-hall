@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.example/schemas/p41-source-commitment-manifest-v1.schema.json",
+  "title": "KC144 P41 nonleaking source commitment manifest",
+  "type": "object",
+  "required": [
+    "schema",
+    "source_predecessor",
+    "cohort_basis",
+    "census",
+    "rows",
+    "privacy",
+    "status",
+    "manifest_root"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.P41.SourceCommitmentManifest.V1"},
+    "rows": {
+      "type": "array",
+      "minItems": 29,
+      "maxItems": 29,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_slot",
+          "locator_commitment",
+          "body_commitment",
+          "body_state"
+        ],
+        "properties": {
+          "source_slot": {"pattern": "^P41\\.SRC\\.[0-9]{3}$"},
+          "locator_commitment": {"pattern": "^sha256:[0-9a-f]{64}$"},
+          "body_commitment": {"pattern": "^sha256:[0-9a-f]{64}$"},
+          "body_state": {"enum": ["CONTENT", "EXACT_EMPTY"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "status": {"const": "REHYDRATED_RECONSTRUCTED_COHORT"},
+    "manifest_root": {"pattern": "^sha256:[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}

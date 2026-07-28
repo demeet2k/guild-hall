@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.example/schemas/p41-ic10-return-v1.schema.json",
+  "title": "KC144 P41 independent IC10 edge return",
+  "type": "object",
+  "required": [
+    "schema",
+    "scope",
+    "verdict",
+    "edge_candidate_root",
+    "source_manifest_root",
+    "repository_forest_root",
+    "heldout_cohort_root",
+    "signer_id",
+    "organization_id",
+    "control_root",
+    "issued_at",
+    "expires_at",
+    "nonce",
+    "signature",
+    "return_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.P41.IC10Return.V1"},
+    "scope": {"const": "P41_THIRD_EDGE_AUTHORIZATION"},
+    "verdict": {"const": "AUTHORIZE_EDGE"},
+    "edge_candidate_root": {"pattern": "^sha256:[0-9a-f]{64}$"},
+    "source_manifest_root": {"pattern": "^sha256:[0-9a-f]{64}$"},
+    "repository_forest_root": {"pattern": "^sha256:[0-9a-f]{64}$"},
+    "heldout_cohort_root": {"pattern": "^sha256:[0-9a-f]{64}$"},
+    "control_root": {"pattern": "^sha256:[0-9a-f]{64}$"},
+    "signature": {"type": "string", "minLength": 80},
+    "return_digest": {"pattern": "^sha256:[0-9a-f]{64}$"}
+  },
+  "additionalProperties": true
+}
