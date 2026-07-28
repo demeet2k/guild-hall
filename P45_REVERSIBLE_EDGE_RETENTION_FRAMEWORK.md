@@ -74,3 +74,27 @@ exist only to validate runtime mechanics.
 Every lane returns to `KC144.V1::GID144::M12`. The exact successor seed is:
 
 `KC144.V4.7::MATH144.P46::ADMIT_REVERSIBLE_EDGE_RETENTION_DECISION_ACCUMULATE_THIRD_FORWARD_WINDOW_VERIFY_TEMPORAL_STABILITY_AND_RECEIVE_INDEPENDENT_IC10_CANONICALIZATION_AUTHORIZATION_MACROCYCLE_15`
+
+## Executed release receipt
+
+Implementation commit:
+`cdec9b592fcaf4cdd06a1f59d3c5e914135f0d48`
+
+Implementation tree:
+`58ed8e2a090311dda126179e7536c599974c9ea0`
+
+Frozen result:
+`KC144.P45.CANDIDATE::a4e840837d138e31520634b1`
+
+Frozen release digest:
+`sha256:a4e840837d138e31520634b1927a4375ce80e2cde999070ffa51ada9ed71bc7e`
+
+Verification:
+
+- focused P45 mechanics: `10/10 PASS`;
+- whole repository tests: `498 run / 496 PASS / 2 expected skips`;
+- verification matrix: `28/28 PASS`;
+- deterministic P45 replay: `PASS`;
+- canonical graph mutations: `0`;
+- truth effect: `NONE`;
+- production authority: `HOLD`.

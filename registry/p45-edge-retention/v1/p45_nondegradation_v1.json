@@ -1,0 +1,1 @@
+{"baseline_mean":null,"candidate_mean":null,"measurement_digest":"sha256:f3857afd20afdf0986ac5ff9415dc1a9ca87d4bde01a860e8ef6083118b52fac","nondegrading_event_count":0,"required_nondegrading_events":3,"schema":"KC144.P45.SecondWindowNondegradation.V1","status":"HOLD","truth_effect":"NONE","window_digest":"sha256:4ad1114c14b4625363d0f385bd5793621eb6223975c5ee9aceae5db73e18b70a"}
