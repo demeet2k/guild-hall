@@ -1,0 +1,48 @@
+{
+  "ceilings": {
+    "canonical_graph_mutation": false,
+    "canonical_weight_mutation": false,
+    "enrollment_authority": "NONE",
+    "evidence_effect": "NONE",
+    "production_mutation": false,
+    "truth_effect": "NONE"
+  },
+  "estimator": {
+    "metric": "success",
+    "precision_decimals": 12,
+    "route_probability": "LAPLACE_BERNOULLI_(SUM_PLUS_1)/(N_PLUS_2)",
+    "value_range": [
+      0.0,
+      1.0
+    ],
+    "weight_normalization": "DIVIDE_BY_SUM_ROUTE_PROBABILITIES"
+  },
+  "held_out_gate": {
+    "baseline_probability": 0.5,
+    "law": "PROPOSED_BRIER_MUST_NOT_EXCEED_BASELINE_BRIER",
+    "score": "BRIER_MEAN"
+  },
+  "ic10": {
+    "all_ten_gates": "PASS",
+    "distinct_control_roots": 3,
+    "distinct_organizations": 3,
+    "distinct_signer_ids": 3,
+    "registry_seats": 5,
+    "threshold": 3
+  },
+  "minimums": {
+    "calibration_observations": 12,
+    "held_out_observations": 12,
+    "observations_per_route_per_partition": 3,
+    "routes_per_partition": 3,
+    "source_surfaces_per_partition": 3
+  },
+  "partition_law": {
+    "calibration": "MAY_PROPOSE_WEIGHTS",
+    "cross_partition_evidence_unit": "FATAL_LEAKAGE",
+    "held_out": "MAY_EVALUATE_PROPOSAL_ONLY",
+    "route_generated_observations": "REJECT"
+  },
+  "policy_digest": "sha256:97db2e551e5ab35b6077d2286088c84954e11bb7a8aa12a181a3ea1a7d89e255",
+  "schema": "KC144.P39.CalibrationPolicy.V1"
+}

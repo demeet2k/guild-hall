@@ -70,3 +70,13 @@ Any missing or mismatched binding terminates in `HOLD`. The only authority
 effect P39 can emit is `SUCCESSOR_AUTHORIZATION`, and only after exact
 three-of-five convergence. Actual activation and canonical weight mutation are
 reserved for P40.
+
+## Frozen candidate receipt
+
+- Implementation commit: `762a556cece499ce3fc12a265aa9f665006ce8aa`
+- Implementation tree: `ae4eb814e10ae03a3b9da71950c5a3bc20d6e02a`
+- Result: `KC144.P39.CANDIDATE::50f5d2f917e2ee111b798d8d`
+- Release digest:
+  `sha256:50f5d2f917e2ee111b798d8de2c18ccc4c96678bee6fb010bfa873c65483eeb6`
+- Frozen state: `CANDIDATE_HOLD`
+- Verification: `PASS`

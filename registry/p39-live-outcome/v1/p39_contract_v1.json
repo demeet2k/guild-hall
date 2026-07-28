@@ -1,0 +1,73 @@
+{
+  "contract_digest": "sha256:e263954e1727dbfbd27b056b0ede2f1074006309584ba503ee3d3494bb9673f4",
+  "default_state": "HOLD_UNTIL_LIVE_OUTCOMES_AND_INDEPENDENT_RETURNS_EXIST",
+  "lanes": [
+    {
+      "lane": "LIVE_OUTCOME_INTAKE",
+      "lane_id": "P39.L01",
+      "parallel_group": 1,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "PARTITION_LEAKAGE_BARRIER",
+      "lane_id": "P39.L02",
+      "parallel_group": 1,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "DETERMINISTIC_WEIGHT_CALIBRATION",
+      "lane_id": "P39.L03",
+      "parallel_group": 1,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "FIXED_FIVE_SEAT_IC10_REGISTRY",
+      "lane_id": "P39.L04",
+      "parallel_group": 2,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "THREE_OF_FIVE_INDEPENDENT_CONVERGENCE",
+      "lane_id": "P39.L05",
+      "parallel_group": 2,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "CANONICAL_SUCCESSOR_DECISION",
+      "lane_id": "P39.L06",
+      "parallel_group": 3,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "M12_RETURN",
+      "lane_id": "P39.L07",
+      "parallel_group": 3,
+      "return": "KC144.V1::GID144::M12"
+    }
+  ],
+  "lookup_key": "KC144.V4.0::MATH144.P39::LIVE_OUTCOME_CORPUS_INDEPENDENT_IC10_CONVERGENCE_WEIGHT_CALIBRATION_AND_CANONICAL_SUCCESSOR_DECISION_MACROCYCLE_08",
+  "merge_law": "VERIFY_ALL_SEVEN_LANES_AND_EXACT_ROOT_BINDINGS_THEN_REDUCE_IN_CANONICAL_LANE_ORDER",
+  "next_seed": "KC144.V4.1::MATH144.P40::AUTHORIZED_SUCCESSOR_ACTIVATION_CANONICAL_WEIGHT_COMMIT_AND_POST_ACTIVATION_OUTCOME_WATCH_MACROCYCLE_09",
+  "noncollapse": [
+    "CONTENT_ADDRESS_IS_NOT_EMPIRICAL_VALIDITY",
+    "SIGNATURE_VALIDITY_IS_NOT_SOURCE_TRUTH",
+    "CALIBRATION_DATA_IS_NOT_HELD_OUT_DATA",
+    "PROPOSED_WEIGHT_IS_NOT_CANONICAL_WEIGHT",
+    "SIGNER_ENROLLMENT_IS_NOT_AUTHORITY",
+    "THREE_SIGNATURES_ARE_NOT_INDEPENDENT_WITHOUT_THREE_CONTROL_ROOTS",
+    "IC10_CONVERGENCE_IS_NOT_PRODUCTION_MUTATION",
+    "SUCCESSOR_READY_IS_NOT_SUCCESSOR_ACTIVATED",
+    "PUBLICATION_IS_NOT_TRUTH_PROMOTION"
+  ],
+  "parent_release_digest": "sha256:903b28c3df75072423c72959a03860ef0d636f6a189b302f4281ca36944963d8",
+  "parent_result_id": "KC144.P38.CANDIDATE::903b28c3df75072423c72959",
+  "policy_digest": "sha256:97db2e551e5ab35b6077d2286088c84954e11bb7a8aa12a181a3ea1a7d89e255",
+  "route": [
+    "KC144.V1::GID135::M03",
+    "KC144.V1::GID047::F04",
+    "KC144.V1::GID141::M09",
+    "KC144.V1::GID003::H03",
+    "KC144.V1::GID144::M12"
+  ],
+  "schema": "KC144.P39.Contract.V1"
+}

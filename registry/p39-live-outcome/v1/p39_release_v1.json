@@ -1,0 +1,29 @@
+{
+  "calibration_digest": "sha256:d8518a7fb1db2f97beffb54c6237294ba1585468bcf610df23813870b4058b11",
+  "canonical_weight_updates_executed": 0,
+  "contract_digest": "sha256:e263954e1727dbfbd27b056b0ede2f1074006309584ba503ee3d3494bb9673f4",
+  "convergence_evaluation_digest": "sha256:07f102ecc5e96ce90c65d5686fb29ec092f770d00f5cb6dbd5fadafa672eab18",
+  "corpus_root": "sha256:853b55d0a8b9a3a6fee0531f0f90cb294fcf253b7e8654e5a98d30aa1de65c28",
+  "decision_digest": "sha256:729299f0ab0c2903f3a3456d978c0312f614bc77a26c9692c72ae6c9d8f16a82",
+  "envelope_digest": "sha256:da8cd009aaa8e53233b89f843d39ad079ef5169b2e76b948d7875837b252f92e",
+  "implementation": {
+    "commit": "762a556cece499ce3fc12a265aa9f665006ce8aa",
+    "repository": "demeet2k/guild-hall",
+    "tree": "ae4eb814e10ae03a3b9da71950c5a3bc20d6e02a"
+  },
+  "independent_ic10_returns": 0,
+  "live_outcomes": 0,
+  "next_seed": "KC144.V4.1::MATH144.P40::AUTHORIZED_SUCCESSOR_ACTIVATION_CANONICAL_WEIGHT_COMMIT_AND_POST_ACTIVATION_OUTCOME_WATCH_MACROCYCLE_09",
+  "parent_release_digest": "sha256:903b28c3df75072423c72959a03860ef0d636f6a189b302f4281ca36944963d8",
+  "parent_result_id": "KC144.P38.CANDIDATE::903b28c3df75072423c72959",
+  "policy_digest": "sha256:97db2e551e5ab35b6077d2286088c84954e11bb7a8aa12a181a3ea1a7d89e255",
+  "production_authority": "HOLD",
+  "release_digest": "sha256:50f5d2f917e2ee111b798d8de2c18ccc4c96678bee6fb010bfa873c65483eeb6",
+  "release_id": "KC144_P39_LIVE_OUTCOME_IC10_CANDIDATE_V1",
+  "result_id": "KC144.P39.CANDIDATE::50f5d2f917e2ee111b798d8d",
+  "schema": "KC144.P39.Release.V1",
+  "status": "CANDIDATE_HOLD",
+  "successor_activated": false,
+  "truth_effect": "NONE",
+  "verification_verdict": "PASS"
+}
