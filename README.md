@@ -1,5 +1,17 @@
 # KC144 Batch-Bound Application Transport Runtime V15
 
+## P45 reversible edge-retention successor
+
+P45 binds the exact public P44 release, admits only a replay-valid frozen P44
+edge-effect receipt, collects a causally disjoint second forward window, compares
+per-route and per-surface effect stability, measures second-window
+nondegradation, and emits `RETAIN_EDGE_REVERSIBLY`,
+`RETRACT_EDGE_PROPOSAL`, or `HOLD`. Every verdict is a non-mutating receipt:
+truth remains `NONE`, production authority remains `HOLD`, and IC10
+canonicalization remains an independent future gate. See
+`P45_REVERSIBLE_EDGE_RETENTION_FRAMEWORK.md` and
+`src/kc144_crystal/p45_runtime.py`.
+
 ## P44 forward edge-effect successor
 
 P44 binds the exact public P43 parent, verifies exactly-once finality,

@@ -150,6 +150,12 @@ from .p44_runtime import (
     p44_contract,
     verify_p44_cycle,
 )
+from .p45_runtime import (
+    compile_p45_cycle,
+    compile_p45_release,
+    p45_contract,
+    verify_p45_cycle,
+)
 from .query import QueryBundle, compile_query, query_contract
 from .repair import (
     M12EvidencePacket,
@@ -657,6 +663,29 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p44_release.add_argument("--implementation-commit", required=True)
     p44_release.add_argument("--implementation-tree", required=True)
+    commands.add_parser(
+        "p45-contract",
+        help="emit the P45 cross-window stability and retention contract",
+    )
+    p45_cycle = commands.add_parser(
+        "p45-cycle",
+        help="compile one P45 second-window retention-decision macrocycle",
+    )
+    p45_cycle.add_argument("--p44-cycle")
+    p45_cycle.add_argument("--second-forward-events")
+    p45_cycle.add_argument("--output")
+    p45_verify = commands.add_parser(
+        "p45-verify", help="verify and replay one P45 macrocycle"
+    )
+    p45_verify.add_argument("envelope")
+    p45_release = commands.add_parser(
+        "p45-release", help="materialize the honest-HOLD P45 reference release"
+    )
+    p45_release.add_argument(
+        "--output", default="registry/p45-edge-retention/v1"
+    )
+    p45_release.add_argument("--implementation-commit", required=True)
+    p45_release.add_argument("--implementation-tree", required=True)
 
     systematic = commands.add_parser("systematic", help="compile every V3 registry")
     systematic.add_argument("--output", default="registry/v3")
@@ -1913,6 +1942,56 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "p44-release":
         report = compile_p44_release(
+            args.output,
+            implementation_commit=args.implementation_commit,
+            implementation_tree=args.implementation_tree,
+        )
+        _json(report)
+        return 0 if report["verification_verdict"] == "PASS" else 2
+
+    if args.command == "p45-contract":
+        _json(p45_contract())
+        return 0
+
+    if args.command == "p45-cycle":
+        parent = (
+            json.loads(Path(args.p44_cycle).read_text(encoding="utf-8"))
+            if args.p44_cycle
+            else None
+        )
+        events = (
+            json.loads(Path(args.second_forward_events).read_text(encoding="utf-8"))
+            if args.second_forward_events
+            else []
+        )
+        report = compile_p45_cycle(
+            p44_cycle=parent,
+            second_forward_events=events,
+        )
+        if args.output:
+            destination = Path(args.output)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_text(
+                json.dumps(
+                    report,
+                    ensure_ascii=False,
+                    sort_keys=True,
+                    separators=(",", ":"),
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+        _json(report)
+        return 0 if verify_p45_cycle(report)["verdict"] == "PASS" else 2
+
+    if args.command == "p45-verify":
+        envelope = json.loads(Path(args.envelope).read_text(encoding="utf-8"))
+        report = verify_p45_cycle(envelope)
+        _json(report)
+        return 0 if report["verdict"] == "PASS" else 2
+
+    if args.command == "p45-release":
+        report = compile_p45_release(
             args.output,
             implementation_commit=args.implementation_commit,
             implementation_tree=args.implementation_tree,

@@ -34,6 +34,22 @@ def main() -> int:
     env["PYTHONPATH"] = str(ROOT / "src")
     runs = [
         run(
+            "P45 second window, route/surface stability, and reversible retention",
+            [
+                sys.executable,
+                "-m",
+                "kc144_crystal",
+                "p45-release",
+                "--output",
+                "registry/p45-edge-retention/v1",
+                "--implementation-commit",
+                "0000000000000000000000000000000000000000",
+                "--implementation-tree",
+                "0000000000000000000000000000000000000000",
+            ],
+            env=env,
+        ),
+        run(
             "P44 forward outcomes, nondegradation, and canonical edge effect",
             [
                 sys.executable,
@@ -352,7 +368,7 @@ def main() -> int:
     ]
     passed = sum(run_result["exit_code"] == 0 for run_result in runs)
     report = {
-        "schema": "KC144.VerificationMatrix.P44",
+        "schema": "KC144.VerificationMatrix.P45",
         "verdict": "PASS" if passed == len(runs) else "FAIL",
         "passed": passed,
         "total": len(runs),
