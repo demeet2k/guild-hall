@@ -1,0 +1,30 @@
+{
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "laws": [
+    "PUBLIC_P36_REMAINS_THE_PUBLIC_BRANCH_PARENT",
+    "SOURCE_P37_RETAINS_ITS_DISTINCT_SOURCE_PARENT",
+    "SOURCE_P37_IS_IMPORTED_BY_IMMUTABLE_COMMITMENT_NOT_REPARENTED",
+    "CONVERGENCE_CREATES_A_NEW_P38_CHILD_OF_PUBLIC_P36",
+    "SOURCE_ATTESTATION_IS_NOT_INDEPENDENT_AUTHORITY"
+  ],
+  "lineage_convergence": "NON_COLLAPSING_RECONCILIATION",
+  "public_branch_parent": {
+    "implementation_commit": "f35697e4baf8afa00f1a2a91a1eff18aa8acfe5f",
+    "implementation_tree": "30377647415d9df054da9db8b536d4363d43d702",
+    "release_commit": "9d64c5d9d9f29af7f5d310f9720f84bdb886a913",
+    "release_digest": "sha256:2dc88c9f2bf39ccb97e883f2c10a2269a628cadf96a50097d4f9fb1a2d808782",
+    "release_tree": "fc4b50ca1bb3d5f27c5baa616092304c1d48916d",
+    "result_id": "KC144.P36.CANDIDATE::2dc88c9f2bf39ccb97e883f2"
+  },
+  "reconciliation_digest": "sha256:15e739f7fa3b796e7e370ac2262c73b9ee73c5ca6a02b970d9edc03b8bccaaa7",
+  "relation": "TYPED_SIBLING_IMPORT",
+  "schema": "KC144.P37.PublicLineageReconciliation.V1",
+  "source_sibling": {
+    "capsule_digest": "sha256:2f7b4da00bfb2c80dea38c73ed94f8aa9fe66c41fedca49227b9cbd3c331e136",
+    "result_digest": "sha256:039d3622874ac1ef067ce4da0cec4ea4c2ba4016881cb4b84abdf7dd43140d84",
+    "result_id": "KC144.P37::039d3622874ac1ef067ce4da",
+    "source_parent_result_id": "KC144.P36::f40dc654ea7fc32651f1ebd6"
+  },
+  "truth_effect": "NONE"
+}

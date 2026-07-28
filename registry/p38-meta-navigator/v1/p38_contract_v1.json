@@ -1,0 +1,89 @@
+{
+  "ceilings": {
+    "authority_effect_without_independent_ic10": "NONE",
+    "canonical_graph_mutation": false,
+    "evidence_effect": "NONE",
+    "truth_effect": "NONE"
+  },
+  "contract_digest": "sha256:20fdf1277b359cebe1dc688551f763004846e04a4202729ea4f7f4965829af15",
+  "crystals": [
+    "KC144",
+    "BR21",
+    "KC27",
+    "KC54",
+    "MATH144",
+    "P31",
+    "HEART"
+  ],
+  "lanes": [
+    {
+      "lane": "LINEAGE_RECONCILIATION",
+      "lane_id": "P38.L01",
+      "parallel_group": 1,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "EXACT_REGISTRY_BINDING",
+      "lane_id": "P38.L02",
+      "parallel_group": 1,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "DYNAMIC_MULTI_CRYSTAL_QUERY",
+      "lane_id": "P38.L03",
+      "parallel_group": 1,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "LIVE_SOURCE_ROUTING",
+      "lane_id": "P38.L04",
+      "parallel_group": 1,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "SECOND_ONE_EDGE_EXPERIMENT",
+      "lane_id": "P38.L05",
+      "parallel_group": 2,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "HELD_OUT_OUTCOME_CALIBRATION",
+      "lane_id": "P38.L06",
+      "parallel_group": 2,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "INDEPENDENT_IC10_RETURN",
+      "lane_id": "P38.L07",
+      "parallel_group": 3,
+      "return": "KC144.V1::GID144::M12"
+    }
+  ],
+  "lookup_key": "KC144.V3.9::MATH144.P38::META_NAVIGATOR_V2_DYNAMIC_MULTI_CRYSTAL_QUERY_COMPILER_LIVE_SOURCE_ROUTING_SECOND_ONE_EDGE_OUTCOME_CORPUS_AND_INDEPENDENT_IC10_MACROCYCLE_07",
+  "merge_law": "VERIFY_ALL_SEVEN_LANE_RECEIPTS_THEN_REDUCE_BY_CANONICAL_LANE_ORDER",
+  "noncollapse": [
+    "DISTINCT_P36_PARENTS_ARE_NOT_EQUAL",
+    "SOURCE_P37_IMPORT_IS_NOT_REPARENTING",
+    "DOC_REVISION_IS_NOT_REPOSITORY_BYTES",
+    "REPOSITORY_BYTES_ARE_NOT_A_REAL_OUTCOME",
+    "STRUCTURAL_EDGE_GAIN_IS_NOT_EMPIRICAL_SUCCESS",
+    "PROPOSAL_GRAPH_IS_NOT_CANONICAL_GRAPH",
+    "SIGNER_ENROLLMENT_IS_NOT_AUTHORITY",
+    "SIGNATURE_VALIDITY_IS_NOT_INDEPENDENCE",
+    "TRAINING_OUTCOME_IS_NOT_HELD_OUT_OUTCOME",
+    "ROUTE_GENERATED_DATA_IS_NOT_EXTERNAL_EVIDENCE",
+    "IC10_I01_TO_I09_IS_NOT_I10_AUTHORIZATION",
+    "PUBLICATION_IS_NOT_TRUTH_PROMOTION"
+  ],
+  "public_parent": "KC144.P36.CANDIDATE::2dc88c9f2bf39ccb97e883f2",
+  "reconciliation_digest": "sha256:15e739f7fa3b796e7e370ac2262c73b9ee73c5ca6a02b970d9edc03b8bccaaa7",
+  "route": [
+    "KC144.V1::GID135::M03",
+    "KC144.V1::GID047::F04",
+    "KC144.V1::GID141::M09",
+    "KC144.V1::GID003::H03",
+    "KC144.V1::GID144::M12"
+  ],
+  "schema": "KC144.P38.Contract.V1",
+  "source_sibling": "KC144.P37::039d3622874ac1ef067ce4da"
+}

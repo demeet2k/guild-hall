@@ -1,0 +1,107 @@
+[
+  {
+    "authority_effect": "NONE",
+    "consent": {
+      "publication_allowed": true,
+      "scope": [
+        "CURRENT_TASK_EXECUTION",
+        "PUBLICATION"
+      ]
+    },
+    "event_id": "sha256:3db0a70660ad107b73986c38bd987023c193d75ddc2a0231e5a0a53f3207f3e8",
+    "evidence_effect": "NONE",
+    "files": [
+      {
+        "blob": "43ec718dfcfc5ddef8344b7ac29d7a04d6c82560",
+        "path": "P38_META_NAVIGATOR_V2.md",
+        "sha256": "sha256:347f21a64d707b0913b30f9793f5d9b646e31c6537dc599ff71049f9f98cc5df",
+        "size": 6155
+      },
+      {
+        "blob": "1b92e79c95c04de6822fd4cc5e3651b6e5c8d0cd",
+        "path": "README.md",
+        "sha256": "sha256:1a787163d14c5c2e2ef13ebec82d91123e15ff17eb378f761fc6e122d8770d21",
+        "size": 30317
+      },
+      {
+        "blob": "743f477c294bbe061a2308ca265af4f5e31a492e",
+        "path": "schemas/kc144/p37-public-reconciliation-v1.schema.json",
+        "sha256": "sha256:42a8bf87f52882c7bcd708dbdf5a302626e857613e36dbc9f120486a1b41449b",
+        "size": 1323
+      },
+      {
+        "blob": "905d17c72cca215a6e43719d82f4bf9274e0cee5",
+        "path": "schemas/kc144/p38-held-out-outcome-v1.schema.json",
+        "sha256": "sha256:1fcb8f649624ea6b6c250af5ee5285a71bf586d0c5b89a40fee11d52a9399784",
+        "size": 1504
+      },
+      {
+        "blob": "e2ae2b78e0ae21b907ad8d5ea428f19016aeac30",
+        "path": "schemas/kc144/p38-independent-ic10-return-v1.schema.json",
+        "sha256": "sha256:a7c79cff9ace3fae87dd7bf8e3a876aa9dc7ac09e7014f7d45ec1592dd353c6d",
+        "size": 1385
+      },
+      {
+        "blob": "b0540de7c0ac2b9f3ce0c2ef4947ca247ff3d778",
+        "path": "schemas/kc144/p38-query-v1.schema.json",
+        "sha256": "sha256:fa0ec1b1e5911e70d870393424b5c1a2337052ac4a448f7fddccf29c8bd5b80d",
+        "size": 822
+      },
+      {
+        "blob": "0ab4bb8769f8372270f9e1e1f3a75af4c642e740",
+        "path": "schemas/kc144/p38-release-v1.schema.json",
+        "sha256": "sha256:2154de3a2e4a72932d7b114bf6ace7d10631b2621217b42f6f5140646f44d932",
+        "size": 2791
+      },
+      {
+        "blob": "fd658011eef0b6e16b25626251a7e70648ce2d8c",
+        "path": "schemas/kc144/p38-signer-registry-v1.schema.json",
+        "sha256": "sha256:e3282d101bbb828d8f7c4425bc66af9cd2e70b6e9135f9260fce9fdb850b289d",
+        "size": 591
+      },
+      {
+        "blob": "4275cc424c9998a40a09d05811d0525a9e96a240",
+        "path": "schemas/kc144/p38-source-event-v1.schema.json",
+        "sha256": "sha256:523a55278eb7ecb17b21ffc9ee338e5e0625cf06b62ee444360371057a4d9b70",
+        "size": 1166
+      },
+      {
+        "blob": "6add1830c4108a2e03668e150298b6d6623445f7",
+        "path": "src/kc144_crystal/cli.py",
+        "sha256": "sha256:e8b564e706f482c6c3d1a1350d1916c957f13ea15534305d56d529ca29f5d935",
+        "size": 75077
+      },
+      {
+        "blob": "9a9e3d84b0b803c01768f0199c4fe4d787ea8b61",
+        "path": "src/kc144_crystal/p37_reconciliation.py",
+        "sha256": "sha256:311bba1230e6cbc0e96aa140c83b94b2ceefcc9fef6dcd35c9cce8815ea1c542",
+        "size": 13950
+      },
+      {
+        "blob": "00d81f7ce18989543cb996d1359970628cff6819",
+        "path": "src/kc144_crystal/p38_runtime.py",
+        "sha256": "sha256:348eeaf3f007d4fe572cd8759c98d10e476f0425576c1cb55d75da0c516c221d",
+        "size": 56646
+      },
+      {
+        "blob": "4774a47fc2b7abbf76bf56301d3b9c0f1fa3f70a",
+        "path": "tests/test_p38_meta_navigator_v2.py",
+        "sha256": "sha256:09e868c1f473497c4a197202854cec78a813fd0de4d8273ded98fb98bbb725cd",
+        "size": 23177
+      }
+    ],
+    "observed_at": "2026-07-28T02:47:15.000000Z",
+    "schema": "KC144.P38.SourceEvent.V1",
+    "source": {
+      "branch": "kc144-mycelium-tool-dispatch-v1",
+      "commit": "800ed1873ac5f04937f5a52f5204258e01262164",
+      "repository": "demeet2k/guild-hall",
+      "surface": "GITHUB",
+      "tree": "a751a49451490463531dd761812a619b30288cb0",
+      "version_type": "GIT_COMMIT_TREE_AND_BLOB"
+    },
+    "source_class": "REPOSITORY_BYTES",
+    "source_verified": true,
+    "truth_effect": "NONE"
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "authority_effect": "NONE",
+  "capsule_digest": "sha256:2f7b4da00bfb2c80dea38c73ed94f8aa9fe66c41fedca49227b9cbd3c331e136",
+  "evidence_effect": "NONE",
+  "implementation_archive_sha256": "sha256:2bda9785f0c519c09b155b7cc17d3128914f8bf42666dd511852ce55b881b158",
+  "manifest_sha256": "sha256:d0ffa0bdab13e28f8c6de218d91256106a46bf44165c6f47f8a43e5f38d51a9f",
+  "meta_atlas": {
+    "id": "KC144.META-ATLAS.V10",
+    "sha256": "sha256:ea0c786a66493c97037ff3674355cc309bf8bb3d2b18483b8054d00587f2a16d",
+    "stations": 144,
+    "undirected_logical_edges": 310
+  },
+  "release_archive_sha256": "sha256:4bf1869290a388a4adf332458bd82232c8f592b09c6d49b5d8d98fe5cc8076a2",
+  "release_state": "HOLD",
+  "result_digest": "sha256:039d3622874ac1ef067ce4da0cec4ea4c2ba4016881cb4b84abdf7dd43140d84",
+  "result_id": "KC144.P37::039d3622874ac1ef067ce4da",
+  "schema": "KC144.P37.ImmutableSiblingCapsule.V1",
+  "seal_sha256": "sha256:9ec2319d3123e8f82f89b3151995fbfd59eb5b255bae54274dea933a2831078d",
+  "source_parent_result_id": "KC144.P36::f40dc654ea7fc32651f1ebd6",
+  "truth_effect": "NONE",
+  "verified_census": {
+    "action_subscriptions_preserved": 360,
+    "canonical_edges_executed": 0,
+    "independent_ic10_returns": 0,
+    "p37_tests": {
+      "passed": 76,
+      "total": 76
+    },
+    "proposal_edges_executed": 1,
+    "real_outcomes": 0,
+    "receipts": {
+      "passed": 627,
+      "total": 627
+    },
+    "repository_tests": {
+      "passed": 484,
+      "total": 484
+    },
+    "source_bodies_admitted": 3
+  }
+}

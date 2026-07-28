@@ -1,0 +1,33 @@
+{
+  "calibration_digest": "sha256:f760c3b6005a664462c3516ebf100ea469c806efa500aa7227272f5683ea6af6",
+  "canonical_edges_executed": 0,
+  "contract_digest": "sha256:20fdf1277b359cebe1dc688551f763004846e04a4202729ea4f7f4965829af15",
+  "coordinate_tensor_digest": "sha256:d78ba073843b1efb11777e5bfa164f96b8d64b5967647b6f37156643812da6ac",
+  "envelope_digest": "sha256:2ad88dbde641328da20313e8a8962c9af89d6eb1260f29330db21677e04f9378",
+  "held_out_outcomes": 0,
+  "implementation": {
+    "commit": "800ed1873ac5f04937f5a52f5204258e01262164",
+    "repository": "demeet2k/guild-hall",
+    "tree": "a751a49451490463531dd761812a619b30288cb0"
+  },
+  "independent_ic10_returns": 0,
+  "next_seed": "KC144.V4.0::MATH144.P39::LIVE_OUTCOME_CORPUS_INDEPENDENT_IC10_CONVERGENCE_WEIGHT_CALIBRATION_AND_CANONICAL_SUCCESSOR_DECISION_MACROCYCLE_08",
+  "production_authority": "HOLD",
+  "proposal_edges_executed": 1,
+  "public_parent": "KC144.P36.CANDIDATE::2dc88c9f2bf39ccb97e883f2",
+  "query_digest": "sha256:8609ee2854119f6e13e003e1b2a17c17479ab12190ac43ca4f025b0361f584d9",
+  "reconciliation_digest": "sha256:15e739f7fa3b796e7e370ac2262c73b9ee73c5ca6a02b970d9edc03b8bccaaa7",
+  "registry_binding_digest": "sha256:6ee10500a42e8a652459e9ed650a2c9508d99e231068d492bcaad1a9b07d481a",
+  "registry_binding_state": "EXACT_BYTES_VERIFIED",
+  "release_digest": "sha256:903b28c3df75072423c72959a03860ef0d636f6a189b302f4281ca36944963d8",
+  "release_id": "KC144_P38_META_NAVIGATOR_V2_CANDIDATE_V1",
+  "result_id": "KC144.P38.CANDIDATE::903b28c3df75072423c72959",
+  "schema": "KC144.P38.Release.V1",
+  "second_edge_digest": "sha256:60211d2546741547589b75bb97a685f53e18cc6184d9c8efc0ab0cdae8ef7d80",
+  "source_capsule_digest": "sha256:2f7b4da00bfb2c80dea38c73ed94f8aa9fe66c41fedca49227b9cbd3c331e136",
+  "source_routing_digest": "sha256:9e39d6ad43b50f5f380f69d3822ac0d53ec530d34b605512a4091ae851ea8d61",
+  "source_sibling": "KC144.P37::039d3622874ac1ef067ce4da",
+  "status": "CANDIDATE_HOLD",
+  "truth_effect": "NONE",
+  "verification_verdict": "PASS"
+}

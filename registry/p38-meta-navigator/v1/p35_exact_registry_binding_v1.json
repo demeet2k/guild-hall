@@ -1,0 +1,42 @@
+{
+  "authority_effect": "NONE",
+  "binding_digest": "sha256:6ee10500a42e8a652459e9ed650a2c9508d99e231068d492bcaad1a9b07d481a",
+  "counts": {
+    "action_subscriptions": 360,
+    "carrier_subscriptions": 37,
+    "gid_subscriptions": 144,
+    "total_rows": 541
+  },
+  "errors": [],
+  "files": [
+    {
+      "errors": [],
+      "name": "action_crosswalk_360.ndjson",
+      "row_root": "sha256:e98c25053bad80bad513d63c8c902c4884f5a0349f6c28047649559807a2ec8a",
+      "rows": 360,
+      "sha256": "sha256:33ecff871f5fc570f54b83727e3e1ab7243dcfb42be806ee645b80c6aef3097f",
+      "verdict": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "carrier_subscriptions_37.ndjson",
+      "row_root": "sha256:54294a6d3aba7f51bf13f9c7d8ab7c8e03cfd0d03d119921085b937dbff19f5f",
+      "rows": 37,
+      "sha256": "sha256:72626390853bef0d834094acd770f9708fb12900fe95543522ca17dcb37897a1",
+      "verdict": "PASS"
+    },
+    {
+      "errors": [],
+      "name": "gid_subscriptions_144.ndjson",
+      "row_root": "sha256:e326dee3efcb94c09b380b894869196c1d54018b745685286f6ada52d331a6fd",
+      "rows": 144,
+      "sha256": "sha256:ad7b281b8984328bf42eaf37ba6164c97a6573a1fd43af6585a1a129f1b534dc",
+      "verdict": "PASS"
+    }
+  ],
+  "private_source_metadata_included": false,
+  "row_commitment_root": "sha256:1ab7a27af13072dddd6f673645d43ce76606a86387d1c11d06ce43624b39e09e",
+  "schema": "KC144.P35.ExactSubscriptionRegistryBinding.V1",
+  "state": "EXACT_BYTES_VERIFIED",
+  "truth_effect": "NONE"
+}

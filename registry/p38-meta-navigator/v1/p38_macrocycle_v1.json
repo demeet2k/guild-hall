@@ -1,0 +1,1017 @@
+{
+  "calibration": {
+    "accepted": [],
+    "authority_effect": "NONE",
+    "calibration_digest": "sha256:f760c3b6005a664462c3516ebf100ea469c806efa500aa7227272f5683ea6af6",
+    "canonical_weight_updates_executed": 0,
+    "census": {
+      "accepted": 0,
+      "minimum_outcomes": 12,
+      "minimum_routes": 3,
+      "minimum_source_surfaces": 3,
+      "rejected": 0,
+      "routes": 0,
+      "source_surfaces": 0
+    },
+    "proposed_weight_updates": [],
+    "rejected": [],
+    "schema": "KC144.P38.OutcomeCalibration.V1",
+    "status": "CORPUS_HOLD",
+    "truth_effect": "NONE"
+  },
+  "compiled_query": {
+    "authority_effect": "NONE",
+    "coordinate_tensor_digest": "sha256:d78ba073843b1efb11777e5bfa164f96b8d64b5967647b6f37156643812da6ac",
+    "lanes": [
+      {
+        "crystal": "KC144",
+        "entry_gid": 3,
+        "lane_digest": "sha256:24f4925f81b1ca85909e223ecee77edb961014ba8f70e2b15b30eae23fd1621b",
+        "route": [
+          3
+        ],
+        "selected_gids": [
+          3,
+          119,
+          19
+        ],
+        "selected_stations": [
+          "H03",
+          "P13",
+          "X-01-SQ"
+        ],
+        "selection_law": "TOKEN_OVERLAP_DESCENDING_THEN_GID_ASCENDING",
+        "transform_views": [
+          {
+            "d4_address_orbit": [
+              3,
+              10,
+              25,
+              36,
+              109,
+              120,
+              135,
+              142
+            ],
+            "d4_orbit_size": 8,
+            "identity_preserved": true,
+            "local_law": "CONSTITUTIONAL_INDEX",
+            "local_orbit": [
+              3
+            ],
+            "local_orbit_size": 1,
+            "truth_effect": "NONE"
+          },
+          {
+            "d4_address_orbit": [
+              15,
+              22,
+              26,
+              35,
+              110,
+              119,
+              123,
+              130
+            ],
+            "d4_orbit_size": 8,
+            "identity_preserved": true,
+            "local_law": "B3_SIGNED_PERMUTATION",
+            "local_orbit": [
+              119
+            ],
+            "local_orbit_size": 1,
+            "truth_effect": "NONE"
+          },
+          {
+            "d4_address_orbit": [
+              18,
+              19,
+              62,
+              71,
+              74,
+              83,
+              126,
+              127
+            ],
+            "d4_orbit_size": 8,
+            "identity_preserved": true,
+            "local_law": "C4xC4_AND_V4xC4",
+            "local_orbit": [
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22
+            ],
+            "local_orbit_size": 16,
+            "truth_effect": "NONE"
+          }
+        ],
+        "truth_effect": "NONE"
+      },
+      {
+        "crystal": "BR21",
+        "entry_gid": 28,
+        "lane_digest": "sha256:c71bdf8cd8a2b55ed1d66b5caaee4faa91b6cf03c697d3993b677c27216ba5bf",
+        "route": [
+          28
+        ],
+        "selected_gids": [
+          28,
+          40,
+          42
+        ],
+        "selected_stations": [
+          "B06",
+          "B18",
+          "B20"
+        ],
+        "selection_law": "TOKEN_OVERLAP_DESCENDING_THEN_GID_ASCENDING",
+        "transform_views": [
+          {
+            "d4_address_orbit": [
+              28,
+              33,
+              39,
+              46,
+              99,
+              106,
+              112,
+              117
+            ],
+            "d4_orbit_size": 8,
+            "identity_preserved": true,
+            "local_law": "C7xC3_PLUS_C2",
+            "local_orbit": [
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43
+            ],
+            "local_orbit_size": 21,
+            "truth_effect": "NONE"
+          },
+          {
+            "d4_address_orbit": [
+              40,
+              45,
+              100,
+              105
+            ],
+            "d4_orbit_size": 4,
+            "identity_preserved": true,
+            "local_law": "C7xC3_PLUS_C2",
+            "local_orbit": [
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43
+            ],
+            "local_orbit_size": 21,
+            "truth_effect": "NONE"
+          },
+          {
+            "d4_address_orbit": [
+              42,
+              43,
+              64,
+              69,
+              76,
+              81,
+              102,
+              103
+            ],
+            "d4_orbit_size": 8,
+            "identity_preserved": true,
+            "local_law": "C7xC3_PLUS_C2",
+            "local_orbit": [
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43
+            ],
+            "local_orbit_size": 21,
+            "truth_effect": "NONE"
+          }
+        ],
+        "truth_effect": "NONE"
+      },
+      {
+        "crystal": "KC27",
+        "entry_gid": 119,
+        "lane_digest": "sha256:db3f66b5b5bbce4abd59befba6fd4065648c38ce3a912ae05a9af20e47837cc1",
+        "route": [
+          119
+        ],
+        "selected_gids": [
+          119,
+          118,
+          106
+        ],
+        "selected_stations": [
+          "P13",
+          "P12",
+          "P00"
+        ],
+        "selection_law": "TOKEN_OVERLAP_DESCENDING_THEN_GID_ASCENDING",
+        "transform_views": [
+          {
+            "d4_address_orbit": [
+              15,
+              22,
+              26,
+              35,
+              110,
+              119,
+              123,
+              130
+            ],
+            "d4_orbit_size": 8,
+            "identity_preserved": true,
+            "local_law": "B3_SIGNED_PERMUTATION",
+            "local_orbit": [
+              119
+            ],
+            "local_orbit_size": 1,
+            "truth_effect": "NONE"
+          },
+          {
+            "d4_address_orbit": [
+              27,
+              34,
+              111,
+              118
+            ],
+            "d4_orbit_size": 4,
+            "identity_preserved": true,
+            "local_law": "B3_SIGNED_PERMUTATION",
+            "local_orbit": [
+              110,
+              116,
+              118,
+              120,
+              122,
+              128
+            ],
+            "local_orbit_size": 6,
+            "truth_effect": "NONE"
+          },
+          {
+            "d4_address_orbit": [
+              28,
+              33,
+              39,
+              46,
+              99,
+              106,
+              112,
+              117
+            ],
+            "d4_orbit_size": 8,
+            "identity_preserved": true,
+            "local_law": "B3_SIGNED_PERMUTATION",
+            "local_orbit": [
+              106,
+              108,
+              112,
+              114,
+              124,
+              126,
+              130,
+              132
+            ],
+            "local_orbit_size": 8,
+            "truth_effect": "NONE"
+          }
+        ],
+        "truth_effect": "NONE"
+      },
+      {
+        "crystal": "KC54",
+        "entry_gid": 119,
+        "lane_digest": "sha256:03030e646d62bffe8b847d7362f90383d2709fc0300486adefc67a57bc7c395d",
+        "route": [
+          119
+        ],
+        "selected_gids": [
+          119,
+          118,
+          106
+        ],
+        "selected_stations": [
+          "P13",
+          "P12",
+          "P00"
+        ],
+        "selection_law": "TOKEN_OVERLAP_DESCENDING_THEN_GID_ASCENDING",
+        "transform_views": [
+          {
+            "d4_address_orbit": [
+              15,
+              22,
+              26,
+              35,
+              110,
+              119,
+              123,
+              130
+            ],
+            "d4_orbit_size": 8,
+            "identity_preserved": true,
+            "local_law": "B3_SIGNED_PERMUTATION",
+            "local_orbit": [
+              119
+            ],
+            "local_orbit_size": 1,
+            "truth_effect": "NONE"
+          },
+          {
+            "d4_address_orbit": [
+              27,
+              34,
+              111,
+              118
+            ],
+            "d4_orbit_size": 4,
+            "identity_preserved": true,
+            "local_law": "B3_SIGNED_PERMUTATION",
+            "local_orbit": [
+              110,
+              116,
+              118,
+              120,
+              122,
+              128
+            ],
+            "local_orbit_size": 6,
+            "truth_effect": "NONE"
+          },
+          {
+            "d4_address_orbit": [
+              28,
+              33,
+              39,
+              46,
+              99,
+              106,
+              112,
+              117
+            ],
+            "d4_orbit_size": 8,
+            "identity_preserved": true,
+            "local_law": "B3_SIGNED_PERMUTATION",
+            "local_orbit": [
+              106,
+              108,
+              112,
+              114,
+              124,
+              126,
+              130,
+              132
+            ],
+            "local_orbit_size": 8,
+            "truth_effect": "NONE"
+          }
+        ],
+        "truth_effect": "NONE"
+      },
+      {
+        "crystal": "MATH144",
+        "entry_gid": 3,
+        "lane_digest": "sha256:bba33e06c9c905f60428bc2b92a06b811050b58b77bd2a29b462e48164b09403",
+        "route": [
+          3
+        ],
+        "selected_gids": [
+          3,
+          119,
+          19
+        ],
+        "selected_stations": [
+          "H03",
+          "P13",
+          "X-01-SQ"
+        ],
+        "selection_law": "TOKEN_OVERLAP_DESCENDING_THEN_GID_ASCENDING",
+        "transform_views": [
+          {
+            "d4_address_orbit": [
+              3,
+              10,
+              25,
+              36,
+              109,
+              120,
+              135,
+              142
+            ],
+            "d4_orbit_size": 8,
+            "identity_preserved": true,
+            "local_law": "CONSTITUTIONAL_INDEX",
+            "local_orbit": [
+              3
+            ],
+            "local_orbit_size": 1,
+            "truth_effect": "NONE"
+          },
+          {
+            "d4_address_orbit": [
+              15,
+              22,
+              26,
+              35,
+              110,
+              119,
+              123,
+              130
+            ],
+            "d4_orbit_size": 8,
+            "identity_preserved": true,
+            "local_law": "B3_SIGNED_PERMUTATION",
+            "local_orbit": [
+              119
+            ],
+            "local_orbit_size": 1,
+            "truth_effect": "NONE"
+          },
+          {
+            "d4_address_orbit": [
+              18,
+              19,
+              62,
+              71,
+              74,
+              83,
+              126,
+              127
+            ],
+            "d4_orbit_size": 8,
+            "identity_preserved": true,
+            "local_law": "C4xC4_AND_V4xC4",
+            "local_orbit": [
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22
+            ],
+            "local_orbit_size": 16,
+            "truth_effect": "NONE"
+          }
+        ],
+        "truth_effect": "NONE"
+      },
+      {
+        "crystal": "P31",
+        "entry_gid": 135,
+        "lane_digest": "sha256:030c97d760fd3844433ca95970214cba7037ab135175fbbeeab01b3293555aec",
+        "route": [
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          1,
+          2,
+          3
+        ],
+        "selected_gids": [
+          3,
+          135,
+          141
+        ],
+        "selected_stations": [
+          "H03",
+          "M03",
+          "M09"
+        ],
+        "selection_law": "TOKEN_OVERLAP_DESCENDING_THEN_GID_ASCENDING",
+        "transform_views": [
+          {
+            "d4_address_orbit": [
+              3,
+              10,
+              25,
+              36,
+              109,
+              120,
+              135,
+              142
+            ],
+            "d4_orbit_size": 8,
+            "identity_preserved": true,
+            "local_law": "CONSTITUTIONAL_INDEX",
+            "local_orbit": [
+              3
+            ],
+            "local_orbit_size": 1,
+            "truth_effect": "NONE"
+          },
+          {
+            "d4_address_orbit": [
+              3,
+              10,
+              25,
+              36,
+              109,
+              120,
+              135,
+              142
+            ],
+            "d4_orbit_size": 8,
+            "identity_preserved": true,
+            "local_law": "SOLID_STATE_INDEX",
+            "local_orbit": [
+              135
+            ],
+            "local_orbit_size": 1,
+            "truth_effect": "NONE"
+          },
+          {
+            "d4_address_orbit": [
+              4,
+              9,
+              37,
+              48,
+              97,
+              108,
+              136,
+              141
+            ],
+            "d4_orbit_size": 8,
+            "identity_preserved": true,
+            "local_law": "SOLID_STATE_INDEX",
+            "local_orbit": [
+              141
+            ],
+            "local_orbit_size": 1,
+            "truth_effect": "NONE"
+          }
+        ],
+        "truth_effect": "NONE"
+      },
+      {
+        "crystal": "HEART",
+        "entry_gid": 6,
+        "lane_digest": "sha256:7c01bee0b946ca65f02bcc4f4b9e40f9c0aab4dee48f4926f0f66ad1440ce333",
+        "route": [
+          6,
+          1,
+          2,
+          3
+        ],
+        "selected_gids": [
+          3,
+          6,
+          141
+        ],
+        "selected_stations": [
+          "H03",
+          "H06",
+          "M09"
+        ],
+        "selection_law": "TOKEN_OVERLAP_DESCENDING_THEN_GID_ASCENDING",
+        "transform_views": [
+          {
+            "d4_address_orbit": [
+              3,
+              10,
+              25,
+              36,
+              109,
+              120,
+              135,
+              142
+            ],
+            "d4_orbit_size": 8,
+            "identity_preserved": true,
+            "local_law": "CONSTITUTIONAL_INDEX",
+            "local_orbit": [
+              3
+            ],
+            "local_orbit_size": 1,
+            "truth_effect": "NONE"
+          },
+          {
+            "d4_address_orbit": [
+              6,
+              7,
+              61,
+              72,
+              73,
+              84,
+              138,
+              139
+            ],
+            "d4_orbit_size": 8,
+            "identity_preserved": true,
+            "local_law": "CONSTITUTIONAL_INDEX",
+            "local_orbit": [
+              6
+            ],
+            "local_orbit_size": 1,
+            "truth_effect": "NONE"
+          },
+          {
+            "d4_address_orbit": [
+              4,
+              9,
+              37,
+              48,
+              97,
+              108,
+              136,
+              141
+            ],
+            "d4_orbit_size": 8,
+            "identity_preserved": true,
+            "local_law": "SOLID_STATE_INDEX",
+            "local_orbit": [
+              141
+            ],
+            "local_orbit_size": 1,
+            "truth_effect": "NONE"
+          }
+        ],
+        "truth_effect": "NONE"
+      }
+    ],
+    "parallel_width": 7,
+    "query": {
+      "crystals": [
+        "KC144",
+        "BR21",
+        "KC27",
+        "KC54",
+        "MATH144",
+        "P31",
+        "HEART"
+      ],
+      "goal": "Observe the entire KC144 crystal simultaneously and maximize efficient expansion, compression, integration, navigation, source routing, mathematical transformation, and lawful return.",
+      "source_surfaces": [
+        "GITHUB",
+        "GOOGLE_DRIVE",
+        "LOCAL_ARTIFACT"
+      ],
+      "terms": [
+        "and",
+        "compression",
+        "crystal",
+        "efficient",
+        "entire",
+        "expansion",
+        "integration",
+        "kc144",
+        "lawful",
+        "mathematical",
+        "maximize",
+        "navigation",
+        "observe",
+        "outcome",
+        "parallel",
+        "return",
+        "rotation",
+        "routing",
+        "simultaneously",
+        "source",
+        "the",
+        "transformation"
+      ]
+    },
+    "query_digest": "sha256:8609ee2854119f6e13e003e1b2a17c17479ab12190ac43ca4f025b0361f584d9",
+    "reducer": "CANONICAL_CRYSTAL_ORDER_THEN_LANE_DIGEST",
+    "route": [
+      "KC144.V1::GID135::M03",
+      "KC144.V1::GID047::F04",
+      "KC144.V1::GID141::M09",
+      "KC144.V1::GID003::H03",
+      "KC144.V1::GID144::M12"
+    ],
+    "schema": "KC144.P38.CompiledQuery.V1",
+    "truth_effect": "NONE"
+  },
+  "contract_digest": "sha256:20fdf1277b359cebe1dc688551f763004846e04a4202729ea4f7f4965829af15",
+  "envelope_digest": "sha256:2ad88dbde641328da20313e8a8962c9af89d6eb1260f29330db21677e04f9378",
+  "ic10_evaluation": {
+    "authority_effect": "NONE",
+    "evaluation_digest": "sha256:13e76250781421cc823242ab59afc06adbfcf5dea52d3c98f037d5e293baa080",
+    "receipts": [],
+    "required_independent_returns": 1,
+    "schema": "KC144.P38.IndependentIC10Evaluation.V1",
+    "status": "HOLD",
+    "valid_independent_returns": 0
+  },
+  "lane_receipts": [
+    {
+      "lane": "LINEAGE_RECONCILIATION",
+      "lane_id": "P38.L01",
+      "payload_digest": "sha256:a51d854d12ecede7938f386c02b43f1f5e9d02b02b534138c2748c0ae83b8d59",
+      "receipt_id": "sha256:2efeed1083f85cf49e3823a3308ddeceff75e0c241e85a6969321a41e5770981",
+      "return": "KC144.V1::GID144::M12",
+      "schema": "KC144.P38.LaneReceipt.V1",
+      "truth_effect": "NONE"
+    },
+    {
+      "lane": "EXACT_REGISTRY_BINDING",
+      "lane_id": "P38.L02",
+      "payload_digest": "sha256:707a3f5c60e4b86b90cdcc6e7c1d7f0093c9b31352313fcbc14753fca05c868c",
+      "receipt_id": "sha256:79c55c8aee389111b7588dc9c30167985f0f235710002cd8ab61d6fb75e1cd0d",
+      "return": "KC144.V1::GID144::M12",
+      "schema": "KC144.P38.LaneReceipt.V1",
+      "truth_effect": "NONE"
+    },
+    {
+      "lane": "DYNAMIC_MULTI_CRYSTAL_QUERY",
+      "lane_id": "P38.L03",
+      "payload_digest": "sha256:003b84110ed15be2501ca5673819c253a13cb9e014dc372272670f3967d6051d",
+      "receipt_id": "sha256:0b4eab5bb4091a967e80724fb91e1a642a214b76c58707a98bf5ecb17517071e",
+      "return": "KC144.V1::GID144::M12",
+      "schema": "KC144.P38.LaneReceipt.V1",
+      "truth_effect": "NONE"
+    },
+    {
+      "lane": "LIVE_SOURCE_ROUTING",
+      "lane_id": "P38.L04",
+      "payload_digest": "sha256:a2bd6289bee9773fdceeedb5858a62b94c7e737264574a78310ae70f3cfaf811",
+      "receipt_id": "sha256:9d2426274442f589bde6a3d23b396e10db639d6643bfb047de431a14d0d35bc7",
+      "return": "KC144.V1::GID144::M12",
+      "schema": "KC144.P38.LaneReceipt.V1",
+      "truth_effect": "NONE"
+    },
+    {
+      "lane": "SECOND_ONE_EDGE_EXPERIMENT",
+      "lane_id": "P38.L05",
+      "payload_digest": "sha256:2c6290de3c0e41f84ceace5594cd18b3edbe32f12908c27cc84d55321c867f83",
+      "receipt_id": "sha256:ea297339b495f4e3e416a0b68342bf0de8a1ddf44152702b2fb050149a4e448c",
+      "return": "KC144.V1::GID144::M12",
+      "schema": "KC144.P38.LaneReceipt.V1",
+      "truth_effect": "NONE"
+    },
+    {
+      "lane": "HELD_OUT_OUTCOME_CALIBRATION",
+      "lane_id": "P38.L06",
+      "payload_digest": "sha256:497c3fc7e45743e21a2f1c09fadcaa4e5151146a1b78361648d307f0007067be",
+      "receipt_id": "sha256:77e044e97dda7ade48c5d715a870dcb1acee2a13a704db6c297ab2253042951f",
+      "return": "KC144.V1::GID144::M12",
+      "schema": "KC144.P38.LaneReceipt.V1",
+      "truth_effect": "NONE"
+    },
+    {
+      "lane": "INDEPENDENT_IC10_RETURN",
+      "lane_id": "P38.L07",
+      "payload_digest": "sha256:83149d7ed46242c4c464c5df7f4f92f41c754d04be369be06e8d8f421faad1f0",
+      "receipt_id": "sha256:8f88510d457ae3f0e96353cc909ef2673e6d826acbeb0601ffbc9f6a96f55a58",
+      "return": "KC144.V1::GID144::M12",
+      "schema": "KC144.P38.LaneReceipt.V1",
+      "truth_effect": "NONE"
+    }
+  ],
+  "reconciliation": {
+    "authority_effect": "NONE",
+    "evidence_effect": "NONE",
+    "laws": [
+      "PUBLIC_P36_REMAINS_THE_PUBLIC_BRANCH_PARENT",
+      "SOURCE_P37_RETAINS_ITS_DISTINCT_SOURCE_PARENT",
+      "SOURCE_P37_IS_IMPORTED_BY_IMMUTABLE_COMMITMENT_NOT_REPARENTED",
+      "CONVERGENCE_CREATES_A_NEW_P38_CHILD_OF_PUBLIC_P36",
+      "SOURCE_ATTESTATION_IS_NOT_INDEPENDENT_AUTHORITY"
+    ],
+    "lineage_convergence": "NON_COLLAPSING_RECONCILIATION",
+    "public_branch_parent": {
+      "implementation_commit": "f35697e4baf8afa00f1a2a91a1eff18aa8acfe5f",
+      "implementation_tree": "30377647415d9df054da9db8b536d4363d43d702",
+      "release_commit": "9d64c5d9d9f29af7f5d310f9720f84bdb886a913",
+      "release_digest": "sha256:2dc88c9f2bf39ccb97e883f2c10a2269a628cadf96a50097d4f9fb1a2d808782",
+      "release_tree": "fc4b50ca1bb3d5f27c5baa616092304c1d48916d",
+      "result_id": "KC144.P36.CANDIDATE::2dc88c9f2bf39ccb97e883f2"
+    },
+    "reconciliation_digest": "sha256:15e739f7fa3b796e7e370ac2262c73b9ee73c5ca6a02b970d9edc03b8bccaaa7",
+    "relation": "TYPED_SIBLING_IMPORT",
+    "schema": "KC144.P37.PublicLineageReconciliation.V1",
+    "source_sibling": {
+      "capsule_digest": "sha256:2f7b4da00bfb2c80dea38c73ed94f8aa9fe66c41fedca49227b9cbd3c331e136",
+      "result_digest": "sha256:039d3622874ac1ef067ce4da0cec4ea4c2ba4016881cb4b84abdf7dd43140d84",
+      "result_id": "KC144.P37::039d3622874ac1ef067ce4da",
+      "source_parent_result_id": "KC144.P36::f40dc654ea7fc32651f1ebd6"
+    },
+    "truth_effect": "NONE"
+  },
+  "registry_binding": {
+    "authority_effect": "NONE",
+    "binding_digest": "sha256:6ee10500a42e8a652459e9ed650a2c9508d99e231068d492bcaad1a9b07d481a",
+    "counts": {
+      "action_subscriptions": 360,
+      "carrier_subscriptions": 37,
+      "gid_subscriptions": 144,
+      "total_rows": 541
+    },
+    "errors": [],
+    "files": [
+      {
+        "errors": [],
+        "name": "action_crosswalk_360.ndjson",
+        "row_root": "sha256:e98c25053bad80bad513d63c8c902c4884f5a0349f6c28047649559807a2ec8a",
+        "rows": 360,
+        "sha256": "sha256:33ecff871f5fc570f54b83727e3e1ab7243dcfb42be806ee645b80c6aef3097f",
+        "verdict": "PASS"
+      },
+      {
+        "errors": [],
+        "name": "carrier_subscriptions_37.ndjson",
+        "row_root": "sha256:54294a6d3aba7f51bf13f9c7d8ab7c8e03cfd0d03d119921085b937dbff19f5f",
+        "rows": 37,
+        "sha256": "sha256:72626390853bef0d834094acd770f9708fb12900fe95543522ca17dcb37897a1",
+        "verdict": "PASS"
+      },
+      {
+        "errors": [],
+        "name": "gid_subscriptions_144.ndjson",
+        "row_root": "sha256:e326dee3efcb94c09b380b894869196c1d54018b745685286f6ada52d331a6fd",
+        "rows": 144,
+        "sha256": "sha256:ad7b281b8984328bf42eaf37ba6164c97a6573a1fd43af6585a1a129f1b534dc",
+        "verdict": "PASS"
+      }
+    ],
+    "private_source_metadata_included": false,
+    "row_commitment_root": "sha256:1ab7a27af13072dddd6f673645d43ce76606a86387d1c11d06ce43624b39e09e",
+    "schema": "KC144.P35.ExactSubscriptionRegistryBinding.V1",
+    "state": "EXACT_BYTES_VERIFIED",
+    "truth_effect": "NONE"
+  },
+  "schema": "KC144.P38.Macrocycle.V1",
+  "second_edge": {
+    "authority_effect": "NONE",
+    "canonical_edges_after": 310,
+    "executed_in_canonical_graph": false,
+    "executed_in_proposal_graph": true,
+    "experiment_digest": "sha256:60211d2546741547589b75bb97a685f53e18cc6184d9c8efc0ab0cdae8ef7d80",
+    "measurement": {
+      "candidate_distance_after": 1,
+      "candidate_distance_before": 6,
+      "candidate_router_distance_reduction": 15,
+      "candidate_router_distance_sum_after": 55,
+      "candidate_router_distance_sum_before": 70,
+      "global_diameter_after": 10,
+      "global_diameter_before": 11,
+      "global_distance_reduction": 1050,
+      "global_distance_sum_after": 49326,
+      "global_distance_sum_before": 50376
+    },
+    "proposal_edges_after": 312,
+    "proposal_parent": {
+      "candidate_router_distance_sum": 70,
+      "first_edge": [
+        "GID047/F04",
+        "GID064/F21"
+      ],
+      "global_diameter": 11,
+      "global_distance_sum": 50376,
+      "meta_atlas_sha256": "sha256:ea0c786a66493c97037ff3674355cc309bf8bb3d2b18483b8054d00587f2a16d",
+      "proposal_edges": 311,
+      "source_result_id": "KC144.P37::039d3622874ac1ef067ce4da"
+    },
+    "real_world_outcome": "UNMEASURED",
+    "schema": "KC144.P38.SecondOneEdgeExperiment.V1",
+    "second_edge": {
+      "selection": "P37_REDIFFERENTIATED_RANK_1",
+      "source": "GID135/M03",
+      "source_candidate_digest": "sha256:aa461e4f9fa93b7881568309794b85698ac9f74a178c30fff4078878e62e5356",
+      "target": "GID047/F04"
+    },
+    "state": "SECOND_EDGE_APPLIED_TO_COPIED_PROPOSAL_GRAPH",
+    "structural_outcome": "MEASURED_DISTANCE_REDUCTION",
+    "truth_effect": "NONE"
+  },
+  "signer_registry_digest": "sha256:991ac2800f9b64eaf7e4162b7b36d8dac66383ce2091d638638ce0a9cd732896",
+  "source_routing": {
+    "authority_effect": "NONE",
+    "counts": {
+      "admitted": 1,
+      "doc_revision_events": 0,
+      "observed": 1,
+      "repository_byte_events": 1
+    },
+    "cutoff": "2026-07-28T23:59:59.000000Z",
+    "receipts": [
+      {
+        "authority_effect": "NONE",
+        "errors": [],
+        "event_id": "sha256:3db0a70660ad107b73986c38bd987023c193d75ddc2a0231e5a0a53f3207f3e8",
+        "holds": [],
+        "receipt_id": "sha256:102a638e11c7a2f6e107cebc1945ef830fd64fc42b86934afb6a3405136c4053",
+        "source_class": "REPOSITORY_BYTES",
+        "status": "ADMITTED_NON_PROMOTING",
+        "truth_effect": "NONE"
+      }
+    ],
+    "routing_digest": "sha256:9e39d6ad43b50f5f380f69d3822ac0d53ec530d34b605512a4091ae851ea8d61",
+    "schema": "KC144.P38.SourceRouting.V1",
+    "truth_effect": "NONE"
+  },
+  "state": {
+    "authority_effect": "NONE",
+    "candidate_root": "sha256:f0f8c1662ccf3e099ec11b5613c4f5485a37bdc49ad89089eb91193980a72fb7",
+    "canonical_edges_executed_this_cycle": 0,
+    "delta_id": "sha256:5b3c8eaf9856d732973016b0d20987ba4f7dc358efd0f7f8d815365b6a976084",
+    "evidence_effect": "NONE",
+    "global_release": "HOLD",
+    "held_out_outcomes_admitted": 0,
+    "independent_ic10_returns": 0,
+    "next_seed": "KC144.V4.0::MATH144.P39::LIVE_OUTCOME_CORPUS_INDEPENDENT_IC10_CONVERGENCE_WEIGHT_CALIBRATION_AND_CANONICAL_SUCCESSOR_DECISION_MACROCYCLE_08",
+    "production_mutated": false,
+    "proposal_edges_executed_this_cycle": 1,
+    "public_parent": "KC144.P36.CANDIDATE::2dc88c9f2bf39ccb97e883f2",
+    "query_crystals_routed": 7,
+    "registry_exact": true,
+    "registry_verification": "PASS",
+    "repository_byte_events_admitted": 1,
+    "residuals": [
+      "HELD_OUT_OUTCOME_CORPUS_INSUFFICIENT",
+      "INDEPENDENT_IC10_RETURN_MISSING"
+    ],
+    "return": "KC144.V1::GID144::M12",
+    "schema": "KC144.P38.StateDelta.V1",
+    "source_sibling": "KC144.P37::039d3622874ac1ef067ce4da",
+    "truth_effect": "NONE",
+    "weight_updates_executed": 0
+  }
+}

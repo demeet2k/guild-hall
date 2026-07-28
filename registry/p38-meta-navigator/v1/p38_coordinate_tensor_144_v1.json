@@ -1,0 +1,5313 @@
+{
+  "census": {
+    "d4_views": 1056,
+    "kc54_duplex_nodes": 27,
+    "local_orbit_memberships": 1112,
+    "stations": 144
+  },
+  "coordinates": [
+    {
+      "band": "H6",
+      "band_invariant": "registry authority is not content authority",
+      "gid": 1,
+      "grid": "R01C01",
+      "kc54_duplex": null,
+      "question": "Which exact seat and identity is this?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "H01",
+      "transform": {
+        "d4_address_orbit": [
+          1,
+          12,
+          133,
+          144
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "CONSTITUTIONAL_INDEX",
+        "local_orbit": [
+          1
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "H6",
+      "band_invariant": "registry authority is not content authority",
+      "gid": 2,
+      "grid": "R01C02",
+      "kc54_duplex": null,
+      "question": "Which domain body occupies which seat?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "H02",
+      "transform": {
+        "d4_address_orbit": [
+          2,
+          11,
+          13,
+          24,
+          121,
+          132,
+          134,
+          143
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "CONSTITUTIONAL_INDEX",
+        "local_orbit": [
+          2
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "H6",
+      "band_invariant": "registry authority is not content authority",
+      "gid": 3,
+      "grid": "R01C03",
+      "kc54_duplex": null,
+      "question": "Which typed routes exist, and where do they return?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "H03",
+      "transform": {
+        "d4_address_orbit": [
+          3,
+          10,
+          25,
+          36,
+          109,
+          120,
+          135,
+          142
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "CONSTITUTIONAL_INDEX",
+        "local_orbit": [
+          3
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "H6",
+      "band_invariant": "registry authority is not content authority",
+      "gid": 4,
+      "grid": "R01C04",
+      "kc54_duplex": null,
+      "question": "Which invariants, bridges, and defects hold?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "H04",
+      "transform": {
+        "d4_address_orbit": [
+          4,
+          9,
+          37,
+          48,
+          97,
+          108,
+          136,
+          141
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "CONSTITUTIONAL_INDEX",
+        "local_orbit": [
+          4
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "H6",
+      "band_invariant": "registry authority is not content authority",
+      "gid": 5,
+      "grid": "R01C05",
+      "kc54_duplex": null,
+      "question": "Which sources exist, with what evidence and version?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "H05",
+      "transform": {
+        "d4_address_orbit": [
+          5,
+          8,
+          49,
+          60,
+          85,
+          96,
+          137,
+          140
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "CONSTITUTIONAL_INDEX",
+        "local_orbit": [
+          5
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "H6",
+      "band_invariant": "registry authority is not content authority",
+      "gid": 6,
+      "grid": "R01C06",
+      "kc54_duplex": null,
+      "question": "How does a session activate, replay, and reseed?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "H06",
+      "transform": {
+        "d4_address_orbit": [
+          6,
+          7,
+          61,
+          72,
+          73,
+          84,
+          138,
+          139
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "CONSTITUTIONAL_INDEX",
+        "local_orbit": [
+          6
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "X16",
+      "band_invariant": "pole and lens roles do not migrate; the four-pole cycle closes",
+      "gid": 7,
+      "grid": "R01C07",
+      "kc54_duplex": null,
+      "question": "What exactly is retained before anything acts upon it?",
+      "return_obligation": "BRANCH_PRESERVING_ANTECEDENT_SET",
+      "station": "X-11-SQ",
+      "transform": {
+        "d4_address_orbit": [
+          6,
+          7,
+          61,
+          72,
+          73,
+          84,
+          138,
+          139
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C4xC4_AND_V4xC4",
+        "local_orbit": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "local_orbit_size": 16,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "X16",
+      "band_invariant": "pole and lens roles do not migrate; the four-pole cycle closes",
+      "gid": 8,
+      "grid": "R01C08",
+      "kc54_duplex": null,
+      "question": "How is the retained object generated?",
+      "return_obligation": "BRANCH_PRESERVING_ANTECEDENT_SET",
+      "station": "X-11-FL",
+      "transform": {
+        "d4_address_orbit": [
+          5,
+          8,
+          49,
+          60,
+          85,
+          96,
+          137,
+          140
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C4xC4_AND_V4xC4",
+        "local_orbit": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "local_orbit_size": 16,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "X16",
+      "band_invariant": "pole and lens roles do not migrate; the four-pole cycle closes",
+      "gid": 9,
+      "grid": "R01C09",
+      "kc54_duplex": null,
+      "question": "What competing candidates could the retained object be?",
+      "return_obligation": "BRANCH_PRESERVING_ANTECEDENT_SET",
+      "station": "X-11-CL",
+      "transform": {
+        "d4_address_orbit": [
+          4,
+          9,
+          37,
+          48,
+          97,
+          108,
+          136,
+          141
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C4xC4_AND_V4xC4",
+        "local_orbit": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "local_orbit_size": 16,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "X16",
+      "band_invariant": "pole and lens roles do not migrate; the four-pole cycle closes",
+      "gid": 10,
+      "grid": "R01C10",
+      "kc54_duplex": null,
+      "question": "How does the retained object reproduce itself across depth?",
+      "return_obligation": "BRANCH_PRESERVING_ANTECEDENT_SET",
+      "station": "X-11-FR",
+      "transform": {
+        "d4_address_orbit": [
+          3,
+          10,
+          25,
+          36,
+          109,
+          120,
+          135,
+          142
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C4xC4_AND_V4xC4",
+        "local_orbit": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "local_orbit_size": 16,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "X16",
+      "band_invariant": "pole and lens roles do not migrate; the four-pole cycle closes",
+      "gid": 11,
+      "grid": "R01C11",
+      "kc54_duplex": null,
+      "question": "What exactly is the operator, with domain, codomain, and effects?",
+      "return_obligation": "PARTIAL_INVERSE",
+      "station": "X-10-SQ",
+      "transform": {
+        "d4_address_orbit": [
+          2,
+          11,
+          13,
+          24,
+          121,
+          132,
+          134,
+          143
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C4xC4_AND_V4xC4",
+        "local_orbit": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "local_orbit_size": 16,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "X16",
+      "band_invariant": "pole and lens roles do not migrate; the four-pole cycle closes",
+      "gid": 12,
+      "grid": "R01C12",
+      "kc54_duplex": null,
+      "question": "How is the operator executed with receipts?",
+      "return_obligation": "PARTIAL_INVERSE",
+      "station": "X-10-FL",
+      "transform": {
+        "d4_address_orbit": [
+          1,
+          12,
+          133,
+          144
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "C4xC4_AND_V4xC4",
+        "local_orbit": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "local_orbit_size": 16,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "X16",
+      "band_invariant": "pole and lens roles do not migrate; the four-pole cycle closes",
+      "gid": 13,
+      "grid": "R02C01",
+      "kc54_duplex": null,
+      "question": "What branch field does the operator produce?",
+      "return_obligation": "PARTIAL_INVERSE",
+      "station": "X-10-CL",
+      "transform": {
+        "d4_address_orbit": [
+          2,
+          11,
+          13,
+          24,
+          121,
+          132,
+          134,
+          143
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C4xC4_AND_V4xC4",
+        "local_orbit": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "local_orbit_size": 16,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "X16",
+      "band_invariant": "pole and lens roles do not migrate; the four-pole cycle closes",
+      "gid": 14,
+      "grid": "R02C02",
+      "kc54_duplex": null,
+      "question": "How do operators compose across depth or scale?",
+      "return_obligation": "PARTIAL_INVERSE",
+      "station": "X-10-FR",
+      "transform": {
+        "d4_address_orbit": [
+          14,
+          23,
+          122,
+          131
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "C4xC4_AND_V4xC4",
+        "local_orbit": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "local_orbit_size": 16,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "X16",
+      "band_invariant": "pole and lens roles do not migrate; the four-pole cycle closes",
+      "gid": 15,
+      "grid": "R02C03",
+      "kc54_duplex": null,
+      "question": "Which kind of zero is this, on which carrier?",
+      "return_obligation": "COMPENSATING_RETURN",
+      "station": "X-00-SQ",
+      "transform": {
+        "d4_address_orbit": [
+          15,
+          22,
+          26,
+          35,
+          110,
+          119,
+          123,
+          130
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C4xC4_AND_V4xC4",
+        "local_orbit": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "local_orbit_size": 16,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "X16",
+      "band_invariant": "pole and lens roles do not migrate; the four-pole cycle closes",
+      "gid": 16,
+      "grid": "R02C04",
+      "kc54_duplex": null,
+      "question": "How is the invariant enforced, transported, and repaired?",
+      "return_obligation": "COMPENSATING_RETURN",
+      "station": "X-00-FL",
+      "transform": {
+        "d4_address_orbit": [
+          16,
+          21,
+          38,
+          47,
+          98,
+          107,
+          124,
+          129
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C4xC4_AND_V4xC4",
+        "local_orbit": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "local_orbit_size": 16,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "X16",
+      "band_invariant": "pole and lens roles do not migrate; the four-pole cycle closes",
+      "gid": 17,
+      "grid": "R02C05",
+      "kc54_duplex": null,
+      "question": "What defects and obstructions are present, and where?",
+      "return_obligation": "COMPENSATING_RETURN",
+      "station": "X-00-CL",
+      "transform": {
+        "d4_address_orbit": [
+          17,
+          20,
+          50,
+          59,
+          86,
+          95,
+          125,
+          128
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C4xC4_AND_V4xC4",
+        "local_orbit": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "local_orbit_size": 16,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "X16",
+      "band_invariant": "pole and lens roles do not migrate; the four-pole cycle closes",
+      "gid": 18,
+      "grid": "R02C06",
+      "kc54_duplex": null,
+      "question": "Does invariance survive the change of scale?",
+      "return_obligation": "COMPENSATING_RETURN",
+      "station": "X-00-FR",
+      "transform": {
+        "d4_address_orbit": [
+          18,
+          19,
+          62,
+          71,
+          74,
+          83,
+          126,
+          127
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C4xC4_AND_V4xC4",
+        "local_orbit": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "local_orbit_size": 16,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "X16",
+      "band_invariant": "pole and lens roles do not migrate; the four-pole cycle closes",
+      "gid": 19,
+      "grid": "R02C07",
+      "kc54_duplex": null,
+      "question": "What return is owed, and of which class?",
+      "return_obligation": "EXACT_INVERSE",
+      "station": "X-01-SQ",
+      "transform": {
+        "d4_address_orbit": [
+          18,
+          19,
+          62,
+          71,
+          74,
+          83,
+          126,
+          127
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C4xC4_AND_V4xC4",
+        "local_orbit": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "local_orbit_size": 16,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "X16",
+      "band_invariant": "pole and lens roles do not migrate; the four-pole cycle closes",
+      "gid": 20,
+      "grid": "R02C08",
+      "kc54_duplex": null,
+      "question": "How is the return actually performed?",
+      "return_obligation": "EXACT_INVERSE",
+      "station": "X-01-FL",
+      "transform": {
+        "d4_address_orbit": [
+          17,
+          20,
+          50,
+          59,
+          86,
+          95,
+          125,
+          128
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C4xC4_AND_V4xC4",
+        "local_orbit": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "local_orbit_size": 16,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "X16",
+      "band_invariant": "pole and lens roles do not migrate; the four-pole cycle closes",
+      "gid": 21,
+      "grid": "R02C09",
+      "kc54_duplex": null,
+      "question": "Which antecedents remain admissible?",
+      "return_obligation": "EXACT_INVERSE",
+      "station": "X-01-CL",
+      "transform": {
+        "d4_address_orbit": [
+          16,
+          21,
+          38,
+          47,
+          98,
+          107,
+          124,
+          129
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C4xC4_AND_V4xC4",
+        "local_orbit": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "local_orbit_size": 16,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "X16",
+      "band_invariant": "pole and lens roles do not migrate; the four-pole cycle closes",
+      "gid": 22,
+      "grid": "R02C10",
+      "kc54_duplex": null,
+      "question": "What minimal seed reconstructs this region to declared fidelity?",
+      "return_obligation": "EXACT_INVERSE",
+      "station": "X-01-FR",
+      "transform": {
+        "d4_address_orbit": [
+          15,
+          22,
+          26,
+          35,
+          110,
+          119,
+          123,
+          130
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C4xC4_AND_V4xC4",
+        "local_orbit": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "local_orbit_size": 16,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 23,
+      "grid": "R02C11",
+      "kc54_duplex": null,
+      "question": "What exact body is materialized from the admitted request?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B01",
+      "transform": {
+        "d4_address_orbit": [
+          14,
+          23,
+          122,
+          131
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 24,
+      "grid": "R02C12",
+      "kc54_duplex": null,
+      "question": "Are request, sources, policy, and carrier jointly admissible?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B02",
+      "transform": {
+        "d4_address_orbit": [
+          2,
+          11,
+          13,
+          24,
+          121,
+          132,
+          134,
+          143
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 25,
+      "grid": "R03C01",
+      "kc54_duplex": null,
+      "question": "How could this admission be wrong, and what would refute it?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B03",
+      "transform": {
+        "d4_address_orbit": [
+          3,
+          10,
+          25,
+          36,
+          109,
+          120,
+          135,
+          142
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 26,
+      "grid": "R03C02",
+      "kc54_duplex": null,
+      "question": "What children does the body lawfully generate?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B04",
+      "transform": {
+        "d4_address_orbit": [
+          15,
+          22,
+          26,
+          35,
+          110,
+          119,
+          123,
+          130
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 27,
+      "grid": "R03C03",
+      "kc54_duplex": null,
+      "question": "Where do the children overlap, and at what typed cost?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B05",
+      "transform": {
+        "d4_address_orbit": [
+          27,
+          34,
+          111,
+          118
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 28,
+      "grid": "R03C04",
+      "kc54_duplex": null,
+      "question": "What did the expansion fail to cover?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B06",
+      "transform": {
+        "d4_address_orbit": [
+          28,
+          33,
+          39,
+          46,
+          99,
+          106,
+          112,
+          117
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 29,
+      "grid": "R03C05",
+      "kc54_duplex": null,
+      "question": "What ordered, typed, witnessed path reaches the target?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B07",
+      "transform": {
+        "d4_address_orbit": [
+          29,
+          32,
+          51,
+          58,
+          87,
+          94,
+          113,
+          116
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 30,
+      "grid": "R03C06",
+      "kc54_duplex": null,
+      "question": "Which routes remain jointly active, and do they commute?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B08",
+      "transform": {
+        "d4_address_orbit": [
+          30,
+          31,
+          63,
+          70,
+          75,
+          82,
+          114,
+          115
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 31,
+      "grid": "R03C07",
+      "kc54_duplex": null,
+      "question": "Is the traversed path auditable and reversible?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B09",
+      "transform": {
+        "d4_address_orbit": [
+          30,
+          31,
+          63,
+          70,
+          75,
+          82,
+          114,
+          115
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 32,
+      "grid": "R03C08",
+      "kc54_duplex": null,
+      "question": "What changed, and what was preserved?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B10",
+      "transform": {
+        "d4_address_orbit": [
+          29,
+          32,
+          51,
+          58,
+          87,
+          94,
+          113,
+          116
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 33,
+      "grid": "R03C09",
+      "kc54_duplex": null,
+      "question": "Which invariants survive transport between carriers?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B11",
+      "transform": {
+        "d4_address_orbit": [
+          28,
+          33,
+          39,
+          46,
+          99,
+          106,
+          112,
+          117
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 34,
+      "grid": "R03C10",
+      "kc54_duplex": null,
+      "question": "Of which return type is this transform capable?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B12",
+      "transform": {
+        "d4_address_orbit": [
+          27,
+          34,
+          111,
+          118
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 35,
+      "grid": "R03C11",
+      "kc54_duplex": null,
+      "question": "Does the claim pass, inside which corridor?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B13",
+      "transform": {
+        "d4_address_orbit": [
+          15,
+          22,
+          26,
+          35,
+          110,
+          119,
+          123,
+          130
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 36,
+      "grid": "R03C12",
+      "kc54_duplex": null,
+      "question": "Are the constructive and conjugate results compatible?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B14",
+      "transform": {
+        "d4_address_orbit": [
+          3,
+          10,
+          25,
+          36,
+          109,
+          120,
+          135,
+          142
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 37,
+      "grid": "R04C01",
+      "kc54_duplex": null,
+      "question": "Can a lawful falsification be compiled against this claim?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B15",
+      "transform": {
+        "d4_address_orbit": [
+          4,
+          9,
+          37,
+          48,
+          97,
+          108,
+          136,
+          141
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 38,
+      "grid": "R04C02",
+      "kc54_duplex": null,
+      "question": "What macrostate plus carry reconstructs the body?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B16",
+      "transform": {
+        "d4_address_orbit": [
+          16,
+          21,
+          38,
+          47,
+          98,
+          107,
+          124,
+          129
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 39,
+      "grid": "R04C03",
+      "kc54_duplex": null,
+      "question": "What is shared, and what must stay in per-branch carry?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B17",
+      "transform": {
+        "d4_address_orbit": [
+          28,
+          33,
+          39,
+          46,
+          99,
+          106,
+          112,
+          117
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 40,
+      "grid": "R04C04",
+      "kc54_duplex": null,
+      "question": "What did compression lose, and is the loss certified?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B18",
+      "transform": {
+        "d4_address_orbit": [
+          40,
+          45,
+          100,
+          105
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 41,
+      "grid": "R04C05",
+      "kc54_duplex": null,
+      "question": "What certified successor was produced?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B19",
+      "transform": {
+        "d4_address_orbit": [
+          41,
+          44,
+          52,
+          57,
+          88,
+          93,
+          101,
+          104
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 42,
+      "grid": "R04C06",
+      "kc54_duplex": null,
+      "question": "Can the process be restarted, not merely remembered?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B20",
+      "transform": {
+        "d4_address_orbit": [
+          42,
+          43,
+          64,
+          69,
+          76,
+          81,
+          102,
+          103
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "BR21",
+      "band_invariant": "PLUS, HINGE, and STAR are projections of one computation",
+      "gid": 43,
+      "grid": "R04C07",
+      "kc54_duplex": null,
+      "question": "Can the circuit be reversed, compensated, or proven irreversible?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "B21",
+      "transform": {
+        "d4_address_orbit": [
+          42,
+          43,
+          64,
+          69,
+          76,
+          81,
+          102,
+          103
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "C7xC3_PLUS_C2",
+        "local_orbit": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43
+        ],
+        "local_orbit_size": 21,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 44,
+      "grid": "R04C08",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F01?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F01",
+      "transform": {
+        "d4_address_orbit": [
+          41,
+          44,
+          52,
+          57,
+          88,
+          93,
+          101,
+          104
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          44,
+          80
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 45,
+      "grid": "R04C09",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F02?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F02",
+      "transform": {
+        "d4_address_orbit": [
+          40,
+          45,
+          100,
+          105
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          45,
+          79
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 46,
+      "grid": "R04C10",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F03?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F03",
+      "transform": {
+        "d4_address_orbit": [
+          28,
+          33,
+          39,
+          46,
+          99,
+          106,
+          112,
+          117
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          46,
+          78
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 47,
+      "grid": "R04C11",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F04?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F04",
+      "transform": {
+        "d4_address_orbit": [
+          16,
+          21,
+          38,
+          47,
+          98,
+          107,
+          124,
+          129
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          47,
+          77
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 48,
+      "grid": "R04C12",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F05?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F05",
+      "transform": {
+        "d4_address_orbit": [
+          4,
+          9,
+          37,
+          48,
+          97,
+          108,
+          136,
+          141
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          48,
+          76
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 49,
+      "grid": "R05C01",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F06?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F06",
+      "transform": {
+        "d4_address_orbit": [
+          5,
+          8,
+          49,
+          60,
+          85,
+          96,
+          137,
+          140
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          49,
+          75
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 50,
+      "grid": "R05C02",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F07?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F07",
+      "transform": {
+        "d4_address_orbit": [
+          17,
+          20,
+          50,
+          59,
+          86,
+          95,
+          125,
+          128
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          50,
+          74
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 51,
+      "grid": "R05C03",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F08?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F08",
+      "transform": {
+        "d4_address_orbit": [
+          29,
+          32,
+          51,
+          58,
+          87,
+          94,
+          113,
+          116
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          51,
+          73
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 52,
+      "grid": "R05C04",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F09?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F09",
+      "transform": {
+        "d4_address_orbit": [
+          41,
+          44,
+          52,
+          57,
+          88,
+          93,
+          101,
+          104
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          52,
+          72
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 53,
+      "grid": "R05C05",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F10?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F10",
+      "transform": {
+        "d4_address_orbit": [
+          53,
+          56,
+          89,
+          92
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          53,
+          71
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 54,
+      "grid": "R05C06",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F11?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F11",
+      "transform": {
+        "d4_address_orbit": [
+          54,
+          55,
+          65,
+          68,
+          77,
+          80,
+          90,
+          91
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          54,
+          70
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 55,
+      "grid": "R05C07",
+      "kc54_duplex": null,
+      "question": "What source-bound domain object, if any, lawfully occupies F12?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F12",
+      "transform": {
+        "d4_address_orbit": [
+          54,
+          55,
+          65,
+          68,
+          77,
+          80,
+          90,
+          91
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          55,
+          69
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 56,
+      "grid": "R05C08",
+      "kc54_duplex": null,
+      "question": "What source-bound domain object, if any, lawfully occupies F13?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F13",
+      "transform": {
+        "d4_address_orbit": [
+          53,
+          56,
+          89,
+          92
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          56,
+          68
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 57,
+      "grid": "R05C09",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F14?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F14",
+      "transform": {
+        "d4_address_orbit": [
+          41,
+          44,
+          52,
+          57,
+          88,
+          93,
+          101,
+          104
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          57,
+          67
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 58,
+      "grid": "R05C10",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F15?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F15",
+      "transform": {
+        "d4_address_orbit": [
+          29,
+          32,
+          51,
+          58,
+          87,
+          94,
+          113,
+          116
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          58,
+          66
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 59,
+      "grid": "R05C11",
+      "kc54_duplex": null,
+      "question": "What source-bound domain object, if any, lawfully occupies F16?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F16",
+      "transform": {
+        "d4_address_orbit": [
+          17,
+          20,
+          50,
+          59,
+          86,
+          95,
+          125,
+          128
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          59,
+          65
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 60,
+      "grid": "R05C12",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F17?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F17",
+      "transform": {
+        "d4_address_orbit": [
+          5,
+          8,
+          49,
+          60,
+          85,
+          96,
+          137,
+          140
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          60,
+          64
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 61,
+      "grid": "R06C01",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F18?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F18",
+      "transform": {
+        "d4_address_orbit": [
+          6,
+          7,
+          61,
+          72,
+          73,
+          84,
+          138,
+          139
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          61,
+          63
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 62,
+      "grid": "R06C02",
+      "kc54_duplex": null,
+      "question": "What source-bound domain object, if any, lawfully occupies F19?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F19",
+      "transform": {
+        "d4_address_orbit": [
+          18,
+          19,
+          62,
+          71,
+          74,
+          83,
+          126,
+          127
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          62
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 63,
+      "grid": "R06C03",
+      "kc54_duplex": null,
+      "question": "What source-bound domain object, if any, lawfully occupies F20?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F20",
+      "transform": {
+        "d4_address_orbit": [
+          30,
+          31,
+          63,
+          70,
+          75,
+          82,
+          114,
+          115
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          61,
+          63
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 64,
+      "grid": "R06C04",
+      "kc54_duplex": null,
+      "question": "What source-bound domain object, if any, lawfully occupies F21?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F21",
+      "transform": {
+        "d4_address_orbit": [
+          42,
+          43,
+          64,
+          69,
+          76,
+          81,
+          102,
+          103
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          60,
+          64
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 65,
+      "grid": "R06C05",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F22?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F22",
+      "transform": {
+        "d4_address_orbit": [
+          54,
+          55,
+          65,
+          68,
+          77,
+          80,
+          90,
+          91
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          59,
+          65
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 66,
+      "grid": "R06C06",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F23?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F23",
+      "transform": {
+        "d4_address_orbit": [
+          66,
+          67,
+          78,
+          79
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          58,
+          66
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 67,
+      "grid": "R06C07",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F24?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F24",
+      "transform": {
+        "d4_address_orbit": [
+          66,
+          67,
+          78,
+          79
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          57,
+          67
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 68,
+      "grid": "R06C08",
+      "kc54_duplex": null,
+      "question": "What source-bound domain object, if any, lawfully occupies F25?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F25",
+      "transform": {
+        "d4_address_orbit": [
+          54,
+          55,
+          65,
+          68,
+          77,
+          80,
+          90,
+          91
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          56,
+          68
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 69,
+      "grid": "R06C09",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F26?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F26",
+      "transform": {
+        "d4_address_orbit": [
+          42,
+          43,
+          64,
+          69,
+          76,
+          81,
+          102,
+          103
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          55,
+          69
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 70,
+      "grid": "R06C10",
+      "kc54_duplex": null,
+      "question": "What source-bound domain object, if any, lawfully occupies F27?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F27",
+      "transform": {
+        "d4_address_orbit": [
+          30,
+          31,
+          63,
+          70,
+          75,
+          82,
+          114,
+          115
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          54,
+          70
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 71,
+      "grid": "R06C11",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F28?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F28",
+      "transform": {
+        "d4_address_orbit": [
+          18,
+          19,
+          62,
+          71,
+          74,
+          83,
+          126,
+          127
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          53,
+          71
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 72,
+      "grid": "R06C12",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F29?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F29",
+      "transform": {
+        "d4_address_orbit": [
+          6,
+          7,
+          61,
+          72,
+          73,
+          84,
+          138,
+          139
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          52,
+          72
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 73,
+      "grid": "R07C01",
+      "kc54_duplex": null,
+      "question": "What source-bound domain object, if any, lawfully occupies F30?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F30",
+      "transform": {
+        "d4_address_orbit": [
+          6,
+          7,
+          61,
+          72,
+          73,
+          84,
+          138,
+          139
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          51,
+          73
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 74,
+      "grid": "R07C02",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F31?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F31",
+      "transform": {
+        "d4_address_orbit": [
+          18,
+          19,
+          62,
+          71,
+          74,
+          83,
+          126,
+          127
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          50,
+          74
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 75,
+      "grid": "R07C03",
+      "kc54_duplex": null,
+      "question": "What source-bound domain object, if any, lawfully occupies F32?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F32",
+      "transform": {
+        "d4_address_orbit": [
+          30,
+          31,
+          63,
+          70,
+          75,
+          82,
+          114,
+          115
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          49,
+          75
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 76,
+      "grid": "R07C04",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F33?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F33",
+      "transform": {
+        "d4_address_orbit": [
+          42,
+          43,
+          64,
+          69,
+          76,
+          81,
+          102,
+          103
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          48,
+          76
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 77,
+      "grid": "R07C05",
+      "kc54_duplex": null,
+      "question": "What source-bound domain object, if any, lawfully occupies F34?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F34",
+      "transform": {
+        "d4_address_orbit": [
+          54,
+          55,
+          65,
+          68,
+          77,
+          80,
+          90,
+          91
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          47,
+          77
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 78,
+      "grid": "R07C06",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F35?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F35",
+      "transform": {
+        "d4_address_orbit": [
+          66,
+          67,
+          78,
+          79
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          46,
+          78
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 79,
+      "grid": "R07C07",
+      "kc54_duplex": null,
+      "question": "What source-bound domain object, if any, lawfully occupies F36?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F36",
+      "transform": {
+        "d4_address_orbit": [
+          66,
+          67,
+          78,
+          79
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          45,
+          79
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "F37",
+      "band_invariant": "carrier legality is not transport legality; bridges require a full beta tuple",
+      "gid": 80,
+      "grid": "R07C08",
+      "kc54_duplex": null,
+      "question": "What are (P, iota, Lambda, boundary, N) for carrier F37?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "F37",
+      "transform": {
+        "d4_address_orbit": [
+          54,
+          55,
+          65,
+          68,
+          77,
+          80,
+          90,
+          91
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "P37_REFLECTION",
+        "local_orbit": [
+          44,
+          80
+        ],
+        "local_orbit_size": 2,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "IC10",
+      "band_invariant": "gates are conjunctive and ordered; nine gates do not authorize I10",
+      "gid": 81,
+      "grid": "R07C09",
+      "kc54_duplex": null,
+      "question": "Is the object exactly identified and sourced?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "I01",
+      "transform": {
+        "d4_address_orbit": [
+          42,
+          43,
+          64,
+          69,
+          76,
+          81,
+          102,
+          103
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "ORDERED_CONJUNCTIVE_GATE",
+        "local_orbit": [
+          81
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "IC10",
+      "band_invariant": "gates are conjunctive and ordered; nine gates do not authorize I10",
+      "gid": 82,
+      "grid": "R07C10",
+      "kc54_duplex": null,
+      "question": "Is its form canonical and its raw identity preserved?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "I02",
+      "transform": {
+        "d4_address_orbit": [
+          30,
+          31,
+          63,
+          70,
+          75,
+          82,
+          114,
+          115
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "ORDERED_CONJUNCTIVE_GATE",
+        "local_orbit": [
+          82
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "IC10",
+      "band_invariant": "gates are conjunctive and ordered; nine gates do not authorize I10",
+      "gid": 83,
+      "grid": "R07C11",
+      "kc54_duplex": null,
+      "question": "Is every object typed with carrier and units?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "I03",
+      "transform": {
+        "d4_address_orbit": [
+          18,
+          19,
+          62,
+          71,
+          74,
+          83,
+          126,
+          127
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "ORDERED_CONJUNCTIVE_GATE",
+        "local_orbit": [
+          83
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "IC10",
+      "band_invariant": "gates are conjunctive and ordered; nine gates do not authorize I10",
+      "gid": 84,
+      "grid": "R07C12",
+      "kc54_duplex": null,
+      "question": "Is the validity corridor declared and testable?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "I04",
+      "transform": {
+        "d4_address_orbit": [
+          6,
+          7,
+          61,
+          72,
+          73,
+          84,
+          138,
+          139
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "ORDERED_CONJUNCTIVE_GATE",
+        "local_orbit": [
+          84
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "IC10",
+      "band_invariant": "gates are conjunctive and ordered; nine gates do not authorize I10",
+      "gid": 85,
+      "grid": "R08C01",
+      "kc54_duplex": null,
+      "question": "Is each invariant preserved under a declared transport?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "I05",
+      "transform": {
+        "d4_address_orbit": [
+          5,
+          8,
+          49,
+          60,
+          85,
+          96,
+          137,
+          140
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "ORDERED_CONJUNCTIVE_GATE",
+        "local_orbit": [
+          85
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "IC10",
+      "band_invariant": "gates are conjunctive and ordered; nine gates do not authorize I10",
+      "gid": 86,
+      "grid": "R08C02",
+      "kc54_duplex": null,
+      "question": "Is the evidence class sufficient and lawful?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "I06",
+      "transform": {
+        "d4_address_orbit": [
+          17,
+          20,
+          50,
+          59,
+          86,
+          95,
+          125,
+          128
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "ORDERED_CONJUNCTIVE_GATE",
+        "local_orbit": [
+          86
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "IC10",
+      "band_invariant": "gates are conjunctive and ordered; nine gates do not authorize I10",
+      "gid": 87,
+      "grid": "R08C03",
+      "kc54_duplex": null,
+      "question": "Are all dependencies resolved and unrevoked?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "I07",
+      "transform": {
+        "d4_address_orbit": [
+          29,
+          32,
+          51,
+          58,
+          87,
+          94,
+          113,
+          116
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "ORDERED_CONJUNCTIVE_GATE",
+        "local_orbit": [
+          87
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "IC10",
+      "band_invariant": "gates are conjunctive and ordered; nine gates do not authorize I10",
+      "gid": 88,
+      "grid": "R08C04",
+      "kc54_duplex": null,
+      "question": "Are transport loss and return behaviour declared?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "I08",
+      "transform": {
+        "d4_address_orbit": [
+          41,
+          44,
+          52,
+          57,
+          88,
+          93,
+          101,
+          104
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "ORDERED_CONJUNCTIVE_GATE",
+        "local_orbit": [
+          88
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "IC10",
+      "band_invariant": "gates are conjunctive and ordered; nine gates do not authorize I10",
+      "gid": 89,
+      "grid": "R08C05",
+      "kc54_duplex": null,
+      "question": "Can an independent process reproduce the result?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "I09",
+      "transform": {
+        "d4_address_orbit": [
+          53,
+          56,
+          89,
+          92
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "ORDERED_CONJUNCTIVE_GATE",
+        "local_orbit": [
+          89
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "IC10",
+      "band_invariant": "gates are conjunctive and ordered; nine gates do not authorize I10",
+      "gid": 90,
+      "grid": "R08C06",
+      "kc54_duplex": null,
+      "question": "May this exact candidate become an authoritative successor?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "I10",
+      "transform": {
+        "d4_address_orbit": [
+          54,
+          55,
+          65,
+          68,
+          77,
+          80,
+          90,
+          91
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "ORDERED_CONJUNCTIVE_GATE",
+        "local_orbit": [
+          90
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC15",
+      "band_invariant": "a support mask records support, never probability or truth",
+      "gid": 91,
+      "grid": "R08C07",
+      "kc54_duplex": null,
+      "question": "What is expressible with support {11}, and what remains inexpressible without {10,00,01}?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "{11}",
+      "transform": {
+        "d4_address_orbit": [
+          54,
+          55,
+          65,
+          68,
+          77,
+          80,
+          90,
+          91
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "S4_SUPPORT_ACTION",
+        "local_orbit": [
+          91,
+          92,
+          93,
+          94
+        ],
+        "local_orbit_size": 4,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC15",
+      "band_invariant": "a support mask records support, never probability or truth",
+      "gid": 92,
+      "grid": "R08C08",
+      "kc54_duplex": null,
+      "question": "What is expressible with support {10}, and what remains inexpressible without {11,00,01}?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "{10}",
+      "transform": {
+        "d4_address_orbit": [
+          53,
+          56,
+          89,
+          92
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "S4_SUPPORT_ACTION",
+        "local_orbit": [
+          91,
+          92,
+          93,
+          94
+        ],
+        "local_orbit_size": 4,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC15",
+      "band_invariant": "a support mask records support, never probability or truth",
+      "gid": 93,
+      "grid": "R08C09",
+      "kc54_duplex": null,
+      "question": "What is expressible with support {00}, and what remains inexpressible without {11,10,01}?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "{00}",
+      "transform": {
+        "d4_address_orbit": [
+          41,
+          44,
+          52,
+          57,
+          88,
+          93,
+          101,
+          104
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "S4_SUPPORT_ACTION",
+        "local_orbit": [
+          91,
+          92,
+          93,
+          94
+        ],
+        "local_orbit_size": 4,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC15",
+      "band_invariant": "a support mask records support, never probability or truth",
+      "gid": 94,
+      "grid": "R08C10",
+      "kc54_duplex": null,
+      "question": "What is expressible with support {01}, and what remains inexpressible without {11,10,00}?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "{01}",
+      "transform": {
+        "d4_address_orbit": [
+          29,
+          32,
+          51,
+          58,
+          87,
+          94,
+          113,
+          116
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "S4_SUPPORT_ACTION",
+        "local_orbit": [
+          91,
+          92,
+          93,
+          94
+        ],
+        "local_orbit_size": 4,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC15",
+      "band_invariant": "a support mask records support, never probability or truth",
+      "gid": 95,
+      "grid": "R08C11",
+      "kc54_duplex": null,
+      "question": "What is expressible with support {11,10}, and what remains inexpressible without {00,01}?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "{11,10}",
+      "transform": {
+        "d4_address_orbit": [
+          17,
+          20,
+          50,
+          59,
+          86,
+          95,
+          125,
+          128
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "S4_SUPPORT_ACTION",
+        "local_orbit": [
+          95,
+          96,
+          97,
+          98,
+          99,
+          100
+        ],
+        "local_orbit_size": 6,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC15",
+      "band_invariant": "a support mask records support, never probability or truth",
+      "gid": 96,
+      "grid": "R08C12",
+      "kc54_duplex": null,
+      "question": "What is expressible with support {11,00}, and what remains inexpressible without {10,01}?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "{11,00}",
+      "transform": {
+        "d4_address_orbit": [
+          5,
+          8,
+          49,
+          60,
+          85,
+          96,
+          137,
+          140
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "S4_SUPPORT_ACTION",
+        "local_orbit": [
+          95,
+          96,
+          97,
+          98,
+          99,
+          100
+        ],
+        "local_orbit_size": 6,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC15",
+      "band_invariant": "a support mask records support, never probability or truth",
+      "gid": 97,
+      "grid": "R09C01",
+      "kc54_duplex": null,
+      "question": "What is expressible with support {11,01}, and what remains inexpressible without {10,00}?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "{11,01}",
+      "transform": {
+        "d4_address_orbit": [
+          4,
+          9,
+          37,
+          48,
+          97,
+          108,
+          136,
+          141
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "S4_SUPPORT_ACTION",
+        "local_orbit": [
+          95,
+          96,
+          97,
+          98,
+          99,
+          100
+        ],
+        "local_orbit_size": 6,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC15",
+      "band_invariant": "a support mask records support, never probability or truth",
+      "gid": 98,
+      "grid": "R09C02",
+      "kc54_duplex": null,
+      "question": "What is expressible with support {10,00}, and what remains inexpressible without {11,01}?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "{10,00}",
+      "transform": {
+        "d4_address_orbit": [
+          16,
+          21,
+          38,
+          47,
+          98,
+          107,
+          124,
+          129
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "S4_SUPPORT_ACTION",
+        "local_orbit": [
+          95,
+          96,
+          97,
+          98,
+          99,
+          100
+        ],
+        "local_orbit_size": 6,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC15",
+      "band_invariant": "a support mask records support, never probability or truth",
+      "gid": 99,
+      "grid": "R09C03",
+      "kc54_duplex": null,
+      "question": "What is expressible with support {10,01}, and what remains inexpressible without {11,00}?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "{10,01}",
+      "transform": {
+        "d4_address_orbit": [
+          28,
+          33,
+          39,
+          46,
+          99,
+          106,
+          112,
+          117
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "S4_SUPPORT_ACTION",
+        "local_orbit": [
+          95,
+          96,
+          97,
+          98,
+          99,
+          100
+        ],
+        "local_orbit_size": 6,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC15",
+      "band_invariant": "a support mask records support, never probability or truth",
+      "gid": 100,
+      "grid": "R09C04",
+      "kc54_duplex": null,
+      "question": "What is expressible with support {00,01}, and what remains inexpressible without {11,10}?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "{00,01}",
+      "transform": {
+        "d4_address_orbit": [
+          40,
+          45,
+          100,
+          105
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "S4_SUPPORT_ACTION",
+        "local_orbit": [
+          95,
+          96,
+          97,
+          98,
+          99,
+          100
+        ],
+        "local_orbit_size": 6,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC15",
+      "band_invariant": "a support mask records support, never probability or truth",
+      "gid": 101,
+      "grid": "R09C05",
+      "kc54_duplex": null,
+      "question": "What is expressible with support {11,10,00}, and what remains inexpressible without {01}?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "{11,10,00}",
+      "transform": {
+        "d4_address_orbit": [
+          41,
+          44,
+          52,
+          57,
+          88,
+          93,
+          101,
+          104
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "S4_SUPPORT_ACTION",
+        "local_orbit": [
+          101,
+          102,
+          103,
+          104
+        ],
+        "local_orbit_size": 4,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC15",
+      "band_invariant": "a support mask records support, never probability or truth",
+      "gid": 102,
+      "grid": "R09C06",
+      "kc54_duplex": null,
+      "question": "What is expressible with support {11,10,01}, and what remains inexpressible without {00}?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "{11,10,01}",
+      "transform": {
+        "d4_address_orbit": [
+          42,
+          43,
+          64,
+          69,
+          76,
+          81,
+          102,
+          103
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "S4_SUPPORT_ACTION",
+        "local_orbit": [
+          101,
+          102,
+          103,
+          104
+        ],
+        "local_orbit_size": 4,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC15",
+      "band_invariant": "a support mask records support, never probability or truth",
+      "gid": 103,
+      "grid": "R09C07",
+      "kc54_duplex": null,
+      "question": "What is expressible with support {11,00,01}, and what remains inexpressible without {10}?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "{11,00,01}",
+      "transform": {
+        "d4_address_orbit": [
+          42,
+          43,
+          64,
+          69,
+          76,
+          81,
+          102,
+          103
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "S4_SUPPORT_ACTION",
+        "local_orbit": [
+          101,
+          102,
+          103,
+          104
+        ],
+        "local_orbit_size": 4,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC15",
+      "band_invariant": "a support mask records support, never probability or truth",
+      "gid": 104,
+      "grid": "R09C08",
+      "kc54_duplex": null,
+      "question": "What is expressible with support {10,00,01}, and what remains inexpressible without {11}?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "{10,00,01}",
+      "transform": {
+        "d4_address_orbit": [
+          41,
+          44,
+          52,
+          57,
+          88,
+          93,
+          101,
+          104
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "S4_SUPPORT_ACTION",
+        "local_orbit": [
+          101,
+          102,
+          103,
+          104
+        ],
+        "local_orbit_size": 4,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC15",
+      "band_invariant": "a support mask records support, never probability or truth",
+      "gid": 105,
+      "grid": "R09C09",
+      "kc54_duplex": null,
+      "question": "What is expressible with support {11,10,00,01}, and what remains inexpressible without {}?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "{11,10,00,01}",
+      "transform": {
+        "d4_address_orbit": [
+          40,
+          45,
+          100,
+          105
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "S4_SUPPORT_ACTION",
+        "local_orbit": [
+          105
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 106,
+      "grid": "R09C10",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P00",
+        "plus": "KC54+::P00",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (-1,-1,-1) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P00",
+      "transform": {
+        "d4_address_orbit": [
+          28,
+          33,
+          39,
+          46,
+          99,
+          106,
+          112,
+          117
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          106,
+          108,
+          112,
+          114,
+          124,
+          126,
+          130,
+          132
+        ],
+        "local_orbit_size": 8,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 107,
+      "grid": "R09C11",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P01",
+        "plus": "KC54+::P01",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (0,-1,-1) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P01",
+      "transform": {
+        "d4_address_orbit": [
+          16,
+          21,
+          38,
+          47,
+          98,
+          107,
+          124,
+          129
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          107,
+          109,
+          111,
+          113,
+          115,
+          117,
+          121,
+          123,
+          125,
+          127,
+          129,
+          131
+        ],
+        "local_orbit_size": 12,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 108,
+      "grid": "R09C12",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P02",
+        "plus": "KC54+::P02",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (1,-1,-1) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P02",
+      "transform": {
+        "d4_address_orbit": [
+          4,
+          9,
+          37,
+          48,
+          97,
+          108,
+          136,
+          141
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          106,
+          108,
+          112,
+          114,
+          124,
+          126,
+          130,
+          132
+        ],
+        "local_orbit_size": 8,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 109,
+      "grid": "R10C01",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P03",
+        "plus": "KC54+::P03",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (-1,0,-1) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P03",
+      "transform": {
+        "d4_address_orbit": [
+          3,
+          10,
+          25,
+          36,
+          109,
+          120,
+          135,
+          142
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          107,
+          109,
+          111,
+          113,
+          115,
+          117,
+          121,
+          123,
+          125,
+          127,
+          129,
+          131
+        ],
+        "local_orbit_size": 12,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 110,
+      "grid": "R10C02",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P04",
+        "plus": "KC54+::P04",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (0,0,-1) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P04",
+      "transform": {
+        "d4_address_orbit": [
+          15,
+          22,
+          26,
+          35,
+          110,
+          119,
+          123,
+          130
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          110,
+          116,
+          118,
+          120,
+          122,
+          128
+        ],
+        "local_orbit_size": 6,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 111,
+      "grid": "R10C03",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P05",
+        "plus": "KC54+::P05",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (1,0,-1) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P05",
+      "transform": {
+        "d4_address_orbit": [
+          27,
+          34,
+          111,
+          118
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          107,
+          109,
+          111,
+          113,
+          115,
+          117,
+          121,
+          123,
+          125,
+          127,
+          129,
+          131
+        ],
+        "local_orbit_size": 12,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 112,
+      "grid": "R10C04",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P06",
+        "plus": "KC54+::P06",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (-1,1,-1) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P06",
+      "transform": {
+        "d4_address_orbit": [
+          28,
+          33,
+          39,
+          46,
+          99,
+          106,
+          112,
+          117
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          106,
+          108,
+          112,
+          114,
+          124,
+          126,
+          130,
+          132
+        ],
+        "local_orbit_size": 8,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 113,
+      "grid": "R10C05",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P07",
+        "plus": "KC54+::P07",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (0,1,-1) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P07",
+      "transform": {
+        "d4_address_orbit": [
+          29,
+          32,
+          51,
+          58,
+          87,
+          94,
+          113,
+          116
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          107,
+          109,
+          111,
+          113,
+          115,
+          117,
+          121,
+          123,
+          125,
+          127,
+          129,
+          131
+        ],
+        "local_orbit_size": 12,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 114,
+      "grid": "R10C06",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P08",
+        "plus": "KC54+::P08",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (1,1,-1) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P08",
+      "transform": {
+        "d4_address_orbit": [
+          30,
+          31,
+          63,
+          70,
+          75,
+          82,
+          114,
+          115
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          106,
+          108,
+          112,
+          114,
+          124,
+          126,
+          130,
+          132
+        ],
+        "local_orbit_size": 8,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 115,
+      "grid": "R10C07",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P09",
+        "plus": "KC54+::P09",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (-1,-1,0) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P09",
+      "transform": {
+        "d4_address_orbit": [
+          30,
+          31,
+          63,
+          70,
+          75,
+          82,
+          114,
+          115
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          107,
+          109,
+          111,
+          113,
+          115,
+          117,
+          121,
+          123,
+          125,
+          127,
+          129,
+          131
+        ],
+        "local_orbit_size": 12,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 116,
+      "grid": "R10C08",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P10",
+        "plus": "KC54+::P10",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (0,-1,0) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P10",
+      "transform": {
+        "d4_address_orbit": [
+          29,
+          32,
+          51,
+          58,
+          87,
+          94,
+          113,
+          116
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          110,
+          116,
+          118,
+          120,
+          122,
+          128
+        ],
+        "local_orbit_size": 6,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 117,
+      "grid": "R10C09",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P11",
+        "plus": "KC54+::P11",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (1,-1,0) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P11",
+      "transform": {
+        "d4_address_orbit": [
+          28,
+          33,
+          39,
+          46,
+          99,
+          106,
+          112,
+          117
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          107,
+          109,
+          111,
+          113,
+          115,
+          117,
+          121,
+          123,
+          125,
+          127,
+          129,
+          131
+        ],
+        "local_orbit_size": 12,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 118,
+      "grid": "R10C10",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P12",
+        "plus": "KC54+::P12",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (-1,0,0) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P12",
+      "transform": {
+        "d4_address_orbit": [
+          27,
+          34,
+          111,
+          118
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          110,
+          116,
+          118,
+          120,
+          122,
+          128
+        ],
+        "local_orbit_size": 6,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 119,
+      "grid": "R10C11",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P13",
+        "plus": "KC54+::P13",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "Which admissible branch becomes the compressed successor?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P13",
+      "transform": {
+        "d4_address_orbit": [
+          15,
+          22,
+          26,
+          35,
+          110,
+          119,
+          123,
+          130
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          119
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 120,
+      "grid": "R10C12",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P14",
+        "plus": "KC54+::P14",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (1,0,0) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P14",
+      "transform": {
+        "d4_address_orbit": [
+          3,
+          10,
+          25,
+          36,
+          109,
+          120,
+          135,
+          142
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          110,
+          116,
+          118,
+          120,
+          122,
+          128
+        ],
+        "local_orbit_size": 6,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 121,
+      "grid": "R11C01",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P15",
+        "plus": "KC54+::P15",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (-1,1,0) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P15",
+      "transform": {
+        "d4_address_orbit": [
+          2,
+          11,
+          13,
+          24,
+          121,
+          132,
+          134,
+          143
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          107,
+          109,
+          111,
+          113,
+          115,
+          117,
+          121,
+          123,
+          125,
+          127,
+          129,
+          131
+        ],
+        "local_orbit_size": 12,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 122,
+      "grid": "R11C02",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P16",
+        "plus": "KC54+::P16",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (0,1,0) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P16",
+      "transform": {
+        "d4_address_orbit": [
+          14,
+          23,
+          122,
+          131
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          110,
+          116,
+          118,
+          120,
+          122,
+          128
+        ],
+        "local_orbit_size": 6,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 123,
+      "grid": "R11C03",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P17",
+        "plus": "KC54+::P17",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (1,1,0) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P17",
+      "transform": {
+        "d4_address_orbit": [
+          15,
+          22,
+          26,
+          35,
+          110,
+          119,
+          123,
+          130
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          107,
+          109,
+          111,
+          113,
+          115,
+          117,
+          121,
+          123,
+          125,
+          127,
+          129,
+          131
+        ],
+        "local_orbit_size": 12,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 124,
+      "grid": "R11C04",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P18",
+        "plus": "KC54+::P18",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (-1,-1,1) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P18",
+      "transform": {
+        "d4_address_orbit": [
+          16,
+          21,
+          38,
+          47,
+          98,
+          107,
+          124,
+          129
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          106,
+          108,
+          112,
+          114,
+          124,
+          126,
+          130,
+          132
+        ],
+        "local_orbit_size": 8,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 125,
+      "grid": "R11C05",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P19",
+        "plus": "KC54+::P19",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (0,-1,1) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P19",
+      "transform": {
+        "d4_address_orbit": [
+          17,
+          20,
+          50,
+          59,
+          86,
+          95,
+          125,
+          128
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          107,
+          109,
+          111,
+          113,
+          115,
+          117,
+          121,
+          123,
+          125,
+          127,
+          129,
+          131
+        ],
+        "local_orbit_size": 12,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 126,
+      "grid": "R11C06",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P20",
+        "plus": "KC54+::P20",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (1,-1,1) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P20",
+      "transform": {
+        "d4_address_orbit": [
+          18,
+          19,
+          62,
+          71,
+          74,
+          83,
+          126,
+          127
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          106,
+          108,
+          112,
+          114,
+          124,
+          126,
+          130,
+          132
+        ],
+        "local_orbit_size": 8,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 127,
+      "grid": "R11C07",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P21",
+        "plus": "KC54+::P21",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (-1,0,1) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P21",
+      "transform": {
+        "d4_address_orbit": [
+          18,
+          19,
+          62,
+          71,
+          74,
+          83,
+          126,
+          127
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          107,
+          109,
+          111,
+          113,
+          115,
+          117,
+          121,
+          123,
+          125,
+          127,
+          129,
+          131
+        ],
+        "local_orbit_size": 12,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 128,
+      "grid": "R11C08",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P22",
+        "plus": "KC54+::P22",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (0,0,1) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P22",
+      "transform": {
+        "d4_address_orbit": [
+          17,
+          20,
+          50,
+          59,
+          86,
+          95,
+          125,
+          128
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          110,
+          116,
+          118,
+          120,
+          122,
+          128
+        ],
+        "local_orbit_size": 6,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 129,
+      "grid": "R11C09",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P23",
+        "plus": "KC54+::P23",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (1,0,1) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P23",
+      "transform": {
+        "d4_address_orbit": [
+          16,
+          21,
+          38,
+          47,
+          98,
+          107,
+          124,
+          129
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          107,
+          109,
+          111,
+          113,
+          115,
+          117,
+          121,
+          123,
+          125,
+          127,
+          129,
+          131
+        ],
+        "local_orbit_size": 12,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 130,
+      "grid": "R11C10",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P24",
+        "plus": "KC54+::P24",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (-1,1,1) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P24",
+      "transform": {
+        "d4_address_orbit": [
+          15,
+          22,
+          26,
+          35,
+          110,
+          119,
+          123,
+          130
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          106,
+          108,
+          112,
+          114,
+          124,
+          126,
+          130,
+          132
+        ],
+        "local_orbit_size": 8,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 131,
+      "grid": "R11C11",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P25",
+        "plus": "KC54+::P25",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (0,1,1) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P25",
+      "transform": {
+        "d4_address_orbit": [
+          14,
+          23,
+          122,
+          131
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          107,
+          109,
+          111,
+          113,
+          115,
+          117,
+          121,
+          123,
+          125,
+          127,
+          129,
+          131
+        ],
+        "local_orbit_size": 12,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "KC27",
+      "band_invariant": "topological adjacency does not imply a lawful semantic route",
+      "gid": 132,
+      "grid": "R11C12",
+      "kc54_duplex": {
+        "conjugate": "KC54*::P26",
+        "plus": "KC54+::P26",
+        "relation": "TYPED_SHADOW_NOT_IDENTITY"
+      },
+      "question": "What does simultaneous displacement at (1,1,1) produce and preserve?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "P26",
+      "transform": {
+        "d4_address_orbit": [
+          2,
+          11,
+          13,
+          24,
+          121,
+          132,
+          134,
+          143
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "B3_SIGNED_PERMUTATION",
+        "local_orbit": [
+          106,
+          108,
+          112,
+          114,
+          124,
+          126,
+          130,
+          132
+        ],
+        "local_orbit_size": 8,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "SSN12",
+      "band_invariant": "telemetry measures and records; it never promotes",
+      "gid": 133,
+      "grid": "R12C01",
+      "kc54_duplex": null,
+      "question": "What state is each node in?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "M01",
+      "transform": {
+        "d4_address_orbit": [
+          1,
+          12,
+          133,
+          144
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "SOLID_STATE_INDEX",
+        "local_orbit": [
+          133
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "SSN12",
+      "band_invariant": "telemetry measures and records; it never promotes",
+      "gid": 134,
+      "grid": "R12C02",
+      "kc54_duplex": null,
+      "question": "What state is each edge in?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "M02",
+      "transform": {
+        "d4_address_orbit": [
+          2,
+          11,
+          13,
+          24,
+          121,
+          132,
+          134,
+          143
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "SOLID_STATE_INDEX",
+        "local_orbit": [
+          134
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "SSN12",
+      "band_invariant": "telemetry measures and records; it never promotes",
+      "gid": 135,
+      "grid": "R12C03",
+      "kc54_duplex": null,
+      "question": "Which frontier activates next?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "M03",
+      "transform": {
+        "d4_address_orbit": [
+          3,
+          10,
+          25,
+          36,
+          109,
+          120,
+          135,
+          142
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "SOLID_STATE_INDEX",
+        "local_orbit": [
+          135
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "SSN12",
+      "band_invariant": "telemetry measures and records; it never promotes",
+      "gid": 136,
+      "grid": "R12C04",
+      "kc54_duplex": null,
+      "question": "What lives between two nodes?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "M04",
+      "transform": {
+        "d4_address_orbit": [
+          4,
+          9,
+          37,
+          48,
+          97,
+          108,
+          136,
+          141
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "SOLID_STATE_INDEX",
+        "local_orbit": [
+          136
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "SSN12",
+      "band_invariant": "telemetry measures and records; it never promotes",
+      "gid": 137,
+      "grid": "R12C05",
+      "kc54_duplex": null,
+      "question": "How dense is the coupling?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "M05",
+      "transform": {
+        "d4_address_orbit": [
+          5,
+          8,
+          49,
+          60,
+          85,
+          96,
+          137,
+          140
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "SOLID_STATE_INDEX",
+        "local_orbit": [
+          137
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "SSN12",
+      "band_invariant": "telemetry measures and records; it never promotes",
+      "gid": 138,
+      "grid": "R12C06",
+      "kc54_duplex": null,
+      "question": "Which nodes co-activate?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "M06",
+      "transform": {
+        "d4_address_orbit": [
+          6,
+          7,
+          61,
+          72,
+          73,
+          84,
+          138,
+          139
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "SOLID_STATE_INDEX",
+        "local_orbit": [
+          138
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "SSN12",
+      "band_invariant": "telemetry measures and records; it never promotes",
+      "gid": 139,
+      "grid": "R12C07",
+      "kc54_duplex": null,
+      "question": "Where is the commitment boundary?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "M07",
+      "transform": {
+        "d4_address_orbit": [
+          6,
+          7,
+          61,
+          72,
+          73,
+          84,
+          138,
+          139
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "SOLID_STATE_INDEX",
+        "local_orbit": [
+          139
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "SSN12",
+      "band_invariant": "telemetry measures and records; it never promotes",
+      "gid": 140,
+      "grid": "R12C08",
+      "kc54_duplex": null,
+      "question": "What was healed, and what gap remains?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "M08",
+      "transform": {
+        "d4_address_orbit": [
+          5,
+          8,
+          49,
+          60,
+          85,
+          96,
+          137,
+          140
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "SOLID_STATE_INDEX",
+        "local_orbit": [
+          140
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "SSN12",
+      "band_invariant": "telemetry measures and records; it never promotes",
+      "gid": 141,
+      "grid": "R12C09",
+      "kc54_duplex": null,
+      "question": "What exact path produced this?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "M09",
+      "transform": {
+        "d4_address_orbit": [
+          4,
+          9,
+          37,
+          48,
+          97,
+          108,
+          136,
+          141
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "SOLID_STATE_INDEX",
+        "local_orbit": [
+          141
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "SSN12",
+      "band_invariant": "telemetry measures and records; it never promotes",
+      "gid": 142,
+      "grid": "R12C10",
+      "kc54_duplex": null,
+      "question": "Which projective synapses exist?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "M10",
+      "transform": {
+        "d4_address_orbit": [
+          3,
+          10,
+          25,
+          36,
+          109,
+          120,
+          135,
+          142
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "SOLID_STATE_INDEX",
+        "local_orbit": [
+          142
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "SSN12",
+      "band_invariant": "telemetry measures and records; it never promotes",
+      "gid": 143,
+      "grid": "R12C11",
+      "kc54_duplex": null,
+      "question": "What fraction of the crystal is covered and returnable?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "M11",
+      "transform": {
+        "d4_address_orbit": [
+          2,
+          11,
+          13,
+          24,
+          121,
+          132,
+          134,
+          143
+        ],
+        "d4_orbit_size": 8,
+        "identity_preserved": true,
+        "local_law": "SOLID_STATE_INDEX",
+        "local_orbit": [
+          143
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    },
+    {
+      "band": "SSN12",
+      "band_invariant": "telemetry measures and records; it never promotes",
+      "gid": 144,
+      "grid": "R12C12",
+      "kc54_duplex": null,
+      "question": "May a solid-state certificate be issued?",
+      "return_obligation": "TYPED_RETURN_REQUIRED",
+      "station": "M12",
+      "transform": {
+        "d4_address_orbit": [
+          1,
+          12,
+          133,
+          144
+        ],
+        "d4_orbit_size": 4,
+        "identity_preserved": true,
+        "local_law": "SOLID_STATE_INDEX",
+        "local_orbit": [
+          144
+        ],
+        "local_orbit_size": 1,
+        "truth_effect": "NONE"
+      }
+    }
+  ],
+  "law": "ALL_TRANSFORMS_ARE_SIMULTANEOUS_TYPED_VIEWS; NONE CHANGES SOURCE IDENTITY, TRUTH, EVIDENCE, OR AUTHORITY",
+  "schema": "KC144.P38.CoordinateTensor144.V1",
+  "tensor_digest": "sha256:d78ba073843b1efb11777e5bfa164f96b8d64b5967647b6f37156643812da6ac"
+}
