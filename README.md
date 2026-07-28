@@ -54,6 +54,8 @@ PYTHONPATH=src python3 -m kc144_crystal application-transport \
   --output registry/v15 \
   --challenge-batch registry/v11/governance_challenge_batch_v11.json
 PYTHONPATH=src python3 -m kc144_crystal tool-dispatch-contract
+PYTHONPATH=src python3 -m kc144_crystal p36-contract
+PYTHONPATH=src python3 -m kc144_crystal p36-tools
 PYTHONPATH=src python3 -m unittest discover -s tests -v
 ```
 
@@ -162,6 +164,17 @@ PYTHONPATH=src python3 -m kc144_crystal tool-dispatch \
   request.json head-registry.json --workers 5 --output result.json
 PYTHONPATH=src python3 -m kc144_crystal tool-dispatch-verify \
   result.json head-registry.json
+PYTHONPATH=src python3 -m kc144_crystal p31-exact-status \
+  --archive /absolute/path/KC144_P31_LIVE_COGNITION_OS_V3_3.zip
+PYTHONPATH=src python3 -m kc144_crystal p31-exact-navigate \
+  "route the event frontier and return to M12" \
+  --archive /absolute/path/KC144_P31_LIVE_COGNITION_OS_V3_3.zip
+PYTHONPATH=src python3 -m kc144_crystal p36-cycle \
+  events.json subscription-registry.json \
+  --base-state-digest sha256:<64-hex> \
+  --cutoff 2026-07-28T00:00:00.000000Z \
+  --output p36-cycle.json
+PYTHONPATH=src python3 -m kc144_crystal p36-verify p36-cycle.json
 PYTHONPATH=src python3 -m kc144_crystal rotate 110 kc27-J
 PYTHONPATH=src python3 -m kc144_crystal rotate 7 sigma
 ```
@@ -183,6 +196,12 @@ PYTHONPATH=src python3 -m kc144_crystal rotate 7 sigma
 - Dispatch compiles five independent preflight lanes, reduces them
   deterministically, seals an exact KC54 return, and returns typed blocked
   receipts instead of guessing or executing command strings.
+- The versioned P36 successor preserves Dispatch V1 while adding an exact P31
+  archive adapter and five-lane event macrocycle: watch, signed replay, source
+  succession, real-outcome intake, and all-and-only affected-front execution.
+- P36 emits five receipts and one M12-returned NOOP/HOLD delta when no genuine
+  event exists. It never converts replay, signature validity, connector
+  retrieval, or user choice into independent evidence or production authority.
 - H06 QueryBundles compile to evidence-filtered, non-scalar Pareto
   attractors, exact paths, bridge exposure, and explicit returns.
 - The beta bridge-witness gate is executable; all 28 production bridges remain

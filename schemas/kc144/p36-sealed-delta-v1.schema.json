@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.invalid/schemas/p36-sealed-delta-v1.schema.json",
+  "title": "KC144 P36 Sealed Delta V1",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "epoch_id",
+    "base_snapshot_digest",
+    "next_state_digest",
+    "state_parent",
+    "runtime_parent",
+    "heart_parent",
+    "subscription_registry_digest",
+    "admitted_event_ids",
+    "lane_receipt_ids",
+    "execution_receipt_root",
+    "coverage",
+    "independent_witness_count",
+    "truth_credit_assigned",
+    "production_mutated",
+    "governance_authority_granted",
+    "content_transport_certified",
+    "production_certificate_issued",
+    "truth_effect",
+    "evidence_effect",
+    "authority_effect",
+    "global_state",
+    "return_target",
+    "successor_seed",
+    "delta_id"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.P36.SealedDelta.V1"},
+    "status": {"enum": ["NOOP_HOLD", "SEALED_HOLD", "ABORTED_HOLD"]},
+    "epoch_id": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "base_snapshot_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "next_state_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "state_parent": {"const": "KC144.P35::f8805a3651f8bc7009e8035f"},
+    "runtime_parent": {"const": "KC144.P31::db5a6446ce54cf4bc53515be"},
+    "heart_parent": {"const": "KC144.HEART::H06.AHEART.V2"},
+    "subscription_registry_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "admitted_event_ids": {"type": "array", "uniqueItems": true},
+    "lane_receipt_ids": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true
+    },
+    "execution_receipt_root": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "coverage": {
+      "type": "object",
+      "required": [
+        "unexpected_execution_count",
+        "missing_resolution_count",
+        "all_and_only_affected"
+      ],
+      "properties": {
+        "unexpected_execution_count": {"const": 0},
+        "missing_resolution_count": {"const": 0},
+        "all_and_only_affected": {"const": true}
+      }
+    },
+    "independent_witness_count": {"const": 0},
+    "truth_credit_assigned": {"const": 0},
+    "production_mutated": {"const": false},
+    "governance_authority_granted": {"const": false},
+    "content_transport_certified": {"const": false},
+    "production_certificate_issued": {"const": false},
+    "truth_effect": {"const": "NONE"},
+    "evidence_effect": {"const": "NONE"},
+    "authority_effect": {"const": "NONE"},
+    "global_state": {"const": "HOLD"},
+    "return_target": {"const": "KC144.V1::GID144::M12"},
+    "successor_seed": {"type": "object"},
+    "delta_id": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+  }
+}

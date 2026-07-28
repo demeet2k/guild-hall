@@ -81,6 +81,15 @@ from .nomination_v14 import (
 )
 from .population import crystallize, write_crystal
 from .parallel_routes import compile_parallel_route_crystal
+from .p31_adapter import ExactP31Archive, navigate_exact_p31
+from .p36_runtime import (
+    compile_p36_cycle,
+    compile_p36_release,
+    p36_contract,
+    p36_tool_registry,
+    public_projection,
+    verify_p36_cycle,
+)
 from .query import QueryBundle, compile_query, query_contract
 from .repair import (
     M12EvidencePacket,
@@ -271,6 +280,55 @@ def build_parser() -> argparse.ArgumentParser:
     dispatch_runtime.add_argument("--implementation-tree", required=True)
     dispatch_runtime.add_argument("--source", required=True)
     dispatch_runtime.add_argument("--bundle", required=True)
+
+    p31_status = commands.add_parser(
+        "p31-exact-status",
+        help="verify and inspect the exact immutable P31 runtime archive",
+    )
+    p31_status.add_argument("--archive", required=True)
+    p31_navigate = commands.add_parser(
+        "p31-exact-navigate",
+        help="navigate through the exact P31 archive adapter",
+    )
+    p31_navigate.add_argument("query")
+    p31_navigate.add_argument("--archive", required=True)
+    p31_navigate.add_argument("--policy", default="minimum_defect")
+    p31_navigate.add_argument("--hop-budget", type=int)
+    commands.add_parser(
+        "p36-contract",
+        help="emit the source-steered five-lane P36 contract",
+    )
+    commands.add_parser(
+        "p36-tools",
+        help="emit the versioned P31-adapter and P36 tool registry",
+    )
+    p36_cycle = commands.add_parser(
+        "p36-cycle",
+        help="compile one bounded caller-supplied P36 event epoch",
+    )
+    p36_cycle.add_argument("events", help="JSON array of event envelopes")
+    p36_cycle.add_argument("subscriptions", help="subscription registry JSON")
+    p36_cycle.add_argument("--base-state-digest", required=True)
+    p36_cycle.add_argument("--cutoff", required=True)
+    p36_cycle.add_argument("--parent-receipts")
+    p36_cycle.add_argument("--output")
+    p36_verify = commands.add_parser(
+        "p36-verify",
+        help="verify one frozen P36 macrocycle without connector reads",
+    )
+    p36_verify.add_argument("envelope")
+    p36_project = commands.add_parser(
+        "p36-public-project",
+        help="emit the privacy-safe public projection of a P36 macrocycle",
+    )
+    p36_project.add_argument("envelope")
+    p36_release = commands.add_parser(
+        "p36-release",
+        help="materialize the candidate-HOLD P36 reference release",
+    )
+    p36_release.add_argument("--output", default="registry/p36-dispatch/v1")
+    p36_release.add_argument("--implementation-commit", required=True)
+    p36_release.add_argument("--implementation-tree", required=True)
 
     systematic = commands.add_parser("systematic", help="compile every V3 registry")
     systematic.add_argument("--output", default="registry/v3")
@@ -950,6 +1008,81 @@ def main(argv: list[str] | None = None) -> int:
             and report["verification_verdict"] == "PASS"
             else 2
         )
+
+    if args.command == "p31-exact-status":
+        _json(ExactP31Archive(args.archive).status())
+        return 0
+
+    if args.command == "p31-exact-navigate":
+        report = navigate_exact_p31(
+            args.query,
+            archive_path=args.archive,
+            policy=args.policy,
+            hop_budget=args.hop_budget,
+        )
+        _json(report)
+        return 0 if report["receipt"]["verified"] else 2
+
+    if args.command == "p36-contract":
+        _json(p36_contract())
+        return 0
+
+    if args.command == "p36-tools":
+        _json(p36_tool_registry())
+        return 0
+
+    if args.command == "p36-cycle":
+        events = json.loads(Path(args.events).read_text(encoding="utf-8"))
+        subscriptions = json.loads(
+            Path(args.subscriptions).read_text(encoding="utf-8")
+        )
+        parent_receipts = (
+            json.loads(Path(args.parent_receipts).read_text(encoding="utf-8"))
+            if args.parent_receipts
+            else []
+        )
+        report = compile_p36_cycle(
+            events=events,
+            subscription_registry=subscriptions,
+            base_state_digest=args.base_state_digest,
+            cutoff=args.cutoff,
+            parent_receipts=parent_receipts,
+        )
+        if args.output:
+            destination = Path(args.output)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_text(
+                json.dumps(
+                    report,
+                    ensure_ascii=False,
+                    sort_keys=True,
+                    separators=(",", ":"),
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+        _json(report)
+        return 0 if report["delta"]["status"] != "ABORTED_HOLD" else 2
+
+    if args.command == "p36-verify":
+        envelope = json.loads(Path(args.envelope).read_text(encoding="utf-8"))
+        report = verify_p36_cycle(envelope)
+        _json(report)
+        return 0 if report["verdict"] == "PASS" else 2
+
+    if args.command == "p36-public-project":
+        envelope = json.loads(Path(args.envelope).read_text(encoding="utf-8"))
+        _json(public_projection(envelope))
+        return 0
+
+    if args.command == "p36-release":
+        report = compile_p36_release(
+            args.output,
+            implementation_commit=args.implementation_commit,
+            implementation_tree=args.implementation_tree,
+        )
+        _json(report)
+        return 0 if report["verification_verdict"] == "PASS" else 2
 
     if args.command == "systematic":
         release = compile_systematic_framework(args.output)

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.invalid/schemas/p36-release-v1.schema.json",
+  "title": "KC144 P36 Candidate Release V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "release_id",
+    "status",
+    "implementation",
+    "lineage",
+    "contract_digest",
+    "tool_registry_digest",
+    "subscription_registry_digest",
+    "envelope_digest",
+    "delta_id",
+    "verification_verdict",
+    "public_projection_digest",
+    "production_authority",
+    "truth_effect",
+    "next_seed",
+    "release_digest",
+    "result_id"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.P36.Release.V1"},
+    "release_id": {"const": "KC144_P36_EVENT_RUNTIME_CANDIDATE_V1"},
+    "status": {"const": "CANDIDATE_HOLD"},
+    "implementation": {
+      "type": "object",
+      "required": ["repository", "commit", "tree"]
+    },
+    "lineage": {"type": "object"},
+    "contract_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "tool_registry_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "subscription_registry_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "envelope_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "delta_id": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "verification_verdict": {"const": "PASS"},
+    "public_projection_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "production_authority": {"const": "HOLD"},
+    "truth_effect": {"const": "NONE"},
+    "next_seed": {"type": "string", "minLength": 1},
+    "release_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "result_id": {"type": "string", "pattern": "^KC144\\.P36\\.CANDIDATE::[0-9a-f]{24}$"}
+  }
+}

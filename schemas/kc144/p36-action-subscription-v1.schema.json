@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.invalid/schemas/p36-action-subscription-v1.schema.json",
+  "title": "KC144 P36 Action Subscription V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "action_id",
+    "front_ids",
+    "event_classes",
+    "predicate",
+    "predicate_version",
+    "effect_class",
+    "required_capabilities",
+    "authority_ceiling",
+    "implementation_digest",
+    "standing",
+    "enabled",
+    "subscription_id"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.P36.ActionSubscription.V1"},
+    "action_id": {"type": "string", "minLength": 1},
+    "front_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "event_classes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "predicate": {"type": "object", "minProperties": 1, "maxProperties": 1},
+    "predicate_version": {"const": "KC144.Predicate.V1"},
+    "effect_class": {
+      "enum": [
+        "READ_ONLY",
+        "LOCAL_REVERSIBLE",
+        "EXTERNAL_MUTATION",
+        "AUTHORITY_MUTATION"
+      ]
+    },
+    "required_capabilities": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "authority_ceiling": {"const": "READ_ONLY"},
+    "implementation_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "standing": {
+      "enum": ["EXACT_BOUND", "SYNTHETIC_TEST_FIXTURE"]
+    },
+    "enabled": {"type": "boolean"},
+    "subscription_id": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

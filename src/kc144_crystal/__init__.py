@@ -123,6 +123,25 @@ from .parallel_routes import (
     coordinate_delta,
     coordinate_vector,
 )
+from .p31_adapter import (
+    ExactP31Archive,
+    P31AdapterError,
+    navigate_exact_p31,
+)
+from .p36_runtime import (
+    P36RuntimeError,
+    build_event,
+    build_subscription,
+    compile_p36_cycle,
+    compile_p36_release,
+    p36_contract,
+    p36_tool_registry,
+    public_projection,
+    synthetic_subscription_registry,
+    unbound_p35_subscription_registry,
+    verify_lane_receipt,
+    verify_p36_cycle,
+)
 from .population import crystallize
 from .query import QueryBundle, compile_query
 from .repair import (
@@ -182,6 +201,9 @@ from .witness import BridgeWitnessPacket, evaluate_bridge_witness
 __all__ = [
     "AgentReceiptError",
     "ToolDispatchError",
+    "P31AdapterError",
+    "P36RuntimeError",
+    "ExactP31Archive",
     "AgentTask",
     "LeaseGrant",
     "RouteSimulation",
@@ -251,6 +273,18 @@ __all__ = [
     "verify_dispatch_head_registry",
     "verify_tool_dispatch_result",
     "tool_dispatch_contract",
+    "navigate_exact_p31",
+    "build_event",
+    "build_subscription",
+    "compile_p36_cycle",
+    "compile_p36_release",
+    "p36_contract",
+    "p36_tool_registry",
+    "public_projection",
+    "synthetic_subscription_registry",
+    "unbound_p35_subscription_registry",
+    "verify_lane_receipt",
+    "verify_p36_cycle",
     "issue_lease",
     "retry_allowed",
     "validate_task_result",
