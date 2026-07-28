@@ -1,0 +1,1 @@
+{"canonical_graph_mutations_this_cycle":0,"edge_id":"P41.EDGE.003","exactly_once_final":false,"execution_count":0,"execution_status":"HELD_NOT_EXECUTED","finality_digest":"sha256:66ab6a010e6d5c65827c4eaf45fbff8eb5dc47c12a9301b178eb23af557f5286","ledger_valid":true,"replay_verdict":"PASS","schema":"KC144.P43.TransactionFinality.V1","truth_effect":"NONE"}

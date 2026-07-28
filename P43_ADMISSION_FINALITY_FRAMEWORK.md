@@ -41,3 +41,16 @@ executions, zero canonical mutations, an unarmed watch, production authority
 `HOLD`, and truth effect `NONE`. The runtime includes positive production,
 idempotency, simulation, missing-gate, tamper, lineage, and noncollapse tests;
 those tests prove machinery, not external readiness.
+
+## Exact implementation and verification receipt
+
+```text
+IMPLEMENTATION_COMMIT::704f9d525bcf0eec858939a1f2fc5cfc7e936ebc
+IMPLEMENTATION_TREE::f7779ca4abe1a12f1096d49dd35bdc2f56b1cdfe
+RESULT::KC144.P43.CANDIDATE::240473a1935faad593c1b8d5
+RELEASE_DIGEST::sha256:240473a1935faad593c1b8d5ea74b7171cac43bfac63ad597e0161238c424aa2
+REPOSITORY_TESTS::478_RUN_476_PASS_2_EXPECTED_SKIP
+VERIFICATION_MATRIX::26/26_PASS
+PRODUCTION_AUTHORITY::HOLD
+TRUTH_EFFECT::NONE
+```
