@@ -9,6 +9,19 @@ IMPLEMENTATION_COMMIT::829e654b2df0225a901d49b84ef37a95d5b04752
 IMPLEMENTATION_TREE::22a72d6f4d59060c9ade16889ac031bf387cbab6
 RECEIPT_COMMIT::d700b77accd2be51ea2f013a0cfe1514cfcf6be5
 RECEIPT_TREE::7b8e205504a8260955deac7d94ee48becf14a184
+P36_IMPLEMENTATION_COMMIT::f35697e4baf8afa00f1a2a91a1eff18aa8acfe5f
+P36_IMPLEMENTATION_TREE::30377647415d9df054da9db8b536d4363d43d702
+P36_RELEASE_COMMIT::9d64c5d9d9f29af7f5d310f9720f84bdb886a913
+P36_RELEASE_TREE::fc4b50ca1bb3d5f27c5baa616092304c1d48916d
+P36_RESULT_ID::KC144.P36.CANDIDATE::2dc88c9f2bf39ccb97e883f2
+P36_RELEASE_DIGEST::sha256:2dc88c9f2bf39ccb97e883f2c10a2269a628cadf96a50097d4f9fb1a2d808782
+P36_VERIFICATION::PASS
+P36_EVENT_CLASSES::18
+P36_ACTION_SUBSCRIPTIONS::360_SOURCE_DECLARED_EXACT_BODIES_UNBOUND
+P36_LANES::5
+P36_FRESH_CHECKOUT_TESTS::381/381
+P36_PRODUCTION_AUTHORITY::HOLD
+P36_TRUTH_EFFECT::NONE
 HEAD_REGISTRY_DIGEST::sha256:5411bcd7c8e875b429004ecfd63b19fe35998b48e0c7ff685f90176ae15fbc62
 TOOL_REGISTRY_DIGEST::sha256:0763e01c6fd520447795d37703f26b711609f1851ddd517c72942b7b3c013e9b
 REQUEST_ID::sha256:8db42ce5513e7ca896160b0b3491db7b7a08adf2744de3e57b5eaac3ab15677e
@@ -84,8 +97,33 @@ substitute is permitted.
 - [Receipt registry](https://github.com/demeet2k/guild-hall/tree/d700b77accd2be51ea2f013a0cfe1514cfcf6be5/registry/tool-dispatch/v1)
 - [Machine metro](KC144_TOOL_DISPATCH_METRO.json)
 
+## P36 source-steered successor
+
+P36 replaces the locator-only P31 boundary with an exact, archive-bound P31
+adapter and places that adapter inside a larger five-lane event macrocycle:
+
+1. continuous event watch;
+2. signed-receipt replay;
+3. source succession;
+4. real-outcome intake;
+5. all-and-only affected-front execution.
+
+The macrocycle recognizes 18 typed event classes and the P35-declared topology
+of 360 action subscriptions. Because the exact subscription bodies, trusted
+signers, and first genuine consented production event are not yet bound, the
+frozen zero-event replay returns `NOOP_HOLD`. It passes integrity verification
+without claiming evidence, truth, governance authority, or production mutation.
+
+- [P36 implementation commit](https://github.com/demeet2k/guild-hall/commit/f35697e4baf8afa00f1a2a91a1eff18aa8acfe5f)
+- [P36 release commit](https://github.com/demeet2k/guild-hall/commit/9d64c5d9d9f29af7f5d310f9720f84bdb886a913)
+- [P36 framework](https://github.com/demeet2k/guild-hall/blob/f35697e4baf8afa00f1a2a91a1eff18aa8acfe5f/P36_EVENT_RUNTIME_V1.md)
+- [P36 event runtime](https://github.com/demeet2k/guild-hall/blob/f35697e4baf8afa00f1a2a91a1eff18aa8acfe5f/src/kc144_crystal/p36_runtime.py)
+- [Exact P31 adapter](https://github.com/demeet2k/guild-hall/blob/f35697e4baf8afa00f1a2a91a1eff18aa8acfe5f/src/kc144_crystal/p31_adapter.py)
+- [Frozen P36 registry](https://github.com/demeet2k/guild-hall/tree/9d64c5d9d9f29af7f5d310f9720f84bdb886a913/registry/p36-dispatch/v1)
+
 ```text
-NEXT::KC144.V1::P31_EXACT_RUNTIME_ADAPTER_AND_WITNESSED_TOOL_OUTCOME_INTAKE
+PRIOR_NEXT::KC144.V1::P31_EXACT_RUNTIME_ADAPTER_AND_WITNESSED_TOOL_OUTCOME_INTAKE
+NEXT::KC144.V3.8::MATH144.P37::EXACT_P35_SUBSCRIPTION_REGISTRY_BINDING_TRUSTED_SIGNER_ENROLLMENT_AND_FIRST_GENUINE_CONSENTED_EVENT_REPLAY_MACROCYCLE_06
 RETURN::KC144.V1::MYCELIUM_LOCATABLE_TOOL_DISPATCH
-PARENT::KC144.V1::CONTENT_ADDRESSED_AGENT_RUN_RECEIPTS
+PARENT::KC144.P35::f8805a3651f8bc7009e8035f
 ```

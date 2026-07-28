@@ -33,7 +33,13 @@
       "AUTHORITY_EFFECT"
     ],
     "maximum_parallel_width": 5,
-    "worker_capacities_verified": [1, 2, 3, 4, 5],
+    "worker_capacities_verified": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
     "canonical_bytes_identical": true,
     "dispatch_status": "EXECUTED",
     "verification_verdict": "PASS",
@@ -50,7 +56,9 @@
     "route_ledger": "GID141/M09",
     "return": "GID144/M12",
     "translation_defect": 0,
-    "open_bridge_ids": ["BR019"],
+    "open_bridge_ids": [
+      "BR019"
+    ],
     "base_graph_mutated": false
   },
   "p31": {
@@ -73,5 +81,55 @@
   "content_transport_certified": false,
   "governance_authority_granted": false,
   "production_truth_effect": "NONE",
-  "next_seed": "KC144.V1::P31_EXACT_RUNTIME_ADAPTER_AND_WITNESSED_TOOL_OUTCOME_INTAKE"
+  "next_seed": "KC144.V3.8::MATH144.P37::EXACT_P35_SUBSCRIPTION_REGISTRY_BINDING_TRUSTED_SIGNER_ENROLLMENT_AND_FIRST_GENUINE_CONSENTED_EVENT_REPLAY_MACROCYCLE_06",
+  "previous_next_seed": "KC144.V1::P31_EXACT_RUNTIME_ADAPTER_AND_WITNESSED_TOOL_OUTCOME_INTAKE",
+  "successor": {
+    "schema": "KC144.P36.EventRuntimeMetro.V1",
+    "branch": "kc144-mycelium-tool-dispatch-v1",
+    "implementation": {
+      "commit": "f35697e4baf8afa00f1a2a91a1eff18aa8acfe5f",
+      "tree": "30377647415d9df054da9db8b536d4363d43d702"
+    },
+    "release_snapshot": {
+      "commit": "9d64c5d9d9f29af7f5d310f9720f84bdb886a913",
+      "tree": "fc4b50ca1bb3d5f27c5baa616092304c1d48916d",
+      "result_id": "KC144.P36.CANDIDATE::2dc88c9f2bf39ccb97e883f2",
+      "release_digest": "sha256:2dc88c9f2bf39ccb97e883f2c10a2269a628cadf96a50097d4f9fb1a2d808782"
+    },
+    "lineage": {
+      "state_parent": "KC144.P35::f8805a3651f8bc7009e8035f",
+      "runtime_parent": "KC144.P31::db5a6446ce54cf4bc53515be",
+      "heart_parent": "KC144.HEART::H06.AHEART.V2"
+    },
+    "topology": {
+      "event_classes": 18,
+      "action_subscriptions": 360,
+      "subscription_standing": "SOURCE_DECLARED_EXACT_BODIES_UNBOUND",
+      "lanes": [
+        "CONTINUOUS_EVENT_WATCH",
+        "SIGNED_RECEIPT_REPLAY",
+        "SOURCE_SUCCESSION",
+        "REAL_OUTCOME_INTAKE",
+        "AFFECTED_FRONT_EXECUTION"
+      ]
+    },
+    "verification": {
+      "verdict": "PASS",
+      "fresh_checkout_tests": {
+        "passed": 381,
+        "total": 381
+      },
+      "production_authority": "HOLD",
+      "truth_effect": "NONE",
+      "evidence_effect": "NONE",
+      "production_mutated": false
+    },
+    "links": {
+      "implementation": "https://github.com/demeet2k/guild-hall/commit/f35697e4baf8afa00f1a2a91a1eff18aa8acfe5f",
+      "release": "https://github.com/demeet2k/guild-hall/commit/9d64c5d9d9f29af7f5d310f9720f84bdb886a913",
+      "framework": "https://github.com/demeet2k/guild-hall/blob/f35697e4baf8afa00f1a2a91a1eff18aa8acfe5f/P36_EVENT_RUNTIME_V1.md",
+      "registry": "https://github.com/demeet2k/guild-hall/tree/9d64c5d9d9f29af7f5d310f9720f84bdb886a913/registry/p36-dispatch/v1"
+    },
+    "next_seed": "KC144.V3.8::MATH144.P37::EXACT_P35_SUBSCRIPTION_REGISTRY_BINDING_TRUSTED_SIGNER_ENROLLMENT_AND_FIRST_GENUINE_CONSENTED_EVENT_REPLAY_MACROCYCLE_06"
+  }
 }
