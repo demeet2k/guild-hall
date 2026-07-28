@@ -521,6 +521,34 @@ class P38MetaNavigatorTests(unittest.TestCase):
                 (Path(second) / "SHA256SUMS").read_text(),
             )
 
+    def test_release_persists_only_public_repository_events(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            compile_p38_release(
+                temporary,
+                implementation_commit="c" * 40,
+                implementation_tree="d" * 40,
+                source_events=[repository_event()],
+            )
+            persisted = json.loads(
+                (
+                    Path(temporary) / "p38_public_source_events_v1.json"
+                ).read_text(encoding="utf-8")
+            )
+            self.assertEqual(persisted, [repository_event()])
+            doc = build_doc_revision_event(
+                body_sha256="sha256:" + "5" * 64,
+                revision_commitment="sha256:" + "6" * 64,
+                issuer_commitment="sha256:" + "7" * 64,
+                observed_at="2026-07-28T01:00:00.000000Z",
+            )
+            with self.assertRaises(P38RuntimeError):
+                compile_p38_release(
+                    temporary,
+                    implementation_commit="c" * 40,
+                    implementation_tree="d" * 40,
+                    source_events=[doc],
+                )
+
     def test_public_artifacts_contain_no_private_docs_identity(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             compile_p38_release(

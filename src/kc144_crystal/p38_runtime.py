@@ -1428,6 +1428,16 @@ def compile_p38_release(
         if registry_directory is not None
         else expected_p35_registry_binding()
     )
+    public_source_events = [dict(event) for event in source_events]
+    if any(
+        event.get("source_class") != "REPOSITORY_BYTES"
+        or event.get("consent", {}).get("publication_allowed") is not True
+        for event in public_source_events
+    ):
+        raise P38RuntimeError(
+            "release artifacts may persist only publication-consented "
+            "repository-byte events"
+        )
     query = {
         "schema": "KC144.P38.Query.V1",
         "goal": (
@@ -1505,6 +1515,7 @@ def compile_p38_release(
         "p38_contract_v1.json": contract,
         "p35_exact_registry_binding_v1.json": binding,
         "p38_coordinate_tensor_144_v1.json": tensor,
+        "p38_public_source_events_v1.json": public_source_events,
         "p38_macrocycle_v1.json": cycle,
         "p38_verification_v1.json": verification,
         "p38_release_v1.json": release,
