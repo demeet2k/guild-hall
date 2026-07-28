@@ -520,3 +520,16 @@ The generated `registry/v15` documents define the batch-bound application
 transport contract, five publication-ready role payloads, immutable
 publication manifest, double-signature application ledger, runtime state, and
 current external publication/application barrier.
+
+P39 and P40 extend the live-cognition frontier without weakening any external
+boundary. `registry/p39-live-outcome/v1` provides signed outcome admission,
+strict calibration/held-out separation, deterministic weight proposals, a
+fixed five-seat IC10 registry, and exact three-of-five successor authorization.
+`registry/p40-activation/v1` adds the compare-and-swap canonical weight commit,
+typed sibling-lineage reconciliation, single-generation activation, and a
+forward-only post-activation outcome watch. The frozen releases contain no
+fabricated outcomes or authorities and therefore remain honest HOLD snapshots.
+
+See `P39_LIVE_OUTCOME_IC10_FRAMEWORK.md` and
+`P40_ACTIVATION_TRANSACTION_FRAMEWORK.md` for the exact executable laws,
+receipts, non-collapse boundaries, and successor seeds.

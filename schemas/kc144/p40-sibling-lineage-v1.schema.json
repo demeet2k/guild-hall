@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.invalid/schemas/p40-sibling-lineage-v1.schema.json",
+  "title": "KC144 P40 Sibling Lineage V1",
+  "type": "object",
+  "required": [
+    "schema", "relation", "result_id", "result_digest",
+    "parent_result_id", "manifest_digest", "archive_sha256",
+    "source_fiber", "runtime", "boundary", "admissibility",
+    "truth_effect", "authority_effect", "next_seed", "capsule_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.P40.SiblingLineage.V1"},
+    "relation": {"const": "TYPED_SIBLING_REFERENCE"},
+    "result_id": {"const": "KC144.P40::f07bae53d9e157e9e8e54473"},
+    "parent_result_id": {"const": "KC144.P39::9a0a228dc74f001e64507417"},
+    "admissibility": {"const": "REFERENCE_ONLY_NOT_PARENT_NOT_MERGED"},
+    "truth_effect": {"const": "NONE"},
+    "authority_effect": {"const": "NONE"},
+    "capsule_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

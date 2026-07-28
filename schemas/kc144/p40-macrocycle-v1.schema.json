@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.invalid/schemas/p40-macrocycle-v1.schema.json",
+  "title": "KC144 P40 Macrocycle V1",
+  "type": "object",
+  "required": [
+    "schema", "contract_digest", "cutoff", "namespace", "p39_cycle",
+    "public_parent_binding", "sibling_capsule", "sibling_binding",
+    "canonical_state_input", "expected_base_state_root",
+    "activation_transaction", "post_activation_watch",
+    "noncollapse_adjudication", "lane_receipts", "state",
+    "envelope_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.P40.Macrocycle.V1"},
+    "namespace": {"enum": ["PRODUCTION", "TEST"]},
+    "lane_receipts": {"type": "array", "minItems": 8, "maxItems": 8},
+    "envelope_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

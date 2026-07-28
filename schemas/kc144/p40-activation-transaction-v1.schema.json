@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.invalid/schemas/p40-activation-transaction-v1.schema.json",
+  "title": "KC144 P40 Activation Transaction V1",
+  "type": "object",
+  "required": [
+    "schema", "namespace", "public_parent_binding_digest",
+    "p39_decision_digest", "p39_convergence_evaluation_digest",
+    "expected_base_state_root", "observed_base_state_root",
+    "base_state_verification", "compare_and_swap", "route_set_compatible",
+    "proposed_weights", "canonical_state_before", "canonical_state_after",
+    "status", "canonical_weight_updates_executed", "successor_activated",
+    "production_mutated", "test_simulation", "truth_effect",
+    "evidence_effect", "authority_effect", "transaction_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.P40.ActivationTransaction.V1"},
+    "namespace": {"enum": ["PRODUCTION", "TEST"]},
+    "compare_and_swap": {"enum": ["PASS", "FAIL"]},
+    "status": {"enum": ["HOLD", "COMMITTED"]},
+    "successor_activated": {"type": "boolean"},
+    "production_mutated": {"type": "boolean"},
+    "test_simulation": {"type": "boolean"},
+    "truth_effect": {"const": "NONE"},
+    "evidence_effect": {"const": "NONE"},
+    "authority_effect": {"enum": ["NONE", "SUCCESSOR_ACTIVATED"]},
+    "transaction_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

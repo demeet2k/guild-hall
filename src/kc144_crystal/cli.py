@@ -114,6 +114,15 @@ from .p39_runtime import (
     p39_policy,
     verify_p39_cycle,
 )
+from .p40_runtime import (
+    P40_CUTOFF,
+    build_canonical_weight_state,
+    compile_p40_cycle,
+    compile_p40_release,
+    p40_contract,
+    p40_sibling_capsule,
+    verify_p40_cycle,
+)
 from .query import QueryBundle, compile_query, query_contract
 from .repair import (
     M12EvidencePacket,
@@ -448,6 +457,48 @@ def build_parser() -> argparse.ArgumentParser:
     p39_release.add_argument("--output", default="registry/p39-live-outcome/v1")
     p39_release.add_argument("--implementation-commit", required=True)
     p39_release.add_argument("--implementation-tree", required=True)
+    commands.add_parser(
+        "p40-contract",
+        help="emit the lineage-safe P40 activation transaction contract",
+    )
+    commands.add_parser(
+        "p40-sibling",
+        help="emit the exact reference-only sibling P40 lineage capsule",
+    )
+    p40_state = commands.add_parser(
+        "p40-state",
+        help="compile a canonical weight state for compare-and-swap activation",
+    )
+    p40_state.add_argument("--weights")
+    p40_state.add_argument("--generation", type=int, default=0)
+    p40_state.add_argument("--parent-state-root")
+    p40_cycle = commands.add_parser(
+        "p40-cycle",
+        help="compile one complete P40 authorization/commit/watch macrocycle",
+    )
+    p40_cycle.add_argument("--p39-cycle")
+    p40_cycle.add_argument("--canonical-state")
+    p40_cycle.add_argument("--expected-base-state-root")
+    p40_cycle.add_argument("--sibling-capsule")
+    p40_cycle.add_argument(
+        "--namespace", choices=("PRODUCTION", "TEST"), default="PRODUCTION"
+    )
+    p40_cycle.add_argument("--cutoff", default=P40_CUTOFF)
+    p40_cycle.add_argument("--output")
+    p40_verify = commands.add_parser(
+        "p40-verify",
+        help="verify and cold-replay one frozen P40 macrocycle",
+    )
+    p40_verify.add_argument("envelope")
+    p40_release = commands.add_parser(
+        "p40-release",
+        help="materialize the lineage-safe honest-HOLD P40 reference release",
+    )
+    p40_release.add_argument(
+        "--output", default="registry/p40-activation/v1"
+    )
+    p40_release.add_argument("--implementation-commit", required=True)
+    p40_release.add_argument("--implementation-tree", required=True)
 
     systematic = commands.add_parser("systematic", help="compile every V3 registry")
     systematic.add_argument("--output", default="registry/v3")
@@ -1379,6 +1430,88 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "p39-release":
         report = compile_p39_release(
+            args.output,
+            implementation_commit=args.implementation_commit,
+            implementation_tree=args.implementation_tree,
+        )
+        _json(report)
+        return 0 if report["verification_verdict"] == "PASS" else 2
+
+    if args.command == "p40-contract":
+        _json(p40_contract())
+        return 0
+
+    if args.command == "p40-sibling":
+        _json(p40_sibling_capsule())
+        return 0
+
+    if args.command == "p40-state":
+        weights = (
+            json.loads(Path(args.weights).read_text(encoding="utf-8"))
+            if args.weights
+            else []
+        )
+        _json(
+            build_canonical_weight_state(
+                weights,
+                generation=args.generation,
+                parent_state_root=args.parent_state_root,
+            )
+        )
+        return 0
+
+    if args.command == "p40-cycle":
+        parent = (
+            json.loads(Path(args.p39_cycle).read_text(encoding="utf-8"))
+            if args.p39_cycle
+            else None
+        )
+        canonical_state = (
+            json.loads(
+                Path(args.canonical_state).read_text(encoding="utf-8")
+            )
+            if args.canonical_state
+            else None
+        )
+        sibling = (
+            json.loads(
+                Path(args.sibling_capsule).read_text(encoding="utf-8")
+            )
+            if args.sibling_capsule
+            else None
+        )
+        report = compile_p40_cycle(
+            p39_cycle=parent,
+            canonical_state=canonical_state,
+            expected_base_state_root=args.expected_base_state_root,
+            sibling_capsule=sibling,
+            namespace=args.namespace,
+            cutoff=args.cutoff,
+        )
+        if args.output:
+            destination = Path(args.output)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_text(
+                json.dumps(
+                    report,
+                    ensure_ascii=False,
+                    sort_keys=True,
+                    separators=(",", ":"),
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+        _json(report)
+        return 0 if verify_p40_cycle(report)["verdict"] == "PASS" else 2
+
+    if args.command == "p40-verify":
+        envelope = json.loads(Path(args.envelope).read_text(encoding="utf-8"))
+        report = verify_p40_cycle(envelope)
+        _json(report)
+        return 0 if report["verdict"] == "PASS" else 2
+
+    if args.command == "p40-release":
+        report = compile_p40_release(
             args.output,
             implementation_commit=args.implementation_commit,
             implementation_tree=args.implementation_tree,

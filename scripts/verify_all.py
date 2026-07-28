@@ -34,6 +34,22 @@ def main() -> int:
     env["PYTHONPATH"] = str(ROOT / "src")
     runs = [
         run(
+            "P40 activation transaction and post-activation watch",
+            [
+                sys.executable,
+                "-m",
+                "kc144_crystal",
+                "p40-release",
+                "--output",
+                "registry/p40-activation/v1",
+                "--implementation-commit",
+                "0000000000000000000000000000000000000000",
+                "--implementation-tree",
+                "1111111111111111111111111111111111111111",
+            ],
+            env=env,
+        ),
+        run(
             "P39 live-outcome and independent-IC10 runtime",
             [
                 sys.executable,
@@ -272,7 +288,7 @@ def main() -> int:
     ]
     passed = sum(run_result["exit_code"] == 0 for run_result in runs)
     report = {
-        "schema": "KC144.VerificationMatrix.P39",
+        "schema": "KC144.VerificationMatrix.P40",
         "verdict": "PASS" if passed == len(runs) else "FAIL",
         "passed": passed,
         "total": len(runs),

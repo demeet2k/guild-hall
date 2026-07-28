@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kc144.invalid/schemas/p40-post-activation-watch-v1.schema.json",
+  "title": "KC144 P40 Post-Activation Outcome Watch V1",
+  "type": "object",
+  "required": [
+    "schema", "activation_transaction_digest", "activated_state_root",
+    "starts_strictly_after", "accepted_partitions", "minimum_outcomes",
+    "minimum_source_surfaces", "minimum_routes",
+    "reuse_for_activation_authorization",
+    "retroactive_observations_permitted", "status",
+    "production_events_observed", "truth_effect", "authority_effect",
+    "watch_digest"
+  ],
+  "properties": {
+    "schema": {"const": "KC144.P40.PostActivationOutcomeWatch.V1"},
+    "status": {"enum": ["ARMED", "HELD_NOT_ARMED"]},
+    "reuse_for_activation_authorization": {"const": false},
+    "retroactive_observations_permitted": {"const": false},
+    "truth_effect": {"const": "NONE"},
+    "authority_effect": {"const": "NONE"},
+    "watch_digest": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}
