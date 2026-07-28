@@ -132,6 +132,24 @@ P43_POST_EDGE_WATCH::HELD_NOT_ARMED
 P43_CANONICAL_GRAPH_MUTATIONS::0
 P43_PRODUCTION_AUTHORITY::HOLD
 P43_TRUTH_EFFECT::NONE
+P44_IMPLEMENTATION_COMMIT::0616d4d391bcec661c4d493dc4a8b81413af8640
+P44_IMPLEMENTATION_TREE::ce731a5a4b964d483f81f93788b3f1276db5db0b
+P44_RELEASE_COMMIT::1022d7735c38c5557fbaadfeba7aeb5e6aef4a0c
+P44_RELEASE_TREE::068e950092013d5a4f74db4a027da0838a58c345
+P44_RESULT_ID::KC144.P44.CANDIDATE::1073b6a2be78da5a66b068e2
+P44_RELEASE_DIGEST::sha256:1073b6a2be78da5a66b068e2da8f23dccb0a0e4d6c01a0ab3f042fd55649e6fb
+P44_VERIFICATION::PASS
+P44_CRYSTAL_LANES::10
+P44_REPOSITORY_TESTS::488_RUN_486_PASS_2_EXPECTED_SKIP
+P44_VERIFICATION_MATRIX::27/27
+P44_PARENT_FINALITY_READY::FALSE
+P44_FORWARD_OUTCOMES::0/5
+P44_FORWARD_ROUTES::0/3
+P44_NONDEGRADATION::HOLD
+P44_CANONICAL_EDGE_EFFECT::HOLD
+P44_CANONICAL_GRAPH_MUTATIONS::0
+P44_PRODUCTION_AUTHORITY::HOLD
+P44_TRUTH_EFFECT::NONE
 HEAD_REGISTRY_DIGEST::sha256:5411bcd7c8e875b429004ecfd63b19fe35998b48e0c7ff685f90176ae15fbc62
 TOOL_REGISTRY_DIGEST::sha256:0763e01c6fd520447795d37703f26b711609f1851ddd517c72942b7b3c013e9b
 REQUEST_ID::sha256:8db42ce5513e7ca896160b0b3491db7b7a08adf2744de3e57b5eaac3ab15677e
@@ -494,4 +512,43 @@ NEXT::KC144.V4.5::MATH144.P44::ACCUMULATE_FORWARD_POST_EDGE_OUTCOMES_VERIFY_EXAC
 RETURN::KC144.V1::GID144::M12
 PUBLIC_PARENT::KC144.P42.CANDIDATE::57435ce8483f620adc52b3c6
 RESULT::KC144.P43.CANDIDATE::240473a1935faad593c1b8d5
+```
+
+## P44 forward outcome / canonical edge-effect successor
+
+P44 binds the exact P43 parent and separates edge execution from measured edge
+effect. It first verifies a single replay-stable execution record, then accepts
+only strictly later nonreused task or empirical outcomes. A valid forward
+window requires five events, two event classes, and three routes.
+
+The measurement compares declared baseline and candidate scores over the
+finite window. The candidate mean may not degrade, and at least three events
+must be individually nondegrading. Only that bounded result may freeze a
+canonical edge-effect receipt. It cannot authorize graph or model weights,
+establish general optimality, promote proposition truth, or grant governance
+authority.
+
+The public release remains `CANDIDATE_HOLD`: P43 has not executed the edge in
+production, so finality is unavailable, the window is empty, nondegradation is
+unmeasured, and the effect is not frozen. The positive and adversarial paths
+are implemented and tested without substituting fixtures for external
+evidence. The private P44 label remains an opaque parallel lineage.
+
+The detached public tree ran 488 tests with 486 passes and two expected skips;
+the integrated matrix passed 27/27, and frozen replay reproduced the exact
+envelope.
+
+- [P44 public branch](https://github.com/demeet2k/guild-hall/tree/kc144-forward-edge-effect-p44-v1)
+- [P44 implementation commit](https://github.com/demeet2k/guild-hall/commit/0616d4d391bcec661c4d493dc4a8b81413af8640)
+- [P44 release commit](https://github.com/demeet2k/guild-hall/commit/1022d7735c38c5557fbaadfeba7aeb5e6aef4a0c)
+- [P44 framework](https://github.com/demeet2k/guild-hall/blob/1022d7735c38c5557fbaadfeba7aeb5e6aef4a0c/P44_FORWARD_EDGE_EFFECT_FRAMEWORK.md)
+- [P44 runtime](https://github.com/demeet2k/guild-hall/blob/0616d4d391bcec661c4d493dc4a8b81413af8640/src/kc144_crystal/p44_runtime.py)
+- [Frozen P44 registry](https://github.com/demeet2k/guild-hall/tree/1022d7735c38c5557fbaadfeba7aeb5e6aef4a0c/registry/p44-edge-effect/v1)
+
+```text
+PRIOR_NEXT::KC144.V4.5::MATH144.P44::ACCUMULATE_FORWARD_POST_EDGE_OUTCOMES_VERIFY_EXACTLY_ONCE_LEDGER_FINALITY_MEASURE_NONDEGRADATION_ACROSS_DIVERSE_ROUTES_AND_FREEZE_CANONICAL_EDGE_EFFECT_MACROCYCLE_13
+NEXT::KC144.V4.6::MATH144.P45::ADMIT_CANONICAL_EDGE_EFFECT_RECEIPT_ACCUMULATE_SECOND_FORWARD_OUTCOME_WINDOW_COMPARE_ROUTE_AND_SURFACE_STABILITY_AND_DECIDE_REVERSIBLE_EDGE_RETENTION_MACROCYCLE_14
+RETURN::KC144.V1::GID144::M12
+PUBLIC_PARENT::KC144.P43.CANDIDATE::240473a1935faad593c1b8d5
+RESULT::KC144.P44.CANDIDATE::1073b6a2be78da5a66b068e2
 ```
