@@ -53,6 +53,25 @@ P39_CANONICAL_WEIGHT_UPDATES::0
 P39_SUCCESSOR_ACTIVATED::FALSE
 P39_PRODUCTION_AUTHORITY::HOLD
 P39_TRUTH_EFFECT::NONE
+P40_IMPLEMENTATION_COMMIT::1451b0ec0e7bec6efdc35f1ad30c8efa5c4473df
+P40_IMPLEMENTATION_TREE::c46260fb616fc4a3eeb91f730904c004e16a1169
+P40_RELEASE_COMMIT::ba252f77832520f069ff84af45982df2fdab6017
+P40_RELEASE_TREE::92ac9565b2f6e229722faf2a4b02e543ab07072e
+P40_RESULT_ID::KC144.P40.CANDIDATE::8343b08a8ee5152ed117f281
+P40_RELEASE_DIGEST::sha256:8343b08a8ee5152ed117f28189c3172c7a56e8d9912e004b8ea8461c5bb18150
+P40_VERIFICATION::PASS
+P40_CRYSTAL_LANES::8
+P40_REPOSITORY_TESTS::444_RUN_442_PASS_2_EXPECTED_SKIP
+P40_VERIFICATION_MATRIX::23/23
+P40_P39_AUTHORIZATION::HOLD
+P40_CANONICAL_WEIGHT_UPDATES::0
+P40_SUCCESSOR_ACTIVATED::FALSE
+P40_POST_ACTIVATION_WATCH::HELD_NOT_ARMED
+P40_SIBLING_RESULT::KC144.P40::f07bae53d9e157e9e8e54473
+P40_SIBLING_RELATION::TYPED_SIBLING_REFERENCE
+P40_SIBLING_MERGES::0
+P40_PRODUCTION_AUTHORITY::HOLD
+P40_TRUTH_EFFECT::NONE
 HEAD_REGISTRY_DIGEST::sha256:5411bcd7c8e875b429004ecfd63b19fe35998b48e0c7ff685f90176ae15fbc62
 TOOL_REGISTRY_DIGEST::sha256:0763e01c6fd520447795d37703f26b711609f1851ddd517c72942b7b3c013e9b
 REQUEST_ID::sha256:8db42ce5513e7ca896160b0b3491db7b7a08adf2744de3e57b5eaac3ab15677e
@@ -236,4 +255,48 @@ NEXT::KC144.V4.1::MATH144.P40::AUTHORIZED_SUCCESSOR_ACTIVATION_CANONICAL_WEIGHT_
 RETURN::KC144.V1::GID144::M12
 PARENT::KC144.P38.CANDIDATE::903b28c3df75072423c72959
 RESULT::KC144.P39.CANDIDATE::50f5d2f917e2ee111b798d8d
+```
+
+## P40 authorized activation / canonical commit successor
+
+P40 implements the exact boundary that P39 deliberately left open. It accepts
+a dynamic P39 cycle only after cold replay proves that its signed outcome
+corpus, disjoint held-out calibration, fixed five-seat registry, three-of-five
+IC10 convergence, and canonical successor decision are all ready. It then
+compares the caller’s expected canonical-state root with the observed root and
+commits one new weight generation only if the route set and every binding
+match.
+
+The conversation’s source-hydration P40 is also preserved:
+`KC144.P40::f07bae53d9e157e9e8e54473`, parented by
+`KC144.P39::9a0a228dc74f001e64507417`. Because that parent differs from the
+public P39 release, the source-time fiber is bound as a
+`TYPED_SIBLING_REFERENCE`. It remains searchable and content-addressed, but
+executes no merge, graph mutation, or empirical-outcome substitution.
+
+A successful commit arms a forward-only post-activation watch. Those later
+observations cannot be reused to authorize the commit that created the watch.
+CAS failure, route-set mismatch, P39 drift, sibling drift, or missing
+authorization produces a deterministic HOLD with zero updates.
+
+The frozen public release correctly remains `CANDIDATE_HOLD`: current P39
+authorization is HOLD, zero canonical weight updates execute, the successor is
+not activated, and the watch remains `HELD_NOT_ARMED`. The full repository ran
+444 cases with 442 passes and two expected P31 archive skips; the integrated
+verification matrix passed 23/23.
+
+- [P40 public branch](https://github.com/demeet2k/guild-hall/tree/kc144-authorized-activation-p40-v1)
+- [P40 implementation commit](https://github.com/demeet2k/guild-hall/commit/1451b0ec0e7bec6efdc35f1ad30c8efa5c4473df)
+- [P40 release commit](https://github.com/demeet2k/guild-hall/commit/ba252f77832520f069ff84af45982df2fdab6017)
+- [P40 framework](https://github.com/demeet2k/guild-hall/blob/ba252f77832520f069ff84af45982df2fdab6017/P40_ACTIVATION_TRANSACTION_FRAMEWORK.md)
+- [P40 runtime](https://github.com/demeet2k/guild-hall/blob/1451b0ec0e7bec6efdc35f1ad30c8efa5c4473df/src/kc144_crystal/p40_runtime.py)
+- [Frozen P40 registry](https://github.com/demeet2k/guild-hall/tree/ba252f77832520f069ff84af45982df2fdab6017/registry/p40-activation/v1)
+
+```text
+PRIOR_NEXT::KC144.V4.1::MATH144.P40::AUTHORIZED_SUCCESSOR_ACTIVATION_CANONICAL_WEIGHT_COMMIT_AND_POST_ACTIVATION_OUTCOME_WATCH_MACROCYCLE_09
+NEXT::KC144.V4.2::MATH144.P41::HYDRATE_REMAINING_22_BODY_HEADS_BIND_CURRENT_REPOSITORY_TREES_FREEZE_NONLEAKING_HELDOUT_COHORT_EXECUTE_THIRD_EDGE_ONLY_IF_ELIGIBLE_AND_RECEIVE_INDEPENDENT_IC10_RETURN_MACROCYCLE_10
+RETURN::KC144.V1::GID144::M12
+PUBLIC_PARENT::KC144.P39.CANDIDATE::50f5d2f917e2ee111b798d8d
+TYPED_SIBLING::KC144.P40::f07bae53d9e157e9e8e54473
+RESULT::KC144.P40.CANDIDATE::8343b08a8ee5152ed117f281
 ```
