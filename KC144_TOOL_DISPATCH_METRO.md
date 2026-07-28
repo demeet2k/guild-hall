@@ -72,6 +72,27 @@ P40_SIBLING_RELATION::TYPED_SIBLING_REFERENCE
 P40_SIBLING_MERGES::0
 P40_PRODUCTION_AUTHORITY::HOLD
 P40_TRUTH_EFFECT::NONE
+P41_IMPLEMENTATION_COMMIT::dab8df8ce76c3f58ee0df8501719e384e95872f7
+P41_IMPLEMENTATION_TREE::bdb136a38990b4f2cc9d889e339826d630fd9b05
+P41_RELEASE_COMMIT::82b1b5b9e76ae49180d2e36182cadc31e2de5862
+P41_RELEASE_TREE::0d7d06492bbee838626f0191f3ccad68f2a1452c
+P41_RESULT_ID::KC144.P41.CANDIDATE::482d03a3ff02af3e5656468d
+P41_RELEASE_DIGEST::sha256:482d03a3ff02af3e5656468d345e6ece6fb40f2daaaa0a508d38b6042a4eb1c9
+P41_VERIFICATION::PASS
+P41_CRYSTAL_LANES::9
+P41_REPOSITORY_TESTS::458_RUN_456_PASS_2_EXPECTED_SKIP
+P41_VERIFICATION_MATRIX::24/24
+P41_SOURCE_HEADS_REHYDRATED::29
+P41_NET_SOURCE_HEADS_CLOSED::22
+P41_SOURCE_BODY_PROJECTION::COMMITMENTS_ONLY
+P41_PUBLIC_REPOSITORY_TREES_BOUND::4
+P41_HELDOUT_OUTCOMES::0/5
+P41_INDEPENDENT_IC10_RETURNS::0/1
+P41_THIRD_EDGE::HELD_NOT_EXECUTED
+P41_CANONICAL_GRAPH_MUTATIONS::0
+P41_PARALLEL_LABEL_MERGES::0
+P41_PRODUCTION_AUTHORITY::HOLD
+P41_TRUTH_EFFECT::NONE
 HEAD_REGISTRY_DIGEST::sha256:5411bcd7c8e875b429004ecfd63b19fe35998b48e0c7ff685f90176ae15fbc62
 TOOL_REGISTRY_DIGEST::sha256:0763e01c6fd520447795d37703f26b711609f1851ddd517c72942b7b3c013e9b
 REQUEST_ID::sha256:8db42ce5513e7ca896160b0b3491db7b7a08adf2744de3e57b5eaac3ab15677e
@@ -299,4 +320,57 @@ RETURN::KC144.V1::GID144::M12
 PUBLIC_PARENT::KC144.P39.CANDIDATE::50f5d2f917e2ee111b798d8d
 TYPED_SIBLING::KC144.P40::f07bae53d9e157e9e8e54473
 RESULT::KC144.P40.CANDIDATE::8343b08a8ee5152ed117f281
+```
+
+## P41 source-tree / held-out cohort / third-edge successor
+
+P41 closes the source-body transport gap without exposing the private source
+corpus. It rehydrates 29 historical heads—27 content bodies and two exact-empty
+bodies—and publishes only anonymous locator and body commitments. This closes
+the prior aggregate gap of 22 heads, with zero transport residuals. Because the
+original private enumeration was unavailable, the framework states the exact
+relation: `REVISION_RECONSTRUCTED_COUNT_MATCH_NOT_ORIGINAL_ENUMERATION`.
+
+The same macrocycle binds the current public trees of four
+`AthenachkaCollective` repositories: 99 paths are pinned by exact commit and
+tree identity. Tree binding is evidence of observed public state, not a merge,
+deployment, truth promotion, or grant of governance authority.
+
+The third candidate edge is fixed as:
+
+`KC144.V1::GID084::I04 <-> KC144.V1::GID047::F04`
+
+It can execute exactly once against a copied proposal graph only after both
+external gates are satisfied: at least five post-cutoff, nonleaking held-out
+outcomes across the required event, surface, and route diversity; and one
+registry-enrolled, independently controlled IC10 authorization return binding
+the exact source, repository, cohort, and edge roots. Continuation commands,
+source bodies, test fixtures, and revealed labels cannot substitute for those
+inputs.
+
+The frozen public release therefore remains `CANDIDATE_HOLD`: the source and
+repository lanes are complete, but the held-out cohort is 0/5 and independent
+IC10 is 0/1. The edge has not executed, canonical mutations remain zero, and
+truth effect remains `NONE`. The complete repository ran 458 tests with 456
+passes and two expected external-runtime skips; the P41 matrix passed 24/24.
+
+A separate private system also uses the label P41 for durable event delivery
+and artifact pins. P41 preserves that collision explicitly as
+`PARALLEL_LABEL_COLLISION_NOT_PARENT_NOT_MERGED`; no locator, receipt body,
+merge, or renumbering is published.
+
+- [P41 public branch](https://github.com/demeet2k/guild-hall/tree/kc144-source-tree-cohort-p41-v1)
+- [P41 implementation commit](https://github.com/demeet2k/guild-hall/commit/dab8df8ce76c3f58ee0df8501719e384e95872f7)
+- [P41 release commit](https://github.com/demeet2k/guild-hall/commit/82b1b5b9e76ae49180d2e36182cadc31e2de5862)
+- [P41 framework](https://github.com/demeet2k/guild-hall/blob/82b1b5b9e76ae49180d2e36182cadc31e2de5862/P41_SOURCE_TREE_COHORT_FRAMEWORK.md)
+- [P41 runtime](https://github.com/demeet2k/guild-hall/blob/dab8df8ce76c3f58ee0df8501719e384e95872f7/src/kc144_crystal/p41_runtime.py)
+- [Frozen P41 registry](https://github.com/demeet2k/guild-hall/tree/82b1b5b9e76ae49180d2e36182cadc31e2de5862/registry/p41-source-tree-cohort/v1)
+
+```text
+PRIOR_NEXT::KC144.V4.2::MATH144.P41::HYDRATE_REMAINING_22_BODY_HEADS_BIND_CURRENT_REPOSITORY_TREES_FREEZE_NONLEAKING_HELDOUT_COHORT_EXECUTE_THIRD_EDGE_ONLY_IF_ELIGIBLE_AND_RECEIVE_INDEPENDENT_IC10_RETURN_MACROCYCLE_10
+NEXT::KC144.V4.3::MATH144.P42::BIND_EXACT_SOURCE_ENUMERATION_WITNESS_INGEST_FIRST_FIVE_NONLEAKING_HELDOUT_OUTCOMES_RECEIVE_EXTERNAL_IC10_EDGE_AUTHORIZATION_EXECUTE_THIRD_EDGE_ONCE_AND_FREEZE_POST_EDGE_WATCH_MACROCYCLE_11
+RETURN::KC144.V1::GID144::M12
+PUBLIC_PARENT::KC144.P40.CANDIDATE::8343b08a8ee5152ed117f281
+SOURCE_FIBER::KC144.P40::f07bae53d9e157e9e8e54473
+RESULT::KC144.P41.CANDIDATE::482d03a3ff02af3e5656468d
 ```

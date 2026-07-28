@@ -81,103 +81,146 @@
   "content_transport_certified": false,
   "governance_authority_granted": false,
   "production_truth_effect": "NONE",
-  "next_seed": "KC144.V4.2::MATH144.P41::HYDRATE_REMAINING_22_BODY_HEADS_BIND_CURRENT_REPOSITORY_TREES_FREEZE_NONLEAKING_HELDOUT_COHORT_EXECUTE_THIRD_EDGE_ONLY_IF_ELIGIBLE_AND_RECEIVE_INDEPENDENT_IC10_RETURN_MACROCYCLE_10",
-  "previous_next_seed": "KC144.V4.1::MATH144.P40::AUTHORIZED_SUCCESSOR_ACTIVATION_CANONICAL_WEIGHT_COMMIT_AND_POST_ACTIVATION_OUTCOME_WATCH_MACROCYCLE_09",
+  "next_seed": "KC144.V4.3::MATH144.P42::BIND_EXACT_SOURCE_ENUMERATION_WITNESS_INGEST_FIRST_FIVE_NONLEAKING_HELDOUT_OUTCOMES_RECEIVE_EXTERNAL_IC10_EDGE_AUTHORIZATION_EXECUTE_THIRD_EDGE_ONCE_AND_FREEZE_POST_EDGE_WATCH_MACROCYCLE_11",
+  "previous_next_seed": "KC144.V4.2::MATH144.P41::HYDRATE_REMAINING_22_BODY_HEADS_BIND_CURRENT_REPOSITORY_TREES_FREEZE_NONLEAKING_HELDOUT_COHORT_EXECUTE_THIRD_EDGE_ONLY_IF_ELIGIBLE_AND_RECEIVE_INDEPENDENT_IC10_RETURN_MACROCYCLE_10",
   "successor": {
-    "schema": "KC144.P40.ActivationTransactionMetro.V1",
-    "branch": "kc144-authorized-activation-p40-v1",
+    "schema": "KC144.P41.SourceTreeCohortMetro.V1",
+    "branch": "kc144-source-tree-cohort-p41-v1",
     "public_parent": {
-      "result_id": "KC144.P39.CANDIDATE::50f5d2f917e2ee111b798d8d",
-      "release_digest": "sha256:50f5d2f917e2ee111b798d8de2c18ccc4c96678bee6fb010bfa873c65483eeb6",
-      "release_commit": "bc29c55bcabc6f75fc571be167034896fab068b8",
-      "release_tree": "770e70a62be7f0f4f765fcb9ab594e2636e5b62c"
+      "result_id": "KC144.P40.CANDIDATE::8343b08a8ee5152ed117f281",
+      "release_digest": "sha256:8343b08a8ee5152ed117f28189c3172c7a56e8d9912e004b8ea8461c5bb18150",
+      "release_commit": "ba252f77832520f069ff84af45982df2fdab6017",
+      "release_tree": "92ac9565b2f6e229722faf2a4b02e543ab07072e"
     },
-    "typed_sibling": {
-      "relation": "TYPED_SIBLING_REFERENCE",
+    "typed_source_fiber": {
+      "relation": "TYPED_SOURCE_FIBER_NOT_PUBLIC_PARENT",
       "result_id": "KC144.P40::f07bae53d9e157e9e8e54473",
       "parent_result_id": "KC144.P39::9a0a228dc74f001e64507417",
-      "result_digest": "sha256:f07bae53d9e157e9e8e544737b99d89f56aa56b4bdb0555aba5d603f8c8557ea",
-      "manifest_digest": "sha256:a1e09af6d786b6ccff099bd04ab8c9412ed22cb59679f16d2bee98eb612d8157",
       "capsule_digest": "sha256:3a78f985957347a12889cc1c7e77e3bd297588b97cec671c30f632f6f62a905f",
-      "admissibility": "REFERENCE_ONLY_NOT_PARENT_NOT_MERGED",
-      "source_bodies_resolved": 7,
-      "source_heads_unhydrated": 22,
-      "merges": 0
+      "cohort_relation": "REVISION_RECONSTRUCTED_COUNT_MATCH_NOT_ORIGINAL_ENUMERATION",
+      "prior_resolved": 7,
+      "prior_unhydrated": 22,
+      "connector_rehydrated": 29,
+      "net_heads_closed": 22,
+      "content_bodies": 27,
+      "exact_empty_bodies": 2,
+      "transport_residuals": 0,
+      "exact_original_enumeration_claimed": false
     },
     "implementation": {
-      "commit": "1451b0ec0e7bec6efdc35f1ad30c8efa5c4473df",
-      "tree": "c46260fb616fc4a3eeb91f730904c004e16a1169"
+      "commit": "dab8df8ce76c3f58ee0df8501719e384e95872f7",
+      "tree": "bdb136a38990b4f2cc9d889e339826d630fd9b05"
     },
     "release_snapshot": {
-      "commit": "ba252f77832520f069ff84af45982df2fdab6017",
-      "tree": "92ac9565b2f6e229722faf2a4b02e543ab07072e",
-      "result_id": "KC144.P40.CANDIDATE::8343b08a8ee5152ed117f281",
-      "release_digest": "sha256:8343b08a8ee5152ed117f28189c3172c7a56e8d9912e004b8ea8461c5bb18150"
+      "commit": "82b1b5b9e76ae49180d2e36182cadc31e2de5862",
+      "tree": "0d7d06492bbee838626f0191f3ccad68f2a1452c",
+      "result_id": "KC144.P41.CANDIDATE::482d03a3ff02af3e5656468d",
+      "release_digest": "sha256:482d03a3ff02af3e5656468d345e6ece6fb40f2daaaa0a508d38b6042a4eb1c9",
+      "status": "CANDIDATE_HOLD"
     },
     "roots": {
-      "contract_digest": "sha256:fdf07c268b9050799cd2062ba55da05bc41085008b1e96ee43d9ceea8ce87d7f",
-      "base_state_root": "sha256:ac35652ae90207449f4f6ba63e4268de05c78fa65e17a249bdf465ca3a88ce6c",
-      "public_parent_binding_digest": "sha256:2c4891de6d2aee5d08511b71b36835dea4c1fdef44ee776287199091100ff71e",
-      "activation_transaction_digest": "sha256:46670a03b07590954eaea7890f6d3f1ca43fdd38439e2c83a4a5a07f2f3a1b09",
-      "post_activation_watch_digest": "sha256:3e30fd9e7d5758006a6533f48a974b0ea1c2409b2fcdcc4fb598a251197acb8a",
-      "envelope_digest": "sha256:3b6ac8336acc0bd2a1d70a6ca3314c6564ea66f15e41b042ac0f7ae72efc4f4d"
+      "contract_digest": "sha256:f13b8f2c33e99f343f214e2fe6eeb8a57559f73e8ffa18922b8a7ade95c4c244",
+      "source_manifest_root": "sha256:2d9606c0d13a85095278acc77e4b237da3131202ea3702190ec8d09b27f240bb",
+      "repository_forest_root": "sha256:e2cef08dbec713419c70d1b9632ed1697b302d70b81aeaccef50f211344d0cef",
+      "heldout_cohort_root": "sha256:32c39e8e130b32168cbc54c1e14485e3afb3647fd28b7b87273f775e711083a1",
+      "parallel_lineage_digest": "sha256:d279ca69e056555305ce4146a5eb34662cdd325adeb4156cca30ca103ebc67c0",
+      "edge_candidate_root": "sha256:e90c498739dbf13933796d34391a0ec4ba1db25e800cf686c78a728485d339ed",
+      "ic10_evaluation_digest": "sha256:3c8b21d35a8c5a0247665655ab160167f734835fb7808b59c23cf58c4d2d5fdb",
+      "third_edge_execution_digest": "sha256:5af65445159d8c844295d315d6d26057820bcf144d6de27f2468207cb74b048e",
+      "envelope_digest": "sha256:dc4655b753026707a6a1011c0e1348c30be8e5c0bac3ae790f34197606e4a7b9"
     },
     "topology": {
-      "activation": {
-        "authorization_source": "VERIFIED_P39_SUCCESSOR_READY",
-        "state_guard": "EXACT_COMPARE_AND_SWAP",
-        "commit_mode": "SINGLE_GENERATION",
-        "route_set_rule": "EXACT_OR_EXPLICITLY_UNPOPULATED",
-        "canonical_weight_updates_executed": 0
+      "source_privacy": {
+        "projection": "COMMITMENTS_ONLY",
+        "raw_body_bytes_published": 0,
+        "raw_document_ids_published": 0,
+        "revision_ids_published": 0,
+        "timestamps_published": 0,
+        "titles_published": 0
       },
-      "post_activation_watch": {
-        "status": "HELD_NOT_ARMED",
-        "starts_strictly_after_activation": true,
-        "reuse_for_activation_authorization": false,
-        "retroactive_observations_permitted": false
+      "repository_forest": {
+        "owner": "AthenachkaCollective",
+        "repository_count": 4,
+        "path_count": 99,
+        "all_commits_pinned": true,
+        "all_trees_pinned": true,
+        "mutation_executed": false
+      },
+      "heldout_cohort": {
+        "event_count": 0,
+        "required_event_count": 5,
+        "event_type_count": 0,
+        "source_surface_count": 0,
+        "route_count": 0,
+        "continuation_events_admitted": 0,
+        "labels_revealed": 0,
+        "status": "HOLD"
+      },
+      "independent_ic10": {
+        "accepted_return_count": 0,
+        "required_independent_returns": 1,
+        "independent_organization_count": 0,
+        "status": "HOLD"
+      },
+      "third_edge": {
+        "edge_id": "P41.EDGE.003",
+        "source": "KC144.V1::GID084::I04",
+        "target": "KC144.V1::GID047::F04",
+        "mutation_scope": "COPIED_PROPOSAL_GRAPH_ONLY",
+        "status": "HELD_NOT_EXECUTED",
+        "canonical_graph_mutations": 0
+      },
+      "parallel_p41": {
+        "relation": "PARALLEL_LABEL_COLLISION_NOT_PARENT_NOT_MERGED",
+        "merge_executed": false,
+        "renumbering_executed": false,
+        "private_receipt_embedded": false
       },
       "lanes": [
-        "PUBLIC_P39_PARENT_BIND",
-        "SIBLING_SOURCE_TIME_FIBER_BIND",
-        "SUCCESSOR_AUTHORIZATION_VERIFY",
-        "CANONICAL_STATE_COMPARE_AND_SWAP",
-        "CANONICAL_WEIGHT_COMMIT",
-        "POST_ACTIVATION_OUTCOME_WATCH",
-        "NONCOLLAPSE_ADJUDICATION",
+        "PUBLIC_P40_PARENT_BIND",
+        "SIBLING_SOURCE_FIBER_BIND",
+        "HISTORICAL_BODY_REHYDRATION",
+        "PUBLIC_REPOSITORY_TREE_BIND",
+        "NONLEAKING_HELDOUT_COHORT_FREEZE",
+        "INDEPENDENT_IC10_RETURN_INTAKE",
+        "THIRD_EDGE_ELIGIBILITY_AND_EXECUTION",
+        "PARALLEL_P41_NONCOLLAPSE",
         "M12_RETURN"
       ]
     },
     "verification": {
       "verdict": "PASS",
       "fresh_checkout_tests": {
-        "ran": 444,
-        "passed": 442,
+        "ran": 458,
+        "passed": 456,
         "skipped": 2,
         "failures": 0,
         "errors": 0
       },
       "verification_matrix": {
-        "passed": 23,
-        "total": 23
+        "passed": 24,
+        "total": 24
       },
       "production_authority": "HOLD",
       "truth_effect": "NONE",
-      "evidence_effect": "NONE",
+      "evidence_effect": "SOURCE_RETRIEVAL_COMMITMENTS_ONLY",
       "production_mutated": false,
-      "p39_authorization": "HOLD",
-      "canonical_weight_updates_executed": 0,
-      "successor_activated": false,
-      "sibling_merges": 0,
-      "post_activation_watch": "HELD_NOT_ARMED"
+      "source_heads_rehydrated": 29,
+      "net_source_heads_closed": 22,
+      "heldout_outcomes": 0,
+      "independent_ic10_returns": 0,
+      "third_edge": "HELD_NOT_EXECUTED",
+      "canonical_graph_mutations": 0,
+      "parallel_p41_merges": 0
     },
     "links": {
-      "branch": "https://github.com/demeet2k/guild-hall/tree/kc144-authorized-activation-p40-v1",
-      "implementation": "https://github.com/demeet2k/guild-hall/commit/1451b0ec0e7bec6efdc35f1ad30c8efa5c4473df",
-      "release": "https://github.com/demeet2k/guild-hall/commit/ba252f77832520f069ff84af45982df2fdab6017",
-      "framework": "https://github.com/demeet2k/guild-hall/blob/ba252f77832520f069ff84af45982df2fdab6017/P40_ACTIVATION_TRANSACTION_FRAMEWORK.md",
-      "runtime": "https://github.com/demeet2k/guild-hall/blob/1451b0ec0e7bec6efdc35f1ad30c8efa5c4473df/src/kc144_crystal/p40_runtime.py",
-      "registry": "https://github.com/demeet2k/guild-hall/tree/ba252f77832520f069ff84af45982df2fdab6017/registry/p40-activation/v1"
+      "branch": "https://github.com/demeet2k/guild-hall/tree/kc144-source-tree-cohort-p41-v1",
+      "implementation": "https://github.com/demeet2k/guild-hall/commit/dab8df8ce76c3f58ee0df8501719e384e95872f7",
+      "release": "https://github.com/demeet2k/guild-hall/commit/82b1b5b9e76ae49180d2e36182cadc31e2de5862",
+      "framework": "https://github.com/demeet2k/guild-hall/blob/82b1b5b9e76ae49180d2e36182cadc31e2de5862/P41_SOURCE_TREE_COHORT_FRAMEWORK.md",
+      "runtime": "https://github.com/demeet2k/guild-hall/blob/dab8df8ce76c3f58ee0df8501719e384e95872f7/src/kc144_crystal/p41_runtime.py",
+      "registry": "https://github.com/demeet2k/guild-hall/tree/82b1b5b9e76ae49180d2e36182cadc31e2de5862/registry/p41-source-tree-cohort/v1"
     },
-    "next_seed": "KC144.V4.2::MATH144.P41::HYDRATE_REMAINING_22_BODY_HEADS_BIND_CURRENT_REPOSITORY_TREES_FREEZE_NONLEAKING_HELDOUT_COHORT_EXECUTE_THIRD_EDGE_ONLY_IF_ELIGIBLE_AND_RECEIVE_INDEPENDENT_IC10_RETURN_MACROCYCLE_10"
+    "next_seed": "KC144.V4.3::MATH144.P42::BIND_EXACT_SOURCE_ENUMERATION_WITNESS_INGEST_FIRST_FIVE_NONLEAKING_HELDOUT_OUTCOMES_RECEIVE_EXTERNAL_IC10_EDGE_AUTHORIZATION_EXECUTE_THIRD_EDGE_ONCE_AND_FREEZE_POST_EDGE_WATCH_MACROCYCLE_11"
   }
 }
