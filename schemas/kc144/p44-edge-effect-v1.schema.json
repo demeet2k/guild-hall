@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"KC144 P44 Edge Effect","type":"object","required":["schema","edge_id","status","effect_scope","effect_digest"],"properties":{"schema":{"const":"KC144.P44.CanonicalEdgeEffect.V1"},"status":{"enum":["HOLD","FROZEN_CANONICAL_EDGE_EFFECT"]},"effect_digest":{"type":"string","pattern":"^sha256:[0-9a-f]{64}$"}}}

@@ -144,6 +144,12 @@ from .p43_runtime import (
     p43_contract,
     verify_p43_cycle,
 )
+from .p44_runtime import (
+    compile_p44_cycle,
+    compile_p44_release,
+    p44_contract,
+    verify_p44_cycle,
+)
 from .query import QueryBundle, compile_query, query_contract
 from .repair import (
     M12EvidencePacket,
@@ -628,6 +634,29 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p43_release.add_argument("--implementation-commit", required=True)
     p43_release.add_argument("--implementation-tree", required=True)
+    commands.add_parser(
+        "p44-contract",
+        help="emit the P44 forward-outcome and canonical edge-effect contract",
+    )
+    p44_cycle = commands.add_parser(
+        "p44-cycle",
+        help="compile one P44 forward-window and nondegradation macrocycle",
+    )
+    p44_cycle.add_argument("--p43-cycle")
+    p44_cycle.add_argument("--forward-events")
+    p44_cycle.add_argument("--output")
+    p44_verify = commands.add_parser(
+        "p44-verify", help="verify and replay one P44 macrocycle"
+    )
+    p44_verify.add_argument("envelope")
+    p44_release = commands.add_parser(
+        "p44-release", help="materialize the honest-HOLD P44 reference release"
+    )
+    p44_release.add_argument(
+        "--output", default="registry/p44-edge-effect/v1"
+    )
+    p44_release.add_argument("--implementation-commit", required=True)
+    p44_release.add_argument("--implementation-tree", required=True)
 
     systematic = commands.add_parser("systematic", help="compile every V3 registry")
     systematic.add_argument("--output", default="registry/v3")
@@ -1837,6 +1866,53 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "p43-release":
         report = compile_p43_release(
+            args.output,
+            implementation_commit=args.implementation_commit,
+            implementation_tree=args.implementation_tree,
+        )
+        _json(report)
+        return 0 if report["verification_verdict"] == "PASS" else 2
+
+    if args.command == "p44-contract":
+        _json(p44_contract())
+        return 0
+
+    if args.command == "p44-cycle":
+        parent = (
+            json.loads(Path(args.p43_cycle).read_text(encoding="utf-8"))
+            if args.p43_cycle
+            else None
+        )
+        events = (
+            json.loads(Path(args.forward_events).read_text(encoding="utf-8"))
+            if args.forward_events
+            else []
+        )
+        report = compile_p44_cycle(p43_cycle=parent, forward_events=events)
+        if args.output:
+            destination = Path(args.output)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_text(
+                json.dumps(
+                    report,
+                    ensure_ascii=False,
+                    sort_keys=True,
+                    separators=(",", ":"),
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+        _json(report)
+        return 0 if verify_p44_cycle(report)["verdict"] == "PASS" else 2
+
+    if args.command == "p44-verify":
+        envelope = json.loads(Path(args.envelope).read_text(encoding="utf-8"))
+        report = verify_p44_cycle(envelope)
+        _json(report)
+        return 0 if report["verdict"] == "PASS" else 2
+
+    if args.command == "p44-release":
+        report = compile_p44_release(
             args.output,
             implementation_commit=args.implementation_commit,
             implementation_tree=args.implementation_tree,

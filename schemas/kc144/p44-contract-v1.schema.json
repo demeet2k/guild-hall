@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"KC144 P44 Contract","type":"object","required":["schema","lookup_key","public_parent","route","lanes","next_seed","contract_digest"],"properties":{"schema":{"const":"KC144.P44.Contract.V1"},"lanes":{"type":"array","minItems":10,"maxItems":10},"contract_digest":{"type":"string","pattern":"^sha256:[0-9a-f]{64}$"}}}

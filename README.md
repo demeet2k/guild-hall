@@ -1,6 +1,15 @@
 # KC144 Batch-Bound Application Transport Runtime V15
 
-## P43 admission and exactly-once finality successor
+## P44 forward edge-effect successor
+
+P44 binds the exact public P43 parent, verifies exactly-once finality,
+accumulates a strictly forward and causally disjoint outcome window, measures
+nondegradation across diverse routes, and freezes a finite canonical
+edge-effect receipt only when every gate passes. See
+`P44_FORWARD_EDGE_EFFECT_FRAMEWORK.md` and
+`src/kc144_crystal/p44_runtime.py`.
+
+## P43 admission and exactly-once finality predecessor
 
 P43 binds the exact public P42 candidate and turns its three external gates
 into one replayable admission transaction. It preserves the honest frozen
