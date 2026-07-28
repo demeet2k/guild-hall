@@ -1,0 +1,41 @@
+{
+  "admissibility": "REFERENCE_ONLY_NOT_PARENT_NOT_MERGED",
+  "archive_sha256": "sha256:af3e560878722bb6409fdd944077674a884c9dd5c3ffc62d1e9b65e16252852a",
+  "authority_effect": "NONE",
+  "boundary": {
+    "canonical_graph_mutations": 0,
+    "deployments": 0,
+    "global_release": "HOLD",
+    "held_out_outcomes": 0,
+    "independent_ic10_returns": 0,
+    "merges": 0,
+    "promotions": 0,
+    "required_held_out_outcomes": 5,
+    "third_edge": "HELD_NOT_EXECUTED"
+  },
+  "capsule_digest": "sha256:3a78f985957347a12889cc1c7e77e3bd297588b97cec671c30f632f6f62a905f",
+  "manifest_digest": "sha256:a1e09af6d786b6ccff099bd04ab8c9412ed22cb59679f16d2bee98eb612d8157",
+  "next_seed": "KC144.V4.2::MATH144.P41::HYDRATE_REMAINING_22_BODY_HEADS_BIND_CURRENT_REPOSITORY_TREES_FREEZE_NONLEAKING_HELDOUT_COHORT_EXECUTE_THIRD_EDGE_ONLY_IF_ELIGIBLE_AND_RECEIVE_INDEPENDENT_IC10_RETURN_MACROCYCLE_10",
+  "parent_result_id": "KC144.P39::9a0a228dc74f001e64507417",
+  "relation": "TYPED_SIBLING_REFERENCE",
+  "result_digest": "sha256:f07bae53d9e157e9e8e544737b99d89f56aa56b4bdb0555aba5d603f8c8557ea",
+  "result_id": "KC144.P40::f07bae53d9e157e9e8e54473",
+  "runtime": {
+    "classic_tools": "9/9",
+    "heart_replay": "REPLAY_STABLE",
+    "p31_active": "KC144.P31::db5a6446ce54cf4bc53515be",
+    "p31_replay": "REPLAY_STABLE",
+    "p32_binding": "EXACT_RUNTIME_BOUND_UNADMITTED",
+    "return": "KC144.V1::GID144::M12"
+  },
+  "schema": "KC144.P40.SiblingLineage.V1",
+  "source_fiber": {
+    "content_bodies_hydrated": 6,
+    "empty_bodies_resolved": 1,
+    "metadata_heads": 29,
+    "newly_resolved_in_wave": 5,
+    "total_bodies_resolved": 7,
+    "unhydrated_heads": 22
+  },
+  "truth_effect": "NONE"
+}

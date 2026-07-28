@@ -1,0 +1,90 @@
+{
+  "activation_law": "VERIFIED_P39_SUCCESSOR_READY_AND_EXACT_COMPARE_AND_SWAP_THEN_COMMIT_PROPOSED_WEIGHTS_ONCE",
+  "contract_digest": "sha256:fdf07c268b9050799cd2062ba55da05bc41085008b1e96ee43d9ceea8ce87d7f",
+  "default_state": "HOLD_UNTIL_VERIFIED_P39_CONVERGENCE_AND_EXACT_CAS",
+  "lanes": [
+    {
+      "lane": "PUBLIC_P39_PARENT_BIND",
+      "lane_id": "P40.L01",
+      "parallel_group": 1,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "SIBLING_SOURCE_TIME_FIBER_BIND",
+      "lane_id": "P40.L02",
+      "parallel_group": 1,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "SUCCESSOR_AUTHORIZATION_VERIFY",
+      "lane_id": "P40.L03",
+      "parallel_group": 1,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "CANONICAL_STATE_COMPARE_AND_SWAP",
+      "lane_id": "P40.L04",
+      "parallel_group": 2,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "CANONICAL_WEIGHT_COMMIT",
+      "lane_id": "P40.L05",
+      "parallel_group": 2,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "POST_ACTIVATION_OUTCOME_WATCH",
+      "lane_id": "P40.L06",
+      "parallel_group": 2,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "NONCOLLAPSE_ADJUDICATION",
+      "lane_id": "P40.L07",
+      "parallel_group": 3,
+      "return": "KC144.V1::GID144::M12"
+    },
+    {
+      "lane": "M12_RETURN",
+      "lane_id": "P40.L08",
+      "parallel_group": 3,
+      "return": "KC144.V1::GID144::M12"
+    }
+  ],
+  "lookup_key": "KC144.V4.1::MATH144.P40::AUTHORIZED_SUCCESSOR_ACTIVATION_CANONICAL_WEIGHT_COMMIT_AND_POST_ACTIVATION_OUTCOME_WATCH_MACROCYCLE_09",
+  "merge_law": "REDUCE_ALL_EIGHT_LANES_IN_CANONICAL_ORDER_WITH_SIBLING_REFERENCE_PRESERVED_OUTSIDE_PUBLIC_PARENT_CHAIN",
+  "next_seed": "KC144.V4.2::MATH144.P41::HYDRATE_REMAINING_22_BODY_HEADS_BIND_CURRENT_REPOSITORY_TREES_FREEZE_NONLEAKING_HELDOUT_COHORT_EXECUTE_THIRD_EDGE_ONLY_IF_ELIGIBLE_AND_RECEIVE_INDEPENDENT_IC10_RETURN_MACROCYCLE_10",
+  "noncollapse": [
+    "PUBLIC_P39_PARENT_IS_NOT_SIBLING_P39_PARENT",
+    "SIBLING_REFERENCE_IS_NOT_MERGE_PARENT",
+    "SOURCE_HYDRATION_IS_NOT_LIVE_OUTCOME_EVIDENCE",
+    "P39_SUCCESSOR_READY_IS_NOT_P40_SUCCESSOR_ACTIVATED",
+    "PROPOSED_WEIGHTS_ARE_NOT_CANONICAL_WEIGHTS",
+    "VALID_SIGNATURES_ARE_NOT_COMPARE_AND_SWAP_SUCCESS",
+    "TEST_COMMIT_IS_NOT_PRODUCTION_MUTATION",
+    "POST_ACTIVATION_OUTCOME_IS_NOT_PRE_ACTIVATION_AUTHORIZATION",
+    "PUBLICATION_IS_NOT_TRUTH_OR_AUTHORITY_PROMOTION"
+  ],
+  "public_parent": {
+    "release_commit": "bc29c55bcabc6f75fc571be167034896fab068b8",
+    "release_digest": "sha256:50f5d2f917e2ee111b798d8de2c18ccc4c96678bee6fb010bfa873c65483eeb6",
+    "release_tree": "770e70a62be7f0f4f765fcb9ab594e2636e5b62c",
+    "result_id": "KC144.P39.CANDIDATE::50f5d2f917e2ee111b798d8d"
+  },
+  "route": [
+    "KC144.V1::GID135::M03",
+    "KC144.V1::GID047::F04",
+    "KC144.V1::GID141::M09",
+    "KC144.V1::GID003::H03",
+    "KC144.V1::GID144::M12"
+  ],
+  "schema": "KC144.P40.Contract.V1",
+  "sibling_reference": {
+    "capsule_digest": "sha256:3a78f985957347a12889cc1c7e77e3bd297588b97cec671c30f632f6f62a905f",
+    "parent_result_id": "KC144.P39::9a0a228dc74f001e64507417",
+    "relation": "TYPED_SIBLING_REFERENCE",
+    "result_id": "KC144.P40::f07bae53d9e157e9e8e54473"
+  },
+  "watch_law": "POST_ACTIVATION_OUTCOMES_BEGIN_AFTER_COMMIT_AND_NEVER_AUTHORIZE_THE_COMMIT_THAT_CREATED_THEIR_WATCH"
+}

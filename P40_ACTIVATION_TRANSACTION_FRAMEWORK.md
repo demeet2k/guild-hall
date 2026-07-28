@@ -100,8 +100,15 @@ successor, arms no watch, merges no sibling lineage, mutates no production
 state, and emits no truth or evidence effect. This is a complete executable
 boundary with incomplete external evidence—not an incomplete implementation.
 
-The final implementation commit, tree, release result, and release digest are
-bound in `registry/p40-activation/v1/p40_release_v1.json`.
+## Frozen candidate receipt
+
+- Implementation commit: `1451b0ec0e7bec6efdc35f1ad30c8efa5c4473df`
+- Implementation tree: `c46260fb616fc4a3eeb91f730904c004e16a1169`
+- Result: `KC144.P40.CANDIDATE::8343b08a8ee5152ed117f281`
+- Release digest:
+  `sha256:8343b08a8ee5152ed117f28189c3172c7a56e8d9912e004b8ea8461c5bb18150`
+- Frozen state: `CANDIDATE_HOLD`
+- Verification: `PASS`
 
 ## Successor
 

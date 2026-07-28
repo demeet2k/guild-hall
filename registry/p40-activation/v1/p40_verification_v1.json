@@ -1,0 +1,6 @@
+{
+  "envelope_digest": "sha256:3b6ac8336acc0bd2a1d70a6ca3314c6564ea66f15e41b042ac0f7ae72efc4f4d",
+  "errors": [],
+  "schema": "KC144.P40.MacrocycleVerification.V1",
+  "verdict": "PASS"
+}

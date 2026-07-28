@@ -1,0 +1,8 @@
+{
+  "generation": 0,
+  "parent_state_root": null,
+  "schema": "KC144.P40.CanonicalWeightState.V1",
+  "state_root": "sha256:ac35652ae90207449f4f6ba63e4268de05c78fa65e17a249bdf465ca3a88ce6c",
+  "status": "UNPOPULATED",
+  "weights": []
+}
