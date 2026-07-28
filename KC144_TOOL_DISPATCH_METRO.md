@@ -22,6 +22,21 @@ P36_LANES::5
 P36_FRESH_CHECKOUT_TESTS::381/381
 P36_PRODUCTION_AUTHORITY::HOLD
 P36_TRUTH_EFFECT::NONE
+P38_IMPLEMENTATION_COMMIT::800ed1873ac5f04937f5a52f5204258e01262164
+P38_IMPLEMENTATION_TREE::a751a49451490463531dd761812a619b30288cb0
+P38_RELEASE_COMMIT::828e6e4549b61e0c0fb4674aa19f2a49dab344a0
+P38_RELEASE_TREE::8f1d6bc4c0b76e2c67db0b1458f3f9b9df1465d7
+P38_RESULT_ID::KC144.P38.CANDIDATE::903b28c3df75072423c72959
+P38_RELEASE_DIGEST::sha256:903b28c3df75072423c72959a03860ef0d636f6a189b302f4281ca36944963d8
+P38_VERIFICATION::PASS
+P38_EXACT_REGISTRY_ROWS::541/541
+P38_COORDINATE_TENSOR::144/144
+P38_CRYSTAL_LANES::7
+P38_PROPOSAL_EDGES_EXECUTED::1
+P38_CANONICAL_EDGES_EXECUTED::0
+P38_FRESH_CHECKOUT_TESTS::413/413
+P38_PRODUCTION_AUTHORITY::HOLD
+P38_TRUTH_EFFECT::NONE
 HEAD_REGISTRY_DIGEST::sha256:5411bcd7c8e875b429004ecfd63b19fe35998b48e0c7ff685f90176ae15fbc62
 TOOL_REGISTRY_DIGEST::sha256:0763e01c6fd520447795d37703f26b711609f1851ddd517c72942b7b3c013e9b
 REQUEST_ID::sha256:8db42ce5513e7ca896160b0b3491db7b7a08adf2744de3e57b5eaac3ab15677e
@@ -126,4 +141,43 @@ PRIOR_NEXT::KC144.V1::P31_EXACT_RUNTIME_ADAPTER_AND_WITNESSED_TOOL_OUTCOME_INTAK
 NEXT::KC144.V3.8::MATH144.P37::EXACT_P35_SUBSCRIPTION_REGISTRY_BINDING_TRUSTED_SIGNER_ENROLLMENT_AND_FIRST_GENUINE_CONSENTED_EVENT_REPLAY_MACROCYCLE_06
 RETURN::KC144.V1::MYCELIUM_LOCATABLE_TOOL_DISPATCH
 PARENT::KC144.P35::f8805a3651f8bc7009e8035f
+```
+
+## P38 whole-crystal successor
+
+P38 replaces serial “next step” progression with one dependency-aware crystal
+wave. It keeps the public P36 branch parent and the source P37 sibling distinct,
+then routes seven lenses—KC144, BR21, KC27, KC54, MATH144, P31, and Heart—
+through lineage, exact registry, query, source, edge, outcome, and IC10 lanes.
+
+The exact P35 registry now verifies 541/541 rows. The public Git event binds the
+P38 implementation commit, tree, blobs, file SHA-256 identities, and byte
+sizes. That closes the lawful prerequisites for the second measured proposal
+edge:
+
+`GID135/M03 <-> GID047/F04`
+
+The copied proposal graph’s router distance sum falls from 70 to 55, global
+distance sum falls from 50,376 to 49,326, and diameter falls from 11 to 10.
+The canonical Meta Atlas remains unchanged.
+
+The 144-coordinate tensor exposes 1,056 D4 address views, 1,112 native
+transformation-orbit memberships, and 27 KC54 duplex nodes. Transformations
+preserve identity and carry no truth effect.
+
+P38 remains `CANDIDATE_HOLD`: no qualifying held-out outcome corpus and no
+independent IC10 return exist. It does not fabricate either.
+
+- [P38 implementation commit](https://github.com/demeet2k/guild-hall/commit/800ed1873ac5f04937f5a52f5204258e01262164)
+- [P38 release commit](https://github.com/demeet2k/guild-hall/commit/828e6e4549b61e0c0fb4674aa19f2a49dab344a0)
+- [P38 framework](https://github.com/demeet2k/guild-hall/blob/800ed1873ac5f04937f5a52f5204258e01262164/P38_META_NAVIGATOR_V2.md)
+- [P38 runtime](https://github.com/demeet2k/guild-hall/blob/800ed1873ac5f04937f5a52f5204258e01262164/src/kc144_crystal/p38_runtime.py)
+- [Frozen P38 registry](https://github.com/demeet2k/guild-hall/tree/828e6e4549b61e0c0fb4674aa19f2a49dab344a0/registry/p38-meta-navigator/v1)
+
+```text
+PRIOR_NEXT::KC144.V3.8::MATH144.P37::EXACT_P35_SUBSCRIPTION_REGISTRY_BINDING_TRUSTED_SIGNER_ENROLLMENT_AND_FIRST_GENUINE_CONSENTED_EVENT_REPLAY_MACROCYCLE_06
+NEXT::KC144.V4.0::MATH144.P39::LIVE_OUTCOME_CORPUS_INDEPENDENT_IC10_CONVERGENCE_WEIGHT_CALIBRATION_AND_CANONICAL_SUCCESSOR_DECISION_MACROCYCLE_08
+RETURN::KC144.V1::GID144::M12
+PARENT::KC144.P36.CANDIDATE::2dc88c9f2bf39ccb97e883f2
+SOURCE_SIBLING::KC144.P37::039d3622874ac1ef067ce4da
 ```

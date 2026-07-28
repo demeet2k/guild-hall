@@ -81,55 +81,94 @@
   "content_transport_certified": false,
   "governance_authority_granted": false,
   "production_truth_effect": "NONE",
-  "next_seed": "KC144.V3.8::MATH144.P37::EXACT_P35_SUBSCRIPTION_REGISTRY_BINDING_TRUSTED_SIGNER_ENROLLMENT_AND_FIRST_GENUINE_CONSENTED_EVENT_REPLAY_MACROCYCLE_06",
-  "previous_next_seed": "KC144.V1::P31_EXACT_RUNTIME_ADAPTER_AND_WITNESSED_TOOL_OUTCOME_INTAKE",
+  "next_seed": "KC144.V4.0::MATH144.P39::LIVE_OUTCOME_CORPUS_INDEPENDENT_IC10_CONVERGENCE_WEIGHT_CALIBRATION_AND_CANONICAL_SUCCESSOR_DECISION_MACROCYCLE_08",
+  "previous_next_seed": "KC144.V3.8::MATH144.P37::EXACT_P35_SUBSCRIPTION_REGISTRY_BINDING_TRUSTED_SIGNER_ENROLLMENT_AND_FIRST_GENUINE_CONSENTED_EVENT_REPLAY_MACROCYCLE_06",
   "successor": {
-    "schema": "KC144.P36.EventRuntimeMetro.V1",
+    "schema": "KC144.P38.MetaNavigatorV2Metro.V1",
     "branch": "kc144-mycelium-tool-dispatch-v1",
     "implementation": {
-      "commit": "f35697e4baf8afa00f1a2a91a1eff18aa8acfe5f",
-      "tree": "30377647415d9df054da9db8b536d4363d43d702"
+      "commit": "800ed1873ac5f04937f5a52f5204258e01262164",
+      "tree": "a751a49451490463531dd761812a619b30288cb0"
     },
     "release_snapshot": {
-      "commit": "9d64c5d9d9f29af7f5d310f9720f84bdb886a913",
-      "tree": "fc4b50ca1bb3d5f27c5baa616092304c1d48916d",
-      "result_id": "KC144.P36.CANDIDATE::2dc88c9f2bf39ccb97e883f2",
-      "release_digest": "sha256:2dc88c9f2bf39ccb97e883f2c10a2269a628cadf96a50097d4f9fb1a2d808782"
+      "commit": "828e6e4549b61e0c0fb4674aa19f2a49dab344a0",
+      "tree": "8f1d6bc4c0b76e2c67db0b1458f3f9b9df1465d7",
+      "result_id": "KC144.P38.CANDIDATE::903b28c3df75072423c72959",
+      "release_digest": "sha256:903b28c3df75072423c72959a03860ef0d636f6a189b302f4281ca36944963d8"
     },
     "lineage": {
-      "state_parent": "KC144.P35::f8805a3651f8bc7009e8035f",
-      "runtime_parent": "KC144.P31::db5a6446ce54cf4bc53515be",
-      "heart_parent": "KC144.HEART::H06.AHEART.V2"
+      "public_parent": "KC144.P36.CANDIDATE::2dc88c9f2bf39ccb97e883f2",
+      "source_sibling": "KC144.P37::039d3622874ac1ef067ce4da",
+      "source_sibling_parent": "KC144.P36::f40dc654ea7fc32651f1ebd6",
+      "relation": "TYPED_SIBLING_IMPORT",
+      "reconciliation_digest": "sha256:15e739f7fa3b796e7e370ac2262c73b9ee73c5ca6a02b970d9edc03b8bccaaa7"
     },
     "topology": {
-      "event_classes": 18,
-      "action_subscriptions": 360,
-      "subscription_standing": "SOURCE_DECLARED_EXACT_BODIES_UNBOUND",
+      "registry_binding": {
+        "state": "EXACT_BYTES_VERIFIED",
+        "actions": 360,
+        "gids": 144,
+        "carriers": 37,
+        "total_rows": 541,
+        "digest": "sha256:6ee10500a42e8a652459e9ed650a2c9508d99e231068d492bcaad1a9b07d481a"
+      },
+      "coordinate_tensor": {
+        "stations": 144,
+        "d4_views": 1056,
+        "local_orbit_memberships": 1112,
+        "kc54_duplex_nodes": 27,
+        "digest": "sha256:d78ba073843b1efb11777e5bfa164f96b8d64b5967647b6f37156643812da6ac"
+      },
+      "crystals": [
+        "KC144",
+        "BR21",
+        "KC27",
+        "KC54",
+        "MATH144",
+        "P31",
+        "HEART"
+      ],
       "lanes": [
-        "CONTINUOUS_EVENT_WATCH",
-        "SIGNED_RECEIPT_REPLAY",
-        "SOURCE_SUCCESSION",
-        "REAL_OUTCOME_INTAKE",
-        "AFFECTED_FRONT_EXECUTION"
-      ]
+        "LINEAGE_RECONCILIATION",
+        "EXACT_REGISTRY_BINDING",
+        "DYNAMIC_MULTI_CRYSTAL_QUERY",
+        "LIVE_SOURCE_ROUTING",
+        "SECOND_ONE_EDGE_EXPERIMENT",
+        "HELD_OUT_OUTCOME_CALIBRATION",
+        "INDEPENDENT_IC10_RETURN"
+      ],
+      "public_repository_event": "sha256:3db0a70660ad107b73986c38bd987023c193d75ddc2a0231e5a0a53f3207f3e8",
+      "proposal_edge": "GID135/M03<->GID047/F04",
+      "proposal_edges_executed": 1,
+      "canonical_edges_executed": 0,
+      "global_distance_sum": {
+        "before": 50376,
+        "after": 49326
+      },
+      "global_diameter": {
+        "before": 11,
+        "after": 10
+      }
     },
     "verification": {
       "verdict": "PASS",
       "fresh_checkout_tests": {
-        "passed": 381,
-        "total": 381
+        "passed": 413,
+        "total": 413
       },
       "production_authority": "HOLD",
       "truth_effect": "NONE",
       "evidence_effect": "NONE",
-      "production_mutated": false
+      "production_mutated": false,
+      "held_out_outcomes": 0,
+      "independent_ic10_returns": 0
     },
     "links": {
-      "implementation": "https://github.com/demeet2k/guild-hall/commit/f35697e4baf8afa00f1a2a91a1eff18aa8acfe5f",
-      "release": "https://github.com/demeet2k/guild-hall/commit/9d64c5d9d9f29af7f5d310f9720f84bdb886a913",
-      "framework": "https://github.com/demeet2k/guild-hall/blob/f35697e4baf8afa00f1a2a91a1eff18aa8acfe5f/P36_EVENT_RUNTIME_V1.md",
-      "registry": "https://github.com/demeet2k/guild-hall/tree/9d64c5d9d9f29af7f5d310f9720f84bdb886a913/registry/p36-dispatch/v1"
+      "implementation": "https://github.com/demeet2k/guild-hall/commit/800ed1873ac5f04937f5a52f5204258e01262164",
+      "release": "https://github.com/demeet2k/guild-hall/commit/828e6e4549b61e0c0fb4674aa19f2a49dab344a0",
+      "framework": "https://github.com/demeet2k/guild-hall/blob/800ed1873ac5f04937f5a52f5204258e01262164/P38_META_NAVIGATOR_V2.md",
+      "registry": "https://github.com/demeet2k/guild-hall/tree/828e6e4549b61e0c0fb4674aa19f2a49dab344a0/registry/p38-meta-navigator/v1"
     },
-    "next_seed": "KC144.V3.8::MATH144.P37::EXACT_P35_SUBSCRIPTION_REGISTRY_BINDING_TRUSTED_SIGNER_ENROLLMENT_AND_FIRST_GENUINE_CONSENTED_EVENT_REPLAY_MACROCYCLE_06"
+    "next_seed": "KC144.V4.0::MATH144.P39::LIVE_OUTCOME_CORPUS_INDEPENDENT_IC10_CONVERGENCE_WEIGHT_CALIBRATION_AND_CANONICAL_SUCCESSOR_DECISION_MACROCYCLE_08"
   }
 }
