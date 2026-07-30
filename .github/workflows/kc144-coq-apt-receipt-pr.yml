@@ -1,0 +1,52 @@
+name: KC144 Coq apt native receipt
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "formal/rocq/**"
+      - "formal/receipts/**"
+      - ".github/workflows/kc144-coq-apt-receipt-pr.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  coq-native-receipt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install packaged Coq kernel
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y coq
+      - name: Compile and emit receipt
+        shell: bash
+        run: |
+          set +e
+          mkdir -p receipts/coq
+          ! grep -RniE '\b(Admitted|admit)\b' formal/rocq/KC144Safe.v
+          PLACEHOLDER_RC=$?
+          coqc --version > receipts/coq/tool-version.txt
+          coqc formal/rocq/KC144Safe.v >receipts/coq/stdout.txt 2>receipts/coq/stderr.txt
+          RC=$?
+          if [ "$PLACEHOLDER_RC" -ne 0 ]; then RC=97; fi
+          set -e
+          python3 formal/receipts/emit_receipt.py \
+            --assistant ROCQ \
+            --expected-toolchain ubuntu-apt/coq \
+            --source formal/rocq/KC144Safe.v \
+            --tool-version-file receipts/coq/tool-version.txt \
+            --stdout receipts/coq/stdout.txt \
+            --stderr receipts/coq/stderr.txt \
+            --returncode "$RC" \
+            --command-json '["coqc","formal/rocq/KC144Safe.v"]' \
+            --output receipts/coq/coq_receipt.json
+          exit "$RC"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kc144-coq-native-receipt
+          path: receipts/coq/
