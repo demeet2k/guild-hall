@@ -19,7 +19,11 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-      - uses: leanprover/lean-action@v1
+      - name: Install pinned Lean through Elan
+        run: |
+          curl https://elan.lean-lang.org/elan-init.sh -sSf | sh -s -- -y --no-modify-path
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - run: lean --version
       - run: "! grep -RniE '\\b(sorry|admit|admitted|oops)\\b' formal/lean/KC144Core.lean"
       - run: lean formal/lean/KC144Core.lean
 
@@ -28,7 +32,11 @@ jobs:
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
-      - uses: leanprover/lean-action@v1
+      - name: Install pinned Lean through Elan
+        run: |
+          curl https://elan.lean-lang.org/elan-init.sh -sSf | sh -s -- -y --no-modify-path
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - run: lean --version
       - run: "! grep -RniE '\\b(sorry|admit|admitted|oops)\\b' formal/lean/SelmerIntegralUnit.lean"
       - run: lake update
       - run: lake env lean formal/lean/SelmerIntegralUnit.lean
