@@ -1,0 +1,184 @@
+name: KC144 native kernel P2.T4
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - kc144-native-kernel-p2t4-v1
+    paths:
+      - "formal/**"
+      - "lean-toolchain"
+      - "lakefile.toml"
+      - ".github/workflows/kc144-native-kernel.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  lean-core:
+    name: Lean core kernel
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+      - name: Reject placeholders
+        run: |
+          ! grep -RniE '\b(sorry|admit|admitted|oops)\b' formal/lean/KC144Core.lean
+      - name: Compile and emit receipt
+        env:
+          SOURCE: formal/lean/KC144Core.lean
+          EXPECTED_TOOLCHAIN: leanprover/lean4:v4.32.1
+        run: |
+          set +e
+          mkdir -p kernel_receipts/lean-core
+          lean "$SOURCE" >kernel_receipts/lean-core/stdout.txt 2>kernel_receipts/lean-core/stderr.txt
+          RC=$?
+          set -e
+          lean --version >kernel_receipts/lean-core/tool-version.txt
+          export RC
+          export SOURCE_SHA="$(sha256sum "$SOURCE" | cut -d' ' -f1)"
+          export ARTIFACT_SHA="$(cat kernel_receipts/lean-core/stdout.txt kernel_receipts/lean-core/stderr.txt | sha256sum | cut -d' ' -f1)"
+          python3 - <<'PY'
+          import json, os, pathlib
+          receipt = {
+              "schema_version": "1.0",
+              "assistant": "LEAN4",
+              "tool_version": pathlib.Path("kernel_receipts/lean-core/tool-version.txt").read_text().strip(),
+              "expected_toolchain": os.environ["EXPECTED_TOOLCHAIN"],
+              "source_path": os.environ["SOURCE"],
+              "source_sha256": os.environ["SOURCE_SHA"],
+              "command": ["lean", os.environ["SOURCE"]],
+              "returncode": int(os.environ["RC"]),
+              "kernel_status": "PASS" if int(os.environ["RC"]) == 0 else "FAIL",
+              "placeholder_scan": "PASS",
+              "execution_provenance": "GITHUB_ACTIONS",
+              "workflow_run_url": f"{os.environ['GITHUB_SERVER_URL']}/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{os.environ['GITHUB_RUN_ID']}",
+              "commit_sha": os.environ["GITHUB_SHA"],
+              "runner_os": os.environ["RUNNER_OS"],
+              "artifact_sha256": os.environ["ARTIFACT_SHA"]
+          }
+          pathlib.Path("kernel_receipts/lean-core/lean_core_receipt.json").write_text(json.dumps(receipt, indent=2))
+          PY
+          exit "$RC"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kc144-lean-core-receipt
+          path: kernel_receipts/lean-core/
+
+  lean-mathlib:
+    name: Lean Mathlib Selmer kernel
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+      - name: Reject placeholders
+        run: |
+          ! grep -RniE '\b(sorry|admit|admitted|oops)\b' formal/lean/SelmerIntegralUnit.lean
+      - name: Fetch pinned Mathlib
+        run: lake update
+      - name: Compile and emit receipt
+        env:
+          SOURCE: formal/lean/SelmerIntegralUnit.lean
+          EXPECTED_TOOLCHAIN: leanprover/lean4:v4.32.1+mathlib:v4.32.1
+        run: |
+          set +e
+          mkdir -p kernel_receipts/lean-mathlib
+          lake env lean "$SOURCE" >kernel_receipts/lean-mathlib/stdout.txt 2>kernel_receipts/lean-mathlib/stderr.txt
+          RC=$?
+          set -e
+          lean --version >kernel_receipts/lean-mathlib/tool-version.txt
+          export RC
+          export SOURCE_SHA="$(sha256sum "$SOURCE" | cut -d' ' -f1)"
+          export ARTIFACT_SHA="$(cat kernel_receipts/lean-mathlib/stdout.txt kernel_receipts/lean-mathlib/stderr.txt | sha256sum | cut -d' ' -f1)"
+          python3 - <<'PY'
+          import json, os, pathlib
+          receipt = {
+              "schema_version": "1.0",
+              "assistant": "LEAN4",
+              "tool_version": pathlib.Path("kernel_receipts/lean-mathlib/tool-version.txt").read_text().strip(),
+              "expected_toolchain": os.environ["EXPECTED_TOOLCHAIN"],
+              "source_path": os.environ["SOURCE"],
+              "source_sha256": os.environ["SOURCE_SHA"],
+              "command": ["lake", "env", "lean", os.environ["SOURCE"]],
+              "returncode": int(os.environ["RC"]),
+              "kernel_status": "PASS" if int(os.environ["RC"]) == 0 else "FAIL",
+              "placeholder_scan": "PASS",
+              "execution_provenance": "GITHUB_ACTIONS",
+              "workflow_run_url": f"{os.environ['GITHUB_SERVER_URL']}/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{os.environ['GITHUB_RUN_ID']}",
+              "commit_sha": os.environ["GITHUB_SHA"],
+              "runner_os": os.environ["RUNNER_OS"],
+              "artifact_sha256": os.environ["ARTIFACT_SHA"]
+          }
+          pathlib.Path("kernel_receipts/lean-mathlib/lean_mathlib_receipt.json").write_text(json.dumps(receipt, indent=2))
+          PY
+          exit "$RC"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kc144-lean-mathlib-receipt
+          path: kernel_receipts/lean-mathlib/
+
+  rocq:
+    name: Rocq native kernel
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reject placeholders
+        run: |
+          ! grep -RniE '\b(Admitted|admit)\b' formal/rocq/KC144Safe.v
+      - name: Install Rocq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y opam
+          opam init --disable-sandboxing -y
+          opam switch create kc144 4.14.2 -y
+          eval "$(opam env --switch=kc144)"
+          opam repo add rocq-released https://rocq-prover.org/opam/released
+          opam install -y rocq-prover
+          rocq -v
+      - name: Compile and emit receipt
+        env:
+          SOURCE: formal/rocq/KC144Safe.v
+          EXPECTED_TOOLCHAIN: rocq-prover/opam
+        run: |
+          eval "$(opam env --switch=kc144)"
+          set +e
+          mkdir -p kernel_receipts/rocq
+          rocq compile "$SOURCE" >kernel_receipts/rocq/stdout.txt 2>kernel_receipts/rocq/stderr.txt
+          RC=$?
+          set -e
+          rocq -v >kernel_receipts/rocq/tool-version.txt
+          export RC
+          export SOURCE_SHA="$(sha256sum "$SOURCE" | cut -d' ' -f1)"
+          export ARTIFACT_SHA="$(cat kernel_receipts/rocq/stdout.txt kernel_receipts/rocq/stderr.txt | sha256sum | cut -d' ' -f1)"
+          python3 - <<'PY'
+          import json, os, pathlib
+          receipt = {
+              "schema_version": "1.0",
+              "assistant": "ROCQ",
+              "tool_version": pathlib.Path("kernel_receipts/rocq/tool-version.txt").read_text().strip(),
+              "expected_toolchain": os.environ["EXPECTED_TOOLCHAIN"],
+              "source_path": os.environ["SOURCE"],
+              "source_sha256": os.environ["SOURCE_SHA"],
+              "command": ["rocq", "compile", os.environ["SOURCE"]],
+              "returncode": int(os.environ["RC"]),
+              "kernel_status": "PASS" if int(os.environ["RC"]) == 0 else "FAIL",
+              "placeholder_scan": "PASS",
+              "execution_provenance": "GITHUB_ACTIONS",
+              "workflow_run_url": f"{os.environ['GITHUB_SERVER_URL']}/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{os.environ['GITHUB_RUN_ID']}",
+              "commit_sha": os.environ["GITHUB_SHA"],
+              "runner_os": os.environ["RUNNER_OS"],
+              "artifact_sha256": os.environ["ARTIFACT_SHA"]
+          }
+          pathlib.Path("kernel_receipts/rocq/rocq_receipt.json").write_text(json.dumps(receipt, indent=2))
+          PY
+          exit "$RC"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kc144-rocq-receipt
+          path: kernel_receipts/rocq/
