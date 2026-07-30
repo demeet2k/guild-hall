@@ -11,3 +11,5 @@ amc://github/kc144/kc144-multiplex-rag@10.0.0?lens=11#certificate-quorum
 ## Authority boundary
 
 One successful workflow run is one certificate lineage, not theorem quorum. V10 requires at least two independent, freshly verified certificate lineages with matching theorem, source, and policy identities. This branch is reversible and grants no production-truth authority.
+
+Workflow activation receipt: `V10-PUBLIC-PROBE-01`.
