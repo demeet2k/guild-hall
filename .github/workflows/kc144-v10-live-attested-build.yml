@@ -1,0 +1,203 @@
+name: KC144 V10 Public Attested Lean Probe
+
+on:
+  push:
+    branches:
+      - agent/kc144-v10-live-certificate
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  native-replay:
+    name: Native Lean replay ${{ matrix.replay }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        replay: [a, b]
+    steps:
+      - name: Checkout immutable source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Install pinned Elan and Lean
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP"
+          curl -fL "https://github.com/leanprover/elan/releases/download/v4.2.3/elan-x86_64-unknown-linux-gnu.tar.gz" -o elan.tar.gz
+          echo "be5e92a2dfdd8176099b2db0b810c27237c9054f1e5db1126f4f2a1134773b25  elan.tar.gz" | sha256sum -c -
+          tar -xzf elan.tar.gz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          "$HOME/.elan/bin/elan" toolchain install leanprover/lean4:v4.32.2
+
+      - name: Resolve exact Mathlib closure
+        shell: bash
+        run: |
+          set -euo pipefail
+          export PATH="$HOME/.elan/bin:$PATH"
+          cd experiments/kc144-multiplex-rag-v10
+          lean --version | tee lean-version.txt
+          grep -F "version 4.32.2" lean-version.txt
+          lake update 2>&1 | tee lake-update.log
+          git -C .lake/packages/mathlib rev-parse HEAD | tee mathlib-commit.txt
+          grep -F "905b95818eb32af7874a58b427f50c1711a5e96c" mathlib-commit.txt
+          lake exe cache get 2>&1 | tee cache-get.log
+          test -f lake-manifest.json
+
+      - name: Native kernel replay twice
+        shell: bash
+        run: |
+          set -euo pipefail
+          export PATH="$HOME/.elan/bin:$PATH"
+          cd experiments/kc144-multiplex-rag-v10
+          lake env lean KC144Formal.lean 2>&1 | tee native-check-1.log
+          lake env lean KC144Formal.lean 2>&1 | tee native-check-2.log
+
+      - name: Compile normalized native receipt
+        env:
+          REPLAY: ${{ matrix.replay }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd experiments/kc144-multiplex-rag-v10
+          python - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          stable={
+            'backend':'lean4',
+            'lean_toolchain':Path('lean-toolchain').read_text().strip(),
+            'mathlib_commit':Path('mathlib-commit.txt').read_text().strip(),
+            'lake_manifest_sha256':sha('lake-manifest.json'),
+            'theorem_source_sha256':sha('KC144Formal.lean'),
+            'native_check_1_sha256':sha('native-check-1.log'),
+            'native_check_2_sha256':sha('native-check-2.log'),
+            'source_sha':os.environ['GITHUB_SHA'],
+            'source_ref':os.environ['GITHUB_REF'],
+          }
+          normalized=hashlib.sha256(json.dumps(stable,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+          receipt={'schema':'kc144.native-receipt/v10','replay':os.environ['REPLAY'],'run_id':os.environ['GITHUB_RUN_ID'],'run_attempt':os.environ['GITHUB_RUN_ATTEMPT'],'runner_name':os.environ.get('RUNNER_NAME',''),'stable':stable,'normalized_digest':normalized,'state':'NATIVE_KERNEL_REPLAY_PASS'}
+          Path(f"native-receipt-{os.environ['REPLAY']}.json").write_text(json.dumps(receipt,indent=2)+'\n')
+          PY
+
+      - name: Upload isolated replay receipt
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: kc144-v10-native-${{ matrix.replay }}
+          path: experiments/kc144-multiplex-rag-v10/native-receipt-${{ matrix.replay }}.json
+          if-no-files-found: error
+          retention-days: 30
+
+  aggregate-attest:
+    needs: native-replay
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      actions: read
+      contents: read
+      id-token: write
+      attestations: write
+      artifact-metadata: write
+    steps:
+      - name: Checkout evidence source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Download and compare independent receipts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/a" "$RUNNER_TEMP/b"
+          gh run download "$GITHUB_RUN_ID" -R "$GITHUB_REPOSITORY" -n kc144-v10-native-a -D "$RUNNER_TEMP/a"
+          gh run download "$GITHUB_RUN_ID" -R "$GITHUB_REPOSITORY" -n kc144-v10-native-b -D "$RUNNER_TEMP/b"
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          a=json.loads(next(Path(os.environ['RUNNER_TEMP'],'a').glob('*.json')).read_text())
+          b=json.loads(next(Path(os.environ['RUNNER_TEMP'],'b').glob('*.json')).read_text())
+          assert a['normalized_digest']==b['normalized_digest']
+          assert a['stable']==b['stable']
+          out={'schema':'kc144.native-comparison/v10','match':True,'normalized_digest':a['normalized_digest'],'replay_a_run_id':a['run_id'],'replay_b_run_id':b['run_id'],'source_sha':a['stable']['source_sha']}
+          Path(os.environ['RUNNER_TEMP'],'native-comparison.json').write_text(json.dumps(out,indent=2)+'\n')
+          PY
+
+      - name: Assemble deterministic subject and SPDX document
+        id: bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          STAGE="$RUNNER_TEMP/evidence"
+          mkdir -p "$STAGE/native-a" "$STAGE/native-b" "$STAGE/formal"
+          cp -a "$RUNNER_TEMP/a/." "$STAGE/native-a/"
+          cp -a "$RUNNER_TEMP/b/." "$STAGE/native-b/"
+          cp "$RUNNER_TEMP/native-comparison.json" "$STAGE/"
+          cp experiments/kc144-multiplex-rag-v10/KC144Formal.lean "$STAGE/formal/"
+          cp experiments/kc144-multiplex-rag-v10/V10_DEPLOYMENT.json "$STAGE/"
+          python - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          root=Path(os.environ['RUNNER_TEMP'],'evidence')
+          files=[]
+          for p in sorted(x for x in root.rglob('*') if x.is_file()): files.append({'path':p.relative_to(root).as_posix(),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'size':p.stat().st_size})
+          ns=hashlib.sha256(json.dumps(files,sort_keys=True).encode()).hexdigest()
+          (root/'sbom.spdx.json').write_text(json.dumps({'spdxVersion':'SPDX-2.3','dataLicense':'CC0-1.0','SPDXID':'SPDXRef-DOCUMENT','name':'kc144-v10-live-certificate','documentNamespace':'https://kc144.example/spdx/v10/'+ns,'files':files},indent=2)+'\n')
+          PY
+          ARTIFACT="$RUNNER_TEMP/kc144-v10-live-certificate.tar.gz"
+          tar --sort=name --mtime='UTC 1970-01-01' --owner=0 --group=0 --numeric-owner -C "$STAGE" -cf - . | gzip -n -9 > "$ARTIFACT"
+          echo "artifact=$ARTIFACT" >> "$GITHUB_OUTPUT"
+          echo "sbom=$STAGE/sbom.spdx.json" >> "$GITHUB_OUTPUT"
+          echo "sha256=$(sha256sum "$ARTIFACT" | awk '{print $1}')" >> "$GITHUB_OUTPUT"
+
+      - name: Generate SLSA provenance attestation
+        id: provenance
+        continue-on-error: true
+        uses: actions/attest@508db95dd578ae2727ebd6217d5ba78e4fbda05d
+        with:
+          subject-path: ${{ steps.bundle.outputs.artifact }}
+          show-summary: true
+
+      - name: Generate SPDX SBOM attestation
+        id: sbom
+        continue-on-error: true
+        uses: actions/attest@508db95dd578ae2727ebd6217d5ba78e4fbda05d
+        with:
+          subject-path: ${{ steps.bundle.outputs.artifact }}
+          sbom-path: ${{ steps.bundle.outputs.sbom }}
+          show-summary: true
+
+      - name: Compile live state
+        env:
+          PROVENANCE_OUTCOME: ${{ steps.provenance.outcome }}
+          SBOM_OUTCOME: ${{ steps.sbom.outcome }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$PROVENANCE_OUTCOME" = success ] && [ "$SBOM_OUTCOME" = success ]; then STATE=SINGLE_EXTERNAL_CERTIFICATE_CANDIDATE; else STATE=NATIVE_REPLAY_PASS_ATTESTATION_CAPABILITY_HOLD; fi
+          printf '{"schema":"kc144.live-probe-state/v10","state":"%s","source_sha":"%s","source_ref":"%s","artifact_sha256":"%s","truth_effect":"NONE"}\n' "$STATE" "$GITHUB_SHA" "$GITHUB_REF" "${{ steps.bundle.outputs.sha256 }}" > "$RUNNER_TEMP/live-probe-state.json"
+
+      - name: Upload evidence subject
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          path: ${{ steps.bundle.outputs.artifact }}
+          archive: false
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload live state receipt
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          path: ${{ runner.temp }}/live-probe-state.json
+          archive: false
+          if-no-files-found: error
+          retention-days: 30
