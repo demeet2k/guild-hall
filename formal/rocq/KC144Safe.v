@@ -31,7 +31,8 @@ Proof. vm_compute. reflexivity. Qed.
 
 Definition legendre7 (a : nat) : Z :=
   if Nat.eqb (a mod 7) 0 then 0
-  else if existsb (Nat.eqb (a mod 7)) [1;2;4] then 1 else -1.
+  else if existsb (Nat.eqb (a mod 7)) [1%nat;2%nat;4%nat]
+       then 1 else -1.
 
 Theorem legendre7_instance :
   legendre7 ((3*5) mod 7) = (legendre7 3 * legendre7 5)%Z.
