@@ -1,0 +1,136 @@
+name: KC144 native receipt artifacts
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "formal/**"
+      - "lean-toolchain"
+      - "lakefile.toml"
+      - ".github/workflows/kc144-native-*.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  lean-core-receipt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Lean
+        run: |
+          curl https://elan.lean-lang.org/elan-init.sh -sSf | sh -s -- -y --no-modify-path
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Compile and emit receipt
+        shell: bash
+        run: |
+          set +e
+          mkdir -p receipts/lean-core
+          ! grep -RniE '\b(sorry|admit|admitted|oops)\b' formal/lean/KC144Core.lean
+          PLACEHOLDER_RC=$?
+          lean --version > receipts/lean-core/tool-version.txt
+          lean formal/lean/KC144Core.lean >receipts/lean-core/stdout.txt 2>receipts/lean-core/stderr.txt
+          RC=$?
+          if [ "$PLACEHOLDER_RC" -ne 0 ]; then RC=97; fi
+          set -e
+          python3 formal/receipts/emit_receipt.py \
+            --assistant LEAN4 \
+            --expected-toolchain leanprover/lean4:v4.32.1 \
+            --source formal/lean/KC144Core.lean \
+            --tool-version-file receipts/lean-core/tool-version.txt \
+            --stdout receipts/lean-core/stdout.txt \
+            --stderr receipts/lean-core/stderr.txt \
+            --returncode "$RC" \
+            --command-json '["lean","formal/lean/KC144Core.lean"]' \
+            --output receipts/lean-core/lean_core_receipt.json
+          exit "$RC"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kc144-lean-core-native-receipt
+          path: receipts/lean-core/
+
+  lean-mathlib-receipt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Lean
+        run: |
+          curl https://elan.lean-lang.org/elan-init.sh -sSf | sh -s -- -y --no-modify-path
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - run: lake update
+      - name: Compile and emit receipt
+        shell: bash
+        run: |
+          set +e
+          mkdir -p receipts/lean-mathlib
+          ! grep -RniE '\b(sorry|admit|admitted|oops)\b' formal/lean/SelmerIntegralUnit.lean
+          PLACEHOLDER_RC=$?
+          lean --version > receipts/lean-mathlib/tool-version.txt
+          lake env lean formal/lean/SelmerIntegralUnit.lean >receipts/lean-mathlib/stdout.txt 2>receipts/lean-mathlib/stderr.txt
+          RC=$?
+          if [ "$PLACEHOLDER_RC" -ne 0 ]; then RC=97; fi
+          set -e
+          python3 formal/receipts/emit_receipt.py \
+            --assistant LEAN4 \
+            --expected-toolchain leanprover/lean4:v4.32.1+mathlib:v4.32.1 \
+            --source formal/lean/SelmerIntegralUnit.lean \
+            --tool-version-file receipts/lean-mathlib/tool-version.txt \
+            --stdout receipts/lean-mathlib/stdout.txt \
+            --stderr receipts/lean-mathlib/stderr.txt \
+            --returncode "$RC" \
+            --command-json '["lake","env","lean","formal/lean/SelmerIntegralUnit.lean"]' \
+            --output receipts/lean-mathlib/lean_mathlib_receipt.json
+          exit "$RC"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kc144-lean-mathlib-native-receipt
+          path: receipts/lean-mathlib/
+
+  rocq-receipt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rocq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y opam
+          opam init --disable-sandboxing -y
+          opam switch create kc144 4.14.2 -y
+          eval "$(opam env --switch=kc144)"
+          opam repo add rocq-released https://rocq-prover.org/opam/released
+          opam install -y rocq-prover
+      - name: Compile and emit receipt
+        shell: bash
+        run: |
+          eval "$(opam env --switch=kc144)"
+          set +e
+          mkdir -p receipts/rocq
+          ! grep -RniE '\b(Admitted|admit)\b' formal/rocq/KC144Safe.v
+          PLACEHOLDER_RC=$?
+          rocq -v > receipts/rocq/tool-version.txt
+          rocq compile formal/rocq/KC144Safe.v >receipts/rocq/stdout.txt 2>receipts/rocq/stderr.txt
+          RC=$?
+          if [ "$PLACEHOLDER_RC" -ne 0 ]; then RC=97; fi
+          set -e
+          python3 formal/receipts/emit_receipt.py \
+            --assistant ROCQ \
+            --expected-toolchain rocq-prover/opam \
+            --source formal/rocq/KC144Safe.v \
+            --tool-version-file receipts/rocq/tool-version.txt \
+            --stdout receipts/rocq/stdout.txt \
+            --stderr receipts/rocq/stderr.txt \
+            --returncode "$RC" \
+            --command-json '["rocq","compile","formal/rocq/KC144Safe.v"]' \
+            --output receipts/rocq/rocq_receipt.json
+          exit "$RC"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kc144-rocq-native-receipt
+          path: receipts/rocq/
