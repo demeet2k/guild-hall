@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "KC144.KERNEL.RECEIPT.V1",
+  "title": "KC144 Native Kernel Receipt",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "assistant",
+    "tool_version",
+    "expected_toolchain",
+    "source_path",
+    "source_sha256",
+    "command",
+    "returncode",
+    "kernel_status",
+    "placeholder_scan",
+    "execution_provenance",
+    "workflow_run_url",
+    "commit_sha",
+    "runner_os",
+    "artifact_sha256"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "assistant": {"enum": ["LEAN4", "ROCQ", "ISABELLE"]},
+    "tool_version": {"type": "string", "minLength": 1},
+    "expected_toolchain": {"type": "string", "minLength": 1},
+    "source_path": {"type": "string", "minLength": 1},
+    "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "command": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "returncode": {"type": "integer"},
+    "kernel_status": {"enum": ["PASS", "FAIL"]},
+    "placeholder_scan": {"enum": ["PASS", "FAIL"]},
+    "execution_provenance": {"const": "GITHUB_ACTIONS"},
+    "workflow_run_url": {"type": "string", "pattern": "^https://github.com/.+/actions/runs/[0-9]+$"},
+    "commit_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "runner_os": {"type": "string", "minLength": 1},
+    "artifact_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

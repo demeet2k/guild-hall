@@ -1,0 +1,60 @@
+name: KC144 native kernel PR gate
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "formal/**"
+      - "lean-toolchain"
+      - "lakefile.toml"
+      - ".github/workflows/kc144-native-kernel*.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  lean-core:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned Lean through Elan
+        run: |
+          curl https://elan.lean-lang.org/elan-init.sh -sSf | sh -s -- -y --no-modify-path
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - run: lean --version
+      - run: "! grep -RniE '\\b(sorry|admit|admitted|oops)\\b' formal/lean/KC144Core.lean"
+      - run: lean formal/lean/KC144Core.lean
+
+  lean-mathlib:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned Lean through Elan
+        run: |
+          curl https://elan.lean-lang.org/elan-init.sh -sSf | sh -s -- -y --no-modify-path
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - run: lean --version
+      - run: "! grep -RniE '\\b(sorry|admit|admitted|oops)\\b' formal/lean/SelmerIntegralUnit.lean"
+      - run: lake update
+      - run: lake env lean formal/lean/SelmerIntegralUnit.lean
+
+  rocq:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - run: "! grep -RniE '\\b(Admitted|admit)\\b' formal/rocq/KC144Safe.v"
+      - name: Install and compile Rocq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y opam
+          opam init --disable-sandboxing -y
+          opam switch create kc144 4.14.2 -y
+          eval "$(opam env --switch=kc144)"
+          opam repo add rocq-released https://rocq-prover.org/opam/released
+          opam install -y rocq-prover
+          rocq -v
+          rocq compile formal/rocq/KC144Safe.v
