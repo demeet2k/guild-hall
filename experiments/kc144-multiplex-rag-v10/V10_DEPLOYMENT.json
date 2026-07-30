@@ -1,0 +1,16 @@
+{
+  "schema": "kc144.live-deployment/v1",
+  "engine_version": "10.0.0",
+  "repository": "demeet2k/guild-hall",
+  "branch": "agent/kc144-v10-live-certificate",
+  "base_commit": "dc1ceebe937aa98f082f3eed5b57a6c1ac3522cb",
+  "formal_theorems": [
+    "complex_polar_multiplication",
+    "finite_orthogonal_projection",
+    "standard_basis_projection"
+  ],
+  "expected_state": "SINGLE_EXTERNAL_CERTIFICATE_HOLD",
+  "quorum_required": 2,
+  "automatic_merge": false,
+  "truth_effect": "NONE"
+}
