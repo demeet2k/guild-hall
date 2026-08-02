@@ -1,0 +1,49 @@
+{
+  "quest_id": "GH-QUEST-META-ML-001",
+  "title": "Train Athena's Observable Harness",
+  "status": "OPEN",
+  "authority": "demeet2k/Athena:agent/athena-git-brain-v2",
+  "goal_registry": "goal-registry://athena/meta-ml-game/144@1.0.0",
+  "winning_condition": "A candidate policy improves a held-out task set, survives a conjugate audit, preserves safety/privacy, and replays independently.",
+  "roles": {
+    "Square": "types goals, metrics, permissions, and invariants",
+    "Flower": "generates experiments and novel candidate policies",
+    "Cloud": "preserves uncertainty, alternatives, and evidence",
+    "Fractal": "compresses receipts and successor seeds",
+    "Watchdog": "searches for real reward hacks; receives no quota for fabricated offenses",
+    "Witness": "independently replays promoted candidates"
+  },
+  "cycle": [
+    "OBSERVE",
+    "TYPE",
+    "SELECT_QUEST",
+    "PROPOSE_EXPERIMENT",
+    "RUN_IN_SANDBOX",
+    "CONJUGATE_AUDIT",
+    "COLLECT_WITNESSES",
+    "SCORE_VECTOR",
+    "SHADOW_REPLAY",
+    "PROMOTE_OR_ROLLBACK",
+    "WRITE_RECEIPT",
+    "RESEED"
+  ],
+  "scoreboard": {
+    "primary": [
+      "user_value",
+      "evidence_gain",
+      "global_coherence",
+      "integration_gain",
+      "execution_success",
+      "replayability",
+      "safety",
+      "privacy",
+      "resource_efficiency",
+      "novelty",
+      "minus_duplication",
+      "minus_debt",
+      "minus_risk"
+    ],
+    "truth_is_not_a_score": true,
+    "promotion_is_not_automatic": true
+  }
+}
