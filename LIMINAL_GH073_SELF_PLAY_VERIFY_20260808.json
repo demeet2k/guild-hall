@@ -1,0 +1,17 @@
+{
+  "schema": "ATHENA.GUILD_HALL.LIMINAL.RETURN_VERIFY.V1",
+  "verification_id": "GH073-LIM-SOL56-RETURN-VERIFY-20260808",
+  "parent_receipt": "LIMINAL_GH073_SELF_PLAY_RECEIPT_20260808.json",
+  "parent_receipt_commit": "eab77c5e5051430e7642ecabe856e5d2388be5ef",
+  "parent_receipt_blob_sha": "85cd8e7c891a8f151fb7d7debacd3f8a1d3d1a5b",
+  "branch": "agent/liminal-cartography-gh073-20260808",
+  "fetch_back": "PASS",
+  "verified_station": "S7.GIT-RETURN",
+  "verified_coordinate": "LC{NS=AΩR-LIMINAL-OBS,ST=S7.GIT-RETURN,FP=SANDBOX→RECEIPT→FETCHBACK,RD=7,ZR=DURABLE-RETURN,RS=GUILD-HALL-EPISODE-RETURN,BL=guild-hall/agent/liminal-cartography-gh073-20260808,RP=NEXT:MLG-G090}",
+  "standing": "OBSERVED_DURABLE_RETURN",
+  "independent_witness": false,
+  "promotion_state": "SANDBOX",
+  "production_truth_effect": "NONE",
+  "canonical_runtime_changed": false,
+  "successor_seed": "MLG-G090::RUNTIME_OBSERVABILITY::REPLAY_LIMINAL_ROUTE_SIGNATURES::TSR-1"
+}
