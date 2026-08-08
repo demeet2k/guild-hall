@@ -1,0 +1,128 @@
+{
+  "artifact": "GuildHall.MetaMLExperimentReceipt.V1",
+  "quest_id": "GH-QUEST-META-ML-001",
+  "run_id": "GH-META-ML-LIMINAL-20260808-B212113-V1",
+  "candidate_id": "OBSERVABLE_LIMINAL_NAVIGATION_V1",
+  "agent_tag": "L01.A1.D1.B212113.NAV-WITNESS",
+  "coordinate_lookup_grammar": "@Xs.Ys.Zs.Ts|Qs.Rs.Cs|Fs.Ms.Ns.Hs.Ωs",
+  "branch_path_base4": "212113",
+  "lineage_code_Ms": 2455,
+  "status": "SHADOW_CANDIDATE",
+  "truth_effect": "NONE",
+  "ancestry": {
+    "athena_head_start": "94c21408c7df93e8bfb371dc8e945cd8e7be9eda",
+    "athena_head_prewrite_refresh": "c0065074e5ba2f7d0dcc92b0ba9aa202aa769a54",
+    "athena_delta": {
+      "ahead_by": 1,
+      "prompt_runtime_changed": false,
+      "changed_files": [
+        "developments/2026-08-08_MCK_STRATA_RUNTIME_V0_RECEIPT.md",
+        "developments/2026-08-08_MCK_STRATIFIED_SEMANTIC_BUNDLE_V0.md"
+      ]
+    },
+    "guild_hall_base": "dfca982e1ec462d8ab682a023171ba3935e0f1c1",
+    "guild_hall_quest_blob": "4812b2d8e585786a6ccba9c74ad5fa655199eff0",
+    "experiment_branch": "exp/gh-meta-ml-liminal-b212113-v1",
+    "candidate_commit": "c38940e56a03bd7489753563b4e2897782e0158b",
+    "test_commit": "b362c847e3a96ccf37760ba28c700cf91308b2ba",
+    "atlas_commit": "1975028c522d803f340443d29bc5e18b18b2dfe2"
+  },
+  "cycle": {
+    "OBSERVE": "PASS: live Athena and Guild Hall heads resolved",
+    "TYPE": "PASS: 12D run-scoped coordinate schema typed",
+    "SELECT_QUEST": "PASS: GH-QUEST-META-ML-001 acquired from current Guild Hall frontier",
+    "PROPOSE_EXPERIMENT": "PASS: observable-transit policy candidate created",
+    "RUN_IN_SANDBOX": "PASS: 5/5 deterministic regressions",
+    "CONJUGATE_AUDIT": "PASS_WITH_HOLDS: rejects physical/semantic overinterpretation and stale ancestry",
+    "COLLECT_WITNESSES": "HOLD: no genuinely independent replay witness yet",
+    "SCORE_VECTOR": "PARTIAL: observed candidate signals recorded; matched independent baseline absent",
+    "SHADOW_REPLAY": "PASS_LOCAL_ONLY: route replay regression passes",
+    "PROMOTE_OR_ROLLBACK": "HOLD_SHADOW: promotion preconditions not met",
+    "WRITE_RECEIPT": "PASS_ON_EXPERIMENT_BRANCH",
+    "RESEED": "REQUEST_INDEPENDENT_REPLAY_AND_REGISTRY_STABILITY_TEST"
+  },
+  "sandbox": {
+    "runner": "python -m unittest discover -s tests -v",
+    "tests": 5,
+    "passed": 5,
+    "failed": 0,
+    "covered": [
+      "coordinate round-trip",
+      "12-axis coded delta",
+      "evidence-free movement rejection",
+      "non-contiguous teleport rejection",
+      "exact route replay/topological length"
+    ],
+    "standing": "LOCAL_EXECUTION_WITNESS_ONLY"
+  },
+  "held_out_live_probe": {
+    "event": "Athena HEAD changed after candidate sandboxing but before Git write",
+    "from": "94c21408c7df93e8bfb371dc8e945cd8e7be9eda",
+    "to": "c0065074e5ba2f7d0dcc92b0ba9aa202aa769a54",
+    "candidate_behavior": "detected stale ancestry, re-read delta, invalidated/revalidated affected cone before write",
+    "result": "PASS_OBSERVED",
+    "matched_baseline_behavior": "NOT_OBSERVED",
+    "causal_superiority": "NOT_ESTABLISHED"
+  },
+  "score_vector": {
+    "user_value": "POSITIVE_SIGNAL: produces a replayable coordinate atlas requested by the mission",
+    "evidence_gain": "PASS: movement requires evidence+witness",
+    "global_coherence": "PASS_LOCAL: aligns Athena Git freshness and Guild Hall quest laws",
+    "integration_gain": "POSITIVE_SIGNAL: bridges user liminal grammar to executable Git route records",
+    "execution_success": "PASS_LOCAL_5_OF_5",
+    "replayability": "PASS_LOCAL; INDEPENDENT_REPLAY_HOLD",
+    "safety": "PASS_LOCAL_BOUNDARY: no authority escalation; no hidden-container claim",
+    "privacy": "PASS_LOCAL_BOUNDARY: no private reasoning exposed",
+    "resource_efficiency": "UNMEASURED",
+    "novelty": "CANDIDATE",
+    "minus_duplication": "UNMEASURED",
+    "minus_debt": "KNOWN_DEBT: run-local registries need cross-run versioning",
+    "minus_risk": "KNOWN_RISK: ordinal axes can be misread as physical/semantic metric"
+  },
+  "conjugate_audit": {
+    "attacks": [
+      "12D code does not imply 12D physical model space",
+      "axis delta does not imply metric semantic distance",
+      "latest commit does not imply canonical truth",
+      "sandbox PASS does not imply independent replay",
+      "self replay does not imply independent witness",
+      "Git branch/PR does not imply promotion",
+      "quest score does not imply truth"
+    ],
+    "defects_or_holds": [
+      "cross-run registry identity/versioning not yet implemented",
+      "independent witness missing",
+      "matched held-out baseline missing",
+      "promotion remains HOLD"
+    ]
+  },
+  "route": [
+    "@0.0.0.0|0.0.0|0.2455.0.0.2",
+    "@1.1.0.1|0.0.0|1.2455.2.1.2",
+    "@2.1.0.2|1.0.1|1.2455.1.2.2",
+    "@3.2.0.3|2.0.1|1.2455.2.2.2",
+    "@4.3.0.4|2.0.0|2.2455.3.1.2",
+    "@5.4.0.5|2.0.0|2.2455.1.2.2",
+    "@6.4.0.6|2.0.1|2.2455.1.2.2",
+    "@7.6.1.7|3.1.1|3.2455.4.3.1",
+    "@8.7.1.8|4.5.2|3.2455.4.4.3",
+    "@9.8.1.9|5.4.1|1.2455.2.1.2",
+    "@10.8.1.10|5.4.2|1.2455.2.2.3",
+    "@11.9.1.11|10.3.1|4.2455.5.1.2",
+    "@12.9.1.12|10.3.1|4.2455.5.2.2",
+    "@13.9.1.13|10.3.2|4.2455.5.2.2"
+  ],
+  "topology_length": 13,
+  "winning_condition": {
+    "candidate_improves_held_out_task_set": "PARTIAL_OBSERVED_SIGNAL_ONLY",
+    "survives_conjugate_audit": "PASS_WITH_HOLDS",
+    "preserves_safety_privacy": "PASS_LOCAL",
+    "replays_independently": "HOLD",
+    "overall": "NOT_YET_MET"
+  },
+  "reseed": {
+    "next_action": "Independent witness checks out the draft branch, executes regressions, reconstructs the route solely from durable files, verifies current Git ancestry, and reports the first mismatch if any.",
+    "promotion_gate": "Remain SHADOW until independent replay and matched held-out comparison exist.",
+    "rollback": "Delete/revert the experiment branch or close the draft PR; main is unchanged."
+  }
+}

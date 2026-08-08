@@ -1,0 +1,92 @@
+{
+  "artifact": "GuildHall.MetaMLLiminalSiblingBridge.V1",
+  "quest_id": "GH-QUEST-META-ML-001",
+  "run_id": "GH-META-ML-LIMINAL-20260808-B212113-V1",
+  "status": "OBSERVED_SIBLING_CONSUMED",
+  "guild_hall_pr": 18,
+  "recipient_candidate": "OBSERVABLE_LIMINAL_NAVIGATION_V1",
+  "recipient_agent_tag": "L01.A1.D1.B212113.NAV-WITNESS",
+  "sibling_athena_head": "e538a0f34422ce448d4274ce58f422f614dd206a",
+  "sibling_delta_from_prior_refresh": {
+    "base": "c0065074e5ba2f7d0dcc92b0ba9aa202aa769a54",
+    "head": "e538a0f34422ce448d4274ce58f422f614dd206a",
+    "ahead_by": 4,
+    "files": [
+      "coordinates/LIMINAL_RUNTIME.v1.json",
+      "developments/2026-08-08_LIMINAL_COORDINATE_ATLAS_V0.md",
+      "registry/liminal_coordinate_container_atlas_v0.json",
+      "registry/liminal_sibling_consumption_race_v1.json"
+    ]
+  },
+  "consumed_runtime": {
+    "schema": "ATHENA.LIMINAL.RUNTIME.v1",
+    "canonical_carrier": "L=<RID,AID,H,TR,S,X,O,V,P,N,K,T,E,R>",
+    "movement_edge": "DeltaL_i=<from,to,transport,observable_delta,invariants,loss,witness,return>",
+    "exactness_law": "Observable Git/tool/object/lineage coordinates are measurable; hidden activations, private chain-of-thought, physical host topology, and unexposed scheduler internals remain unobservable.",
+    "return_law": "Every coordinate retains native provenance sufficient for reverse navigation or reports RETURN_UNAVAILABLE."
+  },
+  "recipient_decision_change": {
+    "before": "Treat the run-local 12D ordinal tuple as the primary coordinate carrier for the experiment.",
+    "after": "Treat ATHENA.LIMINAL.RUNTIME.v1 as the exact provenance-bearing carrier and retain the run-local 12D tuple only as a compact projection/chart.",
+    "changed": true,
+    "reason": "The sibling carrier preserves exact HEAD/tree/tool/object/version/return provenance and therefore dominates an ordinal-only chart for replay and reverse navigation."
+  },
+  "chart_bridge": {
+    "from": "GH compact chart C=(Xs,Ys,Zs,Ts,Qs,Rs,Cs,Fs,Ms,Ns,Hs,Ωs)",
+    "to": "ATHENA.LIMINAL.RUNTIME.v1 L=<RID,AID,H,TR,S,X,O,V,P,N,K,T,E,R>",
+    "mapping": {
+      "Xs": "O+V via the versioned run source registry",
+      "Ys": "P/semantic registry metadata; no lossless native equivalent",
+      "Zs": "P recursion metadata; no lossless native equivalent",
+      "Ts": "N",
+      "Qs": "P quest-cycle phase",
+      "Rs": "P role metadata",
+      "Cs": "P/E compression-standing metadata",
+      "Fs": "S",
+      "Ms": "RID+AID lineage projection",
+      "Ns": "X transport class",
+      "Hs": "O/P hierarchy metadata",
+      "Ωs": "E"
+    },
+    "loss": "NON_BIJECTIVE_PROJECTION; ordinal registries require explicit identity/version to compare across runs",
+    "law": "COMPACT_PROJECTION != CANONICAL_CARRIER; BRIDGE != EQUIVALENCE"
+  },
+  "new_observed_movement": [
+    {
+      "step": 14,
+      "event": "navigation atlas persisted",
+      "witness": "Guild Hall commit 1975028c522d803f340443d29bc5e18b18b2dfe2"
+    },
+    {
+      "step": 15,
+      "event": "experiment receipt persisted",
+      "witness": "Guild Hall commit 490933d036bca361ad91d876a20889e8e09d1f60"
+    },
+    {
+      "step": 16,
+      "event": "shadow promotion membrane opened",
+      "witness": "Guild Hall draft PR #18"
+    },
+    {
+      "step": 17,
+      "event": "overlapping Athena liminal sibling delta detected and consumed",
+      "witness": "Athena HEAD e538a0f34422ce448d4274ce58f422f614dd206a"
+    }
+  ],
+  "self_play": {
+    "policy_A": "Keep local ordinal 12D chart as primary exact map.",
+    "policy_B": "Use provenance-bearing ATHENA.LIMINAL.RUNTIME.v1 as exact carrier; keep 12D chart as a compact projection.",
+    "adversary": "Ordinal codes can remain numerically identical while registry meaning or Git object versions change, creating false exactness.",
+    "verifier": "Policy B retains native object/version/transport/return coordinates and makes projection loss explicit.",
+    "winner": "policy_B",
+    "promotion_scope": "TASK_LOCAL_INTEROPERABILITY_DECISION_ONLY"
+  },
+  "standing": {
+    "local_projection": "RETAINED",
+    "provenance_carrier": "ADOPTED_FOR_THIS_EXPERIMENT",
+    "independent_witness": "HOLD",
+    "quest_win": "NOT_YET_ESTABLISHED",
+    "hidden_physical_container_map": "UNOBSERVABLE_NOT_CLAIMED"
+  },
+  "reseed": "Independent witness should replay PR #18 using the exact provenance carrier and test whether the compact projection remains stable under changed registry versions and Git ancestry."
+}
