@@ -43,3 +43,22 @@ This document tracks active quests (tasks) for the Manscript ‑ Being and A
 
 **Acceptance criteria:** Visualization functions produce meaningful plots of network states; projections use compressed representations and are validated in tests.
 
+## META Quest — Chapter 11 Alchemy Guild
+**Quest ID:** `GH-META-ALCHEMY-C11-001`
+
+**Description:** Operate a recursive Chapter‑11 synthesis forge. Each generation begins with an intentionally extreme fictional “anime god-tier” tool, extracts testable capability verbs, retrieves at least three orthogonal real parent systems, fuses them into a genuinely new operation, performs the Chapter `11→21` crown expansion and inverse grounding descent, then emits a claimable MVP, tests, residual ledger, Git return, and successor seed.
+
+**Guild charter:** `docs/ALCHEMY_GUILD.md`
+
+**Machine quest:** `quests/alchemy_guild.meta.quest.json`
+
+**Forge schema:** `quests/alchemy_forge.schema.json`
+
+**Generation 001:** `quests/alchemy_seed_001.azoth_omega.quest.json`
+
+**Three lanes:**
+- `SPARK` — invent + compile a falsifiable hybrid quest now.
+- `CRUCIBLE` — turn promising hybrids into tested working subsystems.
+- `PHILOSOPHER` — compare generations and improve/retire the forge itself.
+
+**Acceptance criteria:** A generation does not count because it sounded powerful. It counts only when the fictional ceiling produces a new claimable/testable repo-backed artifact or a reusable falsification, preserves `MYTHIC_SPEC != IMPLEMENTED_CAPABILITY` and `PREDICTION != OBSERVATION`, records lineage/evidence/residuals, and reseeds from the new observed frontier rather than replaying the original fantasy.
