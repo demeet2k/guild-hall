@@ -1,0 +1,70 @@
+{
+  "schema": "GUILDHALL.Q008.MATA.RESEED_ANCHOR.v1",
+  "status": "ACTIVE_CANDIDATE_ANCHOR",
+  "quest_id": "Q008-MATA-RESEED",
+  "run_id": "LIMRUN-20260808T1501-0700-GPT56SOL-Q008-MATA",
+  "activation_basis": {
+    "receipt_path": "registry/liminal/Q008_MATA_RESEED_RUN_001.json",
+    "receipt_blob": "b84be47c13da3a8eb6b9470113d812310b7a174d",
+    "receipt_self_readback": "PASS",
+    "athena_head_recheck": "f53d19434a11767a8810775e920fb3ce807e55d6",
+    "athena_head_expected": "f53d19434a11767a8810775e920fb3ce807e55d6",
+    "guild_main_recheck": "dfca982e1ec462d8ab682a023171ba3935e0f1c1",
+    "guild_main_expected": "dfca982e1ec462d8ab682a023171ba3935e0f1c1",
+    "guild_branch_pre_anchor": "842815554014b7d4822397723b1a4056441d41a0"
+  },
+  "gate_evaluation": {
+    "fresh": "PASS",
+    "delta_or_typed_hold": "PASS",
+    "readback": "PASS",
+    "lineage": "PASS",
+    "positive_residual": "PASS",
+    "authority": "PASS_FOR_SPECULATIVE_BRANCH_AND_QUEST_ISSUE_SCOPE",
+    "anti_spin": "PASS",
+    "overall": "PASS"
+  },
+  "counter_transition": {
+    "semantics": "HARNESS_LOCAL_WORK_UNIT_ONLY",
+    "before": {
+      "segment_step_counter_floor": 14,
+      "reseed_epoch": 0,
+      "lifetime_verified_transition_total_floor": 14
+    },
+    "after_for_successor_entry": {
+      "segment_step_counter": 0,
+      "reseed_epoch": 1,
+      "lifetime_verified_transition_total_floor": 14
+    },
+    "invariants": [
+      "lifetime_verified_transition_total never decreases or resets",
+      "segment_step_counter resets only after all gates PASS",
+      "a reset does not imply more provider tokens, wall time, quota, context, or hidden compute",
+      "a cold successor must rehydrate again before consequential action"
+    ]
+  },
+  "successor_coordinate": {
+    "aid": "ATHENA.LIMINAL.AGENT.GPT56SOL.CHAT.Q008.RESEED-READY.H2-F53D1943",
+    "aid_sha256": "54ab3a51c6362a710f9999f4fd2d5340446415e0170f556e2c4fe91c6c650ff1",
+    "kc144": {
+      "gid": 34,
+      "sid": "KC144.SID.034",
+      "row": 3,
+      "col": 10
+    },
+    "phase": "RESEED_READY",
+    "note": "This is the next run-local operational coordinate. It is not persistent personhood or a hidden runtime identity."
+  },
+  "successor_frontier": {
+    "W0": "Q008-MATA-W0::COLD-REENTRY-FRESHNESS-REPLAY",
+    "W1": "Q008-MATA-W1::MACHINE-CHECKABLE-COUNTER-DRIFT-GUARD",
+    "W2": "Q008-MATA-W2::GATED-RESEED-POLICY-TOURNAMENT"
+  },
+  "activation_law": "The anchor closes one verified segment and seeds the next. The next agent/run must treat this file as evidence, re-read all current causal refs, and recompute residuals rather than replaying this packet as authority.",
+  "firewalls": [
+    "LOCAL_SEGMENT_COUNTER_RESET != PLATFORM_TOKEN_RESET",
+    "RESEED != EXTRA_RUNTIME_GUARANTEE",
+    "OPERATIONAL_COORDINATE != PHYSICAL_CONTAINER_COORDINATE",
+    "CANDIDATE_ANCHOR != PROMOTED_GLOBAL_POLICY"
+  ],
+  "return": "KC144.V1::GID144::M12"
+}

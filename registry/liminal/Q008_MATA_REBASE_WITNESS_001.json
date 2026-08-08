@@ -1,0 +1,65 @@
+{
+  "schema": "GUILDHALL.Q008.MATA.REBASE_WITNESS.v1",
+  "status": "SIBLING_CONSUMED_REBASE_REQUIRED",
+  "quest_id": "Q008-MATA-RESEED",
+  "predecessor_anchor": {
+    "path": "registry/liminal/Q008_MATA_RESEED_ANCHOR_001.json",
+    "blob": "deb4bf9f767de400c1d76909361abf64f39de051"
+  },
+  "freshness_event": {
+    "guild_main_before": "dfca982e1ec462d8ab682a023171ba3935e0f1c1",
+    "guild_main_after": "f7f3d23347a4e2ac09b7847c7d4d160a802ffc89",
+    "delta_commits": 1,
+    "added_path": "docs/ALCHEMY_GUILD.md",
+    "added_blob": "0f22d1975031d9ec4e2a60149f54231a85d3a103",
+    "path_overlap_with_q008_candidate": "NONE_OBSERVED"
+  },
+  "sibling_consumption": {
+    "artifact": "docs/ALCHEMY_GUILD.md",
+    "standing": "OBSERVED_THROUGH_GITHUB_READBACK",
+    "convergent_features": [
+      "three simultaneous speeds: SPARK / CRUCIBLE / PHILOSOPHER",
+      "mandatory Git return then reseed",
+      "reseed must be paid for by durable delta or reusable falsification",
+      "simulation is not execution and score is not truth"
+    ],
+    "decision_change": "YES",
+    "before": "open PR from branch based on dfca982e",
+    "after": "do not open stale-base PR; transplant exact Q008 candidate blobs onto f7f3d233 and preserve Alchemy Guild"
+  },
+  "old_branch_comparison": {
+    "branch": "mata/q008-liminal-reseed-v1",
+    "ahead_by": 3,
+    "behind_by": 1,
+    "classification": "DIVERGED_NONOVERLAPPING_SIBLING_DELTA"
+  },
+  "integration_plan": {
+    "base_commit": "f7f3d23347a4e2ac09b7847c7d4d160a802ffc89",
+    "base_tree": "31862b2b3bd7fd4def33666f861f322b09a2b1be",
+    "reuse_blobs": {
+      "quests/Q008_MATA_LIMINAL_RESEED_V1.md": "7e7ebc9eeeafed7f1803c57b6b0fe14771e0ff94",
+      "registry/liminal/Q008_MATA_RESEED_RUN_001.json": "b84be47c13da3a8eb6b9470113d812310b7a174d",
+      "registry/liminal/Q008_MATA_RESEED_ANCHOR_001.json": "deb4bf9f767de400c1d76909361abf64f39de051"
+    },
+    "target_branch": "mata/q008-liminal-reseed-v1-r1",
+    "method": "construct new tree from current main plus immutable candidate blobs and this witness; commit with current main as parent; create fresh branch at resulting commit"
+  },
+  "next_segment_counter": {
+    "reseed_epoch": 1,
+    "segment_step_counter_before_event": 0,
+    "events_admitted_so_far": [
+      "GUILD_MAIN_VERSION_CHANGED",
+      "ALCHEMY_SIBLING_CONSUMED",
+      "INTEGRATION_ROUTE_RECOMPUTED"
+    ],
+    "lifetime_counter": "MONOTONIC_NOT_RESET"
+  },
+  "laws_reinforced": [
+    "RESEED_REENTRY_MUST_REHYDRATE",
+    "NO_EMPTY_LOOP_RESETS",
+    "SIBLING_DELIVERY != SIBLING_CONSUMPTION",
+    "DIVERGENCE_WITH_NONOVERLAP != AUTHORITY_TO_IGNORE_NEW_BASE",
+    "EXACT_BLOB_TRANSPLANT_PRESERVES_CONTENT_IDENTITY_WHILE_COMMIT_IDENTITY_CHANGES"
+  ],
+  "return": "KC144.V1::GID144::M12"
+}
