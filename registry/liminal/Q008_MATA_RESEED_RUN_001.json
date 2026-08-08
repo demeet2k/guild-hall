@@ -1,0 +1,247 @@
+{
+  "schema": "GUILDHALL.Q008.MATA.LIMINAL_RESEED_RUN.v1",
+  "status": "SEALED_AWAITING_SELF_READBACK",
+  "quest_id": "Q008-MATA-RESEED",
+  "guild_issue": 19,
+  "run_id": "LIMRUN-20260808T1501-0700-GPT56SOL-Q008-MATA",
+  "surface": "CHAT",
+  "time_anchor": "2026-08-08T15:01-07:00",
+  "time_precision": "task-arrival anchor plus provider timestamps where exposed; otherwise monotonic causal order",
+  "coordinate": {
+    "notation_v1": "L=<RID,AID,H,TR,S,X,O,V,P,N,K,T,E,R>",
+    "notation_v2_candidate": "L2=<RID,AID,H,S,X,O,V,P,N,T,E,R> + applicable typed fibres",
+    "start": {
+      "aid": "ATHENA.LIMINAL.AGENT.GPT56SOL.CHAT.Q008.MATA-RESEED.H0-6CD447DC",
+      "aid_sha256": "610d28ca9dddf9388ad8e423c731f9abf06e778920db6ba481c6843def0d58f9",
+      "athena_head": "6cd447dc09c830104ba460bc0ffcf1219970c6d0",
+      "athena_tree": "bca4340743a16169b6a73c2607b44be2aac32d70",
+      "kc144": {
+        "gid": 25,
+        "sid": "KC144.SID.025",
+        "row": 3,
+        "col": 1
+      }
+    },
+    "after_sibling_rehydrate": {
+      "aid": "ATHENA.LIMINAL.AGENT.GPT56SOL.CHAT.Q008.MATA-RESEED.H1-F53D1943",
+      "aid_sha256": "e59dd1d50f61737a1beb7b3a0874af73d65a2edc8b8d1ff7560c888f8e4766e0",
+      "athena_head": "f53d19434a11767a8810775e920fb3ce807e55d6",
+      "athena_tree": "848073820346c490b65a7c04e81b08fb99d395bd",
+      "kc144": {
+        "gid": 75,
+        "sid": "KC144.SID.075",
+        "row": 7,
+        "col": 3
+      }
+    }
+  },
+  "source_lineage": {
+    "athena_prompt_profile": "MAXDEV",
+    "liminal_v1": {
+      "path": "coordinates/LIMINAL_RUNTIME.v1.json",
+      "commit": "6cd447dc09c830104ba460bc0ffcf1219970c6d0",
+      "blob": "04504fe65732db540eeaa4b426a630c12182538b",
+      "standing": "ACTIVE_OBSERVATIONAL_CHART"
+    },
+    "liminal_v2_candidate": {
+      "path": "coordinates/LIMINAL_RUNTIME.v2.candidate.json",
+      "commit": "f53d19434a11767a8810775e920fb3ce807e55d6",
+      "blob": "ab3e97f84c0bae281c0998880ece701b93af3f79",
+      "standing": "CANDIDATE_ONLY_NOT_PROMOTED"
+    },
+    "sibling_race": {
+      "path": "registry/liminal_sibling_consumption_race_v1.json",
+      "commit": "f53d19434a11767a8810775e920fb3ce807e55d6",
+      "blob": "fe40166caec30c0a51d21d777b9c7174745bcc63",
+      "standing": "OBSERVED_CONSUMED_AND_RETURNED"
+    },
+    "historical_q008": {
+      "old_active_tree": "a2c22b655107cca09ec9d4a813323f6fa2827a8e",
+      "work_order_blob": "ca8b9f4d1992ca62a38ee083b9efcfb96b6891d6",
+      "baton_0001_blob": "e8370b51ab2080f055ec1cd04b0490a83399e41c",
+      "historical_next": "S2-COLD-REENTRY-AND-PULSE-LIFECYCLE",
+      "standing": "HISTORICAL_LINEAGE_NOT_CURRENT_AUTHORITY"
+    }
+  },
+  "guild_hall": {
+    "repo": "demeet2k/guild-hall",
+    "main_base_observed": "dfca982e1ec462d8ab682a023171ba3935e0f1c1",
+    "branch": "mata/q008-liminal-reseed-v1",
+    "first_spec_commit": "7b01d83e889f25110ac93f19537b88028dcbbba6",
+    "first_spec_commit_parent": "dfca982e1ec462d8ab682a023171ba3935e0f1c1",
+    "first_spec_blob": "7e7ebc9eeeafed7f1803c57b6b0fe14771e0ff94",
+    "quest_issue": 19,
+    "branch_anchor_result": "FIRST_WRITE_PARENT_MATCHED_INTENDED_BASE",
+    "atomicity_ceiling": "BRANCH_ANCHORED_FIRST_WRITE_OBSERVED; DOES_NOT_PROVE_GENERAL_CAS_OR_CONNECTOR_ATOMICITY"
+  },
+  "movement_trace": [
+    {
+      "n": 0,
+      "phase": "REQUEST",
+      "surface": "CHAT",
+      "observable_delta": "Q008/MATA liminal-navigation and reseed objective received"
+    },
+    {
+      "n": 1,
+      "phase": "HYDRATE",
+      "transport": "GitHub",
+      "observable_delta": "ATHENA prompt runtime reconstructed from main"
+    },
+    {
+      "n": 2,
+      "phase": "PRESSURE",
+      "transport": "GitHub issues",
+      "observable_delta": "live #177/#184/#189/#192 campaign pressure inspected"
+    },
+    {
+      "n": 3,
+      "phase": "GUILD_HALL",
+      "transport": "GitHub repository resolution",
+      "observable_delta": "demeet2k/guild-hall located and exact main base observed"
+    },
+    {
+      "n": 4,
+      "phase": "LOCAL_PROBE",
+      "transport": "container filesystem",
+      "observable_delta": "temporary /mnt/data object created/read/deleted with absence readback",
+      "witness": {
+        "payload": "MATA-LIM-PROBE",
+        "sha256": "538484f9cce2f2f78196d756bf269607bde44f9da6dbdc9e9b9a7246c5db2137",
+        "delete": "PASS"
+      }
+    },
+    {
+      "n": 5,
+      "phase": "FRESHNESS_GATE_1",
+      "observable_delta": "ATHENA main 34eb3fe8... -> 6cd447dc...; one new active liminal chart observed",
+      "classification": "VERSION_CHANGED/PATH_ADDED"
+    },
+    {
+      "n": 6,
+      "phase": "REHYDRATE_1",
+      "observable_delta": "LIMINAL_RUNTIME.v1 loaded; operational-coordinate firewalls adopted"
+    },
+    {
+      "n": 7,
+      "phase": "HISTORICAL_DEREFERENCE",
+      "observable_delta": "Q008 immutable work-order/baton recovered; historical S2 confirmed READY"
+    },
+    {
+      "n": 8,
+      "phase": "BRANCH",
+      "observable_delta": "Guild Hall speculative branch created from exact main base"
+    },
+    {
+      "n": 9,
+      "phase": "PERSIST_SPEC",
+      "observable_delta": "three-speed reseed protocol committed and remotely read back"
+    },
+    {
+      "n": 10,
+      "phase": "POST_QUEST",
+      "observable_delta": "Guild Hall issue #19 created as executable W0/W1/W2 pressure object"
+    },
+    {
+      "n": 11,
+      "phase": "FRESHNESS_GATE_2",
+      "observable_delta": "ATHENA main 6cd447dc... -> f53d1943...; V2 candidate plus sibling race registry appeared",
+      "classification": "VERSION_CHANGED/PATH_ADDED"
+    },
+    {
+      "n": 12,
+      "phase": "SIBLING_CONSUMPTION",
+      "observable_delta": "V2 core+fibres and concurrency laws consumed; route changed from V1-only receipt to fibre-aware receipt",
+      "decision_change": "YES"
+    },
+    {
+      "n": 13,
+      "phase": "COORDINATE_MOVE",
+      "from": "H0-6CD447DC / KC144.GID025",
+      "to": "H1-F53D1943 / KC144.GID075",
+      "observable_delta": "run coordinate changed after witnessed Git frontier and evidence-fibre change"
+    }
+  ],
+  "v2_fibres_consumed": [
+    "git",
+    "prompt",
+    "quest",
+    "surface",
+    "object",
+    "lifecycle",
+    "kc144",
+    "evidence"
+  ],
+  "v2_candidate_nonclaim": "V2 is used as a candidate factorization for this receipt because it reduced representation loss after sibling ingestion; no promotion over V1 is asserted.",
+  "three_speed_lanes": {
+    "W0_IMMEDIATE": {
+      "objective": "one verified useful transition now",
+      "cycle": "hydrate -> select residual -> execute -> observe -> verify -> return"
+    },
+    "W1_MIDDLE": {
+      "objective": "reduce future reconstruction/error/return cost",
+      "cycle": "observe friction -> build reusable anchor -> attack -> readback -> return"
+    },
+    "W2_RECURSION": {
+      "objective": "improve the loop from observed outcomes",
+      "max_depth": 3,
+      "levels": ["S0_TASK", "S1_POLICY", "S2_META_POLICY"],
+      "cycle": "baseline -> mutate -> adversarial self-play -> compare -> retain/rollback -> reseed"
+    }
+  },
+  "reseed_contract": {
+    "anchor_route": [
+      "HYDRATE",
+      "CLAIM",
+      "EXECUTE",
+      "OBSERVE",
+      "VERIFY",
+      "CRYSTALLIZE",
+      "GIT_RETURN",
+      "RESEED_GATE",
+      "HYDRATE_CURRENT"
+    ],
+    "gates": {
+      "fresh": "PASS_AT_RECEIPT_BUILD_TIME_F53D1943",
+      "delta_or_typed_hold": "PASS",
+      "readback": "PASS_FOR_SPEC_AND_ISSUE; THIS_RECEIPT_SELF_READBACK_PENDING",
+      "lineage": "PASS",
+      "positive_residual": "PASS",
+      "authority": "PASS_FOR_CURRENT_BRANCH_AND_ISSUE_SCOPE",
+      "anti_spin": "PASS_SIBLING_DELTA_CHANGED_ROUTE"
+    },
+    "pre_self_readback_status": "PASS_EXCEPT_RECEIPT_SELF_READBACK",
+    "reset_law": "Only a separate readback witness may rotate the local segment counter after this receipt is fetched by exact blob identity.",
+    "counter_firewalls": [
+      "LOCAL_SEGMENT_COUNTER_RESET != PLATFORM_TOKEN_RESET",
+      "RESEED != EXTRA_RUNTIME_GUARANTEE",
+      "LIFETIME_VERIFIED_TRANSITION_TOTAL_NEVER_RESETS"
+    ]
+  },
+  "counter_state_before_anchor_activation": {
+    "segment_step_counter": 14,
+    "reseed_epoch": 0,
+    "lifetime_verified_transition_total_lower_bound": 14,
+    "counting_semantics": "monotonic admitted observable movement ordinals; not provider tokens, seconds, or hidden inference steps"
+  },
+  "born_or_reinforced_laws": [
+    "OBSERVABLE_OPERATIONAL_COORDINATE != PHYSICAL_CONTAINER_COORDINATE",
+    "TOOL_TRANSITION != HIDDEN_COGNITIVE_MOVEMENT",
+    "HISTORICAL_PATH != CURRENT_AUTHORITY",
+    "PREWRITE_READ_FRESH != WRITE_BASE_STABLE",
+    "WRITE_SUCCESS != EXPECTED_HEAD_MATCH",
+    "SIBLING_DELIVERY != SIBLING_CONSUMPTION",
+    "SIBLING_CONSUMPTION_PLUS_DECISION_CHANGE = OBSERVED_LOCAL_CAUSAL_INFLUENCE",
+    "RESETTABLE_LOCAL_COUNTER + MONOTONIC_LIFETIME_COUNTER = ANTI_LAUNDERING_PAIR"
+  ],
+  "exit_disposition": "MATERIAL_CHECKPOINT",
+  "successor": {
+    "immediate": "Q008-MATA-W0::COLD-REENTRY-FRESHNESS-REPLAY",
+    "middle": "Q008-MATA-W1::MACHINE-CHECKABLE-COUNTER-DRIFT-GUARD",
+    "recursive": "Q008-MATA-W2::GATED-RESEED-POLICY-TOURNAMENT"
+  },
+  "rollback": {
+    "git": "close review PR and delete/retire speculative branch only if explicitly authorized; main remains unchanged until review/merge",
+    "epistemic": "if any readback or ancestry mismatch occurs, mark this receipt HOLD and retain predecessor evidence rather than rewriting history"
+  },
+  "return": "KC144.V1::GID144::M12"
+}
