@@ -1,0 +1,86 @@
+{
+  "artifact": "GuildHall.AlchemyCapabilityIRBuildReceipt.V0",
+  "quest_id": "GH-ALCHEMY-AZOTH-001",
+  "parent_meta_quest": "GH-META-ALCHEMY-C11-001",
+  "generation": 1,
+  "lane_transition": "SPARK_TO_CRUCIBLE",
+  "status": "LOCAL_TESTED_BRANCH_CANDIDATE",
+  "run_coordinate_name": "LIMINAL.ALCHEMIST.SOL.AZOTH001.CAPIRV0",
+  "lcid": "GH::ALCHEMY::AZOTH001::SOL::CAPIRV0::G93db023::Ac1858bc",
+  "lineage": {
+    "guild_hall_base": "93db0232e786a9ca2e4a1d08c8b472f89f0d47c5",
+    "athena_observed_head": "c1858bcbc6587296c2b8a7e29642bfef695fdb2a",
+    "branch": "alchemy/azoth-001-capability-ir-v0",
+    "seed_blob": "9f31b5c9f9e4882f0ba892b2cd4411186093ff2d",
+    "forge_schema_blob": "0d1bac1c575f0b02543e3c44e49a1ed47037dc26"
+  },
+  "artifacts": [
+    {
+      "path": "quests/generated/GH-ALCHEMY-AZOTH-001/capability_ir.schema.json",
+      "commit": "01bb37ed5fe808dd8f7b6dec0e747c116f7aced7",
+      "role": "strict typed CapabilityIR.V0 schema"
+    },
+    {
+      "path": "tools/alchemy_capability_ir.py",
+      "commit": "953661cd99c4e86d6898587b76de806f5fddaafc",
+      "role": "deterministic lexical compiler with unresolved fallback"
+    },
+    {
+      "path": "tests/alchemy/test_capability_ir.py",
+      "commit": "f1da1260cf7f2fcc03020845b299c95f62a92519",
+      "role": "held-out and epistemic regression suite"
+    }
+  ],
+  "implemented_operation": "COMPILE_CAPABILITY_IR(goal_text) -> typed capabilities + constraints + tests + resources + risks + contradictions + unknowns + zero-observation evidence membrane + input digest provenance",
+  "observations": {
+    "test_command": "python -m unittest discover -s tests/alchemy -v",
+    "tests_run": 7,
+    "tests_passed": 7,
+    "tests_failed": 0,
+    "held_out_domains": 5,
+    "checks": [
+      "five held-out ambitious goals emit schema-valid IR",
+      "compilation is deterministic",
+      "mythic absolutes remain explicit unknowns",
+      "simple contradictory must/must-not constraints are surfaced",
+      "unrecognized goals fall back to FALLBACK_UNRESOLVED",
+      "schema forbids minting observations",
+      "schema forbids untyped extra fields"
+    ],
+    "standing": "OBSERVED_LOCAL_SANDBOX"
+  },
+  "before_after_evidence": {
+    "before": "AUTHORED seed specified a Capability IR parser residual; no implementation observation was present.",
+    "after": "A concrete schema/compiler/test trio exists on a speculative branch and passed the recorded local suite.",
+    "claim_ceiling": "LOCAL_TESTED_COMPONENT; NOT HOSTED_CI; NOT INDEPENDENT_WITNESS; NOT FULL HYBRID_QUEST_COMPILER"
+  },
+  "firewalls_preserved": [
+    "MYTHIC_SPEC != IMPLEMENTED_CAPABILITY",
+    "PREDICTION != OBSERVATION",
+    "PARSED_TEXT != WORLD_EVIDENCE",
+    "SCHEMA_VALID != SEMANTIC_CORRECTNESS",
+    "HEURISTIC_DOMAIN_HINT != DOMAIN_TRUTH",
+    "LOCAL_TEST_PASS != PROMOTION"
+  ],
+  "known_limits": [
+    "Verb extraction is intentionally lexical and does not claim robust semantic parsing.",
+    "Contradiction detection only covers simple must/must-not phrase collisions.",
+    "Resource extraction is shallow and can overcapture clause tails.",
+    "Held-out goals are a small synthetic set authored within this run.",
+    "The component does not yet retrieve parents, generate competing hybrids, or compile a quest DAG.",
+    "No hosted CI or external independent witness has executed this branch yet."
+  ],
+  "residual_ledger": [
+    "Define repo-aware parent-system retrieval and ranking with locators/provenance.",
+    "Define a hybrid novelty/integration test against single-parent and checklist baselines.",
+    "Implement dependency-aware quest DAG compilation with concrete artifact leaves.",
+    "Create a larger held-out multi-domain benchmark not authored by the compiler lane.",
+    "Connect execution receipts to evidence/residual updates without circular self-scoring."
+  ],
+  "successor_candidate": {
+    "working_id": "GH-ALCHEMY-AZOTH-002-PARENT-RETRIEVAL",
+    "target": "repo-aware parent-system retrieval/ranking protocol",
+    "activation_condition": "reseed only after branch readback and review/CI state are observed; do not treat this candidate ID as an already-posted quest"
+  },
+  "promotion": "NOT_PERFORMED"
+}
