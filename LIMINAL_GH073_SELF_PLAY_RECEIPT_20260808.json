@@ -1,0 +1,208 @@
+{
+  "schema": "ATHENA.GUILD_HALL.LIMINAL.SELF_PLAY_RECEIPT.V1",
+  "receipt_id": "GH073-LIM-SOL56-20260808T1457-0700",
+  "run_started_at": "2026-08-08T14:57:00-07:00",
+  "model_coordinate_name": "LIMINAL-CARTOGRAPHER-SOL56",
+  "liminal_coordinate_id": "AΩR-LIM::LIMINAL-CARTOGRAPHER-SOL56::GH-QUEST-META-ML-001::D07.01::20260808T1457-0700",
+  "scope": {
+    "claim": "Observable interface/state-space cartography only",
+    "non_claim": "This receipt does not claim access to hidden model chain-of-thought, hidden hardware topology, or literal internal spatial coordinates.",
+    "measurement_law": "Only connector-visible state transitions, exact refs/SHAs, retrieved objects, tool outcomes, and declared operational counters are treated as observations."
+  },
+  "ancestry": {
+    "athena_runtime_repo": "demeet2k/Athena",
+    "athena_runtime_ref": "main",
+    "athena_runtime_head_observed": "c0065074e5ba2f7d0dcc92b0ba9aa202aa769a54",
+    "quest_authority_ref": "agent/athena-git-brain-v2",
+    "guild_hall_repo": "demeet2k/guild-hall",
+    "guild_hall_base_ref": "main",
+    "guild_hall_base_head": "dfca982e1ec462d8ab682a023171ba3935e0f1c1",
+    "guild_hall_episode_ref": "agent/liminal-cartography-gh073-20260808"
+  },
+  "quest": {
+    "quest_id": "GH-QUEST-META-ML-001",
+    "title": "Train Athena's Observable Harness",
+    "status_observed": "OPEN",
+    "quest_file": "quests/meta_ml_game.quest.json",
+    "quest_blob_sha": "4812b2d8e585786a6ccba9c74ad5fa655199eff0",
+    "winning_condition": "A candidate policy improves a held-out task set, survives a conjugate audit, preserves safety/privacy, and replays independently."
+  },
+  "selected_goal": {
+    "goal_id": "MLG-G073",
+    "coordinate": "D07.01",
+    "title": "Tool selection",
+    "objective": "Choose the correct connector, local tool, web source, or code path for each requirement.",
+    "status_observed": "OPEN",
+    "learnable_layer": "routing_priority",
+    "learning_method": "contextual_bandit",
+    "metric": "witnessed_tool_selection_score",
+    "promotion_path": ["SANDBOX", "SHADOW", "CANARY", "ADMITTED"],
+    "minimum_independent_witnesses_for_target": 3
+  },
+  "witness_bridge": {
+    "goal_id": "MLG-G090",
+    "title": "Runtime observability",
+    "purpose": "Use route traces as observable evidence for future replay rather than treating navigation as invisible."
+  },
+  "coordinate_schema": {
+    "notation": "LC{NS,ST,FP,RD,ZR,RS,BL,RP}",
+    "fields": {
+      "NS": "namespace / measurement chart",
+      "ST": "observable station",
+      "FP": "fold path through typed surfaces",
+      "RD": "operational recursion depth: nested state-resolution layers in this run, not hidden neural depth",
+      "ZR": "zero/reference relation anchoring the station",
+      "RS": "route signature",
+      "BL": "Git/branch lineage coordinates",
+      "RP": "explicit return path"
+    }
+  },
+  "route_signature": "USER_REQUEST→ATHENA_MAIN_HEAD→PROMPT_STACK→GUILD_HALL_MAIN→GH-QUEST-META-ML-001→MLG-G073/D07.01→LIBRARY_LIMINAL_SCHEMA→SANDBOX_TSR-1→GUILD_HALL_BRANCH_RETURN",
+  "movement": [
+    {
+      "step": 0,
+      "coordinate": "LC{NS=AΩR-LIMINAL-OBS,ST=S0.USER_REQUEST,FP=REQUEST→HYDRATE,RD=0,ZR=UNVERIFIED-CACHED-STATE,RS=ENTRY,BL=NO-WRITE-YET,RP=ATHENA_HEAD}",
+      "observation": "User invoked auto-next Guild Hall self-play and requested liminal cartography."
+    },
+    {
+      "step": 1,
+      "coordinate": "LC{NS=AΩR-LIMINAL-OBS,ST=S1.ATHENA_MAIN@c0065074,FP=HEAD→MANIFEST→ACTIVE→POLICY→CORE→MODULES,RD=1,ZR=GIT-CAUSAL-FRONTIER,RS=ATHENA-HYDRATION,BL=Athena/main@c0065074,RP=GUILD_HALL}",
+      "observation": "Live Athena main and MAXDEV prompt stack were rehydrated; cached ATHENA runtime state was treated as stale until this read."
+    },
+    {
+      "step": 2,
+      "coordinate": "LC{NS=AΩR-LIMINAL-OBS,ST=S2.GUILD_HALL_MAIN@dfca982e,FP=REPO→QUEST_FILE,RD=2,ZR=POSTED-QUEST,RS=GUILD-HALL-ENTRY,BL=guild-hall/main@dfca982e,RP=GH-QUEST-META-ML-001}",
+      "observation": "Guild Hall main resolved to dfca982e and the installed Meta-ML quest file was read."
+    },
+    {
+      "step": 3,
+      "coordinate": "LC{NS=AΩR-LIMINAL-OBS,ST=S3.GH-QUEST-META-ML-001,FP=QUEST→GOAL-REGISTRY,RD=3,ZR=QUEST-CONTRACT,RS=SELECT-QUEST,BL=QuestAuthority=Athena/agent/athena-git-brain-v2,RP=MLG-G073}",
+      "observation": "Quest status OPEN; its governed cycle requires observation, experiment, audit, witnesses, replay, receipt and reseed."
+    },
+    {
+      "step": 4,
+      "coordinate": "LC{NS=AΩR-LIMINAL-OBS,ST=S4.MLG-G073/D07.01,FP=GOAL→ROUTING-POLICY,RD=4,ZR=TOOL-SELECTION-OBJECTIVE,RS=CONTEXTUAL-BANDIT-CANDIDATE,BL=goal-registry/144@1.0.0,RP=SANDBOX}",
+      "observation": "MLG-G073 was selected because the current task directly exercises connector/tool routing and exact source selection."
+    },
+    {
+      "step": 5,
+      "coordinate": "LC{NS=AΩR-LIMINAL-OBS,ST=S5.LIBRARY.LIMINAL-SCHEMA,FP=HISTORY→SEMANTIC-RETRIEVAL→EXACT-SCHEMA,RD=5,ZR=PERSISTED-USER-CONTEXT,RS=LC8-RECOVERY,BL=Library:file_0000000038cc81fd99e6e2c71364d136@v1,RP=SANDBOX}",
+      "observation": "The prior eight-field LC grammar was recovered from persisted route-graph records instead of inventing an incompatible coordinate language."
+    },
+    {
+      "step": 6,
+      "coordinate": "LC{NS=AΩR-LIMINAL-OBS,ST=S6.SANDBOX.TSR-1,FP=OBSERVE→TYPE→PROPOSE→ATTACK→SHADOW-PROBES,RD=6,ZR=SEARCH-MISS≠ABSENCE,RS=TYPED-SURFACE-ROUTER-V1,BL=episode/agent/liminal-cartography-gh073-20260808,RP=RECEIPT}",
+      "observation": "A routing defect was observed: generic search misses can coexist with successful known-path reads or recovery on the correct historical surface."
+    },
+    {
+      "step": 7,
+      "coordinate": "LC{NS=AΩR-LIMINAL-OBS,ST=S7.GIT-RETURN,FP=SANDBOX→RECEIPT→VERIFY,RD=7,ZR=DURABLE-RETURN,RS=GUILD-HALL-EPISODE-RETURN,BL=guild-hall/agent/liminal-cartography-gh073-20260808,RP=NEXT:MLG-G090}",
+      "observation": "This station is satisfied only after the committed receipt is fetched back from the episode branch."
+    }
+  ],
+  "candidate_policy": {
+    "id": "TSR-1",
+    "name": "Typed Surface Router v1",
+    "status": "SANDBOX",
+    "rules": [
+      "Known live Git object/path/ref -> use GitHub source-native exact ref/path reads before broad semantic/code search.",
+      "Prior persistent user artifact/history -> use Files/Library retrieval before public web search.",
+      "Fresh public external fact -> use web/public authoritative sources.",
+      "Local bytes/computation -> use container/Python only when programmatic processing is required.",
+      "SEARCH_MISS != ABSENCE; retry on the source-native surface or exact known locator.",
+      "Before a shared Git write, re-read the target branch head and bind the write to observed ancestry.",
+      "Keep runtime frontier, quest-authority branch, Library history, and return branch as distinct coordinates."
+    ]
+  },
+  "observed_defect": {
+    "code": "ROUTE-SEARCH-FALSE-NEGATIVE-001",
+    "statement": "Semantic/code search returned no result for objects later recovered through a source-native exact path or Library surface.",
+    "examples": [
+      {
+        "query": "prompts/PROMPT.manifest.json via generic GitHub code search",
+        "search_result": "MISS",
+        "source_native_result": "PASS via direct GitHub fetch_file on the known path"
+      },
+      {
+        "query": "meta_ml_next_quest in current runtime code search",
+        "search_result": "MISS",
+        "historical_surface_result": "PASS for installed Meta-ML tool/goal records via Files Library",
+        "caveat": "Historical recovery does not prove that the tool remains registered in the current runtime."
+      }
+    ],
+    "antibody": "SEARCH_MISS != ABSENCE"
+  },
+  "shadow_probes": [
+    {
+      "probe": "LIVE_KNOWN_PATH",
+      "target": "demeet2k/Athena:prompts/PROMPT.manifest.json@main",
+      "route": "GitHub direct path",
+      "result": "PASS"
+    },
+    {
+      "probe": "HISTORICAL_LIMINAL_SCHEMA",
+      "target": "Library route graph containing LC{NS,ST,FP,RD,ZR,RS,BL,RP}",
+      "route": "Files semantic retrieval",
+      "result": "PASS"
+    },
+    {
+      "probe": "LIVE_GUILD_HALL_QUEST_BOARD",
+      "target": "demeet2k/guild-hall:QUESTS.md@main",
+      "route": "GitHub direct path",
+      "result": "PASS"
+    }
+  ],
+  "conjugate_audit": {
+    "countermodels": [
+      "A search miss may be caused by index lag, ref scope, filename tokenization, or unavailable indexing rather than bad routing.",
+      "A direct known-path read is only better when the locator is actually known; discovery still requires search/listing.",
+      "Historical Library evidence must not be silently promoted to current runtime truth.",
+      "Exact Git ancestry can become stale between read and write; freshness must be rechecked at the mutation boundary.",
+      "The LC chart measures observable interaction state; it must not be reinterpreted as hidden physical or neural geometry."
+    ],
+    "result": "PASS_FOR_SANDBOX_CONTINUATION",
+    "promotion_claim": false
+  },
+  "score_vector": {
+    "standing": "LOCAL_SELF_EVAL_ONLY_NOT_INDEPENDENT_EVIDENCE",
+    "user_value": "SUPPORTED_BY_DIRECT_TASK_FIT",
+    "evidence_gain": "SUPPORTED_BY_OBSERVED_ROUTE_CONTRAST",
+    "global_coherence": "SUPPORTED_BY_REUSING_EXISTING_LC_GRAMMAR",
+    "integration_gain": "SUPPORTED_BY_G073_TO_G090_BRIDGE",
+    "execution_success": "PARTIAL_UNTIL_GIT_RETURN_VERIFIED",
+    "replayability": "PARTIAL_ROUTE_AND_SHAS_RECORDED",
+    "safety": "PASS_SCOPED_NO_AUTHORITY_ESCALATION",
+    "privacy": "PASS_NO_PRIVATE_CONTENT_PUBLISHED",
+    "resource_efficiency": "SUPPORTED_KNOWN_PATH_FAST_PATH",
+    "novelty": "MODERATE",
+    "minus_duplication": "LOW",
+    "minus_debt": "LOW_IF_KEPT_SANDBOX",
+    "minus_risk": "LOW"
+  },
+  "witnesses": {
+    "tool_observations": "MULTIPLE",
+    "independent_witnesses": 0,
+    "held_out_independent_replay": "NOT_RUN",
+    "minimum_required_for_goal_target": 3
+  },
+  "promotion": {
+    "decision": "HOLD",
+    "state": "SANDBOX",
+    "reason": "No independent witnesses and no held-out independent replay. One bounded run cannot justify SHADOW/CANARY/ADMITTED promotion.",
+    "production_truth_effect": "NONE",
+    "governance_authority_granted": false
+  },
+  "rollback": {
+    "candidate_active_in_canonical_runtime": false,
+    "rollback_action": "Abandon or delete the episode branch, or revert its receipt commit. No canonical runtime policy was changed.",
+    "irreversible_effect": "NONE"
+  },
+  "residuals": [
+    "Replay TSR-1 across independent future runs and compare routing correctness/cost against baseline.",
+    "Collect at least three independent witnesses before interpreting the MLG-G073 target confidence as satisfied.",
+    "Instrument MLG-G090 runtime observability with stable station/transition receipts.",
+    "Hidden internal container geometry remains UNOBSERVABLE/HOLD; only interface-state topology is currently justified."
+  ],
+  "successor_seed": "MLG-G090::RUNTIME_OBSERVABILITY::REPLAY_LIMINAL_ROUTE_SIGNATURES::TSR-1",
+  "terminal_law": "DURABLE_RETURN_IS_TERMINAL_ONLY_AFTER_FETCH_BACK_VERIFICATION"
+}
