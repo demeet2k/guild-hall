@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "guild-hall://schemas/alchemy-forge-quest/v1",
+  "title": "Alchemy Guild Chapter 11 Hybrid Quest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "quest_id",
+    "title",
+    "guild_id",
+    "status",
+    "generation",
+    "lineage",
+    "mythic_spec",
+    "capabilities",
+    "parents",
+    "hybrid",
+    "crown",
+    "descent",
+    "mvp",
+    "tests",
+    "evidence",
+    "residuals",
+    "git_return",
+    "reseed"
+  ],
+  "properties": {
+    "quest_id": {"type": "string", "minLength": 3},
+    "title": {"type": "string", "minLength": 3},
+    "guild_id": {"const": "GH-ALCHEMY-C11"},
+    "status": {"enum": ["OPEN", "CLAIMED", "BUILDING", "TESTING", "WITNESSED", "PROMOTED", "FORKED", "RETIRED"]},
+    "speed_lane": {"enum": ["SPARK", "CRUCIBLE", "PHILOSOPHER"]},
+    "generation": {"type": "integer", "minimum": 0},
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["parent_quest_id", "athena_head", "guild_hall_head"],
+      "properties": {
+        "parent_quest_id": {"type": ["string", "null"]},
+        "athena_head": {"type": "string", "minLength": 7},
+        "guild_hall_head": {"type": "string", "minLength": 7},
+        "source_artifacts": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }
+    },
+    "mythic_spec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "impossible_ceiling", "reality_firewall"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "impossible_ceiling": {"type": "string", "minLength": 10},
+        "reality_firewall": {"const": "MYTHIC_SPEC != IMPLEMENTED_CAPABILITY"}
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["verb", "definition", "test"],
+        "properties": {
+          "verb": {"type": "string", "minLength": 2},
+          "definition": {"type": "string", "minLength": 5},
+          "test": {"type": "string", "minLength": 5}
+        }
+      }
+    },
+    "parents": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "contribution", "orthogonality"],
+        "properties": {
+          "name": {"type": "string", "minLength": 2},
+          "contribution": {"type": "string", "minLength": 5},
+          "orthogonality": {"type": "string", "minLength": 5},
+          "locator": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "hybrid": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["new_operation", "invariants", "interfaces", "cross_effects", "failure_surface"],
+      "properties": {
+        "new_operation": {"type": "string", "minLength": 10},
+        "invariants": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "interfaces": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "cross_effects": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "failure_surface": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    },
+    "crown": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chapter_11_to_21", "completed_future_object", "operator_stack", "proof_shape", "next_hinge"],
+      "properties": {
+        "chapter_11_to_21": {"const": true},
+        "completed_future_object": {"type": "string", "minLength": 10},
+        "operator_stack": {"type": "array", "minItems": 2, "items": {"type": "string"}},
+        "proof_shape": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "next_hinge": {"type": "string", "minLength": 5}
+      }
+    },
+    "descent": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["future_object", "grounding", "standing"],
+        "properties": {
+          "future_object": {"type": "string", "minLength": 3},
+          "grounding": {"type": "string", "minLength": 3},
+          "standing": {"enum": ["KNOWN", "BUILDABLE", "RESEARCH", "UNRESOLVED"]}
+        }
+      }
+    },
+    "mvp": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["artifact", "why_now", "acceptance"],
+      "properties": {
+        "artifact": {"type": "string", "minLength": 5},
+        "why_now": {"type": "string", "minLength": 5},
+        "acceptance": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    },
+    "tests": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["acceptance", "kill_tests"],
+      "properties": {
+        "acceptance": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "kill_tests": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["standing", "observations", "unknowns"],
+      "properties": {
+        "standing": {"enum": ["AUTHORED", "INFERRED", "TESTED", "OBSERVED", "MIXED"]},
+        "observations": {"type": "array", "items": {"type": "string"}},
+        "unknowns": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "residuals": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "git_return": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "targets", "required_receipts"],
+      "properties": {
+        "repository": {"type": "string", "minLength": 3},
+        "targets": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "required_receipts": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    },
+    "reseed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["condition", "successor_rule"],
+      "properties": {
+        "condition": {"type": "string", "minLength": 5},
+        "successor_rule": {"type": "string", "minLength": 5}
+      }
+    }
+  }
+}
