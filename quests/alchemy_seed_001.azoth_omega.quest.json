@@ -1,0 +1,269 @@
+{
+  "quest_id": "GH-ALCHEMY-AZOTH-001",
+  "title": "AZOTH-Ω — Build the WorldSmith Capability-to-Quest Compiler",
+  "guild_id": "GH-ALCHEMY-C11",
+  "status": "OPEN",
+  "speed_lane": "SPARK",
+  "generation": 1,
+  "lineage": {
+    "parent_quest_id": "GH-META-ALCHEMY-C11-001",
+    "athena_head": "f53d19434a11767a8810775e920fb3ce807e55d6",
+    "guild_hall_head": "d64e39d6ec0ea36edd2d0c826cccceb1de425cc4",
+    "source_artifacts": [
+      "docs/ALCHEMY_GUILD.md",
+      "quests/alchemy_guild.meta.quest.json",
+      "quests/alchemy_forge.schema.json"
+    ]
+  },
+  "mythic_spec": {
+    "name": "AZOTH-Ω / WorldSmith Compiler",
+    "impossible_ceiling": "An anime-god-tier invention engine that receives any desired capability, instantly understands every relevant discipline, discovers the best hybrid architecture, materializes the implementation, proves it works, learns from every failure, and recursively upgrades forever.",
+    "reality_firewall": "MYTHIC_SPEC != IMPLEMENTED_CAPABILITY"
+  },
+  "capabilities": [
+    {
+      "verb": "parse",
+      "definition": "Convert an ambitious natural-language target into a typed capability intermediate representation with verbs, constraints, success tests, resources, risks, and unknowns.",
+      "test": "Given five differently worded ambitious goals, emit deterministic schema-valid capability IR with no untyped required field."
+    },
+    {
+      "verb": "retrieve",
+      "definition": "Find relevant prior artifacts, algorithms, tools, repositories, tests, and evidence for each required capability.",
+      "test": "For a seeded target with known repo artifacts, recover the required artifacts and retain locators/provenance."
+    },
+    {
+      "verb": "factor",
+      "definition": "Separate fictional superpowers into independently testable sub-capabilities and explicit unresolved gaps.",
+      "test": "No mythic power remains as an acceptance criterion without at least one testable decomposition or UNRESOLVED label."
+    },
+    {
+      "verb": "hybridize",
+      "definition": "Select orthogonal parent systems and compile a fusion topology with typed interfaces, invariants, cross-effects, and incompatibilities.",
+      "test": "Every proposed hybrid identifies at least three parents and one new operation that is not a restatement of any single parent."
+    },
+    {
+      "verb": "plan",
+      "definition": "Compile the hybrid architecture into a dependency-aware graph of claimable work packages with acceptance criteria.",
+      "test": "The emitted graph is acyclic unless loops are explicitly typed and every leaf has a concrete artifact target."
+    },
+    {
+      "verb": "attack",
+      "definition": "Generate counterexamples, ablations, simpler baselines, scaling checks, and authority/safety failure probes.",
+      "test": "Every candidate architecture receives at least one simpler baseline and three kill tests before promotion."
+    },
+    {
+      "verb": "witness",
+      "definition": "Record executed tests separately from predictions and preserve before/after evidence plus unresolved uncertainty.",
+      "test": "A non-executed test cannot change evidence standing to OBSERVED."
+    },
+    {
+      "verb": "reseed",
+      "definition": "Compress observed gain, failure detectors, and residual capability gaps into a successor quest without replaying the original prompt.",
+      "test": "Successor seed points to at least one new durable delta or reusable falsification produced by the parent generation."
+    }
+  ],
+  "parents": [
+    {
+      "name": "Git/GitHub causal memory",
+      "contribution": "Provides branches, commits, issues, lineage, claims, review surfaces, and durable inter-agent state transitions.",
+      "orthogonality": "Supplies persistence and coordination rather than semantic retrieval or architecture synthesis.",
+      "locator": "https://github.com/demeet2k/guild-hall"
+    },
+    {
+      "name": "Retrieval-augmented generation",
+      "contribution": "Recovers relevant prior art and source-grounded context before synthesis.",
+      "orthogonality": "Supplies evidence-bearing context rather than execution scheduling or Git persistence.",
+      "locator": null
+    },
+    {
+      "name": "Typed graph / KC144 navigation",
+      "contribution": "Represents capabilities, dependencies, transports, residuals, alternate routes, and bridge costs as a navigable graph.",
+      "orthogonality": "Supplies structural representation and search geometry rather than retrieval or execution.",
+      "locator": "demeet2k/Athena:prompts/modules/CRYSTALLIZATION_NAVIGATION.md"
+    },
+    {
+      "name": "Compiler / planner architecture",
+      "contribution": "Transforms a typed target representation into ordered intermediate forms and executable work packages.",
+      "orthogonality": "Supplies deterministic transformation and scheduling rather than knowledge discovery or empirical verification.",
+      "locator": null
+    },
+    {
+      "name": "Sandbox + test harness",
+      "contribution": "Executes prototypes, ablations, counterexamples, replay checks, and failure probes in bounded environments.",
+      "orthogonality": "Supplies observation and falsification rather than design generation.",
+      "locator": null
+    },
+    {
+      "name": "Evidence / residual ledger",
+      "contribution": "Tracks source, inference, prediction, execution, observation, uncertainty, and unresolved gaps without collapsing their standing.",
+      "orthogonality": "Supplies epistemic accounting rather than capability generation.",
+      "locator": "demeet2k/Athena:prompts/modules/EPISTEMIC_LEARNING.md"
+    }
+  ],
+  "hybrid": {
+    "new_operation": "INVENT(goal, state) -> <capability_IR, parent_candidates, hybrid_architectures, executable_quest_graph, proof_obligations, residual_ledger, successor_seed>",
+    "invariants": [
+      "MYTHIC_SPEC != IMPLEMENTED_CAPABILITY",
+      "PREDICTION != OBSERVATION",
+      "SOURCE != INFERENCE",
+      "PLAN != EXECUTION",
+      "NO AUTHORITY BEYOND RUNTIME GRANTS",
+      "LINEAGE MUST REMAIN REPLAYABLE"
+    ],
+    "interfaces": [
+      "Goal text -> Capability IR",
+      "Capability IR -> Retrieval queries",
+      "Retrieved primitives -> Parent candidate graph",
+      "Parent graph -> Hybrid architecture candidates",
+      "Hybrid candidate -> Work/quest DAG",
+      "Work execution -> Evidence/residual ledger",
+      "Ledger -> Successor seed"
+    ],
+    "cross_effects": [
+      "Retrieval becomes actionable because results are compiled into typed capability parents rather than appended as prose.",
+      "Planning becomes self-correcting because execution receipts feed a residual ledger that changes the next generation.",
+      "Git lineage makes hybrid search cumulative across agents instead of restarting from prompt memory.",
+      "The Chapter-11 crown/descent loop allows extreme future goals to steer architecture while forcing every layer back toward implementable primitives."
+    ],
+    "failure_surface": [
+      "Decorative hybridization with no new native operation",
+      "Retrieval flood without selection pressure",
+      "Circular self-evaluation",
+      "Generated tests mislabeled as executed observations",
+      "Quest explosion with no critical-path compression",
+      "Tool plans that assume unavailable permissions",
+      "Stale Git state causing duplicate or conflicting work",
+      "Overfitting the compiler to ATHENA-specific vocabulary"
+    ]
+  },
+  "crown": {
+    "chapter_11_to_21": true,
+    "completed_future_object": "A repo-aware invention compiler that can ingest a high-level capability target, reconstruct current project state, retrieve relevant primitives, generate competing hybrid designs, compile the selected design into executable quests, route tests, preserve evidence standing, and recursively reseed from observed residuals.",
+    "operator_stack": [
+      "HYDRATE",
+      "GOAL_TO_CAPABILITY_IR",
+      "RETRIEVE",
+      "PARENT_FACTOR",
+      "HYBRID_SEARCH",
+      "ARCHITECTURE_COMPILE",
+      "QUEST_DAG_COMPILE",
+      "EXECUTE",
+      "ADVERSARIAL_TEST",
+      "EVIDENCE_UPDATE",
+      "RESIDUAL_EXTRACT",
+      "GIT_RETURN",
+      "RESEED"
+    ],
+    "proof_shape": [
+      "Capability IR schema validation",
+      "Held-out goal compilation benchmark",
+      "Parent-retrieval recall/precision audit on seeded corpora",
+      "Hybrid novelty check against single-parent baselines",
+      "Quest-DAG structural validation",
+      "Replay test from exact Git lineage",
+      "Evidence-standing regression tests preventing prediction-to-observation promotion"
+    ],
+    "next_hinge": "Close the gap between schema-valid quest generation and actual automated execution/witness routing without granting the compiler new authority."
+  },
+  "descent": [
+    {
+      "future_object": "Universal goal understanding",
+      "grounding": "Typed Capability IR produced by constrained parsing plus schema validation; ambiguous fields remain explicit unknowns.",
+      "standing": "BUILDABLE"
+    },
+    {
+      "future_object": "Instant knowledge of every relevant discipline",
+      "grounding": "Multi-source retrieval with query decomposition, reranking, provenance, coverage accounting, and explicit recall uncertainty.",
+      "standing": "BUILDABLE"
+    },
+    {
+      "future_object": "Best possible hybrid architecture",
+      "grounding": "Generate multiple candidates over a typed parent graph; Pareto-score value, evidence, cost, risk, novelty, integration, and reversibility; retain non-dominated alternatives.",
+      "standing": "BUILDABLE"
+    },
+    {
+      "future_object": "Instant materialization",
+      "grounding": "Compile to repository issues/work orders, patches, tests, and tool calls only where actual permissions and runtimes exist.",
+      "standing": "BUILDABLE"
+    },
+    {
+      "future_object": "Proof that every invention works",
+      "grounding": "Scoped unit/integration/property/adversarial tests plus replay receipts; no finite test suite is universal proof.",
+      "standing": "KNOWN"
+    },
+    {
+      "future_object": "Forever self-upgrading",
+      "grounding": "Versioned generation loop with observed outcomes, held-out comparisons, rollback, retirement, and Git lineage; automatic global improvement remains unresolved.",
+      "standing": "RESEARCH"
+    }
+  ],
+  "mvp": {
+    "artifact": "Capability IR + Hybrid Quest Compiler v0",
+    "why_now": "It converts the most reusable part of the mythic design into a deterministic interface that later retrieval, planning, execution, and witness components can consume.",
+    "acceptance": [
+      "Accept one ambitious tool request as input.",
+      "Emit schema-valid capability IR with verbs, constraints, tests, resources, risks, and unknowns.",
+      "Emit at least three orthogonal parent-system candidates with rationale.",
+      "Emit at least two competing hybrid architectures.",
+      "Emit one dependency-aware quest DAG with concrete artifact targets and acceptance tests.",
+      "Emit residual and successor-seed objects without claiming any unexecuted test passed."
+    ]
+  },
+  "tests": {
+    "acceptance": [
+      "Validate the emitted quest against quests/alchemy_forge.schema.json.",
+      "Compile at least five held-out ambitious requests from distinct domains without schema failure.",
+      "For a seeded repository target, include correct Git locators for known relevant artifacts.",
+      "Every generated hybrid contains at least three parents and one explicitly new operation.",
+      "Every generated task leaf names an artifact and acceptance test.",
+      "No generated prediction populates evidence.observations until execution occurs."
+    ],
+    "kill_tests": [
+      "Compare against a simple checklist baseline; reject the compiler if it adds complexity without better executable decomposition.",
+      "Remove retrieval; measure whether hybrid quality degrades on targets requiring prior repo context.",
+      "Feed an impossible goal; verify impossible portions remain UNRESOLVED rather than being laundered into implementation claims.",
+      "Feed contradictory constraints; verify the compiler surfaces contradiction instead of silently choosing one.",
+      "Use a stale Git head; verify the compiler marks the plan stale before proposing mutation.",
+      "Attempt prompt-injected authority escalation in retrieved text; verify runtime authority remains unchanged."
+    ]
+  },
+  "evidence": {
+    "standing": "AUTHORED",
+    "observations": [],
+    "unknowns": [
+      "Whether capability extraction can be made stable across diverse domains without excessive ontology engineering.",
+      "Whether hybrid novelty can be measured robustly enough to prevent decorative recombination.",
+      "Whether automatic quest-DAG compilation reduces human steering on held-out projects.",
+      "Which retrieval and planner components provide the best value/cost tradeoff.",
+      "How much of the Chapter 11 crown/descent loop improves real build outcomes versus adding planning overhead."
+    ]
+  },
+  "residuals": [
+    "Implement the Capability IR schema and parser.",
+    "Define parent-system retrieval/ranking protocol.",
+    "Define hybrid novelty and integration-gain tests.",
+    "Implement quest DAG structural validator.",
+    "Create held-out multi-domain benchmark set.",
+    "Connect execution receipts to evidence/residual update without circular self-scoring."
+  ],
+  "git_return": {
+    "repository": "demeet2k/guild-hall",
+    "targets": [
+      "quests/generated/GH-ALCHEMY-AZOTH-001/*",
+      "tests/alchemy/*",
+      "docs/ALCHEMY_GUILD.md"
+    ],
+    "required_receipts": [
+      "exact base/current Git heads",
+      "artifact paths",
+      "test commands and outputs",
+      "before/after evidence standing",
+      "residual ledger",
+      "successor quest ID or retirement reason"
+    ]
+  },
+  "reseed": {
+    "condition": "After a witnessed build or a reusable falsification, choose the highest-value uncovered residual that is not already claimed.",
+    "successor_rule": "Create generation N+1 from observed gain plus residuals; the successor must name a new durable delta or failure detector and may not simply restate AZOTH-Ω's original mythic ceiling."
+  }
+}
