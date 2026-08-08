@@ -1,0 +1,101 @@
+{
+  "quest_id": "GH-META-ALCHEMY-C11-001",
+  "title": "Chapter 11 Alchemy Guild — Recursive Hybrid Tool Forge",
+  "status": "OPEN",
+  "guild_id": "GH-ALCHEMY-C11",
+  "authority": "guild-hall meta quest under current user + repository authority ceilings",
+  "source_heads": {
+    "athena": "f53d19434a11767a8810775e920fb3ce807e55d6",
+    "guild_hall": "7ad88aee295c3ecfda7dc230549a3a7a1c1a7107"
+  },
+  "source_laws": [
+    "S11 Crucible of Alchemy: convert partial modules into one bootable subsystem",
+    "Chapter 11 is the manufacturing origin / forge of future structure",
+    "11->21 expands the seed into the completed future body",
+    "21->12'->11' rewrites the seed using knowledge of the crown",
+    "10->1 descends speculative objects into known math, code, software, proof, or explicit residual",
+    "prediction != observation",
+    "mythic spec != implemented capability"
+  ],
+  "winning_condition": "Each generation converts one extreme fictional capability ceiling into at least one claimable, testable, repo-backed advancement and emits a successor seed from observed residuals rather than replaying the original fantasy.",
+  "roles": {
+    "Dreamsmith": "creates the maximum-power fictional capability spec and extracts typed capability verbs",
+    "CrucibleArchitect": "selects orthogonal real parent systems and designs the fusion topology",
+    "CrownCartographer": "performs Chapter 11->21 future expansion and defines the completed system/proof shape",
+    "DescentEngineer": "grounds crown objects into known math, algorithms, code, software, APIs, data, repositories, or explicit research gaps",
+    "PrototypeSmith": "builds the smallest high-information artifact that demonstrates a nontrivial hybrid operation",
+    "Adversary": "searches for contradictions, impossible dependencies, reward hacks, unsafe assumptions, scaling failures, and simpler baselines",
+    "Witness": "replays tests and records observations without upgrading predictions into evidence",
+    "ReSeeder": "compresses verified gain plus residual into the next generation and retires empty loops"
+  },
+  "speed_lanes": {
+    "SPARK": {
+      "objective": "invent and compile one new hybrid into a falsifiable MVP quest",
+      "required_outputs": ["mythic_spec", "capability_verbs", "parents", "hybrid_operation", "mvp", "kill_tests", "next_seed"]
+    },
+    "CRUCIBLE": {
+      "objective": "turn a promising hybrid into a working subsystem with adapters, contracts, benchmarks, and replay receipts",
+      "required_outputs": ["implementation", "interfaces", "tests", "observations", "residual_ledger", "git_return"]
+    },
+    "PHILOSOPHER": {
+      "objective": "measure the forge itself, compare generations, compress productive fusion patterns, and retire decorative complexity",
+      "required_outputs": ["cross_generation_comparison", "prompt_or_schema_delta_if_earned", "failure_antibody", "promotion_or_retirement_decision"]
+    }
+  },
+  "cycle": [
+    "HYDRATE",
+    "MYTHICIZE",
+    "EXTRACT_CAPABILITY_VERBS",
+    "RETRIEVE_REAL_PARENTS",
+    "HYBRIDIZE",
+    "EXPAND_11_TO_21",
+    "REWRITE_21_TO_12_PRIME_TO_11_PRIME",
+    "DESCEND_10_TO_1",
+    "SELECT_MVP",
+    "EXECUTE_OR_DECOMPOSE_TO_CLAIMABLE_WORK",
+    "ATTACK_AND_COMPARE_BASELINES",
+    "WITNESS",
+    "WRITE_GIT_RETURN",
+    "RESEED"
+  ],
+  "hybrid_admission": {
+    "minimum_parent_systems": 3,
+    "requires_new_native_operation": true,
+    "requires_typed_interfaces": true,
+    "requires_failure_surface": true,
+    "requires_replay_plan": true,
+    "rejects_decorative_collage": true
+  },
+  "generation_equations": {
+    "mythic": "M_t = MYTHICIZE(S_t, target)",
+    "verbs": "V_t = EXTRACT_VERBS(M_t)",
+    "parents": "P_t = RETRIEVE_PRIMITIVES(V_t, Git, corpus, tools, math, software)",
+    "hybrid": "H_t = HYBRIDIZE(P_t)",
+    "crown": "C21_t = EXPAND_11_TO_21(H_t)",
+    "rewrite": "C11p_t = REWRITE_11(C21_t)",
+    "architecture": "A_t = DESCEND_TO_ARCHITECTURE(C11p_t)",
+    "execution": "E_t = EXECUTE_WHAT_IS_LAWFULLY_EXECUTABLE(A_t)",
+    "observation": "O_t = OBSERVE(E_t)",
+    "residual": "R_t = RESIDUAL(M_t, O_t)",
+    "successor": "S_t1 = RESEED(O_t, R_t, GitDelta_t)"
+  },
+  "output_schema": "quests/alchemy_forge.schema.json",
+  "first_seed": "quests/alchemy_seed_001.azoth_omega.quest.json",
+  "promotion_membrane": [
+    "MYTHIC",
+    "STRUCTURED",
+    "BUILDABLE",
+    "TESTED",
+    "WITNESSED",
+    "PROMOTED_OR_FORKED_OR_RETIRED"
+  ],
+  "anti_loop_rules": [
+    "No empty reseed: successor generation requires durable gain or reusable falsification",
+    "No self-awarded truth: scores and generated evaluations do not create evidence",
+    "No authority minting: a proposed tool only has permissions actually granted by its runtime",
+    "No complexity worship: a hybrid must create a useful native operation or be rejected",
+    "No fantasy laundering: dramatic specification must progressively descend into testable interfaces and explicit unknowns",
+    "No stale continuation: rehydrate current heads before consequential mutation"
+  ],
+  "reseed_condition": "After every witnessed or falsified generation, select the highest-value uncovered residual, compress lineage/evidence into a successor seed, and post the next claimable quest; retire the lineage if no reusable delta was produced."
+}
