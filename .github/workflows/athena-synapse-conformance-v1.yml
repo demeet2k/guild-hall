@@ -1,0 +1,51 @@
+name: ATHENA Synapse V1 Conformance
+
+on:
+  pull_request:
+    paths:
+      - "tools/athena_synapse_*.py"
+      - "schemas/athena_synapse_*.json"
+      - "registry/ATHENA_SYNAPSE_NODES_V1.json"
+      - "fixtures/athena_synapse_*.json"
+      - "tests/test_athena_synapse_*.py"
+      - ".github/workflows/athena-synapse-conformance-v1.yml"
+  push:
+    branches: [main]
+    paths:
+      - "tools/athena_synapse_*.py"
+      - "schemas/athena_synapse_*.json"
+      - "registry/ATHENA_SYNAPSE_NODES_V1.json"
+      - "fixtures/athena_synapse_*.json"
+      - "tests/test_athena_synapse_*.py"
+      - ".github/workflows/athena-synapse-conformance-v1.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synapse-conformance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile boundary tools
+        run: |
+          python -m py_compile tools/athena_synapse_conformance.py tools/athena_synapse_registry_audit.py
+      - name: Audit node admission registry
+        run: |
+          python tools/athena_synapse_registry_audit.py registry/ATHENA_SYNAPSE_NODES_V1.json
+      - name: Validate golden Synapse envelopes
+        run: |
+          python tools/athena_synapse_conformance.py validate fixtures/athena_synapse_vectors_v1.json
+      - name: Verify causal ordering and conservative GC surfaces
+        run: |
+          python tools/athena_synapse_conformance.py causal fixtures/athena_synapse_vectors_v1.json
+          python tools/athena_synapse_conformance.py gc fixtures/athena_synapse_vectors_v1.json
+      - name: Run focused Python tests
+        run: |
+          python -m pip install --disable-pip-version-check pytest
+          python -m pytest -q tests/test_athena_synapse_conformance.py tests/test_athena_synapse_registry_audit.py
