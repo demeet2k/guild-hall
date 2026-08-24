@@ -1,10 +1,11 @@
 from __future__ import annotations
 
-"""ATHENA Synapse ABI V1 conformance, frontier, and conservative GC helpers.
+"""ATHENA Synapse ABI V1 conformance, frontier, causality and conservative GC.
 
-Dependency-free by design: every ATHENA repo can run the same checks without
-importing another organ's runtime. Routing never upgrades into truth, and causal
-order is never inferred from wall-clock timestamps.
+Dependency-free by design: every ATHENA repository can run the same boundary
+checks without importing another organ's runtime.  The module is intentionally
+strict about identity, projection loss, frontiers and receipt stages so routing
+cannot be mistaken for truth, cognition, or global causal order.
 """
 
 import argparse
@@ -23,6 +24,8 @@ RECEIPT_STAGES = {
     "PRESENTED", "CONSUMED", "INCORPORATED", "DECISION_CHANGED", "PROPAGATED",
 }
 EPISTEMIC_CLASSES = {"OBS", "RET", "DER", "HYP", "SIM", "UNK", "CON"}
+LOSS_CLASSES = {"LOSSLESS", "LOSSY_AUX", "NONRETURNABLE"}
+FRONTIER_SEMANTICS = {"NATIVE_EVENT_FRONTIER", "NATIVE_SNAPSHOT", "BRIDGE_VECTOR", "UNKNOWN"}
 
 
 def canonical_json(value: Any) -> str:
@@ -33,10 +36,11 @@ def digest(value: Any) -> str:
     return "sha256:" + hashlib.sha256(canonical_json(value).encode("utf-8")).hexdigest()
 
 
-def bridge_event_id(origin: Mapping[str, Any], projection: str = "athena-synapse-v1") -> str:
-    """Stable bridge identity; wall time is deliberately excluded."""
+def bridge_event_id(origin: Mapping[str, Any], projection_profile: str) -> str:
+    """Stable bridge identity; wall time/frontier state are deliberately excluded."""
     material = {
-        "projection": projection,
+        "schema": SCHEMA,
+        "projection_profile": projection_profile,
         "node_id": origin.get("node_id"),
         "repository": origin.get("repository"),
         "native_system": origin.get("native_system"),
@@ -47,7 +51,8 @@ def bridge_event_id(origin: Mapping[str, Any], projection: str = "athena-synapse
 
 
 def dedupe_key(envelope: Mapping[str, Any]) -> str:
-    return bridge_event_id(envelope.get("origin") or {})
+    projection = envelope.get("projection") or {}
+    return bridge_event_id(envelope.get("origin") or {}, str(projection.get("profile") or ""))
 
 
 def _is_nonempty_str(value: Any) -> bool:
@@ -71,16 +76,48 @@ def validate_envelope(envelope: Mapping[str, Any]) -> list[str]:
     if not _is_nonempty_str(envelope.get("subject")):
         errors.append("subject is required")
 
+    projection = envelope.get("projection")
+    if not isinstance(projection, Mapping):
+        errors.append("projection object is required")
+        projection = {}
+    profile = projection.get("profile")
+    loss_class = projection.get("loss_class")
+    if not _is_nonempty_str(profile):
+        errors.append("projection.profile is required")
+    if loss_class not in LOSS_CLASSES:
+        errors.append("projection.loss_class must be LOSSLESS|LOSSY_AUX|NONRETURNABLE")
+    for field in ("preserved", "lost"):
+        if not _string_list(projection.get(field, [])):
+            errors.append(f"projection.{field} must be a unique string array")
+    return_token = projection.get("return_token")
+    if return_token is not None and not _is_nonempty_str(return_token):
+        errors.append("projection.return_token must be null or non-empty string")
+    if loss_class == "LOSSLESS":
+        if projection.get("lost"):
+            errors.append("LOSSLESS projection cannot declare lost fields")
+        if not _is_nonempty_str(return_token):
+            errors.append("LOSSLESS projection requires return_token")
+    elif loss_class == "LOSSY_AUX":
+        if not (projection.get("lost") or []):
+            errors.append("LOSSY_AUX projection must declare lost fields")
+        if not _is_nonempty_str(return_token):
+            errors.append("LOSSY_AUX projection requires return_token")
+    elif loss_class == "NONRETURNABLE":
+        if not (projection.get("lost") or []):
+            errors.append("NONRETURNABLE projection must declare lost fields")
+        if return_token is not None:
+            errors.append("NONRETURNABLE projection must not carry return_token")
+
     origin = envelope.get("origin")
     if not isinstance(origin, Mapping):
         errors.append("origin object is required")
         origin = {}
-    for field in ("node_id", "repository", "native_system", "native_event_id", "source_revision"):
+    required_origin = ("node_id", "repository", "native_system", "native_event_id", "source_revision")
+    for field in required_origin:
         if not _is_nonempty_str(origin.get(field)):
             errors.append(f"origin.{field} is required")
-    required_origin = ("node_id", "repository", "native_system", "native_event_id", "source_revision")
-    if _is_nonempty_str(event_id) and all(_is_nonempty_str(origin.get(k)) for k in required_origin):
-        if event_id != bridge_event_id(origin):
+    if _is_nonempty_str(event_id) and _is_nonempty_str(profile) and all(_is_nonempty_str(origin.get(k)) for k in required_origin):
+        if event_id != bridge_event_id(origin, str(profile)):
             errors.append("event_id does not match deterministic bridge identity")
 
     semantics = envelope.get("semantics")
@@ -119,6 +156,24 @@ def validate_envelope(envelope: Mapping[str, Any]) -> list[str]:
         errors.append("CONTRADICTION requires correction_of or a causal parent")
     if event_type == "SUPERSESSION" and not causality.get("retraction_of") and not (causality.get("supersedes") or []):
         errors.append("SUPERSESSION requires retraction_of or supersedes")
+
+    frontier_state = envelope.get("frontier")
+    if not isinstance(frontier_state, Mapping):
+        errors.append("frontier object is required")
+        frontier_state = {}
+    frontier_semantics = frontier_state.get("semantics")
+    if frontier_semantics not in FRONTIER_SEMANTICS:
+        errors.append("frontier.semantics is invalid")
+    native_digest = frontier_state.get("native_digest")
+    native_ref = frontier_state.get("native_ref")
+    if native_digest is not None and not _is_nonempty_str(native_digest):
+        errors.append("frontier.native_digest must be null or non-empty string")
+    if native_ref is not None and not _is_nonempty_str(native_ref):
+        errors.append("frontier.native_ref must be null or non-empty string")
+    if frontier_semantics != "UNKNOWN" and not _is_nonempty_str(native_digest) and not _is_nonempty_str(native_ref):
+        errors.append("known frontier requires native_digest or native_ref")
+    if frontier_semantics == "UNKNOWN" and native_digest is not None:
+        errors.append("UNKNOWN frontier cannot assert native_digest")
 
     receipt = envelope.get("receipt")
     if event_type == "RECEIPT":
