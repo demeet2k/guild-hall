@@ -7,6 +7,7 @@ on:
       - "schemas/athena_synapse_*.json"
       - "registry/ATHENA_SYNAPSE_NODES_V1.json"
       - "registry/ATHENA_CORE_SYNAPSE_SOURCE_PIN_V1.json"
+      - "registry/ATHENA_SYNAPSE_ELEMENTAL_IDENTITY_V1.json"
       - "fixtures/athena_synapse_*.json"
       - "fixtures/athena_core_synapse_*.json"
       - "tests/test_athena_synapse_*.py"
@@ -18,6 +19,7 @@ on:
       - "schemas/athena_synapse_*.json"
       - "registry/ATHENA_SYNAPSE_NODES_V1.json"
       - "registry/ATHENA_CORE_SYNAPSE_SOURCE_PIN_V1.json"
+      - "registry/ATHENA_SYNAPSE_ELEMENTAL_IDENTITY_V1.json"
       - "fixtures/athena_synapse_*.json"
       - "fixtures/athena_core_synapse_*.json"
       - "tests/test_athena_synapse_*.py"
@@ -41,7 +43,8 @@ jobs:
           python -m py_compile \
             tools/athena_synapse_conformance.py \
             tools/athena_synapse_registry_audit.py \
-            tools/athena_synapse_manifest_audit.py
+            tools/athena_synapse_manifest_audit.py \
+            tools/athena_synapse_elemental_identity_audit.py
       - name: Audit Core source pin and access standing
         run: |
           python - <<'PY'
@@ -66,6 +69,9 @@ jobs:
       - name: Audit node admission registry
         run: |
           python tools/athena_synapse_registry_audit.py registry/ATHENA_SYNAPSE_NODES_V1.json
+      - name: Audit elemental identity collisions
+        run: |
+          python tools/athena_synapse_elemental_identity_audit.py registry/ATHENA_SYNAPSE_ELEMENTAL_IDENTITY_V1.json
       - name: Validate golden Synapse envelopes
         run: |
           python tools/athena_synapse_conformance.py validate fixtures/athena_synapse_vectors_v1.json
@@ -80,4 +86,5 @@ jobs:
             tests/test_athena_synapse_conformance.py \
             tests/test_athena_synapse_registry_audit.py \
             tests/test_athena_synapse_manifest_audit.py \
-            tests/test_athena_synapse_core_packet_profile.py
+            tests/test_athena_synapse_core_packet_profile.py \
+            tests/test_athena_synapse_elemental_identity_audit.py
