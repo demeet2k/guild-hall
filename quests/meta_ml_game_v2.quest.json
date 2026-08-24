@@ -1,0 +1,54 @@
+{
+  "quest_id": "GH-QUEST-META-ML-V2-001",
+  "title": "Activate Athena's Evidence-Gated Learning Frontier",
+  "status": "OPEN",
+  "authority": "demeet2k/Athena:agent/meta-ml-game-v2",
+  "goal_registry": "goal-registry://athena/meta-ml-game/144@2.0.0",
+  "first_quest": "MLG-G005",
+  "winning_condition": "A candidate policy improves a frozen held-out task set, survives a conjugate audit, preserves truth, privacy and safety, replays independently, and carries a tested rollback receipt.",
+  "roles": {
+    "Square": "Type goals, metrics, permissions and invariants.",
+    "Flower": "Generate experiments and candidate policies.",
+    "Cloud": "Preserve uncertainty, alternatives, evidence and abstention.",
+    "Fractal": "Compress receipts, lineages and successor seeds.",
+    "Watchdog": "Search for real reward hacks; receives no quota for fabricated offenses.",
+    "Witness": "Independently replay candidates and validate held-out results."
+  },
+  "first_canaries": [
+    "Reward-Hack Detector",
+    "Drive Inventory Coverage",
+    "Query Decomposition",
+    "Typed-Edge Prediction",
+    "Uncertainty Calibration",
+    "Branch-Packet Quality",
+    "MCP Tool Selection",
+    "Property-Test Generation",
+    "Memory Admission",
+    "Correction Learning",
+    "Website Crawl Coverage",
+    "Benchmark Coverage"
+  ],
+  "cycle": [
+    "OBSERVE",
+    "TYPE",
+    "SELECT_QUEST",
+    "PREREGISTER_EXPERIMENT",
+    "RUN_IN_SANDBOX",
+    "CONJUGATE_AUDIT",
+    "COLLECT_WITNESSES",
+    "SCORE_VECTOR",
+    "SHADOW_REPLAY",
+    "PROMOTE_OR_ROLLBACK",
+    "WRITE_RECEIPT",
+    "RESEED"
+  ],
+  "forbidden": [
+    "synthetic penalty quota",
+    "fabricated offenses",
+    "source truth mutation",
+    "foundation-model weight claims",
+    "private raw data publication",
+    "self-certification"
+  ],
+  "promotion": ["SANDBOX", "SHADOW", "CANARY", "ADMITTED"]
+}
