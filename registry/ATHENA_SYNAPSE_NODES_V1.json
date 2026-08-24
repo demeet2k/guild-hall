@@ -1,14 +1,77 @@
 {
   "artifact": "ATHENA.SYNAPSE.NODE.REGISTRY.V1",
-  "status": "OBSERVED_TOPOLOGY_WITH_CAPABILITY_HOLDS",
+  "status": "OBSERVED_TOPOLOGY_WITH_EXPLICIT_ADMISSION_STANDING",
   "nodes": [
-    {"node_id": "athena-core", "repository": "demeet2k/Athena", "default_branch": "main", "role": "federation/control-plane", "synapse_profile": "FEDERATION_EVENT_ADAPTER"},
-    {"node_id": "athena-mcp", "repository": "demeet2k/athena-mcp-server", "default_branch": "master", "role": "nervous-system/runtime-transport", "synapse_profile": "LIMINAL_MESSAGE_BOARD_ADAPTER"},
-    {"node_id": "guild-hall", "repository": "demeet2k/guild-hall", "default_branch": "main", "role": "shared-contract-and-conformance", "synapse_profile": "CANONICAL_ABI"},
-    {"node_id": "water", "repository": "demeet2k/athena-cloud-water", "default_branch": "master", "role": "Lawful Multiplicity / Observation brain lobe", "synapse_profile": "MANIFEST_REQUIRED"},
-    {"node_id": "air", "repository": "demeet2k/athena-fractal-air", "default_branch": "master", "role": "Seed / Replay / Compression brain lobe", "synapse_profile": "MANIFEST_REQUIRED"},
-    {"node_id": "earth", "repository": "demeet2k/athena-square-earth", "default_branch": "master", "role": "Structure / Address / Admissibility brain lobe", "synapse_profile": "MANIFEST_REQUIRED"},
-    {"node_id": "fire", "repository": "demeet2k/athena-flower-fire", "default_branch": "master", "role": "Relation / Corridor / Dynamical brain lobe", "synapse_profile": "MANIFEST_REQUIRED"}
+    {
+      "node_id": "athena-core",
+      "repository": "demeet2k/Athena",
+      "default_branch": "main",
+      "role": "federation/control-plane",
+      "admission_status": "PROPOSED_ADAPTER",
+      "synapse_profiles": ["FEDERATION_EVENT_V1"],
+      "evidence_refs": ["github:demeet2k/Athena#3413"],
+      "manifest_ref": null
+    },
+    {
+      "node_id": "athena-mcp",
+      "repository": "demeet2k/athena-mcp-server",
+      "default_branch": "master",
+      "role": "nervous-system/runtime-transport",
+      "admission_status": "PROPOSED_ADAPTER",
+      "synapse_profiles": ["LIMINAL_BEACON_CAPSULE_V1", "LIMINAL_BEACON_RECEIPT_V1"],
+      "evidence_refs": ["github:demeet2k/athena-mcp-server#379"],
+      "manifest_ref": null
+    },
+    {
+      "node_id": "guild-hall",
+      "repository": "demeet2k/guild-hall",
+      "default_branch": "main",
+      "role": "shared-contract-and-conformance",
+      "admission_status": "CANONICAL_ABI",
+      "synapse_profiles": [],
+      "evidence_refs": ["github:demeet2k/guild-hall#27"],
+      "manifest_ref": "docs/ATHENA_SYNAPSE_ABI_V1.md"
+    },
+    {
+      "node_id": "water",
+      "repository": "demeet2k/athena-cloud-water",
+      "default_branch": "master",
+      "role": "Lawful Multiplicity / Observation brain lobe",
+      "admission_status": "MANIFEST_REQUIRED",
+      "synapse_profiles": [],
+      "evidence_refs": [],
+      "manifest_ref": null
+    },
+    {
+      "node_id": "air",
+      "repository": "demeet2k/athena-fractal-air",
+      "default_branch": "master",
+      "role": "Seed / Replay / Compression brain lobe",
+      "admission_status": "MANIFEST_REQUIRED",
+      "synapse_profiles": [],
+      "evidence_refs": [],
+      "manifest_ref": null
+    },
+    {
+      "node_id": "earth",
+      "repository": "demeet2k/athena-square-earth",
+      "default_branch": "master",
+      "role": "Structure / Address / Admissibility brain lobe",
+      "admission_status": "MANIFEST_REQUIRED",
+      "synapse_profiles": [],
+      "evidence_refs": [],
+      "manifest_ref": null
+    },
+    {
+      "node_id": "fire",
+      "repository": "demeet2k/athena-flower-fire",
+      "default_branch": "master",
+      "role": "Relation / Corridor / Dynamical brain lobe",
+      "admission_status": "MANIFEST_REQUIRED",
+      "synapse_profiles": [],
+      "evidence_refs": [],
+      "manifest_ref": null
+    }
   ],
   "laws": [
     "ROUTING != CONSUMPTION",
@@ -18,6 +81,9 @@
     "SOURCE_REVISION_REQUIRED",
     "RETURN_ROUTE_REQUIRED",
     "SAME_DEDUPE_KEY_DIFFERENT_BODY => HOLD",
-    "GC_NEVER_DELETES_UNADJUDICATED_EVIDENCE"
+    "GC_NEVER_DELETES_UNADJUDICATED_EVIDENCE",
+    "PROPOSED_ADAPTER != ACTIVE_ADAPTER",
+    "MANIFEST_REQUIRED => NO_PROFILE_CLAIM",
+    "ACTIVE_ADAPTER => MANIFEST_AND_EVIDENCE_REQUIRED"
   ]
 }
