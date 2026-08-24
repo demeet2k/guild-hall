@@ -34,6 +34,36 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - name: Checkout pinned Core Synapse producer
+        uses: actions/checkout@v4
+        with:
+          repository: demeet2k/Athena
+          ref: 69ddee368b20e54c4fb14f4763b933d27445e0da
+          path: _interop/athena-core
+          persist-credentials: false
+          fetch-depth: 1
+      - name: Execute pinned Core packet bridge regressions
+        working-directory: _interop/athena-core
+        run: |
+          python -m unittest -v \
+            tests.test_federation_synapse_envelope_bridge_v1 \
+            tests.test_federation_synapse_envelope_vector_v1
+      - name: Verify frozen Core envelope has not drifted
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          guild = json.loads(Path('fixtures/athena_core_synapse_packet_envelope_v1.json').read_text(encoding='utf-8'))
+          core = json.loads(Path('_interop/athena-core/fixtures/athena_federation_synapse_packet_envelope_v1.json').read_text(encoding='utf-8'))
+
+          assert guild['source']['core_base_revision'] == core['source_revision']
+          assert guild['source']['profile'] == core['expected']['projection_profile']
+          assert guild['envelope'] == core['envelope']
+          for key in ('event_id', 'packet_digest', 'body_digest', 'envelope_digest'):
+              assert guild['expected'][key] == core['expected'][key], key
+          print('CORE_GUILD_SYNAPSE_VECTOR_EXACT_MATCH')
+          PY
       - name: Compile boundary tools
         run: |
           python -m py_compile \
