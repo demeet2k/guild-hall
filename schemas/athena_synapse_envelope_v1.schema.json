@@ -3,12 +3,24 @@
   "$id": "https://github.com/demeet2k/guild-hall/schemas/athena_synapse_envelope_v1.schema.json",
   "title": "ATHENA Synapse Envelope V1",
   "type": "object",
-  "required": ["schema", "event_id", "event_type", "subject", "origin", "semantics", "routing", "causality", "clock", "payload"],
+  "required": ["schema", "event_id", "event_type", "subject", "projection", "origin", "semantics", "routing", "causality", "frontier", "clock", "payload"],
   "properties": {
     "schema": {"const": "ATHENA.SYNAPSE.ENVELOPE.V1"},
     "event_id": {"type": "string", "minLength": 1},
     "event_type": {"enum": ["OBSERVATION", "PROPOSAL", "CLAIM", "EFFECT", "RECEIPT", "WITNESS", "CONTRADICTION", "HOLD", "RETURN", "SUPERSESSION"]},
     "subject": {"type": "string", "minLength": 1},
+    "projection": {
+      "type": "object",
+      "required": ["profile", "loss_class", "preserved", "lost", "return_token"],
+      "properties": {
+        "profile": {"type": "string", "minLength": 1},
+        "loss_class": {"enum": ["LOSSLESS", "LOSSY_AUX", "NONRETURNABLE"]},
+        "preserved": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "lost": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "return_token": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
     "origin": {
       "type": "object",
       "required": ["node_id", "repository", "native_system", "native_event_id", "source_revision"],
@@ -18,7 +30,8 @@
         "native_system": {"type": "string", "minLength": 1},
         "native_event_id": {"type": "string", "minLength": 1},
         "source_revision": {"type": "string", "minLength": 1},
-        "native_ref": {"type": ["string", "null"]}
+        "native_ref": {"type": ["string", "null"]},
+        "actor_id": {"type": ["string", "null"]}
       },
       "additionalProperties": true
     },
@@ -53,6 +66,16 @@
         "correction_of": {"type": ["string", "null"]},
         "retraction_of": {"type": ["string", "null"]},
         "supersedes": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    },
+    "frontier": {
+      "type": "object",
+      "required": ["semantics", "native_digest", "native_ref"],
+      "properties": {
+        "semantics": {"enum": ["NATIVE_EVENT_FRONTIER", "NATIVE_SNAPSHOT", "BRIDGE_VECTOR", "UNKNOWN"]},
+        "native_digest": {"type": ["string", "null"]},
+        "native_ref": {"type": ["string", "null"]}
       },
       "additionalProperties": false
     },
