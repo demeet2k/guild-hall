@@ -1,0 +1,153 @@
+{
+  "artifact": "ATHENA.SYNAPSE.CORE.PACKET.CONFORMANCE.VECTOR.V1",
+  "version": "1.0.0",
+  "source": {
+    "repository": "demeet2k/Athena",
+    "pull_request": 3431,
+    "core_base_revision": "35ffed16ea419d8cb133b7e667516b7f7f5e9601",
+    "profile": "FEDERATION_SYNAPSE_PACKET_V1"
+  },
+  "envelope": {
+    "causality": {
+      "correction_of": null,
+      "parent_ids": [
+        "SYN-665f76ed1e14e686b9db82a2aa8ae2a2",
+        "SYN-69572a13f6682ec228f2b8a0a1f3b711"
+      ],
+      "reply_to": null,
+      "retraction_of": null,
+      "supersedes": []
+    },
+    "clock": {
+      "bridge_observed_at": "2026-08-24T14:55:00Z",
+      "origin_sequence": null,
+      "wall_time": "2026-08-24T14:54:00Z"
+    },
+    "event_id": "SYN-3476a07f331d1dcc8b7dd88212c9fdd4",
+    "event_type": "CLAIM",
+    "frontier": {
+      "native_digest": "sha256:32921fb91d54d9ed88c9d455e890752929dc6e666b11245c3a469a5b1caac35b",
+      "native_ref": "athena-synapse-packet:sha256:32921fb91d54d9ed88c9d455e890752929dc6e666b11245c3a469a5b1caac35b",
+      "semantics": "NATIVE_SNAPSHOT"
+    },
+    "origin": {
+      "actor_id": "coord.synapse",
+      "native_event_id": "PKT-144",
+      "native_ref": "federation_v1/synapse.py#SynapsePacket",
+      "native_system": "ATHENA.FEDERATION.SYNAPSE.PACKET.V1",
+      "node_id": "athena-core",
+      "repository": "demeet2k/Athena",
+      "source_revision": "35ffed16ea419d8cb133b7e667516b7f7f5e9601"
+    },
+    "payload": {
+      "body": {
+        "packet": {
+          "aliases": ["alpha", "beta"],
+          "claims": [
+            {
+              "claim_id": "C1",
+              "evidence_grade": "OBS",
+              "evidence_refs": ["ev:c"],
+              "oid": "OID-144",
+              "predicate": "shape",
+              "source_event_digest": null,
+              "supersedes": [],
+              "value_digest": "sha256:v1"
+            },
+            {
+              "claim_id": "C2",
+              "evidence_grade": "RET",
+              "evidence_refs": ["ev:b", "ev:a"],
+              "oid": "OID-144",
+              "predicate": "state",
+              "source_event_digest": "event:2",
+              "supersedes": ["C0"],
+              "value_digest": "sha256:v2"
+            }
+          ],
+          "emitted_at": "2026-08-24T14:54:00Z",
+          "fingerprint": ["kind:checkpoint", "schema:v1"],
+          "lineage": "main@35ffed1",
+          "metadata": {"mode": "interop", "unicode": "Athena Ω"},
+          "oid": "OID-144",
+          "packet_id": "PKT-144",
+          "parent_packets": ["PKT-parent-a", "PKT-parent-b"],
+          "projections": [
+            {
+              "address": "GID144",
+              "chart": "KC144",
+              "loss_class": "LOSSY_AUX",
+              "lost": ["native-order"],
+              "preserved": ["oid", "fingerprint"],
+              "return_token": "kc144:return"
+            },
+            {
+              "address": "phase:relay",
+              "chart": "LIMINAL",
+              "loss_class": "LOSSLESS",
+              "lost": [],
+              "preserved": ["lineage"],
+              "return_token": "liminal:return"
+            }
+          ],
+          "return_routes": ["athena://federation/synapse", "athena://jspace"],
+          "source_node": "coord.synapse",
+          "source_thread": "thread:alpha",
+          "target_domains": ["coord.guild", "transport.mcp"]
+        },
+        "packet_digest": "sha256:32921fb91d54d9ed88c9d455e890752929dc6e666b11245c3a469a5b1caac35b",
+        "profile": "FEDERATION_SYNAPSE_PACKET_V1"
+      },
+      "body_digest": "sha256:3e87d1adc554d03dd78b3ea1e03a52530d2c33dc395ddffb8b89445319b448f2",
+      "evidence": ["ev:a", "ev:b", "ev:c", "event:2"],
+      "payload_ref": "athena-synapse-packet:sha256:32921fb91d54d9ed88c9d455e890752929dc6e666b11245c3a469a5b1caac35b",
+      "residuals": [
+        "SEMANTIC_PACKET_IDENTITY_PRESERVED_NOT_ORIGINAL_WIRE_ORDER",
+        "ENVELOPE_ROUTED != PACKET_DELIVERED",
+        "ENVELOPE_PRESENTED != PACKET_CONSUMED",
+        "INTEROPERABILITY != AUTHORITY_PROMOTION"
+      ],
+      "summary": "SynapsePacket PKT-144 for OID-144"
+    },
+    "projection": {
+      "loss_class": "LOSSLESS",
+      "lost": [],
+      "preserved": [
+        "packet_digest", "packet_id", "source_node", "source_thread", "lineage", "oid", "aliases",
+        "fingerprint", "projections", "claims", "target_domains", "return_routes", "emitted_at",
+        "parent_packets", "metadata"
+      ],
+      "profile": "FEDERATION_SYNAPSE_PACKET_V1",
+      "return_token": "athena-synapse-packet:sha256:32921fb91d54d9ed88c9d455e890752929dc6e666b11245c3a469a5b1caac35b"
+    },
+    "receipt": null,
+    "routing": {
+      "recipients": [],
+      "return_routes": ["athena://federation/synapse", "athena://jspace"],
+      "route_keys": ["coord.guild", "transport.mcp"],
+      "visibility": null
+    },
+    "schema": "ATHENA.SYNAPSE.ENVELOPE.V1",
+    "semantics": {
+      "authority_class": "ZERO_AUTHORITY_INTEROP",
+      "epistemic_class": "UNK",
+      "evidence_ceiling": null,
+      "native_kind": "SYNAPSE_PACKET",
+      "truth_ceiling": "NATIVE_SYNAPSE_PACKET_ONLY"
+    },
+    "subject": "OID-144"
+  },
+  "expected": {
+    "event_id": "SYN-3476a07f331d1dcc8b7dd88212c9fdd4",
+    "packet_digest": "sha256:32921fb91d54d9ed88c9d455e890752929dc6e666b11245c3a469a5b1caac35b",
+    "body_digest": "sha256:3e87d1adc554d03dd78b3ea1e03a52530d2c33dc395ddffb8b89445319b448f2",
+    "envelope_digest": "sha256:2c217cc0a27c6b250a07ffc3be148a4db75ef9ad0f5d281dc4ed9e195b7023b2",
+    "external_causal_refs": [
+      "SYN-665f76ed1e14e686b9db82a2aa8ae2a2",
+      "SYN-69572a13f6682ec228f2b8a0a1f3b711"
+    ],
+    "frontier_node_id": "athena-core",
+    "frontier_repository": "demeet2k/Athena",
+    "source_revision": "35ffed16ea419d8cb133b7e667516b7f7f5e9601"
+  }
+}
