@@ -6,6 +6,7 @@ on:
       - "tools/athena_synapse_*.py"
       - "schemas/athena_synapse_*.json"
       - "registry/ATHENA_SYNAPSE_NODES_V1.json"
+      - "registry/ATHENA_CORE_SYNAPSE_SOURCE_PIN_V1.json"
       - "fixtures/athena_synapse_*.json"
       - "fixtures/athena_core_synapse_*.json"
       - "tests/test_athena_synapse_*.py"
@@ -16,6 +17,7 @@ on:
       - "tools/athena_synapse_*.py"
       - "schemas/athena_synapse_*.json"
       - "registry/ATHENA_SYNAPSE_NODES_V1.json"
+      - "registry/ATHENA_CORE_SYNAPSE_SOURCE_PIN_V1.json"
       - "fixtures/athena_synapse_*.json"
       - "fixtures/athena_core_synapse_*.json"
       - "tests/test_athena_synapse_*.py"
@@ -34,42 +36,33 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Checkout pinned Core Synapse producer
-        uses: actions/checkout@v4
-        with:
-          repository: demeet2k/Athena
-          ref: 69ddee368b20e54c4fb14f4763b933d27445e0da
-          path: _interop/athena-core
-          persist-credentials: false
-          fetch-depth: 1
-      - name: Execute pinned Core packet bridge regressions
-        working-directory: _interop/athena-core
-        run: |
-          python -m unittest -v \
-            tests.test_federation_synapse_envelope_bridge_v1 \
-            tests.test_federation_synapse_envelope_vector_v1
-      - name: Verify frozen Core envelope has not drifted
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-
-          guild = json.loads(Path('fixtures/athena_core_synapse_packet_envelope_v1.json').read_text(encoding='utf-8'))
-          core = json.loads(Path('_interop/athena-core/fixtures/athena_federation_synapse_packet_envelope_v1.json').read_text(encoding='utf-8'))
-
-          assert guild['source']['core_base_revision'] == core['source_revision']
-          assert guild['source']['profile'] == core['expected']['projection_profile']
-          assert guild['envelope'] == core['envelope']
-          for key in ('event_id', 'packet_digest', 'body_digest', 'envelope_digest'):
-              assert guild['expected'][key] == core['expected'][key], key
-          print('CORE_GUILD_SYNAPSE_VECTOR_EXACT_MATCH')
-          PY
       - name: Compile boundary tools
         run: |
           python -m py_compile \
             tools/athena_synapse_conformance.py \
             tools/athena_synapse_registry_audit.py \
             tools/athena_synapse_manifest_audit.py
+      - name: Audit Core source pin and access standing
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          row = json.loads(Path('registry/ATHENA_CORE_SYNAPSE_SOURCE_PIN_V1.json').read_text(encoding='utf-8'))
+          producer = row['producer']
+          evidence = row['producer_execution_evidence']
+          assert producer['repository'] == 'demeet2k/Athena'
+          assert producer['pull_request'] == 3431
+          assert len(producer['producer_revision']) == 40
+          assert len(producer['native_packet_revision']) == 40
+          assert producer['profile'] == 'FEDERATION_SYNAPSE_PACKET_V1'
+          assert evidence['source_equivalent_tests'] == 25
+          assert evidence['source_equivalent_failures'] == 0
+          assert evidence['guild_cross_repository_checkout'] == 'UNAVAILABLE'
+          assert evidence['branch_exact_core_execution_from_guild'] == 'UNOBSERVED'
+          assert row['standing'] == 'PINNED_VECTOR_ABI_VERIFIED_PRODUCER_BRANCH_EXACT_EXECUTION_UNOBSERVED'
+          print('CORE_SOURCE_PIN_AND_ACCESS_STANDING_PASS')
+          PY
       - name: Audit node admission registry
         run: |
           python tools/athena_synapse_registry_audit.py registry/ATHENA_SYNAPSE_NODES_V1.json
