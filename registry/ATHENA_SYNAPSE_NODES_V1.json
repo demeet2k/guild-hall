@@ -1,0 +1,23 @@
+{
+  "artifact": "ATHENA.SYNAPSE.NODE.REGISTRY.V1",
+  "status": "OBSERVED_TOPOLOGY_WITH_CAPABILITY_HOLDS",
+  "nodes": [
+    {"node_id": "athena-core", "repository": "demeet2k/Athena", "default_branch": "main", "role": "federation/control-plane", "synapse_profile": "FEDERATION_EVENT_ADAPTER"},
+    {"node_id": "athena-mcp", "repository": "demeet2k/athena-mcp-server", "default_branch": "master", "role": "nervous-system/runtime-transport", "synapse_profile": "LIMINAL_MESSAGE_BOARD_ADAPTER"},
+    {"node_id": "guild-hall", "repository": "demeet2k/guild-hall", "default_branch": "main", "role": "shared-contract-and-conformance", "synapse_profile": "CANONICAL_ABI"},
+    {"node_id": "water", "repository": "demeet2k/athena-cloud-water", "default_branch": "master", "role": "Lawful Multiplicity / Observation brain lobe", "synapse_profile": "MANIFEST_REQUIRED"},
+    {"node_id": "air", "repository": "demeet2k/athena-fractal-air", "default_branch": "master", "role": "Seed / Replay / Compression brain lobe", "synapse_profile": "MANIFEST_REQUIRED"},
+    {"node_id": "earth", "repository": "demeet2k/athena-square-earth", "default_branch": "master", "role": "Structure / Address / Admissibility brain lobe", "synapse_profile": "MANIFEST_REQUIRED"},
+    {"node_id": "fire", "repository": "demeet2k/athena-flower-fire", "default_branch": "master", "role": "Relation / Corridor / Dynamical brain lobe", "synapse_profile": "MANIFEST_REQUIRED"}
+  ],
+  "laws": [
+    "ROUTING != CONSUMPTION",
+    "PRESENTATION != INCORPORATION",
+    "WALL_TIME != CAUSAL_ORDER",
+    "BRIDGE_ID != TRUTH",
+    "SOURCE_REVISION_REQUIRED",
+    "RETURN_ROUTE_REQUIRED",
+    "SAME_DEDUPE_KEY_DIFFERENT_BODY => HOLD",
+    "GC_NEVER_DELETES_UNADJUDICATED_EVIDENCE"
+  ]
+}
