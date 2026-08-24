@@ -9,6 +9,8 @@ synapse = importlib.util.module_from_spec(spec)
 assert spec.loader
 spec.loader.exec_module(synapse)
 
+PROFILE = "LIMINAL_BEACON_V1"
+
 
 def envelope(native_event_id="pkt-1", **overrides):
     origin = {
@@ -18,30 +20,66 @@ def envelope(native_event_id="pkt-1", **overrides):
         "native_event_id": native_event_id,
         "source_revision": "abc123",
         "native_ref": f"athena://liminal/packet/{native_event_id}",
+        "actor_id": "agent-a",
+    }
+    projection = {
+        "profile": PROFILE,
+        "loss_class": "LOSSY_AUX",
+        "preserved": ["native_event_id", "subject", "payload", "source_revision"],
+        "lost": ["native_runtime_object_identity"],
+        "return_token": origin["native_ref"],
     }
     row = {
         "schema": synapse.SCHEMA,
-        "event_id": synapse.bridge_event_id(origin),
+        "event_id": synapse.bridge_event_id(origin, projection["profile"]),
         "event_type": "OBSERVATION",
         "subject": "work:bridge",
+        "projection": projection,
         "origin": origin,
         "semantics": {"epistemic_class": "OBS", "authority_class": "COORDINATION", "truth_ceiling": "ROUTING_STATE", "native_kind": "DELTA"},
         "routing": {"return_routes": [origin["native_ref"]], "recipients": [], "route_keys": ["work:bridge"], "visibility": "COLONY"},
         "causality": {"parent_ids": [], "reply_to": None, "correction_of": None, "retraction_of": None, "supersedes": []},
+        "frontier": {"semantics": "UNKNOWN", "native_digest": None, "native_ref": None},
         "clock": {"wall_time": "2026-08-24T08:00:00Z", "bridge_observed_at": "2026-08-24T08:00:01Z", "origin_sequence": 4},
-        "payload": {"summary": "bridge delta", "payload_ref": origin["native_ref"], "body": {"x": 1}, "body_digest": synapse.digest({"x": 1}), "evidence": [], "residuals": []},
+        "payload": {"summary": "bridge delta", "payload_ref": origin["native_ref"], "body": {"x": 1}, "body_digest": synapse.digest({"x": 1}), "evidence": [], "residuals": ["frontier unknown"]},
         "receipt": None,
     }
     row.update(overrides)
     return row
 
 
-def test_valid_envelope_and_stable_id_ignores_wall_time():
+def test_valid_envelope_and_stable_id_ignores_wall_time_and_frontier():
     one = envelope()
     two = copy.deepcopy(one)
     two["clock"]["wall_time"] = "2030-01-01T00:00:00Z"
+    two["frontier"] = {"semantics": "NATIVE_SNAPSHOT", "native_digest": "fd-new", "native_ref": None}
     assert synapse.validate_envelope(one) == []
     assert one["event_id"] == two["event_id"]
+
+
+def test_projection_profile_is_identity_relevant():
+    row = envelope()
+    other = copy.deepcopy(row)
+    other["projection"]["profile"] = "MESSAGE_BOARD_V1"
+    other["event_id"] = synapse.bridge_event_id(other["origin"], other["projection"]["profile"])
+    assert other["event_id"] != row["event_id"]
+    assert synapse.validate_envelope(other) == []
+
+
+def test_projection_loss_contract_is_enforced():
+    row = envelope()
+    row["projection"] = dict(row["projection"], loss_class="LOSSLESS", lost=["oops"], return_token=None)
+    errors = synapse.validate_envelope(row)
+    assert "LOSSLESS projection cannot declare lost fields" in errors
+    assert "LOSSLESS projection requires return_token" in errors
+
+
+def test_known_and_unknown_frontier_claims_are_distinguished():
+    row = envelope()
+    row["frontier"] = {"semantics": "NATIVE_EVENT_FRONTIER", "native_digest": None, "native_ref": None}
+    assert "known frontier requires native_digest or native_ref" in synapse.validate_envelope(row)
+    row["frontier"] = {"semantics": "UNKNOWN", "native_digest": "invented", "native_ref": None}
+    assert "UNKNOWN frontier cannot assert native_digest" in synapse.validate_envelope(row)
 
 
 def test_bad_bridge_id_and_body_digest_are_rejected():
@@ -68,7 +106,7 @@ def test_receipt_preserves_stage_distinction():
 def test_vector_frontier_does_not_make_global_clock():
     rows = [envelope("a"), envelope("b")]
     rows[1]["origin"] = dict(rows[1]["origin"], node_id="guild-hall", repository="demeet2k/guild-hall", native_system="conformance", source_revision="def456")
-    rows[1]["event_id"] = synapse.bridge_event_id(rows[1]["origin"])
+    rows[1]["event_id"] = synapse.bridge_event_id(rows[1]["origin"], rows[1]["projection"]["profile"])
     rows[1]["clock"]["origin_sequence"] = 999
     f = synapse.frontier(rows)
     assert set(f["origins"]) == {"athena-mcp", "guild-hall"}
