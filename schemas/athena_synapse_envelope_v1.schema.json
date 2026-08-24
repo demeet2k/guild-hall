@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/demeet2k/guild-hall/schemas/athena_synapse_envelope_v1.schema.json",
+  "title": "ATHENA Synapse Envelope V1",
+  "type": "object",
+  "required": ["schema", "event_id", "event_type", "subject", "projection", "origin", "semantics", "routing", "causality", "frontier", "clock", "payload"],
+  "properties": {
+    "schema": {"const": "ATHENA.SYNAPSE.ENVELOPE.V1"},
+    "event_id": {"type": "string", "minLength": 1},
+    "event_type": {"enum": ["OBSERVATION", "PROPOSAL", "CLAIM", "EFFECT", "RECEIPT", "WITNESS", "CONTRADICTION", "HOLD", "RETURN", "SUPERSESSION"]},
+    "subject": {"type": "string", "minLength": 1},
+    "projection": {
+      "type": "object",
+      "required": ["profile", "loss_class", "preserved", "lost", "return_token"],
+      "properties": {
+        "profile": {"type": "string", "minLength": 1},
+        "loss_class": {"enum": ["LOSSLESS", "LOSSY_AUX", "NONRETURNABLE"]},
+        "preserved": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "lost": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "return_token": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "origin": {
+      "type": "object",
+      "required": ["node_id", "repository", "native_system", "native_event_id", "source_revision"],
+      "properties": {
+        "node_id": {"type": "string", "minLength": 1},
+        "repository": {"type": "string", "minLength": 1},
+        "native_system": {"type": "string", "minLength": 1},
+        "native_event_id": {"type": "string", "minLength": 1},
+        "source_revision": {"type": "string", "minLength": 1},
+        "native_ref": {"type": ["string", "null"]},
+        "actor_id": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "semantics": {
+      "type": "object",
+      "required": ["epistemic_class", "authority_class", "truth_ceiling"],
+      "properties": {
+        "epistemic_class": {"enum": ["OBS", "RET", "DER", "HYP", "SIM", "UNK", "CON"]},
+        "authority_class": {"type": "string", "minLength": 1},
+        "truth_ceiling": {"type": "string", "minLength": 1},
+        "native_kind": {"type": ["string", "null"]},
+        "evidence_ceiling": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "routing": {
+      "type": "object",
+      "required": ["return_routes"],
+      "properties": {
+        "return_routes": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "recipients": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "route_keys": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "visibility": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "causality": {
+      "type": "object",
+      "properties": {
+        "parent_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "reply_to": {"type": ["string", "null"]},
+        "correction_of": {"type": ["string", "null"]},
+        "retraction_of": {"type": ["string", "null"]},
+        "supersedes": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    },
+    "frontier": {
+      "type": "object",
+      "required": ["semantics", "native_digest", "native_ref"],
+      "properties": {
+        "semantics": {"enum": ["NATIVE_EVENT_FRONTIER", "NATIVE_SNAPSHOT", "BRIDGE_VECTOR", "UNKNOWN"]},
+        "native_digest": {"type": ["string", "null"]},
+        "native_ref": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "clock": {
+      "type": "object",
+      "required": ["bridge_observed_at"],
+      "properties": {
+        "wall_time": {"type": ["string", "null"]},
+        "bridge_observed_at": {"type": "string", "minLength": 1},
+        "origin_sequence": {"type": ["integer", "null"], "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "payload": {
+      "type": "object",
+      "properties": {
+        "summary": {"type": ["string", "null"]},
+        "payload_ref": {"type": ["string", "null"]},
+        "body": {},
+        "body_digest": {"type": ["string", "null"]},
+        "evidence": {"type": "array", "items": {"type": "string"}},
+        "residuals": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "receipt": {
+      "type": ["object", "null"],
+      "properties": {
+        "stage": {"enum": ["PRESENTED", "CONSUMED", "INCORPORATED", "DECISION_CHANGED", "PROPAGATED"]},
+        "recipient": {"type": ["string", "null"]},
+        "disposition": {"type": ["string", "null"]},
+        "outcome_ref": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}
