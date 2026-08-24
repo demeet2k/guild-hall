@@ -1,0 +1,122 @@
+{
+  "artifact": "ATHENA.SYNAPSE.ELEMENTAL.IDENTITY.V1",
+  "version": "1.0.0",
+  "observed_at": "2026-08-24",
+  "status": "IDENTITY_COLLISIONS_OBSERVED_ADMISSION_HOLD",
+  "common_native_config": {
+    "path": ".mcp.json",
+    "blob_sha": "d37d130dbb1eb885e51b3d64b54b3f56283b1955",
+    "crystal_address": "Xi108:W1:A2:S32:u498:Su:S:d1",
+    "crystal_node_id": 498,
+    "phase": "Mutable",
+    "mcp_server_name": "athena-nervous-system"
+  },
+  "common_runtime_kernel": {
+    "MCP/athena_mcp_server.py": "350f8ab682a3a5697b18d60515e008173438a41a",
+    "MCP/element_servers": "6667c6fbedbda3b26653d73d3e28b4b0c39b3310",
+    "MCP/generate_graph.py": "b867a5b79dfcf83ca1d786f113e078882a2e86a8",
+    "MCP/requirements.txt": "3ce29a062030f12740da592d230647a69fd3749d"
+  },
+  "shared_nervous_system_contracts": {
+    "synapse_schema": {
+      "path": "NERVOUS_SYSTEM/70_SCHEMAS/02_SYNAPSE_SCHEMA.md",
+      "blob_sha": "b938a55d8d7f06c459991a330cd1ccf4fa119d76",
+      "semantic_kind": "LEGACY_RELATION_EDGE",
+      "fields": ["synapse_id", "src", "dst", "kind", "why_it_exists", "metro_line", "status", "witness"]
+    },
+    "swarm_packet_schema": {
+      "path": "NERVOUS_SYSTEM/70_SCHEMAS/05_SWARM_PACKET_SCHEMA.md",
+      "blob_sha": "2e40f4cf085e1a5af83798bf646cd692a6bc7da7",
+      "semantic_kind": "STRUCTURAL_SWARM_PACKET_SHELL_WITH_COMMAND_EVENT_SUBTYPE"
+    }
+  },
+  "nodes": [
+    {
+      "node_id": "water",
+      "repository": "demeet2k/athena-cloud-water",
+      "revision": "a7fcf26683c08f090cf94b14a8aa861db599c679",
+      "tree_sha": "645171ec3baae3adbcf5f23e1b4ced29a4e6016a",
+      "crystal_tree_sha": "0f8e33253aa7c88985219f778329802225701334",
+      "data_tree_sha": "4ef9189b8024e63dac8f73ae7f41d9a935f12f38",
+      "admission": "HOLD_IDENTITY_DISCRIMINATOR_REQUIRED"
+    },
+    {
+      "node_id": "air",
+      "repository": "demeet2k/athena-fractal-air",
+      "revision": "3eecf5cab4a8b712705792ad72f44f5e7287c503",
+      "tree_sha": "c40fccc80a260f5bc8464690598e08803279593d",
+      "crystal_tree_sha": "fef3870a28a37b08092b7c85e1656642ccdcaeb5",
+      "data_tree_sha": "3dea75786466feda1062a79d21916fe7b16064b2",
+      "admission": "HOLD_IDENTITY_DISCRIMINATOR_REQUIRED"
+    },
+    {
+      "node_id": "earth",
+      "repository": "demeet2k/athena-square-earth",
+      "revision": "dafd62e7af64eb2a58975ecef27b8ef4792868f9",
+      "tree_sha": "728b644f0b7b5df0fffa53b25a6b5d642491f4c6",
+      "crystal_tree_sha": "0f8e33253aa7c88985219f778329802225701334",
+      "data_tree_sha": "de3f4a539b5060cd1042551c9a38eff565001c87",
+      "admission": "HOLD_IDENTITY_DISCRIMINATOR_REQUIRED"
+    },
+    {
+      "node_id": "fire",
+      "repository": "demeet2k/athena-flower-fire",
+      "revision": "79aa18ea7c26d21dbbbb5dbfe8f26e8deff719f4",
+      "tree_sha": "645171ec3baae3adbcf5f23e1b4ced29a4e6016a",
+      "crystal_tree_sha": "0f8e33253aa7c88985219f778329802225701334",
+      "data_tree_sha": "4ef9189b8024e63dac8f73ae7f41d9a935f12f38",
+      "admission": "HOLD_IDENTITY_DISCRIMINATOR_REQUIRED"
+    }
+  ],
+  "collision_groups": [
+    {
+      "kind": "NATIVE_CONFIG_IDENTITY_COLLISION",
+      "key": ".mcp.json:d37d130dbb1eb885e51b3d64b54b3f56283b1955",
+      "nodes": ["air", "earth", "fire", "water"],
+      "standing": "HOLD"
+    },
+    {
+      "kind": "RUNTIME_KERNEL_COLLISION",
+      "key": "COMMON_MCP_KERNEL_V1",
+      "nodes": ["air", "earth", "fire", "water"],
+      "standing": "HOLD_ELEMENT_PROFILE_INFERENCE"
+    },
+    {
+      "kind": "EXACT_REPOSITORY_TREE_MIRROR",
+      "key": "645171ec3baae3adbcf5f23e1b4ced29a4e6016a",
+      "nodes": ["fire", "water"],
+      "standing": "IDENTITY_NOT_DISTINGUISHED_BY_CONTENT"
+    },
+    {
+      "kind": "CRYSTAL_SUBTREE_COLLISION",
+      "key": "0f8e33253aa7c88985219f778329802225701334",
+      "nodes": ["earth", "fire", "water"],
+      "standing": "ELEMENT_LABEL_NOT_DERIVABLE_FROM_CRYSTAL_TREE"
+    }
+  ],
+  "required_discriminator_manifest": {
+    "required_before_profile_admission": true,
+    "fields": [
+      "repository",
+      "revision",
+      "stable_native_node_id",
+      "role_source_ref",
+      "native_event_or_packet_type",
+      "deterministic_identity_rule",
+      "return_or_reconstruction_rule",
+      "truth_or_authority_ceiling",
+      "runtime_witness"
+    ],
+    "must_not_use_alone": ["repository_name", "element_name", "shared_crystal_address", "shared_kernel_blob"]
+  },
+  "laws": [
+    "REPOSITORY_ID != NATIVE_RUNTIME_IDENTITY",
+    "REPOSITORY_NAME != ELEMENT_ROLE_PROOF",
+    "SAME_TREE => CONTENT_IDENTITY_NOT_ROLE_IDENTITY",
+    "SAME_RUNTIME_KERNEL != SAME_SEMANTIC_NODE",
+    "SHARED_CRYSTAL_ADDRESS != UNIQUE_NODE_IDENTITY",
+    "LEGACY_SYNAPSE_EDGE != CORE_SYNAPSE_PACKET",
+    "MANIFEST_REQUIRED => NO_ELEMENT_PROFILE_INFERENCE",
+    "IDENTITY_COLLISION => HOLD_UNTIL_TYPED_DISCRIMINATOR"
+  ]
+}
