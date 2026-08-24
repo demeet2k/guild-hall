@@ -1,0 +1,36 @@
+{
+  "artifact": "ATHENA.CORE.SYNAPSE.SOURCE.PIN.V1",
+  "version": "1.0.0",
+  "producer": {
+    "repository": "demeet2k/Athena",
+    "pull_request": 3431,
+    "producer_revision": "69ddee368b20e54c4fb14f4763b933d27445e0da",
+    "native_packet_revision": "35ffed16ea419d8cb133b7e667516b7f7f5e9601",
+    "profile": "FEDERATION_SYNAPSE_PACKET_V1",
+    "packet_digest": "sha256:32921fb91d54d9ed88c9d455e890752929dc6e666b11245c3a469a5b1caac35b",
+    "event_id": "SYN-3476a07f331d1dcc8b7dd88212c9fdd4",
+    "envelope_digest": "sha256:2c217cc0a27c6b250a07ffc3be148a4db75ef9ad0f5d281dc4ed9e195b7023b2"
+  },
+  "producer_execution_evidence": {
+    "source_equivalent_tests": 25,
+    "source_equivalent_failures": 0,
+    "core_hosted_workflows": "POLICY_SKIPPED",
+    "guild_cross_repository_checkout": "UNAVAILABLE",
+    "guild_cross_repository_checkout_run": 32744043789,
+    "guild_cross_repository_checkout_failure": "REPOSITORY_NOT_FOUND_WITH_REPO_SCOPED_GITHUB_TOKEN",
+    "branch_exact_core_execution_from_guild": "UNOBSERVED"
+  },
+  "guild_abi_evidence": {
+    "frozen_vector_conformance_run": 32743562895,
+    "frozen_vector_conformance": "PASS",
+    "focused_python_tests": 34,
+    "focused_python_test_failures": 0
+  },
+  "standing": "PINNED_VECTOR_ABI_VERIFIED_PRODUCER_BRANCH_EXACT_EXECUTION_UNOBSERVED",
+  "laws": [
+    "SOURCE_PIN != SOURCE_EXECUTION",
+    "REPOSITORY_ACCESS_FAILURE != PRODUCER_TEST_FAILURE",
+    "FROZEN_VECTOR_CONFORMANCE != LIVE_CROSS_REPOSITORY_FETCH",
+    "INTEROPERABILITY != AUTHORITY_PROMOTION"
+  ]
+}
