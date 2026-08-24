@@ -8,8 +8,8 @@
       "default_branch": "main",
       "role": "federation/control-plane",
       "admission_status": "PROPOSED_ADAPTER",
-      "synapse_profiles": ["FEDERATION_EVENT_V1"],
-      "evidence_refs": ["github:demeet2k/Athena#3413"],
+      "synapse_profiles": ["FEDERATION_EVENT_V1", "FEDERATION_SYNAPSE_PACKET_V1"],
+      "evidence_refs": ["github:demeet2k/Athena#3413", "github:demeet2k/Athena#3431"],
       "manifest_ref": null
     },
     {
@@ -18,8 +18,16 @@
       "default_branch": "master",
       "role": "nervous-system/runtime-transport",
       "admission_status": "PROPOSED_ADAPTER",
-      "synapse_profiles": ["LIMINAL_BEACON_CAPSULE_V1", "LIMINAL_BEACON_RECEIPT_V1"],
-      "evidence_refs": ["github:demeet2k/athena-mcp-server#379"],
+      "synapse_profiles": [
+        "LIMINAL_BEACON_CAPSULE_V1",
+        "LIMINAL_BEACON_RECEIPT_V1",
+        "LIMINAL_INGRESS_CORRELATION_V1"
+      ],
+      "evidence_refs": [
+        "github:demeet2k/athena-mcp-server#379",
+        "github:demeet2k/athena-mcp-server#383",
+        "github:demeet2k/athena-mcp-server#385"
+      ],
       "manifest_ref": null
     },
     {
@@ -29,7 +37,7 @@
       "role": "shared-contract-and-conformance",
       "admission_status": "CANONICAL_ABI",
       "synapse_profiles": [],
-      "evidence_refs": ["github:demeet2k/guild-hall#27"],
+      "evidence_refs": ["github:demeet2k/guild-hall#27", "github:demeet2k/guild-hall#28"],
       "manifest_ref": "docs/ATHENA_SYNAPSE_ABI_V1.md"
     },
     {
@@ -84,6 +92,7 @@
     "GC_NEVER_DELETES_UNADJUDICATED_EVIDENCE",
     "PROPOSED_ADAPTER != ACTIVE_ADAPTER",
     "MANIFEST_REQUIRED => NO_PROFILE_CLAIM",
-    "ACTIVE_ADAPTER => MANIFEST_AND_EVIDENCE_REQUIRED"
+    "ACTIVE_ADAPTER => MANIFEST_AND_EVIDENCE_REQUIRED",
+    "PROCESS_LOCAL_CORRELATION_PROFILE != DURABLE_RETURN_PROOF"
   ]
 }
